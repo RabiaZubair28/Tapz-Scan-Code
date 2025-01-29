@@ -23,7 +23,7 @@ const Profile = () => {
 useEffect(() => {
   const fetchClient = async () => {
     try {
-      const response = await axios.get(`http://localhost:3500/api/data/client/${clientId}`);
+      const response = await axios.get(`https://scantap.onrender.com/api/data/client/${clientId}`);
       setClient(response.data);
       setLoading(false);
     } catch (err) {

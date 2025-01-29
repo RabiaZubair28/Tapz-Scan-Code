@@ -9,7 +9,7 @@ const connectDb = require("./utils/db.js");
 const errorMiddleware = require("./middlewares/error-middleware.js");
 const path = require("path");
 const corsOptions = {
-  origin: "*",
+  origin: "https://scantap.onrender.com/",
   method: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
   optionSuccessStatus: 200,

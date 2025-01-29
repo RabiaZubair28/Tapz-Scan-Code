@@ -85,7 +85,7 @@ const toDataURL = async (url) => {
 useEffect(() => {
   const fetchClient = async () => {
     try {
-      const response = await axios.get(`http://localhost:3500/api/data/client/${clientId}`);
+      const response = await axios.get(`https://scantap.onrender.com/api/data/client/${clientId}`);
       setClient(response.data);
       setLoading(false);
     } catch (err) {
@@ -221,7 +221,7 @@ var clientId01 = _id;
     const fetchAndIncrementVisitCount = async () => {
       try {
         // console.log("Fetching visit count...");
-        const incrementResponse = await axios.post(`http://localhost:3500/api/visit/${clientId}`);
+        const incrementResponse = await axios.post(`https://scantap.onrender.com/api/visit/${clientId}`);
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
         // console.log(`Visit count for client ${clientId} incremented. New count:`, incrementResponse.data.count);
