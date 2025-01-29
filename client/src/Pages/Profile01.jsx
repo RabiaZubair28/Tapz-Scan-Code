@@ -68,8 +68,8 @@ const Profile01 = () => {
   const handleShow03 = () => setShow03(true);
   const navigate = useNavigate();
   const params = useParams();
-  const clientId = params.id;
-  console.log(clientId)
+  const clientId01 = params.id;
+  console.log(clientId01)
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
   console.log(params)
@@ -85,7 +85,7 @@ const toDataURL = async (url) => {
 useEffect(() => {
   const fetchClient = async () => {
     try {
-      const response = await axios.get(`https://scantap.onrender.com/api/data/client/${clientId}`);
+      const response = await axios.get(`https://scantap.onrender.com/api/data/client/${clientId01}`);
       setClient(response.data);
       setLoading(false);
     } catch (err) {
@@ -93,7 +93,7 @@ useEffect(() => {
     }
   };
 
-  if (clientId) {
+  if (clientId01) {
     fetchClient();
   } else {
     setLoading(false);
@@ -214,6 +214,10 @@ var { _id,
   flag
 } = client;
 
+// Used it for a Client make it dynamic by fetching the current client id
+
+var [visitCount, setVisitCount] = useState(0);
+var clientId = _id; 
 // Used it for a Client make it dynamic by fetching the current client id
 
   useEffect(() => {
