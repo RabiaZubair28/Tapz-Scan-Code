@@ -317,7 +317,7 @@ const clientSchema = new mongoose.Schema({
     type: String,
   },
   flag: {
-    type: String,
+    type: Boolean,
   },
   password: {
     type: String,
