@@ -210,13 +210,11 @@ var { _id,
   color02,
   color03,
   password,
-  visitCount,
   flag
 } = client;
 
 // Used it for a Client make it dynamic by fetching the current client id
 
-var [visitCount, setVisitCount] = useState(0);
 var clientId = _id; 
 // Used it for a Client make it dynamic by fetching the current client id
 
