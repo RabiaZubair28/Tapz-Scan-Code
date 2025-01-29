@@ -4135,7 +4135,7 @@ console.log(inputField)
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[${color01}] via-[${color02}] to-[${color03}]`} style={{ backgroundAttachment: "fixed" }}>
+    <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#ffb8d6] via-[#f9d6cd] to-[#f6ece9]`} style={{ backgroundAttachment: "fixed" }}>
       <div className="px-6">
       {logo && (
       <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
