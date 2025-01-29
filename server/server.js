@@ -7,7 +7,7 @@ const authRoute = require("./router/auth-router.js");
 const detailRoute = require("./router/detail-router");
 const connectDb = require("./utils/db.js");
 const errorMiddleware = require("./middlewares/error-middleware.js");
-
+const path = require("path");
 const corsOptions = {
   origin: "*",
   method: "GET, POST, PUT, DELETE, PATCH, HEAD",
@@ -15,12 +15,15 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
+const _dirname = path.resolve();
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
 console.log("Auth Route:", authRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
+
 app.post("/api/visit/:clientId", async (req, res) => {
   const clientId = req.params.clientId;
   try {
@@ -39,9 +42,14 @@ app.post("/api/visit/:clientId", async (req, res) => {
 });
 app.use(errorMiddleware);
 
-const PORT = 3500;
+app.use(express.static(path.join(__dirname, "..", "/client/dist")));
+console.log(__dirname);
+app.get("*", (_, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "client", "dist", "index.html"));
+});
+
 connectDb().then(() => {
-  app.listen(PORT, () => {
-    console.log(`server is running at port: ${PORT}`);
+  app.listen(process.env.PORT, () => {
+    console.log(`server is running at port: ${process.env.PORT}`);
   });
 });
