@@ -889,17 +889,14 @@ router.route("/updateImg10/:id").put(async (req, res) => {
   }
 });
 
-router.route("/client/:id").get(async (req, res) => {
-  const { id } = req.params;
-  console.log(id);
+router.route("/client/:companyName").get(async (req, res) => {
+  const { companyName } = req.params;
+  console.log(companyName);
   // Validate the ID format
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: "Invalid ID format" });
-  }
 
   try {
     // Find the client by ID
-    const client = await Client.findById(id);
+    const client = await Client.findOne({ companyName: companyName });
 
     if (!client) {
       return res.status(404).json({ error: "Client not found" });
