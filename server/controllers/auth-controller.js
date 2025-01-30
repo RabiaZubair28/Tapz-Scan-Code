@@ -12,6 +12,14 @@ const login = async (req, res) => {
         message: "Login successful",
         userId: user.companyName,
       });
+    } else if (user.email != email) {
+      return res.status(401).json({
+        message: "Invalid email",
+      });
+    } else if (user.password != password) {
+      return res.status(401).json({
+        message: "Invalid Password",
+      });
     } else {
       return res.status(401).json({
         message: "Invalid email or password",
