@@ -24,6 +24,7 @@ console.log("Auth Route:", authRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
 
+// Visit count endpoint
 app.post("/api/visit/:clientId", async (req, res) => {
   const clientId = req.params.clientId;
   try {
@@ -34,13 +35,12 @@ app.post("/api/visit/:clientId", async (req, res) => {
 
     client.visitCount += 1;
     await client.save();
-    res.json({ visitCount: client.visitCount });
+    res.json({ count: client.visitCount });
   } catch (error) {
     console.error("Error updating visit count:", error);
     res.status(500).json({ message: "Error updating visit count" });
   }
 });
-app.use(errorMiddleware);
 
 app.use(express.static(path.join(__dirname, "..", "/client/dist")));
 console.log(__dirname);
