@@ -69,7 +69,7 @@ const Profile01 = () => {
   const navigate = useNavigate();
   const params = useParams();
   const clientId = params.id;
-  console.log(clientId01)
+  console.log(clientId)
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
   console.log(params)
