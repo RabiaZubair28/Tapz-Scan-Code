@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault();
     console.log(user)
     try {
-      const response = await fetch('https://scantap.onrender.com/api/auth/login', {
+      const response = await fetch('https://www.scan-taps.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user), // Correctly send the user object as JSON
