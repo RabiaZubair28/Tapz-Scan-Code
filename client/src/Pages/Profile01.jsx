@@ -73,6 +73,7 @@ const Profile01 = () => {
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
   console.log(params)
+  console.log(visitCount)
 
 const toDataURL = async (url) => {
 
