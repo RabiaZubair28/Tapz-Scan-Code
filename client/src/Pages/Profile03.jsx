@@ -304,7 +304,7 @@ const [selected, setSelected] = useState("");
   <div>
 {show && (
   <div
-  className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+  className="qr-modal min-h-screen bg-gradient-to-b from-[#544e66] to-[#1f153d] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
   style={{ backgroundAttachment: "fixed" }}
 >
   <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -317,12 +317,12 @@ const [selected, setSelected] = useState("");
     <div className="flex flex-col items-center justify-center space-y-8">
       {/* QR Code */}
       <div className="qr flex items-center justify-center" id="qr">
-      <QRCodeCanvas  value={window.location.href} />
+      <QRCodeCanvas  value={window.location.href} color='#1f153d'/>
       </div>
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-2">
         <div
-          className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+          className="w-12 h-12 bg-[#1f153d] text-white p-3 rounded-full hover:bg-[#1f153d] flex items-center justify-center"
           onClick={() => {
             downloadQr("qr");
             handleClose();
@@ -407,73 +407,75 @@ const [selected, setSelected] = useState("");
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[white] via-[white] to-[white]`} style={{ backgroundAttachment: "fixed" }}>
-      
-    {logo && (
-        <div className="flex flex-col items-center mx-auto space-y-2">
-          <a href={logo} className="w-full">
-            <div className="relative mb-2">
-              <img
-                src={logo}
-                alt="profile"
-                className="mx-auto h-[400px] w-full bg-cover"
+    <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-b from-[#544e66] to-[#1f153d]`} style={{ backgroundAttachment: "fixed" }}>
+      <div className="px-6">
+      {logo && (
+      <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-1">
 
-              />
-            </div>
-          </a>
-        </div>
-      )}
-     <div className=" ">
-     <div className="relative h-36 bg-gradient-to-t from-blue-900 via-blue-900 to-transparent opacity-100 blur-md px-0 w-full -mt-36">
-     <div className="absolute inset-0 bg-blue-900"></div>
+        <a href={logo}>
+        <div className="relative mb-2 ">
+        <img
+          src={logo}
+          alt="profile"
+          className="w-48 h-48 mx-auto rounded-full border-8 border-white shadow-md"
+        />
       </div>
-      <div className='bg-blue-900 relative -mt-10'>
-      <div className="flex  justify-center gap-x-2 pb-1 items-center px-6">
-          <MdRemoveRedEye size={20} />
-          <p>{visitCount}</p>
+        </a>
+      </div>
+      )}
+      <div className="flex justify-center gap-x-2 pt-0 pb-1 items-center">
+          <MdRemoveRedEye size={20} color='white' />
+          <p className='text-white'>{visitCount}</p>
         </div>
 
         <div className="px-4">
-          <div className="flex justify-center space-x-2 mt-2 mb-2.5">
-          <a href={`tel:${telephone01}`}
+       
+        
+        <a href={`https://wa.me/${whatsapp01}`}
         target="_blank"
-        rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-            <MdOutlinePhoneAndroid size={20} />
+        rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-4 mt-2 mb-3 rounded-lg">
+             <ImWhatsapp size={20} color='white' />&nbsp;REACH OUT
             </a>
-            <a href={`mailto:${email}`}
-        target="_blank"
-        rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-            <AiOutlineMail size={20} />
-            </a>
-            <a className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-            <RiMessage2Line size={20} />
-            </a>
-            <a href={`https://wa.me/${whatsapp01}`}
-        target="_blank"
-        rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-            <ImWhatsapp size={20} />
-            </a>
-          </div>
+            </div>
 
-      </div>
-      <div className='flex flex-col justify-center items-center'>
-      <h2 className="text-lg font-semibold text-gray-800 pt-1 ">{name}</h2>
-      <h2 className="text-2xl font-semibold text-gray-800 pt-1">{clientName}</h2>
-      <p className="text-md text-gray-900 pt-1 pb-1">{designation}</p>
-      <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[280px] break-words">{description}</p></div>
-      {/* <p className="text-xs text-gray-500">{description}</p> */}
-      {/* <p className="text-md text-gray-600">{romanName}</p> */}
-      <div className="flex items-center justify-center mt-2 mb-5">
+            <div className="px-4 flex flex-row gap-x-3">
+       
+        
+        <a href={`tel:${telephone01}`}
+        target="_blank"
+       rel="noopener noreferrer" className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg">
+            <MdOutlinePhoneAndroid size={20} color='#1f153d' />&nbsp;CALL
+           </a>
+           <a href={`mailto:${email}`}
+       target="_blank"
+       rel="noopener noreferrer" className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg">
+            <AiOutlineMail size={20} color='#1f153d' />&nbsp; EMAIL
+           </a>
+           </div>
+
+            <div className='flex flex-col justify-center items-center'>
+      <h2 className="text-lg font-light text-white pt-4 ">{name}</h2>
+      <h2 className="text-3xl font-semibold text-white pt-1">{clientName}</h2>
+      <p className="text-md font-light text-white pt-1 pb-1">{designation}</p>
+</div>
+<div className="flex items-center justify-center mt-2 mb-0 px-4">
             {/* <img src={eye} height={25}></img>
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                  <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-                  <FaDownload size={20} onClick={downloadContactCard} color="black" />
-                  <span style={{display:"flex",alignItems:"center",color:"black",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Download Contact</span>
+                  <button className="flex w-full gap-x-2 items-center justify-center bg-[#4722b4] border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-4 mt-2 mb-3 rounded-lg">
+                  <FaDownload size={20} onClick={downloadContactCard} color="white" />
+                  <span style={{display:"flex",alignItems:"center",color:"white",justifyContent:"center"
+                  }} onClick={downloadContactCard} >&nbsp;SHARE CONTACT</span>
                 </button>
         
                 </div>
+    
+      <div className='flex flex-col justify-center items-center'>
+
+      <p className="text-sm text-white pb-1 max-w-[280px] break-words">{description}</p></div>
+      {/* <p className="text-xs text-gray-500">{description}</p> */}
+      {/* <p className="text-md text-gray-600">{romanName}</p> */}
+
     
 
     { phone01 && <div className="flex justify-center mt-3">
@@ -1397,14 +1399,14 @@ const [selected, setSelected] = useState("");
     </div>
 
     { services != "" && <div className="px-4 ">
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">Services</h2>
+      <h2 className="text-xl font-semibold text-white mb-3 mt-5">Services</h2>
       <hr className="border-gray-300" />
       {services && (
   <div className="flex justify-center mt-2 w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
     <a className="flex w-full py-1  text-gray-700  max-w-md">
       <div className="flex items-center space-x-6 w-full">
       <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-    <div className="flex flex-col text-md max-w-[250px] font-medium text-gray-800 pt-1 text-start gap-y-1">
+    <div className="flex flex-col text-md max-w-[250px] font-medium text-gray-500 pt-1 text-start gap-y-1">
       {services.split("\n").map((line, index) => (
         <div key={index} className="flex items-start space-x-2">
           <span className="text-gray-700">•</span>
@@ -1420,7 +1422,7 @@ const [selected, setSelected] = useState("");
 
       </div>}
       <div className="px-4">
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">Image Gallery</h2>
+      <h2 className="text-xl font-semibold text-white mb-3 mt-5">Image Gallery</h2>
       <hr className="border-gray-300" />
       {img01 && (
       <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md p-1 space-y-2 mt-3">
@@ -1539,7 +1541,7 @@ const [selected, setSelected] = useState("");
 )}
  </div>
       <div className="px-4">
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">Location</h2>
+      <h2 className="text-xl font-semibold text-white mb-3 mt-5">Location</h2>
       <hr className="border-gray-300" />
       <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
         {location && (
@@ -1548,7 +1550,7 @@ const [selected, setSelected] = useState("");
       </div>
       </div>
       <div className="px-4">
-          <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">Share Profile</h2>
+          <h2 className="text-xl font-semibold text-white mb-3 mt-5">Share Profile</h2>
           <hr className="border-gray-300" />
           <div className="flex justify-center space-x-3 mt-3">
           <div className="social-btn ">
@@ -1624,25 +1626,204 @@ const [selected, setSelected] = useState("");
 
       </div>
       <div className='px-4'>
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5 px-4">Share Contact & QR</h2>
+      <h2 className="text-xl font-semibold text-white mb-3 mt-5">Share Contact & QR</h2>
       <hr className="border-gray-300" />
       <div className="flex justify-center space-x-3 mt-3 px-4">
               <div className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"  onClick={handleShow} >
-              <IoQrCodeSharp size={35} color="black" />
+              <IoQrCodeSharp size={35} color="#1f153d" />
               </div>
        
               <div  className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white" onClick={downloadContactCard} value="download">
-              <FaDownload size={30} color="black" />
+              <FaDownload size={30} color="#1f153d" />
               </div>
       </div>
         
-      <p className="pt-4">Copyright © <span className="company">{companyName}</span>. All Rights Reserved.</p>
+      <p className="pt-4 text-white">Copyright © <span className="company">{companyName}</span>. All Rights Reserved.</p>
       </div>
     </div>
-    </div>
+
+
     {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
           </section>
           }
+
+{ show02 && <div>
+  <div className="qr-modal"
+         style={{
+          position: 'initial',
+         
+        }}
+      >
+        
+          <ImCross className="close" onClick={()=>{
+            handleClose02()
+            setSelected("")}} />
+         <div style={{
+          position: 'initial',
+          display: 'flex',
+          flexDirection: 'column', // Makes the content flow vertically
+          alignItems: 'center',
+        }}>
+            <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+              <div style={{fontSize:"20px", color:"rgb(22, 33, 92)", fontFamily:"sans-serif", fontWeight:"bold", marginBlock:"10px"}}>Select One of them</div>
+            </div>
+            <div style={{
+      display: 'flex',
+      flexWrap: 'wrap', // Allows icons to wrap
+      justifyContent: 'center',
+      maxWidth: '650px', // Set a max width for the icon container
+      gapInline: '5px', // Adds space between icons
+      paddingBlock: '5px',
+    }}
+>
+              {(phone02 == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Phone Number")
+              }} src={phone} height={50} width={50}></img>}
+              {(email == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Email")
+              }} src={emailImg} height={50} width={50}></img>}
+              {(whatsapp02 == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Whatsapp Number")
+              }} src={whatsapp} height={50} width={50}></img>}
+              {(tiktokLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Tiktok Link")
+              }} src={tiktok} height={50} width={50}></img>}
+              {(twitterLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Twitter Link")
+              }} src={threads} height={50} width={50}></img>}
+              {(instagramLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Instagram Link")
+              }} src={insta} height={50} width={50}></img>}
+               {(googleMapLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Google Map Link")
+              }} src={locations} height={50} width={50}></img>}
+               {(googleReviewLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Google Review Link")
+              }} src={greview} height={50} width={50}></img>}
+               {(snapchatLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Snapchat Link")
+              }} src={snap} height={50} width={50}></img>}
+               {(youtubeLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Youtube Link")
+              }} src={yt} height={50} width={50}></img>}
+               {(youtubeShortsLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Youtube Shorts Link")
+              }} src={ytshorts} height={50} width={50}></img>}
+               {(facebookLink == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Facebook Link")
+              }} src={fb} height={50} width={50}></img>}
+               {(website == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Website Link")
+              }} src={websiteImg} height={50} width={50}></img>}
+               {(address == "")&&<img style={{marginInline:"8px",marginBlock:"8px", objectFit:"cover"}} onClick={()=>{
+                setSelected("Address")
+              }} src={addressImg} height={50} width={50}></img>}
+              </div>
+
+             {(selected !="") && <div>
+               <span style={{display:"flex", alignItems:"center", justifyContent:"center",fontSize:"20px", color:"rgb(22, 33, 92)", fontFamily:"sans-serif", fontWeight:"bold", marginBlock:"10px"}}> Enter {selected}: </span>
+               <span style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                <input id="add-link" style={{paddingBlock:"5px", width:"200px", paddingInline:"10px"}} type="text" />
+                <button onClick={()=>{
+                  if(selected == "Phone Number")
+                    {
+                      handleAddPhone02(_id)
+                      toast("Phone Number Added Successfully!")
+                      inputField.value = ""
+
+                    }
+                  else if(selected == "Tiktok Link")
+                  {
+                    handleAddTiktok(_id)
+                    toast("Tiktok Link Added Successfully!")
+                    inputField.value = ""
+                    
+                  }
+                  else if(selected == "Whatsapp Number")
+                    {
+                      handleAddWhatsapp02(_id)
+                      toast("Whatsapp Number Added Successfully!")
+                      inputField.value = ""
+                    }
+                  else if(selected == "Email")
+                      {
+                        handleAddEmail(_id)
+                         toast("Email Added Successfully!")
+                      inputField.value = ""
+                      }
+                  else if(selected == "Instagram Link")
+                      {
+                        handleAddInstagram(_id)
+                         toast("Instagram Link Added Successfully!")
+                      inputField.value = ""
+                      }
+                 else if(selected == "Snapchat Link")
+                      {
+                        handleAddSnapchat(_id)
+                        toast("Snapchat Link Added Successfully!")
+                      inputField.value = ""
+                      }
+                      else if(selected == "Youtube Link")
+                      {
+                        handleAddYoutube(_id)
+                         toast("Youtube Link Added Successfully!")
+                      inputField.value = ""
+                      }
+                      else if(selected == "Youtube Shorts Link")
+                        {
+                          handleAddYoutubeShorts(_id)
+                            toast("Youtube Shorts Link Added Successfully!")
+                      inputField.value = ""
+                        }
+                        else if(selected == "Twitter Link")
+                          {
+                            handleAddTwitter(_id)
+                              toast("Twitter Link Added Successfully!")
+                      inputField.value = ""
+                          }
+                        else if(selected == "Facebook Link")
+                      {
+                        handleAddFacebook(_id)
+                          toast("Facebook Link Added Successfully!")
+                      inputField.value = ""
+                      }
+                      else if(selected == "Google Map Link")
+                        {
+                          handleAddGMap(_id)
+                            toast("Google Map Link Added Successfully!")
+                      inputField.value = ""
+                        }
+                        else if(selected == "Google Review Link")
+                          {
+                            handleAddGReview(_id)
+                              toast("Google Review Link Added Successfully!")
+                      inputField.value = ""
+                          }
+                          else if(selected == "Website Link")
+                            {
+                              handleAddWebsite(_id)
+                                toast("Website Link Added Successfully!")
+                      inputField.value = ""
+                            }
+                            else if(selected == "Address")
+                              {
+                                handleAddAddress(_id)
+                                toast("Address Added Successfully!")
+                      inputField.value = ""
+                              }
+                }} style={{fontSize:"15px", backgroundColor:"rgb(22, 33, 92)", 
+                color:"white",fontFamily:"sans-serif", fontWeight:"bold", marginInline:"10px", paddingInline:"20px", paddingBlock:"5px", borderRadius:"5px"}}>ADD</button>
+                <ToastContainer />
+               </span>
+              </div>}
+
+              </div>
+          </div></div>
+          }
+
+
+  
+
           </div>
         );
       }
