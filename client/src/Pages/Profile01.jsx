@@ -68,7 +68,7 @@ const Profile01 = () => {
   const handleShow03 = () => setShow03(true);
   const navigate = useNavigate();
   const params = useParams();
-  const clientId01 = params.id;
+  const clientId = params.id;
   console.log(clientId01)
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
@@ -85,7 +85,7 @@ const toDataURL = async (url) => {
 useEffect(() => {
   const fetchClient = async () => {
     try {
-      const response = await axios.get(`https://www.scan-taps.com/api/data/client/${clientId01}`);
+      const response = await axios.get(`https://www.scan-taps.com/api/data/client/${clientId}`);
       setClient(response.data);
       setLoading(false);
     } catch (err) {
@@ -93,7 +93,7 @@ useEffect(() => {
     }
   };
 
-  if (clientId01) {
+  if (clientId) {
     fetchClient();
   } else {
     setLoading(false);
@@ -215,7 +215,7 @@ var { _id,
 
 // Used it for a Client make it dynamic by fetching the current client id
 
-var clientId = _id; 
+
 // Used it for a Client make it dynamic by fetching the current client id
 
   useEffect(() => {
