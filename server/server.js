@@ -34,7 +34,7 @@ app.post("/api/visit/:clientId", async (req, res) => {
 
     client.visitCount += 1;
     await client.save();
-    res.json({ count: client.visitCount });
+    res.json({ visitCount: client.visitCount });
   } catch (error) {
     console.error("Error updating visit count:", error);
     res.status(500).json({ message: "Error updating visit count" });
