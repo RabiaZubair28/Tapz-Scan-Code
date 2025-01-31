@@ -100,7 +100,6 @@ useEffect(() => {
   }
 }, [clientId]);
 
-var [visitCount, setVisitCount] = useState(0);
 
 
 var { _id,
@@ -210,18 +209,20 @@ var { _id,
   color02,
   color03,
   password,
-  visitCount,
   flag
 } = client;
 
+var [visitCount, setVisitCount] = useState(0);
+
 var clientId01 = _id; 
+
 // Used it for a Client make it dynamic by fetching the current client id
 
   useEffect(() => {
     const fetchAndIncrementVisitCount = async () => {
       try {
         // console.log("Fetching visit count...");
-        const incrementResponse = await axios.post(`https://www.scan-taps.com/api/visit/${clientId}`);
+        const incrementResponse = await axios.post(`https://www.scan-taps.com/api/visit/${clientId01}`);
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
         // console.log(`Visit count for client ${clientId} incremented. New count:`, incrementResponse.data.count);
@@ -231,7 +232,7 @@ var clientId01 = _id;
     };
 
     fetchAndIncrementVisitCount();
-  }, [clientId]);
+  }, [clientId01]);
 
 
 
