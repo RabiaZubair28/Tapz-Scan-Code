@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import axios from "axios";
+import Profile04 from './Profile04';
 // import ScaleLoader from "react-spinners/ScaleLoader";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -164,6 +165,10 @@ if (client) {
   else if(option === "3")
     {
     return <Profile03 />;
+  }
+  else if(option === "4")
+    {
+    return <Profile04 />;
   }
     else {
     return (
