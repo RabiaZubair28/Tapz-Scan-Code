@@ -465,7 +465,7 @@ const [selected, setSelected] = useState("");
         rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-[#4e867e] border border-gray-300 shadow-sm hover:shadow-md hover:bg-[#cfdedc]">
             <AiOutlineMail size={20} color='white' />
             </a>
-            <a className="w-12 h-12 flex items-center justify-center rounded-full bg-[#4e867e] border border-gray-300 shadow-sm hover:shadow-md hover:bg-[#cfdedc]">
+            <a href={`sms:${phone01}`} className="w-12 h-12 flex items-center justify-center rounded-full bg-[#4e867e] border border-gray-300 shadow-sm hover:shadow-md hover:bg-[#cfdedc]">
             <RiMessage2Line size={20} color='white' />
             </a>
             <a href={`https://wa.me/${whatsapp01}`}
