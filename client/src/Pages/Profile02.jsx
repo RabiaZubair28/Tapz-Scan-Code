@@ -238,8 +238,9 @@ var clientId01 = _id;
   const downloadContactCard = async () => {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
-N:${name};;;;
-FN:${companyName}
+N:${clientName};;;;
+FN:${designation}
+ORG:${name}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
 EMAIL;HOME:${email}

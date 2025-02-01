@@ -236,13 +236,14 @@ var [visitCount, setVisitCount] = useState(0);
    
     // Create a vCard file
     const vcard = `BEGIN:VCARD
-    VERSION:3.0
-    N:${name};;;;
-    FN:${companyName}
-    TEL;CELL:${phone01}
-    TEL;CELL:${phone02}
-    EMAIL;HOME:${email}
-    END:VCARD`;
+VERSION:3.0
+N:${clientName};;;;
+FN:${designation}
+ORG:${name}
+TEL;CELL:${phone01}
+TEL;CELL:${phone02}
+EMAIL;HOME:${email}
+END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
     const url = URL.createObjectURL(blob);
