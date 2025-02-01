@@ -563,7 +563,7 @@ const [selected, setSelected] = useState("");
       <img
         src={telephone}
         alt="Telephone"
-        className="h-10 w-10"
+        className="h-10 w-10 rounded-sm"
       />
       <div className="flex flex-col text-start gap-y-1">
         <span className="font-medium">Telephone</span>
@@ -585,7 +585,7 @@ const [selected, setSelected] = useState("");
       <img
         src={telephone}
         alt="Telephone"
-        className="h-10 w-10"
+        className="h-10 w-10 rounded-sm"
       />
       <div className="flex flex-col text-start gap-y-1">
         <span className="font-medium">Telephone</span>
@@ -607,7 +607,7 @@ const [selected, setSelected] = useState("");
           <img
             src={telephone}
             alt="Telephone"
-            className="h-10 w-10"
+            className="h-10 w-10 rounded-sm"
           />
           <div className="flex flex-col text-start gap-y-1">
             <span className="font-medium">Telephone</span>
