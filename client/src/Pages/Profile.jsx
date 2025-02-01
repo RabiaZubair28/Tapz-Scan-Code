@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useState } from 'react';
 import axios from "axios";
 import Profile04 from './Profile04';
+import Profile05 from './Profile05';
 // import ScaleLoader from "react-spinners/ScaleLoader";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -169,6 +170,10 @@ if (client) {
   else if(option === "4")
     {
     return <Profile04 />;
+  }
+  else if(option === "5")
+    {
+    return <Profile05 />;
   }
     else {
     return (
