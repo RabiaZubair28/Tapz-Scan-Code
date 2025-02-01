@@ -258,7 +258,7 @@ END:VCARD`;
     } else {
         // Regular download for other devices
         const newLink = document.createElement('a');
-        newLink.download = `${companyName}.vcf`;
+        newLink.download = `${name}.vcf`;
         newLink.href = url;
         newLink.click();
     }
