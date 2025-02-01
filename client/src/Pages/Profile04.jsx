@@ -100,6 +100,9 @@ useEffect(() => {
   }
 }, [clientId]);
 
+
+
+
 var { _id,
   companyName,
   name,
@@ -210,8 +213,8 @@ var { _id,
   flag
 } = client;
 
-var clientId01 = _id;
-var [visitCount, setVisitCount] = useState(0); 
+var [visitCount, setVisitCount] = useState(0);
+var clientId01 = _id; 
 // Used it for a Client make it dynamic by fetching the current client id
 
   useEffect(() => {
@@ -233,8 +236,6 @@ var [visitCount, setVisitCount] = useState(0);
 
 
   const downloadContactCard = async () => {
-   
-    // Create a vCard file
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
@@ -248,12 +249,23 @@ END:VCARD`;
     const blob = new Blob([vcard], { type: "text/vcard" });
     const url = URL.createObjectURL(blob);
 
-  
+    // Check if it's an iPhone/iPad device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+        // Open vCard in a new tab instead of forcing download
+        window.location.href = url;
+    } else {
+        // Regular download for other devices
         const newLink = document.createElement('a');
-        newLink.download = `${companyName}.vcf`;
+        newLink.download = `${clientName}.vcf`;
         newLink.href = url;
         newLink.click();
     }
+
+    // Revoke the object URL to free memory
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
 
     const downloadQr = (rootEle) => {
       const input = document.getElementById(rootEle);
@@ -443,7 +455,7 @@ const [selected, setSelected] = useState("");
 
         <div className="px-4">
           <div className="flex justify-center space-x-2 mt-2 mb-2.5">
-          <a href={`tel:${telephone01}`}
+          <a href={`tel:${phone01}`}
         target="_blank"
         rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
             <MdOutlinePhoneAndroid size={20} />
@@ -467,7 +479,7 @@ const [selected, setSelected] = useState("");
       <div className='flex flex-col justify-center items-center'>
       <h2 className="text-lg font-semibold text-gray-800 pt-1 ">{name}</h2>
       <h2 className="text-2xl font-semibold text-gray-800 pt-1">{clientName}</h2>
-      <p className="text-md text-gray-900 pt-1 pb-1">{designation}</p>
+      <p className="text-md font-semibold text-gray-900 pt-1 pb-1">{designation}</p>
       <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[280px] break-words">{description}</p></div>
       {/* <p className="text-xs text-gray-500">{description}</p> */}
       {/* <p className="text-md text-gray-600">{romanName}</p> */}
@@ -478,7 +490,7 @@ const [selected, setSelected] = useState("");
                   <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                   <FaDownload size={20} onClick={downloadContactCard} color="black" />
                   <span style={{display:"flex",alignItems:"center",color:"black",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Download Contact</span>
+                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Save Contact</span>
                 </button>
         
                 </div>

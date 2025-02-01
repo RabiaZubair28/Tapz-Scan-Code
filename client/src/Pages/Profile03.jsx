@@ -259,7 +259,7 @@ END:VCARD`;
     } else {
         // Regular download for other devices
         const newLink = document.createElement('a');
-        newLink.download = `${name}.vcf`;
+        newLink.download = `${clientName}.vcf`;
         newLink.href = url;
         newLink.click();
     }
@@ -443,7 +443,7 @@ const [selected, setSelected] = useState("");
         <div className="px-4">
        
         
-        <a href={`https://wa.me/${whatsapp01}`}
+        <a href={`https://wa.me/${phone01}`}
         target="_blank"
         rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white hover:text-black py-4 mt-2 mb-3 rounded-lg">
              <ImWhatsapp size={20} color='white' />&nbsp;REACH OUT

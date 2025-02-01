@@ -258,7 +258,7 @@ END:VCARD`;
     } else {
         // Regular download for other devices
         const newLink = document.createElement('a');
-        newLink.download = `${name}.vcf`;
+        newLink.download = `${clientName}.vcf`;
         newLink.href = url;
         newLink.click();
     }
@@ -455,7 +455,7 @@ const [selected, setSelected] = useState("");
 
         <div className="px-4">
           <div className="flex justify-center space-x-2 mt-2 mb-2.5">
-          <a href={`tel:${telephone01}`}
+          <a href={`tel:${phone01}`}
         target="_blank"
         rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
             <MdOutlinePhoneAndroid size={20} />
