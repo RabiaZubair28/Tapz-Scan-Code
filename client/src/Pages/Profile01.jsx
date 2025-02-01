@@ -27,6 +27,7 @@ import menu from "../assets/menu.png"
 import catalog from "../assets/catalog.jpg"
 import profile from "../assets/profile.png"
 import telephone from "../assets/telephone01.jpg"
+import vCard from "vcards-js"
 import eye from "../assets/eye.jpg"
 import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
@@ -40,7 +41,6 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { SlArrowRight } from "react-icons/sl";
-import vCard from "vcards-js"
 import {FacebookShareButton, TelegramShareButton, TwitterShareButton, LinkedinShareButton, WhatsappShareButton, LinkedinIcon} from 'react-share'
 import { ImCross } from "react-icons/im";
 import axios from "axios";
@@ -260,6 +260,14 @@ var clientId01 = _id
         newLink.click();
     }
 
+    const toDataURL02 = async (url) => {
+
+      const response = await axios.get(url, { responseType: "blob" });
+      const imageDataUrl = URL.createObjectURL(response.data);
+        
+      return imageDataUrl;
+    };
+
     const downloadQr = (rootEle) => {
       const input = document.getElementById(rootEle);
       html2canvas(input).then((canvas) => {
@@ -457,7 +465,7 @@ const [selected, setSelected] = useState("");
       <div className='flex flex-col justify-center items-center'>
       <h2 className="text-md font-semibold text-gray-800 pt-1 ">{name}</h2>
       <h2 className="text-2xl font-semibold text-gray-800 pt-1">{clientName}</h2>
-      <p className="text-md text-gray-600 pt-1 pb-1">{designation}</p>
+      <p className="text-md font-semibold text-gray-600 pt-1 pb-1">{designation}</p>
       <p className="text-sm text-gray-600 pt-1 pb-1 max-w-[280px] break-words">{description}</p></div>
       {/* <p className="text-xs text-gray-500">{description}</p> */}
       {/* <p className="text-md text-gray-600">{romanName}</p> */}
@@ -468,7 +476,7 @@ const [selected, setSelected] = useState("");
                   <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                   <FaDownload size={20} onClick={downloadContactCard} color="black" />
                   <span style={{display:"flex",alignItems:"center",color:"black",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Download Contact</span>
+                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Save Contact</span>
                 </button>
         
                 </div>
