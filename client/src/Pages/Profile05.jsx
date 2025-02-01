@@ -304,7 +304,7 @@ const [selected, setSelected] = useState("");
   <div>
 {show && (
   <div
-  className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+  className="qr-modal min-h-screen bg-gradient-to-tr from-[#cfdedc] via-[#e6eaea] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
   style={{ backgroundAttachment: "fixed" }}
 >
   <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
