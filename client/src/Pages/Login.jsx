@@ -36,8 +36,21 @@ function Login() {
         console.log('Login successful:', data);
         navigate(`/edit/${data.userId}`);
       } else {
+        if(user.password != data.password && user.email != data.email)
+          {
+            alert("Invalid Password")
+          }
+        else if(user.email != data.email)
+        {
+          alert("Invalid Email")
+        }
+        else if(user.password != data.password)
+          {
+            alert("Invalid Password")
+          }
+          
         console.log('Login failed:', data.message);
-        alert(data.message || 'Invalid credentials');
+        // alert(data.message || 'Invalid credentials');
       }
     } catch (error) {
       console.error('Error during login:', error);
