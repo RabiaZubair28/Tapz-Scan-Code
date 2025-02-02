@@ -10676,7 +10676,7 @@ console.log(inputField)
       else{
         return(
     
-            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-b from-[#544e66] to-[#1f153d] pt-[50%]`} style={{ backgroundAttachment: "fixed" }}>
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-b from-[#544e66] to-[#1f153d] pt-[30%]`} style={{ backgroundAttachment: "fixed" }}>
             <ScaleLoader
             color={"white"}
             size={50}

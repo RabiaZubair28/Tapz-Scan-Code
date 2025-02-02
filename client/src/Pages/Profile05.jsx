@@ -1661,7 +1661,7 @@ const [selected, setSelected] = useState("");
       else{
         return(
     
-            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#cfdedc] via-[#e6eaea] pt-[50%]`} style={{ backgroundAttachment: "fixed" }}>
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#cfdedc] via-[#e6eaea] pt-[30%]`} style={{ backgroundAttachment: "fixed" }}>
             <ScaleLoader
             color={"black"}
             size={50}
