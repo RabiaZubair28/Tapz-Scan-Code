@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ScaleLoader from "react-spinners/ScaleLoader";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { QRCodeCanvas} from 'qrcode.react';
