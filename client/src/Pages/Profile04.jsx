@@ -1673,8 +1673,14 @@ const [selected, setSelected] = useState("");
       }
       else{
         return(
-        <div className="spin">
-            
+    
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[50%]`} style={{ backgroundAttachment: "fixed" }}>
+            <ScaleLoader
+            color={"white"}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
           </div>);
       }
       }

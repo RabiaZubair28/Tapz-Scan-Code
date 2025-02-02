@@ -1,4 +1,5 @@
 import React from 'react'
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -1841,8 +1842,14 @@ const [selected, setSelected] = useState("");
       }
       else{
         return(
-        <div className="spin">
-            
+    
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-b from-[#544e66] to-[#1f153d] pt-[50%]`} style={{ backgroundAttachment: "fixed" }}>
+            <ScaleLoader
+            color={"white"}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
           </div>);
       }
       }
