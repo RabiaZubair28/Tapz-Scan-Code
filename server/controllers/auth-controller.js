@@ -10,7 +10,7 @@ const login = async (req, res) => {
     if (user) {
       return res.status(200).json({
         message: "Login successful",
-        userId: user.companyName,
+        userId: user._id,
       });
     } else if (user.email != email) {
       return res.status(401).json({
