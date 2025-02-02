@@ -7,10 +7,9 @@ const login = async (req, res) => {
     // Find one user with matching email and password
     const user = await Client.findOne({ email, password });
 
-    if (user) {
-      return res.status(200).json({
-        message: "Login successful",
-        userId: user._id,
+    if (user.email != email && user.password != password) {
+      return res.status(401).json({
+        message: "Invalid email & Password",
       });
     } else if (user.email != email) {
       return res.status(401).json({
@@ -19,6 +18,11 @@ const login = async (req, res) => {
     } else if (user.password != password) {
       return res.status(401).json({
         message: "Invalid Password",
+      });
+    } else if (user) {
+      return res.status(200).json({
+        message: "Login successful",
+        userId: user._id,
       });
     } else {
       return res.status(401).json({
