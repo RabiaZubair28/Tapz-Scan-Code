@@ -34,7 +34,7 @@ function Login() {
   
       if (response.ok) {
         console.log('Login successful:', data);
-        navigate(`/edit/${data.userId}`);
+        navigate(`/edit/${data._id}`);
       } else {
         if(user.password != data.password && user.email != data.email)
           {

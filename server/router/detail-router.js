@@ -891,14 +891,14 @@ router.route("/updateImg10/:id").put(async (req, res) => {
   }
 });
 
-router.route("/client/:companyName").get(async (req, res) => {
-  const { companyName } = req.params;
-  console.log(companyName);
+router.route("/client/:id").get(async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
   // Validate the ID format
 
   try {
     // Find the client by ID
-    const client = await Client.findOne({ companyName: companyName });
+    const client = await Client.findById(id);
 
     if (!client) {
       return res.status(404).json({ error: "Client not found" });
