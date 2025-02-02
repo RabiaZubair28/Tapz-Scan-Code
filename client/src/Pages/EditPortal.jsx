@@ -9,7 +9,7 @@ import axios from "axios";
 // import ScaleLoader from "react-spinners/ScaleLoader";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
-
+import ScaleLoader from "react-spinners/ScaleLoader";
 const EditPortal = () => {
 
   const params = useParams();
@@ -168,12 +168,17 @@ if (client) {
       </div>
     );
   }
-} else {
-  return (
-    <div className="spin">
-      {/* Add loading spinner or placeholder */}
-    </div>
-  );
+} else{
+  return(
+
+      <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`} style={{ backgroundAttachment: "fixed" }}>
+      <ScaleLoader
+      color={"white"}
+      size={50}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
+    </div>);
 }
 }
 

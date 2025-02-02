@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import ScaleLoader from "react-spinners/ScaleLoader";
 import Profile01 from './Profile01';
 import Profile02 from './Profile02';
 import Profile03 from "./Profile03"
@@ -182,12 +184,17 @@ if (client) {
       </div>
     );
   }
-} else {
-  return (
-    <div className="spin">
-      {/* Add loading spinner or placeholder */}
-    </div>
-  );
+}       else{
+  return(
+
+      <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`} style={{ backgroundAttachment: "fixed" }}>
+      <ScaleLoader
+      color={"white"}
+      size={50}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
+    </div>);
 }
 }
 
