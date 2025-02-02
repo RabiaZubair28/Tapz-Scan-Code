@@ -7,6 +7,8 @@ const login = async (req, res) => {
     // Find one user with matching email and password
     const user = await Client.findOne({ email, password });
 
+  } catch (error) {
+
     if (user.email != email && user.password != password) {
       return res.status(401).json({
         message: "Invalid email & Password",
@@ -26,14 +28,8 @@ const login = async (req, res) => {
       });
     } else {
       return res.status(401).json({
-        message: "Invalid email or password",
+        message: "Invalid credentials",
       });
-    }
-  } catch (error) {
-    console.error("Error during login:", error);
-    return res.status(500).json({
-      message: "Internal Server Error",
-    });
   }
 };
 
