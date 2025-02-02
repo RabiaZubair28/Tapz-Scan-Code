@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ScaleLoader from "react-spinners/ScaleLoader";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { QRCodeCanvas} from 'qrcode.react';
@@ -1840,8 +1840,14 @@ const [selected, setSelected] = useState("");
       }
       else{
         return(
-        <div className="spin">
-            
+    
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pt-5 pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#ffb8d6] via-[#f9d6cd] to-[#f6ece9]`} style={{ backgroundAttachment: "fixed" }}>
+            <ScaleLoader
+            color={"black"}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
           </div>);
       }
       }
