@@ -4577,7 +4577,7 @@ console.log(inputField)
       <div className="flex items-center space-x-6 w-full">
         <div className="flex flex-1 items-center justify-center gap-x-3">
           {(!modal02 && !editDescription) && (
-            <div className="flex flex-col text-md w-[250px] max-w-[250px] font-light  pt-1 text-center gap-y-2">
+            <div className="flex flex-col text-md w-[230px] max-w-[230px] font-light  pt-1 text-center gap-y-2">
             <span className="text-sm text-white pb-1 max-w-[280px] break-words">{description}</span>
           </div>
           
