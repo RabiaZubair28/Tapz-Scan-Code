@@ -6,9 +6,7 @@ const login = async (req, res) => {
   try {
     // Find one user with matching email and password
     const user = await Client.findOne({ email, password });
-
   } catch (error) {
-
     if (user.email != email && user.password != password) {
       return res.status(401).json({
         message: "Invalid email & Password",
@@ -30,7 +28,7 @@ const login = async (req, res) => {
       return res.status(401).json({
         message: "Invalid credentials",
       });
+    }
   }
 };
-
 module.exports = { login };
