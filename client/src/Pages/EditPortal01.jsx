@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { QRCodeCanvas} from 'qrcode.react';
+import ScaleLoader from "react-spinners/ScaleLoader";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import phone from "../assets/phone.png"
@@ -10594,7 +10595,14 @@ console.log(inputField)
       }
       else{
         return(
-        <div className="spin">
+    
+            <div className={`min-h-screen  w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#ffb8d6] via-[#f9d6cd] to-[#f6ece9] pt-[50%]`} style={{ backgroundAttachment: "fixed" }}>
+            <ScaleLoader
+            color={"black"}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
           </div>);
       }
       }
