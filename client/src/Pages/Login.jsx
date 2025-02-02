@@ -67,7 +67,7 @@ function Login() {
         whileHover={{ rotate: 90, scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => {setIsOpen(false)
-          navigate("/home")
+          navigate("/")
         }}
         className="absolute -right-4 -top-4 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
       >
