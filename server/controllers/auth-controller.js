@@ -11,12 +11,14 @@ const login = async (req, res) => {
       // Check if the email exists separately
       const emailExists = await Client.findOne({ email });
       const passwordExists = await Client.findOne({ password });
-      if (!emailExists) {
+      if (!emailExists && !passwordExists) {
+        throw new Error("Invalid email & password");
+      } else if (!emailExists) {
         throw new Error("Invalid email");
       } else if (!passwordExists) {
         throw new Error("Invalid password");
       } else {
-        throw new Error("Invalid password & email");
+        throw new Error("Invalid credentials");
       }
     }
 
