@@ -4275,7 +4275,7 @@ console.log(inputField)
 <a href={`https://wa.me/${whatsapp01}`}
         target="_blank"
         rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-4 mt-2 mb-3 rounded-lg hover:text-black">
-            <ImWhatsapp size={20} color='white' />&nbsp;REACH OUT
+            <ImWhatsapp className="hover:text-black" size={20} color='white' />&nbsp;REACH OUT
             </a>
 </div>
 
@@ -4562,9 +4562,9 @@ console.log(inputField)
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
                   <button className="flex w-full gap-x-2 items-center justify-center bg-[#4722b4] border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-4 mt-2 mb-3 rounded-lg hover:text-black">
-                  <FaDownload size={20} onClick={downloadContactCard} color="white" />
+                  <FaDownload className="hover:text-black" size={20} onClick={downloadContactCard} color="white" />
                   <span style={{display:"flex",alignItems:"center",color:"white",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;SHARE CONTACT</span>
+                  }} className=" text-wite hover:text-black" onClick={downloadContactCard} >&nbsp;SHARE CONTACT</span>
                 </button>
         
                 
