@@ -210,7 +210,6 @@ var { _id,
   color02,
   color03,
   password,
-  visitCount,
   flag
 } = client;
 
@@ -221,7 +220,7 @@ var clientId01 = _id;
     const fetchAndIncrementVisitCount = async () => {
       try {
         // console.log("Fetching visit count...");
-        const incrementResponse = await axios.post(`https://www.scan-taps.com/api/visit/${clientId}`);
+        const incrementResponse = await axios.post(`https://www.scan-taps.com/api/visit/${clientId01}`);
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
         // console.log(`Visit count for client ${clientId} incremented. New count:`, incrementResponse.data.count);
@@ -231,7 +230,7 @@ var clientId01 = _id;
     };
 
     fetchAndIncrementVisitCount();
-  }, [clientId]);
+  }, [clientId01]);
 
 
 
@@ -483,7 +482,7 @@ const [selected, setSelected] = useState("");
                   <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-[#4e867e] border border-gray-300 shadow-sm hover:shadow-md hover:bg-[#cfdedc]">
                   <FaDownload size={20} onClick={downloadContactCard} color="white" />
                   <span style={{display:"flex",alignItems:"center",color:"white",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Download Contact</span>
+                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Save Contact</span>
                 </button>
         
                 </div>
