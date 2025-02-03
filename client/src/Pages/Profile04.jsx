@@ -445,11 +445,11 @@ const [selected, setSelected] = useState("");
       </div>
         </a>
         <div className="flex items-center justify-center -mt-24 mb-5 gap-x-4">
-        <div className="flex justify-start gap-x-1.5 -mt-5 pb-1 items-center">
+        <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
           <MdRemoveRedEye size={20} color='white' />
           <p className='text-white'>{visitCount}</p>
         </div>
-                  <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5 px-4 bg-gray-600 border border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                  <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-gray-600 border border-white shadow-sm hover:shadow-md hover:bg-gray-500">
                   {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                   <span style={{display:"flex",alignItems:"center",color:"white",justifyContent:"center"
                   }} onClick={downloadContactCard} >Save Contact</span>
