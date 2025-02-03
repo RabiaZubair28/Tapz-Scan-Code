@@ -409,7 +409,7 @@ const [selected, setSelected] = useState("");
     <div className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg  pb-5 text-center bg-gradient-to-tr from-[#cfdedc] via-[#e6eaea] to-white`} style={{ backgroundAttachment: "fixed" }}>
       
       {images && (
-      <div className="flex flex-col items-center mx-auto px-6 rounded-x space-y-2 ">
+      <div className="flex flex-col items-center mx-auto px-1 rounded-x space-y-2 ">
 
         <a href={images} className='w-full'>
         <div className="relative mb-2 ">
@@ -422,7 +422,7 @@ const [selected, setSelected] = useState("");
         </a>
       </div>
       )}
-      <div className="px-6">
+      <div className="px-1">
       {logo && (
       <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
 
