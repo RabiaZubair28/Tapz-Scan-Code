@@ -10,6 +10,7 @@ import axios from "axios";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import ScaleLoader from "react-spinners/ScaleLoader";
+import EditPortal04 from "./EditPortal04";
 const EditPortal = () => {
 
   const params = useParams();
@@ -160,6 +161,9 @@ if (client) {
   }else if(option === "3")
     {
     return <EditPortal03 />;
+  }else if(option === "4")
+    {
+    return <EditPortal04 />;
   }
     else {
     return (
