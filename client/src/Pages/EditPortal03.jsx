@@ -210,7 +210,7 @@ var { _id,
   password,
   flag
 } = client;
-
+var [visitCount, setVisitCount] = useState(0);
 var clientId01 = _id; 
 // Used it for a Client make it dynamic by fetching the current client id
 
