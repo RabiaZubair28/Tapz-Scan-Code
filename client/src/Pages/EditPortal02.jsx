@@ -100,7 +100,6 @@ useEffect(() => {
   }
 }, [clientId]);
 
-var [visitCount, setVisitCount] = useState(0);
 var { _id,
   companyName,
   name,
@@ -4671,7 +4670,7 @@ console.log(inputField)
                   <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                   <FaDownload size={20} onClick={downloadContactCard} color="black" />
                   <span style={{display:"flex",alignItems:"center",color:"black",justifyContent:"center"
-                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Download Contact</span>
+                  }} onClick={downloadContactCard} >&nbsp;&nbsp;Save Contact</span>
                 </button>
         
                 </div>
