@@ -467,9 +467,9 @@ const [selected, setSelected] = useState("");
            </div>
 
             <div className='flex flex-col justify-center items-center'>
-      <h2 className="text-lg font-light text-white pt-4 ">{name}</h2>
-      <h2 className="text-3xl font-semibold text-white pt-1">{clientName}</h2>
-      <p className="text-md font-semibold text-white pt-1 pb-1">{designation}</p>
+            {(name != "") && <h2 className="text-lg font-light text-white pt-4 ">{name}</h2>}
+      {(clientName != "") && <h2 className="text-3xl font-semibold text-white pt-1">{clientName}</h2>}
+      {(designation != "") && <p className="text-md font-semibold text-white pt-1 pb-1">{designation}</p>}
 </div>
 <div className="flex items-center justify-center mt-2 mb-0 px-4">
             {/* <img src={eye} height={25}></img>
