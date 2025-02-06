@@ -446,7 +446,7 @@ const [selected, setSelected] = useState("");
         
         <a href={`https://wa.me/${phone01}`}
         target="_blank"
-        rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white hover:text-black py-3 mt-2 mb-3 rounded-lg">
+        rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white hover:text-black py-4 mt-2 mb-3 rounded-lg">
              <ImWhatsapp size={20} color='white' className='text-white hover:text-black' />&nbsp;REACH OUT
             </a>
             </div>
