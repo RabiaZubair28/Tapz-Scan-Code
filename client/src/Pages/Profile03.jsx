@@ -446,8 +446,8 @@ const [selected, setSelected] = useState("");
         
         <a href={`https://wa.me/${phone01}`}
         target="_blank"
-        rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white hover:text-black py-4 mt-2 mb-3 rounded-lg">
-             <ImWhatsapp size={20} color='white' />&nbsp;REACH OUT
+        rel="noopener noreferrer" className="w-full flex items-center justify-center bg-[#4722b4] gap-x-2 border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100 text-white hover:text-black py-3 mt-2 mb-3 rounded-lg">
+             <ImWhatsapp size={20} color='white' className='text-white hover:text-black' />&nbsp;REACH OUT
             </a>
             </div>
 
@@ -476,7 +476,7 @@ const [selected, setSelected] = useState("");
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
                   <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#4722b4] border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-gray-100  py-4 mt-2 mb-3 rounded-lg hover:text-black ">
-                  <FaDownload size={20} onClick={downloadContactCard} color="white" />
+                  <FaDownload size={20} onClick={downloadContactCard} color="white" className='text-white hover:text-black' />
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center"
                   }} onClick={downloadContactCard} >&nbsp;SAVE CONTACT</span>
                 </button>
