@@ -1444,7 +1444,7 @@ const [selected, setSelected] = useState("");
 )}
 
       </div>}
-      <div className="px-4">
+      { (img01 != "" || img02 != "" || img03 != "" || img04 != "" || img05 != "" || img05 != "" || img06 != "" || img07 != "" || img08 != "" || img09 != "" || img10 != "" ) && <div className="px-4">
       <h2 className="text-xl font-semibold text-white mb-3 mt-5">Image Gallery</h2>
       <hr className="border-gray-300" />
       {img01 && (
@@ -1562,8 +1562,8 @@ const [selected, setSelected] = useState("");
 
   </div>
 )}
- </div>
-      <div className="px-4">
+ </div>}
+      { (location != "") && <div className="px-4">
       <h2 className="text-xl font-semibold text-white mb-3 mt-5">Location</h2>
       <hr className="border-gray-300" />
       <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
@@ -1571,7 +1571,7 @@ const [selected, setSelected] = useState("");
          <iframe src={location} width="100%" height="300" allowfullscreen="" loading="lazy" className="rounded-xl"></iframe> 
         )}
       </div>
-      </div>
+      </div>}
       <div className="px-4">
           <h2 className="text-xl font-semibold text-white mb-3 mt-5">Share Profile</h2>
           <hr className="border-gray-300" />
