@@ -247,7 +247,7 @@ var { _id,
      
        <div className='flex flex-col justify-center items-center pt-0.5'>
       <h2 className="text-2xl font-semibold text-white text-center pt-1 ">{name}</h2>
-      <h2 className="text-lg font-semibold text-white text-center  pt-6 ">Please select the branch</h2>
+      <h2 className="text-lg font-semibold text-white text-center  pt-8 ">Please select the branch</h2>
       </div>
     
     { profileLink01 && <div className="flex justify-center mt-3">
