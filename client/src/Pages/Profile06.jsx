@@ -227,7 +227,7 @@ var { _id,
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen pt-16 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
+    <div className={`min-h-screen pt-[25%] w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
   
        {logo && (
       <div className="flex  flex-row items-center  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
@@ -247,7 +247,7 @@ var { _id,
      
        <div className='flex flex-col justify-center items-center pt-0.5'>
       <h2 className="text-2xl font-semibold text-white text-center pt-3 ">{name}</h2>
-      <h2 className="text-xl font-semibold text-white text-center  pt-5 ">Please select the branch:</h2>
+      <h2 className="text-xl font-semibold text-white text-center  pt-5 ">Please select the branch</h2>
       </div>
     
     { profileLink01 && <div className="flex justify-center mt-3">
