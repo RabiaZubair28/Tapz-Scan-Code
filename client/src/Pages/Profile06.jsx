@@ -269,7 +269,7 @@ var { _id,
             className="h-10 w-10 rounded-md"
           />
           <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Profile</span>
+            <span className="font-medium">{name} Branch 01</span>
             <span className=" text-sm">{profileName01}</span>
           </div>
         </div>
@@ -288,7 +288,7 @@ var { _id,
             className="h-10 w-10 rounded-md"
           />
           <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Profile</span>
+            <span className="font-medium">{name} Branch 02</span>
             <span className="text-sm">{profileName02}</span>
           </div>
         </div>
