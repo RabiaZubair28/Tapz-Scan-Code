@@ -227,7 +227,7 @@ var { _id,
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen pt-5 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
+    <div className={`min-h-screen pt-8 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
   
        {logo && (
       <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
