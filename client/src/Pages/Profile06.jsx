@@ -219,11 +219,7 @@ var { _id,
 
 
   if(client)
-  {      return(
-  
-  <div>
-
-    <section>
+  {      return( <section>
   
     
        
@@ -303,7 +299,6 @@ var { _id,
     {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
           </section>
 
-          </div>
         );
       }
       else{
