@@ -246,8 +246,8 @@ var { _id,
       <div className="px-6">
      
        <div className='flex flex-col justify-center items-center pt-0.5'>
-      <h2 className="text-2xl font-semibold text-white text-center pt-2 ">{name}</h2>
-      <h2 className="text-xl font-semibold text-white text-center  pt-5 ">Please select the branch</h2>
+      <h2 className="text-2xl font-semibold text-white text-center pt-1 ">{name}</h2>
+      <h2 className="text-lg font-semibold text-white text-center  pt-6 ">Please select the branch</h2>
       </div>
     
     { profileLink01 && <div className="flex justify-center mt-3">
@@ -262,7 +262,7 @@ var { _id,
             className="h-10 w-10 rounded-md"
           />
           <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Branch 01</span>
+            <span className="font-medium">Branch One</span>
             <span className=" text-sm">{profileName01}</span>
           </div>
         </div>
@@ -281,7 +281,7 @@ var { _id,
             className="h-10 w-10 rounded-md"
           />
           <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Branch 02</span>
+            <span className="font-medium">Branch Two</span>
             <span className="text-sm">{profileName02}</span>
           </div>
         </div>
