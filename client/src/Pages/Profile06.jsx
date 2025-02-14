@@ -237,7 +237,7 @@ var { _id,
         <img
           src={logo}
           alt="profile"
-          className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[0.25px] border-white shadow-md"
+          className="w-36 h-36 mx-auto rounded-2xl border-[0.25px] border-white shadow-md"
         />
       </div>
         </a>
@@ -245,7 +245,7 @@ var { _id,
       )}
       <div className="px-6">
      
-       <div className='flex flex-col justify-center items-start pt-0.5'>
+       <div className='flex flex-col justify-center items-center pt-0.5'>
       <h2 className="text-2xl font-semibold text-white text-center pt-3 ">{name}</h2>
       <h2 className="text-xl font-semibold text-white text-center  pt-5 ">Please select the branch:</h2>
       </div>
