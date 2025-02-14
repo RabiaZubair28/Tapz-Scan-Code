@@ -182,11 +182,7 @@ if (client) {
     return <Profile06 />;
   }
     else {
-    return (
-      <div>
-        {/* Add fallback UI or any other component you want here */}
-      </div>
-    );
+      return <Profile02 />;
   }
 }       else{
   return(
