@@ -223,19 +223,15 @@ var { _id,
   
   <div>
 
-    <section className="main">
+    <section>
   
-          {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"rgb(22, 33, 92)", border:"1px solid white", borderRadius:"5px"}} onClick={
-            ()=>{
-              navigate(`/`)
-            }
-          }>Logout</button> */}
+    
        
     <Helmet>
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
+    <div className={`min-h-screen pt-12 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
   
        {logo && (
       <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
@@ -313,7 +309,7 @@ var { _id,
       else{
         return(
     
-            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`} style={{ backgroundAttachment: "fixed" }}>
+            <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`} style={{ backgroundAttachment: "fixed" }}>
             <ScaleLoader
             color={"white"}
             size={50}
