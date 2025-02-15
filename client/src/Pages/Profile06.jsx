@@ -256,7 +256,7 @@ var { _id,
         className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
         onClick={() => window.open(profileLink01, "_blank")}
       >
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3">
           <img
            src={menu}
             alt="Profile"
@@ -274,7 +274,7 @@ var { _id,
         className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
         onClick={() => window.open(profileLink02, "_blank")}
       >
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3">
           <img
            src={menu}
             alt="Profile"
