@@ -263,7 +263,7 @@ var { _id,
             className="h-10 w-10 rounded-md"
           />
           <div className="flex flex-col text-start">
-            <span className=" text-sm">{profileName01}</span>
+            <span className="text-md font-semibold">{profileName01}</span>
           </div>
         </div>
         <SlArrowRight  /> {/* Chevron/Arrow */}
@@ -282,7 +282,7 @@ var { _id,
           />
           <div className="flex flex-col text-start">
            
-            <span className="text-sm">{profileName02}</span>
+            <span className="text-md font-semibold">{profileName02}</span>
           </div>
         </div>
         <SlArrowRight  /> {/* Chevron/Arrow */}
