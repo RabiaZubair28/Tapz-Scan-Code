@@ -248,12 +248,12 @@ var { _id,
        <div className='flex flex-col justify-center items-center pt-0.5'>
       <h2 className="text-2xl font-semibold text-white text-center pt-1 ">{name}</h2>
       <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">{address}</h2>
-      <h2 className="text-lg font-semibold text-white text-center  pt-12 ">Please select the branch</h2>
+      <h2 className="text-lg font-semibold text-white text-center  pt-12 ">Please select the Branch</h2>
       </div>
     
     { profileLink01 && <div className="flex justify-center mt-3">
       <button
-        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+        className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
         onClick={() => window.open(profileLink01, "_blank")}
       >
         <div className="flex items-center space-x-6">
@@ -262,8 +262,7 @@ var { _id,
             alt="Profile"
             className="h-10 w-10 rounded-md"
           />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Branch One</span>
+          <div className="flex flex-col text-start">
             <span className=" text-sm">{profileName01}</span>
           </div>
         </div>
@@ -272,7 +271,7 @@ var { _id,
     </div>}
     { profileLink02 && <div className="flex justify-center mt-3">
       <button
-        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+        className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
         onClick={() => window.open(profileLink02, "_blank")}
       >
         <div className="flex items-center space-x-6">
@@ -281,8 +280,8 @@ var { _id,
             alt="Profile"
             className="h-10 w-10 rounded-md"
           />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Branch Two</span>
+          <div className="flex flex-col text-start">
+           
             <span className="text-sm">{profileName02}</span>
           </div>
         </div>
