@@ -256,7 +256,7 @@ var { _id,
         className="flex items-center justify-between w-full px-5 py-5  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
         onClick={() => window.open(profileLink01, "_blank")}
       >
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4">
           <img
            src={menu}
             alt="Profile"
@@ -266,7 +266,7 @@ var { _id,
             <span className="text-md font-semibold">{profileName01}</span>
           </div>
         </div>
-        <SlArrowRight  /> {/* Chevron/Arrow */}
+        {/* <SlArrowRight  /> Chevron/Arrow */}
       </button>
     </div>}
     { profileLink02 && <div className="flex justify-center mt-3">
@@ -285,7 +285,7 @@ var { _id,
             <span className="text-md font-semibold">{profileName02}</span>
           </div>
         </div>
-        <SlArrowRight  /> {/* Chevron/Arrow */}
+        {/* <SlArrowRight  /> Chevron/Arrow */}
       </button>
     </div>}
     </div>
