@@ -348,7 +348,7 @@ const [selected, setSelected] = useState("");
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-4">
       
-          <FaDownload className="w-6 h-6" onClick={() => {
+          <FaDownload className="w-8 h-8" onClick={() => {
             downloadQr("qr");
             handleClose();
           }} />
@@ -360,7 +360,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaFacebookF
-              className="w-6 h-6"
+              className="w-8 h-8"
             />
           </FacebookShareButton>
      
@@ -372,7 +372,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaLinkedinIn
-              className="w-6 h-6"
+              className="w-8 h-8"
             />
           </LinkedinShareButton>
        
@@ -382,7 +382,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaTelegramPlane
-              className="w-6 h-6"
+              className="w-8 h-8"
             />
           </TelegramShareButton>
        
@@ -392,7 +392,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaWhatsapp
-              className="w-6 h-6"
+              className="w-8 h-8"
             />
           </WhatsappShareButton>
     
