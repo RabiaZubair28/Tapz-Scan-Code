@@ -12,6 +12,7 @@ import axios from "axios";
 import Profile04 from './Profile04';
 import Profile05 from './Profile05';
 import Profile06 from './Profile06';
+import Profile07 from './Profile07';
 // import ScaleLoader from "react-spinners/ScaleLoader";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -180,6 +181,10 @@ if (client) {
   }else if(option === "6")
     {
     return <Profile06 />;
+  }
+  else if(option === "7")
+    {
+    return <Profile07 />;
   }
     else {
       return <Profile02 />;

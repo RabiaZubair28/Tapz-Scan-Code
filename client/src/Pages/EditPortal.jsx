@@ -12,6 +12,7 @@ import axios from "axios";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import EditPortal04 from "./EditPortal04";
 import EditPortal05 from "./EditPortal05";
+import EditPortal07 from "./EditPortal07";
 const EditPortal = () => {
 
   const params = useParams();
@@ -168,6 +169,9 @@ if (client) {
   }else if(option === "5")
     {
     return <EditPortal05 />;
+  }else if(option === "7")
+    {
+    return <EditPortal07 />;
   }
     else {
     return (
