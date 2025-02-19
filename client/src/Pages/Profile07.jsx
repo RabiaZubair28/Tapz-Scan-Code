@@ -340,7 +340,7 @@ const [selected, setSelected] = useState("");
       onClick={handleClose}
     />
 
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center space-y-8">
       {/* QR Code */}
       <div className="qr flex items-center justify-center" id="qr">
       <QRCodeCanvas  value={window.location.href} />
