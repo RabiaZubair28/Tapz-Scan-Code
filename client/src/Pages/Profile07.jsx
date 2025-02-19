@@ -348,7 +348,7 @@ const [selected, setSelected] = useState("");
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-5">
       
-          <FaDownload className="w-8 h-8" onClick={() => {
+          <FaDownload className="w-7 h-7" onClick={() => {
             downloadQr("qr");
             handleClose();
           }} />
