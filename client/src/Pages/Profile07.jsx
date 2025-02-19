@@ -333,7 +333,7 @@ const [selected, setSelected] = useState("");
   className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
   style={{ backgroundAttachment: "fixed" }}
 >
-  <div className="bg-gray-50 border-gray-200 border-2 rounded-lg pb-8 pt-16 px-10 relative">
+  <div className="bg-gray-50 border-gray-200 space-x-5 border-2 rounded-lg pb-8 pt-16 px-10 relative">
     {/* Close Icon */}
     <ImCross
       className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
@@ -348,7 +348,7 @@ const [selected, setSelected] = useState("");
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-2">
       
-          <FaDownload className="w-8 h-8" onClick={() => {
+          <FaDownload className="w-6 h-6" onClick={() => {
             downloadQr("qr");
             handleClose();
           }} />
@@ -360,7 +360,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaFacebookF
-              className="w-8 h-8"
+              className="w-6 h-6"
             />
           </FacebookShareButton>
         </div>
@@ -372,7 +372,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaLinkedinIn
-              className="w-8 h-8"
+              className="w-6 h-6"
             />
           </LinkedinShareButton>
         </div>
@@ -384,7 +384,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaTelegramPlane
-              className="w-8 h-8"
+              className="w-6 h-6"
             />
           </TelegramShareButton>
         </div>
@@ -396,7 +396,7 @@ const [selected, setSelected] = useState("");
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
             <FaWhatsapp
-              className="w-8 h-8"
+              className="w-6 h-6"
             />
           </WhatsappShareButton>
         </div>
