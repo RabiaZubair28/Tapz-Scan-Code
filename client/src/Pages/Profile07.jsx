@@ -333,7 +333,7 @@ const [selected, setSelected] = useState("");
   className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
   style={{ backgroundAttachment: "fixed" }}
 >
-  <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+  <div className="bg-gray-50 border-gray-500 border-2 rounded-lg pb-8 pt-16 px-10 relative">
     {/* Close Icon */}
     <ImCross
       className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
@@ -348,7 +348,7 @@ const [selected, setSelected] = useState("");
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-2">
         <div
-          className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+          className="w-12 h-12 bg-white text-gray-800 p-3 rounded-full flex items-center justify-center"
           onClick={() => {
             downloadQr("qr");
             handleClose();
@@ -363,10 +363,8 @@ const [selected, setSelected] = useState("");
             quote="please share this"
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
-            <img
-              src={fb} // Replace with the actual path to the Facebook icon
-              alt="Facebook"
-              className="w-12 h-12 rounded-full border-2 border-white"
+            <FaFacebookF
+              className="w-8 h-8"
             />
           </FacebookShareButton>
         </div>
@@ -377,10 +375,8 @@ const [selected, setSelected] = useState("");
             quote="please share this"
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
-            <img
-              src={linkedin} // Replace with the actual path to the LinkedIn icon
-              alt="LinkedIn"
-              className="w-12 h-12 rounded-full border-2 border-white"
+            <FaLinkedinIn
+              className="w-8 h-8"
             />
           </LinkedinShareButton>
         </div>
@@ -391,10 +387,8 @@ const [selected, setSelected] = useState("");
             quote="please share this"
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
-            <img
-              src={telegram} // Replace with the actual path to the Telegram icon
-              alt="Telegram"
-              className="w-12 h-12 rounded-full border-2 border-white"
+            <FaTelegramPlane
+              className="w-8 h-8"
             />
           </TelegramShareButton>
         </div>
@@ -405,10 +399,8 @@ const [selected, setSelected] = useState("");
             quote="please share this"
             hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
           >
-            <img
-              src={whatsapp} // Replace with the actual path to the WhatsApp icon
-              alt="WhatsApp"
-              className="w-12 h-12 rounded-full border-2 border-white"
+            <FaWhatsapp
+              className="w-8 h-8"
             />
           </WhatsappShareButton>
         </div>
