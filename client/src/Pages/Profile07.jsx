@@ -353,7 +353,7 @@ const [selected, setSelected] = useState("");
             handleClose();
           }} />
   
-        <div className="social-btn">
+       
           <FacebookShareButton
             url={currentPageUrl}
             quote="please share this"
@@ -363,9 +363,9 @@ const [selected, setSelected] = useState("");
               className="w-6 h-6"
             />
           </FacebookShareButton>
-        </div>
+     
 
-        <div className="social-btn">
+    
           <LinkedinShareButton
             url={currentPageUrl}
             quote="please share this"
@@ -375,9 +375,7 @@ const [selected, setSelected] = useState("");
               className="w-6 h-6"
             />
           </LinkedinShareButton>
-        </div>
-
-        <div className="social-btn">
+       
           <TelegramShareButton
             url={currentPageUrl}
             quote="please share this"
@@ -387,9 +385,7 @@ const [selected, setSelected] = useState("");
               className="w-6 h-6"
             />
           </TelegramShareButton>
-        </div>
-
-        <div className="social-btn">
+       
           <WhatsappShareButton
             url={currentPageUrl}
             quote="please share this"
@@ -399,7 +395,7 @@ const [selected, setSelected] = useState("");
               className="w-6 h-6"
             />
           </WhatsappShareButton>
-        </div>
+    
       </div>
     </div>
   </div>
