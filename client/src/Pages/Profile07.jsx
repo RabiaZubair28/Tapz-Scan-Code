@@ -346,7 +346,7 @@ const [selected, setSelected] = useState("");
       <QRCodeCanvas  value={window.location.href} />
       </div>
       {/* Buttons and Social Icons */}
-      <div className="flex justify-center space-x-2">
+      <div className="flex justify-center space-x-4">
       
           <FaDownload className="w-6 h-6" onClick={() => {
             downloadQr("qr");
