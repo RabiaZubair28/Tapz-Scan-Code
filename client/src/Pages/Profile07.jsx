@@ -333,7 +333,7 @@ const [selected, setSelected] = useState("");
   className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
   style={{ backgroundAttachment: "fixed" }}
 >
-  <div className="bg-gray-50 border-gray-500 border-2 rounded-lg pb-8 pt-16 px-10 relative">
+  <div className="bg-gray-50 border-gray-200 border-2 rounded-lg pb-8 pt-16 px-10 relative">
     {/* Close Icon */}
     <ImCross
       className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
@@ -347,16 +347,12 @@ const [selected, setSelected] = useState("");
       </div>
       {/* Buttons and Social Icons */}
       <div className="flex justify-center space-x-2">
-        <div
-          className="w-12 h-12 bg-white text-gray-800 p-3 rounded-full flex items-center justify-center"
-          onClick={() => {
+      
+          <FaDownload className="w-8 h-8" onClick={() => {
             downloadQr("qr");
             handleClose();
-          }}
-        >
-          <FaDownload size={20} />
-        </div>
-
+          }} />
+  
         <div className="social-btn">
           <FacebookShareButton
             url={currentPageUrl}
