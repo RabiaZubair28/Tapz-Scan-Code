@@ -453,7 +453,7 @@ const [selected, setSelected] = useState("");
         <img
           src={logo}
           alt="profile"
-          className="w-36 h-36 -mt-24 mx-auto rounded-full border-4 border-white shadow-md"
+          className="w-36 h-36 -mt-24 mx-auto rounded-full border-1 border-white shadow-md"
         />
       </div>
         </a>
