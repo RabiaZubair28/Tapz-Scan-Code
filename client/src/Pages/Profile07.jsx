@@ -417,7 +417,7 @@ const [selected, setSelected] = useState("");
     <title>{name}</title>
     </Helmet>
 
-    <div className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-4  text-center bg-white`} style={{ backgroundAttachment: "fixed" }}>
+    <div className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-3  text-center bg-white`} style={{ backgroundAttachment: "fixed" }}>
       <div className='bg-white border border-white rounded-2xl pb-4'>
       {/* {images && (
       <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
