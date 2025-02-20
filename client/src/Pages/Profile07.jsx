@@ -1484,41 +1484,12 @@ const [selected, setSelected] = useState("");
   </div>
 )}
  </div>} */}
- {(location != "") && <div className="px-1">
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Location</h2>
-   
-      <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
-        {location && (
-         <iframe src={location} width="100%" height="300" allowfullscreen="" loading="lazy" className="rounded-xl"></iframe> 
-        )}
-      </div>
-      </div>}
-      { services != "" && <div className="px-4 ">
-      <h2 className="text-xl font-semibold text-gray-800 mb-2.5 mt-8">Services</h2>
-    
-      {services && (
-  <div className="flex justify-center  mt-0 w-full px-5  bg-white text-gray-700  max-w-md">
-    <a className="flex w-full  text-gray-700  max-w-md">
-      <div className="flex items-center space-x-8 w-full">
-      <div className="flex flex-row w-full  items-center justify-center gap-x-3">
-    <div className="flex flex-col  items-center justify-center max-w-[300px] text-gray-600 pt-1 text-center gap-y-1">
-      {services.split("\n").map((line, index) => (
-        <div key={index} className="flex items-center space-x-2">
-     
-          <span>{line}</span>
-        </div>
-      ))}
-    </div>
-</div>
-</div>
-    </a>
-  </div>
-)}
-
-      </div>}
-      <div className="px-4">
+    <div className="px-4">
           <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Share Profile</h2>
           <div className="flex justify-center space-x-5 mt-6">
+          <div className="social-btn ">
+          <IoQrCodeSharp size={35} onClick={handleShow} />
+          </div>
           <div className="social-btn ">
             <FacebookShareButton
               url={currentPageUrl}
@@ -1586,17 +1557,20 @@ const [selected, setSelected] = useState("");
           </div>
 
       </div>
-      <div className='px-4'>
-      <h2 className="text-xl font-semibold text-gray-800 mt-7 px-4">Share Contact & QR</h2>
-      <div className="flex justify-center gap-x-6 mt-6 px-4 text-gray-800">
-              
-              <IoQrCodeSharp size={35} onClick={handleShow} />
-           
-       
-           
-              <FaDownload size={30} onClick={downloadContactCard} value="download" />
-           
+ {(location != "") && <div className="px-1">
+      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Location</h2>
+   
+      <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
+        {location && (
+         <iframe src={location} width="100%" height="300" allowfullscreen="" loading="lazy" className="rounded-xl"></iframe> 
+        )}
       </div>
+      </div>}
+    
+   
+      <div className='px-4'>
+     
+     
         
       <p className="pt-8">Copyright © <span className="company">{companyName}</span>. All Rights Reserved.</p>
       </div>
