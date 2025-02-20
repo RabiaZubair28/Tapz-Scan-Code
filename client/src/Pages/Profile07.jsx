@@ -437,9 +437,9 @@ const [selected, setSelected] = useState("");
             {/* <img src={eye} height={25}></img>
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                  <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-                  <FaDownload size={20} onClick={downloadContactCard} color="black" />
-                  <span style={{display:"flex",alignItems:"center",color:"black",justifyContent:"center"
+                  <button className="flex text-white bg-blue-500 items-center justify-center gap-x-2 rounded-lg py-2 px-10  border-1 border-white shadow-sm hover:shadow-md hover:bg-blue-300">
+                  <FaDownload  size={20} onClick={downloadContactCard}  />
+                  <span style={{display:"flex",alignItems:"center",justifyContent:"center"
                   }} onClick={downloadContactCard} >&nbsp;&nbsp;Save Contact</span>
                 </button>
         
