@@ -446,7 +446,7 @@ const [selected, setSelected] = useState("");
         </div>
       <div className="px-6">
       {logo && (
-      <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-32">
+      <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-28">
 
         <a href={logo}>
         <div className="relative mb-2 ">
