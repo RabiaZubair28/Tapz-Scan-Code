@@ -1484,6 +1484,15 @@ const [selected, setSelected] = useState("");
   </div>
 )}
  </div>} */}
+ {(location != "") && <div className="px-1">
+      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Location</h2>
+   
+      <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
+        {location && (
+         <iframe src={location} width="100%" height="300" allowfullscreen="" loading="lazy" className="rounded-xl"></iframe> 
+        )}
+      </div>
+      </div>}
     <div className="px-4">
           <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Share Profile</h2>
           <div className="flex justify-center space-x-5 mt-6">
@@ -1557,15 +1566,7 @@ const [selected, setSelected] = useState("");
           </div>
 
       </div>
- {(location != "") && <div className="px-1">
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">Location</h2>
-   
-      <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
-        {location && (
-         <iframe src={location} width="100%" height="300" allowfullscreen="" loading="lazy" className="rounded-xl"></iframe> 
-        )}
-      </div>
-      </div>}
+ 
     
    
       <div className='px-4'>
