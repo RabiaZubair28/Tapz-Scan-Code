@@ -240,7 +240,7 @@ var clientId01 = _id;
 VERSION:3.0
 N:${clientName};;;;
 FN:${clientName}
-ORG:${name}
+ORG:${name};${designation}
 TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
