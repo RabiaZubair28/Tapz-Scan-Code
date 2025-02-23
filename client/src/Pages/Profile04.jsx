@@ -239,8 +239,9 @@ var clientId01 = _id;
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
-FN:${designation}
+FN:${clientName}
 ORG:${name}
+TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
 EMAIL;HOME:${email}
