@@ -235,12 +235,12 @@ var clientId01 = _id;
 
 
 
-  const downloadContactCard = async () => {
+const downloadContactCard = async () => {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
 FN:${clientName}
-ORG:${name};${designation}
+ORG:${name}
 TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
