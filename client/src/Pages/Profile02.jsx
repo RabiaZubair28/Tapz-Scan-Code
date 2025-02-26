@@ -561,6 +561,70 @@ const [selected, setSelected] = useState("");
         <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
       </a>
     </div>}
+
+    { whatsapp01 &&<div className="flex justify-center mt-3">
+      <a
+        href={`https://wa.me/${whatsapp01}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
+      >
+        <div className="flex items-center space-x-6">
+          <img
+            src={whatsapp}
+            alt="Whatsapp01"
+            className="h-10 w-10"
+          />
+          <div className="flex flex-col text-start gap-y-1">
+            <span className="font-medium">Whatsapp</span>
+            <span className="text-gray-500 text-sm">{whatsapp01}</span>
+          </div>
+        </div>
+        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
+      </a>
+    </div>}
+    { whatsapp02 && <div className="flex justify-center mt-3">
+      <a
+        href={`https://wa.me/${whatsapp02}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
+      >
+        <div className="flex items-center space-x-6">
+          <img
+            src={whatsapp}
+            alt="Whatsapp02"
+            className="h-10 w-10"
+          />
+          <div className="flex flex-col text-start gap-y-1">
+            <span className="font-medium">Whatsapp</span>
+            <span className="text-gray-500 text-sm">{whatsapp02}</span>
+          </div>
+        </div>
+        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
+      </a>
+    </div> }
+    { whatsapp03 &&<div className="flex justify-center mt-3">
+      <a
+        href={`https://wa.me/${whatsapp03}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
+      >
+        <div className="flex items-center space-x-6">
+          <img
+            src={whatsapp}
+            alt="Whatsapp03"
+            className="h-10 w-10"
+          />
+          <div className="flex flex-col text-start gap-y-1">
+            <span className="font-medium">Whatsapp</span>
+            <span className="text-gray-500 text-sm">{whatsapp03}</span>
+          </div>
+        </div>
+        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
+      </a>
+    </div>}
     { telephone02 && <div className="flex justify-center mt-3">
   <a
     href={`tel:${telephone02}`}
@@ -621,69 +685,6 @@ const [selected, setSelected] = useState("");
           <div className="flex flex-col text-start gap-y-1">
             <span className="font-medium">Telephone</span>
             <span className="text-gray-500 text-sm">{telephone03}</span>
-          </div>
-        </div>
-        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
-      </a>
-    </div>}
-    { whatsapp01 &&<div className="flex justify-center mt-3">
-      <a
-        href={`https://wa.me/${whatsapp01}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
-      >
-        <div className="flex items-center space-x-6">
-          <img
-            src={whatsapp}
-            alt="Whatsapp01"
-            className="h-10 w-10"
-          />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Whatsapp</span>
-            <span className="text-gray-500 text-sm">{whatsapp01}</span>
-          </div>
-        </div>
-        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
-      </a>
-    </div>}
-    { whatsapp02 && <div className="flex justify-center mt-3">
-      <a
-        href={`https://wa.me/${whatsapp02}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
-      >
-        <div className="flex items-center space-x-6">
-          <img
-            src={whatsapp}
-            alt="Whatsapp02"
-            className="h-10 w-10"
-          />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Whatsapp</span>
-            <span className="text-gray-500 text-sm">{whatsapp02}</span>
-          </div>
-        </div>
-        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
-      </a>
-    </div> }
-    { whatsapp03 &&<div className="flex justify-center mt-3">
-      <a
-        href={`https://wa.me/${whatsapp03}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
-      >
-        <div className="flex items-center space-x-6">
-          <img
-            src={whatsapp}
-            alt="Whatsapp03"
-            className="h-10 w-10"
-          />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Whatsapp</span>
-            <span className="text-gray-500 text-sm">{whatsapp03}</span>
           </div>
         </div>
         <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
@@ -1151,24 +1152,7 @@ const [selected, setSelected] = useState("");
         <SlArrowRight color="gray-400" /> {/* Chevron/Arrow */}
       </button>
     </div>}
-    { address && <div className="flex justify-center mt-3">
-      <button
-        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
-      >
-        <div className="flex items-center space-x-6">
-          <img
-           src={addressImg}
-            alt="Address"
-            className="h-10 w-10 rounded-md"
-          />
-          <div className="flex flex-col text-start gap-y-1">
-            <span className="font-medium">Address</span>
-            <span className="text-gray-500 text-sm">{address}</span>
-          </div>
-        </div>
-        <SlArrowRight color="gray-400" /> {/* Chevron/Arrow */}
-      </button>
-    </div>}
+
     { website && <div className="flex justify-center mt-3">
       <button
         className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
@@ -1411,6 +1395,24 @@ const [selected, setSelected] = useState("");
           <div className="flex flex-col text-start gap-y-1">
             <span className="font-medium">Profile</span>
             <span className="text-gray-500 text-sm">{profileName02}</span>
+          </div>
+        </div>
+        <SlArrowRight color="gray-400" /> {/* Chevron/Arrow */}
+      </button>
+    </div>}
+    { address && <div className="flex justify-center mt-3">
+      <button
+        className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
+      >
+        <div className="flex items-center space-x-6">
+          <img
+           src={addressImg}
+            alt="Address"
+            className="h-10 w-10 rounded-md"
+          />
+          <div className="flex flex-col text-start gap-y-1">
+            <span className="font-medium">Address</span>
+            <span className="text-gray-500 text-sm">{address}</span>
           </div>
         </div>
         <SlArrowRight color="gray-400" /> {/* Chevron/Arrow */}
