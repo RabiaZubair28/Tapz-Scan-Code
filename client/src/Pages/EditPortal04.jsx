@@ -4930,7 +4930,7 @@ END:VCARD`;
                                     <input
                                       id="name"
                                       placeholder={name}
-                                      className="flex-1  px-3 py-0.5 border rounded-md focus:outline-none"
+                                      className="flex-1 text-black px-3 py-0.5 border rounded-md focus:outline-none"
                                     />
                                   </div>
                                   <button
@@ -5019,7 +5019,7 @@ END:VCARD`;
                                     <input
                                       id="client-name"
                                       placeholder={clientName}
-                                      className="flex-1 max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                      className="flex-1 text-black max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
                                     />
                                   </div>
                                   <button
@@ -5110,7 +5110,7 @@ END:VCARD`;
                                     <input
                                       id="designation"
                                       placeholder={designation}
-                                      className="flex-1 max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                      className="flex-1 text-black max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
                                     />
                                   </div>
                                   <button
@@ -5234,7 +5234,7 @@ END:VCARD`;
                                     <input
                                       id="description"
                                       placeholder={description}
-                                      className="flex-1 max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                      className="flex-1 text-black max-w-[180px] px-3 py-0.5 border rounded-md focus:outline-none"
                                     />
                                   </div>
                                   <button
