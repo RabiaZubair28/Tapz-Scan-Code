@@ -4875,7 +4875,7 @@ END:VCARD`;
                         <div className="flex items-start space-x-6 w-full">
                           <div className="flex flex-1 items-start justify-center gap-x-3">
                             {!modal05 && !editName && (
-                              <div className="flex flex-col text-lg w-[250px] max-w-[250px] font-semibold text-white text-start gap-y-1">
+                              <div className="flex flex-col text-lg w-[280px] max-w-[280px] font-semibold text-white text-start gap-y-1">
                                 <span className="text-lg font-semibold text-white">
                                   {name}
                                 </span>
@@ -4964,7 +4964,7 @@ END:VCARD`;
                         <div className="flex items-start space-x-6 w-full">
                           <div className="flex flex-1 items-start justify-center gap-x-3">
                             {!modal04 && !editClientName && (
-                              <div className="flex flex-col text-md w-[250px] max-w-[250px] font-semibold text-white text-start gap-y-1">
+                              <div className="flex flex-col text-md w-[280px] max-w-[280px] font-semibold text-white text-start gap-y-1">
                                 <span className="text-white text-2xl font-semibold">
                                   {clientName}
                                 </span>
@@ -5053,7 +5053,7 @@ END:VCARD`;
                         <div className="flex items-center space-x-6 w-full">
                           <div className="flex flex-1 items-start justify-center gap-x-3">
                             {!modal03 && !editDesignation && (
-                              <div className="flex flex-col text-md w-[250px] max-w-[250px] font-semibold text-white pt-1  text-start gap-y-1">
+                              <div className="flex flex-col text-md w-[280px] max-w-[280px] font-semibold text-white pt-1  text-start gap-y-1">
                                 <span className="text-md text-white fontsemibold pb-1">
                                   {designation}
                                 </span>
@@ -5177,7 +5177,7 @@ END:VCARD`;
                         <div className="flex items-start space-x-6 w-full">
                           <div className="flex flex-1 items-start justify-center gap-x-3">
                             {!modal02 && !editDescription && (
-                              <div className="flex flex-col text-md w-[250px] max-w-[250px] font-light text-white pt-1 text-start gap-y-1">
+                              <div className="flex flex-col text-md w-[280px] max-w-[280px] font-light text-white pt-1 text-start gap-y-1">
                                 <span className="text-sm text-white pt-1 pb-1  break-words">
                                   {description}
                                 </span>
