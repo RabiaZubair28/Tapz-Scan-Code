@@ -499,11 +499,13 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Cover updated successfully:", response.data);
+        alert("Cover Successfully updated!");
         window.location.reload();
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Cover!");
     }
   };
   const handleDeleteImg01 = async (id) => {
@@ -615,11 +617,13 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Logo updated successfully:", response.data);
+        alert("Logo Successfully updated!");
         window.location.reload();
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Logo!");
     }
   };
   const handleDeleteImg02 = async (id) => {
