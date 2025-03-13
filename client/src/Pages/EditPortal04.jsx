@@ -520,9 +520,12 @@ END:VCARD`;
       if (response.status === 200) {
         console.log("Image 01 updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
+        alert("Image 01 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
   const handleEditImg01 = async (event) => {
@@ -560,11 +563,13 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 01 updated successfully:", response.data);
+        alert("Image 01 updated successfully!");
         window.location.reload();
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   // const handleDeleteLogo = async(id) => {
@@ -637,9 +642,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 02 updated successfully:", response.data);
+        alert("Image 02 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -678,10 +686,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 02 updated successfully:", response.data);
+        alert("Image 02 updated successfully!");
         window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -696,9 +706,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 03 updated successfully:", response.data);
+        alert("Image 03 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -737,10 +750,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 03 updated successfully:", response.data);
+        alert("Image 03 updated successfully!");
         window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg04 = async (id) => {
@@ -754,9 +769,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 04 updated successfully:", response.data);
+        alert("Image 04 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -799,6 +817,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg05 = async (id) => {
@@ -812,9 +831,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 05 updated successfully:", response.data);
+        alert("Image 05 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -857,6 +879,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -871,9 +894,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 06 updated successfully:", response.data);
+        alert("Image 06 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -916,6 +942,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg07 = async (id) => {
@@ -929,9 +956,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 07 updated successfully:", response.data);
+        alert("Image 07 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -974,6 +1004,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -988,9 +1019,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 08 updated successfully:", response.data);
+        alert("Image 08 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -1033,6 +1067,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg09 = async (id) => {
@@ -1046,9 +1081,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 09 updated successfully:", response.data);
+        alert("Image 09 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -1091,6 +1129,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -1105,9 +1144,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 10 updated successfully:", response.data);
+        alert("Image 10 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -1150,6 +1192,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleEditName = async (id) => {
