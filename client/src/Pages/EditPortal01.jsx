@@ -7930,7 +7930,7 @@ END:VCARD`;
                           )}
                           {editYoutubeShorts && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">YoutubeShorts</span>
+                              <span className="font-medium">Linkedin</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
                                   <label>Account Name:</label>

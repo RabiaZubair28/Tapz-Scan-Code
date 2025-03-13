@@ -465,70 +465,6 @@ END:VCARD`;
     return uploadedImgURL.url;
   };
 
-  const handleDeleteImg01 = async (id) => {
-    try {
-      const response = await axios.put(
-        `https://www.scan-taps.com/api/data/update/${id}`,
-        {
-          img01: "",
-        }
-      );
-
-      if (response.status === 200) {
-        console.log("Image 01 updated successfully:", response.data);
-        // Update the state or trigger a re-render here as needed
-        alert("Image 01 deleted successfully!");
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error("Error updating name:", error);
-      alert("Error Deleting Image");
-    }
-  };
-  const handleEditImg01 = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "first_time_using_cloudinary");
-    data.append("cloud_name", "dxokfhkhu");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    const uploadedImgURL = await res.json();
-    console.log(uploadedImgURL.url);
-
-    var newImg = uploadedImgURL.url;
-    console.log(newImg);
-    if (newImg == "") {
-      return;
-    } // Get the new name from the input
-    try {
-      const response = await axios.put(
-        `https://www.scan-taps.com/api/data/updateImg01/${_id}`,
-        {
-          img01: newImg,
-        }
-      );
-
-      if (response.status === 200) {
-        console.log("Img 01 updated successfully:", response.data);
-        alert("Image 01 updated successfully!");
-        window.location.reload();
-        // Update the state or trigger a re-render here as needed
-      }
-    } catch (error) {
-      console.error("Error updating name:", error);
-      alert("Error Updating Image");
-    }
-  };
   // const handleDeleteLogo = async(id) => {
   //   try {
   //     const response = await axios.put(`https://www.scan-taps.com/api/data/update/${id}`, {
@@ -630,6 +566,70 @@ END:VCARD`;
     } catch (error) {
       console.error("Error updating name:", error);
       alert("Error Updating Logo!");
+    }
+  };
+  const handleDeleteImg01 = async (id) => {
+    try {
+      const response = await axios.put(
+        `https://www.scan-taps.com/api/data/update/${id}`,
+        {
+          img01: "",
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Image 01 updated successfully:", response.data);
+        // Update the state or trigger a re-render here as needed
+        alert("Image 01 deleted successfully!");
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error("Error updating name:", error);
+      alert("Error Deleting Image");
+    }
+  };
+  const handleEditImg01 = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "first_time_using_cloudinary");
+    data.append("cloud_name", "dxokfhkhu");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const uploadedImgURL = await res.json();
+    console.log(uploadedImgURL.url);
+
+    var newImg = uploadedImgURL.url;
+    console.log(newImg);
+    if (newImg == "") {
+      return;
+    } // Get the new name from the input
+    try {
+      const response = await axios.put(
+        `https://www.scan-taps.com/api/data/updateImg01/${_id}`,
+        {
+          img01: newImg,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Img 01 updated successfully:", response.data);
+        alert("Image 01 updated successfully!");
+        window.location.reload();
+        // Update the state or trigger a re-render here as needed
+      }
+    } catch (error) {
+      console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg02 = async (id) => {
@@ -7896,7 +7896,7 @@ END:VCARD`;
                           )}
                           {editYoutubeShorts && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">YoutubeShorts</span>
+                              <span className="font-medium">Linkedin</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
                                   <label>Account Name:</label>
