@@ -467,6 +467,94 @@ END:VCARD`;
     return uploadedImgURL.url;
   };
 
+  const handleEditCover = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "first_time_using_cloudinary");
+    data.append("cloud_name", "dxokfhkhu");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const uploadedImgURL = await res.json();
+    console.log(uploadedImgURL.url);
+
+    var newImg = uploadedImgURL.url;
+    console.log(newImg);
+    if (newImg == "") {
+      return;
+    } // Get the new name from the input
+    try {
+      const response = await axios.put(
+        `https://www.scan-taps.com/api/data/updateCover/${_id}`,
+        {
+          images: newImg,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Cover updated successfully:", response.data);
+        alert("Cover Successfully updated!");
+        window.location.reload();
+        // Update the state or trigger a re-render here as needed
+      }
+    } catch (error) {
+      console.error("Error updating name:", error);
+      alert("Error Updating Cover!");
+    }
+  };
+  const handleEditLogo = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "first_time_using_cloudinary");
+    data.append("cloud_name", "dxokfhkhu");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const uploadedImgURL = await res.json();
+    console.log(uploadedImgURL.url);
+
+    var newImg = uploadedImgURL.url;
+    console.log(newImg);
+    if (newImg == "") {
+      return;
+    } // Get the new name from the input
+    try {
+      const response = await axios.put(
+        `https://www.scan-taps.com/api/data/updateLogo/${_id}`,
+        {
+          logo: newImg,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Logo updated successfully:", response.data);
+        alert("Logo Successfully updated!");
+        window.location.reload();
+        // Update the state or trigger a re-render here as needed
+      }
+    } catch (error) {
+      console.error("Error updating name:", error);
+      alert("Error Updating Logo!");
+    }
+  };
   const handleDeleteImg01 = async (id) => {
     try {
       const response = await axios.put(
@@ -479,9 +567,12 @@ END:VCARD`;
       if (response.status === 200) {
         console.log("Image 01 updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
+        alert("Image 01 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
   const handleEditImg01 = async (event) => {
@@ -519,68 +610,13 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 01 updated successfully:", response.data);
+        alert("Image 01 updated successfully!");
         window.location.reload();
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
       console.error("Error updating name:", error);
-    }
-  };
-  // const handleDeleteLogo = async(id) => {
-  //   try {
-  //     const response = await axios.put(`https://www.scan-taps.com/api/data/update/${id}`, {
-  //       logo: ""
-  //     });
-
-  //     if (response.status === 200) {
-  //       console.log('Logo updated successfully:', response.data);
-  //       // Update the state or trigger a re-render here as needed
-  //     }
-  //   } catch (error) {
-  //     console.error('Error updating name:', error);
-  //   }
-
-  // }
-  const handleEditLogo = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "first_time_using_cloudinary");
-    data.append("cloud_name", "dxokfhkhu");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    const uploadedImgURL = await res.json();
-    console.log(uploadedImgURL.url);
-
-    var newImg = uploadedImgURL.url;
-    console.log(newImg);
-    if (newImg == "") {
-      return;
-    } // Get the new name from the input
-    try {
-      const response = await axios.put(
-        `https://www.scan-taps.com/api/data/updateLogo/${_id}`,
-        {
-          logo: newImg,
-        }
-      );
-
-      if (response.status === 200) {
-        console.log("Logo updated successfully:", response.data);
-        window.location.reload();
-        // Update the state or trigger a re-render here as needed
-      }
-    } catch (error) {
-      console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg02 = async (id) => {
@@ -594,9 +630,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 02 updated successfully:", response.data);
+        alert("Image 02 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -635,10 +674,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 02 updated successfully:", response.data);
+        alert("Image 02 updated successfully!");
         window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -653,9 +694,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 03 updated successfully:", response.data);
+        alert("Image 03 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -694,10 +738,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Img 03 updated successfully:", response.data);
+        alert("Image 03 updated successfully!");
         window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg04 = async (id) => {
@@ -711,9 +757,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 04 updated successfully:", response.data);
+        alert("Image 04 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -756,6 +805,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg05 = async (id) => {
@@ -769,9 +819,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 05 updated successfully:", response.data);
+        alert("Image 05 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -814,6 +867,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -828,9 +882,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 06 updated successfully:", response.data);
+        alert("Image 06 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -873,6 +930,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg07 = async (id) => {
@@ -886,9 +944,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 07 updated successfully:", response.data);
+        alert("Image 07 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -931,6 +992,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -945,9 +1007,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 08 updated successfully:", response.data);
+        alert("Image 08 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -990,6 +1055,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleDeleteImg09 = async (id) => {
@@ -1003,9 +1069,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 09 updated successfully:", response.data);
+        alert("Image 09 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -1048,6 +1117,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
 
@@ -1062,9 +1132,12 @@ END:VCARD`;
 
       if (response.status === 200) {
         console.log("Image 10 updated successfully:", response.data);
+        alert("Image 10 deleted successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Deleting Image");
     }
   };
 
@@ -1107,6 +1180,7 @@ END:VCARD`;
       }
     } catch (error) {
       console.error("Error updating name:", error);
+      alert("Error Updating Image");
     }
   };
   const handleEditName = async (id) => {
