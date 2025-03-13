@@ -464,50 +464,7 @@ END:VCARD`;
     // console.log(file)
     return uploadedImgURL.url;
   };
-  const handleEditCover = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
 
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "first_time_using_cloudinary");
-    data.append("cloud_name", "dxokfhkhu");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    const uploadedImgURL = await res.json();
-    console.log(uploadedImgURL.url);
-
-    var newImg = uploadedImgURL.url;
-    console.log(newImg);
-    if (newImg == "") {
-      return;
-    } // Get the new name from the input
-    try {
-      const response = await axios.put(
-        `https://www.scan-taps.com/api/data/updateCover/${_id}`,
-        {
-          images: newImg,
-        }
-      );
-
-      if (response.status === 200) {
-        console.log("Cover updated successfully:", response.data);
-        alert("Cover Successfully updated!");
-        window.location.reload();
-        // Update the state or trigger a re-render here as needed
-      }
-    } catch (error) {
-      console.error("Error updating name:", error);
-      alert("Error Updating Cover!");
-    }
-  };
   const handleDeleteImg01 = async (id) => {
     try {
       const response = await axios.put(
@@ -587,6 +544,50 @@ END:VCARD`;
   //   }
 
   // }
+  const handleEditCover = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "first_time_using_cloudinary");
+    data.append("cloud_name", "dxokfhkhu");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const uploadedImgURL = await res.json();
+    console.log(uploadedImgURL.url);
+
+    var newImg = uploadedImgURL.url;
+    console.log(newImg);
+    if (newImg == "") {
+      return;
+    } // Get the new name from the input
+    try {
+      const response = await axios.put(
+        `https://www.scan-taps.com/api/data/updateCover/${_id}`,
+        {
+          images: newImg,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Cover updated successfully:", response.data);
+        alert("Cover Successfully updated!");
+        window.location.reload();
+        // Update the state or trigger a re-render here as needed
+      }
+    } catch (error) {
+      console.error("Error updating name:", error);
+      alert("Error Updating Cover!");
+    }
+  };
   const handleEditLogo = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -4879,7 +4880,6 @@ END:VCARD`;
                     <button
                       className="btn bg-green-500 text-white rounded-md py-1 px-6"
                       onClick={() => {
-                        setDeleteModal12(false);
                         setEditCover(true);
                       }}
                     >
