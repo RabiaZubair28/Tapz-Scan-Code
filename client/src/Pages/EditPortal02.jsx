@@ -10065,117 +10065,6 @@ END:VCARD`;
                     </div>
                   )}
                 </div>
-                {services != "" && (
-                  <div className="px-4 ">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
-                      Services
-                    </h2>
-                    <hr className="border-gray-300" />
-                    {services && (
-                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
-                        <a className="flex w-full py-1  text-gray-700  max-w-md">
-                          <div className="flex items-center space-x-6 w-full">
-                            <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                              {!modal01 && !editServices && (
-                                <div className="flex flex-col text-md max-w-[250px] font-medium text-gray-800 pt-1 text-start gap-y-1">
-                                  {services.split("\n").map((line, index) => (
-                                    <div
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <span className="text-gray-700">•</span>
-                                      <span>{line}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-
-                              {/* Modal for confirmation */}
-                              {modal01 && (
-                                <div className="text-center w-full">
-                                  <div className="text-sm font-medium mb-2">
-                                    Are you sure you want to delete?
-                                  </div>
-                                  <div className="flex justify-start space-x-1">
-                                    <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
-                                      onClick={() => setModal01(false)}
-                                    >
-                                      Cancel
-                                    </button>
-                                    <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
-                                      onClick={() => {
-                                        handleDeleteServices(_id);
-                                        window.location.reload();
-                                        setModal01(false);
-                                      }}
-                                    >
-                                      Confirm
-                                    </button>
-                                  </div>
-                                </div>
-                              )}
-
-                              {/* Edit services modal */}
-                              {editServices && (
-                                <div className="flex flex-col text-start gap-y-1 w-full">
-                                  <span className="font-semibold">
-                                    Services:
-                                  </span>
-                                  <div className="flex items-center w-full space-x-2 mt-1">
-                                    <div className="flex flex-col space-y-2 mt-1 w-full max-w-[250px]">
-                                      <textarea
-                                        id="services"
-                                        rows="4" // Setting rows for better height management
-                                        placeholder={services}
-                                        className="w-full px-3 py-0.5 border rounded-md focus:outline-none"
-                                      />
-                                    </div>
-                                    <div className="flex space-x-2">
-                                      <button
-                                        className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
-                                        onClick={() => {
-                                          handleEditServices(_id);
-                                          setEditServices(false);
-                                          window.location.reload();
-                                        }}
-                                      >
-                                        &#x2714;
-                                      </button>
-                                      <button
-                                        className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
-                                        onClick={() => setEditServices(false)}
-                                      >
-                                        &#x2716;
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          {!modal01 && !editServices && (
-                            <div className="flex justify-center items-center space-x-3">
-                              <FaEdit
-                                size={20}
-                                color="black"
-                                className="cursor-pointer"
-                                onClick={() => setEditServices(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                color="black"
-                                className="cursor-pointer"
-                                onClick={() => setModal01(true)}
-                              />
-                            </div>
-                          )}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                )}
 
                 <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
@@ -11018,6 +10907,117 @@ END:VCARD`;
                     )}
                   </div>
                 </div>
+                {services != "" && (
+                  <div className="px-4 ">
+                    <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
+                      Services
+                    </h2>
+                    <hr className="border-gray-300" />
+                    {services && (
+                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
+                        <a className="flex w-full py-1  text-gray-700  max-w-md">
+                          <div className="flex items-center space-x-6 w-full">
+                            <div className="flex flex-row w-full  items-start justify-between gap-x-3">
+                              {!modal01 && !editServices && (
+                                <div className="flex flex-col text-md max-w-[250px] font-medium text-gray-800 pt-1 text-start gap-y-1">
+                                  {services.split("\n").map((line, index) => (
+                                    <div
+                                      key={index}
+                                      className="flex items-start space-x-2"
+                                    >
+                                      <span className="text-gray-700">•</span>
+                                      <span>{line}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+
+                              {/* Modal for confirmation */}
+                              {modal01 && (
+                                <div className="text-center w-full">
+                                  <div className="text-sm font-medium mb-2">
+                                    Are you sure you want to delete?
+                                  </div>
+                                  <div className="flex justify-start space-x-1">
+                                    <button
+                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                      onClick={() => setModal01(false)}
+                                    >
+                                      Cancel
+                                    </button>
+                                    <button
+                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                      onClick={() => {
+                                        handleDeleteServices(_id);
+                                        window.location.reload();
+                                        setModal01(false);
+                                      }}
+                                    >
+                                      Confirm
+                                    </button>
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Edit services modal */}
+                              {editServices && (
+                                <div className="flex flex-col text-start gap-y-1 w-full">
+                                  <span className="font-semibold">
+                                    Services:
+                                  </span>
+                                  <div className="flex items-center w-full space-x-2 mt-1">
+                                    <div className="flex flex-col space-y-2 mt-1 w-full max-w-[250px]">
+                                      <textarea
+                                        id="services"
+                                        rows="4" // Setting rows for better height management
+                                        placeholder={services}
+                                        className="w-full px-3 py-0.5 border rounded-md focus:outline-none"
+                                      />
+                                    </div>
+                                    <div className="flex space-x-2">
+                                      <button
+                                        className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                        onClick={() => {
+                                          handleEditServices(_id);
+                                          setEditServices(false);
+                                          window.location.reload();
+                                        }}
+                                      >
+                                        &#x2714;
+                                      </button>
+                                      <button
+                                        className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                        onClick={() => setEditServices(false)}
+                                      >
+                                        &#x2716;
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          {!modal01 && !editServices && (
+                            <div className="flex justify-center items-center space-x-3">
+                              <FaEdit
+                                size={20}
+                                color="black"
+                                className="cursor-pointer"
+                                onClick={() => setEditServices(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                color="black"
+                                className="cursor-pointer"
+                                onClick={() => setModal01(true)}
+                              />
+                            </div>
+                          )}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Share Profile
