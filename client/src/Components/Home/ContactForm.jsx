@@ -53,7 +53,15 @@ const ContactForm = ({ onClose }) => {
       }}
     >
       {contactModal && (
-        <div className="fixed inset-0 bg-blue-50 bg-opacity-50 flex items-center justify-center p-8">
+        <div
+          className="fixed inset-0  flex items-center justify-center p-8"
+          style={{
+            backgroundImage:
+              "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <Toaster position="top-center" />
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
