@@ -111,7 +111,7 @@ export default function Hero() {
           <img
             src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743097674/001_igz3ei.png"
             alt="Mountain Overlay"
-            className="relative -mt-12 xs:-mt-12 sm:-mt-12 md:-mt-12 lg:-mt-36 xl:-mt-36 xxl:-mt-36  left-0 w-full z-[3]"
+            className="relative -mt-18 xs:-mt-18 sm:-mt-18 md:-mt-18 lg:-mt-36 xl:-mt-36 xxl:-mt-36  left-0 w-full z-[3]"
           />
         </div>
       </div>
