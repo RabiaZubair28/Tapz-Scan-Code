@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import bcard from "../../assets/b-card.jpg";
 import scard from "../../assets/o-one.jpg";
-import stand from "../../assets/stand.jpg";
+import stand from "../../assets/logos/stand-3.jpg";
 import menustand from "../../assets/menu-stand.png";
 import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
 // Pricing data
 const plans = [
   {
-    name: "PVC NFC  Business Card",
+    name: "PVC NFC Business Card",
     link: bcard,
     features: [
       "Customizable profile with social details.",
@@ -62,16 +62,6 @@ const plans = [
       "Instantly share social medias with a single tap.",
       "Customizable designs to match your brand.",
       "No app required—works seamlessly on all devices.",
-    ],
-  },
-
-  {
-    name: "NFC Menu Sticker",
-    link: stand,
-    features: [
-      "Showcase menus, catalogue, or links with ease.",
-      "Durable and stylish designs for any setting.",
-      "Contactless interaction for customer engagement.",
     ],
   },
 ];
