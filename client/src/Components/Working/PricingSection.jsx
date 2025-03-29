@@ -8,6 +8,7 @@ import menustand from "../../assets/menu-stand.png";
 import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Pricing data
 const plans = [
   {
@@ -99,7 +100,13 @@ function PricingSection() {
                     : "bg-blue-50 border border-gray-200 hover:shadow-lg"
                 }`}
             >
-              <Link to="/shop">
+              <Link
+                onClick={() => {
+                  const navigate = useNavigate();
+                  navigate("/home");
+                  window.scrollTo(0, 0);
+                }}
+              >
                 <img
                   src={plan.link}
                   className="rounded-md xs:rounded-md sm:rounded-md md:rounded-md lg:rounded-xl xl:rounded-xl xx:rounded-xl w-full h-[200px] xs:h-[200px] sm:h-[200px] md:h-[200px] lg:h-[450px] xl:h-[450px] xxl:h-[450px]"
