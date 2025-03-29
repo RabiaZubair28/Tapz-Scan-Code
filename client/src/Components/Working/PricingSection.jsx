@@ -70,7 +70,7 @@ const plans = [
 
 function PricingSection() {
   const [hoveredCard, setHoveredCard] = useState(null);
-
+  const navigate = useNavigate();
   return (
     <div className=" bg-[#16215c] pt-2 pb-10 xs:pb-20 sm:pb-20 md:pb-20 lg:pb-20 xl:pb-20 xxl:pb-20   px-2">
       <div className="max-w-7xl mx-auto">
@@ -102,7 +102,6 @@ function PricingSection() {
             >
               <Link
                 onClick={() => {
-                  const navigate = useNavigate();
                   navigate("/home");
                   window.scrollTo(0, 0);
                 }}
