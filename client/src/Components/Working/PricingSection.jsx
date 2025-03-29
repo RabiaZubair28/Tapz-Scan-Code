@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import bcard from "../../assets/b-card.jpg";
 import scard from "../../assets/o-one.jpg";
 import stand from "../../assets/stand.jpg";
+import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
 // Pricing data
 const plans = [
@@ -45,10 +46,19 @@ const plans = [
     ],
   },
   {
-    name: "NFC Social-Media Cards",
+    name: "NFC Sticker",
+    link: sticker,
+    features: [
+      "Showcase menus, catalogue, or links with ease.",
+      "Durable and stylish designs for any setting.",
+      "Contactless interaction for customer engagement.",
+    ],
+  },
+  {
+    name: "NFC Social Media Card",
     link: scard,
     features: [
-      "Instantly share social profiles with a single tap.",
+      "Instantly share social medias with a single tap.",
       "Customizable designs to match your brand.",
       "No app required—works seamlessly on all devices.",
     ],
