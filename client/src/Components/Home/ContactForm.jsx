@@ -66,7 +66,7 @@ const ContactForm = ({ onClose }) => {
               whileTap={{ scale: 0.9 }}
               onClick={() => {
                 setContactModal(false);
-                navigate("/home");
+                navigate("/");
               }}
               className="absolute -right-4 -top-4 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
             >
