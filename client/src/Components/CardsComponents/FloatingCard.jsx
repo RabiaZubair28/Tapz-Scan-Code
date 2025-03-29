@@ -61,7 +61,7 @@ const FloatingCard = ({ title, image, name }) => {
       {modalOpen &&
         createPortal(
           <div
-            className="fixed inset-0 flex items-center justify-center p-6 bg-opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center p-4 bg-opacity-50 z-50"
             style={{
               backgroundImage:
                 "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
@@ -69,7 +69,7 @@ const FloatingCard = ({ title, image, name }) => {
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-white m-4 pt-12 pb-4 px-3 rounded-lg w-full max-w-md">
+            <div className="bg-white m-4 pt-12 pb-4 px-4 rounded-lg w-full max-w-md">
               <h2 className="text-3xl font-bold text-center text-[#1a237e] pb-4">
                 Send Us Inquiry!
               </h2>
