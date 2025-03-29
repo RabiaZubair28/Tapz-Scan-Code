@@ -59,7 +59,15 @@ function Login() {
 
       {/* Modal Container */}
       {isOpen && (
-        <div className="fixed inset-0 bg-blue-50  flex items-center justify-center p-4">
+        <div
+          className="fixed inset-0 flex items-center justify-center p-4"
+          style={{
+            backgroundImage:
+              "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
