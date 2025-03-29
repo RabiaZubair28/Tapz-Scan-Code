@@ -100,7 +100,7 @@ function PricingSection() {
                     : "bg-blue-50 border border-gray-200 hover:shadow-lg"
                 }`}
             >
-              <Link
+              <div
                 onClick={() => {
                   navigate("/shop");
                   window.scrollTo(0, 0);
@@ -138,7 +138,7 @@ function PricingSection() {
                 >
                   {plan.name}
                 </button>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
