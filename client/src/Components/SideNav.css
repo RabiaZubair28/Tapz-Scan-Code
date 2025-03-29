@@ -1,0 +1,28 @@
+.selected-button {
+  background-color: rgb(22, 33, 92);
+  color: rgb(241, 247, 251);
+  margin-block: 15px;
+  color: rgb(49, 157, 125);
+  border-left: 5px solid rgb(49, 157, 125);
+  padding-inline: 20px;
+  padding-block: 10px;
+}
+.app-container {
+  display: flex;
+  padding-top: -30px;
+}
+.button-container {
+  width: 270px;
+  background-color: rgb(22, 33, 92);
+  display: block;
+  border-right: 1px solid rgb(241, 247, 251);
+  padding-top: -20px;
+  padding-left: 3%;
+}
+.unselected-button {
+  background-color: rgb(22, 33, 92);
+  color: rgb(241, 247, 251);
+  margin-block: 15px;
+  padding-inline: 20px;
+  padding-block: 10px;
+}
