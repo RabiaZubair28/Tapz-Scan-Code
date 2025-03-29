@@ -110,7 +110,7 @@ function PricingSection() {
             >
               <img
                 src={plan.link}
-                className="rounded-md xs:rounded-md sm:rounded-md md:rounded-md lg:rounded-xl xl:rounded-xl xx:rounded-xl w-full"
+                className="rounded-md xs:rounded-md sm:rounded-md md:rounded-md lg:rounded-xl xl:rounded-xl xx:rounded-xl w-full h-[200px] xs:h-[200px] sm:h-[200px] md:h-[200px] lg:h-[450px] xl:h-[450px] xxl:h-[450px]"
               ></img>
               {/* <div className="text-[12px] xs:text-[45px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[45px] xxl:text-[45px] text-center font-bold mt-2 mb-0 xs:mb-2 xs:mt-5 sm:mb-2 sm:mt-5 md:mb-2 md:mt-5 lg:mb-2 lg:mt-5 xl:mb-2 xl:mt-5 xxl:mb-2 xxl:mt-5">
                 {plan.name}
