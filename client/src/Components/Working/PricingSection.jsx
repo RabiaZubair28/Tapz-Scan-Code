@@ -102,7 +102,7 @@ function PricingSection() {
             >
               <Link
                 onClick={() => {
-                  navigate("/home");
+                  navigate("/shop");
                   window.scrollTo(0, 0);
                 }}
               >
