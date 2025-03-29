@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Hero from "./Components/Home/Hero.jsx";
 import Login from "./Pages/Login.jsx";
 import Working from "./Pages/Working.jsx";
-import ContactForm from "./Components/Home/Contact.jsx";
+import ContactForm from "./Components/Home/ContactForm.jsx";
 import EditPortal from "./Pages/EditPortal.jsx";
 import Profile from "./Pages/Profile.jsx";
 
