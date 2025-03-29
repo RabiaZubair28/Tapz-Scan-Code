@@ -192,7 +192,7 @@ if (client) {
 }       else{
   return(
 
-      <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`} style={{ backgroundAttachment: "fixed" }}>
+      <div className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] pt-[25%]`} style={{ backgroundAttachment: "fixed" }}>
       <ScaleLoader
       color={"white"}
       size={50}
