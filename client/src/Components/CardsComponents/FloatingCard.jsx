@@ -61,7 +61,7 @@ const FloatingCard = ({ title, image, name }) => {
       {modalOpen &&
         createPortal(
           <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center p-6 bg-opacity-50 z-50"
             style={{
               backgroundImage:
                 "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
@@ -73,7 +73,7 @@ const FloatingCard = ({ title, image, name }) => {
               <h2 className="text-3xl font-bold text-center text-[#1a237e] pb-4">
                 Send Us Inquiry!
               </h2>
-              <form ref={form} onSubmit={sendEmail} className="space-y-2">
+              <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <motion.button
                   whileHover={{ rotate: 90, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

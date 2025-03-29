@@ -60,7 +60,7 @@ function Login() {
       {/* Modal Container */}
       {isOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center p-4"
+          className="fixed inset-0 flex items-center justify-center p-6"
           style={{
             backgroundImage:
               "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
