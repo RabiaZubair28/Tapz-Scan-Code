@@ -7,6 +7,7 @@ import stand from "../../assets/logos/stand-3.jpg";
 import menustand from "../../assets/menu-stand.png";
 import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
+import { Link } from "react-router-dom";
 // Pricing data
 const plans = [
   {
@@ -98,15 +99,16 @@ function PricingSection() {
                     : "bg-blue-50 border border-gray-200 hover:shadow-lg"
                 }`}
             >
-              <img
-                src={plan.link}
-                className="rounded-md xs:rounded-md sm:rounded-md md:rounded-md lg:rounded-xl xl:rounded-xl xx:rounded-xl w-full h-[200px] xs:h-[200px] sm:h-[200px] md:h-[200px] lg:h-[450px] xl:h-[450px] xxl:h-[450px]"
-              ></img>
-              {/* <div className="text-[12px] xs:text-[45px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[45px] xxl:text-[45px] text-center font-bold mt-2 mb-0 xs:mb-2 xs:mt-5 sm:mb-2 sm:mt-5 md:mb-2 md:mt-5 lg:mb-2 lg:mt-5 xl:mb-2 xl:mt-5 xxl:mb-2 xxl:mt-5">
+              <Link to="/shop">
+                <img
+                  src={plan.link}
+                  className="rounded-md xs:rounded-md sm:rounded-md md:rounded-md lg:rounded-xl xl:rounded-xl xx:rounded-xl w-full h-[200px] xs:h-[200px] sm:h-[200px] md:h-[200px] lg:h-[450px] xl:h-[450px] xxl:h-[450px]"
+                ></img>
+                {/* <div className="text-[12px] xs:text-[45px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[45px] xxl:text-[45px] text-center font-bold mt-2 mb-0 xs:mb-2 xs:mt-5 sm:mb-2 sm:mt-5 md:mb-2 md:mt-5 lg:mb-2 lg:mt-5 xl:mb-2 xl:mt-5 xxl:mb-2 xxl:mt-5">
                 {plan.name}
               </div> */}
 
-              {/* <ul className="space-y-0.5 xs:space-y-4 sm:space-y-4 md:space-y-4 lg:space-y-4 xl:space-y-4 xxl:space-y-4 mt-1.5 mb-1.5 xs:mb-5 xs:mt-5 sm:mb-5 sm:mt-5 md:mb-5 md:mt-5 lg:mb-5 lg:mt-5 xl:mb-5 xl:mt-5 xxl:mb-5 xxl:mt-5">
+                {/* <ul className="space-y-0.5 xs:space-y-4 sm:space-y-4 md:space-y-4 lg:space-y-4 xl:space-y-4 xxl:space-y-4 mt-1.5 mb-1.5 xs:mb-5 xs:mt-5 sm:mb-5 sm:mt-5 md:mb-5 md:mt-5 lg:mb-5 lg:mt-5 xl:mb-5 xl:mt-5 xxl:mb-5 xxl:mt-5">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-3">
                     <Check
@@ -120,16 +122,17 @@ function PricingSection() {
                   </li>
                 ))}
               </ul> */}
-              <button
-                className={`w-full py-1 xs:py-3 sm:py-3 md:py-3 lg:py-3 xl:py-3 xxl:py-3 rounded-md xs:rounded-xl sm:rounded-xl md:rounded-xl lg:rounded-xl xl:rounded-xl xxl:rounded-xl font-medium transition-all duration-200 ease-out cursor-pointer text-[12px] xs:text-[12px] sm:text-[12px] md:text-[12px] lg:text-[18px] xl:text-[18px] xxl:text-[18px]
+                <button
+                  className={`w-full py-1 xs:py-3 sm:py-3 md:py-3 lg:py-3 xl:py-3 xxl:py-3 rounded-md xs:rounded-xl sm:rounded-xl md:rounded-xl lg:rounded-xl xl:rounded-xl xxl:rounded-xl font-medium transition-all duration-200 ease-out cursor-pointer text-[12px] xs:text-[12px] sm:text-[12px] md:text-[12px] lg:text-[18px] xl:text-[18px] xxl:text-[18px]
                   ${
                     hoveredCard === index
                       ? "bg-[#F4A340] text-white hover:bg-[#f4a340ee] shadow-md"
                       : "bg-[#A5E1E9] text-[#16205D] hover:bg-[#95d1d9]"
                   }`}
-              >
-                {plan.name}
-              </button>
+                >
+                  {plan.name}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>
