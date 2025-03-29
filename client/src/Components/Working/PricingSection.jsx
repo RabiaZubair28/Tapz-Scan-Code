@@ -123,7 +123,7 @@ function PricingSection() {
                 ))}
               </ul> */}
                 <button
-                  className={`w-full py-1 xs:py-3 sm:py-3 md:py-3 lg:py-3 xl:py-3 xxl:py-3 rounded-md xs:rounded-xl sm:rounded-xl md:rounded-xl lg:rounded-xl xl:rounded-xl xxl:rounded-xl font-medium transition-all duration-200 ease-out cursor-pointer text-[12px] xs:text-[12px] sm:text-[12px] md:text-[12px] lg:text-[18px] xl:text-[18px] xxl:text-[18px]
+                  className={`w-full py-1 mt-1 xs:mt-1 sm:mt-1 md:mt-1 lg:mt-2 xl:mt-2 xxl:mt-2 xs:py-3 sm:py-3 md:py-3 lg:py-3 xl:py-3 xxl:py-3 rounded-md xs:rounded-xl sm:rounded-xl md:rounded-xl lg:rounded-xl xl:rounded-xl xxl:rounded-xl font-medium transition-all duration-200 ease-out cursor-pointer text-[12px] xs:text-[12px] sm:text-[12px] md:text-[12px] lg:text-[18px] xl:text-[18px] xxl:text-[18px]
                   ${
                     hoveredCard === index
                       ? "bg-[#F4A340] text-white hover:bg-[#f4a340ee] shadow-md"
