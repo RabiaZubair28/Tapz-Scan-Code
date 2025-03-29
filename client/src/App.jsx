@@ -12,8 +12,8 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white">
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/profile/home" element={<Hero />} />
+          <Route path="/" element={<Hero />} />
+          <Route path="/home" element={<Hero />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Working />} />
           <Route path="/contact" element={<ContactForm />} />
