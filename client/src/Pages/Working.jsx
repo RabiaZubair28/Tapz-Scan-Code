@@ -56,7 +56,7 @@
 //   );
 // };
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PricingSection from "../Components/Working/PricingSection.jsx";
 import Component04 from "../Components/Working/Component04.jsx";
 import App from "../Components/Working/App.jsx";
@@ -93,183 +93,159 @@ const Working = () => {
     "NFC Social Media Cards",
     "NFC Digital Business Cards",
   ];
-  const [isLoading, setIsLoading] = useState(true);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate page load delay
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Show loader for 2 seconds
-  }, []);
 
   return (
-    <div>
-      {loading ? (
-        <div
-          className={`min-h-screen w-full  mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] pt-[25%]`}
-          style={{ backgroundAttachment: "fixed" }}
-        >
-          <ScaleLoader
-            color={"white"}
-            size={50}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </div>
-      ) : (
-        <div className="bg-[#16215c] min-h-screen">
-          <App />
-          <div className="flex flex-col  md:flex-row">
-            {/* SideNav / Navbar */}
-            <div className="w-full  bg-[#16215c] text-white px-2 py-6 md:p-4 flex md:flex-col justify-center md:justify-start md:w-1/5 md:h-screen flex-wrap gap-2">
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`py-2 px-5 text-center hover:bg-[#95d1d9] rounded-md transition-all whitespace-nowrap 
+    <div className="bg-[#16215c] min-h-screen">
+      <App />
+      <div className="flex flex-col  md:flex-row">
+        {/* SideNav / Navbar */}
+        <div className="w-full  bg-[#16215c] text-white px-2 py-6 md:p-4 flex md:flex-col justify-center md:justify-start md:w-1/5 md:h-screen flex-wrap gap-2">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`py-2 px-5 text-center hover:bg-[#95d1d9] rounded-md transition-all whitespace-nowrap 
             ${activeTab === tab ? "text-[#16205D] bg-[#95d1d9]" : ""}`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-
-            {/* Content Container */}
-            <div className="w-full md:w-4/5 px-2">
-              {activeTab === "NFC Stands" && (
-                <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
-                  <FloatingCard
-                    title="A-3.5 Size NFC Stand"
-                    image={a3}
-                    name="A-3.5 Size NFC Stand"
-                  />
-                  <FloatingCard
-                    title="Two A-3.5 Size NFC Stands"
-                    image={twoa3}
-                    name="Two A-3.5 Size NFC Stands"
-                  />
-
-                  <FloatingCard
-                    title="Two A-4 Size NFC Stands"
-                    image={twoa4}
-                    name="Two A-4 Size NFC Stands"
-                  />
-                  <FloatingCard
-                    title="Two A-5 Size NFC Stands"
-                    image={twoa5}
-                    name="Two A-5 Size NFC Stands"
-                  />
-                  <FloatingCard
-                    title="Net-Style NFC Stand"
-                    image={net}
-                    name="Net-Style NFC Stand"
-                  />
-                  <FloatingCard
-                    title="A-6 Size NFC Stand"
-                    image={a6}
-                    name="A-6 Size NFC Stand"
-                  />
-                </div>
-              )}
-              {activeTab === "NFC Stickers" && (
-                <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
-                  Contencnjdcbdhcdhcdgcvdgcgdt for Tab 2
-                </div>
-              )}
-              {activeTab === "NFC Social Media Cards" && (
-                <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
-                  <FloatingCard
-                    title="NFC Google Review Card"
-                    image={google}
-                    name="NFC Google Review Card"
-                  />
-                  <FloatingCard
-                    title="NFC Instagram Card"
-                    image={insta}
-                    name="NFC Instagram Card"
-                  />
-                  <FloatingCard
-                    title="NFC Facebook Card"
-                    image="https://via.placeholder.com/300"
-                    name="NFC Facebook Card"
-                  />
-                  <FloatingCard
-                    title="NFC WhatsApp Card"
-                    image="https://via.placeholder.com/300"
-                    name="NFC WhatsApp Card"
-                  />
-                  <FloatingCard
-                    title="NFC Snapchat Card"
-                    image="https://via.placeholder.com/300"
-                    name="NFC Snapchat Card"
-                  />
-                  <FloatingCard
-                    title="NFC Tiktok Card"
-                    image="https://via.placeholder.com/300"
-                    name="NFC Tiktok Card"
-                  />
-                  <FloatingCard
-                    title="NFC Menu Card"
-                    image={menu}
-                    name="NFC Menu Card"
-                  />
-                  <FloatingCard
-                    title="Any Two NFC Cards Deal"
-                    image={two}
-                    name="Any Two NFC Cards Deal"
-                  />
-
-                  <FloatingCard
-                    title="Any Three NFC Cards Deal"
-                    image={three}
-                    name="Any Three NFC Cards Deal"
-                  />
-                  <FloatingCard
-                    title="Any Four NFC Cards Deal"
-                    image={four}
-                    name="Any Four NFC Cards Deal"
-                  />
-                </div>
-              )}
-              {activeTab === "NFC Digital Business Cards" && (
-                <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
-                  <FloatingCard
-                    title="Black PVC Digital Business Card"
-                    image={blackcard}
-                    name="Black PVC Digital Business Card"
-                  />
-                  <FloatingCard
-                    title="Black Metal Digital Business Card"
-                    image="https://via.placeholder.com/300"
-                    name="Black Metal Digital Business Card"
-                  />
-                  <FloatingCard
-                    title="Gold Metal Digital Business Card"
-                    image="https://via.placeholder.com/300"
-                    name="Gold Metal Digital Business Card"
-                  />
-                  <FloatingCard
-                    title="Silver Metal Digital Business Card"
-                    image="https://via.placeholder.com/300"
-                    name="Silver Metal Digital Business Card"
-                  />
-                  <FloatingCard
-                    title="Gold Metal Digital Business Card"
-                    image="https://via.placeholder.com/300"
-                    name="Gold Metal Digital Business Card"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-          <Banner />
-          <Seemore />
-          <StatsSection />
-          <Footer />
+            >
+              {tab}
+            </button>
+          ))}
         </div>
-      )}
+
+        {/* Content Container */}
+        <div className="w-full md:w-4/5 px-2">
+          {activeTab === "NFC Stands" && (
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+              <FloatingCard
+                title="A-3.5 Size NFC Stand"
+                image={a3}
+                name="A-3.5 Size NFC Stand"
+              />
+              <FloatingCard
+                title="Two A-3.5 Size NFC Stands"
+                image={twoa3}
+                name="Two A-3.5 Size NFC Stands"
+              />
+
+              <FloatingCard
+                title="Two A-4 Size NFC Stands"
+                image={twoa4}
+                name="Two A-4 Size NFC Stands"
+              />
+              <FloatingCard
+                title="Two A-5 Size NFC Stands"
+                image={twoa5}
+                name="Two A-5 Size NFC Stands"
+              />
+              <FloatingCard
+                title="Net-Style NFC Stand"
+                image={net}
+                name="Net-Style NFC Stand"
+              />
+              <FloatingCard
+                title="A-6 Size NFC Stand"
+                image={a6}
+                name="A-6 Size NFC Stand"
+              />
+            </div>
+          )}
+          {activeTab === "NFC Stickers" && (
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+              Contencnjdcbdhcdhcdgcvdgcgdt for Tab 2
+            </div>
+          )}
+          {activeTab === "NFC Social Media Cards" && (
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+              <FloatingCard
+                title="NFC Google Review Card"
+                image={google}
+                name="NFC Google Review Card"
+              />
+              <FloatingCard
+                title="NFC Instagram Card"
+                image={insta}
+                name="NFC Instagram Card"
+              />
+              <FloatingCard
+                title="NFC Facebook Card"
+                image="https://via.placeholder.com/300"
+                name="NFC Facebook Card"
+              />
+              <FloatingCard
+                title="NFC WhatsApp Card"
+                image="https://via.placeholder.com/300"
+                name="NFC WhatsApp Card"
+              />
+              <FloatingCard
+                title="NFC Snapchat Card"
+                image="https://via.placeholder.com/300"
+                name="NFC Snapchat Card"
+              />
+              <FloatingCard
+                title="NFC Tiktok Card"
+                image="https://via.placeholder.com/300"
+                name="NFC Tiktok Card"
+              />
+              <FloatingCard
+                title="NFC Menu Card"
+                image={menu}
+                name="NFC Menu Card"
+              />
+              <FloatingCard
+                title="Any Two NFC Cards Deal"
+                image={two}
+                name="Any Two NFC Cards Deal"
+              />
+
+              <FloatingCard
+                title="Any Three NFC Cards Deal"
+                image={three}
+                name="Any Three NFC Cards Deal"
+              />
+              <FloatingCard
+                title="Any Four NFC Cards Deal"
+                image={four}
+                name="Any Four NFC Cards Deal"
+              />
+            </div>
+          )}
+          {activeTab === "NFC Digital Business Cards" && (
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+              <FloatingCard
+                title="Black PVC Digital Business Card"
+                image={blackcard}
+                name="Black PVC Digital Business Card"
+              />
+              <FloatingCard
+                title="Black Metal Digital Business Card"
+                image="https://via.placeholder.com/300"
+                name="Black Metal Digital Business Card"
+              />
+              <FloatingCard
+                title="Gold Metal Digital Business Card"
+                image="https://via.placeholder.com/300"
+                name="Gold Metal Digital Business Card"
+              />
+              <FloatingCard
+                title="Silver Metal Digital Business Card"
+                image="https://via.placeholder.com/300"
+                name="Silver Metal Digital Business Card"
+              />
+              <FloatingCard
+                title="Gold Metal Digital Business Card"
+                image="https://via.placeholder.com/300"
+                name="Gold Metal Digital Business Card"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+      <Banner />
+      <Seemore />
+      <StatsSection />
+      <Footer />
     </div>
   );
 };
+
 export default Working;
