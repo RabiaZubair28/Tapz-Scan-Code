@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import bcard from "../../assets/b-card.jpg";
 import scard from "../../assets/o-one.jpg";
 import stand from "../../assets/stand.jpg";
+import menustand from "../../assets/menu-stand.jpg";
 import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
 // Pricing data
@@ -38,7 +39,7 @@ const plans = [
   },
   {
     name: "NFC Menu Stand",
-    link: stand,
+    link: menustand,
     features: [
       "Showcase menus, catalogue, or links with ease.",
       "Durable and stylish designs for any setting.",
