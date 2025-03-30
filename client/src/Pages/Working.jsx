@@ -118,7 +118,7 @@ const Working = () => {
         </div>
 
         {/* Content Container */}
-        <div className="w-full md:w-3/5 lg:w-[70%] xl:w-4/5 xxl:w-4/5 px-4 pt-0 xs:pt-0 sm:pt-0 md:pt-0 lg:pt-4 xl:pt-4 xxl:pt-4">
+        <div className="w-full md:w-3/5 lg:w-[70%] xl:w-4/5 xxl:w-4/5 px-4">
           {activeTab === "NFC Stands" && (
             <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
@@ -149,7 +149,7 @@ const Working = () => {
             </div>
           )}
           {activeTab === "NFC Stickers" && (
-            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
                 title="NFC Sticker"
                 image={sticker}
@@ -158,7 +158,7 @@ const Working = () => {
             </div>
           )}
           {activeTab === "NFC Social Media Cards" && (
-            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
                 title="NFC Google Review Card"
                 image={google}
@@ -197,7 +197,7 @@ const Working = () => {
             </div>
           )}
           {activeTab === "NFC Digital Business Cards" && (
-            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
                 title="Black Metal Digital Business Card"
                 image={black}
