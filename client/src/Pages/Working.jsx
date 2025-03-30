@@ -133,11 +133,7 @@ const Working = () => {
                 image={net}
                 name="Net-Style NFC Stand"
               />
-              <FloatingCard
-                title="NFC Menu Stand"
-                image={menustand}
-                name="NFC Menu Stand"
-              />
+
               <FloatingCard
                 title="A-3.5 Size NFC Stand"
                 image={a3}
@@ -157,6 +153,11 @@ const Working = () => {
                 title="A-6 Size NFC Stand"
                 image={a6}
                 name="A-6 Size NFC Stand"
+              />
+              <FloatingCard
+                title="NFC Menu Stand"
+                image={menustand}
+                name="NFC Menu Stand"
               />
             </div>
           )}
