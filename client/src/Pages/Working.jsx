@@ -84,6 +84,9 @@ import twoa4 from "../assets/products/2a4.jpg";
 import a5 from "../assets/products/a5.jpg";
 import twoa5 from "../assets/products/2a5.jpg";
 import sticker from "../assets/sticker.jpg";
+import silver from "../../assets/silver-metal.jpg";
+import golden from "../../assets/gold-metal.jpg";
+import black from "../../assets/black-metal.jpg";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
@@ -114,7 +117,7 @@ const Working = () => {
         </div>
 
         {/* Content Container */}
-        <div className="w-full md:w-3/5 lg:w-[70%] xl:w-4/5 xxl:w-4/5 px-4">
+        <div className="w-full md:w-3/5 lg:w-[70%] xl:w-4/5 xxl:w-4/5 px-4 pt-0 xs:pt-0 sm:pt-0 md:pt-0 lg:pt-4 xl:pt-4 xxl:pt-4">
           {activeTab === "NFC Stands" && (
             <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
@@ -195,29 +198,29 @@ const Working = () => {
           {activeTab === "NFC Digital Business Cards" && (
             <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
               <FloatingCard
-                title="Black PVC Digital Business Card"
-                image={blackcard}
-                name="Black PVC Digital Business Card"
-              />
-              <FloatingCard
                 title="Black Metal Digital Business Card"
-                image="https://via.placeholder.com/300"
+                image={black}
                 name="Black Metal Digital Business Card"
               />
               <FloatingCard
                 title="Gold Metal Digital Business Card"
-                image="https://via.placeholder.com/300"
+                image={golden}
                 name="Gold Metal Digital Business Card"
               />
               <FloatingCard
                 title="Silver Metal Digital Business Card"
-                image="https://via.placeholder.com/300"
+                image={silver}
                 name="Silver Metal Digital Business Card"
               />
               <FloatingCard
                 title="Gold Metal Digital Business Card"
                 image="https://via.placeholder.com/300"
                 name="Gold Metal Digital Business Card"
+              />
+              <FloatingCard
+                title="Black PVC Digital Business Card"
+                image={blackcard}
+                name="Black PVC Digital Business Card"
               />
             </div>
           )}
