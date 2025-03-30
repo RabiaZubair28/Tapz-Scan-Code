@@ -87,7 +87,7 @@ import sticker from "../assets/sticker.jpg";
 import silver from "../assets/silver-metal.jpg";
 import golden from "../assets/gold-metal.jpg";
 import black from "../assets/black-metal.jpg";
-import white from "../assets/global-stan.png";
+import white from "../assets/global-stan.jpg";
 import menustand from "../assets/menu-stand.png";
 import allthree from "../assets/all-three.jpg";
 import alltwo from "../assets/all-two.png";
