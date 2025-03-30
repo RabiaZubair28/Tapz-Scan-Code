@@ -173,7 +173,7 @@ const Working = () => {
                 title="NFC Sticker"
                 image={sticker}
                 name="NFC Sticker"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306950/sticker_anmgm5.jpg"
               />
             </div>
           )}
@@ -183,43 +183,43 @@ const Working = () => {
                 title="NFC Google Review Card"
                 image={google}
                 name="NFC Google Review Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306991/g-review_nwyahj.png"
               />
               <FloatingCard
                 title="NFC Instagram Card"
                 image={insta}
                 name="NFC Instagram Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306985/m-design_gx2uxg.jpg"
               />
               <FloatingCard
                 title="NFC Facebook Card"
                 image={fbcard}
                 name="NFC Facebook Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307007/fb-card_actw0p.avif"
               />
               <FloatingCard
                 title="NFC WhatsApp Card"
                 image={wacard}
                 name="NFC WhatsApp Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306498/wa-card_xentto.avif"
               />
               <FloatingCard
                 title="NFC Snapchat Card"
                 image={snapcard}
                 name="NFC Snapchat Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306499/snap-card_cji89g.png"
               />
               <FloatingCard
                 title="NFC Tiktok Card"
                 image={tiktokcard}
                 name="NFC Tiktok Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306497/tiktok-card_xrxv4u.avif"
               />
               <FloatingCard
                 title="NFC Menu Card"
                 image={menu}
                 name="NFC Menu Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306398/s-card-2_zkgl8h.jpg"
               />
             </div>
           )}
@@ -229,32 +229,32 @@ const Working = () => {
                 title="Black Metal Digital Business Card"
                 image={black}
                 name="Black Metal Digital Business Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306444/black-metal_lvgdix.jpg"
               />
               <FloatingCard
                 title="Gold Metal Digital Business Card"
                 image={golden}
                 name="Gold Metal Digital Business Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306456/gold-metal_pu2co9.jpg"
               />
               <FloatingCard
                 title="Silver Metal Digital Business Card"
                 image={silver}
                 name="Silver Metal Digital Business Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306995/silver-metal_rj4gj3.jpg"
               />
 
               <FloatingCard
                 title="Black PVC Digital Business Card"
                 image={blackcard}
                 name="Black PVC Digital Business Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307200/b-card_cercs3.jpg"
               />
               <FloatingCard
                 title="White PVC Digital Business Card"
                 image={white}
                 name="White PVC Digital Business Card"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306453/global-stan_fc8iap.jpg"
               />
             </div>
           )}
@@ -264,51 +264,51 @@ const Working = () => {
                 title="Two A-3.5 Size NFC Stands"
                 image={twoa3}
                 name="Two A-3.5 Size NFC Stands"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306390/stand-2_glprse.jpg"
               />
 
               <FloatingCard
                 title="Two A-4 Size NFC Stands"
                 image={twoa4}
                 name="Two A-4 Size NFC Stands"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307385/2a4_mujk3l.jpg"
               />
               <FloatingCard
                 title="Two A-5 Size NFC Stands"
                 image={twoa5}
                 name="Two A-5 Size NFC Stands"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307384/2a5_yuobsy.jpg"
               />
               <FloatingCard
                 title="All Three NFC Business Cards Deal"
                 image={allthree}
                 name="All Three NFC Business Cards Deal"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306447/all-three_asasop.jpg"
               />
               <FloatingCard
                 title="All Two NFC Business Cards Deal"
                 image={alltwo}
                 name="All Two NFC Business Cards Deal"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307003/all-two_vyovh2.png"
               />
               <FloatingCard
                 title="Any Two NFC Cards Deal"
                 image={two}
                 name="Any Two NFC Cards Deal"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307391/two_ehw7dy.jpg"
               />
 
               <FloatingCard
                 title="Any Three NFC Cards Deal"
                 image={three}
                 name="Any Three NFC Cards Deal"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307392/three_k4dj9a.jpg"
               />
               <FloatingCard
                 title="Any Four NFC Cards Deal"
                 image={four}
                 name="Any Four NFC Cards Deal"
-                link=""
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307389/four_xiauuk.jpg"
               />
             </div>
           )}
