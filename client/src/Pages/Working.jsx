@@ -132,32 +132,38 @@ const Working = () => {
                 title="Net-Style NFC Stand"
                 image={net}
                 name="Net-Style NFC Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306451/stand02_brry2g.jpg"
               />
 
               <FloatingCard
                 title="A-3.5 Size NFC Stand"
                 image={a3}
                 name="A-3.5 Size NFC Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306382/stand-6_cggiiv.jpg"
               />
               <FloatingCard
                 title="A-4 Size NFC Stand"
                 image={a4}
                 name="A-4 Size NFC Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306388/stand-3_bnvdb7.jpg"
               />
               <FloatingCard
                 title="A-5 Size NFC Stand"
                 image={a5}
                 name="A-5 Size NFC Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306385/stand-5_dddzzq.jpg"
               />
               <FloatingCard
                 title="A-6 Size NFC Stand"
                 image={a6}
                 name="A-6 Size NFC Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306386/stand-4_lc4c6o.jpg"
               />
               <FloatingCard
                 title="NFC Menu Stand"
                 image={menustand}
                 name="NFC Menu Stand"
+                link="https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306467/menu-stand_ofnhbp.png"
               />
             </div>
           )}
@@ -167,6 +173,7 @@ const Working = () => {
                 title="NFC Sticker"
                 image={sticker}
                 name="NFC Sticker"
+                link=""
               />
             </div>
           )}
@@ -176,36 +183,43 @@ const Working = () => {
                 title="NFC Google Review Card"
                 image={google}
                 name="NFC Google Review Card"
+                link=""
               />
               <FloatingCard
                 title="NFC Instagram Card"
                 image={insta}
                 name="NFC Instagram Card"
+                link=""
               />
               <FloatingCard
                 title="NFC Facebook Card"
                 image={fbcard}
                 name="NFC Facebook Card"
+                link=""
               />
               <FloatingCard
                 title="NFC WhatsApp Card"
                 image={wacard}
                 name="NFC WhatsApp Card"
+                link=""
               />
               <FloatingCard
                 title="NFC Snapchat Card"
                 image={snapcard}
                 name="NFC Snapchat Card"
+                link=""
               />
               <FloatingCard
                 title="NFC Tiktok Card"
                 image={tiktokcard}
                 name="NFC Tiktok Card"
+                link=""
               />
               <FloatingCard
                 title="NFC Menu Card"
                 image={menu}
                 name="NFC Menu Card"
+                link=""
               />
             </div>
           )}
@@ -215,27 +229,32 @@ const Working = () => {
                 title="Black Metal Digital Business Card"
                 image={black}
                 name="Black Metal Digital Business Card"
+                link=""
               />
               <FloatingCard
                 title="Gold Metal Digital Business Card"
                 image={golden}
                 name="Gold Metal Digital Business Card"
+                link=""
               />
               <FloatingCard
                 title="Silver Metal Digital Business Card"
                 image={silver}
                 name="Silver Metal Digital Business Card"
+                link=""
               />
 
               <FloatingCard
                 title="Black PVC Digital Business Card"
                 image={blackcard}
                 name="Black PVC Digital Business Card"
+                link=""
               />
               <FloatingCard
                 title="White PVC Digital Business Card"
                 image={white}
                 name="White PVC Digital Business Card"
+                link=""
               />
             </div>
           )}
@@ -245,43 +264,51 @@ const Working = () => {
                 title="Two A-3.5 Size NFC Stands"
                 image={twoa3}
                 name="Two A-3.5 Size NFC Stands"
+                link=""
               />
 
               <FloatingCard
                 title="Two A-4 Size NFC Stands"
                 image={twoa4}
                 name="Two A-4 Size NFC Stands"
+                link=""
               />
               <FloatingCard
                 title="Two A-5 Size NFC Stands"
                 image={twoa5}
                 name="Two A-5 Size NFC Stands"
+                link=""
               />
               <FloatingCard
                 title="All Three NFC Business Cards Deal"
                 image={allthree}
                 name="All Three NFC Business Cards Deal"
+                link=""
               />
               <FloatingCard
                 title="All Two NFC Business Cards Deal"
                 image={alltwo}
                 name="All Two NFC Business Cards Deal"
+                link=""
               />
               <FloatingCard
                 title="Any Two NFC Cards Deal"
                 image={two}
                 name="Any Two NFC Cards Deal"
+                link=""
               />
 
               <FloatingCard
                 title="Any Three NFC Cards Deal"
                 image={three}
                 name="Any Three NFC Cards Deal"
+                link=""
               />
               <FloatingCard
                 title="Any Four NFC Cards Deal"
                 image={four}
                 name="Any Four NFC Cards Deal"
+                link=""
               />
             </div>
           )}

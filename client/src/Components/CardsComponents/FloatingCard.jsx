@@ -5,7 +5,8 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 
-const FloatingCard = ({ title, image, name }) => {
+import { Link } from "react-router-dom";
+const FloatingCard = ({ title, image, name, link }) => {
   const cardRef = useRef(null);
   const overlayRef = useRef(null);
   const form = useRef();
@@ -154,11 +155,13 @@ const FloatingCard = ({ title, image, name }) => {
           gsap.to(overlayRef.current, { opacity: 0, duration: 0.3 })
         }
       >
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover border border-1 border-white rounded-lg"
-        />
+        <Link to={link}>
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover border border-1 border-white rounded-lg"
+          />
+        </Link>
       </div>
       <div
         className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg opacity-0 transition-opacity"
