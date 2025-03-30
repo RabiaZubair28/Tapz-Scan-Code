@@ -84,13 +84,13 @@ import twoa4 from "../assets/products/2a4.jpg";
 import a5 from "../assets/products/a5.jpg";
 import twoa5 from "../assets/products/2a5.jpg";
 import sticker from "../assets/sticker.jpg";
-import silver from "../../assets/silver-metal.jpg";
-import golden from "../../assets/gold-metal.jpg";
-import black from "../../assets/black-metal.jpg";
-import white from "../../assets/global-stan.png";
-import menustand from "../../assets/menu-stand.png";
-import allthree from "../../assets/all-three.jpg";
-import alltwo from "../../assets/all-two.png";
+import silver from "../assets/silver-metal.jpg";
+import golden from "../assets/gold-metal.jpg";
+import black from "../assets/black-metal.jpg";
+import white from "../assets/global-stan.png";
+import menustand from "../assets/menu-stand.png";
+import allthree from "../assets/all-three.jpg";
+import alltwo from "../assets/all-two.png";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
