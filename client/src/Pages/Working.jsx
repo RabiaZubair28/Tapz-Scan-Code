@@ -91,6 +91,9 @@ import white from "../assets/global-stan.png";
 import menustand from "../assets/menu-stand.png";
 import allthree from "../assets/all-three.jpg";
 import alltwo from "../assets/all-two.png";
+import fbcard from "../assets/fb-card.avif";
+import wacard from "../assets/wa-card.avif";
+import snapcard from "../assets/snap-card.png";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
