@@ -161,7 +161,7 @@ function Carousal() {
                     key={idx}
                     src={img}
                     alt={`Slide Image ${idx}`}
-                    className="w-full h-[150px] md:h-[250px] rounded-md object-cover"
+                    className="w-full h-[150px] md:h-[250px] rounded-md object-cover cursor-pointer"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: idx * 0.2 }}
