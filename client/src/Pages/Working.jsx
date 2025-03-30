@@ -69,7 +69,7 @@ import Banner from "../Components/Home/Banner.jsx";
 import CompanyLogo from "../Components/Home/CompanyLogo.jsx";
 import FloatingCard from "../Components/CardsComponents/FloatingCard.jsx";
 import blackcard from "../assets/b-card.jpg";
-import google from "../assets/products/google.jpg";
+import google from "../assets/g-review.png";
 import insta from "../assets/m-design.jpg";
 import menu from "../assets/products/menu.jpg";
 import two from "../assets/products/two.jpg";
