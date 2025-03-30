@@ -79,7 +79,7 @@ const FloatingCard = ({ title, image, name, link }) => {
                 onClick={() => {
                   setModalOpen(false);
                 }}
-                className="absolute top-3 right-3 w-10 h-10 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
+                className="absolute -top-4 -right-4  w-10 h-10 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
               >
                 <svg
                   className="w-6 h-6"
