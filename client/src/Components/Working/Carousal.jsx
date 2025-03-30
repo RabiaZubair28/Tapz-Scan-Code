@@ -25,18 +25,42 @@ const slides = [
     highlight: "SHOWCASE",
     subtitle: "YOUR PROFILE",
     image: [bcard01, bcard03, bcard04, bcard02, bcard05, bcard06],
+    link: [
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743307950/b-card-1_nlgzul.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306995/silver-metal_rj4gj3.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306456/gold-metal_pu2co9.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743308088/b-card-2_x2c5ss.png",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306444/black-metal_lvgdix.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743308093/b-card-6_tfjo5a.png",
+    ],
   },
   {
     title: "NFC STANDS TO",
     highlight: "ELEVATE",
     subtitle: "YOUR BUSINESS",
     image: [stand01, stand02, stand03, stand04, stand05, stand06],
+    link: [
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306391/stand-1_qpo6x1.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306390/stand-2_glprse.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306388/stand-3_bnvdb7.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306461/new-stand_rtizmi.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306385/stand-5_dddzzq.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306382/stand-6_cggiiv.jpg",
+    ],
   },
   {
     title: "NFC SOCIAL-MEDIA CARDS TO",
     highlight: "CONNECT",
     subtitle: "IN ONE TAP",
     image: [scard02, scard01, scard03, scard04, scard05, scard06],
+    link: [
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306398/s-card-2_zkgl8h.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306993/o-one_irphgk.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306453/global-stan_fc8iap.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306401/s-card-4_stzruc.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306985/m-design_gx2uxg.jpg",
+      "https://res.cloudinary.com/dxokfhkhu/image/upload/v1743306999/three-cards_upoe4f.jpg",
+    ],
   },
 ];
 
@@ -140,6 +164,7 @@ function Carousal() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: idx * 0.2 }}
+                    onClick={() => {}}
                   />
                 ))}
               </div>
