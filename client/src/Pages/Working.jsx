@@ -93,6 +93,7 @@ import allthree from "../assets/all-three.jpg";
 import alltwo from "../assets/all-two.png";
 import fbcard from "../assets/fb-card.avif";
 import wacard from "../assets/wa-card.avif";
+import tiktokcard from "../assets/tiktok-card.avif";
 import snapcard from "../assets/snap-card.png";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
@@ -182,22 +183,22 @@ const Working = () => {
               />
               <FloatingCard
                 title="NFC Facebook Card"
-                image="https://via.placeholder.com/300"
+                image={fbcard}
                 name="NFC Facebook Card"
               />
               <FloatingCard
                 title="NFC WhatsApp Card"
-                image="https://via.placeholder.com/300"
+                image={wacard}
                 name="NFC WhatsApp Card"
               />
               <FloatingCard
                 title="NFC Snapchat Card"
-                image="https://via.placeholder.com/300"
+                image={snapcard}
                 name="NFC Snapchat Card"
               />
               <FloatingCard
                 title="NFC Tiktok Card"
-                image="https://via.placeholder.com/300"
+                image={tiktokcard}
                 name="NFC Tiktok Card"
               />
               <FloatingCard
