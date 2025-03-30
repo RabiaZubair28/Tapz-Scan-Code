@@ -88,6 +88,9 @@ import silver from "../../assets/silver-metal.jpg";
 import golden from "../../assets/gold-metal.jpg";
 import black from "../../assets/black-metal.jpg";
 import white from "../../assets/global-stan.png";
+import menustand from "../../assets/menu-stand.png";
+import allthree from "../../assets/all-three.jpg";
+import alltwo from "../../assets/all-two.png";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
@@ -125,6 +128,11 @@ const Working = () => {
                 title="Net-Style NFC Stand"
                 image={net}
                 name="Net-Style NFC Stand"
+              />
+              <FloatingCard
+                title="NFC Menu Stand"
+                image={menustand}
+                name="NFC Menu Stand"
               />
               <FloatingCard
                 title="A-3.5 Size NFC Stand"
@@ -247,6 +255,16 @@ const Working = () => {
                 title="Two A-5 Size NFC Stands"
                 image={twoa5}
                 name="Two A-5 Size NFC Stands"
+              />
+              <FloatingCard
+                title="All Three NFC Business Cards Deal"
+                image={allthree}
+                name="All Three NFC Business Cards Deal"
+              />
+              <FloatingCard
+                title="All Two NFC Business Cards Deal"
+                image={alltwo}
+                name="All Two NFC Business Cards Deal"
               />
               <FloatingCard
                 title="Any Two NFC Cards Deal"
