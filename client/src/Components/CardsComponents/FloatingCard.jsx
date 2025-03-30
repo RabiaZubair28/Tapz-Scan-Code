@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { createPortal } from "react-dom";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { toast } from "react-hot-toast";
 
+import { toast, Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 const FloatingCard = ({ title, image, name, link }) => {
   const cardRef = useRef(null);
@@ -59,6 +59,7 @@ const FloatingCard = ({ title, image, name, link }) => {
 
   return (
     <div className="flex flex-col items-center w-full max-w-sm mx-auto">
+      <Toaster position="top-center" />
       {modalOpen &&
         createPortal(
           <div
