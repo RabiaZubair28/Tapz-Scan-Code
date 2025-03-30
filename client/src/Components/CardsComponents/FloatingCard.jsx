@@ -71,32 +71,32 @@ const FloatingCard = ({ title, image, name, link }) => {
             }}
           >
             <div className="bg-white m-4 pt-12 pb-4 px-3 rounded-lg w-full max-w-md">
+              <motion.button
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  setModalOpen(false);
+                }}
+                className="absolute right-1 -mt-28 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </motion.button>
               <h2 className="text-3xl font-bold text-center text-[#1a237e] pb-4">
                 Send Us Inquiry!
               </h2>
               <form ref={form} onSubmit={sendEmail} className="space-y-2">
-                <motion.button
-                  whileHover={{ rotate: 90, scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => {
-                    setModalOpen(false);
-                  }}
-                  className="absolute right-1 -mt-28 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </motion.button>
                 <input
                   type="text"
                   placeholder="Name"
