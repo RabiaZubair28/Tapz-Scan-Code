@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import siba from "../../assets/logos/video.mp4";
-
+import net from "../assets/products/crinkle.jpg";
 export default function ScrollSection() {
   const sectionRef = useRef(null);
 
@@ -56,19 +56,7 @@ export default function ScrollSection() {
 
         {/* Right Side (Video) */}
         <div className="w-full xs:w-full sm:w-full md:w-full lg:w-[580px] xl:w-[580px] xxl:w-[580px] h-[400px] xs:h-[400px] sm:h-[500px] md:h-[600px] lg:h-[600px] xl:h-[600px] xxl:h-[600px]  rounded-lg xs:rounded-2xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl xl:rounded-2xl xxl:rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 flex flex-col">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source
-              src="https://res.cloudinary.com/dxokfhkhu/video/upload/v1743305467/video_f5c7c0.mov"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <img src={net} className="w-full h-full object-cover" />
 
           {/* <hr className="h-[1px] w-full text-blue-300 bg-blue-300 mt-5" /> */}
         </div>
