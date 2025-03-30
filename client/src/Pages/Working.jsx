@@ -83,6 +83,7 @@ import a4 from "../assets/products/a4.jpg";
 import twoa4 from "../assets/products/2a4.jpg";
 import a5 from "../assets/products/a5.jpg";
 import twoa5 from "../assets/products/2a5.jpg";
+import sticker from "../assets/sticker.jpg";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
@@ -91,6 +92,7 @@ const Working = () => {
     "NFC Stickers",
     "NFC Social Media Cards",
     "NFC Digital Business Cards",
+    "Discounted Deals",
   ];
 
   return (
@@ -116,30 +118,24 @@ const Working = () => {
           {activeTab === "NFC Stands" && (
             <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
+                title="Net-Style NFC Stand"
+                image={net}
+                name="Net-Style NFC Stand"
+              />
+              <FloatingCard
                 title="A-3.5 Size NFC Stand"
                 image={a3}
                 name="A-3.5 Size NFC Stand"
               />
               <FloatingCard
-                title="Two A-3.5 Size NFC Stands"
-                image={twoa3}
-                name="Two A-3.5 Size NFC Stands"
-              />
-
-              <FloatingCard
-                title="Two A-4 Size NFC Stands"
-                image={twoa4}
-                name="Two A-4 Size NFC Stands"
+                title="A-4 Size NFC Stand"
+                image={a4}
+                name="A-4 Size NFC Stand"
               />
               <FloatingCard
-                title="Two A-5 Size NFC Stands"
-                image={twoa5}
-                name="Two A-5 Size NFC Stands"
-              />
-              <FloatingCard
-                title="Net-Style NFC Stand"
-                image={net}
-                name="Net-Style NFC Stand"
+                title="A-5 Size NFC Stand"
+                image={a5}
+                name="A-5 Size NFC Stand"
               />
               <FloatingCard
                 title="A-6 Size NFC Stand"
@@ -150,7 +146,11 @@ const Working = () => {
           )}
           {activeTab === "NFC Stickers" && (
             <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
-              Contencnjdcbdhcdhcdgcvdgcgdt for Tab 2
+              <FloatingCard
+                title="NFC Sticker"
+                image={sticker}
+                name="NFC Sticker"
+              />
             </div>
           )}
           {activeTab === "NFC Social Media Cards" && (
@@ -190,22 +190,6 @@ const Working = () => {
                 image={menu}
                 name="NFC Menu Card"
               />
-              <FloatingCard
-                title="Any Two NFC Cards Deal"
-                image={two}
-                name="Any Two NFC Cards Deal"
-              />
-
-              <FloatingCard
-                title="Any Three NFC Cards Deal"
-                image={three}
-                name="Any Three NFC Cards Deal"
-              />
-              <FloatingCard
-                title="Any Four NFC Cards Deal"
-                image={four}
-                name="Any Four NFC Cards Deal"
-              />
             </div>
           )}
           {activeTab === "NFC Digital Business Cards" && (
@@ -234,6 +218,42 @@ const Working = () => {
                 title="Gold Metal Digital Business Card"
                 image="https://via.placeholder.com/300"
                 name="Gold Metal Digital Business Card"
+              />
+            </div>
+          )}
+          {activeTab === "Discounted Deals" && (
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
+              <FloatingCard
+                title="Two A-3.5 Size NFC Stands"
+                image={twoa3}
+                name="Two A-3.5 Size NFC Stands"
+              />
+
+              <FloatingCard
+                title="Two A-4 Size NFC Stands"
+                image={twoa4}
+                name="Two A-4 Size NFC Stands"
+              />
+              <FloatingCard
+                title="Two A-5 Size NFC Stands"
+                image={twoa5}
+                name="Two A-5 Size NFC Stands"
+              />
+              <FloatingCard
+                title="Any Two NFC Cards Deal"
+                image={two}
+                name="Any Two NFC Cards Deal"
+              />
+
+              <FloatingCard
+                title="Any Three NFC Cards Deal"
+                image={three}
+                name="Any Three NFC Cards Deal"
+              />
+              <FloatingCard
+                title="Any Four NFC Cards Deal"
+                image={four}
+                name="Any Four NFC Cards Deal"
               />
             </div>
           )}
