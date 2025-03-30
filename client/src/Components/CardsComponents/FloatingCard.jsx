@@ -70,14 +70,15 @@ const FloatingCard = ({ title, image, name, link }) => {
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-white m-4 pt-12 pb-4 px-3 rounded-lg w-full max-w-md">
+            <div className="relative bg-white m-4 pt-12 pb-4 px-3 rounded-lg w-full max-w-md">
+              {/* Close Button (Top-Right) */}
               <motion.button
                 whileHover={{ rotate: 90, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   setModalOpen(false);
                 }}
-                className="absolute right-1 -mt-28 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
+                className="absolute top-3 right-3 w-10 h-10 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
               >
                 <svg
                   className="w-6 h-6"
@@ -93,9 +94,11 @@ const FloatingCard = ({ title, image, name, link }) => {
                   />
                 </svg>
               </motion.button>
+
               <h2 className="text-3xl font-bold text-center text-[#1a237e] pb-4">
                 Send Us Inquiry!
               </h2>
+
               <form ref={form} onSubmit={sendEmail} className="space-y-2">
                 <input
                   type="text"
