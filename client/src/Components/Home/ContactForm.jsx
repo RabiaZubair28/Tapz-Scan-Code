@@ -69,31 +69,30 @@ const ContactForm = ({ onClose }) => {
             exit={{ scale: 0.8, opacity: 0 }}
             className="bg-white rounded-3xl p-6 max-w-xl w-full relative"
           >
-            <motion.button
-              whileHover={{ rotate: 90, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => {
-                setContactModal(false);
-                navigate("/");
-              }}
-              className="absolute -right-4 -top-4 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </motion.button>
-
             <div className="flex flex-col space-y-4">
+              <motion.button
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  setContactModal(false);
+                  navigate("/");
+                }}
+                className="absolute -right-4 -top-4 w-12 h-12 bg-[#1a237e] text-white rounded-full flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </motion.button>
               <div className="w-full">
                 {/* <img
               src="https://liamcrest.com/assets/static/CONTACT%20US%20IMAGE-N1-01.png"
