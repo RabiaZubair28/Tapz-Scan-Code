@@ -166,7 +166,7 @@ function Carousal() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: idx * 0.2 }}
                     onClick={() => {
-                      navigate(`/${slides[slideIndex].link[idx]}`);
+                      window.open(slides[slideIndex].link[idx], "_blank");
                     }}
                   />
                 ))}
