@@ -18,7 +18,7 @@ import bcard03 from "../../assets/silver-metal.jpg";
 import bcard04 from "../../assets/gold-metal.jpg";
 import bcard05 from "../../assets/black-metal.jpg";
 import bcard06 from "../../assets/logos/b-card-6.png";
-
+import { useNavigate } from "react-router-dom";
 const slides = [
   {
     title: "DIGITAL BUSINESS CARDS TO",
@@ -93,6 +93,7 @@ function Carousal() {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (autoPlay) {
@@ -164,7 +165,9 @@ function Carousal() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: idx * 0.2 }}
-                    onClick={() => {}}
+                    onClick={() => {
+                      navigate(`/${slides[slideIndex].link[idx]}`);
+                    }}
                   />
                 ))}
               </div>
