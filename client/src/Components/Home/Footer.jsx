@@ -48,7 +48,10 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 mt-8 text-[#1F2C73]">
           <div className="flex space-x-5 mb-6 md:mb-0">
-            <a href="#" className="text-primary hover:opacity-80">
+            <a
+              href="https://www.linkedin.com/company/106347260/admin/dashboard/"
+              className="text-primary hover:opacity-80"
+            >
               <Linkedin size={20} />
             </a>
             <a
