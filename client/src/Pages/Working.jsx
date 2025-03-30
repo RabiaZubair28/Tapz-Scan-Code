@@ -68,7 +68,6 @@ import StatsSection from "../Components/Working/StatsSection.jsx";
 import Banner from "../Components/Home/Banner.jsx";
 import CompanyLogo from "../Components/Home/CompanyLogo.jsx";
 import FloatingCard from "../Components/CardsComponents/FloatingCard.jsx";
-import ScaleLoader from "react-spinners/ScaleLoader";
 import blackcard from "../assets/b-card.jpg";
 import google from "../assets/products/google.jpg";
 import insta from "../assets/products/insta.jpg";
@@ -95,11 +94,11 @@ const Working = () => {
   ];
 
   return (
-    <div className="bg-[#16215c] min-h-screen">
+    <div className="bg-[#16215c] h-screen">
       <App />
-      <div className="flex flex-col  md:flex-row">
+      <div className="flex flex-col bg-[#16215c] md:flex-row">
         {/* SideNav / Navbar */}
-        <div className="w-full  bg-[#16215c] text-white px-2 py-6 md:p-4 flex md:flex-col justify-center md:justify-start md:w-1/5 md:h-screen flex-wrap gap-2">
+        <div className="w-full  bg-[#16215c] text-white px-2 py-6 md:p-4 flex md:flex-col justify-center md:justify-start xs:w-full sm:w-full md:w-2/5 lg:w-[30%] xl:w-1/5 xxl:w-1/5 md:h-screen flex-wrap gap-2">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -113,9 +112,9 @@ const Working = () => {
         </div>
 
         {/* Content Container */}
-        <div className="w-full md:w-4/5 px-2">
+        <div className="w-full md:w-3/5 lg:w-[70%] xl:w-4/5 xxl:w-4/5 px-4">
           {activeTab === "NFC Stands" && (
-            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 md:grid-cols-2 gap-2">
+            <div className="px-0 bg-[#16215c] text-white grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-2 mt-0 xs:mt-0 sm:mt-0 md:mt-8 lg:mt-8 xl:mt-8 xxl:mt-8">
               <FloatingCard
                 title="A-3.5 Size NFC Stand"
                 image={a3}

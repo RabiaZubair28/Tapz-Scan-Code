@@ -61,7 +61,7 @@ const FloatingCard = ({ title, image, name }) => {
       {modalOpen &&
         createPortal(
           <div
-            className="fixed inset-0 flex items-center justify-center p-4 bg-opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
             style={{
               backgroundImage:
                 "url(https://liamcrest.com/assets/static/header/Asset%2072.png)",
@@ -69,11 +69,11 @@ const FloatingCard = ({ title, image, name }) => {
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-white m-4 pt-12 pb-4 px-4 rounded-lg w-full max-w-md">
+            <div className="bg-white m-4 pt-12 pb-4 px-3 rounded-lg w-full max-w-md">
               <h2 className="text-3xl font-bold text-center text-[#1a237e] pb-4">
                 Send Us Inquiry!
               </h2>
-              <form ref={form} onSubmit={sendEmail} className="space-y-4">
+              <form ref={form} onSubmit={sendEmail} className="space-y-2">
                 <motion.button
                   whileHover={{ rotate: 90, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -145,7 +145,7 @@ const FloatingCard = ({ title, image, name }) => {
         )}
 
       <div
-        className="relative w-full h-[200px] bg-white shadow-lg rounded-lg overflow-hidden"
+        className="relative w-full h-[200px] xs:h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[350px] xxl:h-[350px] bg-white shadow-lg rounded-lg overflow-hidden"
         ref={cardRef}
         onMouseEnter={() =>
           gsap.to(overlayRef.current, { opacity: 1, duration: 0.3 })
@@ -168,11 +168,11 @@ const FloatingCard = ({ title, image, name }) => {
       </div>
 
       <div className="my-3 flex flex-col items-center justify-center">
-        <div className=" flex items-center justify-center text-center text-white text-[12px] font-semibold">
+        <div className=" flex items-center justify-center text-center text-white text-[12px] xs:text-[12px] sm:text-[12px] md:text-[15px] lg:text-[18px] xl:text-[18px] xxl:text-[18px] font-semibold">
           {title}
         </div>
         <button
-          className="flex items-center justify-center mt-1  px-6 py-1 border rounded-md text-[12px] text-white bg-[#95d1d9] hover:bg-bg-[#95d1d9] transition-all"
+          className="flex items-center justify-center mt-1  px-6 py-1 border rounded-md text-[12px] xs:text-[12px] sm:text-[12px] md:text-[15px] lg:text-[18px] xl:text-[18px] xxl:text-[18px]text-white bg-[#95d1d9] hover:bg-bg-[#95d1d9] transition-all"
           onClick={() => {
             setOrder({ ...order, name });
             setModalOpen(true);
