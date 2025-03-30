@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import siba from "../../assets/logos/video.mp4";
-import net from "../assets/products/crinkle.jpg";
+import net from "../../assets/products/crinkle.jpg";
 export default function ScrollSection() {
   const sectionRef = useRef(null);
 
