@@ -63,7 +63,10 @@ export default function ScrollSection() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src={siba} type="video/mp4" />
+            <source
+              src="https://res.cloudinary.com/dxokfhkhu/video/upload/v1743305467/video_f5c7c0.mov"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
 
