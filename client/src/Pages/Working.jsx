@@ -70,7 +70,7 @@ import CompanyLogo from "../Components/Home/CompanyLogo.jsx";
 import FloatingCard from "../Components/CardsComponents/FloatingCard.jsx";
 import blackcard from "../assets/b-card.jpg";
 import google from "../assets/products/google.jpg";
-import insta from "../assets/products/insta.jpg";
+import insta from "../assets/m-design.jpg";
 import menu from "../assets/products/menu.jpg";
 import two from "../assets/products/two.jpg";
 import three from "../assets/products/three.jpg";
@@ -225,11 +225,7 @@ const Working = () => {
                 image={silver}
                 name="Silver Metal Digital Business Card"
               />
-              <FloatingCard
-                title="Gold Metal Digital Business Card"
-                image="https://via.placeholder.com/300"
-                name="Gold Metal Digital Business Card"
-              />
+
               <FloatingCard
                 title="Black PVC Digital Business Card"
                 image={blackcard}
