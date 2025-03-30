@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import bcard from "../../assets/b-card.jpg";
 import scard from "../../assets/o-one.jpg";
-import stand from "../../assets/logos/stand-3.jpg";
+import stand from "../../assets/logos/stand-1.jpg";
 import menustand from "../../assets/menu-stand.png";
 import sticker from "../../assets/sticker.jpg";
 import metalcard from "../../assets/silver-metal.jpg";
