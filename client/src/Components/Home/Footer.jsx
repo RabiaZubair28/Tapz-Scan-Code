@@ -18,19 +18,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
           <div className="space-y-3 text-[#1F2C73]">
             <Link
-              href="/contact"
+              to="/contact"
               className="block text-primary font-semibold hover:opacity-80"
             >
               Our Location
             </Link>
             <Link
-              href="/shop"
+              to="/shop"
               className="block text-primary font-semibold hover:opacity-80"
             >
               Our Shop
             </Link>
             <Link
-              href="/contact"
+              to="/contact"
               className="block text-primary font-semibold hover:opacity-80"
             >
               Contact Us
