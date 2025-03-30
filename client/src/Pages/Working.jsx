@@ -107,7 +107,7 @@ const Working = () => {
   ];
 
   return (
-    <div className="bg-[#16215c] h-screen">
+    <div className="bg-[#16215c]">
       <App />
       <div className="flex flex-col bg-[#16215c] md:flex-row">
         {/* SideNav / Navbar */}
