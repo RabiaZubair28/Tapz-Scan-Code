@@ -45,7 +45,7 @@ function StatsSection() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="-mt-[25px] xs:-mt-[25px] sm:-mt-[25px] md:-mt-[25px] lg:mt-[100px] xl:mt-[100px] xxl:mt-[100px] px-5 bg-[#16215c] pb-10 xs:pb-10 sm:pb-10 md:pb-10 lg:pb-0 xl:pb-0 xxl:pb-0 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0 xs:gap-8 sm:gap-8 md:gap-8 lg:gap-8 xl:gap-8 xxl:gap-8 "
+      className="-mt-[25px] xs:-mt-[25px] sm:-mt-[25px] md:-mt-[25px] lg:mt-[100px] xl:mt-[100px] xxl:mt-[100px] px-5 bg-[#16215c] pb-10 xs:pb-10 sm:pb-10 md:pb-10 lg:pb-10 xl:pb-10 xxl:pb-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0 xs:gap-8 sm:gap-8 md:gap-8 lg:gap-8 xl:gap-8 xxl:gap-8 "
     >
       {stats.map((stat, index) => (
         <StatCard key={index} {...stat} />
