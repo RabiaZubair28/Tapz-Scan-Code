@@ -87,6 +87,7 @@ import sticker from "../assets/sticker.jpg";
 import silver from "../../assets/silver-metal.jpg";
 import golden from "../../assets/gold-metal.jpg";
 import black from "../../assets/black-metal.jpg";
+import white from "../../assets/global-stan.png";
 const Working = () => {
   const [activeTab, setActiveTab] = useState("NFC Stands");
 
@@ -221,6 +222,11 @@ const Working = () => {
                 title="Black PVC Digital Business Card"
                 image={blackcard}
                 name="Black PVC Digital Business Card"
+              />
+              <FloatingCard
+                title="White PVC Digital Business Card"
+                image={white}
+                name="White PVC Digital Business Card"
               />
             </div>
           )}
