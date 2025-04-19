@@ -421,7 +421,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-28 pb-5 text-center"
+              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-[6.5rem] pb-7 text-center"
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
