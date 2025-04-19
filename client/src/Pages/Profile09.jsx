@@ -421,7 +421,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-[8rem] pb-12 text-center"
+              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-[10rem] pb-16 text-center"
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
@@ -430,7 +430,7 @@ END:VCARD`;
                 backgroundPosition: "center",
               }}
             >
-              <div className=" bg-gradient-to-tr from-[#da2a32] via-[#ea8f93] to-[#ffffff] border border-white rounded-2xl pb-5">
+              <div className=" bg-gradient-to-tr from-[#fff04a] via-[#fff8a8] to-[#ffffff] border border-white rounded-2xl pb-5">
                 {/* {images && (
                   <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
                     <a href={images} className="w-full">
