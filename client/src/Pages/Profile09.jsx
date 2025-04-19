@@ -421,7 +421,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
+              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-32 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
