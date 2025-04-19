@@ -421,11 +421,11 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-[10rem] pb-16 text-center"
+              className="min-h-screen bg-gradient-to-tr from-[#da2a32] via-[#da2a32] to-[#da2a32] w-full px-3 max-w-md mx-auto shadow-lg pt-[10rem] pb-16 text-center"
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
+                // backgroundImage:
+                //   "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
                 backgroundSize: "contain",
                 backgroundPosition: "center",
               }}
