@@ -425,7 +425,7 @@ END:VCARD`;
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
-                {images && (
+                {/* {images && (
                   <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
                     <a href={images} className="w-full">
                       <div className="relative mb-2 ">
@@ -437,7 +437,7 @@ END:VCARD`;
                       </div>
                     </a>
                   </div>
-                )}
+                )} */}
                 <div className="px-6">
                   {logo && (
                     <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
@@ -457,7 +457,7 @@ END:VCARD`;
                     <p>{visitCount}</p>
                   </div>
 
-                  <div className="px-4">
+                  {/* <div className="px-4">
                     <div className="flex justify-center space-x-2 mt-2 mb-2.5">
                       <a
                         href={`tel:${phone01}`}
@@ -490,7 +490,7 @@ END:VCARD`;
                         <ImWhatsapp size={20} />
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="flex flex-col justify-center items-center">
                     <h2 className="text-lg font-semibold text-gray-800 pt-1 ">
                       {name}
@@ -510,10 +510,8 @@ END:VCARD`;
                   </div>
                   {/* <p className="text-xs text-gray-500">{description}</p> */}
                   {/* <p className="text-md text-gray-600">{romanName}</p> */}
-                  <div className="flex items-center justify-center mt-2 mb-5">
-                    {/* <img src={eye} height={25}></img>
-                  <span style={{display:"flex",alignItems:"center",justifyContent:"center",
-                  }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
+                  {/* <div className="flex items-center justify-center mt-2 mb-5">
+                    
                     <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                       <FaDownload
                         size={20}
@@ -532,7 +530,7 @@ END:VCARD`;
                         &nbsp;&nbsp;Save Contact
                       </span>
                     </button>
-                  </div>
+                  </div> */}
 
                   {phone01 && (
                     <div className="flex justify-center mt-3">
