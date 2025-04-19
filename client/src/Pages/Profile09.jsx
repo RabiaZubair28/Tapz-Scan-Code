@@ -320,7 +320,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#a3c24e] via-[#cfdcad] to-[#fcfff2] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -421,10 +421,16 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-32 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
-              style={{ backgroundAttachment: "fixed" }}
+              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-8rem] pb-12 text-center"
+              style={{
+                backgroundAttachment: "fixed",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+              }}
             >
-              <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
+              <div className=" bg-gradient-to-tr from-[#a3c24e] via-[#cfdcad] to-[#fcfff2] border border-white rounded-2xl pb-5">
                 {/* {images && (
                   <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
                     <a href={images} className="w-full">
@@ -446,7 +452,7 @@ END:VCARD`;
                           <img
                             src={logo}
                             alt="profile"
-                            className="w-36 h-36 -mt-24 mx-auto rounded-full border-4 border-white shadow-md"
+                            className="w-48 h-48 -mt-24 mx-auto rounded-full border-4 border-white shadow-md"
                           />
                         </div>
                       </a>
