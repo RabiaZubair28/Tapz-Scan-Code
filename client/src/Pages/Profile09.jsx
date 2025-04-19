@@ -1771,7 +1771,7 @@ END:VCARD`;
                     )}
                   </div>
                 )}
-                {location != "" && (
+                {/* {location != "" && (
                   <div className="px-4">
                     <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                       Location
@@ -1819,8 +1819,8 @@ END:VCARD`;
                       </div>
                     )}
                   </div>
-                )}
-                <div className="px-4">
+                )} */}
+                {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Share Profile
                   </h2>
@@ -1896,8 +1896,8 @@ END:VCARD`;
                       </WhatsappShareButton>
                     </div>
                   </div>
-                </div>
-                <div className="px-4">
+                </div> */}
+                {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
@@ -1923,7 +1923,7 @@ END:VCARD`;
                     Copyright © <span className="company">{companyName}</span>.
                     All Rights Reserved.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
