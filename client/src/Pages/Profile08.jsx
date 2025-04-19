@@ -426,7 +426,7 @@ END:VCARD`;
                 backgroundAttachment: "fixed",
                 backgroundImage:
                   "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
               }}
             >
