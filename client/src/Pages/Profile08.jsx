@@ -421,7 +421,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
+              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-32 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
@@ -511,7 +511,7 @@ END:VCARD`;
                   {/* <p className="text-xs text-gray-500">{description}</p> */}
                   {/* <p className="text-md text-gray-600">{romanName}</p> */}
                   {/* <div className="flex items-center justify-center mt-2 mb-5">
-                   
+                    
                     <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                       <FaDownload
                         size={20}
@@ -1771,7 +1771,7 @@ END:VCARD`;
                     )}
                   </div>
                 )}
-                {location != "" && (
+                {/* {location != "" && (
                   <div className="px-4">
                     <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                       Location
@@ -1819,8 +1819,8 @@ END:VCARD`;
                       </div>
                     )}
                   </div>
-                )}
-                <div className="px-4">
+                )} */}
+                {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Share Profile
                   </h2>
@@ -1896,8 +1896,8 @@ END:VCARD`;
                       </WhatsappShareButton>
                     </div>
                   </div>
-                </div>
-                <div className="px-4">
+                </div> */}
+                {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
@@ -1923,7 +1923,7 @@ END:VCARD`;
                     Copyright © <span className="company">{companyName}</span>.
                     All Rights Reserved.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
