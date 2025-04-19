@@ -421,21 +421,16 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className="min-h-screen bg-gradient-to-tr from-[#000000] via-[#3b461c] to-[#748a38] w-full px-3 max-w-md mx-auto shadow-lg pt-[6rem] pb-5 text-center"
+              className="min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-28 pb-5 text-center"
               style={{
                 backgroundAttachment: "fixed",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
-              <div
-                className="border border-white rounded-2xl pb-5"
-                style={{
-                  backgroundAttachment: "fixed",
-                  backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074320/White_Gradient_Creative_Instagram_Profile_Picture_rff3nd.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+              <div className=" bg-gradient-to-tr from-[#a3c24e] via-[#cfdcad] to-[#fcfff2] border border-white rounded-2xl pb-5">
                 {/* {images && (
                   <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
                     <a href={images} className="w-full">
