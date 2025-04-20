@@ -424,8 +424,8 @@ END:VCARD`;
               className="min-h-screen bg-gradient-to-tr from-[#f2b0b4] via-[#f2b0b4] to-[#f2b0b4] w-full px-3 max-w-md mx-auto shadow-lg pt-[8rem] pb-12 text-center"
               style={{
                 backgroundAttachment: "fixed",
-                // backgroundImage:
-                //   "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745146127/Logo_Patterns-02_uijzdb.jpg')",
                 backgroundSize: "contain",
                 backgroundPosition: "center",
               }}

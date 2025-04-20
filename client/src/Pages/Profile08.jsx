@@ -425,7 +425,7 @@ END:VCARD`;
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745074819/White_Gradient_Creative_Instagram_Profile_Picture_xdkemy.png')",
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1745146123/Logo_Patterns-03_jf2mpr.jpg')",
                 backgroundSize: "contain",
                 backgroundPosition: "center",
               }}
