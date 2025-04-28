@@ -10072,7 +10072,7 @@ END:VCARD`;
                   )}
                 </div>
 
-                <div className="px-4">
+                {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Image Gallery
                   </h2>
@@ -10893,7 +10893,7 @@ END:VCARD`;
                       <div className="text-lg font-bold ">Add More Images</div>
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 {/* <div className="px-4">
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
