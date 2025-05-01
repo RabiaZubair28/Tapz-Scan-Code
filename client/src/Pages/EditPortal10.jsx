@@ -9400,7 +9400,7 @@ END:VCARD`;
                 )}
                 {menuLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-md max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={menu}
