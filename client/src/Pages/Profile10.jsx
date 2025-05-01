@@ -1398,7 +1398,7 @@ END:VCARD`;
                 {menuLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] rounded-xl border-white shadow  max-w-md"
                       onClick={() => window.open(menuLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
