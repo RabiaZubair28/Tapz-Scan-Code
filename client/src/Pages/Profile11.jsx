@@ -459,13 +459,12 @@ END:VCARD`;
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-gray-600 border border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-white border border-white shadow-sm hover:shadow-md  text-yellow-600 hover:bg-gray-500">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "white",
                           justifyContent: "center",
                         }}
                         onClick={downloadContactCard}
@@ -499,7 +498,7 @@ END:VCARD`;
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center bg-white hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <MdOutlinePhoneAndroid size={20} color="white" />
                     </a>
@@ -507,13 +506,13 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-500 border-white "
                     >
                       <AiOutlineMail size={20} color="white" />
                     </a>
                     <a
                       href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-500 border-white "
                     >
                       <RiMessage2Line size={20} color="white" />
                     </a>
@@ -521,7 +520,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-white hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <ImWhatsapp size={20} color="white" />
                     </a>
@@ -541,7 +540,7 @@ END:VCARD`;
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3 bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3 bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={phone} alt="Phone01" className="h-10 w-10" />
@@ -560,7 +559,7 @@ END:VCARD`;
                       href={`tel:${phone02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md "
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md "
                     >
                       <div className="flex items-center space-x-6">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
@@ -579,7 +578,7 @@ END:VCARD`;
                       href={`tel:${phone03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={phone} alt="Phone03" className="h-10 w-10" />
@@ -598,7 +597,7 @@ END:VCARD`;
                       href={`tel:${telephone02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py- bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py- bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -622,7 +621,7 @@ END:VCARD`;
                       href={`tel:${telephone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -646,7 +645,7 @@ END:VCARD`;
                       href={`tel:${telephone03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -669,7 +668,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -692,7 +691,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -715,7 +714,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -738,7 +737,7 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -757,7 +756,7 @@ END:VCARD`;
                       href={`mailto:${email02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -776,7 +775,7 @@ END:VCARD`;
                       href={`mailto:${email03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -792,7 +791,7 @@ END:VCARD`;
                 {facebookLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -813,7 +812,7 @@ END:VCARD`;
                 {facebookLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -834,7 +833,7 @@ END:VCARD`;
                 {facebookLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -855,7 +854,7 @@ END:VCARD`;
                 {instagramLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -876,7 +875,7 @@ END:VCARD`;
                 {instagramLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -897,7 +896,7 @@ END:VCARD`;
                 {instagramLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -918,7 +917,7 @@ END:VCARD`;
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -935,7 +934,7 @@ END:VCARD`;
                 {snapchatLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -952,7 +951,7 @@ END:VCARD`;
                 {snapchatLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -969,7 +968,7 @@ END:VCARD`;
                 {youtubeLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -986,7 +985,7 @@ END:VCARD`;
                 {youtubeLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1003,7 +1002,7 @@ END:VCARD`;
                 {youtubeLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1020,7 +1019,7 @@ END:VCARD`;
                 {tiktokLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1037,7 +1036,7 @@ END:VCARD`;
                 {tiktokLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1054,7 +1053,7 @@ END:VCARD`;
                 {tiktokLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1071,7 +1070,7 @@ END:VCARD`;
                 {youtubeShortsLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1092,7 +1091,7 @@ END:VCARD`;
                 {youtubeShortsLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1113,7 +1112,7 @@ END:VCARD`;
                 {youtubeShortsLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1134,7 +1133,7 @@ END:VCARD`;
                 {twitterLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1155,7 +1154,7 @@ END:VCARD`;
                 {twitterLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1176,7 +1175,7 @@ END:VCARD`;
                 {twitterLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1196,7 +1195,7 @@ END:VCARD`;
                 )}
                 {address && (
                   <div className="flex justify-center mt-3">
-                    <button className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
+                    <button className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6">
                         <img
                           src={addressImg}
@@ -1215,7 +1214,7 @@ END:VCARD`;
                 {website && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1236,7 +1235,7 @@ END:VCARD`;
                 {website02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1257,7 +1256,7 @@ END:VCARD`;
                 {website03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1278,7 +1277,7 @@ END:VCARD`;
                 {googleReviewLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1299,7 +1298,7 @@ END:VCARD`;
                 {googleReviewLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1320,7 +1319,7 @@ END:VCARD`;
                 {googleReviewLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1341,7 +1340,7 @@ END:VCARD`;
                 {googleMapLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1362,7 +1361,7 @@ END:VCARD`;
                 {googleMapLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1383,7 +1382,7 @@ END:VCARD`;
                 {googleMapLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1404,7 +1403,7 @@ END:VCARD`;
                 {menuLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(menuLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1425,7 +1424,7 @@ END:VCARD`;
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(catalogueLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1446,7 +1445,7 @@ END:VCARD`;
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(profileLink01, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1467,7 +1466,7 @@ END:VCARD`;
                 {profileLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-500 text-yellow-600 border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(profileLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1489,12 +1488,12 @@ END:VCARD`;
 
               {services != "" && (
                 <div className="px-4 ">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-yellow-600 mb-3 mt-5">
                     Services
                   </h2>
                   <hr className="border-gray-300" />
                   {services && (
-                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
+                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
                         <div className="flex items-center space-x-6 w-full">
                           <div className="flex flex-row w-full  items-start justify-between gap-x-3">
@@ -1533,7 +1532,7 @@ END:VCARD`;
                   </h2>
                   <hr className="border-gray-300" />
                   {img01 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img01}>
                         <img
                           src={img01}
@@ -1545,7 +1544,7 @@ END:VCARD`;
                   )}
 
                   {img02 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img02}>
                         <img
                           src={img02}
@@ -1557,7 +1556,7 @@ END:VCARD`;
                   )}
 
                   {img03 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img03}>
                         <img
                           src={img03}
@@ -1569,7 +1568,7 @@ END:VCARD`;
                   )}
 
                   {img04 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img04}>
                         <img
                           src={img04}
@@ -1581,7 +1580,7 @@ END:VCARD`;
                   )}
 
                   {img05 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img05}>
                         <img
                           src={img05}
@@ -1593,7 +1592,7 @@ END:VCARD`;
                   )}
 
                   {img06 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img06}>
                         <img
                           src={img06}
@@ -1605,7 +1604,7 @@ END:VCARD`;
                   )}
 
                   {img07 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img07}>
                         <img
                           src={img07}
@@ -1616,7 +1615,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img08 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img08}>
                         <img
                           src={img08}
@@ -1628,7 +1627,7 @@ END:VCARD`;
                   )}
 
                   {img09 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img09}>
                         <img
                           src={img09}
@@ -1639,7 +1638,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img10 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img10}>
                         <img
                           src={img10}
@@ -1755,14 +1754,14 @@ END:VCARD`;
                 <hr className="border-gray-300" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-gray-600 hover:bg-gray-500 hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-white hover:bg-gray-500 hover:border-white"
                     onClick={handleShow}
                   >
                     <IoQrCodeSharp size={35} color="white" />
                   </div>
 
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-white hover:bg-gray-500 hover:border-white"
                     onClick={downloadContactCard}
                     value="download"
                   >
