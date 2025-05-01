@@ -1408,7 +1408,7 @@ END:VCARD`;
                           className="h-10 w-10 rounded-md"
                         />
                         <div className="flex flex-col text-start gap-y-1">
-                          <span className="font-medium">Menu</span>
+                          <span className="font-medium">Fresha</span>
                           <span className="text-sm">{menuName}</span>
                         </div>
                       </div>
