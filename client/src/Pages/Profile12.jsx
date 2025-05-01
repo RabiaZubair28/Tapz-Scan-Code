@@ -456,10 +456,10 @@ END:VCARD`;
                   </a>
                   <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
                     <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
-                      <MdRemoveRedEye size={20} color="white" />
+                      <MdRemoveRedEye size={20} color="black" />
                       <p className="text-gray-800">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-white border border-white shadow-sm hover:shadow-md hover:bg-gray-50">
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-white border border-gray-50 shadow-sm hover:shadow-md hover:bg-gray-50">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
@@ -499,7 +499,7 @@ END:VCARD`;
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-white hover:bg-gray-50 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center bg-white hover:bg-gray-50 border-gray-50 justify-center rounded-full  border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
@@ -507,13 +507,13 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-50 border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-50 border-gray-50 "
                     >
                       <AiOutlineMail size={20} color="black" />
                     </a>
                     <a
                       href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-50 border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-50 border-gray-50 "
                     >
                       <RiMessage2Line size={20} color="black" />
                     </a>
@@ -521,7 +521,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-white hover:bg-gray-50 border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-white hover:bg-gray-50 border-gray-50 border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <ImWhatsapp size={20} color="black" />
                     </a>
@@ -1531,7 +1531,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-white" />
                   {img01 && (
                     <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img01}>
@@ -1656,7 +1656,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                     Location
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-white" />
                   <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
                     {location && (
                       <iframe
@@ -1675,7 +1675,7 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">
                   Share Profile
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-white" />
                 <div className="flex justify-center space-x-3 mt-3">
                   <div className="social-btn ">
                     <FacebookShareButton
@@ -1752,21 +1752,21 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-white" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-white hover:bg-gray-50 hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-gray-50 bg-white hover:bg-gray-50 hover:border-gray-50"
                     onClick={handleShow}
                   >
-                    <IoQrCodeSharp size={35} color="white" />
+                    <IoQrCodeSharp size={35} color="black" />
                   </div>
 
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-white hover:bg-gray-50 hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-gray-50  bg-white hover:bg-gray-50 hover:border-gray-50"
                     onClick={downloadContactCard}
                     value="download"
                   >
-                    <FaDownload size={30} color="white" />
+                    <FaDownload size={30} color="black" />
                   </div>
                 </div>
 
