@@ -320,8 +320,14 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-            style={{ backgroundAttachment: "fixed" }}
+            className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center`}
+            style={{
+              backgroundAttachment: "fixed",
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746093356/GRADIENTS-04_mzdw4d.jpg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
@@ -338,7 +344,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12 bg-white text-yellow-600 p-3 rounded-full hover:bg-white flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
@@ -1491,7 +1497,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-yellow-600 mb-3 mt-5">
                     Services
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-white" />
                   {services && (
                     <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
@@ -1530,7 +1536,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-white" />
                   {img01 && (
                     <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                       <a href={img01}>
@@ -1674,7 +1680,7 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                   Share Profile
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-white" />
                 <div className="flex justify-center space-x-3 mt-3">
                   <div className="social-btn ">
                     <FacebookShareButton
@@ -1751,13 +1757,13 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
-                <hr className="border-gray-300" />
-                <div className="flex justify-center space-x-3 mt-3 px-4">
+                <hr className="border-white" />
+                <div className="flex justify-center space-x-3 mt-3 px-4 text-yellow-600">
                   <div
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-white hover:bg-gray-500 hover:border-white"
                     onClick={handleShow}
                   >
-                    <IoQrCodeSharp size={35} color="white" />
+                    <IoQrCodeSharp size={35} />
                   </div>
 
                   <div
@@ -1765,7 +1771,7 @@ END:VCARD`;
                     onClick={downloadContactCard}
                     value="download"
                   >
-                    <FaDownload size={30} color="white" />
+                    <FaDownload size={30} />
                   </div>
                 </div>
 
