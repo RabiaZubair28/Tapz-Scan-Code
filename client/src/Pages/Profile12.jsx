@@ -320,8 +320,14 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-            style={{ backgroundAttachment: "fixed" }}
+            className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center `}
+            style={{
+              backgroundAttachment: "fixed",
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746093366/GRADIENTS-02_vqzvan.jpg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
@@ -338,7 +344,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-gray-800 p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
