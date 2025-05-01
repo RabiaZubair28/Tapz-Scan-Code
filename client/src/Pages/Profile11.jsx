@@ -347,7 +347,7 @@ END:VCARD`;
                     <FaDownload size={20} />
                   </div>
 
-                  <div className="social-btn">
+                  <div className="social-btn ">
                     <FacebookShareButton
                       url={currentPageUrl}
                       quote="please share this"
@@ -493,14 +493,14 @@ END:VCARD`;
         </div> */}
 
                 <div className="">
-                  <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                  <div className="flex text-yellow-600 justify-start space-x-5 mt-3 mb-2.5">
                     <a
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center bg-white hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <MdOutlinePhoneAndroid size={20} color="white" />
+                      <MdOutlinePhoneAndroid size={20} />
                     </a>
                     <a
                       href={`mailto:${email}`}
@@ -508,13 +508,13 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-500 border-white "
                     >
-                      <AiOutlineMail size={20} color="white" />
+                      <AiOutlineMail size={20} />
                     </a>
                     <a
                       href={`sms:${phone01}`}
                       className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-white hover:bg-gray-500 border-white "
                     >
-                      <RiMessage2Line size={20} color="white" />
+                      <RiMessage2Line size={20} />
                     </a>
                     <a
                       href={`https://wa.me/${whatsapp01}`}
@@ -522,7 +522,7 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <ImWhatsapp size={20} color="white" />
+                      <ImWhatsapp size={20} />
                     </a>
                   </div>
                 </div>
