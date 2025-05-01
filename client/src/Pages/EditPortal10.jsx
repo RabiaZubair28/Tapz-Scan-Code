@@ -4805,7 +4805,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-1 border-white shadow-md"
+                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[1px] border-white shadow-md"
                       />
                     </div>
                   </a>
@@ -9402,7 +9402,11 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
-                        <img src={menu} alt="menu01" className="h-10 w-10" />
+                        <img
+                          src={menu}
+                          alt="menu01"
+                          className="h-10 w-10  border-[0.25px] rounded-lg"
+                        />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
                             <div className="flex flex-col text-start gap-y-1">
