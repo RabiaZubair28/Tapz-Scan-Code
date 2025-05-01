@@ -23,7 +23,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/menu.png";
+import menu from "../assets/fresha.jpg";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
@@ -1408,7 +1408,7 @@ END:VCARD`;
                           className="h-10 w-10 rounded-md"
                         />
                         <div className="flex flex-col text-start gap-y-1">
-                          <span className="font-medium">Menu</span>
+                          <span className="font-medium">Fresha</span>
                           <span className="text-sm">{menuName}</span>
                         </div>
                       </div>
