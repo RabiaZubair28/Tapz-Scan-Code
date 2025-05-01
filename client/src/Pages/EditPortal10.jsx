@@ -9405,7 +9405,7 @@ END:VCARD`;
                         <img
                           src={menu}
                           alt="menu01"
-                          className="h-10 w-10  border-[0.25px] rounded-lg"
+                          className="h-10 w-10  border-[0.25px] border-white rounded-xl"
                         />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
