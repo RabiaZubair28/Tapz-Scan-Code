@@ -23,7 +23,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/menu.png";
+import menu from "../assets/fresha.png";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
