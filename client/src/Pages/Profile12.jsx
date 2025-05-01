@@ -465,9 +465,10 @@ END:VCARD`;
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "white",
+
                           justifyContent: "center",
                         }}
+                        className="texy-gray-800"
                         onClick={downloadContactCard}
                       >
                         Save Contact
