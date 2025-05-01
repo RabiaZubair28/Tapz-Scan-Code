@@ -21,7 +21,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/menu.png";
+import menu from "../assets/fresha.jpg";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
@@ -4438,7 +4438,7 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Fresha updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
@@ -4457,7 +4457,7 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Fresha updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
@@ -9406,7 +9406,7 @@ END:VCARD`;
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Fresha</span>
                               <span className=" text-sm">{menuName}</span>
                             </div>
                           )}
@@ -9451,7 +9451,7 @@ END:VCARD`;
                           )}
                           {editMenu && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Fresha</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
                                   <label>Account Name:</label>
