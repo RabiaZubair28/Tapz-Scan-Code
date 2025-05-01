@@ -422,7 +422,13 @@ END:VCARD`;
 
             <div
               className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
-              style={{ backgroundAttachment: "fixed" }}
+              style={{
+                backgroundAttachment: "fixed",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746093366/GRADIENTS-02_vqzvan.jpg')",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+              }}
             >
               {images && (
                 <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">

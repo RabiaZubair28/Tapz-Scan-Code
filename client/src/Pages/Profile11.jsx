@@ -422,7 +422,13 @@ END:VCARD`;
 
             <div
               className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
-              style={{ backgroundAttachment: "fixed" }}
+              style={{
+                backgroundAttachment: "fixed",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746093356/GRADIENTS-04_mzdw4d.jpg')",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+              }}
             >
               {images && (
                 <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
@@ -1398,7 +1404,7 @@ END:VCARD`;
                 {menuLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-xl max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(menuLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
