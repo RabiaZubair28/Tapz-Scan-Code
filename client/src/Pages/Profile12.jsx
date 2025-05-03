@@ -467,7 +467,7 @@ END:VCARD`;
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-[#C79D3D] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center bg-gray-300 border-black justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <MdOutlinePhoneAndroid size={20} color="white" />
                     </a>
@@ -489,17 +489,17 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-300 border-black border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <ImWhatsapp size={20} color="white" />
+                      <ImWhatsapp size={20} color="black" />
                     </a>
                   </div>
                   <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
                     <div className="flex justify-start gap-x-2  pb-1 items-center">
-                      <MdRemoveRedEye size={20} color="white" />
+                      <MdRemoveRedEye size={20} color="black" />
                       <p className="text-black">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#C79D3D] border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
+                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-gray-300 border-black bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
