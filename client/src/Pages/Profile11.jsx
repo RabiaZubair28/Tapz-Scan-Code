@@ -424,6 +424,10 @@ END:VCARD`;
               className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
               style={{
                 backgroundAttachment: "fixed",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               {images && (
@@ -492,7 +496,7 @@ END:VCARD`;
                   </div>
                   <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
                     <div className="flex justify-start gap-x-2  pb-1 items-center">
-                      <MdRemoveRedEye size={20} color="white" />
+                      <MdRemoveRedEye size={20} color="black" />
                       <p className="text-black">{visitCount}</p>
                     </div>
                     <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-white border-black  bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
