@@ -467,7 +467,7 @@ END:VCARD`;
                       href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center  bg-[#D3D3D3] border-black justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center  bg-[#bdbdbd] border-black justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
@@ -489,7 +489,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-300 border-black border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center justify-center rounded-full  bg-[#bdbdbd] border-black border-[0.25px] shadow-sm hover:shadow-md "
                     >
                       <ImWhatsapp size={20} color="black" />
                     </a>
