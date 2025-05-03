@@ -338,7 +338,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12 bg-gray-800 text-black p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
@@ -421,14 +421,9 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-black`}
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
               }}
             >
               {images && (
@@ -438,7 +433,7 @@ END:VCARD`;
                       <img
                         src={images}
                         alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-[#C79D3D]"
+                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-black"
                       />
                     </div>
                   </a>
@@ -1413,17 +1408,17 @@ END:VCARD`;
                   </h2>
                   <hr className="border-gray-300" />
                   {services && (
-                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white text-white border-[0.25px] border-black shadow rounded-lg max-w-md">
+                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md">
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
                         <div className="flex items-center space-x-6 w-full">
                           <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                            <div className="flex flex-col text-md max-w-[250px] font-medium text-white pt-1 text-start gap-y-1">
+                            <div className="flex flex-col text-md max-w-[250px] font-medium text-black pt-1 text-start gap-y-1">
                               {services.split("\n").map((line, index) => (
                                 <div
                                   key={index}
                                   className="flex items-start space-x-2"
                                 >
-                                  <span className="text-white">•</span>
+                                  <span className="text-black">•</span>
                                   <span>{line}</span>
                                 </div>
                               ))}
@@ -1447,10 +1442,10 @@ END:VCARD`;
                 img09 != "" ||
                 img10 != "") && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-[#C79D3D]" />
+                  <hr className="border-black" />
                   {img01 && (
                     <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img01}>
@@ -1572,10 +1567,10 @@ END:VCARD`;
               )}
               {location != "" && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Location
                   </h2>
-                  <hr className="border-[#C79D3D]" />
+                  <hr className="border-black" />
                   <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
                     {location && (
                       <iframe
@@ -1591,10 +1586,10 @@ END:VCARD`;
                 </div>
               )}
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                   Share Profile
                 </h2>
-                <hr className="border-[#C79D3D]" />
+                <hr className="border-black" />
                 <div className="flex justify-center space-x-3 mt-3">
                   <div className="social-btn ">
                     <FacebookShareButton
@@ -1668,10 +1663,10 @@ END:VCARD`;
                 </div>
               </div>
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                <h2 className="text-xl font-semibold text-black mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
-                <hr className="border-[#C79D3D]" />
+                <hr className="border-black" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-[#C79D3D] hover:border-white"
@@ -1689,7 +1684,7 @@ END:VCARD`;
                   </div>
                 </div>
 
-                <p className="pt-4 text-white">
+                <p className="pt-4 text-black">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
                 </p>
