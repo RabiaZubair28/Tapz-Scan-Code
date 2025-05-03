@@ -437,7 +437,7 @@ END:VCARD`;
                       <img
                         src={images}
                         alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-gray-300"
+                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-black"
                       />
                     </div>
                   </a>
@@ -1449,7 +1449,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-black" />
                   {img01 && (
                     <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img01}>
@@ -1574,7 +1574,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Location
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-black" />
                   <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
                     {location && (
                       <iframe
@@ -1593,7 +1593,7 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                   Share Profile
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-black" />
                 <div className="flex justify-center space-x-3 mt-3">
                   <div className="social-btn ">
                     <FacebookShareButton
@@ -1670,7 +1670,7 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-black mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-black" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-[#C79D3D] hover:border-white"
