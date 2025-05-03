@@ -499,7 +499,7 @@ END:VCARD`;
                       <MdRemoveRedEye size={20} color="black" />
                       <p className="text-black">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#bdbdbd]border-black bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
+                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#bdbdbd] border-black bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
