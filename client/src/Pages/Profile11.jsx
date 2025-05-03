@@ -465,7 +465,7 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center bg-white border-black justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <MdOutlinePhoneAndroid size={20} color="white" />
+                      <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
                     {/* <a
                       href={`mailto:${email}`}
@@ -487,7 +487,7 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white border-black  border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <ImWhatsapp size={20} color="white" />
+                      <ImWhatsapp size={20} color="black" />
                     </a>
                   </div>
                   <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
@@ -1669,18 +1669,18 @@ END:VCARD`;
                 <hr className="border-black" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-[#C79D3D] hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-black bg-white hover:border-black"
                     onClick={handleShow}
                   >
-                    <IoQrCodeSharp size={35} color="white" />
+                    <IoQrCodeSharp size={35} color="black" />
                   </div>
 
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-[#C79D3D] hover:border-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-black bg-white hover:border-black"
                     onClick={downloadContactCard}
                     value="download"
                   >
-                    <FaDownload size={30} color="white" />
+                    <FaDownload size={30} color="black" />
                   </div>
                 </div>
 
