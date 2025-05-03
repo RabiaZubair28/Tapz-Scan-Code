@@ -437,7 +437,7 @@ END:VCARD`;
                       <img
                         src={images}
                         alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-[#C79D3D]"
+                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-gray-300"
                       />
                     </div>
                   </a>
