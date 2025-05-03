@@ -338,7 +338,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12 bg-gray-800 text-black p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
@@ -446,13 +446,13 @@ END:VCARD`;
 
               <div className="px-6">
                 <div className="flex flex-col justify-center items-start pt-0.5">
-                  <h2 className="text-lg font-semibold text-white pt-1 ">
+                  <h2 className="text-lg font-semibold text-black pt-1 ">
                     {name}
                   </h2>
-                  <h2 className="text-2xl font-semibold text-white pt-1">
+                  <h2 className="text-2xl font-semibold text-black pt-1">
                     {clientName}
                   </h2>
-                  <p className="text-md font-semibold text-white pt-1 pb-1">
+                  <p className="text-md font-semibold text-black pt-1 pb-1">
                     {designation}
                   </p>
                 </div>
@@ -497,9 +497,9 @@ END:VCARD`;
                   <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
                     <div className="flex justify-start gap-x-2  pb-1 items-center">
                       <MdRemoveRedEye size={20} color="white" />
-                      <p className="text-white">{visitCount}</p>
+                      <p className="text-black">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#C79D3D] border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-white">
+                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#C79D3D] border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
@@ -515,7 +515,7 @@ END:VCARD`;
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-start">
-                  <p className="text-sm text-left text-white pt-1 pb-1 w-full  break-words">
+                  <p className="text-sm text-left text-black pt-1 pb-1 w-full  break-words">
                     {description}
                   </p>
                 </div>
@@ -528,7 +528,7 @@ END:VCARD`;
                       href={`tel:${telephone02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py- bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py- bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -552,7 +552,7 @@ END:VCARD`;
                       href={`tel:${telephone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -576,7 +576,7 @@ END:VCARD`;
                       href={`tel:${telephone03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -599,7 +599,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -622,7 +622,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -645,7 +645,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
@@ -665,7 +665,7 @@ END:VCARD`;
                 {menuLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] rounded-lg border-white shadow  max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] rounded-lg border-white shadow  max-w-md"
                       onClick={() => window.open(menuLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -686,7 +686,7 @@ END:VCARD`;
                 {instagramLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -707,7 +707,7 @@ END:VCARD`;
                 {instagramLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -728,7 +728,7 @@ END:VCARD`;
                 {instagramLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(instagramLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -749,7 +749,7 @@ END:VCARD`;
                 {googleReviewLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -770,7 +770,7 @@ END:VCARD`;
                 {googleReviewLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -791,7 +791,7 @@ END:VCARD`;
                 {googleReviewLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleReviewLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -812,7 +812,7 @@ END:VCARD`;
                 {facebookLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -833,7 +833,7 @@ END:VCARD`;
                 {facebookLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -854,7 +854,7 @@ END:VCARD`;
                 {facebookLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(facebookLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -875,7 +875,7 @@ END:VCARD`;
                 {tiktokLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -892,7 +892,7 @@ END:VCARD`;
                 {tiktokLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -909,7 +909,7 @@ END:VCARD`;
                 {tiktokLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(tiktokLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -927,7 +927,7 @@ END:VCARD`;
                 {googleMapLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -948,7 +948,7 @@ END:VCARD`;
                 {googleMapLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -969,7 +969,7 @@ END:VCARD`;
                 {googleMapLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(googleMapLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -994,7 +994,7 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -1013,7 +1013,7 @@ END:VCARD`;
                       href={`mailto:${email02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -1032,7 +1032,7 @@ END:VCARD`;
                       href={`mailto:${email03}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -1049,7 +1049,7 @@ END:VCARD`;
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1066,7 +1066,7 @@ END:VCARD`;
                 {snapchatLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1083,7 +1083,7 @@ END:VCARD`;
                 {snapchatLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(snapchatLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1100,7 +1100,7 @@ END:VCARD`;
                 {youtubeLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1117,7 +1117,7 @@ END:VCARD`;
                 {youtubeLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1134,7 +1134,7 @@ END:VCARD`;
                 {youtubeLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1152,7 +1152,7 @@ END:VCARD`;
                 {youtubeShortsLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1173,7 +1173,7 @@ END:VCARD`;
                 {youtubeShortsLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1194,7 +1194,7 @@ END:VCARD`;
                 {youtubeShortsLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(youtubeShortsLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1215,7 +1215,7 @@ END:VCARD`;
                 {twitterLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1236,7 +1236,7 @@ END:VCARD`;
                 {twitterLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1257,7 +1257,7 @@ END:VCARD`;
                 {twitterLink03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(twitterLink03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1279,7 +1279,7 @@ END:VCARD`;
                 {website && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1300,7 +1300,7 @@ END:VCARD`;
                 {website02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1321,7 +1321,7 @@ END:VCARD`;
                 {website03 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(website03, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1343,7 +1343,7 @@ END:VCARD`;
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(catalogueLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1364,7 +1364,7 @@ END:VCARD`;
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(profileLink01, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1385,7 +1385,7 @@ END:VCARD`;
                 {profileLink02 && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md"
                       onClick={() => window.open(profileLink02, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
@@ -1407,22 +1407,22 @@ END:VCARD`;
 
               {services != "" && (
                 <div className="px-4 ">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Services
                   </h2>
                   <hr className="border-gray-300" />
                   {services && (
-                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
+                    <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-[#C79D3D] text-black border-[0.25px] border-white shadow rounded-lg max-w-md">
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
                         <div className="flex items-center space-x-6 w-full">
                           <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                            <div className="flex flex-col text-md max-w-[250px] font-medium text-white pt-1 text-start gap-y-1">
+                            <div className="flex flex-col text-md max-w-[250px] font-medium text-black pt-1 text-start gap-y-1">
                               {services.split("\n").map((line, index) => (
                                 <div
                                   key={index}
                                   className="flex items-start space-x-2"
                                 >
-                                  <span className="text-white">•</span>
+                                  <span className="text-black">•</span>
                                   <span>{line}</span>
                                 </div>
                               ))}
@@ -1446,7 +1446,7 @@ END:VCARD`;
                 img09 != "" ||
                 img10 != "") && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Image Gallery
                   </h2>
                   <hr className="border-[#C79D3D]" />
@@ -1571,7 +1571,7 @@ END:VCARD`;
               )}
               {location != "" && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                     Location
                   </h2>
                   <hr className="border-[#C79D3D]" />
@@ -1590,7 +1590,7 @@ END:VCARD`;
                 </div>
               )}
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                   Share Profile
                 </h2>
                 <hr className="border-[#C79D3D]" />
@@ -1667,7 +1667,7 @@ END:VCARD`;
                 </div>
               </div>
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                <h2 className="text-xl font-semibold text-black mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
                 <hr className="border-[#C79D3D]" />
@@ -1688,7 +1688,7 @@ END:VCARD`;
                   </div>
                 </div>
 
-                <p className="pt-4 text-white">
+                <p className="pt-4 text-black">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
                 </p>
