@@ -1444,7 +1444,7 @@ END:VCARD`;
                   </h2>
                   <hr className="border-[#C79D3D]" />
                   {img01 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img01}>
                         <img
                           src={img01}
@@ -1456,7 +1456,7 @@ END:VCARD`;
                   )}
 
                   {img02 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img02}>
                         <img
                           src={img02}
@@ -1468,7 +1468,7 @@ END:VCARD`;
                   )}
 
                   {img03 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img03}>
                         <img
                           src={img03}
@@ -1480,7 +1480,7 @@ END:VCARD`;
                   )}
 
                   {img04 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img04}>
                         <img
                           src={img04}
@@ -1492,7 +1492,7 @@ END:VCARD`;
                   )}
 
                   {img05 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img05}>
                         <img
                           src={img05}
@@ -1504,7 +1504,7 @@ END:VCARD`;
                   )}
 
                   {img06 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img06}>
                         <img
                           src={img06}
@@ -1516,7 +1516,7 @@ END:VCARD`;
                   )}
 
                   {img07 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img07}>
                         <img
                           src={img07}
@@ -1527,7 +1527,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img08 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img08}>
                         <img
                           src={img08}
@@ -1539,7 +1539,7 @@ END:VCARD`;
                   )}
 
                   {img09 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img09}>
                         <img
                           src={img09}
@@ -1550,7 +1550,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img10 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img10}>
                         <img
                           src={img10}
