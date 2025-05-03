@@ -469,7 +469,7 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center bg-gray-300 border-black justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                     >
-                      <MdOutlinePhoneAndroid size={20} color="white" />
+                      <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
                     {/* <a
                       href={`mailto:${email}`}
