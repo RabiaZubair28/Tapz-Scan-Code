@@ -487,12 +487,12 @@ END:VCARD`;
                       <ImWhatsapp size={20} color="white" />
                     </a>
                   </div>
-                  <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-2">
-                    <div className="flex justify-start gap-x-1  pb-1 items-center">
+                  <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
+                    <div className="flex justify-start gap-x-2  pb-1 items-center">
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 hover:bg-gray-500 border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md">
+                    <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-gray-600 hover:bg-gray-500 border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-white">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                       <span
                         style={{
