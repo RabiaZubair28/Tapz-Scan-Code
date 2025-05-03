@@ -454,7 +454,7 @@ END:VCARD`;
           <p>{visitCount}</p>
         </div> */}
 
-                <div className="">
+                <div className="flex justify-between ">
                   <div className="flex justify-start space-x-5 mt-3 mb-2.5">
                     <a
                       href={`tel:${phone01}`}
