@@ -21,7 +21,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/menu.png";
+import menu from "../assets/fresha.jpg";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
@@ -9901,7 +9901,7 @@ END:VCARD`;
                 )}
 
                 <div className="">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
                   </h2>
                   <hr className="border-gray-300" />
@@ -9918,7 +9918,7 @@ END:VCARD`;
                       {!editImg01 && !deleteModal01 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-black rounded-md py-1 px-6"
+                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal01(false);
                               setEditImg01(true);
@@ -10848,7 +10848,7 @@ END:VCARD`;
                     <div
                       style={{
                         fontSize: "20px",
-                        color: "rgb(22, 33, 92)",
+                        color: "black",
                         fontFamily: "sans-serif",
                         fontWeight: "bold",
                         marginBlock: "10px",
@@ -11191,7 +11191,7 @@ END:VCARD`;
                                 alignItems: "center",
                                 justifyContent: "center",
                                 fontSize: "20px",
-                                color: "rgb(22, 33, 92)",
+                                color: "black",
                                 fontFamily: "sans-serif",
                                 fontWeight: "bold",
                                 marginBlock: "10px",
@@ -11227,7 +11227,7 @@ END:VCARD`;
                               alignItems: "center",
                               justifyContent: "center",
                               fontSize: "20px",
-                              color: "rgb(22, 33, 92)",
+                              color: "black",
                               fontFamily: "sans-serif",
                               fontWeight: "bold",
                               marginBlock: "10px",
