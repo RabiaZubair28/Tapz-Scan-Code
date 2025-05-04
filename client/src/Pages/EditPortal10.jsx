@@ -11572,7 +11572,7 @@ END:VCARD`;
                           }}
                           style={{
                             fontSize: "15px",
-                            backgroundColor: "rgb(22, 33, 92)",
+                            backgroundColor: "black",
                             color: "white",
                             fontFamily: "sans-serif",
                             fontWeight: "bold",
