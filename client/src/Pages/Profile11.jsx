@@ -320,7 +320,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative border-[0.25px] border-black"
+            className="qr-modal min-h-screen  w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{
               backgroundAttachment: "fixed",
               backgroundImage:
@@ -344,13 +344,13 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-white border-[0.25px] border-black text-black  p-3 rounded-full flex items-center justify-center"
+                    className="w-12 h-12 bg-white text-black p-3 rounded-full hover:bg-white flex items-center justify-center border-[0.25px] border-black "
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
                     }}
                   >
-                    <FaDownload size={20} color="black" />
+                    <FaDownload size={20} />
                   </div>
 
                   <div className="social-btn">
@@ -362,9 +362,37 @@ END:VCARD`;
                       <img
                         src={fb} // Replace with the actual path to the Facebook icon
                         alt="Facebook"
-                        className="w-12 h-12 rounded-full border-[0.25px] border-black"
+                        className="w-12 h-12 rounded-full border-2 border-white"
                       />
                     </FacebookShareButton>
+                  </div>
+
+                  <div className="social-btn">
+                    <LinkedinShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <img
+                        src={linkedin} // Replace with the actual path to the LinkedIn icon
+                        alt="LinkedIn"
+                        className="w-12 h-12 rounded-full border-2 border-white"
+                      />
+                    </LinkedinShareButton>
+                  </div>
+
+                  <div className="social-btn">
+                    <TelegramShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <img
+                        src={telegram} // Replace with the actual path to the Telegram icon
+                        alt="Telegram"
+                        className="w-12 h-12 rounded-full border-2 border-white"
+                      />
+                    </TelegramShareButton>
                   </div>
 
                   <div className="social-btn">
@@ -376,7 +404,7 @@ END:VCARD`;
                       <img
                         src={whatsapp} // Replace with the actual path to the WhatsApp icon
                         alt="WhatsApp"
-                        className="w-12 h-12 rounded-full border-[0.25px] border-black"
+                        className="w-12 h-12 rounded-full border-2 border-white"
                       />
                     </WhatsappShareButton>
                   </div>
@@ -1582,7 +1610,7 @@ END:VCARD`;
                       <img
                         src={fb} // Replace with the actual path to the Facebook icon
                         alt="Facebook"
-                        className="w-12 h-12 rounded-full border-[0.25px] border-black"
+                        className="w-12 h-12 rounded-full"
                       />
                     </FacebookShareButton>
                   </div>
@@ -1638,7 +1666,7 @@ END:VCARD`;
                       <img
                         src={whatsapp} // Replace with the actual path to the WhatsApp icon
                         alt="WhatsApp"
-                        className="w-12 h-12 rounded-full border-[0.25px] border-black"
+                        className="w-12 h-12 rounded-full "
                       />
                     </WhatsappShareButton>
                   </div>
