@@ -21,7 +21,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/fresha.jpg";
+import menu from "../assets/menu.png";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
@@ -4438,7 +4438,7 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Fresha updated successfully:", response.data);
+        console.log("Name updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
@@ -4457,7 +4457,7 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Fresha updated successfully:", response.data);
+        console.log("Name updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
@@ -4805,7 +4805,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[1px] border-white shadow-md"
+                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-4 border-white shadow-md"
                       />
                     </div>
                   </a>
@@ -9400,17 +9400,13 @@ END:VCARD`;
                 )}
                 {menuLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-md max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={menu}
-                          alt="menu01"
-                          className="h-10 w-10  border-[0.25px] border-white rounded-xl"
-                        />
+                        <img src={menu} alt="menu01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Fresha</span>
+                              <span className="font-medium">Menu</span>
                               <span className=" text-sm">{menuName}</span>
                             </div>
                           )}
@@ -9455,7 +9451,7 @@ END:VCARD`;
                           )}
                           {editMenu && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Fresha</span>
+                              <span className="font-medium">Menu</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
                                   <label>Account Name:</label>
