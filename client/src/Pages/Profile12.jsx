@@ -344,7 +344,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-white text-black p-3 rounded-full hover:bg-white flex items-center justify-center border-[0.25px] border-black "
+                    className="w-12 h-12 bg-[#bdbdbd] text-black p-3 rounded-full hover:bg-[#bdbdbd] flex items-center justify-center border-[0.25px] border-black "
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
