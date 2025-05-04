@@ -1610,7 +1610,7 @@ END:VCARD`;
                       <img
                         src={fb} // Replace with the actual path to the Facebook icon
                         alt="Facebook"
-                        className="w-12 h-12 rounded-full border-2 border-black"
+                        className="w-12 h-12 rounded-full "
                       />
                     </FacebookShareButton>
                   </div>
@@ -1666,7 +1666,7 @@ END:VCARD`;
                       <img
                         src={whatsapp} // Replace with the actual path to the WhatsApp icon
                         alt="WhatsApp"
-                        className="w-12 h-12 rounded-full border-2 border-black"
+                        className="w-12 h-12 rounded-full "
                       />
                     </WhatsappShareButton>
                   </div>
