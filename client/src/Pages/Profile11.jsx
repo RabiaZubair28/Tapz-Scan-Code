@@ -320,7 +320,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative border-[0.25px] border-black"
             style={{
               backgroundAttachment: "fixed",
               backgroundImage:
@@ -344,7 +344,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-white border-[0.25px] border-black text-black p-3 rounded-full flex items-center justify-center"
+                    className="w-12 h-12 bg-white border-[0.25px] border-black text-black  p-3 rounded-full flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
