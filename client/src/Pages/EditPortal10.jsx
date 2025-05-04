@@ -6108,161 +6108,33 @@ END:VCARD`;
                     </a>
                   </div>
                 )}
-                {email && (
-                  <div className="flex justify-center mt-3 ">
-                    <a
-                      href={`mailto:${email}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md"
-                    >
-                      <div className="flex items-center space-x-6">
-                        <img src={emailImg} alt="Email" className="h-10 w-10" />
-                        <div className="flex flex-col text-start gap-y-1">
-                          <span className="font-medium">Email</span>
-                          <span className="text-sm">{email}</span>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
-                {email02 && (
-                  <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={emailImg}
-                          alt="Whatsapp02"
-                          className="h-10 w-10"
-                        />
-                        <div className="flex flex-1 items-center justify-between">
-                          {/* Phone Info */}
-                          {!modal12 && !editEmail02 && (
-                            <div className="flex flex-col max-w-[160px] text-start gap-y-1">
-                              <span className="font-medium">Email</span>
-                              <span className=" max-w-[160px] text-sm break-words">
-                                {email02}
-                              </span>
-                            </div>
-                          )}
-
-                          {/* Edit and Delete Buttons */}
-                          {!modal12 && !editEmail02 && (
-                            <div className="flex space-x-3">
-                              <FaEdit
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setEditEmail02(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal12(true)}
-                              />
-                            </div>
-                          )}
-
-                          {/* Modal for Delete Confirmation */}
-                          {modal12 && (
-                            <div className="text-start w-full">
-                              <div className="text-sm font-medium mb-2">
-                                Are you sure you want to delete?
-                              </div>
-                              <div className="flex justify-start space-x-1">
-                                <button
-                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal12(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => {
-                                    handleDeleteEmail02(_id);
-                                    window.location.reload();
-                                    setModal12(false);
-                                  }}
-                                >
-                                  Confirm
-                                </button>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Edit Phone Input */}
-                          {editEmail02 && (
-                            <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Email</span>
-                              <div className="flex items-center space-x-2 mt-1">
-                                <input
-                                  id="email02"
-                                  placeholder={email02}
-                                  className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                />
-                                <button
-                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => {
-                                    handleEditEmail02(_id);
-                                    setEditEmail02(false);
-                                    window.location.reload();
-                                  }}
-                                >
-                                  &#x2714;
-                                </button>
-                                <button
-                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditEmail02(false)}
-                                >
-                                  &#x2716;
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
-                {email03 && (
+                {menuLink && (
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={emailImg}
-                          alt="Whatsapp02"
-                          className="h-10 w-10"
-                        />
+                        <img src={menu} alt="menu01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
-                          {/* Phone Info */}
-                          {!modal13 && !editEmail03 && (
-                            <div className="flex flex-col max-w-[160px] text-start gap-y-1">
-                              <span className="font-medium">Email</span>
-                              <span className=" max-w-[160px] text-sm break-words">
-                                {email03}
-                              </span>
+                          {!modal45 && !editMenu && (
+                            <div className="flex flex-col text-start gap-y-1">
+                              <span className="font-medium">Menu</span>
+                              <span className=" text-sm">{menuName}</span>
                             </div>
                           )}
-
-                          {/* Edit and Delete Buttons */}
-                          {!modal13 && !editEmail03 && (
+                          {!modal45 && !editMenu && (
                             <div className="flex space-x-3">
                               <FaEdit
                                 size={20}
                                 className="cursor-pointer"
-                                onClick={() => setEditEmail03(true)}
+                                onClick={() => setEditMenu(true)}
                               />
                               <MdDelete
                                 size={20}
                                 className="cursor-pointer"
-                                onClick={() => setModal13(true)}
+                                onClick={() => setModal45(true)}
                               />
                             </div>
                           )}
-
-                          {/* Modal for Delete Confirmation */}
-                          {modal13 && (
+                          {modal45 && (
                             <div className="text-start w-full">
                               <div className="text-sm font-medium mb-2">
                                 Are you sure you want to delete?
@@ -6270,16 +6142,16 @@ END:VCARD`;
                               <div className="flex justify-start space-x-1">
                                 <button
                                   className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal13(false)}
+                                  onClick={() => setModal45(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
                                   className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
                                   onClick={() => {
-                                    handleDeleteEmail03(_id);
+                                    handleDeleteMenu(_id);
                                     window.location.reload();
-                                    setModal13(false);
+                                    setModal45(false);
                                   }}
                                 >
                                   Confirm
@@ -6287,22 +6159,29 @@ END:VCARD`;
                               </div>
                             </div>
                           )}
-
-                          {/* Edit Phone Input */}
-                          {editEmail03 && (
+                          {editMenu && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Email</span>
+                              <span className="font-medium">Menu</span>
                               <div className="flex items-center space-x-2 mt-1">
-                                <input
-                                  id="email03"
-                                  placeholder={email03}
-                                  className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                />
+                                <div className="flex flex-col space-y-2 mt-1">
+                                  <label>Account Name:</label>
+                                  <input
+                                    id="menuText"
+                                    placeholder={menuName}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                  <label>Account Link:</label>
+                                  <input
+                                    id="menuLink"
+                                    placeholder={menuLink}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                </div>
                                 <button
                                   className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
-                                    handleEditEmail03(_id);
-                                    setEditEmail03(false);
+                                    handleEditMenu(_id);
+                                    setEditMenu(false);
                                     window.location.reload();
                                   }}
                                 >
@@ -6310,7 +6189,7 @@ END:VCARD`;
                                 </button>
                                 <button
                                   className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditEmail03(false)}
+                                  onClick={() => setEditMenu(false)}
                                 >
                                   &#x2716;
                                 </button>
@@ -6323,6 +6202,301 @@ END:VCARD`;
                   </div>
                 )}
 
+                {instagramLink && (
+                  <div className="flex justify-center mt-3">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
+                      <div className="flex items-center space-x-6 w-full">
+                        <img
+                          src={insta}
+                          alt="instagram01"
+                          className="h-10 w-10"
+                        />
+                        <div className="flex flex-1 items-center justify-between">
+                          {!modal17 && !editInstagram && (
+                            <div className="flex flex-col text-start gap-y-1">
+                              <span className="font-medium">Instagram</span>
+                              <span className=" text-sm">{instagramName}</span>
+                            </div>
+                          )}
+                          {!modal17 && !editInstagram && (
+                            <div className="flex space-x-3">
+                              <FaEdit
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setEditInstagram(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setModal17(true)}
+                              />
+                            </div>
+                          )}
+                          {modal17 && (
+                            <div className="text-start w-full">
+                              <div className="text-sm font-medium mb-2">
+                                Are you sure you want to delete?
+                              </div>
+                              <div className="flex justify-start space-x-1">
+                                <button
+                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => setModal17(false)}
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => {
+                                    handleDeleteInstagram(_id);
+                                    window.location.reload();
+                                    setModal17(false);
+                                  }}
+                                >
+                                  Confirm
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                          {editInstagram && (
+                            <div className="flex flex-col text-start gap-y-1 w-full">
+                              <span className="font-medium">Instagram</span>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <div className="flex flex-col space-y-2 mt-1">
+                                  <label>Account Name:</label>
+                                  <input
+                                    id="instagramText"
+                                    placeholder={instagramName}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                  <label>Account Link:</label>
+                                  <input
+                                    id="instagram"
+                                    placeholder={instagramLink}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                </div>
+                                <button
+                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => {
+                                    handleEditInstagram(_id);
+                                    setEditInstagram(false);
+                                    window.location.reload();
+                                  }}
+                                >
+                                  &#x2714;
+                                </button>
+                                <button
+                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => setEditInstagram(false)}
+                                >
+                                  &#x2716;
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+                {instagramLink02 && (
+                  <div className="flex justify-center mt-3">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
+                      <div className="flex items-center space-x-6 w-full">
+                        <img
+                          src={insta}
+                          alt="instagram02"
+                          className="h-10 w-10"
+                        />
+                        <div className="flex flex-1 items-center justify-between">
+                          {!modal18 && !editInstagram02 && (
+                            <div className="flex flex-col text-start gap-y-1">
+                              <span className="font-medium">Instagram</span>
+                              <span className=" text-sm">
+                                {instagramName02}
+                              </span>
+                            </div>
+                          )}
+                          {!modal18 && !editInstagram02 && (
+                            <div className="flex space-x-3">
+                              <FaEdit
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setEditInstagram02(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setModal18(true)}
+                              />
+                            </div>
+                          )}
+                          {modal18 && (
+                            <div className="text-start w-full">
+                              <div className="text-sm font-medium mb-2">
+                                Are you sure you want to delete?
+                              </div>
+                              <div className="flex justify-start space-x-1">
+                                <button
+                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => setModal18(false)}
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => {
+                                    handleDeleteInstagram02(_id);
+                                    window.location.reload();
+                                    setModal18(false);
+                                  }}
+                                >
+                                  Confirm
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                          {editInstagram02 && (
+                            <div className="flex flex-col text-start gap-y-1 w-full">
+                              <span className="font-medium">Instagram</span>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <div className="flex flex-col space-y-2 mt-1">
+                                  <label>Account Name:</label>
+                                  <input
+                                    id="instagramText02"
+                                    placeholder={instagramName02}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                  <label>Account Link:</label>
+                                  <input
+                                    id="instagram02"
+                                    placeholder={instagramLink02}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                </div>
+                                <button
+                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => {
+                                    handleEditInstagram02(_id);
+                                    setEditInstagram02(false);
+                                    window.location.reload();
+                                  }}
+                                >
+                                  &#x2714;
+                                </button>
+                                <button
+                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => setEditInstagram02(false)}
+                                >
+                                  &#x2716;
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+                {instagramLink03 && (
+                  <div className="flex justify-center mt-3">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
+                      <div className="flex items-center space-x-6 w-full">
+                        <img
+                          src={insta}
+                          alt="instagram03"
+                          className="h-10 w-10"
+                        />
+                        <div className="flex flex-1 items-center justify-between">
+                          {!modal19 && !editInstagram03 && (
+                            <div className="flex flex-col text-start gap-y-1">
+                              <span className="font-medium">Instagram</span>
+                              <span className=" text-sm">
+                                {instagramName03}
+                              </span>
+                            </div>
+                          )}
+                          {!modal19 && !editInstagram03 && (
+                            <div className="flex space-x-3">
+                              <FaEdit
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setEditInstagram03(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setModal19(true)}
+                              />
+                            </div>
+                          )}
+                          {modal19 && (
+                            <div className="text-start w-full">
+                              <div className="text-sm font-medium mb-2">
+                                Are you sure you want to delete?
+                              </div>
+                              <div className="flex justify-start space-x-1">
+                                <button
+                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => setModal19(false)}
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => {
+                                    handleDeleteInstagram03(_id);
+                                    window.location.reload();
+                                    setModal19(false);
+                                  }}
+                                >
+                                  Confirm
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                          {editInstagram03 && (
+                            <div className="flex flex-col text-start gap-y-1 w-full">
+                              <span className="font-medium">Instagram</span>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <div className="flex flex-col space-y-2 mt-1">
+                                  <label>Account Name:</label>
+                                  <input
+                                    id="instagramText03"
+                                    placeholder={instagramName03}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                  <label>Account Link:</label>
+                                  <input
+                                    id="instagram03"
+                                    placeholder={instagramLink03}
+                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                  />
+                                </div>
+                                <button
+                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => {
+                                    handleEditInstagram03(_id);
+                                    setEditInstagram03(false);
+                                    window.location.reload();
+                                  }}
+                                >
+                                  &#x2714;
+                                </button>
+                                <button
+                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => setEditInstagram03(false)}
+                                >
+                                  &#x2716;
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
                 {facebookLink && (
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
@@ -6626,301 +6800,7 @@ END:VCARD`;
                     </a>
                   </div>
                 )}
-                {instagramLink && (
-                  <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={insta}
-                          alt="instagram01"
-                          className="h-10 w-10"
-                        />
-                        <div className="flex flex-1 items-center justify-between">
-                          {!modal17 && !editInstagram && (
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Instagram</span>
-                              <span className=" text-sm">{instagramName}</span>
-                            </div>
-                          )}
-                          {!modal17 && !editInstagram && (
-                            <div className="flex space-x-3">
-                              <FaEdit
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setEditInstagram(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal17(true)}
-                              />
-                            </div>
-                          )}
-                          {modal17 && (
-                            <div className="text-start w-full">
-                              <div className="text-sm font-medium mb-2">
-                                Are you sure you want to delete?
-                              </div>
-                              <div className="flex justify-start space-x-1">
-                                <button
-                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal17(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => {
-                                    handleDeleteInstagram(_id);
-                                    window.location.reload();
-                                    setModal17(false);
-                                  }}
-                                >
-                                  Confirm
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                          {editInstagram && (
-                            <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Instagram</span>
-                              <div className="flex items-center space-x-2 mt-1">
-                                <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
-                                  <input
-                                    id="instagramText"
-                                    placeholder={instagramName}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                  <label>Account Link:</label>
-                                  <input
-                                    id="instagram"
-                                    placeholder={instagramLink}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                </div>
-                                <button
-                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => {
-                                    handleEditInstagram(_id);
-                                    setEditInstagram(false);
-                                    window.location.reload();
-                                  }}
-                                >
-                                  &#x2714;
-                                </button>
-                                <button
-                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditInstagram(false)}
-                                >
-                                  &#x2716;
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
-                {instagramLink02 && (
-                  <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={insta}
-                          alt="instagram02"
-                          className="h-10 w-10"
-                        />
-                        <div className="flex flex-1 items-center justify-between">
-                          {!modal18 && !editInstagram02 && (
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Instagram</span>
-                              <span className=" text-sm">
-                                {instagramName02}
-                              </span>
-                            </div>
-                          )}
-                          {!modal18 && !editInstagram02 && (
-                            <div className="flex space-x-3">
-                              <FaEdit
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setEditInstagram02(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal18(true)}
-                              />
-                            </div>
-                          )}
-                          {modal18 && (
-                            <div className="text-start w-full">
-                              <div className="text-sm font-medium mb-2">
-                                Are you sure you want to delete?
-                              </div>
-                              <div className="flex justify-start space-x-1">
-                                <button
-                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal18(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => {
-                                    handleDeleteInstagram02(_id);
-                                    window.location.reload();
-                                    setModal18(false);
-                                  }}
-                                >
-                                  Confirm
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                          {editInstagram02 && (
-                            <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Instagram</span>
-                              <div className="flex items-center space-x-2 mt-1">
-                                <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
-                                  <input
-                                    id="instagramText02"
-                                    placeholder={instagramName02}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                  <label>Account Link:</label>
-                                  <input
-                                    id="instagram02"
-                                    placeholder={instagramLink02}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                </div>
-                                <button
-                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => {
-                                    handleEditInstagram02(_id);
-                                    setEditInstagram02(false);
-                                    window.location.reload();
-                                  }}
-                                >
-                                  &#x2714;
-                                </button>
-                                <button
-                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditInstagram02(false)}
-                                >
-                                  &#x2716;
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
-                {instagramLink03 && (
-                  <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={insta}
-                          alt="instagram03"
-                          className="h-10 w-10"
-                        />
-                        <div className="flex flex-1 items-center justify-between">
-                          {!modal19 && !editInstagram03 && (
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Instagram</span>
-                              <span className=" text-sm">
-                                {instagramName03}
-                              </span>
-                            </div>
-                          )}
-                          {!modal19 && !editInstagram03 && (
-                            <div className="flex space-x-3">
-                              <FaEdit
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setEditInstagram03(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal19(true)}
-                              />
-                            </div>
-                          )}
-                          {modal19 && (
-                            <div className="text-start w-full">
-                              <div className="text-sm font-medium mb-2">
-                                Are you sure you want to delete?
-                              </div>
-                              <div className="flex justify-start space-x-1">
-                                <button
-                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal19(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => {
-                                    handleDeleteInstagram03(_id);
-                                    window.location.reload();
-                                    setModal19(false);
-                                  }}
-                                >
-                                  Confirm
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                          {editInstagram03 && (
-                            <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Instagram</span>
-                              <div className="flex items-center space-x-2 mt-1">
-                                <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
-                                  <input
-                                    id="instagramText03"
-                                    placeholder={instagramName03}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                  <label>Account Link:</label>
-                                  <input
-                                    id="instagram03"
-                                    placeholder={instagramLink03}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                </div>
-                                <button
-                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => {
-                                    handleEditInstagram03(_id);
-                                    setEditInstagram03(false);
-                                    window.location.reload();
-                                  }}
-                                >
-                                  &#x2714;
-                                </button>
-                                <button
-                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditInstagram03(false)}
-                                >
-                                  &#x2716;
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
+
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
@@ -9344,99 +9224,7 @@ END:VCARD`;
                     </a>
                   </div>
                 )}
-                {menuLink && (
-                  <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
-                      <div className="flex items-center space-x-6 w-full">
-                        <img src={menu} alt="menu01" className="h-10 w-10" />
-                        <div className="flex flex-1 items-center justify-between">
-                          {!modal45 && !editMenu && (
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
-                              <span className=" text-sm">{menuName}</span>
-                            </div>
-                          )}
-                          {!modal45 && !editMenu && (
-                            <div className="flex space-x-3">
-                              <FaEdit
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setEditMenu(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal45(true)}
-                              />
-                            </div>
-                          )}
-                          {modal45 && (
-                            <div className="text-start w-full">
-                              <div className="text-sm font-medium mb-2">
-                                Are you sure you want to delete?
-                              </div>
-                              <div className="flex justify-start space-x-1">
-                                <button
-                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => setModal45(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
-                                  onClick={() => {
-                                    handleDeleteMenu(_id);
-                                    window.location.reload();
-                                    setModal45(false);
-                                  }}
-                                >
-                                  Confirm
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                          {editMenu && (
-                            <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Menu</span>
-                              <div className="flex items-center space-x-2 mt-1">
-                                <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
-                                  <input
-                                    id="menuText"
-                                    placeholder={menuName}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                  <label>Account Link:</label>
-                                  <input
-                                    id="menuLink"
-                                    placeholder={menuLink}
-                                    className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                  />
-                                </div>
-                                <button
-                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => {
-                                    handleEditMenu(_id);
-                                    setEditMenu(false);
-                                    window.location.reload();
-                                  }}
-                                >
-                                  &#x2714;
-                                </button>
-                                <button
-                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
-                                  onClick={() => setEditMenu(false)}
-                                >
-                                  &#x2716;
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                )}
+
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
@@ -9729,6 +9517,220 @@ END:VCARD`;
                   </div>
                 )}
 
+                {email && (
+                  <div className="flex justify-center mt-3 ">
+                    <a
+                      href={`mailto:${email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md"
+                    >
+                      <div className="flex items-center space-x-6">
+                        <img src={emailImg} alt="Email" className="h-10 w-10" />
+                        <div className="flex flex-col text-start gap-y-1">
+                          <span className="font-medium">Email</span>
+                          <span className="text-sm">{email}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+                {email02 && (
+                  <div className="flex justify-center mt-3">
+                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
+                      {/* Phone Icon and Info */}
+                      <div className="flex items-center space-x-6 w-full">
+                        <img
+                          src={emailImg}
+                          alt="Whatsapp02"
+                          className="h-10 w-10"
+                        />
+                        <div className="flex flex-1 items-center justify-between">
+                          {/* Phone Info */}
+                          {!modal12 && !editEmail02 && (
+                            <div className="flex flex-col max-w-[160px] text-start gap-y-1">
+                              <span className="font-medium">Email</span>
+                              <span className=" max-w-[160px] text-sm break-words">
+                                {email02}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Edit and Delete Buttons */}
+                          {!modal12 && !editEmail02 && (
+                            <div className="flex space-x-3">
+                              <FaEdit
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setEditEmail02(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setModal12(true)}
+                              />
+                            </div>
+                          )}
+
+                          {/* Modal for Delete Confirmation */}
+                          {modal12 && (
+                            <div className="text-start w-full">
+                              <div className="text-sm font-medium mb-2">
+                                Are you sure you want to delete?
+                              </div>
+                              <div className="flex justify-start space-x-1">
+                                <button
+                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => setModal12(false)}
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => {
+                                    handleDeleteEmail02(_id);
+                                    window.location.reload();
+                                    setModal12(false);
+                                  }}
+                                >
+                                  Confirm
+                                </button>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Edit Phone Input */}
+                          {editEmail02 && (
+                            <div className="flex flex-col text-start gap-y-1 w-full">
+                              <span className="font-medium">Email</span>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <input
+                                  id="email02"
+                                  placeholder={email02}
+                                  className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                />
+                                <button
+                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => {
+                                    handleEditEmail02(_id);
+                                    setEditEmail02(false);
+                                    window.location.reload();
+                                  }}
+                                >
+                                  &#x2714;
+                                </button>
+                                <button
+                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => setEditEmail02(false)}
+                                >
+                                  &#x2716;
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+                {email03 && (
+                  <div className="flex justify-center mt-3">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white bg-white hover:border-white text-black shadow rounded-lg max-w-md">
+                      {/* Phone Icon and Info */}
+                      <div className="flex items-center space-x-6 w-full">
+                        <img
+                          src={emailImg}
+                          alt="Whatsapp02"
+                          className="h-10 w-10"
+                        />
+                        <div className="flex flex-1 items-center justify-between">
+                          {/* Phone Info */}
+                          {!modal13 && !editEmail03 && (
+                            <div className="flex flex-col max-w-[160px] text-start gap-y-1">
+                              <span className="font-medium">Email</span>
+                              <span className=" max-w-[160px] text-sm break-words">
+                                {email03}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Edit and Delete Buttons */}
+                          {!modal13 && !editEmail03 && (
+                            <div className="flex space-x-3">
+                              <FaEdit
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setEditEmail03(true)}
+                              />
+                              <MdDelete
+                                size={20}
+                                className="cursor-pointer"
+                                onClick={() => setModal13(true)}
+                              />
+                            </div>
+                          )}
+
+                          {/* Modal for Delete Confirmation */}
+                          {modal13 && (
+                            <div className="text-start w-full">
+                              <div className="text-sm font-medium mb-2">
+                                Are you sure you want to delete?
+                              </div>
+                              <div className="flex justify-start space-x-1">
+                                <button
+                                  className="bg-black font-medium text-md  text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => setModal13(false)}
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  className="bg-black font-medium text-md text-black px-3 py-1 rounded-md border border-white"
+                                  onClick={() => {
+                                    handleDeleteEmail03(_id);
+                                    window.location.reload();
+                                    setModal13(false);
+                                  }}
+                                >
+                                  Confirm
+                                </button>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Edit Phone Input */}
+                          {editEmail03 && (
+                            <div className="flex flex-col text-start gap-y-1 w-full">
+                              <span className="font-medium">Email</span>
+                              <div className="flex items-center space-x-2 mt-1">
+                                <input
+                                  id="email03"
+                                  placeholder={email03}
+                                  className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                />
+                                <button
+                                  className="bg-green-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => {
+                                    handleEditEmail03(_id);
+                                    setEditEmail03(false);
+                                    window.location.reload();
+                                  }}
+                                >
+                                  &#x2714;
+                                </button>
+                                <button
+                                  className="bg-red-600 text-black px-2 py-1 rounded-md text-sm"
+                                  onClick={() => setEditEmail03(false)}
+                                >
+                                  &#x2716;
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
                 {(phone01 == "" ||
                   phone02 == "" ||
                   phone03 == "" ||
