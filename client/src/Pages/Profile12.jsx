@@ -425,7 +425,7 @@ END:VCARD`;
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304918/7_t4htza.png')",
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746342633/SILVER_BG-04_bgntv6.jpg')",
                 backgroundSize: "contain",
                 backgroundPosition: "center",
               }}
@@ -1575,7 +1575,7 @@ END:VCARD`;
                     Location
                   </h2>
                   <hr className="border-black" />
-                  <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                  <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-black shadow-md  space-y-4 mt-3">
                     {location && (
                       <iframe
                         src={location}
@@ -1604,7 +1604,7 @@ END:VCARD`;
                       <img
                         src={fb} // Replace with the actual path to the Facebook icon
                         alt="Facebook"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-2 border-black"
                       />
                     </FacebookShareButton>
                   </div>
@@ -1660,7 +1660,7 @@ END:VCARD`;
                       <img
                         src={whatsapp} // Replace with the actual path to the WhatsApp icon
                         alt="WhatsApp"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-2 border-black"
                       />
                     </WhatsappShareButton>
                   </div>
