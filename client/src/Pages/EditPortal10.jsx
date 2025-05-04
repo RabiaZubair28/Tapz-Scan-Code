@@ -4798,83 +4798,8 @@ END:VCARD`;
                   </a>
                 </div>
               )}
-              {logo && (
-                <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
-                  <a href={logo}>
-                    <div className="relative mb-2 ">
-                      <img
-                        src={logo}
-                        alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-4 border-white shadow-md"
-                      />
-                    </div>
-                  </a>
-
-                  <div className="flex items-center justify-center gap-x-2 -mt-24 mb-5">
-                    {/* <img src={eye} height={25}></img>
-                  <span style={{display:"flex",alignItems:"center",justifyContent:"center",
-                  }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <div className="flex justify-start gap-x-1.5 -mt-5 pb-1 items-center">
-                      <MdRemoveRedEye size={20} color="white" />
-                      <p className="text-white">{visitCount}</p>
-                    </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 border text-sm border-white shadow-sm hover:shadow-md hover:bg-gray-500">
-                      {/* <FaDownload size={20} onClick={downloadContactCard}  /> */}
-                      <span
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          color: "white",
-                          justifyContent: "center",
-                        }}
-                        onClick={downloadContactCard}
-                      >
-                        Save Contact
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              )}
 
               <div className="flex flex-col justify-start items-start mx-auto rounded-x px-6 space-y-2 mt-3">
-                {!editLogo && (
-                  <div className="space-x-2">
-                    <button
-                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
-                      onClick={() => {
-                        setDeleteModal11(false);
-                        setEditLogo(true);
-                      }}
-                    >
-                      Edit Logo
-                    </button>
-                    {/* <button
-              className="btn bg-red-500 text-white rounded-md py-1 px-4"
-              onClick={() => {
-                setDeleteModal11(true)}}
-            >
-              Delete
-            </button> */}
-                  </div>
-                )}
-
-                {editLogo && (
-                  <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
-                    <input
-                      type="file"
-                      className="file-input w-56 h-8 text-sm"
-                      onChange={handleEditLogo}
-                    />
-                    <ImCross
-                      color="white"
-                      size={18}
-                      className="cursor-pointer bg-black p-1 rounded-sm"
-                      onClick={() => {
-                        setEditLogo(false);
-                      }}
-                    />
-                  </div>
-                )}
                 {!editCover && (
                   <div className="space-x-2">
                     <button
@@ -5194,20 +5119,7 @@ END:VCARD`;
                     >
                       <MdOutlinePhoneAndroid size={20} color="white" />
                     </a>
-                    <a
-                      href={`mailto:${email}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
-                    >
-                      <AiOutlineMail size={20} color="white" />
-                    </a>
-                    <a
-                      href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
-                    >
-                      <RiMessage2Line size={20} color="white" />
-                    </a>
+
                     <a
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
@@ -10817,48 +10729,6 @@ END:VCARD`;
                           className="w-12 h-12 rounded-full border-2 border-white"
                         />
                       </FacebookShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <TwitterShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <img
-                          src={twitter02} // Replace with the actual path to the Twitter icon
-                          alt="Twitter"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
-                      </TwitterShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <LinkedinShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <img
-                          src={linkedin} // Replace with the actual path to the LinkedIn icon
-                          alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
-                      </LinkedinShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <TelegramShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <img
-                          src={telegram} // Replace with the actual path to the Telegram icon
-                          alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
-                      </TelegramShareButton>
                     </div>
 
                     <div className="social-btn">
