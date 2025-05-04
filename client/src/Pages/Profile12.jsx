@@ -320,7 +320,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-black`}
+            className="qr-modal min-h-screen  w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{
               backgroundAttachment: "fixed",
               backgroundImage:

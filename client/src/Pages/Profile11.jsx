@@ -320,12 +320,12 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
+            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{
               backgroundAttachment: "fixed",
               backgroundImage:
                 "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
             }}
           >
