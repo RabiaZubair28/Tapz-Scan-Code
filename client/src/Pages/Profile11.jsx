@@ -320,8 +320,14 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-            style={{ backgroundAttachment: "fixed" }}
+            className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
+            style={{
+              backgroundAttachment: "fixed",
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
