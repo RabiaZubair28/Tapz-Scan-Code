@@ -5110,24 +5110,58 @@ END:VCARD`;
                     </div>
                   )}
 
-                  <div className="flex justify-start space-x-5 mt-2 mb-2.5">
-                    <a
-                      href={`tel:${telephone01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
-                    >
-                      <MdOutlinePhoneAndroid size={20} color="white" />
-                    </a>
-
-                    <a
-                      href={`https://wa.me/${whatsapp01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
-                    >
-                      <ImWhatsapp size={20} color="white" />
-                    </a>
+                  <div className="flex justify-between ">
+                    <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                      <a
+                        href={`tel:${phone01}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 flex items-center bg-[#C79D3D] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      >
+                        <MdOutlinePhoneAndroid size={20} color="white" />
+                      </a>
+                      {/* <a
+                                     href={`mailto:${email}`}
+                                     target="_blank"
+                                     rel="noopener noreferrer"
+                                     className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                                   >
+                                     <AiOutlineMail size={20} color="white" />
+                                   </a>
+                                   <a
+                                     href={`sms:${phone01}`}
+                                     className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                                   >
+                                     <RiMessage2Line size={20} color="white" />
+                                   </a> */}
+                      <a
+                        href={`https://wa.me/${whatsapp01}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      >
+                        <ImWhatsapp size={20} color="white" />
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
+                      <div className="flex justify-start gap-x-2  pb-1 items-center">
+                        <MdRemoveRedEye size={20} color="white" />
+                        <p className="text-white">{visitCount}</p>
+                      </div>
+                      <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#C79D3D] border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-white">
+                        {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
+                        <span
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                          onClick={downloadContactCard}
+                        >
+                          Save Contact
+                        </span>
+                      </button>
+                    </div>
                   </div>
 
                   {description && (
