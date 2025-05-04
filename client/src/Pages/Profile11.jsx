@@ -325,7 +325,7 @@ END:VCARD`;
               backgroundAttachment: "fixed",
               backgroundImage:
                 "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
