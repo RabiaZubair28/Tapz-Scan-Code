@@ -329,7 +329,7 @@ END:VCARD`;
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+            <div className="bg-white border-[0.25px] border-black rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
