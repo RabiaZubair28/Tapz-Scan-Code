@@ -5116,7 +5116,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center bg-[#C79D3D] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center  justify-center rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white  shadow-sm hover:shadow-md "
                       >
                         <MdOutlinePhoneAndroid size={20} color="white" />
                       </a>
@@ -5138,7 +5138,7 @@ END:VCARD`;
                         href={`https://wa.me/${whatsapp01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border-white border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white  shadow-sm hover:shadow-md "
                       >
                         <ImWhatsapp size={20} color="white" />
                       </a>
@@ -5148,7 +5148,7 @@ END:VCARD`;
                         <MdRemoveRedEye size={20} color="white" />
                         <p className="text-white">{visitCount}</p>
                       </div>
-                      <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-[#C79D3D] border-white bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-white">
+                      <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white  shadow-sm hover:shadow-md text-white">
                         {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                         <span
                           style={{
