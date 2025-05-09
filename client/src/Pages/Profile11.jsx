@@ -24,7 +24,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/fresha.jpg";
-import catalog from "../assets/catalog.jpg";
+import catalog from "../assets/pricelist.jpg";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
@@ -643,6 +643,27 @@ END:VCARD`;
                       </div>
                       <SlArrowRight /> {/* Chevron/Arrow */}
                     </a>
+                  </div>
+                )}
+                {catalogueLink && (
+                  <div className="flex justify-center mt-3">
+                    <button
+                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      onClick={() => window.open(catalogueLink, "_blank")}
+                    >
+                      <div className="flex items-center space-x-6">
+                        <img
+                          src={catalog}
+                          alt="Catalog"
+                          className="h-10 w-10 rounded-md"
+                        />
+                        <div className="flex flex-col text-start gap-y-1">
+                          <span className="font-medium">Pricelist</span>
+                          <span className=" text-sm">{catalogueName}</span>
+                        </div>
+                      </div>
+                      <SlArrowRight /> {/* Chevron/Arrow */}
+                    </button>
                   </div>
                 )}
                 {whatsapp03 && (
@@ -1346,27 +1367,6 @@ END:VCARD`;
                   </div>
                 )}
 
-                {catalogueLink && (
-                  <div className="flex justify-center mt-3">
-                    <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
-                      onClick={() => window.open(catalogueLink, "_blank")}
-                    >
-                      <div className="flex items-center space-x-6">
-                        <img
-                          src={catalog}
-                          alt="Catalog"
-                          className="h-10 w-10 rounded-md"
-                        />
-                        <div className="flex flex-col text-start gap-y-1">
-                          <span className="font-medium">Catalogue</span>
-                          <span className=" text-sm">{catalogueName}</span>
-                        </div>
-                      </div>
-                      <SlArrowRight /> {/* Chevron/Arrow */}
-                    </button>
-                  </div>
-                )}
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
                     <button
