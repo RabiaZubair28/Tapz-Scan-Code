@@ -1354,27 +1354,6 @@ END:VCARD`;
                   </div>
                 )}
 
-                {catalogueLink && (
-                  <div className="flex justify-center mt-3">
-                    <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
-                      onClick={() => window.open(catalogueLink, "_blank")}
-                    >
-                      <div className="flex items-center space-x-6">
-                        <img
-                          src={catalog}
-                          alt="Catalog"
-                          className="h-10 w-10 rounded-md"
-                        />
-                        <div className="flex flex-col text-start gap-y-1">
-                          <span className="font-medium">Catalogue</span>
-                          <span className=" text-sm">{catalogueName}</span>
-                        </div>
-                      </div>
-                      <SlArrowRight /> {/* Chevron/Arrow */}
-                    </button>
-                  </div>
-                )}
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
                     <button
