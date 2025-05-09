@@ -648,7 +648,7 @@ END:VCARD`;
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
                     <button
-                      className="flex items-center justify-between w-full px-5 py-3  bg-[#C79D3D] text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
                       onClick={() => window.open(catalogueLink, "_blank")}
                     >
                       <div className="flex items-center space-x-6">
