@@ -9282,7 +9282,7 @@ END:VCARD`;
                           )}
                           {editCatalogue && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Catalogue</span>
+                              <span className="font-medium">Pricelist</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
                                   <label>Account Name:</label>

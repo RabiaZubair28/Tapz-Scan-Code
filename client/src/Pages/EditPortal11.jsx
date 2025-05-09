@@ -22,7 +22,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/fresha.jpg";
-import catalog from "../assets/catalog.jpg";
+import catalog from "../assets/pricelist.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
 import telephone from "../assets/telephone01.jpg";
@@ -9237,7 +9237,7 @@ END:VCARD`;
                         <div className="flex flex-1 items-center justify-between">
                           {!modal46 && !editCatalogue && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Catalogue</span>
+                              <span className="font-medium">Pricelist</span>
                               <span className=" text-sm">{catalogueName}</span>
                             </div>
                           )}
