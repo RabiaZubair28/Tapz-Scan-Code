@@ -22,7 +22,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/fresha.jpg";
-import catalog from "../assets/catalog.jpg";
+import catalog from "../assets/pricelist.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
 import telephone from "../assets/telephone01.jpg";
