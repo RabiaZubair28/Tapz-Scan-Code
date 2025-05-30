@@ -418,7 +418,12 @@ END:VCARD`;
 
             <Helmet>
               <title>{name}</title>
-              <link rel="icon" href={logo} type="image/png" />
+              <link
+                rel="icon"
+                href={logo}
+                type="image/x-icon"
+                style="border: 1px solid white; border-radius: 50%"
+              />
             </Helmet>
 
             <div
