@@ -1413,10 +1413,10 @@ END:VCARD`;
 
               {services != "" && (
                 <div className="px-4 ">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Services
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-white" />
                   {services && (
                     <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md">
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
@@ -1577,10 +1577,10 @@ END:VCARD`;
               )}
               {location != "" && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Location
                   </h2>
-                  <hr className="border-black" />
+                  <hr className="border-white" />
                   <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-black shadow-md  space-y-4 mt-3">
                     {location && (
                       <iframe
