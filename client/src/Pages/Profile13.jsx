@@ -502,8 +502,8 @@ END:VCARD`;
                   </div>
                   <div className="flex items-center justify-end mt-3 mb-2.5 gap-x-4">
                     <div className="flex justify-start gap-x-2  pb-1 items-center">
-                      <MdRemoveRedEye size={20} color="black" />
-                      <p className="text-black">{visitCount}</p>
+                      <MdRemoveRedEye size={20} color="white" />
+                      <p className="text-white">{visitCount}</p>
                     </div>
                     <button className="flex items-start justify-start  gap-x-2 rounded-lg py-2.5  px-4 bg-white border-black  bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md text-black">
                       {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
@@ -1452,10 +1452,10 @@ END:VCARD`;
                 img09 != "" ||
                 img10 != "") && (
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-black" />
+                  <hr className="border-white" />
                   {img01 && (
                     <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                       <a href={img01}>
@@ -1596,10 +1596,10 @@ END:VCARD`;
                 </div>
               )}
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                   Share Profile
                 </h2>
-                <hr className="border-black" />
+                <hr className="border-white" />
                 <div className="flex justify-center space-x-3 mt-3">
                   <div className="social-btn ">
                     <FacebookShareButton
@@ -1673,10 +1673,10 @@ END:VCARD`;
                 </div>
               </div>
               <div className="px-4">
-                <h2 className="text-xl font-semibold text-black mb-3 mt-5 px-4">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
                   Share Contact & QR
                 </h2>
-                <hr className="border-black" />
+                <hr className="border-white" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-black bg-white hover:border-black"
