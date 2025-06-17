@@ -18,6 +18,7 @@ import Profile09 from "./Profile09";
 import Profile10 from "./Profile10";
 import Profile11 from "./Profile11";
 import Profile12 from "./Profile12";
+import Profile13 from "./Profile13";
 // import ScaleLoader from "react-spinners/ScaleLoader";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -192,6 +193,8 @@ const Profile = () => {
       return <Profile11 />;
     } else if (option === "12") {
       return <Profile12 />;
+    } else if (option === "13") {
+      return <Profile13 />;
     } else {
       return <Profile02 />;
     }
