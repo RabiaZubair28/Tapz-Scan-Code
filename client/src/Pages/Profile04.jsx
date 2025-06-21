@@ -478,7 +478,10 @@ END:VCARD`;
               )}
               <div className="px-6">
                 <div className="flex flex-col justify-center items-start pt-0.5">
-                  <h2 className="text-lg font-semibold text-white pt-1 ">
+                  <h2
+                    className="text-lg font-semibold text-white pt-1 "
+                    style={{ flexWrap: "nowrap" }}
+                  >
                     {name}
                   </h2>
                   <h2 className="text-2xl font-semibold text-white pt-1">
