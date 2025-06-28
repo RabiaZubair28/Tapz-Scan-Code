@@ -1498,7 +1498,7 @@ END:VCARD`;
                       <a className="flex w-full py-1  text-gray-700  max-w-md">
                         <div className="flex items-center space-x-6 w-full">
                           <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                            <div className="flex flex-col text-md max-w-[250px] font-medium text-white pt-1 text-start gap-y-1">
+                            <div className="flex flex-col text-md max-w-[450px] font-medium text-white pt-1 text-start gap-y-1">
                               {services.split("\n").map((line, index) => (
                                 <div
                                   key={index}
