@@ -598,7 +598,7 @@ END:VCARD`;
                       href={`tel:${telephone02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py- bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img
