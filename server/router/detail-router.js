@@ -909,6 +909,8 @@ router.route("/client/:companyName").get(async (req, res) => {
     // Load the original index.html file
     const indexFile = path.join(__dirname, "../build/index.html");
 
+    console.log(indexFile);
+
     fs.readFile(indexFile, "utf8", (err, htmlData) => {
       if (err) {
         console.error("Error reading HTML file:", err);
