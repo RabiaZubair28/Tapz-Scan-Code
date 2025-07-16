@@ -891,54 +891,26 @@ router.route("/updateImg10/:id").put(async (req, res) => {
   }
 });
 
-const fs = require("fs");
-const path = require("path");
-
 router.route("/client/:companyName").get(async (req, res) => {
   const { companyName } = req.params;
-  console.log("Requested company:", companyName);
+  console.log(companyName);
+  // Validate the ID format
 
   try {
-    // Fetch client by company name
-    const client = await Client.findOne({ companyName });
+    // Find the client by ID
+    const client = await Client.findOne({ companyName: companyName });
 
     if (!client) {
-      return res.status(404).send("Client not found");
+      return res.status(404).json({ error: "Client not found" });
     }
 
-    // Load the original index.html file
-    const indexFile = path.join(__dirname, "../build/index.html");
-
-    console.log(indexFile);
-
-    fs.readFile(indexFile, "utf8", (err, htmlData) => {
-      if (err) {
-        console.error("Error reading HTML file:", err);
-        return res.status(500).send("Server error");
-      }
-
-      // Replace title and add meta tags
-      const modifiedHtml = htmlData
-        .replace(/<title>(.*?)<\/title>/, `<title>${client.name} </title>`)
-        .replace(
-          "</head>",
-          `
-  <meta property="og:title" content="${client.name} – Scantaps" />
-  <meta property="og:description" content="Branding profile for ${client.name}" />
-  <meta property="og:image" content="${client.logo}" />
-  <meta property="og:url" content="https://scan-taps.com/client/${companyName}" />
-  <meta name="twitter:card" content="summary_large_image" />
-</head>`
-        );
-
-      res.send(modifiedHtml);
-    });
+    res.status(200).json(client);
   } catch (error) {
-    console.error("Error in client route:", error);
-    res.status(500).send("An error occurred");
+    res
+      .status(500)
+      .json({ error: "An error occurred", details: error.message });
   }
 });
-
 router.route("/addClient").post(async (req, res) => {
   try {
     console.log(req.body);
