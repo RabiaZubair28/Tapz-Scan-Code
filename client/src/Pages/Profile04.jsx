@@ -312,12 +312,49 @@ END:VCARD`;
   };
 
   const currentPageUrl = window.location.href;
+  const currentPageUrl2 = window.location.href;
+  const pageTitle = client?.clientName || client?.name || "Digital Profile";
+  const pageDescription =
+    client?.description || "Connect with my digital profile";
+  const shareImage = client?.logo || "";
+
+  useEffect(() => {
+    if (client) {
+      // Update document title
+      document.title = pageTitle;
+
+      // Update favicon if logo exists
+      if (client.logo) {
+        const link = document.querySelector("link[rel~='icon']");
+        if (link) {
+          link.href = client.logo;
+        }
+      }
+    }
+  }, [client, pageTitle]);
 
   const [selected, setSelected] = useState("");
 
   if (client) {
     return (
       <div>
+        <Helmet>
+          <title>{pageTitle}</title>
+          <meta name="title" content={pageTitle} />
+          <meta name="description" content={pageDescription} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={currentPageUrl2} />
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:description" content={pageDescription} />
+          <meta property="og:image" content={shareImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content={currentPageUrl2} />
+          <meta name="twitter:title" content={pageTitle} />
+          <meta name="twitter:description" content={pageDescription} />
+          <meta name="twitter:image" content={shareImage} />
+        </Helmet>
         {show && (
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
