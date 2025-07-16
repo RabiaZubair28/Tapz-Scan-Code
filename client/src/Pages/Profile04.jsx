@@ -346,7 +346,7 @@ END:VCARD`;
           <meta property="og:url" content={currentPageUrl2} />
           <meta property="og:title" content={pageTitle} />
           <meta property="og:description" content={pageDescription} />
-          <meta property="og:image" content={shareImage} />
+          <meta property="og:image" content={shareImage} src={shareImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta name="twitter:card" content="summary_large_image" />

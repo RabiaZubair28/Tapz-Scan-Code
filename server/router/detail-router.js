@@ -1146,4 +1146,47 @@ router.route("/addClient").post(async (req, res) => {
     next(error);
   }
 });
+router.get("/share/:companyName", async (req, res) => {
+  const { companyName } = req.params;
+
+  try {
+    const client = await Client.findOne({ companyName });
+    if (!client) return res.status(404).send("Client not found");
+
+    const title = client.name || client.companyName;
+    const description =
+      client.description || `${client.companyName}'s profile on Scantaps.`;
+    const image = client.logo;
+
+    const html = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>${title}</title>
+        <meta property="og:title" content="${title}">
+        <meta property="og:description" content="${description}">
+        <meta property="og:image" content="${image}">
+        <meta property="og:url" content="https://yourdomain.com/${companyName}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="${title}">
+        <meta name="twitter:description" content="${description}">
+        <meta name="twitter:image" content="${image}">
+      </head>
+      <body>
+        Redirecting...
+        <script>
+          window.location.href = "/${companyName}";
+        </script>
+      </body>
+      </html>
+    `;
+
+    res.send(html);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 module.exports = router;
