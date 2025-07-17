@@ -1169,7 +1169,6 @@ router.route("/client/:companyName").get(async (req, res) => {
 
 router.route("/get-client/:companyName").get(async (req, res) => {
   const { companyName } = req.params;
-  const userAgent = req.headers["user-agent"] || "";
 
   try {
     const client = await Client.findOne({ companyName });
@@ -1178,36 +1177,31 @@ router.route("/get-client/:companyName").get(async (req, res) => {
       return res.status(404).send("Client not found");
     }
 
-    const isBot = /bot|crawler|facebook|whatsapp|twitter|linkedin/i.test(
-      userAgent
-    );
+    // Construct HTML with OG tags
+    const html = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${client.clientName}</title>
 
-    if (isBot) {
-      // Return OG meta HTML for bots (no redirect)
-      const html = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
-          <title>${client.clientName}</title>
+        <meta property="og:title" content="${client.companyName}" />
+        <meta property="og:description" content="${
+          client.description || "Welcome to our digital card!"
+        }" />
+        <meta property="og:image" content="${client.logo}" />
+        <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
 
-          <meta property="og:title" content="${client.companyName}" />
-          <meta property="og:description" content="${
-            client.description || "Welcome to our digital card!"
-          }" />
-          <meta property="og:image" content="${client.logo}" />
-          <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
-          <meta property="og:type" content="website" />
-          <meta name="twitter:card" content="summary_large_image" />
-        </head>
-        <body></body>
-        </html>
-      `;
-      res.send(html);
-    } else {
-      // Redirect real users to the React frontend
-      res.redirect(`/client/${companyName}`);
-    }
+        <meta http-equiv="refresh" content="0; url=/client/${companyName}" />
+      </head>
+      <body>
+      </body>
+      </html>
+    `;
+
+    res.send(html);
   } catch (error) {
     console.error(error);
     res.status(500).send("Server error");
