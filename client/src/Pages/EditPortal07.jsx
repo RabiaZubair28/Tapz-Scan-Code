@@ -4754,7 +4754,7 @@ const EditPortal07 = () => {
           }>Logout</button> */}
 
             <Helmet>
-              <title>{name}</title>
+              <title>{clientName}</title>
             </Helmet>
 
             <div

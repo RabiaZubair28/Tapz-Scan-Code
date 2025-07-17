@@ -425,7 +425,7 @@ END:VCARD`;
           }>Logout</button> */}
 
               <Helmet>
-                <title>{name}</title>
+                <title>{clientName}</title>
                 <link
                   rel="icon"
                   href={logo}
