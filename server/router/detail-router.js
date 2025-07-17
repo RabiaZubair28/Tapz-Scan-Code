@@ -1189,7 +1189,7 @@ router.get("/get-client/:companyName", async (req, res) => {
           client.description || "Welcome to our digital card!"
         }" />
         <meta property="og:image" content="${client.logo}" />
-        <meta property="og:url" content="https://www.scan-taps.com/preview/${companyName}" />
+        <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </head>
