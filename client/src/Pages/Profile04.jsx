@@ -322,9 +322,8 @@ END:VCARD`;
   if (client) {
     return (
       <section>
-        {" "}
         <Helmet>
-          <title>{name}</title>
+          <title>{clientName}</title>
         </Helmet>
         <div>
           {show && (
