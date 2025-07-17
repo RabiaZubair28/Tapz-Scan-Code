@@ -1,4 +1,5 @@
 require("dotenv").config();
+const prerender = require("prerender-node");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -7,6 +8,7 @@ const authRoute = require("./router/auth-router.js");
 const detailRoute = require("./router/detail-router");
 const connectDb = require("./utils/db.js");
 const errorMiddleware = require("./middlewares/error-middleware.js");
+
 const path = require("path");
 const corsOptions = {
   origin: "https://www.scan-taps.com/",
@@ -16,10 +18,11 @@ const corsOptions = {
 };
 
 const _dirname = path.resolve();
+prerender.set("prerenderToken", "bF19sF0R6C6m2Bdw8QE2");
 
 app.use(cors(corsOptions));
 app.use(express.json());
-
+app.use(prerender);
 console.log("Auth Route:", authRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
