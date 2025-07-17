@@ -327,6 +327,10 @@ END:VCARD`;
             className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
+            <Helmet>
+              <title>{clientName}</title>
+            </Helmet>
+
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
               <ImCross
