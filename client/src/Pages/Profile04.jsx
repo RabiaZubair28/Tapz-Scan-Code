@@ -1779,7 +1779,7 @@ END:VCARD`;
                   <div className="social-btn">
                     <a
                       href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                        `Welcome to ${clientName},\nHere is my digital vCard:\n${currentPageUrl}\n\nPowered by: ScanTaps`
+                        `🌟 Welcome to ${companyName}!\n\nHere’s my digital card:\nhttps://www.scan-taps.com/get-client/${companyName}\n\nPowered by ScanTaps`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"

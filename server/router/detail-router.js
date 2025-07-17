@@ -1167,7 +1167,7 @@ router.route("/client/:companyName").get(async (req, res) => {
   }
 });
 
-router.route("/get-client/:companyName").get(async (req, res) => {
+router.get("/get-client/:companyName", async (req, res) => {
   const { companyName } = req.params;
 
   try {
@@ -1177,7 +1177,6 @@ router.route("/get-client/:companyName").get(async (req, res) => {
       return res.status(404).send("Client not found");
     }
 
-    // Construct HTML with OG tags
     const html = `
       <!DOCTYPE html>
       <html lang="en">
@@ -1190,19 +1189,18 @@ router.route("/get-client/:companyName").get(async (req, res) => {
           client.description || "Welcome to our digital card!"
         }" />
         <meta property="og:image" content="${client.logo}" />
-        <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
+        <meta property="og:url" content="https://www.scan-taps.com/preview/${companyName}" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-
       </head>
       <body>
-      <script>
-        // Redirect after short delay (let crawler read OG tags first)
-        setTimeout(() => {
-          window.location.href = "/client/${companyName}";
-        }, 2000);
-      </script>
-      <p style="color:white">Redirecting to profile...</p>
+        <script>
+          // Delay redirect so crawlers can pick up OG tags
+          setTimeout(() => {
+            window.location.href = "/${companyName}";
+          }, 2000);
+        </script>
+        <p>Redirecting to profile...</p>
       </body>
       </html>
     `;
