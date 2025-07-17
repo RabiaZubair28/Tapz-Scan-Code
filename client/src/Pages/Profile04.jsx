@@ -346,6 +346,10 @@ END:VCARD`;
   if (client) {
     return (
       <div>
+        <Helmet>
+          <title>{clientName}</title>
+          <meta name="description" content={description} />
+        </Helmet>
         {show && (
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
