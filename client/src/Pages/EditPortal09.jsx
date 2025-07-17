@@ -4783,7 +4783,20 @@ END:VCARD`;
           }>Logout</button> */}
 
             <Helmet>
-              <title>{clientName}</title>
+              <Helmet>
+                <title>{clientName}</title>
+                <meta name="description" content={description}></meta>
+                <meta property="article:section" content={clientName}></meta>
+                <meta property="og:title" content={clientName}></meta>
+                <meta property="og:description" content={description}></meta>
+                <meta
+                  property="og:url"
+                  content={`https://www.scan-taps.com/${companyName}`}
+                ></meta>
+                <meta property="og:image" content={logo}></meta>
+                <meta name="twitter:title" content={clientName}></meta>
+                <meta name="twitter:description" content={description}></meta>
+              </Helmet>
             </Helmet>
 
             <div

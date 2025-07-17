@@ -323,7 +323,20 @@ END:VCARD`;
     return (
       <section>
         <Helmet>
-          <title>{clientName}</title>
+          <Helmet>
+            <title>{clientName}</title>
+            <meta name="description" content={description}></meta>
+            <meta property="article:section" content={clientName}></meta>
+            <meta property="og:title" content={clientName}></meta>
+            <meta property="og:description" content={description}></meta>
+            <meta
+              property="og:url"
+              content={`https://www.scan-taps.com/${companyName}`}
+            ></meta>
+            <meta property="og:image" content={logo}></meta>
+            <meta name="twitter:title" content={clientName}></meta>
+            <meta name="twitter:description" content={description}></meta>
+          </Helmet>
           <meta name="description" content={description}></meta>
           <meta property="article:section" content={clientName}></meta>
           <meta property="og:title" content={clientName}></meta>
@@ -339,7 +352,8 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className="qr-modal min-h-screen 
+              bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -436,7 +450,20 @@ END:VCARD`;
           }>Logout</button> */}
 
               <Helmet>
-                <title>{clientName}</title>
+                <Helmet>
+                  <title>{clientName}</title>
+                  <meta name="description" content={description}></meta>
+                  <meta property="article:section" content={clientName}></meta>
+                  <meta property="og:title" content={clientName}></meta>
+                  <meta property="og:description" content={description}></meta>
+                  <meta
+                    property="og:url"
+                    content={`https://www.scan-taps.com/${companyName}`}
+                  ></meta>
+                  <meta property="og:image" content={logo}></meta>
+                  <meta name="twitter:title" content={clientName}></meta>
+                  <meta name="twitter:description" content={description}></meta>
+                </Helmet>
                 <link
                   rel="icon"
                   href={logo}
