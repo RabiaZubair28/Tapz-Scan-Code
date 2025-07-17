@@ -1167,36 +1167,4 @@ router.route("/client/:companyName").get(async (req, res) => {
   }
 });
 
-router.get("/get-client/:companyName", async (req, res) => {
-  const { companyName } = req.params;
-
-  try {
-    const client = await Client.findOne({ companyName });
-
-    if (!client) {
-      return res.status(404).send("Client not found");
-    }
-
-    const html = `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <title>${client.clientName}</title>
-
-      
-      </head>
-      <body>
-       
-      </body>
-      </html>
-    `;
-
-    res.send(html);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Server error");
-  }
-});
-
 module.exports = router;
