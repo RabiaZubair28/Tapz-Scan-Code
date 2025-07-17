@@ -349,6 +349,9 @@ END:VCARD`;
         <Helmet>
           <title>{clientName}</title>
           <meta name="description" content={description} />
+          <meta property="og:title" content={clientName}></meta>
+          <meta property="og:url" content={currentPageUrl}></meta>
+          <meta property="og:image" content={logo}></meta>
         </Helmet>
         {show && (
           <div
