@@ -1762,17 +1762,19 @@ END:VCARD`;
                   </div>
 
                   <div className="social-btn">
-                    <WhatsappShareButton
-                      url={currentPageUrl}
-                      quote="please share this"
-                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                        `Welcome to ${companyName},\nHere is my digital vCard:\n${currentPageUrl}\n\nPowered by: ScanTaps`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <img
-                        src={whatsapp} // Replace with the actual path to the WhatsApp icon
+                        src={whatsapp}
                         alt="WhatsApp"
                         className="w-12 h-12 rounded-full border-2 border-white"
                       />
-                    </WhatsappShareButton>
+                    </a>
                   </div>
                 </div>
               </div>
