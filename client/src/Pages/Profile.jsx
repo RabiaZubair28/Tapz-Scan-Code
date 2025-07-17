@@ -56,28 +56,28 @@ const Profile = () => {
   const [client2, setClient2] = useState("");
   console.log(params);
 
-  useEffect(() => {
-    const fetchClient = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.scan-taps.com/api/data/get-client/${clientId}`
-        );
-        setClient2(response.data);
-        console.log(response);
-        setLoading(false);
-      } catch (err) {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchClient = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://www.scan-taps.com/api/data/get-client/${clientId}`
+  //       );
+  //       setClient2(response.data);
+  //       console.log(response);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    if (clientId) {
-      fetchClient();
-    } else {
-      setLoading(false);
-    }
-  }, [clientId]);
+  //   if (clientId) {
+  //     fetchClient();
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, [clientId]);
 
-  console.log(client2);
+  // console.log(client2);
 
   var {
     _id,

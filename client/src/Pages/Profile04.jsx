@@ -112,28 +112,28 @@ const Profile04 = () => {
 
   console.log(client);
 
-  useEffect(() => {
-    const fetchClient = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.scan-taps.com/api/data/get-client/${clientId}`
-        );
-        setClient2(response.data);
-        console.log(response);
-        setLoading(false);
-      } catch (err) {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchClient = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://www.scan-taps.com/api/data/get-client/${clientId}`
+  //       );
+  //       setClient2(response.data);
+  //       console.log(response);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    if (clientId) {
-      fetchClient();
-    } else {
-      setLoading(false);
-    }
-  }, [clientId]);
+  //   if (clientId) {
+  //     fetchClient();
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, [clientId]);
 
-  console.log(client2);
+  // console.log(client2);
 
   var {
     _id,
@@ -346,7 +346,7 @@ END:VCARD`;
   if (client) {
     return (
       <div>
-        <Helmet>
+        {/* <Helmet>
           <title>{clientName}</title>
           <meta name="description" content={description} />
           <meta property="og:title" content={clientName}></meta>
@@ -360,7 +360,7 @@ END:VCARD`;
             content={logo}
             data-react-helmet="false"
           ></meta>
-        </Helmet>
+        </Helmet> */}
         {show && (
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
