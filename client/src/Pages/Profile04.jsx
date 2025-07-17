@@ -87,7 +87,6 @@ const Profile04 = () => {
     return imageDataUrl;
   };
 
-  const [client2, setClient2] = useState("");
   console.log(params);
 
   useEffect(() => {
@@ -111,29 +110,6 @@ const Profile04 = () => {
   }, [clientId]);
 
   console.log(client);
-
-  useEffect(() => {
-    const fetchClient = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.scan-taps.com/api/data/get-client/${clientId}`
-        );
-        setClient2(response.data);
-        console.log(response);
-        setLoading(false);
-      } catch (err) {
-        setLoading(false);
-      }
-    };
-
-    if (clientId) {
-      fetchClient();
-    } else {
-      setLoading(false);
-    }
-  }, [clientId]);
-
-  console.log(client2);
 
   var {
     _id,
@@ -348,18 +324,6 @@ END:VCARD`;
       <div>
         <Helmet>
           <title>{clientName}</title>
-          <meta name="description" content={description} />
-          <meta property="og:title" content={clientName}></meta>
-          <meta
-            property="og:url"
-            content={currentPageUrl}
-            data-react-helmet="false"
-          ></meta>
-          <meta
-            property="og:image"
-            content={logo}
-            data-react-helmet="false"
-          ></meta>
         </Helmet>
         {show && (
           <div
