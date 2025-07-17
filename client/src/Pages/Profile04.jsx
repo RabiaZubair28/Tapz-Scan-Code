@@ -323,19 +323,27 @@ END:VCARD`;
     return (
       <section>
         <Helmet>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
           <title>{clientName}</title>
-          <link rel="icon" type="image/x-icon" href={logo} />
-          <meta name="description" content={description}></meta>
-          <meta property="article:section" content={clientName}></meta>
-          <meta property="og:title" content={clientName}></meta>
-          <meta property="og:description" content={description}></meta>
+
+          <link rel="icon" type="image/x-icon" href={`${logo}`} />
+
+          <meta name="description" content={description} />
+          <meta property="article:section" content={description} />
+          <meta property="og:title" content={clientName} />
+          <meta property="og:description" content={description} />
           <meta
             property="og:url"
             content={`https://www.scan-taps.com/${companyName}`}
-          ></meta>
-          <meta property="og:image" content={logo}></meta>
-          <meta name="twitter:title" content={clientName}></meta>
-          <meta name="twitter:description" content={description}></meta>
+          />
+          <meta property="og:image" content={`${logo}`} />
+          <meta name="twitter:title" content={clientName} />
+          <meta name="twitter:description" content={description} />
         </Helmet>
         <div>
           {show && (
