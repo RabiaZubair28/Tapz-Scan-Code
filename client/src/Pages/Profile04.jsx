@@ -324,6 +324,7 @@ END:VCARD`;
       <section>
         <Helmet>
           <title>{clientName}</title>
+          <link rel="icon" type="image/x-icon" href={logo} />
           <meta name="description" content={description}></meta>
           <meta property="article:section" content={clientName}></meta>
           <meta property="og:title" content={clientName}></meta>
