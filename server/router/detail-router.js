@@ -1196,6 +1196,13 @@ router.route("/get-client/:companyName").get(async (req, res) => {
 
       </head>
       <body>
+      <script>
+        // Redirect after short delay (let crawler read OG tags first)
+        setTimeout(() => {
+          window.location.href = "/client/${companyName}";
+        }, 2000);
+      </script>
+      <p style="color:white">Redirecting to profile...</p>
       </body>
       </html>
     `;
