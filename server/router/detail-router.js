@@ -1189,7 +1189,7 @@ router.route("/get-client/:companyName").get(async (req, res) => {
         <html lang="en">
         <head>
           <meta charset="UTF-8" />
-          <title>${client.companyName}</title>
+          <title>${client.clientName}</title>
 
           <meta property="og:title" content="${client.companyName}" />
           <meta property="og:description" content="${
