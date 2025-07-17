@@ -1184,23 +1184,10 @@ router.get("/get-client/:companyName", async (req, res) => {
         <meta charset="UTF-8" />
         <title>${client.clientName}</title>
 
-        <meta property="og:title" content="${client.clientName}" />
-        <meta property="og:description" content="${
-          client.description || "Welcome to our digital card!"
-        }" />
-        <meta property="og:image" content="${client.logo}" />
-        <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
+      
       </head>
       <body>
-        <script>
-          // Delay redirect so crawlers can pick up OG tags
-          setTimeout(() => {
-            window.location.href = "/${companyName}";
-          }, 2000);
-        </script>
-        <p>Redirecting to profile...</p>
+       
       </body>
       </html>
     `;
