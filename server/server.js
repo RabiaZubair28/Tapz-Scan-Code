@@ -22,7 +22,7 @@ prerender.set("prerenderToken", "bF19sF0R6C6m2Bdw8QE2");
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(prerender);
+
 console.log("Auth Route:", authRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
@@ -46,6 +46,8 @@ app.post("/api/visit/:clientId", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "..", "/client/dist")));
+
+app.use(prerender);
 console.log(__dirname);
 app.get("*", (_, res) => {
   res.sendFile(path.resolve(__dirname, "..", "client", "dist", "index.html"));
