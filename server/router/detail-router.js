@@ -1185,7 +1185,7 @@ router.route("/get-client/:companyName").get(async (req, res) => {
         <meta charset="UTF-8" />
         <title>${client.clientName}</title>
 
-        <meta property="og:title" content="${client.companyName}" />
+        <meta property="og:title" content="${client.clientName}" />
         <meta property="og:description" content="${
           client.description || "Welcome to our digital card!"
         }" />
@@ -1194,7 +1194,6 @@ router.route("/get-client/:companyName").get(async (req, res) => {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <meta http-equiv="refresh" content="0; url=/client/${companyName}" />
       </head>
       <body>
       </body>
