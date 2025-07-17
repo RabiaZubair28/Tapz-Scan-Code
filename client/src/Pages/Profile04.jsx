@@ -339,21 +339,21 @@ END:VCARD`;
     return (
       <div>
         <Helmet>
-          <title>{pageTitle}</title>
-          <meta name="title" content={pageTitle} />
-          <meta name="description" content={pageDescription} />
+          <title>{client.name}</title>
+          <meta name="title" content={client.name} />
+          <meta name="description" content={client.name} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={currentPageUrl2} />
-          <meta property="og:title" content={pageTitle} />
-          <meta property="og:description" content={pageDescription} />
-          <meta property="og:image" content={shareImage} src={shareImage} />
+          <meta property="og:title" content={client.name} />
+          <meta property="og:description" content={client.name} />
+          <meta property="og:image" content={client.logo} src={client.logo} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={currentPageUrl2} />
-          <meta name="twitter:title" content={pageTitle} />
-          <meta name="twitter:description" content={pageDescription} />
-          <meta name="twitter:image" content={shareImage} />
+          <meta name="twitter:title" content={client.name} />
+          <meta name="twitter:description" content={client.name} />
+          <meta name="twitter:image" content={client.logo} />
         </Helmet>
         {show && (
           <div
