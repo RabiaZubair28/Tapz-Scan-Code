@@ -335,14 +335,14 @@ END:VCARD`;
 
           <meta name="description" content={description} />
           <meta property="article:section" content={description} />
-          <meta property="og:title" content={clientName} />
+          <meta property="og:title" content={client.clientName} />
           <meta property="og:description" content={description} />
           <meta
             property="og:url"
             content={`https://www.scan-taps.com/${companyName}`}
           />
           <meta property="og:image" content={`${logo}`} />
-          <meta name="twitter:title" content={clientName} />
+          <meta name="twitter:title" content={client.clientName} />
           <meta name="twitter:description" content={description} />
         </Helmet>
         <div>
