@@ -1189,4 +1189,45 @@ router.get("/share/:companyName", async (req, res) => {
   }
 });
 
+router.route("/get-client/:companyName").get(async (req, res) => {
+  const { companyName } = req.params;
+
+  try {
+    const client = await Client.findOne({ companyName });
+
+    if (!client) {
+      return res.status(404).send("Client not found");
+    }
+
+    // Construct HTML with OG tags
+    const html = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${client.companyName}</title>
+
+        <meta property="og:title" content="${client.companyName}" />
+        <meta property="og:description" content="${
+          client.description || "Welcome to our digital card!"
+        }" />
+        <meta property="og:image" content="${client.logo}" />
+        <meta property="og:url" content="https://www.scan-taps.com/${companyName}" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta http-equiv="refresh" content="0; url=/client/${companyName}" />
+      </head>
+      <body>
+      </body>
+      </html>
+    `;
+
+    res.send(html);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;

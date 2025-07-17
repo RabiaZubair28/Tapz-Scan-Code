@@ -87,6 +87,9 @@ const Profile04 = () => {
     return imageDataUrl;
   };
 
+  const [client2, setClient2] = useState("");
+  console.log(params);
+
   useEffect(() => {
     const fetchClient = async () => {
       try {
@@ -106,6 +109,31 @@ const Profile04 = () => {
       setLoading(false);
     }
   }, [clientId]);
+
+  console.log(client);
+
+  useEffect(() => {
+    const fetchClient = async () => {
+      try {
+        const response = await axios.get(
+          `https://www.scan-taps.com/api/data/get-client/${clientId}`
+        );
+        setClient2(response.data);
+        console.log(response);
+        setLoading(false);
+      } catch (err) {
+        setLoading(false);
+      }
+    };
+
+    if (clientId) {
+      fetchClient();
+    } else {
+      setLoading(false);
+    }
+  }, [clientId]);
+
+  console.log(client2);
 
   var {
     _id,
@@ -312,49 +340,12 @@ END:VCARD`;
   };
 
   const currentPageUrl = window.location.href;
-  const currentPageUrl2 = window.location.href;
-  const pageTitle = client?.clientName || client?.name || "Digital Profile";
-  const pageDescription =
-    client?.description || "Connect with my digital profile";
-  const shareImage = client?.logo || "";
-
-  useEffect(() => {
-    if (client) {
-      // Update document title
-      document.title = pageTitle;
-
-      // Update favicon if logo exists
-      if (client.logo) {
-        const link = document.querySelector("link[rel~='icon']");
-        if (link) {
-          link.href = client.logo;
-        }
-      }
-    }
-  }, [client, pageTitle]);
 
   const [selected, setSelected] = useState("");
 
   if (client) {
     return (
       <div>
-        <Helmet>
-          <title>{client.name}</title>
-          <meta name="title" content={client.name} />
-          <meta name="description" content={client.name} />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content={currentPageUrl2} />
-          <meta property="og:title" content={client.name} />
-          <meta property="og:description" content={client.name} />
-          <meta property="og:image" content={client.logo} src={client.logo} />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content={currentPageUrl2} />
-          <meta name="twitter:title" content={client.name} />
-          <meta name="twitter:description" content={client.name} />
-          <meta name="twitter:image" content={client.logo} />
-        </Helmet>
         {show && (
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
