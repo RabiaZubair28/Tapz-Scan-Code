@@ -34,7 +34,7 @@ function Login() {
 
       if (response.ok) {
         console.log("Login successful:", data);
-        if (data.userId == "6806360ac274db764c043f21") {
+        if (data.userId == "679d0388338c8b03276c7ae2") {
           navigate(`/dashboard/${data.userId}`);
         } else {
           navigate(`/edit/${data.userId}`);
