@@ -1168,16 +1168,18 @@ router.route("/addClient").post(async (req, res) => {
 });
 router.route("/fetchClients").get(async (req, res) => {
   try {
-    const clients = await Client.find(); // fetches all documents from Client collection
-
+    const clients = await Client.find();
+    console.log("Fetched clients count:", clients.length);
     res.status(200).json(clients);
   } catch (error) {
+    console.error("Error fetching clients:", error.message);
     res.status(500).json({
       error: "An error occurred while fetching clients",
       details: error.message,
     });
   }
 });
+
 router.route("/deleteClient/:id").delete(async (req, res) => {
   const { id } = req.params;
 
