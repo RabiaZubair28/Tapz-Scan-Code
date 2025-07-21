@@ -81,7 +81,8 @@ const Dashboard = () => {
         const response = await axios.get(
           "https://www.scan-taps.com/api/data/fetchClients"
         );
-        setClient2(response.data); // assuming you're storing the list in setClients
+        setClient2(response.data);
+        console.log(client2); // assuming you're storing the list in setClients
         setLoading(false);
       } catch (err) {
         setLoading(false);
