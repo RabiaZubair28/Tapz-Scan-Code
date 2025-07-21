@@ -339,6 +339,55 @@ const Dashboard = () => {
               placeholder="Company Name"
               className="border p-2 w-full"
             />
+            <input
+              type="text"
+              name="clientName"
+              value={formData.clientName}
+              onChange={handleChange}
+              placeholder="Client Name"
+              className="border p-2 w-full"
+            />
+            <input
+              type="text"
+              name="designation"
+              value={formData.designation}
+              onChange={handleChange}
+              placeholder="Designation"
+              className="border p-2 w-full"
+            />
+            <input
+              type="text"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Description"
+              className="border p-2 w-full"
+            />
+
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder="Address"
+              className="border p-2 w-full"
+            />
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Map URL"
+              className="border p-2 w-full"
+            />
+            <input
+              type="text"
+              name="services"
+              value={formData.services}
+              onChange={handleChange}
+              placeholder="Services"
+              className="border p-2 w-full"
+            />
 
             <input
               type="text"
@@ -348,6 +397,7 @@ const Dashboard = () => {
               placeholder="Phone Number 01"
               className="border p-2 w-full"
             />
+
             <select
               name="option"
               value={formData.option}
@@ -361,6 +411,14 @@ const Dashboard = () => {
               <option value="4">Black & Grey</option>
               <option value="5">Indigo & Green</option>
             </select>
+            <input
+              type="text"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="border p-2 w-full"
+            />
 
             {/* Upload Fields in full width */}
             <div className="col-span-2">
