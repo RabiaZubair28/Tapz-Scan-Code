@@ -1180,24 +1180,10 @@ router.route("/fetchClients").get(async (req, res) => {
   }
 });
 
-router.route("/deleteClient/:id").delete(async (req, res) => {
+router.delete("/deleteClient/:id", async (req, res) => {
   const { id } = req.params;
-
-  try {
-    const deletedClient = await Client.findByIdAndDelete(id);
-
-    if (!deletedClient) {
-      return res.status(404).json({ error: "Client not found" });
-    }
-
-    res
-      .status(200)
-      .json({ message: "Client deleted successfully", deletedClient });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred", details: error.message });
-  }
+  await Client.findByIdAndDelete(id);
+  res.status(200).json({ message: "Client deleted" });
 });
 
 module.exports = router;

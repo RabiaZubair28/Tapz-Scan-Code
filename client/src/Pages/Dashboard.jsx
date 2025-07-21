@@ -342,6 +342,17 @@ const Dashboard = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(
+        `https://www.scan-taps.com/api/data/deleteClient/${id}`
+      );
+      setClient2((prev) => prev.filter((client) => client._id !== id));
+    } catch (error) {
+      console.error("Delete failed", error);
+    }
+  };
+
   const [mode, setMode] = useState("add");
 
   if (client) {
