@@ -8,7 +8,7 @@ import axios from "axios";
 // import ScaleLoader from "react-spinners/ScaleLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Trash2 } from "lucide-react";
+import { FaTrash } from "react-icons/fa";
 // import { link } from "../../../server/router/auth-router";
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -19,6 +19,9 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
   const [client2, setClient2] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const clientsPerPage = 10;
   console.log(params);
 
   const toDataURL = async (url) => {
@@ -86,6 +89,12 @@ const Dashboard = () => {
 
     fetchClients();
   }, []);
+
+  // Pagination logic
+  const indexOfLastClient = currentPage * clientsPerPage;
+  const indexOfFirstClient = indexOfLastClient - clientsPerPage;
+  const currentClients = client2.slice(indexOfFirstClient, indexOfLastClient);
+  const totalPages = Math.ceil(client2.length / clientsPerPage);
 
   var {
     _id,
@@ -1109,19 +1118,28 @@ const Dashboard = () => {
 
         {client && mode == "delete" && (
           <div className="p-4">
-            {client2.length > 0 ? (
+            {currentClients.length > 0 ? (
               <div className="grid gap-4">
-                {client2.map((client) => (
+                {currentClients.map((client) => (
                   <div
                     key={client._id}
-                    className="border p-4 rounded shadow-sm bg-white"
+                    className="border p-4 rounded shadow-sm bg-white relative"
                   >
-                    <p className="font-semibold text-lg">
-                      {client.companyName || "Unnamed Client"}
-                    </p>
-                    <p className="text-sm text-gray-600">ID: {client._id}</p>
+                    <button
+                      className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+                      onClick={() => handleDelete(client._id)}
+                      title="Delete client"
+                    >
+                      <FaTrash />
+                    </button>
 
-                    {/* Optional: Display some links */}
+                    <p className="font-semibold text-lg">
+                      Client Name: {client.clientName || "Unnamed Client"}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      URL Name: {client.companyName} <br /> ID: {client._id}
+                    </p>
+
                     {client.website && (
                       <p className="text-blue-600 text-sm">
                         Website:{" "}
@@ -1135,14 +1153,29 @@ const Dashboard = () => {
                         </a>
                       </p>
                     )}
-
-                    {/* Add more fields if needed */}
                   </div>
                 ))}
               </div>
             ) : (
               <p>No clients found.</p>
             )}
+
+            {/* Pagination controls */}
+            <div className="flex justify-center mt-6 gap-2 flex-wrap">
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i + 1}
+                  className={`px-3 py-1 rounded ${
+                    currentPage === i + 1
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-200 text-gray-800"
+                  }`}
+                  onClick={() => setCurrentPage(i + 1)}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
