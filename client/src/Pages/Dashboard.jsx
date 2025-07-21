@@ -321,7 +321,7 @@ const Dashboard = () => {
         {client && (
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-2 gap-x-2 gap-y-4 max-w-4xl mx-auto mt-10 px-4"
+            className="grid grid-cols-2 gap-x-2 gap-y-2 max-w-4xl mx-auto mt-10 px-4"
           >
             <input
               type="text"
