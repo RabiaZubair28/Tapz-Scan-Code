@@ -317,6 +317,7 @@ const Dashboard = () => {
     return (
       <div>
         <ToastContainer />
+        <h2 className="text-center">Dashboard</h2>
         {client && (
           <form
             onSubmit={handleSubmit}
