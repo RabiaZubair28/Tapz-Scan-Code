@@ -319,15 +319,15 @@ const Dashboard = () => {
         {client && (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 max-w-md mx-auto mt-10"
+            className="grid grid-cols-2 gap-x-4 gap-y-6 max-w-4xl mx-auto mt-10"
           >
             <input
               type="text"
               name="companyName"
               value={formData.companyName}
               onChange={handleChange}
-              placeholder="Company Name"
-              className="border p-2"
+              placeholder="URL Name"
+              className="border p-2 w-full"
               required
             />
             <input
@@ -335,28 +335,32 @@ const Dashboard = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
-              className="border p-2"
+              placeholder="Company Name"
+              className="border p-2 w-full"
             />
+
             <input
               type="text"
               name="phone01"
               value={formData.phone01}
               onChange={handleChange}
-              placeholder="Phone 1"
-              className="border p-2"
+              placeholder="Phone Number 01"
+              className="border p-2 w-full"
             />
             <input
               type="text"
               name="option"
               value={formData.option}
               onChange={handleChange}
-              placeholder="Option"
-              className="border p-2"
+              placeholder="Profile Option"
+              className="border p-2 w-full"
             />
-            {/* Add more fields as needed */}
-            <div className="col-span-full">
-              <label className="block mb-1 font-semibold">Upload Logo</label>
+
+            {/* Upload Fields in full width */}
+            <div className="col-span-2">
+              <label className="block mb-1 font-semibold">
+                Upload Profile Picture
+              </label>
               <input
                 type="file"
                 accept="image/*"
@@ -365,23 +369,40 @@ const Dashboard = () => {
               />
             </div>
 
-            <div className="col-span-full">
+            <div className="col-span-2">
               <label className="block mb-1 font-semibold">
-                Upload Image 01
+                Upload Cover Photo
               </label>
               <input
                 type="file"
                 accept="image/*"
-                onChange={(e) => handleFileUpload(e, "img01")}
+                onChange={(e) => handleFileUpload(e, "cover")}
                 className="border p-2 w-full"
               />
             </div>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Add Client
-            </button>
+
+            {Array.from({ length: 10 }, (_, i) => (
+              <div key={i} className="col-span-1">
+                <label className="block mb-1 font-semibold">
+                  Upload Image 0{i + 1}
+                </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleFileUpload(e, `img0${i + 1}`)}
+                  className="border p-2 w-full"
+                />
+              </div>
+            ))}
+
+            <div className="col-span-2">
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded w-full"
+              >
+                Add Client
+              </button>
+            </div>
           </form>
         )}
       </div>
