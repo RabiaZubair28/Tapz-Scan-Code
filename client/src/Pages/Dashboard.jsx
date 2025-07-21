@@ -1128,7 +1128,7 @@ const Dashboard = () => {
         )}
 
         {client && mode == "delete" && (
-          <div className="p-4">
+          <div className="px-4 pb-4">
             {currentClients.length > 0 ? (
               <div className="grid gap-4">
                 {currentClients.map((client) => (
