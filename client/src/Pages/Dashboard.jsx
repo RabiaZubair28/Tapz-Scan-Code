@@ -349,7 +349,8 @@ const Dashboard = () => {
     color02: "",
     color03: "",
     password: "",
-    flag: "",
+    option: "",
+    visitCount: 5,
   });
 
   const handleChange = (e) => {
@@ -403,6 +404,14 @@ const Dashboard = () => {
               value={formData.phone01}
               onChange={handleChange}
               placeholder="Phone 1"
+              className="border p-2"
+            />
+            <input
+              type="text"
+              name="option"
+              value={formData.option}
+              onChange={handleChange}
+              placeholder="Option"
               className="border p-2"
             />
             {/* Add more fields as needed */}
