@@ -313,25 +313,38 @@ const Dashboard = () => {
     }
   };
 
-  const [isAdd, setIsAdd] = useState(true);
-
-  const handleClick = () => setIsAdd(!isAdd);
+  const [mode, setMode] = useState("add");
 
   if (client) {
     return (
       <div>
         <ToastContainer />
         <h2 className="text-center text-[80px] font-bold mt-10">Dashboard</h2>
-        <div className="flex items-center justify-between p-4 border-b mb-4">
+        <div className="flex gap-4">
           <button
-            onClick={handleClick}
-            className="bg-blue-600 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
+            onClick={() => setMode("add")}
+            className={`px-4 py-2 rounded-xl shadow transition ${
+              mode === "add"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
           >
-            {isAdd ? "Delete Client" : "Add Client"}
+            Add Client
+          </button>
+
+          <button
+            onClick={() => setMode("delete")}
+            className={`px-4 py-2 rounded-xl shadow transition ${
+              mode === "delete"
+                ? "bg-red-600 text-white"
+                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
+          >
+            Delete Client
           </button>
         </div>
 
-        {client && !isAdd && (
+        {client && mode == "add" && (
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-2 gap-x-2 gap-y-2 max-w-4xl mx-auto mt-4 px-4"
@@ -1071,7 +1084,7 @@ const Dashboard = () => {
           </form>
         )}
 
-        {client && isAdd && <div>delete</div>}
+        {client && mode == "delete" && <div>delete</div>}
       </div>
     );
   } else {
