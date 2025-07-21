@@ -322,7 +322,7 @@ const Dashboard = () => {
         <h2 className="text-center text-[40px] font-bold mt-5 mb-2">
           Dashboard
         </h2>
-        <div className="flex gap-3 justify-center items-start mb-5">
+        <div className="flex gap-3 justify-center items-start mb-10">
           <button
             onClick={() => setMode("add")}
             className={`px-6 py-3 rounded-lg shadow transition ${
