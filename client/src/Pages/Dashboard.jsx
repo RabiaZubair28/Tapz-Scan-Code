@@ -17,7 +17,7 @@ const Dashboard = () => {
   console.log(clientId);
 
   const [client, setClient] = useState("");
-  const [client2, setClient2] = useState(null);
+  const [client2, setClient2] = useState([]);
   console.log(params);
 
   const toDataURL = async (url) => {
