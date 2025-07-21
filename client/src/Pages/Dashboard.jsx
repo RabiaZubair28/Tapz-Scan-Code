@@ -15,9 +15,7 @@ const Dashboard = () => {
   const params = useParams();
   const clientId = params.id;
   console.log(clientId);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [clientsPerPage] = useState(10);
-  const [loading, setLoading] = useState(true);
+
   const [client, setClient] = useState("");
   const [client2, setClient2] = useState(null);
   console.log(params);
@@ -78,9 +76,9 @@ const Dashboard = () => {
         );
         setClient2(response.data);
         console.log(client2); // assuming you're storing the list in setClients
-        setLoading(false);
+        console.log("successful");
       } catch (err) {
-        setLoading(false);
+        console.log("error");
       }
     };
 
