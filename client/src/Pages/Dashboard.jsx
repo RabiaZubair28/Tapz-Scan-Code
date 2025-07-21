@@ -8,16 +8,24 @@ import axios from "axios";
 // import ScaleLoader from "react-spinners/ScaleLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Trash2 } from "lucide-react";
 // import { link } from "../../../server/router/auth-router";
 const Dashboard = () => {
   const navigate = useNavigate();
   const params = useParams();
   const clientId = params.id;
   console.log(clientId);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [clientsPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
   const [client, setClient] = useState("");
+  const [client2, setClient2] = useState(null);
   console.log(params);
+
+  const indexOfLast = currentPage * clientsPerPage;
+  const indexOfFirst = indexOfLast - clientsPerPage;
+  const currentClients = clients.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(clients.length / clientsPerPage);
 
   const toDataURL = async (url) => {
     const response = await axios.get(url, { responseType: "blob" });
@@ -66,6 +74,22 @@ const Dashboard = () => {
       setLoading(false);
     }
   }, [clientId]);
+
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axios.get(
+          "https://www.scan-taps.com/api/data/fetchClients"
+        );
+        setClient2(response.data); // assuming you're storing the list in setClients
+        setLoading(false);
+      } catch (err) {
+        setLoading(false);
+      }
+    };
+
+    fetchClients();
+  }, []);
 
   var {
     _id,
@@ -1087,7 +1111,57 @@ const Dashboard = () => {
           </form>
         )}
 
-        {client && mode == "delete" && <div>delete</div>}
+        {client && mode == "delete" && (
+          <div className="p-4">
+            <h2 className="text-xl font-semibold mb-4">All Clients</h2>
+
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <>
+                <div className="grid gap-3">
+                  {currentClients.map((client) => (
+                    <div
+                      key={client._id}
+                      className="flex items-center justify-between border p-3 rounded-lg shadow"
+                    >
+                      <div>
+                        <p className="font-medium">
+                          {client.companyName || "Unnamed Client"}
+                        </p>
+                        <p className="text-sm text-gray-600">{client._id}</p>
+                      </div>
+                      <button
+                        onClick={() => {}}
+                        className="text-red-600 hover:text-red-800 transition"
+                        title="Delete Client"
+                      >
+                        <Trash2 size={20} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Pagination Controls */}
+                <div className="flex justify-center mt-6 gap-2">
+                  {Array.from({ length: totalPages }, (_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentPage(idx + 1)}
+                      className={`px-3 py-1 rounded ${
+                        currentPage === idx + 1
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-200 hover:bg-gray-300"
+                      }`}
+                    >
+                      {idx + 1}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </div>
     );
   } else {

@@ -224,20 +224,27 @@ const Profile06 = () => {
     return (
       <section>
         <Helmet>
-          <Helmet>
-            <title>{clientName}</title>
-            <meta name="description" content={description}></meta>
-            <meta property="article:section" content={clientName}></meta>
-            <meta property="og:title" content={clientName}></meta>
-            <meta property="og:description" content={description}></meta>
-            <meta
-              property="og:url"
-              content={`https://www.scan-taps.com/${companyName}`}
-            ></meta>
-            <meta property="og:image" content={logo}></meta>
-            <meta name="twitter:title" content={clientName}></meta>
-            <meta name="twitter:description" content={description}></meta>
-          </Helmet>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          <title>{clientName}</title>
+
+          <link rel="icon" type="image/x-icon" href={`${logo}`} />
+
+          <meta name="description" content={name} />
+          <meta property="article:section" content={name} />
+          <meta property="og:title" content={client.clientName} />
+          <meta property="og:description" content={name} />
+          <meta
+            property="og:url"
+            content={`https://www.scan-taps.com/${companyName}`}
+          />
+          <meta property="og:image" content={`${logo}`} />
+          <meta name="twitter:title" content={client.clientName} />
+          <meta name="twitter:description" content={name} />
         </Helmet>
 
         <div

@@ -332,109 +332,133 @@ END:VCARD`;
 
   if (client) {
     return (
-      <div>
-        {show && (
-          <div
-            className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-            style={{ backgroundAttachment: "fixed" }}
-          >
-            <div className="bg-gray-50 border-gray-200 space-x-5 border-2 rounded-lg pb-8 pt-16 px-10 relative">
-              {/* Close Icon */}
-              <ImCross
-                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
-                onClick={handleClose}
-              />
+      <section>
+        <Helmet>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
 
-              <div className="flex flex-col items-center justify-center space-y-8">
-                {/* QR Code */}
-                <div className="qr flex items-center justify-center" id="qr">
-                  <QRCodeCanvas value={window.location.href} />
-                </div>
-                {/* Buttons and Social Icons */}
-                <div className="flex justify-center space-x-5">
-                  <FaDownload
-                    className="w-7 h-7"
-                    onClick={() => {
-                      downloadQr("qr");
-                      handleClose();
-                    }}
-                  />
+          <title>{clientName}</title>
 
-                  <FacebookShareButton
-                    url={currentPageUrl}
-                    quote="please share this"
-                    hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                  >
-                    <FaFacebookF className="w-8 h-8" />
-                  </FacebookShareButton>
+          <link rel="icon" type="image/x-icon" href={`${logo}`} />
 
-                  <LinkedinShareButton
-                    url={currentPageUrl}
-                    quote="please share this"
-                    hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                  >
-                    <FaLinkedinIn className="w-8 h-8" />
-                  </LinkedinShareButton>
+          <meta name="description" content={name} />
+          <meta property="article:section" content={name} />
+          <meta property="og:title" content={client.clientName} />
+          <meta property="og:description" content={name} />
+          <meta
+            property="og:url"
+            content={`https://www.scan-taps.com/${companyName}`}
+          />
+          <meta property="og:image" content={`${logo}`} />
+          <meta name="twitter:title" content={client.clientName} />
+          <meta name="twitter:description" content={name} />
+        </Helmet>
+        <div>
+          {show && (
+            <div
+              className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              style={{ backgroundAttachment: "fixed" }}
+            >
+              <div className="bg-gray-50 border-gray-200 space-x-5 border-2 rounded-lg pb-8 pt-16 px-10 relative">
+                {/* Close Icon */}
+                <ImCross
+                  className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
+                  onClick={handleClose}
+                />
 
-                  <TelegramShareButton
-                    url={currentPageUrl}
-                    quote="please share this"
-                    hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                  >
-                    <FaTelegramPlane className="w-8 h-8" />
-                  </TelegramShareButton>
+                <div className="flex flex-col items-center justify-center space-y-8">
+                  {/* QR Code */}
+                  <div className="qr flex items-center justify-center" id="qr">
+                    <QRCodeCanvas value={window.location.href} />
+                  </div>
+                  {/* Buttons and Social Icons */}
+                  <div className="flex justify-center space-x-5">
+                    <FaDownload
+                      className="w-7 h-7"
+                      onClick={() => {
+                        downloadQr("qr");
+                        handleClose();
+                      }}
+                    />
 
-                  <WhatsappShareButton
-                    url={currentPageUrl}
-                    quote="please share this"
-                    hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                  >
-                    <FaWhatsapp className="w-8 h-8" />
-                  </WhatsappShareButton>
+                    <FacebookShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <FaFacebookF className="w-8 h-8" />
+                    </FacebookShareButton>
+
+                    <LinkedinShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <FaLinkedinIn className="w-8 h-8" />
+                    </LinkedinShareButton>
+
+                    <TelegramShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <FaTelegramPlane className="w-8 h-8" />
+                    </TelegramShareButton>
+
+                    <WhatsappShareButton
+                      url={currentPageUrl}
+                      quote="please share this"
+                      hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                    >
+                      <FaWhatsapp className="w-8 h-8" />
+                    </WhatsappShareButton>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {!show && !show02 && (
-          <section className="main">
-            {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"rgb(22, 33, 92)", border:"1px solid white", borderRadius:"5px"}} onClick={
+          {!show && !show02 && (
+            <section className="main">
+              {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"rgb(22, 33, 92)", border:"1px solid white", borderRadius:"5px"}} onClick={
             ()=>{
               navigate(`/`)
             }
           }>Logout</button> */}
 
-            <Helmet>
-              <meta charset="UTF-8" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0"
-              />
+              <Helmet>
+                <meta charset="UTF-8" />
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+                />
 
-              <title>{clientName}</title>
+                <title>{clientName}</title>
 
-              <link rel="icon" type="image/x-icon" href={`${logo}`} />
+                <link rel="icon" type="image/x-icon" href={`${logo}`} />
 
-              <meta name="description" content={description} />
-              <meta property="article:section" content={description} />
-              <meta property="og:title" content={clientName} />
-              <meta property="og:description" content={description} />
-              <meta
-                property="og:url"
-                content={`https://www.scan-taps.com/${companyName}`}
-              />
-              <meta property="og:image" content={`${logo}`} />
-              <meta name="twitter:title" content={clientName} />
-              <meta name="twitter:description" content={description} />
-            </Helmet>
+                <meta name="description" content={description} />
+                <meta property="article:section" content={description} />
+                <meta property="og:title" content={clientName} />
+                <meta property="og:description" content={description} />
+                <meta
+                  property="og:url"
+                  content={`https://www.scan-taps.com/${companyName}`}
+                />
+                <meta property="og:image" content={`${logo}`} />
+                <meta name="twitter:title" content={clientName} />
+                <meta name="twitter:description" content={description} />
+              </Helmet>
 
-            <div
-              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-3  text-center bg-white`}
-              style={{ backgroundAttachment: "fixed" }}
-            >
-              <div className="bg-white border border-white rounded-2xl pb-4">
-                {/* {images && (
+              <div
+                className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-3  text-center bg-white`}
+                style={{ backgroundAttachment: "fixed" }}
+              >
+                <div className="bg-white border border-white rounded-2xl pb-4">
+                  {/* {images && (
       <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
 
         <a href={images} className='w-full'>
@@ -448,44 +472,44 @@ END:VCARD`;
         </a>
       </div>
       )} */}
-                <div className="flex items-center justify-center mt-0 mb-0">
-                  {/* <img src={eye} height={25}></img>
+                  <div className="flex items-center justify-center mt-0 mb-0">
+                    {/* <img src={eye} height={25}></img>
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                  <button className="flex text-white bg-[#1d8eb7] items-center justify-center gap-x-1 rounded-md py-2.5 px-6  border-1 border-white shadow-sm hover:shadow-md hover:bg-blue-300">
-                    <FaDownload size={20} onClick={downloadContactCard} />
-                    <span
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                      onClick={downloadContactCard}
-                    >
-                      &nbsp;&nbsp;Save Contact
-                    </span>
-                  </button>
-                </div>
-                <div className="px-6">
-                  {logo && (
-                    <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-28">
-                      <a href={logo}>
-                        <div className="relative mb-2 ">
-                          <img
-                            src={logo}
-                            alt="profile"
-                            className="w-36 h-36 -mt-24 mx-auto rounded-full border-1 border-white shadow-md"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  )}
-                  {/* <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
+                    <button className="flex text-white bg-[#1d8eb7] items-center justify-center gap-x-1 rounded-md py-2.5 px-6  border-1 border-white shadow-sm hover:shadow-md hover:bg-blue-300">
+                      <FaDownload size={20} onClick={downloadContactCard} />
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        onClick={downloadContactCard}
+                      >
+                        &nbsp;&nbsp;Save Contact
+                      </span>
+                    </button>
+                  </div>
+                  <div className="px-6">
+                    {logo && (
+                      <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-28">
+                        <a href={logo}>
+                          <div className="relative mb-2 ">
+                            <img
+                              src={logo}
+                              alt="profile"
+                              className="w-36 h-36 -mt-24 mx-auto rounded-full border-1 border-white shadow-md"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                    )}
+                    {/* <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
           <MdRemoveRedEye size={20} />
           <p>{visitCount}</p>
         </div> */}
 
-                  {/* <div className="px-4">
+                    {/* <div className="px-4">
           <div className="flex justify-center space-x-2 mt-2 mb-2.5">
           <a href={`tel:${phone01}`}
         target="_blank"
@@ -508,976 +532,1022 @@ END:VCARD`;
           </div>
 
       </div> */}
-                  <div className="flex flex-col justify-center items-center">
-                    <h2 className="text-lg font-semibold text-gray-800 pt-1 ">
-                      {name}
-                    </h2>
-                    <h2 className="text-2xl font-semibold text-gray-800 pt-1">
-                      {clientName}
-                    </h2>
-                    <p className="text-md font-semibold text-gray-900 pt-1 pb-1">
-                      {designation}
-                    </p>
-                    <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[280px] break-words">
-                      {description}
-                    </p>
+                    <div className="flex flex-col justify-center items-center">
+                      <h2 className="text-lg font-semibold text-gray-800 pt-1 ">
+                        {name}
+                      </h2>
+                      <h2 className="text-2xl font-semibold text-gray-800 pt-1">
+                        {clientName}
+                      </h2>
+                      <p className="text-md font-semibold text-gray-900 pt-1 pb-1">
+                        {designation}
+                      </p>
+                      <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[280px] break-words">
+                        {description}
+                      </p>
+                    </div>
+                    {/* <p className="text-xs text-gray-500">{description}</p> */}
+                    {/* <p className="text-md text-gray-600">{romanName}</p> */}
+
+                    <div className="px-10">
+                      {phone01 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${phone01}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5 bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaPhoneVolume
+                                alt="Phone01"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {phone01}
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                      {phone02 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${phone02}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <img
+                                src={phone}
+                                alt="Phone02"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {phone02}
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                      {phone03 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${phone03}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5 bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <img
+                                src={phone}
+                                alt="Phone03"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {phone03}
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                      {telephone02 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${telephone02}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-2.5">
+                              <GiRotaryPhone
+                                alt="Telephone"
+                                className="h-8 w-8 rounded-sm"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {telephone02}
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+
+                      {telephone01 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${telephone01}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-2.5">
+                              <GiRotaryPhone
+                                alt="Telephone"
+                                className="h-7 w-7 rounded-sm"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {telephone01}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+
+                      {telephone03 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`tel:${telephone03}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700 shadow rounded-lg max-w-md"
+                          >
+                            <div className="flex items-center space-x-2.5">
+                              <GiRotaryPhone
+                                alt="Telephone"
+                                className="h-7 w-7 rounded-sm"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="font-medium">Telephone</span>
+                                <span className="text-gray-500 text-sm">
+                                  {telephone03}
+                                </span>
+                              </div>
+                            </div>
+                            <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {whatsapp01 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`https://wa.me/${whatsapp01}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <FaWhatsapp
+                                alt="Whatsapp01"
+                                className="h-7 w-7"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {whatsapp01}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {whatsapp02 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`https://wa.me/${whatsapp02}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <FaWhatsapp
+                                alt="Whatsapp02"
+                                className="h-7 w-7"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {whatsapp02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {whatsapp03 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`https://wa.me/${whatsapp03}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700 max-w-md"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <FaWhatsapp
+                                alt="Whatsapp03"
+                                className="h-7 w-7"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {whatsapp03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {email && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`mailto:${email}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <TfiEmail alt="Email" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {email}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {email02 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`mailto:${email02}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <TfiEmail alt="Email" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {email02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {email03 && (
+                        <div className="flex justify-center mt-3">
+                          <a
+                            href={`mailto:${email03}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <TfiEmail alt="Email" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {email03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </a>
+                        </div>
+                      )}
+                      {facebookLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(facebookLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaFacebookF
+                                alt="Facebook"
+                                className="h-6 w-6 "
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {facebookName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {facebookLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(facebookLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaFacebookF
+                                alt="Facebook"
+                                className="h-6 w-6 "
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {facebookName02}
+                                </span>
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      )}
+                      {facebookLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(facebookLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaFacebookF
+                                alt="Facebook"
+                                className="h-6 w-6 "
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {facebookName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {instagramLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(instagramLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaInstagram
+                                alt="Instagram"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {instagramName}
+                                </span>
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      )}
+                      {instagramLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(instagramLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaInstagram
+                                alt="Instagram"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {instagramName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {instagramLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(instagramLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaInstagram
+                                alt="Instagram"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="font-medium">Instagram</span>
+                                <span className="text-gray-500 text-sm">
+                                  {instagramName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {snapchatLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(snapchatLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaSnapchatGhost
+                                alt="Snapchat"
+                                className="h-6 w-6"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {snapchatName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {snapchatLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(snapchatLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaSnapchatGhost className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {snapchatName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {snapchatLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(snapchatLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaSnapchatGhost className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {snapchatName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(youtubeLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaYoutube className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(youtubeLink02, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaYoutube alt="Youtube" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(youtubeLink03, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaYoutube alt="Youtube" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {tiktokLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(tiktokLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTiktok alt="Youtube" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {tiktokName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {tiktokLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(tiktokLink02, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTiktok alt="Youtube" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {tiktokName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {tiktokLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(tiktokLink03, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTiktok alt="Youtube" className="h-6 w-6" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {tiktokName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeShortsLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(youtubeShortsLink, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLinkedinIn
+                                alt="Youtube"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeShortsName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeShortsLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(youtubeShortsLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLinkedinIn
+                                alt="Youtube"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeShortsName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {youtubeShortsLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(youtubeShortsLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLinkedinIn
+                                alt="Youtube"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {youtubeShortsName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {twitterLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(twitterLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTwitter className="h-6 w-6 rounded-md" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {twitterName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {twitterLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(twitterLink02, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTwitter
+                                alt="Twitter"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {twitterName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {twitterLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(twitterLink03, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaTwitter
+                                alt="Twitter"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {twitterName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {address && (
+                        <div className="flex justify-center mt-3">
+                          <button className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md">
+                            <div className="flex items-center space-x-4">
+                              <FaBuilding
+                                alt="Address"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {address}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {website && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(website, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGlobe
+                                alt="Website"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {websiteName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {website02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(website02, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGlobe
+                                alt="Website"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {websiteName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {website03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(website03, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGlobe
+                                alt="Website"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {websiteName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleReviewLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(googleReviewLink, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGooglePlusG
+                                alt="Google Review"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleReviewName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleReviewLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(googleReviewLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGooglePlusG
+                                alt="Google Review"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleReviewName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleReviewLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(googleReviewLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaGooglePlusG
+                                alt="Google Review"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleReviewName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleMapLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(googleMapLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLocationDot
+                                alt="Google Map"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleMapName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleMapLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(googleMapLink02, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLocationDot
+                                alt="Google Map"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleMapName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {googleMapLink03 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() =>
+                              window.open(googleMapLink03, "_blank")
+                            }
+                          >
+                            <div className="flex items-center space-x-4">
+                              <FaLocationDot
+                                alt="Google Map"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {googleMapName03}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {menuLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(menuLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <MdOutlineRestaurant className="h-6 w-6 rounded-md" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {menuName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {catalogueLink && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(catalogueLink, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <MdOutlineMenuBook className="h-6 w-6 rounded-md" />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {catalogueName}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {profileLink01 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(profileLink01, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <RiProfileLine
+                                alt="Profile"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {profileName01}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                      {profileLink02 && (
+                        <div className="flex justify-center mt-3">
+                          <button
+                            className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
+                            onClick={() => window.open(profileLink02, "_blank")}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <RiProfileLine
+                                alt="Profile"
+                                className="h-6 w-6 rounded-md"
+                              />
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="text-gray-500 text-sm">
+                                  {profileName02}
+                                </span>
+                              </div>
+                            </div>
+                            {/* Chevron/Arrow */}
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  {/* <p className="text-xs text-gray-500">{description}</p> */}
-                  {/* <p className="text-md text-gray-600">{romanName}</p> */}
 
-                  <div className="px-10">
-                    {phone01 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${phone01}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5 bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaPhoneVolume alt="Phone01" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {phone01}
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    )}
-                    {phone02 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${phone02}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <img
-                              src={phone}
-                              alt="Phone02"
-                              className="h-6 w-6"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {phone02}
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    )}
-                    {phone03 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${phone03}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5 bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <img
-                              src={phone}
-                              alt="Phone03"
-                              className="h-6 w-6"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {phone03}
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    )}
-                    {telephone02 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${telephone02}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-2.5">
-                            <GiRotaryPhone
-                              alt="Telephone"
-                              className="h-8 w-8 rounded-sm"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {telephone02}
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    )}
-
-                    {telephone01 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${telephone01}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-2.5">
-                            <GiRotaryPhone
-                              alt="Telephone"
-                              className="h-7 w-7 rounded-sm"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {telephone01}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-
-                    {telephone03 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`tel:${telephone03}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700 shadow rounded-lg max-w-md"
-                        >
-                          <div className="flex items-center space-x-2.5">
-                            <GiRotaryPhone
-                              alt="Telephone"
-                              className="h-7 w-7 rounded-sm"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Telephone</span>
-                              <span className="text-gray-500 text-sm">
-                                {telephone03}
-                              </span>
-                            </div>
-                          </div>
-                          <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {whatsapp01 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`https://wa.me/${whatsapp01}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <FaWhatsapp alt="Whatsapp01" className="h-7 w-7" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {whatsapp01}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {whatsapp02 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`https://wa.me/${whatsapp02}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <FaWhatsapp alt="Whatsapp02" className="h-7 w-7" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {whatsapp02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {whatsapp03 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`https://wa.me/${whatsapp03}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700 max-w-md"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <FaWhatsapp alt="Whatsapp03" className="h-7 w-7" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {whatsapp03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {email && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`mailto:${email}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <TfiEmail alt="Email" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {email}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {email02 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`mailto:${email02}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <TfiEmail alt="Email" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {email02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {email03 && (
-                      <div className="flex justify-center mt-3">
-                        <a
-                          href={`mailto:${email03}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <TfiEmail alt="Email" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {email03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </a>
-                      </div>
-                    )}
-                    {facebookLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(facebookLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaFacebookF alt="Facebook" className="h-6 w-6 " />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {facebookName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {facebookLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(facebookLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaFacebookF alt="Facebook" className="h-6 w-6 " />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {facebookName02}
-                              </span>
-                            </div>
-                          </div>
-                        </button>
-                      </div>
-                    )}
-                    {facebookLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(facebookLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaFacebookF alt="Facebook" className="h-6 w-6 " />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {facebookName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {instagramLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(instagramLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaInstagram alt="Instagram" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {instagramName}
-                              </span>
-                            </div>
-                          </div>
-                        </button>
-                      </div>
-                    )}
-                    {instagramLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(instagramLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaInstagram alt="Instagram" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {instagramName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {instagramLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(instagramLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaInstagram alt="Instagram" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Instagram</span>
-                              <span className="text-gray-500 text-sm">
-                                {instagramName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {snapchatLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(snapchatLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaSnapchatGhost
-                              alt="Snapchat"
-                              className="h-6 w-6"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {snapchatName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {snapchatLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(snapchatLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaSnapchatGhost className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {snapchatName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {snapchatLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(snapchatLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaSnapchatGhost className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {snapchatName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(youtubeLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaYoutube className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(youtubeLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaYoutube alt="Youtube" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(youtubeLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaYoutube alt="Youtube" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {tiktokLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(tiktokLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTiktok alt="Youtube" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {tiktokName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {tiktokLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(tiktokLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTiktok alt="Youtube" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {tiktokName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {tiktokLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(tiktokLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTiktok alt="Youtube" className="h-6 w-6" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {tiktokName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeShortsLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(youtubeShortsLink, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLinkedinIn
-                              alt="Youtube"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeShortsName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeShortsLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(youtubeShortsLink02, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLinkedinIn
-                              alt="Youtube"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeShortsName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {youtubeShortsLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(youtubeShortsLink03, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLinkedinIn
-                              alt="Youtube"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {youtubeShortsName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {twitterLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(twitterLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTwitter className="h-6 w-6 rounded-md" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {twitterName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {twitterLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(twitterLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTwitter
-                              alt="Twitter"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {twitterName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {twitterLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(twitterLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaTwitter
-                              alt="Twitter"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {twitterName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {address && (
-                      <div className="flex justify-center mt-3">
-                        <button className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md">
-                          <div className="flex items-center space-x-4">
-                            <FaBuilding
-                              alt="Address"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {address}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {website && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(website, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGlobe
-                              alt="Website"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {websiteName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {website02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(website02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGlobe
-                              alt="Website"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {websiteName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {website03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(website03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGlobe
-                              alt="Website"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {websiteName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleReviewLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(googleReviewLink, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGooglePlusG
-                              alt="Google Review"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleReviewName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleReviewLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(googleReviewLink02, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGooglePlusG
-                              alt="Google Review"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleReviewName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleReviewLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() =>
-                            window.open(googleReviewLink03, "_blank")
-                          }
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaGooglePlusG
-                              alt="Google Review"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleReviewName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleMapLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(googleMapLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLocationDot
-                              alt="Google Map"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleMapName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleMapLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(googleMapLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLocationDot
-                              alt="Google Map"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleMapName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {googleMapLink03 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(googleMapLink03, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <FaLocationDot
-                              alt="Google Map"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {googleMapName03}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {menuLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(menuLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <MdOutlineRestaurant className="h-6 w-6 rounded-md" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {menuName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {catalogueLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(catalogueLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <MdOutlineMenuBook className="h-6 w-6 rounded-md" />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {catalogueName}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {profileLink01 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(profileLink01, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <RiProfileLine
-                              alt="Profile"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {profileName01}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                    {profileLink02 && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-start w-full px-5  bg-white text-gray-700  max-w-md"
-                          onClick={() => window.open(profileLink02, "_blank")}
-                        >
-                          <div className="flex items-center space-x-4">
-                            <RiProfileLine
-                              alt="Profile"
-                              className="h-6 w-6 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="text-gray-500 text-sm">
-                                {profileName02}
-                              </span>
-                            </div>
-                          </div>
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* { (img01 != "" || img02 != "" || img03 != "" || img04 != "" || img05 != "" || img05 != "" || img06 != "" || img07 != "" || img08 != "" || img09 != "" || img10 != "" ) &&  <div className="px-4">
+                  {/* { (img01 != "" || img02 != "" || img03 != "" || img04 != "" || img05 != "" || img05 != "" || img06 != "" || img07 != "" || img08 != "" || img09 != "" || img10 != "" ) &&  <div className="px-4">
       <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-5">Image Gallery</h2>
       <hr className="border-gray-300" />
       {img01 && (
@@ -1596,113 +1666,114 @@ END:VCARD`;
   </div>
 )}
  </div>} */}
-                {location != "" && (
-                  <div className="px-1">
+                  {location != "" && (
+                    <div className="px-1">
+                      <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">
+                        Location
+                      </h2>
+
+                      <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
+                        {location && (
+                          <iframe
+                            src={location}
+                            width="100%"
+                            height="300"
+                            allowfullscreen=""
+                            loading="lazy"
+                            className="rounded-xl"
+                          ></iframe>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  <div className="px-4">
                     <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">
-                      Location
+                      Share Profile
                     </h2>
+                    <div className="flex justify-center space-x-5 mt-6">
+                      <div className="social-btn ">
+                        <IoQrCodeSharp size={35} onClick={handleShow} />
+                      </div>
+                      <div className="social-btn ">
+                        <FacebookShareButton
+                          url={currentPageUrl}
+                          quote="please share this"
+                          hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                        >
+                          <FaFacebookF // Replace with the actual path to the Facebook icon
+                            alt="Facebook"
+                            className="w-8 h-8"
+                          />
+                        </FacebookShareButton>
+                      </div>
 
-                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
-                      {location && (
-                        <iframe
-                          src={location}
-                          width="100%"
-                          height="300"
-                          allowfullscreen=""
-                          loading="lazy"
-                          className="rounded-xl"
-                        ></iframe>
-                      )}
+                      <div className="social-btn">
+                        <TwitterShareButton
+                          url={currentPageUrl}
+                          quote="please share this"
+                          hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                        >
+                          <FaTwitter // Replace with the actual path to the Twitter icon
+                            alt="Twitter"
+                            className="w-8 h-8"
+                          />
+                        </TwitterShareButton>
+                      </div>
+
+                      <div className="social-btn">
+                        <LinkedinShareButton
+                          url={currentPageUrl}
+                          quote="please share this"
+                          hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                        >
+                          <FaLinkedinIn // Replace with the actual path to the LinkedIn icon
+                            alt="LinkedIn"
+                            className="w-8 h-8 "
+                          />
+                        </LinkedinShareButton>
+                      </div>
+
+                      <div className="social-btn">
+                        <TelegramShareButton
+                          url={currentPageUrl}
+                          quote="please share this"
+                          hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                        >
+                          <FaTelegramPlane // Replace with the actual path to the Telegram icon
+                            alt="Telegram"
+                            className="w-8 h-8 "
+                          />
+                        </TelegramShareButton>
+                      </div>
+
+                      <div className="social-btn">
+                        <WhatsappShareButton
+                          url={currentPageUrl}
+                          quote="please share this"
+                          hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                        >
+                          <FaWhatsapp // Replace with the actual path to the WhatsApp icon
+                            alt="WhatsApp"
+                            className="w-8 h-8"
+                          />
+                        </WhatsappShareButton>
+                      </div>
                     </div>
                   </div>
-                )}
-                <div className="px-4">
-                  <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-8">
-                    Share Profile
-                  </h2>
-                  <div className="flex justify-center space-x-5 mt-6">
-                    <div className="social-btn ">
-                      <IoQrCodeSharp size={35} onClick={handleShow} />
-                    </div>
-                    <div className="social-btn ">
-                      <FacebookShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <FaFacebookF // Replace with the actual path to the Facebook icon
-                          alt="Facebook"
-                          className="w-8 h-8"
-                        />
-                      </FacebookShareButton>
-                    </div>
 
-                    <div className="social-btn">
-                      <TwitterShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <FaTwitter // Replace with the actual path to the Twitter icon
-                          alt="Twitter"
-                          className="w-8 h-8"
-                        />
-                      </TwitterShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <LinkedinShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <FaLinkedinIn // Replace with the actual path to the LinkedIn icon
-                          alt="LinkedIn"
-                          className="w-8 h-8 "
-                        />
-                      </LinkedinShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <TelegramShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <FaTelegramPlane // Replace with the actual path to the Telegram icon
-                          alt="Telegram"
-                          className="w-8 h-8 "
-                        />
-                      </TelegramShareButton>
-                    </div>
-
-                    <div className="social-btn">
-                      <WhatsappShareButton
-                        url={currentPageUrl}
-                        quote="please share this"
-                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
-                      >
-                        <FaWhatsapp // Replace with the actual path to the WhatsApp icon
-                          alt="WhatsApp"
-                          className="w-8 h-8"
-                        />
-                      </WhatsappShareButton>
-                    </div>
+                  <div className="px-4">
+                    <p className="pt-8">
+                      Copyright © <span className="company">{companyName}</span>
+                      . All Rights Reserved.
+                    </p>
                   </div>
-                </div>
-
-                <div className="px-4">
-                  <p className="pt-8">
-                    Copyright © <span className="company">{companyName}</span>.
-                    All Rights Reserved.
-                  </p>
                 </div>
               </div>
-            </div>
-            {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
-          </section>
-        )}
-      </div>
+              {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
+            </section>
+          )}
+        </div>
+      </section>
     );
   } else {
     return (
