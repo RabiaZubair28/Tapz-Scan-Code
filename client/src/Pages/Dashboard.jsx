@@ -1107,7 +1107,44 @@ const Dashboard = () => {
           </form>
         )}
 
-        {client && mode == "delete" && <div className="p-4">delete</div>}
+        {client && mode == "delete" && (
+          <div className="p-4">
+            {client2.length > 0 ? (
+              <div className="grid gap-4">
+                {client2.map((client) => (
+                  <div
+                    key={client._id}
+                    className="border p-4 rounded shadow-sm bg-white"
+                  >
+                    <p className="font-semibold text-lg">
+                      {client.companyName || "Unnamed Client"}
+                    </p>
+                    <p className="text-sm text-gray-600">ID: {client._id}</p>
+
+                    {/* Optional: Display some links */}
+                    {client.website && (
+                      <p className="text-blue-600 text-sm">
+                        Website:{" "}
+                        <a
+                          href={client.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline"
+                        >
+                          {client.website}
+                        </a>
+                      </p>
+                    )}
+
+                    {/* Add more fields if needed */}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p>No clients found.</p>
+            )}
+          </div>
+        )}
       </div>
     );
   } else {
