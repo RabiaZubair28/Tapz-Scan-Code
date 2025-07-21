@@ -304,7 +304,9 @@ const Dashboard = () => {
         formData
       );
       toast.success("Client added successfully");
-      setFormData({ ...formData }); // clear a few fields or all
+      setFormData({ ...formData });
+
+      console.log(formData); // clear a few fields or all
     } catch (error) {
       toast.error("Failed to add client");
       console.error(error);
