@@ -1,77 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { QRCodeCanvas } from "qrcode.react";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
-import phone from "../assets/phone.png";
-import addressImg from "../assets/adress.png";
-import whatsapp from "../assets/whatsapp.png";
-import insta from "../assets/insta.png";
 import { useNavigate } from "react-router-dom";
-import snap from "../assets/snap.png";
-import yt from "../assets/yt.png";
-import tiktok from "../assets/tiktok.png";
-import threads from "../assets/threads.png";
-import fb from "../assets/fb.png";
-import greview from "../assets/greview.png";
-import websiteImg from "../assets/web.png";
-import emailImg from "../assets/gmail.png";
-import linkedin from "../assets/linkedin.webp";
-import ytshorts from "../assets/yt-shorts.png";
-import locations from "../assets/location.png";
-import twitter02 from "../assets/twitter02.png";
-import telegram from "../assets/telegram.webp";
-import menu from "../assets/menu.png";
-import catalog from "../assets/catalog.jpg";
-import profile from "../assets/profile.png";
-import eye from "../assets/eye.jpg";
-import telephone from "../assets/telephone01.jpg";
-import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
-import { Helmet } from "react-helmet";
-import { IoQrCodeSharp } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
-import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialTwitter } from "react-icons/ti";
-import { TiSocialLinkedin } from "react-icons/ti";
-import { FaTelegramPlane } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { SlArrowRight } from "react-icons/sl";
-import vCard from "vcards-js";
-import {
-  FacebookShareButton,
-  TelegramShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  WhatsappShareButton,
-  LinkedinIcon,
-} from "react-share";
-import { ImCross } from "react-icons/im";
 import axios from "axios";
 // import ScaleLoader from "react-spinners/ScaleLoader";
-import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { MdOutlinePhoneAndroid } from "react-icons/md";
-import { AiOutlineMail } from "react-icons/ai";
-import { RiMessage2Line } from "react-icons/ri";
-import { ImWhatsapp } from "react-icons/im";
-import linkedin02 from "../assets/download.png";
-import { MdRemoveRedEye } from "react-icons/md";
+
 // import { link } from "../../../server/router/auth-router";
 const Dashboard = () => {
-  const [show, setShow] = useState(false);
-  const [show02, setShow02] = useState(false);
-  const [show03, setShow03] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleClose02 = () => setShow02(false);
-  const handleShow02 = () => setShow02(true);
-  const handleClose03 = () => setShow03(false);
-  const handleShow03 = () => setShow03(true);
   const navigate = useNavigate();
   const params = useParams();
   const clientId = params.id;
@@ -86,7 +25,7 @@ const Dashboard = () => {
 
     return imageDataUrl;
   };
-  const handleFileUpload = async (event) => {
+  const handleFileUpload = async (event, fieldName) => {
     const file = event.target.files[0];
     if (!file) return;
 
@@ -104,9 +43,7 @@ const Dashboard = () => {
     );
 
     const uploadedImgURL = await res.json();
-    // console.log(uploadedImgURL.url)
-    // console.log(file)
-    return uploadedImgURL.url;
+    setFormData({ ...formData, [fieldName]: uploadedImgURL.url });
   };
 
   useEffect(() => {
