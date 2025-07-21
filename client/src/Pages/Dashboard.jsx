@@ -319,11 +319,11 @@ const Dashboard = () => {
     return (
       <div>
         <ToastContainer />
-        <h2 className="text-center text-[80px] font-bold mt-10">Dashboard</h2>
-        <div className="flex gap-4">
+        <h2 className="text-center text-[40px] font-bold mt-5">Dashboard</h2>
+        <div className="flex gap-2 justify-center items-start">
           <button
             onClick={() => setMode("add")}
-            className={`px-4 py-2 rounded-xl shadow transition ${
+            className={`px-6 py-4 rounded-lg shadow transition ${
               mode === "add"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-800 hover:bg-gray-300"
@@ -334,9 +334,9 @@ const Dashboard = () => {
 
           <button
             onClick={() => setMode("delete")}
-            className={`px-4 py-2 rounded-xl shadow transition ${
+            className={`px-6 py-4 rounded-lg shadow transition ${
               mode === "delete"
-                ? "bg-red-600 text-white"
+                ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-800 hover:bg-gray-300"
             }`}
           >
@@ -422,6 +422,7 @@ const Dashboard = () => {
               onChange={handleChange}
               placeholder="Email 01"
               className="border p-2 w-full"
+              required
             />
             <input
               type="text"
