@@ -90,7 +90,7 @@ const EditPortal10 = () => {
     const fetchClient = async () => {
       try {
         const response = await axios.get(
-          `https://www.scan-taps.com/api/data/client/${clientId}`
+          `https://www.scan-taps.com/api/data/clients/${clientId}`
         );
         setClient(response.data);
         setLoading(false);
