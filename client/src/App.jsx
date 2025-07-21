@@ -6,6 +6,7 @@ import Working from "./Pages/Working.jsx";
 import ContactForm from "./Components/Home/ContactForm.jsx";
 import EditPortal from "./Pages/EditPortal.jsx";
 import Profile from "./Pages/Profile.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/edit/:id" element={<EditPortal />} />
           <Route path="/:id" element={<Profile />} />
+          <Route path="/dashboard/:id" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>

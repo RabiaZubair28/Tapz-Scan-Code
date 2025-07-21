@@ -34,7 +34,11 @@ function Login() {
 
       if (response.ok) {
         console.log("Login successful:", data);
-        navigate(`/edit/${data.userId}`);
+        if (data.userId == "6806360ac274db764c043f21") {
+          navigate(`/dashboard/${data.userId}`);
+        } else {
+          navigate(`/edit/${data.userId}`);
+        }
       } else {
         console.log("Login failed:", data.message);
         alert(data.message || "Invalid credentials");
