@@ -911,6 +911,26 @@ router.route("/client/:companyName").get(async (req, res) => {
       .json({ error: "An error occurred", details: error.message });
   }
 });
+router.route("/clients/:companyName").get(async (req, res) => {
+  const { companyName } = req.params;
+  console.log(companyName);
+  // Validate the ID format
+
+  try {
+    // Find the client by ID
+    const client = await Client.findOne({ _id: companyName });
+
+    if (!client) {
+      return res.status(404).json({ error: "Client not found" });
+    }
+
+    res.status(200).json(client);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "An error occurred", details: error.message });
+  }
+});
 router.route("/addClient").post(async (req, res) => {
   try {
     console.log(req.body);
