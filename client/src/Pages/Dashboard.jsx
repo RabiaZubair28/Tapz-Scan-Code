@@ -319,11 +319,13 @@ const Dashboard = () => {
     return (
       <div>
         <ToastContainer />
-        <h2 className="text-center text-[40px] font-bold mt-5">Dashboard</h2>
-        <div className="flex gap-2 justify-center items-start">
+        <h2 className="text-center text-[40px] font-bold mt-5 mb-2">
+          Dashboard
+        </h2>
+        <div className="flex gap-3 justify-center items-start mb-5">
           <button
             onClick={() => setMode("add")}
-            className={`px-6 py-4 rounded-lg shadow transition ${
+            className={`px-6 py-3 rounded-lg shadow transition ${
               mode === "add"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-800 hover:bg-gray-300"
@@ -334,7 +336,7 @@ const Dashboard = () => {
 
           <button
             onClick={() => setMode("delete")}
-            className={`px-6 py-4 rounded-lg shadow transition ${
+            className={`px-6 py-3 rounded-lg shadow transition ${
               mode === "delete"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-800 hover:bg-gray-300"
