@@ -76,9 +76,10 @@ const Dashboard = () => {
           "https://www.scan-taps.com/api/data/fetchClients"
         );
         setClient2(response.data);
-        console.log(client2); // assuming you're storing the list in setClients
+        console.log("Fetched on frontend:", response.data); // ✅ Use this
         setLoading(false);
       } catch (err) {
+        console.error("Error in fetch:", err);
         setLoading(false);
       }
     };
