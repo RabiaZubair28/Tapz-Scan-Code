@@ -1138,7 +1138,10 @@ const Dashboard = () => {
                   >
                     <button
                       className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-                      onClick={() => handleDelete(client._id)}
+                      onClick={() => {
+                        handleDelete(client._id);
+                        toast.error("Client deleted successfully!");
+                      }}
                       title="Delete client"
                     >
                       <FaTrash />
@@ -1151,16 +1154,16 @@ const Dashboard = () => {
                       URL Name: {client.companyName} <br /> ID: {client._id}
                     </p>
 
-                    {client.website && (
+                    {client.email && (
                       <p className="text-blue-600 text-sm">
-                        Website:{" "}
+                        Email:{" "}
                         <a
-                          href={client.website}
+                          href={client.email}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="underline"
                         >
-                          {client.website}
+                          {client.email}
                         </a>
                       </p>
                     )}
