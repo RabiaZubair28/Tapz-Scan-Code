@@ -86,6 +86,28 @@ const Dashboard = () => {
 
     return imageDataUrl;
   };
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "first_time_using_cloudinary");
+    data.append("cloud_name", "dxokfhkhu");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const uploadedImgURL = await res.json();
+    // console.log(uploadedImgURL.url)
+    // console.log(file)
+    return uploadedImgURL.url;
+  };
 
   useEffect(() => {
     const fetchClient = async () => {
@@ -220,28 +242,6 @@ const Dashboard = () => {
 
   // Used it for a Client make it dynamic by fetching the current client id
 
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "first_time_using_cloudinary");
-    data.append("cloud_name", "dxokfhkhu");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dxokfhkhu/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    const uploadedImgURL = await res.json();
-    // console.log(uploadedImgURL.url)
-    // console.log(file)
-    return uploadedImgURL.url;
-  };
   const [formData, setFormData] = useState({
     companyName: "",
     name: "",
@@ -415,7 +415,27 @@ const Dashboard = () => {
               className="border p-2"
             />
             {/* Add more fields as needed */}
+            <div className="col-span-full">
+              <label className="block mb-1 font-semibold">Upload Logo</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleFileUpload(e, "logo")}
+                className="border p-2 w-full"
+              />
+            </div>
 
+            <div className="col-span-full">
+              <label className="block mb-1 font-semibold">
+                Upload Image 01
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleFileUpload(e, "img01")}
+                className="border p-2 w-full"
+              />
+            </div>
             <button
               type="submit"
               className="bg-blue-500 text-white px-4 py-2 rounded"
