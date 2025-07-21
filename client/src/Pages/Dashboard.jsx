@@ -44,6 +44,7 @@ const Dashboard = () => {
 
     const uploadedImgURL = await res.json();
     setFormData({ ...formData, [fieldName]: uploadedImgURL.url });
+    console.log(formData);
   };
 
   useEffect(() => {
