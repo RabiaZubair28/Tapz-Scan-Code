@@ -22,11 +22,6 @@ const Dashboard = () => {
   const [client2, setClient2] = useState(null);
   console.log(params);
 
-  const indexOfLast = currentPage * clientsPerPage;
-  const indexOfFirst = indexOfLast - clientsPerPage;
-  const currentClients = client2.slice(indexOfFirst, indexOfLast);
-  const totalPages = Math.ceil(client2.length / clientsPerPage);
-
   const toDataURL = async (url) => {
     const response = await axios.get(url, { responseType: "blob" });
     const imageDataUrl = URL.createObjectURL(response.data);
@@ -1112,55 +1107,7 @@ const Dashboard = () => {
           </form>
         )}
 
-        {client && mode == "delete" && (
-          <div className="p-4">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <>
-                <div className="grid gap-3">
-                  {currentClients.map((client) => (
-                    <div
-                      key={client._id}
-                      className="flex items-center justify-between border p-3 rounded-lg shadow"
-                    >
-                      <div>
-                        <p className="font-medium">
-                          {client.companyName || "Unnamed Client"}
-                        </p>
-                        <p className="text-sm text-gray-600">{client._id}</p>
-                      </div>
-                      <button
-                        onClick={() => {}}
-                        className="text-red-600 hover:text-red-800 transition"
-                        title="Delete Client"
-                      >
-                        <Trash2 size={20} />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Pagination Controls */}
-                <div className="flex justify-center mt-6 gap-2">
-                  {Array.from({ length: totalPages }, (_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentPage(idx + 1)}
-                      className={`px-3 py-1 rounded ${
-                        currentPage === idx + 1
-                          ? "bg-blue-600 text-white"
-                          : "bg-gray-200 hover:bg-gray-300"
-                      }`}
-                    >
-                      {idx + 1}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        )}
+        {client && mode == "delete" && <div className="p-4">delete</div>}
       </div>
     );
   } else {
