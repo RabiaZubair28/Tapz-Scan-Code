@@ -376,7 +376,7 @@ const Dashboard = () => {
   if (client) {
     return (
       <div>
-        {!client && (
+        {client && (
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-4 max-w-md mx-auto mt-10"
