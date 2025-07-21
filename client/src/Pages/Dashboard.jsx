@@ -1113,14 +1113,12 @@ const Dashboard = () => {
 
         {client && mode == "delete" && (
           <div className="p-4">
-            <h2 className="text-xl font-semibold mb-4">All Clients</h2>
-
             {loading ? (
               <div>Loading...</div>
             ) : (
               <>
                 <div className="grid gap-3">
-                  {currentClients.map((client) => (
+                  {client2.map((client) => (
                     <div
                       key={client._id}
                       className="flex items-center justify-between border p-3 rounded-lg shadow"
