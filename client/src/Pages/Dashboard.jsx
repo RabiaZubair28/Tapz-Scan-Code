@@ -316,6 +316,7 @@ const Dashboard = () => {
   if (client) {
     return (
       <div>
+        <ToastContainer />
         {client && (
           <form
             onSubmit={handleSubmit}
@@ -347,14 +348,19 @@ const Dashboard = () => {
               placeholder="Phone Number 01"
               className="border p-2 w-full"
             />
-            <input
-              type="text"
+            <select
               name="option"
               value={formData.option}
               onChange={handleChange}
-              placeholder="Profile Option"
               className="border p-2 w-full"
-            />
+            >
+              <option value="">Select Profile Option</option>
+              <option value="1">Blue & White</option>
+              <option value="2">Pink & Peach</option>
+              <option value="3">Violet & Purple</option>
+              <option value="4">Black & Grey</option>
+              <option value="5">Indigo & Green</option>
+            </select>
 
             {/* Upload Fields in full width */}
             <div className="col-span-2">
