@@ -24,8 +24,8 @@ const Dashboard = () => {
 
   const indexOfLast = currentPage * clientsPerPage;
   const indexOfFirst = indexOfLast - clientsPerPage;
-  const currentClients = clients.slice(indexOfFirst, indexOfLast);
-  const totalPages = Math.ceil(clients.length / clientsPerPage);
+  const currentClients = client2.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(client2.length / clientsPerPage);
 
   const toDataURL = async (url) => {
     const response = await axios.get(url, { responseType: "blob" });
@@ -1118,7 +1118,7 @@ const Dashboard = () => {
             ) : (
               <>
                 <div className="grid gap-3">
-                  {client2.map((client) => (
+                  {currentClients.map((client) => (
                     <div
                       key={client._id}
                       className="flex items-center justify-between border p-3 rounded-lg shadow"
