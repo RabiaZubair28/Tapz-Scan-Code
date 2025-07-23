@@ -321,6 +321,26 @@ const Profile14 = () => {
                 </button>
               </div>
             )}
+            {menuLink && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black shadow rounded-lg max-w-md gap-x-2"
+                  onClick={() => window.open(menuLink, "_blank")}
+                >
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={menu}
+                      alt="Profile"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start">
+                      <span className="text-lg font-semibold">{menuName}</span>
+                    </div>
+                  </div>
+                  {/* <SlArrowRight  /> Chevron/Arrow */}
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="px-4">
