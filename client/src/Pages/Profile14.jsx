@@ -321,7 +321,7 @@ END:VCARD`;
           )}
           <div className="px-6">
             <div className="flex flex-col justify-center items-center pt-0.5">
-              <div className="flex justify-center gap-x-2 pt-3 pb-2 items-center">
+              <div className="flex justify-center gap-x-2 pt-0 pb-0 items-center">
                 <MdRemoveRedEye size={20} color="white" />
                 <p className="text-white">{visitCount}</p>
               </div>
@@ -334,7 +334,7 @@ END:VCARD`;
               </h2>
             </div>
 
-            <div className="px-4 flex flex-row gap-x-2">
+            <div className="px-4 mt-4 flex flex-row gap-x-2">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
@@ -376,7 +376,7 @@ END:VCARD`;
                 </span>
               </button>
             </div>
-            <h2 className="text-lg font-semibold text-white text-center  pt-6 ">
+            <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
               Please select the Menu
             </h2>
 
