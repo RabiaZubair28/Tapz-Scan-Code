@@ -1278,24 +1278,7 @@ END:VCARD`;
                       </button>
                     </div>
                   )}
-                  {address && (
-                    <div className="flex justify-center mt-3">
-                      <button className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={addressImg}
-                            alt="Address"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Address</span>
-                            <span className=" text-sm">{address}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
+
                   {website && (
                     <div className="flex justify-center mt-3">
                       <button
@@ -1571,6 +1554,24 @@ END:VCARD`;
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Profile</span>
                             <span className="text-sm">{profileName02}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </button>
+                    </div>
+                  )}
+                  {address && (
+                    <div className="flex justify-center mt-3">
+                      <button className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md">
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={addressImg}
+                            alt="Address"
+                            className="h-10 w-10 rounded-md"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Address</span>
+                            <span className=" text-sm">{address}</span>
                           </div>
                         </div>
                         <SlArrowRight /> {/* Chevron/Arrow */}
