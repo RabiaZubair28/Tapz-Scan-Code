@@ -248,7 +248,7 @@ const Profile14 = () => {
         </Helmet>
 
         <div
-          className={`min-h-screen pt-8 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
+          className={`min-h-screen pt-8 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
           style={{ backgroundAttachment: "fixed" }}
         >
           {logo && (
