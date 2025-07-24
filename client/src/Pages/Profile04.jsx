@@ -1571,7 +1571,12 @@ END:VCARD`;
                           />
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Address</span>
-                            <span className=" text-sm">{address}</span>
+                            <span
+                              className=" text-sm break-words"
+                              style={{ flexWrap: "nowrap" }}
+                            >
+                              {address}
+                            </span>
                           </div>
                         </div>
                         <SlArrowRight /> {/* Chevron/Arrow */}
