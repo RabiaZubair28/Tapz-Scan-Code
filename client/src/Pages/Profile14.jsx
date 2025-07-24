@@ -313,7 +313,7 @@ END:VCARD`;
                   <img
                     src={logo}
                     alt="profile"
-                    className="w-36 h-36 mx-auto rounded-2xl border-[0.25px] border-white shadow-md"
+                    className="w-36 h-36 mx-auto rounded-2xl border-[2px] border-white shadow-md"
                   />
                 </div>
               </a>
@@ -328,7 +328,7 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
-            <div className="flex justify-center gap-x-2 pt-0 pb-1 items-center">
+            <div className="flex justify-center gap-x-2 pt-2 pb-2 items-center">
               <MdRemoveRedEye size={20} color="white" />
               <p className="text-white">{visitCount}</p>
             </div>
@@ -338,7 +338,7 @@ END:VCARD`;
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                 &nbsp;CALL
@@ -348,15 +348,15 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
                 &nbsp;REACH OUT
               </a>
             </div>
 
-            <div className="flex items-center justify-center mt-2 mb-0 px-4">
-              <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[#38572e] border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-4 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+            <div className="flex items-center justify-center mt-0 mb-0 px-4">
+              <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
@@ -375,7 +375,7 @@ END:VCARD`;
                 </span>
               </button>
             </div>
-            <h2 className="text-lg font-semibold text-white text-center  pt-12 ">
+            <h2 className="text-lg font-semibold text-white text-center  pt-6 ">
               Please select the Menu
             </h2>
 
