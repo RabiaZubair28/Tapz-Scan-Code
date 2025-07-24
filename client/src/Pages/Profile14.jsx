@@ -334,12 +334,12 @@ END:VCARD`;
               </h2>
             </div>
 
-            <div className="px-4 flex flex-row gap-x-3">
+            <div className="px-4 flex flex-row gap-x-2">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                 &nbsp;CALL
@@ -349,7 +349,7 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
                 &nbsp;REACH OUT
