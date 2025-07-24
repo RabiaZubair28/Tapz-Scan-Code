@@ -218,6 +218,61 @@ const Profile14 = () => {
     flag,
   } = client;
 
+  var [visitCount, setVisitCount] = useState(0);
+  var clientId01 = _id;
+  // Used it for a Client make it dynamic by fetching the current client id
+
+  useEffect(() => {
+    const fetchAndIncrementVisitCount = async () => {
+      try {
+        // console.log("Fetching visit count...");
+        const incrementResponse = await axios.post(
+          `https://www.scan-taps.com/api/visit/${clientId01}`
+        );
+        // console.log("Current visit count fetched.");
+        setVisitCount(incrementResponse.data.count);
+        // console.log(`Visit count for client ${clientId} incremented. New count:`, incrementResponse.data.count);
+      } catch (error) {
+        console.error("Error fetching or incrementing visit count:", error);
+      }
+    };
+
+    fetchAndIncrementVisitCount();
+  }, [clientId01]);
+
+  const downloadContactCard = async () => {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${clientName};;;;
+FN:${clientName}
+ORG:${name}
+TITLE:${designation}
+TEL;CELL:${phone01}
+TEL;CELL:${phone02}
+EMAIL;HOME:${email}
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: "text/vcard" });
+    const url = URL.createObjectURL(blob);
+
+    // Check if it's an iPhone/iPad device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // Open vCard in a new tab instead of forcing download
+      window.location.href = url;
+    } else {
+      // Regular download for other devices
+      const newLink = document.createElement("a");
+      newLink.download = `${clientName}.vcf`;
+      newLink.href = url;
+      newLink.click();
+    }
+
+    // Revoke the object URL to free memory
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
   // Used it for a Client make it dynamic by fetching the current client id
 
   if (client) {
@@ -272,15 +327,62 @@ const Profile14 = () => {
               <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
                 {address}
               </h2>
-              <h2 className="text-lg font-semibold text-white text-center  pt-12 ">
-                Please select the Menu
-              </h2>
             </div>
+            <div className="flex justify-center gap-x-2 pt-0 pb-1 items-center">
+              <MdRemoveRedEye size={20} color="white" />
+              <p className="text-white">{visitCount}</p>
+            </div>
+
+            <div className="px-4 flex flex-row gap-x-3">
+              <a
+                href={`tel:${phone01}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg"
+              >
+                <MdOutlinePhoneAndroid size={20} color="#1f153d" />
+                &nbsp;CALL
+              </a>
+
+              <a
+                href={`https://wa.me/${phone01}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3.5 rounded-lg"
+              >
+                <ImWhatsapp size={20} color="#1f153d" />
+                &nbsp;REACH OUT
+              </a>
+            </div>
+
+            <div className="flex items-center justify-center mt-2 mb-0 px-4">
+              <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[#38572e] border-[0.5px] border-transparent shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-4 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+                <FaDownload
+                  size={20}
+                  onClick={downloadContactCard}
+                  color="white"
+                  className="text-white hover:text-black"
+                />
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onClick={downloadContactCard}
+                >
+                  &nbsp;SAVE CONTACT
+                </span>
+              </button>
+            </div>
+            <h2 className="text-lg font-semibold text-white text-center  pt-12 ">
+              Please select the Menu
+            </h2>
 
             {profileLink01 && (
               <div className="flex justify-center mt-3">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-4  bg-[#dbca7a] hover:bg-[#ebdda2] text-black border-[0.25px] border-[#02300c] shadow rounded-lg max-w-md gap-x-2"
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
                   onClick={() => window.open(profileLink01, "_blank")}
                 >
                   <div className="flex items-center space-x-3">
@@ -302,7 +404,7 @@ const Profile14 = () => {
             {profileLink02 && (
               <div className="flex justify-center mt-3">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-4  bg-[#dbca7a] hover:bg-[#ebdda2] text-black border-[0.25px] border-[#02300c] shadow rounded-lg max-w-md gap-x-2"
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
                   onClick={() => window.open(profileLink02, "_blank")}
                 >
                   <div className="flex items-center space-x-3">
@@ -324,7 +426,7 @@ const Profile14 = () => {
             {menuLink && (
               <div className="flex justify-center mt-3">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-4  bg-[#dbca7a] hover:bg-[#ebdda2] text-black border-[0.25px] border-[#02300c] shadow rounded-lg max-w-md gap-x-2"
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
                   onClick={() => window.open(menuLink, "_blank")}
                 >
                   <div className="flex items-center space-x-3">
