@@ -321,7 +321,7 @@ END:VCARD`;
           )}
           <div className="px-6">
             <div className="flex flex-col justify-center items-center pt-0.5">
-              <div className="flex justify-center gap-x-2 pt-0 pb-0 items-center">
+              <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
                 <MdRemoveRedEye size={20} color="white" />
                 <p className="text-white">{visitCount}</p>
               </div>
