@@ -303,7 +303,7 @@ END:VCARD`;
         </Helmet>
 
         <div
-          className={`min-h-screen pt-8 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
+          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
           style={{ backgroundAttachment: "fixed" }}
         >
           {logo && (
@@ -313,7 +313,7 @@ END:VCARD`;
                   <img
                     src={logo}
                     alt="profile"
-                    className="w-36 h-36 mx-auto rounded-2xl border-[2px] border-white shadow-md"
+                    className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
                   />
                 </div>
               </a>
@@ -321,16 +321,17 @@ END:VCARD`;
           )}
           <div className="px-6">
             <div className="flex flex-col justify-center items-center pt-0.5">
+              <div className="flex justify-center gap-x-2 pt-3 pb-2 items-center">
+                <MdRemoveRedEye size={20} color="white" />
+                <p className="text-white">{visitCount}</p>
+              </div>
+
               <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
                 {name}
               </h2>
               <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
                 {address}
               </h2>
-            </div>
-            <div className="flex justify-center gap-x-2 pt-2 pb-2 items-center">
-              <MdRemoveRedEye size={20} color="white" />
-              <p className="text-white">{visitCount}</p>
             </div>
 
             <div className="px-4 flex flex-row gap-x-3">
