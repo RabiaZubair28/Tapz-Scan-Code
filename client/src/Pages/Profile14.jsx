@@ -1300,7 +1300,163 @@ END:VCARD`;
             )}
           </div>
 
-          <div className="px-4">
+          <div className="px-6">
+            {(img01 != "" ||
+              img02 != "" ||
+              img03 != "" ||
+              img04 != "" ||
+              img05 != "" ||
+              img05 != "" ||
+              img06 != "" ||
+              img07 != "" ||
+              img08 != "" ||
+              img09 != "" ||
+              img10 != "") && (
+              <div className="px-4">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  Image Gallery
+                </h2>
+                <hr className="border-gray-300" />
+                {img01 && (
+                  <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img01}>
+                      <img
+                        src={img01}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img02 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img02}>
+                      <img
+                        src={img02}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img03 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img03}>
+                      <img
+                        src={img03}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img04 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img04}>
+                      <img
+                        src={img04}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img05 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img05}>
+                      <img
+                        src={img05}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img06 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img06}>
+                      <img
+                        src={img06}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img07 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img07}>
+                      <img
+                        src={img07}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+                {img08 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img08}>
+                      <img
+                        src={img08}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img09 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img09}>
+                      <img
+                        src={img09}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+                {img10 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img10}>
+                      <img
+                        src={img10}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            )}
+            {location != "" && (
+              <div className="px-4">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  Location
+                </h2>
+                <hr className="border-gray-300" />
+                <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                  {location && (
+                    <iframe
+                      src={location}
+                      width="100%"
+                      height="300"
+                      allowfullscreen=""
+                      loading="lazy"
+                      className="rounded-xl"
+                    ></iframe>
+                  )}
+                </div>
+              </div>
+            )}
+
             <p className="pt-4 text-white">
               Copyright © <span className="company">{companyName}</span>. All
               Rights Reserved.
