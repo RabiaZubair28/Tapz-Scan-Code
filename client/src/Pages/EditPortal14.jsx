@@ -4871,7 +4871,7 @@ END:VCARD`;
                     <div className="flex justify-center mt-2">
                       <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
                         <div className="flex items-center space-x-6 w-full">
-                          <div className="flex flex-1 items-center justify-center gap-x-3">
+                          <div className="flex flex-1 items-center justify-center gap-x-5">
                             {!modal05 && !editName && (
                               <div className="flex flex-col text-lg font-semibold text-white text-start gap-y-1">
                                 <span className="text-2xl font-semibold  text-white text-center ">
