@@ -4870,6 +4870,95 @@ END:VCARD`;
                   <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
                     {name}
                   </h2>
+
+                  {name && (
+                    <div className="flex justify-center mt-2">
+                      <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
+                        <div className="flex items-start space-x-6 w-full">
+                          <div className="flex flex-1 items-start justify-center gap-x-3">
+                            {!modal05 && !editName && (
+                              <div className="flex flex-col text-lg w-[280px] max-w-[280px] font-semibold text-white text-start gap-y-1">
+                                <span className="text-2xl font-semibold  text-white text-center  pt-1 ">
+                                  {name}
+                                </span>
+                              </div>
+                            )}
+                            {!modal05 && !editName && (
+                              <div className="flex space-x-3">
+                                <FaEdit
+                                  size={20}
+                                  color="white"
+                                  className="cursor-pointer"
+                                  onClick={() => setEditName(true)}
+                                />
+                                <MdDelete
+                                  size={20}
+                                  color="white"
+                                  className="cursor-pointer"
+                                  onClick={() => setModal05(true)}
+                                />
+                              </div>
+                            )}
+                            {modal05 && (
+                              <div className="text-start w-full">
+                                <div className="text-sm font-medium mb-2">
+                                  Are you sure you want to delete?
+                                </div>
+                                <div className="flex justify-start space-x-1">
+                                  <button
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    onClick={() => setModal05(false)}
+                                  >
+                                    Cancel
+                                  </button>
+                                  <button
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    onClick={() => {
+                                      handleDeleteName(_id);
+                                      window.location.reload();
+                                      setModal05(false);
+                                    }}
+                                  >
+                                    Confirm
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                            {editName && (
+                              <div className="flex flex-col text-start gap-y-1 w-full">
+                                <span className="font-medium">Name:</span>
+                                <div className="flex items-center space-x-2 mt-1">
+                                  <div className="flex flex-col space-y-2 mt-1">
+                                    <input
+                                      id="name"
+                                      placeholder={name}
+                                      className="flex-1 text-black px-3 py-0.5 border rounded-md focus:outline-none"
+                                    />
+                                  </div>
+                                  <button
+                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    onClick={() => {
+                                      handleEditName(_id);
+                                      setEditName(false);
+                                      window.location.reload();
+                                    }}
+                                  >
+                                    &#x2714;
+                                  </button>
+                                  <button
+                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    onClick={() => setEditName(false)}
+                                  >
+                                    &#x2716;
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  )}
                   <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
                     {address}
                   </h2>
