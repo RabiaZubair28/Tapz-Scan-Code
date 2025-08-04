@@ -4870,7 +4870,7 @@ END:VCARD`;
                   {name && (
                     <div className="flex justify-center mt-2">
                       <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
-                        <div className="flex items-center space-x-6 w-full">
+                        <div className="flex items-center space-x-3 w-full">
                           <div className="flex flex-1 items-center justify-center gap-x-5">
                             {!modal05 && !editName && (
                               <div className="flex flex-col text-lg font-semibold text-white text-start gap-y-1">
@@ -5012,7 +5012,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={phone} alt="Phone01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -5104,7 +5104,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -5196,7 +5196,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -5288,7 +5288,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Telephone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={telephone}
                           alt="Telephone01"
@@ -5384,7 +5384,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Telephone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={telephone}
                           alt="Telephone02"
@@ -5480,7 +5480,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Telephone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={telephone}
                           alt="Telephone02"
@@ -5576,7 +5576,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={whatsapp}
                           alt="Whatsapp01"
@@ -5672,7 +5672,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={whatsapp}
                           alt="Whatsapp02"
@@ -5768,7 +5768,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={whatsapp}
                           alt="Whatsapp02"
@@ -5868,7 +5868,7 @@ END:VCARD`;
                       rel="noopener noreferrer"
                       className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md"
                     >
-                      <div className="flex items-center space-x-6">
+                      <div className="flex items-center space-x-3">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
                         <div className="flex flex-col text-start gap-y-1">
                           <span className="font-medium">Email</span>
@@ -5882,7 +5882,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="flex w-full px-5 py-3  border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={emailImg}
                           alt="Whatsapp02"
@@ -5980,7 +5980,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={emailImg}
                           alt="Whatsapp02"
@@ -6079,7 +6079,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -6180,7 +6180,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -6281,7 +6281,7 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       {/* Phone Icon and Info */}
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={fb} alt="facebook03" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {/* Phone Info */}
@@ -6381,7 +6381,7 @@ END:VCARD`;
                 {instagramLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={insta}
                           alt="instagram01"
@@ -6478,7 +6478,7 @@ END:VCARD`;
                 {instagramLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={insta}
                           alt="instagram02"
@@ -6577,7 +6577,7 @@ END:VCARD`;
                 {instagramLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={insta}
                           alt="instagram03"
@@ -6676,7 +6676,7 @@ END:VCARD`;
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={snap}
                           alt="snapchat01"
@@ -6773,7 +6773,7 @@ END:VCARD`;
                 {snapchatLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={snap}
                           alt="snapchat02"
@@ -6870,7 +6870,7 @@ END:VCARD`;
                 {snapchatLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={snap}
                           alt="snapchat03"
@@ -6967,7 +6967,7 @@ END:VCARD`;
                 {youtubeLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={yt} alt="youtube01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal23 && !editYoutube && (
@@ -7060,7 +7060,7 @@ END:VCARD`;
                 {youtubeLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={yt} alt="youtube02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal24 && !editYoutube02 && (
@@ -7153,7 +7153,7 @@ END:VCARD`;
                 {youtubeLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={yt} alt="youtube03" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal25 && !editYoutube03 && (
@@ -7247,7 +7247,7 @@ END:VCARD`;
                 {tiktokLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={tiktok}
                           alt="tiktok01"
@@ -7344,7 +7344,7 @@ END:VCARD`;
                 {tiktokLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={tiktok}
                           alt="tiktok02"
@@ -7441,7 +7441,7 @@ END:VCARD`;
                 {tiktokLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={tiktok}
                           alt="tiktok03"
@@ -7538,7 +7538,7 @@ END:VCARD`;
                 {youtubeShortsLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={linkedin02}
                           alt="youtubeShorts01"
@@ -7637,7 +7637,7 @@ END:VCARD`;
                 {youtubeShortsLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={linkedin02}
                           alt="youtubeShorts02"
@@ -7736,7 +7736,7 @@ END:VCARD`;
                 {youtubeShortsLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={linkedin02}
                           alt="youtubeShorts03"
@@ -7835,7 +7835,7 @@ END:VCARD`;
                 {address && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={addressImg}
                           alt="tiktok01"
@@ -7925,7 +7925,7 @@ END:VCARD`;
                 {website && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={websiteImg}
                           alt="website01"
@@ -8022,7 +8022,7 @@ END:VCARD`;
                 {website02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={websiteImg}
                           alt="website02"
@@ -8119,7 +8119,7 @@ END:VCARD`;
                 {website03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={websiteImg}
                           alt="website03"
@@ -8216,7 +8216,7 @@ END:VCARD`;
                 {twitterLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={threads}
                           alt="twitter01"
@@ -8313,7 +8313,7 @@ END:VCARD`;
                 {twitterLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={threads}
                           alt="twitter02"
@@ -8410,7 +8410,7 @@ END:VCARD`;
                 {twitterLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={threads}
                           alt="twitter03"
@@ -8507,7 +8507,7 @@ END:VCARD`;
                 {googleReviewLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={greview}
                           alt="googleReview01"
@@ -8606,7 +8606,7 @@ END:VCARD`;
                 {googleReviewLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={greview}
                           alt="googleReview02"
@@ -8705,7 +8705,7 @@ END:VCARD`;
                 {googleReviewLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={greview}
                           alt="googleReview03"
@@ -8804,7 +8804,7 @@ END:VCARD`;
                 {googleMapLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={locations}
                           alt="googleMap01"
@@ -8901,7 +8901,7 @@ END:VCARD`;
                 {googleMapLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={locations}
                           alt="googleMap02"
@@ -9000,7 +9000,7 @@ END:VCARD`;
                 {googleMapLink03 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={locations}
                           alt="googleMap03"
@@ -9099,7 +9099,7 @@ END:VCARD`;
                 {menuLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={menu} alt="menu01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
@@ -9192,7 +9192,7 @@ END:VCARD`;
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img
                           src={catalog}
                           alt="catalogue01"
@@ -9289,7 +9289,7 @@ END:VCARD`;
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={menu} alt="profile01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal48 && !editProfile01 && (
@@ -9382,7 +9382,7 @@ END:VCARD`;
                 {profileLink02 && (
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
-                      <div className="flex items-center space-x-6 w-full">
+                      <div className="flex items-center space-x-3 w-full">
                         <img src={menu} alt="profile02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal47 && !editProfile02 && (
