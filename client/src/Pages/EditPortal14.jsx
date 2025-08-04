@@ -5793,7 +5793,7 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3 bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-3">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -5807,7 +5807,7 @@ END:VCARD`;
                 )}
                 {email02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-3 w-full">
                         <img
