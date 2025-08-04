@@ -4816,20 +4816,6 @@ END:VCARD`;
                       />
                     </div>
                   </a>
-
-                  <div className="flex flex-col justify-center items-center pt-0.5">
-                    <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
-                      <MdRemoveRedEye size={20} color="white" />
-                      <p className="text-white">{visitCount}</p>
-                    </div>
-
-                    <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
-                      {name}
-                    </h2>
-                    <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
-                      {address}
-                    </h2>
-                  </div>
                 </div>
               )}
 
