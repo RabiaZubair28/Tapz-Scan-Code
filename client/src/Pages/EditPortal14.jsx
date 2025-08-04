@@ -4819,7 +4819,7 @@ END:VCARD`;
                 </div>
               )}
 
-              <div className="flex flex-col justify-start items-start mx-auto rounded-x px-6 space-y-2 mt-3">
+              <div className="flex flex-col justify-center items-center mx-auto rounded-x px-6 space-y-2 mt-3">
                 {!editLogo && (
                   <div className="space-x-2">
                     <button
