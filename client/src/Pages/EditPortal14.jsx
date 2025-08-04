@@ -4830,6 +4830,49 @@ END:VCARD`;
                       {address}
                     </h2>
                   </div>
+
+                  <div className="px-4 mt-4 flex flex-row gap-x-2">
+                    <a
+                      href={`tel:${phone01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                    >
+                      <MdOutlinePhoneAndroid size={20} color="#1f153d" />
+                      &nbsp;CALL
+                    </a>
+
+                    <a
+                      href={`https://wa.me/${phone01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                    >
+                      <ImWhatsapp size={20} color="#1f153d" />
+                      &nbsp;REACH OUT
+                    </a>
+                  </div>
+
+                  <div className="flex items-center justify-center mt-0 mb-0 px-4">
+                    <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+                      <FaDownload
+                        size={20}
+                        onClick={downloadContactCard}
+                        color="white"
+                        className="text-white hover:text-black"
+                      />
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        onClick={downloadContactCard}
+                      >
+                        &nbsp;SAVE CONTACT
+                      </span>
+                    </button>
+                  </div>
                 </div>
               )}
 
