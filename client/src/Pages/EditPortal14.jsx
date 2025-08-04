@@ -10352,11 +10352,14 @@ END:VCARD`;
                     img09 == "" ||
                     img10 == "") && (
                     <div
-                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow-md space-y-3"
+                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow-md space-y-3 rounded-lg"
                       onClick={() => handleShow03()}
                     >
-                      <IoIosAddCircle className="text-white mt-2" size={30} />
-                      <div className="text-lg font-bold text-white">
+                      <IoIosAddCircle
+                        className="text-[#38572e] mt-2"
+                        size={30}
+                      />
+                      <div className="text-lg font-bold text-[#38572e]">
                         Add More Images
                       </div>
                     </div>
