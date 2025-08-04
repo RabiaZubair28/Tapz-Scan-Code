@@ -380,25 +380,6 @@ END:VCARD`;
               Please select the Menu
             </h2>
 
-            {phone01 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${phone01}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3 bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img src={phone} alt="Phone01" className="h-10 w-10" />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Phone</span>
-                      <span className="text-sm">{phone01}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight color="white" /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
             {phone02 && (
               <div className="flex justify-center mt-3">
                 <a
@@ -508,29 +489,7 @@ END:VCARD`;
                 </a>
               </div>
             )}
-            {whatsapp01 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`https://wa.me/${whatsapp01}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={whatsapp}
-                      alt="Whatsapp01"
-                      className="h-10 w-10"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Whatsapp</span>
-                      <span className="text-sm">{whatsapp01}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
+
             {whatsapp02 && (
               <div className="flex justify-center mt-3">
                 <a
