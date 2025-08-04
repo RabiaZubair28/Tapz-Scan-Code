@@ -9498,7 +9498,7 @@ END:VCARD`;
 
                       {deleteModal01 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9578,7 +9578,7 @@ END:VCARD`;
 
                       {deleteModal02 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9658,7 +9658,7 @@ END:VCARD`;
 
                       {deleteModal03 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9738,7 +9738,7 @@ END:VCARD`;
 
                       {deleteModal04 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9818,7 +9818,7 @@ END:VCARD`;
 
                       {deleteModal05 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9898,7 +9898,7 @@ END:VCARD`;
 
                       {deleteModal06 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -9978,7 +9978,7 @@ END:VCARD`;
 
                       {deleteModal07 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -10057,7 +10057,7 @@ END:VCARD`;
 
                       {deleteModal08 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -10137,7 +10137,7 @@ END:VCARD`;
 
                       {deleteModal09 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -10216,7 +10216,7 @@ END:VCARD`;
 
                       {deleteModal10 && (
                         <div>
-                          <div className="text-center text-md font-medium">
+                          <div className="text-center text-md text-white font-medium">
                             Are you sure you want to delete?
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
@@ -10283,7 +10283,7 @@ END:VCARD`;
                     </div>
                   )}
                 </div>
-                \
+
                 <p className="pt-4 text-white">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
