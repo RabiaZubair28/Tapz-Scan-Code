@@ -4862,13 +4862,13 @@ END:VCARD`;
 
               <div className="px-6">
                 <div className="flex flex-col justify-center items-center pt-0.5">
-                  <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
+                  <div className="flex justify-center gap-x-2 pt-3 pb-0 items-center">
                     <MdRemoveRedEye size={20} color="white" />
                     <p className="text-white">{visitCount}</p>
                   </div>
 
                   {name && (
-                    <div className="flex justify-center mt-2">
+                    <div className="flex justify-center mt-1">
                       <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
                         <div className="flex items-center space-x-3 w-full">
                           <div className="flex flex-1 items-center justify-center gap-x-5">
