@@ -4805,27 +4805,14 @@ END:VCARD`;
               className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
               style={{ backgroundAttachment: "fixed" }}
             >
-              {images && (
-                <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
-                  <a href={images} className="w-full">
-                    <div className="relative mb-2 ">
-                      <img
-                        src={images}
-                        alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-gray-300"
-                      />
-                    </div>
-                  </a>
-                </div>
-              )}
               {logo && (
-                <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
                   <a href={logo}>
                     <div className="relative mb-2 ">
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-4 border-white shadow-md"
+                        className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
                       />
                     </div>
                   </a>
