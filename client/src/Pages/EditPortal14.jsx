@@ -4817,28 +4817,18 @@ END:VCARD`;
                     </div>
                   </a>
 
-                  <div className="flex items-center justify-center gap-x-2 -mt-24 mb-5">
-                    {/* <img src={eye} height={25}></img>
-                  <span style={{display:"flex",alignItems:"center",justifyContent:"center",
-                  }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <div className="flex justify-start gap-x-1.5 -mt-5 pb-1 items-center">
+                  <div className="flex flex-col justify-center items-center pt-0.5">
+                    <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 border text-sm border-white shadow-sm hover:shadow-md hover:bg-gray-500">
-                      {/* <FaDownload size={20} onClick={downloadContactCard}  /> */}
-                      <span
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          color: "white",
-                          justifyContent: "center",
-                        }}
-                        onClick={downloadContactCard}
-                      >
-                        Save Contact
-                      </span>
-                    </button>
+
+                    <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
+                      {name}
+                    </h2>
+                    <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
+                      {address}
+                    </h2>
                   </div>
                 </div>
               )}
