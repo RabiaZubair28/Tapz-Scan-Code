@@ -9527,7 +9527,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
@@ -9538,118 +9538,6 @@ END:VCARD`;
                 )}
               </div>
               <div className="px-4">
-                {services != "" && (
-                  <div className="">
-                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
-                      Services
-                    </h2>
-                    <hr className="border-white" />
-                    {services && (
-                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg-gray-600 text-white shadow rounded-lg max-w-md border-[0.25px] border-white">
-                        <a className="flex w-full py-1  text-white  max-w-md">
-                          <div className="flex items-center space-x-6 w-full">
-                            <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                              {!modal01 && !editServices && (
-                                <div className="flex flex-col text-md max-w-[250px] font-medium text-white pt-1 text-start gap-y-1">
-                                  {services.split("\n").map((line, index) => (
-                                    <div
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <span className="text-white">•</span>
-                                      <span>{line}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-
-                              {/* Modal for confirmation */}
-                              {modal01 && (
-                                <div className="text-start w-full">
-                                  <div className="text-sm font-medium mb-2">
-                                    Are you sure you want to delete?
-                                  </div>
-                                  <div className="flex justify-start space-x-1">
-                                    <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
-                                      onClick={() => setModal01(false)}
-                                    >
-                                      Cancel
-                                    </button>
-                                    <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
-                                      onClick={() => {
-                                        handleDeleteServices(_id);
-                                        window.location.reload();
-                                        setModal01(false);
-                                      }}
-                                    >
-                                      Confirm
-                                    </button>
-                                  </div>
-                                </div>
-                              )}
-
-                              {/* Edit services modal */}
-                              {editServices && (
-                                <div className="flex flex-col text-start gap-y-1 w-full">
-                                  <span className="font-semibold">
-                                    Services:
-                                  </span>
-                                  <div className="flex items-center w-full space-x-2 mt-1">
-                                    <div className="flex flex-col space-y-2 mt-1 w-full max-w-[250px]">
-                                      <textarea
-                                        id="services"
-                                        rows="4" // Setting rows for better height management
-                                        placeholder={services}
-                                        className="w-full px-3 py-0.5 border rounded-md focus:outline-none"
-                                      />
-                                    </div>
-                                    <div className="flex space-x-2">
-                                      <button
-                                        className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
-                                        onClick={() => {
-                                          handleEditServices(_id);
-                                          setEditServices(false);
-                                          window.location.reload();
-                                        }}
-                                      >
-                                        &#x2714;
-                                      </button>
-                                      <button
-                                        className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
-                                        onClick={() => setEditServices(false)}
-                                      >
-                                        &#x2716;
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          {!modal01 && !editServices && (
-                            <div className="flex justify-center items-center space-x-3">
-                              <FaEdit
-                                size={20}
-                                color="white"
-                                className="cursor-pointer"
-                                onClick={() => setEditServices(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                color="white"
-                                className="cursor-pointer"
-                                onClick={() => setModal01(true)}
-                              />
-                            </div>
-                          )}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                )}
-
                 <div className="">
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
@@ -10464,7 +10352,7 @@ END:VCARD`;
                     img09 == "" ||
                     img10 == "") && (
                     <div
-                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2 bg-gray-600   mx-auto rounded-xl border-[0.25px] shadow-md space-y-3"
+                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow-md space-y-3"
                       onClick={() => handleShow03()}
                     >
                       <IoIosAddCircle className="text-white mt-2" size={30} />
