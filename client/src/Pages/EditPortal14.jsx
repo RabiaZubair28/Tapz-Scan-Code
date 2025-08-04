@@ -4958,11 +4958,6 @@ END:VCARD`;
                                 className="cursor-pointer"
                                 onClick={() => setEditPhone01(true)}
                               />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal06(true)}
-                              />
                             </div>
                           )}
 
@@ -5525,11 +5520,6 @@ END:VCARD`;
                                 size={20}
                                 className="cursor-pointer"
                                 onClick={() => setEditWhatsapp01(true)}
-                              />
-                              <MdDelete
-                                size={20}
-                                className="cursor-pointer"
-                                onClick={() => setModal09(true)}
                               />
                             </div>
                           )}
