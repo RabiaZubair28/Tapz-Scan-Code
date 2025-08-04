@@ -9626,7 +9626,7 @@ END:VCARD`;
                   </div>
                 )}
               </div>
-              <div className="px-4">
+              <div className="px-6">
                 <div className="">
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
