@@ -4819,6 +4819,47 @@ END:VCARD`;
                 </div>
               )}
 
+              <div className="flex flex-col justify-start items-start mx-auto rounded-x px-6 space-y-2 mt-3">
+                {!editLogo && (
+                  <div className="space-x-2">
+                    <button
+                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                      onClick={() => {
+                        setDeleteModal11(false);
+                        setEditLogo(true);
+                      }}
+                    >
+                      Edit Logo
+                    </button>
+                    {/* <button
+              className="btn bg-red-500 text-white rounded-md py-1 px-4"
+              onClick={() => {
+                setDeleteModal11(true)}}
+            >
+              Delete
+            </button> */}
+                  </div>
+                )}
+
+                {editLogo && (
+                  <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
+                    <input
+                      type="file"
+                      className="file-input w-56 h-8 text-sm"
+                      onChange={handleEditLogo}
+                    />
+                    <ImCross
+                      color="white"
+                      size={18}
+                      className="cursor-pointer bg-black p-1 rounded-sm"
+                      onClick={() => {
+                        setEditLogo(false);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+
               <div className="px-6">
                 <div className="flex flex-col justify-center items-center pt-0.5">
                   <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
@@ -4879,47 +4920,6 @@ END:VCARD`;
                 <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
                   Please select the Menu
                 </h2>
-              </div>
-
-              <div className="flex flex-col justify-start items-start mx-auto rounded-x px-6 space-y-2 mt-3">
-                {!editLogo && (
-                  <div className="space-x-2">
-                    <button
-                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
-                      onClick={() => {
-                        setDeleteModal11(false);
-                        setEditLogo(true);
-                      }}
-                    >
-                      Edit Logo
-                    </button>
-                    {/* <button
-              className="btn bg-red-500 text-white rounded-md py-1 px-4"
-              onClick={() => {
-                setDeleteModal11(true)}}
-            >
-              Delete
-            </button> */}
-                  </div>
-                )}
-
-                {editLogo && (
-                  <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
-                    <input
-                      type="file"
-                      className="file-input w-56 h-8 text-sm"
-                      onChange={handleEditLogo}
-                    />
-                    <ImCross
-                      color="white"
-                      size={18}
-                      className="cursor-pointer bg-black p-1 rounded-sm"
-                      onClick={() => {
-                        setEditLogo(false);
-                      }}
-                    />
-                  </div>
-                )}
               </div>
 
               <div className="px-6">
