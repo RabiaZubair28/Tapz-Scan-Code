@@ -9172,13 +9172,13 @@ END:VCARD`;
                               <span className="font-medium">Menu</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
+                                  <label>Menu Name:</label>
                                   <input
                                     id="menuText"
                                     placeholder={menuName}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Account Link:</label>
+                                  <label>Menu Link:</label>
                                   <input
                                     id="menuLink"
                                     placeholder={menuLink}
@@ -9310,15 +9310,11 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={profile}
-                          alt="profile01"
-                          className="h-10 w-10"
-                        />
+                        <img src={menu} alt="profile01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal48 && !editProfile01 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Profile</span>
+                              <span className="font-medium">Menu</span>
                               <span className=" text-sm">{profileName01}</span>
                             </div>
                           )}
@@ -9363,16 +9359,16 @@ END:VCARD`;
                           )}
                           {editProfile01 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Profile</span>
+                              <span className="font-medium">Menu</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
+                                  <label>Menu Name:</label>
                                   <input
                                     id="profileText01"
                                     placeholder={profileName01}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Account Link:</label>
+                                  <label>Menu Link:</label>
                                   <input
                                     id="profile01"
                                     placeholder={profileLink01}
@@ -9407,15 +9403,11 @@ END:VCARD`;
                   <div className="flex justify-center mt-3">
                     <a className="lex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2">
                       <div className="flex items-center space-x-6 w-full">
-                        <img
-                          src={profile}
-                          alt="profile02"
-                          className="h-10 w-10"
-                        />
+                        <img src={menu} alt="profile02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
                           {!modal47 && !editProfile02 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Profile</span>
+                              <span className="font-medium">Menu</span>
                               <span className=" text-sm">{profileName02}</span>
                             </div>
                           )}
@@ -9460,16 +9452,16 @@ END:VCARD`;
                           )}
                           {editProfile02 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Profile</span>
+                              <span className="font-medium">Menu</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
+                                  <label>Menu Name:</label>
                                   <input
                                     id="profileText02"
                                     placeholder={profileName02}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Account Link:</label>
+                                  <label>Menu Link:</label>
                                   <input
                                     id="profile02"
                                     placeholder={profileLink02}
