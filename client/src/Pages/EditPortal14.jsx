@@ -4830,51 +4830,70 @@ END:VCARD`;
                       {address}
                     </h2>
                   </div>
-
-                  <div className="px-4 mt-4 flex flex-row gap-x-2">
-                    <a
-                      href={`tel:${phone01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
-                    >
-                      <MdOutlinePhoneAndroid size={20} color="#1f153d" />
-                      &nbsp;CALL
-                    </a>
-
-                    <a
-                      href={`https://wa.me/${phone01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
-                    >
-                      <ImWhatsapp size={20} color="#1f153d" />
-                      &nbsp;REACH OUT
-                    </a>
-                  </div>
-
-                  <div className="flex items-center justify-center mt-0 mb-0 px-4">
-                    <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
-                      <FaDownload
-                        size={20}
-                        onClick={downloadContactCard}
-                        color="white"
-                        className="text-white hover:text-black"
-                      />
-                      <span
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                        onClick={downloadContactCard}
-                      >
-                        &nbsp;SAVE CONTACT
-                      </span>
-                    </button>
-                  </div>
                 </div>
               )}
+
+              <div className="px-6">
+                <div className="flex flex-col justify-center items-center pt-0.5">
+                  <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
+                    <MdRemoveRedEye size={20} color="white" />
+                    <p className="text-white">{visitCount}</p>
+                  </div>
+
+                  <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
+                    {name}
+                  </h2>
+                  <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
+                    {address}
+                  </h2>
+                </div>
+
+                <div className="px-4 mt-4 flex flex-row gap-x-2">
+                  <a
+                    href={`tel:${phone01}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                  >
+                    <MdOutlinePhoneAndroid size={20} color="#1f153d" />
+                    &nbsp;CALL
+                  </a>
+
+                  <a
+                    href={`https://wa.me/${phone01}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                  >
+                    <ImWhatsapp size={20} color="#1f153d" />
+                    &nbsp;REACH OUT
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center mt-0 mb-0 px-4">
+                  <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+                    <FaDownload
+                      size={20}
+                      onClick={downloadContactCard}
+                      color="white"
+                      className="text-white hover:text-black"
+                    />
+                    <span
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                      onClick={downloadContactCard}
+                    >
+                      &nbsp;SAVE CONTACT
+                    </span>
+                  </button>
+                </div>
+                <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
+                  Please select the Menu
+                </h2>
+              </div>
 
               <div className="flex flex-col justify-start items-start mx-auto rounded-x px-6 space-y-2 mt-3">
                 {!editLogo && (
