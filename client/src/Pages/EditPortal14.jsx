@@ -10283,28 +10283,7 @@ END:VCARD`;
                     </div>
                   )}
                 </div>
-
-                {location != "" && (
-                  <div className="">
-                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
-                      Location
-                    </h2>
-                    <hr className="border-gray-300" />
-                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
-                      {location && (
-                        <iframe
-                          src={location}
-                          width="100%"
-                          height="300"
-                          allowfullscreen=""
-                          loading="lazy"
-                          className="rounded-xl"
-                        ></iframe>
-                      )}
-                    </div>
-                  </div>
-                )}
-
+                \
                 <p className="pt-4 text-white">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
