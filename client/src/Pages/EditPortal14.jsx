@@ -9528,7 +9528,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg01}
                           />
                           <ImCross
@@ -9608,7 +9608,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg02}
                           />
                           <ImCross
@@ -9688,7 +9688,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg03}
                           />
                           <ImCross
@@ -9768,7 +9768,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg04}
                           />
                           <ImCross
@@ -9848,7 +9848,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg05}
                           />
                           <ImCross
@@ -9928,7 +9928,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg06}
                           />
                           <ImCross
@@ -10008,7 +10008,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg07}
                           />
                           <ImCross
@@ -10087,7 +10087,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg08}
                           />
                           <ImCross
@@ -10167,7 +10167,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg09}
                           />
                           <ImCross
@@ -10246,7 +10246,7 @@ END:VCARD`;
                         <div className="flex items-center justify-center pt-1.5 gap-6 w-fit mx-auto">
                           <input
                             type="file"
-                            className="file-input w-56 h-8 text-sm"
+                            className="file-input text-white w-56 h-8 text-sm"
                             onChange={handleEditImg10}
                           />
                           <ImCross
