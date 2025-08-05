@@ -444,7 +444,7 @@ END:VCARD`;
                 className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
                 style={{ backgroundAttachment: "fixed" }}
               >
-                <div className="bg-[#f1f4da] border border-white rounded-2xl pb-5">
+                <div className="bg-[#fafcee] border border-white rounded-2xl pb-5">
                   {images && (
                     <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
                       <a href={images} className="w-full">
