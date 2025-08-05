@@ -527,7 +527,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center text-white bg-[#38572e] border-[0.5px] rounded-full  border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center justify-center text-white bg-[#38572e] border-[0.5px] rounded-full  border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41] shadow-sm hover:shadow-md "
                       >
                         <MdOutlinePhoneAndroid size={20} color="white" />
                       </a>
