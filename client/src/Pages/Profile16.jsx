@@ -554,6 +554,31 @@ END:VCARD`;
                       </button>
                     </div>
 
+                    {menuLink && (
+                      <div className="flex justify-center mt-3">
+                        <button
+                          className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
+                          onClick={() => window.open(menuLink, "_blank")}
+                        >
+                          <div className="flex items-center space-x-6">
+                            <img
+                              src={menu}
+                              alt="Menu"
+                              className="h-10 w-10 rounded-md"
+                            />
+                            <div className="flex flex-col text-start gap-y-1">
+                              <span className="font-medium">Menu</span>
+                              <span className="text-gray-500 text-sm">
+                                {menuName}
+                              </span>
+                            </div>
+                          </div>
+                          <SlArrowRight color="gray-400" />{" "}
+                          {/* Chevron/Arrow */}
+                        </button>
+                      </div>
+                    )}
+
                     {phone01 && (
                       <div className="flex justify-center mt-3">
                         <a
@@ -1575,30 +1600,7 @@ END:VCARD`;
                         </button>
                       </div>
                     )}
-                    {menuLink && (
-                      <div className="flex justify-center mt-3">
-                        <button
-                          className="flex items-center justify-between w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md"
-                          onClick={() => window.open(menuLink, "_blank")}
-                        >
-                          <div className="flex items-center space-x-6">
-                            <img
-                              src={menu}
-                              alt="Menu"
-                              className="h-10 w-10 rounded-md"
-                            />
-                            <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
-                              <span className="text-gray-500 text-sm">
-                                {menuName}
-                              </span>
-                            </div>
-                          </div>
-                          <SlArrowRight color="gray-400" />{" "}
-                          {/* Chevron/Arrow */}
-                        </button>
-                      </div>
-                    )}
+
                     {catalogueLink && (
                       <div className="flex justify-center mt-3">
                         <button

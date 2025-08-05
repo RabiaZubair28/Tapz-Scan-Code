@@ -5340,6 +5340,104 @@ END:VCARD`;
                     </button>
                   </div>
 
+                  {menuLink && (
+                    <div className="flex justify-center mt-3">
+                      <a className="flex w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
+                        <div className="flex items-center space-x-6 w-full">
+                          <img src={menu} alt="menu01" className="h-10 w-10" />
+                          <div className="flex flex-1 items-center justify-between">
+                            {!modal45 && !editMenu && (
+                              <div className="flex flex-col text-start gap-y-1">
+                                <span className="font-medium">Menu</span>
+                                <span className="text-gray-500 text-sm">
+                                  {menuName}
+                                </span>
+                              </div>
+                            )}
+                            {!modal45 && !editMenu && (
+                              <div className="flex space-x-3">
+                                <FaEdit
+                                  size={20}
+                                  color="black"
+                                  className="cursor-pointer"
+                                  onClick={() => setEditMenu(true)}
+                                />
+                                <MdDelete
+                                  size={20}
+                                  color="black"
+                                  className="cursor-pointer"
+                                  onClick={() => setModal45(true)}
+                                />
+                              </div>
+                            )}
+                            {modal45 && (
+                              <div className="text-start w-full">
+                                <div className="text-sm font-medium mb-2">
+                                  Are you sure you want to delete?
+                                </div>
+                                <div className="flex justify-start space-x-1">
+                                  <button
+                                    className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                    onClick={() => setModal45(false)}
+                                  >
+                                    Cancel
+                                  </button>
+                                  <button
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    onClick={() => {
+                                      handleDeleteMenu(_id);
+                                      window.location.reload();
+                                      setModal45(false);
+                                    }}
+                                  >
+                                    Confirm
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                            {editMenu && (
+                              <div className="flex flex-col text-start gap-y-1 w-full">
+                                <span className="font-medium">Menu</span>
+                                <div className="flex items-center space-x-2 mt-1">
+                                  <div className="flex flex-col space-y-2 mt-1">
+                                    <label>Account Name:</label>
+                                    <input
+                                      id="menuText"
+                                      placeholder={menuName}
+                                      className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                    />
+                                    <label>Account Link:</label>
+                                    <input
+                                      id="menuLink"
+                                      placeholder={menuLink}
+                                      className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
+                                    />
+                                  </div>
+                                  <button
+                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    onClick={() => {
+                                      handleEditMenu(_id);
+                                      setEditMenu(false);
+                                      window.location.reload();
+                                    }}
+                                  >
+                                    &#x2714;
+                                  </button>
+                                  <button
+                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    onClick={() => setEditMenu(false)}
+                                  >
+                                    &#x2716;
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  )}
+
                   {phone01 && (
                     <div className="flex justify-center mt-3">
                       <a className="flex w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
@@ -9626,103 +9724,7 @@ END:VCARD`;
                       </a>
                     </div>
                   )}
-                  {menuLink && (
-                    <div className="flex justify-center mt-3">
-                      <a className="flex w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
-                        <div className="flex items-center space-x-6 w-full">
-                          <img src={menu} alt="menu01" className="h-10 w-10" />
-                          <div className="flex flex-1 items-center justify-between">
-                            {!modal45 && !editMenu && (
-                              <div className="flex flex-col text-start gap-y-1">
-                                <span className="font-medium">Menu</span>
-                                <span className="text-gray-500 text-sm">
-                                  {menuName}
-                                </span>
-                              </div>
-                            )}
-                            {!modal45 && !editMenu && (
-                              <div className="flex space-x-3">
-                                <FaEdit
-                                  size={20}
-                                  color="black"
-                                  className="cursor-pointer"
-                                  onClick={() => setEditMenu(true)}
-                                />
-                                <MdDelete
-                                  size={20}
-                                  color="black"
-                                  className="cursor-pointer"
-                                  onClick={() => setModal45(true)}
-                                />
-                              </div>
-                            )}
-                            {modal45 && (
-                              <div className="text-start w-full">
-                                <div className="text-sm font-medium mb-2">
-                                  Are you sure you want to delete?
-                                </div>
-                                <div className="flex justify-start space-x-1">
-                                  <button
-                                    className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
-                                    onClick={() => setModal45(false)}
-                                  >
-                                    Cancel
-                                  </button>
-                                  <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
-                                    onClick={() => {
-                                      handleDeleteMenu(_id);
-                                      window.location.reload();
-                                      setModal45(false);
-                                    }}
-                                  >
-                                    Confirm
-                                  </button>
-                                </div>
-                              </div>
-                            )}
-                            {editMenu && (
-                              <div className="flex flex-col text-start gap-y-1 w-full">
-                                <span className="font-medium">Menu</span>
-                                <div className="flex items-center space-x-2 mt-1">
-                                  <div className="flex flex-col space-y-2 mt-1">
-                                    <label>Account Name:</label>
-                                    <input
-                                      id="menuText"
-                                      placeholder={menuName}
-                                      className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                    />
-                                    <label>Account Link:</label>
-                                    <input
-                                      id="menuLink"
-                                      placeholder={menuLink}
-                                      className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
-                                    />
-                                  </div>
-                                  <button
-                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
-                                    onClick={() => {
-                                      handleEditMenu(_id);
-                                      setEditMenu(false);
-                                      window.location.reload();
-                                    }}
-                                  >
-                                    &#x2714;
-                                  </button>
-                                  <button
-                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
-                                    onClick={() => setEditMenu(false)}
-                                  >
-                                    &#x2716;
-                                  </button>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  )}
+
                   {catalogueLink && (
                     <div className="flex justify-center mt-3">
                       <a className="flex w-full px-5 py-3 bg-white text-gray-700 shadow rounded-lg max-w-md">
