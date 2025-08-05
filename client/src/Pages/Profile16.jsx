@@ -344,7 +344,7 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -441,7 +441,7 @@ END:VCARD`;
           }>Logout</button> */}
 
               <div
-                className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
+                className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
                 style={{ backgroundAttachment: "fixed" }}
               >
                 <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
@@ -1993,7 +1993,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
