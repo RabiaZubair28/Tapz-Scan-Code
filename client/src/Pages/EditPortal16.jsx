@@ -4686,7 +4686,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4807,10 +4807,10 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}
+              className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
               style={{ backgroundAttachment: "fixed" }}
             >
-              <div className="bg-[#f1f2f9] border border-white rounded-2xl pb-5">
+              <div className="bg-[#f1f4da] border border-white rounded-2xl pb-5">
                 {
                   <div className="flex flex-col items-center mx-auto w-full space-y-2">
                     <a href={images} className="w-full">
@@ -11147,7 +11147,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className="min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11928,7 +11928,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11983,7 +11983,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c] pt-[30%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] pt-[30%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
