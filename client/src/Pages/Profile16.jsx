@@ -1962,14 +1962,14 @@ END:VCARD`;
                     <hr className="border-gray-300" />
                     <div className="flex justify-center space-x-3 mt-3 px-4">
                       <div
-                        className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                        className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-gray-300 bg-white"
                         onClick={handleShow}
                       >
                         <IoQrCodeSharp size={35} color="black" />
                       </div>
 
                       <div
-                        className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                        className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-gray-300 bg-white"
                         onClick={downloadContactCard}
                         value="download"
                       >
