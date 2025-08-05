@@ -549,7 +549,7 @@ END:VCARD`;
                         href={`https://wa.me/${whatsapp01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full text-white bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41] "
+                        className="w-12 h-12 flex items-center justify-center rounded-full text-white bg-[#38572e] hover:bg-[#4f7b41] border-[0.5px] border-white shadow-sm hover:shadow-md "
                       >
                         <ImWhatsapp size={20} color="white" />
                       </a>
@@ -1852,14 +1852,14 @@ END:VCARD`;
                   <hr className="border-gray-300" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-[#38572e] hover:bg-[#4f7b41] hover:border-white"
                       onClick={handleShow}
                     >
                       <IoQrCodeSharp size={35} color="white" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-[#38572e] hover:bg-[#4f7b41] hover:border-white"
                       onClick={downloadContactCard}
                       value="download"
                     >
