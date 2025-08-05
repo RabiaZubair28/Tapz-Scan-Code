@@ -487,7 +487,7 @@ END:VCARD`;
                         <MdRemoveRedEye size={20} color="white" />
                         <p className="text-white">{visitCount}</p>
                       </div>
-                      <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm  shadow-sm hover:shadow-md  bg-white hover:bg-gray-50 text-[#38572e] border-[0.25px] border-[#38572e]">
+                      <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm  shadow-sm hover:shadow-md   text-white bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]">
                         {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                         <span
                           style={{
@@ -527,7 +527,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center text-white bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center text-white bg-[#38572e] border-[0.5px] rounded-full  border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41] shadow-sm hover:shadow-md "
                       >
                         <MdOutlinePhoneAndroid size={20} color="white" />
                       </a>
