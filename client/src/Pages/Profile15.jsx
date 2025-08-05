@@ -604,7 +604,7 @@ END:VCARD`;
                             <span className="text-sm">{phone01}</span>
                           </div>
                         </div>
-                        <SlArrowRight color="white" /> {/* Chevron/Arrow */}
+                        <SlArrowRight /> {/* Chevron/Arrow */}
                       </a>
                     </div>
                   )}
