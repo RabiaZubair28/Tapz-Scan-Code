@@ -4681,7 +4681,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4699,7 +4699,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12  text-white bg-[#38572e] border-[0.5px] border-white text-white p-3 rounded-full flex items-center justify-center"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52]`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {images && (
@@ -4838,7 +4838,7 @@ END:VCARD`;
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 border text-sm border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3  text-white bg-[#38572e] border-[0.5px] border-white border text-sm border-white shadow-sm hover:shadow-md ">
                       {/* <FaDownload size={20} onClick={downloadContactCard}  /> */}
                       <span
                         style={{
@@ -5210,7 +5210,7 @@ END:VCARD`;
                       href={`tel:${telephone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center  text-white bg-[#38572e] border-[0.5px] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
                       <MdOutlinePhoneAndroid size={20} color="white" />
                     </a>
@@ -5218,13 +5218,13 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center  text-white bg-[#38572e] border-[0.5px] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
                       <AiOutlineMail size={20} color="white" />
                     </a>
                     <a
                       href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center  text-white bg-[#38572e] border-[0.5px] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
                       <RiMessage2Line size={20} color="white" />
                     </a>
@@ -5232,7 +5232,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center  text-white bg-[#38572e] border-[0.5px] border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
                       <ImWhatsapp size={20} color="white" />
                     </a>
@@ -9851,7 +9851,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer border-[0.25px] border-white   text-white bg-[#38572e] border-[0.5px] border-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
@@ -10788,7 +10788,7 @@ END:VCARD`;
                     img09 == "" ||
                     img10 == "") && (
                     <div
-                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2 bg-gray-600   mx-auto rounded-xl border-[0.25px] shadow-md space-y-3"
+                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2  text-white bg-[#38572e] border-[0.5px] border-white   mx-auto rounded-xl  shadow-md space-y-3"
                       onClick={() => handleShow03()}
                     >
                       <IoIosAddCircle className="text-white mt-2" size={30} />
@@ -10902,14 +10902,14 @@ END:VCARD`;
                 <hr className="border-gray-300" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white  text-white bg-[#38572e] border-[0.5px] border-white"
                     onClick={handleShow}
                   >
                     <IoQrCodeSharp size={35} />
                   </div>
 
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white  text-white bg-[#38572e] border-[0.5px] border-white"
                     onClick={downloadContactCard}
                     value="download"
                   >
@@ -10928,7 +10928,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11709,7 +11709,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
