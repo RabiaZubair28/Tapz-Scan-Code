@@ -506,7 +506,7 @@ END:VCARD`;
                 )}
                 <div className="px-6">
                   <div className="flex flex-col justify-center items-start pt-0.5">
-                    <h2 className="text-lg font-semibold text-white pt-1 break-words  whitespace-pre-wrap text-start">
+                    <h2 className="text-lg font-semibold text-white pt-1 ">
                       {name}
                     </h2>
                     <h2 className="text-2xl font-semibold text-white pt-1">
