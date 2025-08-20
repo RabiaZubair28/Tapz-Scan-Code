@@ -1177,18 +1177,19 @@ END:VCARD`;
                   className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
                   onClick={() => window.open(catalogueLink, "_blank")}
                 >
-                  <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-3">
                     <img
-                      src={catalog}
-                      alt="Catalog"
+                      src={menu}
+                      alt="Profile"
                       className="h-10 w-10 rounded-md"
                     />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Catalogue</span>
-                      <span className=" text-sm">{catalogueName}</span>
+                    <div className="flex flex-col text-start">
+                      <span className="text-lg font-semibold">
+                        {catalogueName}
+                      </span>
                     </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
+                  </div>{" "}
+                  {/* Chevron/Arrow */}
                 </button>
               </div>
             )}
