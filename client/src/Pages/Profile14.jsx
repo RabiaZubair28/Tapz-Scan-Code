@@ -357,7 +357,7 @@ END:VCARD`;
             </div>
 
             <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full gap-x-2 items-center  text-white bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+              <button className="flex w-full justify-center gap-x-2 items-center  text-white bg-[#38572e] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#4f7b41]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
