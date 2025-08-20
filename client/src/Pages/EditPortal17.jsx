@@ -22,7 +22,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
-import catalog from "../assets/catalog.jpg";
+import catalog from "../assets/menu.png";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
 import telephone from "../assets/telephone01.jpg";
@@ -4410,11 +4410,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name Added successfully:", response.data);
+        console.log("Menu Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding name:", error);
+      console.error("Error Adding menu:", error);
     }
   };
   const handleEditMenu = async (id) => {
@@ -4438,7 +4438,7 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
@@ -4457,11 +4457,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating menu:", error);
     }
   };
   const handleAddCatalogue = async (id) => {
@@ -4478,11 +4478,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Catalogue Added successfully:", response.data);
+        console.log("Menu Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding catalogue:", error);
+      console.error("Error Adding menu:", error);
     }
   };
 
@@ -4507,11 +4507,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Catalogue updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating catalogue:", error);
+      console.error("Error updating menu:", error);
     }
   };
 
@@ -4526,11 +4526,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Catalogue updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating catalogue:", error);
+      console.error("Error updating menu:", error);
     }
   };
 
@@ -4548,11 +4548,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile Added successfully:", response.data);
+        console.log("Menu Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding profile:", error);
+      console.error("Error Adding Menu:", error);
     }
   };
 
@@ -4577,11 +4577,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.error("Error updating Menu:", error);
     }
   };
 
@@ -4596,11 +4596,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.error("Error updating Menu:", error);
     }
   };
   const handleAddProfile02 = async (id) => {
@@ -4617,11 +4617,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile Added successfully:", response.data);
+        console.log("Menu Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding profile:", error);
+      console.error("Error Adding Menu:", error);
     }
   };
 
@@ -4646,11 +4646,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.error("Error updating Menu:", error);
     }
   };
 
@@ -4665,11 +4665,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Profile updated successfully:", response.data);
+        console.log("Menu updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.error("Error updating Menu:", error);
     }
   };
 

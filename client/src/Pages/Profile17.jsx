@@ -24,7 +24,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
-import catalog from "../assets/catalog.jpg";
+import catalog from "../assets/menu.png";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
