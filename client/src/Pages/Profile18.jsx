@@ -493,7 +493,7 @@ END:VCARD`;
                           style={{
                             display: "flex",
                             alignItems: "center",
-                            color: "white",
+                            color: "black",
                             justifyContent: "center",
                           }}
                           onClick={downloadContactCard}
@@ -535,7 +535,7 @@ END:VCARD`;
                         href={`mailto:${email}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-mdbg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-50 "
+                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-50 "
                       >
                         <AiOutlineMail size={20} color="black" />
                       </a>
@@ -584,7 +584,7 @@ END:VCARD`;
                             </span>
                           </div>
                         </div>
-                        <SlArrowRight color="white" /> {/* Chevron/Arrow */}
+                        <SlArrowRight /> {/* Chevron/Arrow */}
                       </a>
                     </div>
                   )}
@@ -1936,18 +1936,18 @@ END:VCARD`;
                   <hr className="border-gray-300" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-gray-300 bg-white hover:border-gray-300"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="white" />
+                      <IoQrCodeSharp size={35} color="black" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-gray-300  bg-white hover:border-gray-300"
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="white" />
+                      <FaDownload size={30} color="black" />
                     </div>
                   </div>
 
