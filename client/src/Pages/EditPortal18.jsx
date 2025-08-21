@@ -4860,7 +4860,7 @@ END:VCARD`;
                 {!editLogo && (
                   <div className="space-x-2">
                     <button
-                      className="btn bg-green-500 text-black rounded-md py-1 px-6"
+                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
                       onClick={() => {
                         setDeleteModal11(false);
                         setEditLogo(true);
@@ -10018,7 +10018,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal01(false);
                               }}
@@ -10026,7 +10026,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg01(_id);
                                 setDeleteModal01(false);
@@ -10098,7 +10098,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal02(false);
                               }}
@@ -10106,7 +10106,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg02(_id);
                                 window.location.reload();
@@ -10178,7 +10178,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal03(false);
                               }}
@@ -10186,7 +10186,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg03(_id);
                                 window.location.reload();
@@ -10258,7 +10258,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal04(false);
                               }}
@@ -10266,7 +10266,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg04(_id);
                                 window.location.reload();
@@ -10338,7 +10338,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal05(false);
                               }}
@@ -10346,7 +10346,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg05(_id);
                                 window.location.reload();
@@ -10418,7 +10418,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal06(false);
                               }}
@@ -10426,7 +10426,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg06(_id);
                                 window.location.reload();
@@ -10498,7 +10498,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal07(false);
                               }}
@@ -10506,7 +10506,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg07(_id);
                                 window.location.reload();
@@ -10577,7 +10577,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal08(false);
                               }}
@@ -10585,7 +10585,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg08(_id);
                                 window.location.reload();
@@ -10657,7 +10657,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal09(false);
                               }}
@@ -10665,7 +10665,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg09(_id);
                                 window.location.reload();
@@ -10736,7 +10736,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-4 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 setDeleteModal10(false);
                               }}
@@ -10744,7 +10744,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-white text-black py-1 px-3 border border-white rounded-md hover:bg-gray-50"
                               onClick={() => {
                                 handleDeleteImg10(_id);
                                 window.location.reload();
