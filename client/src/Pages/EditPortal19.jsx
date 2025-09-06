@@ -4806,7 +4806,7 @@ END:VCARD`;
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
-                <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                <div className="flex  flex-row items-center  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
                   <a href={logo}>
                     <div className="relative mb-2 ">
                       <img
