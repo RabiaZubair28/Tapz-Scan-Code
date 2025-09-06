@@ -470,11 +470,11 @@ END:VCARD`;
                       </div>
                     </a>
                     <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
-                      <div className="flex justify-center gap-x-1 -mt-5 pb-1 items-center">
+                      <div className="flex justify-center gap-x-1  pb-1 items-center">
                         <MdRemoveRedEye size={20} color="white" />
                         <p className="text-white">{visitCount}</p>
                       </div>
-                      <button className="flex items-start justify-start gap-x-2 rounded-lg py-2.5  px-3 text-sm  bg-white border border-white shadow-sm hover:shadow-md hover:bg-[#784330]">
+                      <button className="flex items-start justify-start gap-x-2 rounded-lg py-2.5  px-3 text-sm  bg-white border border-white shadow-sm hover:shadow-md hover:bg-white">
                         {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
                         <span
                           style={{
