@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#784330] via-[#764a3a] to-[#c7bcaf] pb-4`}
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg   text-center bg-gradient-to-tr from-[#784330] via-[#764a3a] to-[#c7bcaf] pt-4`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
@@ -4812,7 +4812,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-4 border-white shadow-md"
+                        className="w-36 h-36 mt-0 mx-auto rounded-2xl border-4 border-white shadow-md"
                       />
                     </div>
                   </a>
