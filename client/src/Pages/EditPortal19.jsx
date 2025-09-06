@@ -4802,22 +4802,9 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#784330] via-[#764a3a] to-[#c7bcaf]`}
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#784330] via-[#764a3a] to-[#c7bcaf] pb-4`}
               style={{ backgroundAttachment: "fixed" }}
             >
-              {images && (
-                <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
-                  <a href={images} className="w-full">
-                    <div className="relative mb-2 ">
-                      <img
-                        src={images}
-                        alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-gray-300"
-                      />
-                    </div>
-                  </a>
-                </div>
-              )}
               {logo && (
                 <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
                   <a href={logo}>
@@ -4830,7 +4817,7 @@ END:VCARD`;
                     </div>
                   </a>
 
-                  <div className="flex items-center justify-center gap-x-2 -mt-24 mb-5">
+                  <div className="flex items-center justify-center gap-x-2 mb-5">
                     {/* <img src={eye} height={25}></img>
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
@@ -4838,13 +4825,13 @@ END:VCARD`;
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 border text-sm border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-white border text-sm border-white shadow-sm hover:shadow-md text-[#784330]">
                       {/* <FaDownload size={20} onClick={downloadContactCard}  /> */}
                       <span
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "white",
+                          color: "#784330",
                           justifyContent: "center",
                         }}
                         onClick={downloadContactCard}
@@ -4893,25 +4880,6 @@ END:VCARD`;
                         setEditLogo(false);
                       }}
                     />
-                  </div>
-                )}
-                {!editCover && (
-                  <div className="space-x-2">
-                    <button
-                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
-                      onClick={() => {
-                        setEditCover(true);
-                      }}
-                    >
-                      Edit Cover
-                    </button>
-                    {/* <button
-              className="btn bg-red-500 text-white rounded-md py-1 px-4"
-              onClick={() => {
-                setDeleteModal11(true)}}
-            >
-              Delete
-            </button> */}
                   </div>
                 )}
 
@@ -5210,31 +5178,31 @@ END:VCARD`;
                       href={`tel:${telephone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
-                      <MdOutlinePhoneAndroid size={20} color="white" />
+                      <MdOutlinePhoneAndroid size={20} color="#784330" />
                     </a>
                     <a
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
-                      <AiOutlineMail size={20} color="white" />
+                      <AiOutlineMail size={20} color="#784330" />
                     </a>
                     <a
                       href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
-                      <RiMessage2Line size={20} color="white" />
+                      <RiMessage2Line size={20} color="#784330" />
                     </a>
                     <a
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
                     >
-                      <ImWhatsapp size={20} color="white" />
+                      <ImWhatsapp size={20} color="#784330" />
                     </a>
                   </div>
 
@@ -5332,7 +5300,7 @@ END:VCARD`;
 
                 {phone01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone01" className="h-10 w-10" />
@@ -5424,7 +5392,7 @@ END:VCARD`;
                 )}
                 {phone02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
@@ -5516,7 +5484,7 @@ END:VCARD`;
                 )}
                 {phone03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
@@ -5608,7 +5576,7 @@ END:VCARD`;
                 )}
                 {telephone01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5704,7 +5672,7 @@ END:VCARD`;
                 )}
                 {telephone02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5800,7 +5768,7 @@ END:VCARD`;
                 )}
                 {telephone03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5896,7 +5864,7 @@ END:VCARD`;
                 )}
                 {whatsapp01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5992,7 +5960,7 @@ END:VCARD`;
                 )}
                 {whatsapp02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6088,7 +6056,7 @@ END:VCARD`;
                 )}
                 {whatsapp03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6188,7 +6156,7 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -6202,7 +6170,7 @@ END:VCARD`;
                 )}
                 {email02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6300,7 +6268,7 @@ END:VCARD`;
                 )}
                 {email03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6399,7 +6367,7 @@ END:VCARD`;
 
                 {facebookLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
@@ -6500,7 +6468,7 @@ END:VCARD`;
                 )}
                 {facebookLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
@@ -6601,7 +6569,7 @@ END:VCARD`;
                 )}
                 {facebookLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook03" className="h-10 w-10" />
@@ -6702,7 +6670,7 @@ END:VCARD`;
                 )}
                 {instagramLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6799,7 +6767,7 @@ END:VCARD`;
                 )}
                 {instagramLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6898,7 +6866,7 @@ END:VCARD`;
                 )}
                 {instagramLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6997,7 +6965,7 @@ END:VCARD`;
                 )}
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7094,7 +7062,7 @@ END:VCARD`;
                 )}
                 {snapchatLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7191,7 +7159,7 @@ END:VCARD`;
                 )}
                 {snapchatLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7288,7 +7256,7 @@ END:VCARD`;
                 )}
                 {youtubeLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7381,7 +7349,7 @@ END:VCARD`;
                 )}
                 {youtubeLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7474,7 +7442,7 @@ END:VCARD`;
                 )}
                 {youtubeLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube03" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7568,7 +7536,7 @@ END:VCARD`;
 
                 {tiktokLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7665,7 +7633,7 @@ END:VCARD`;
                 )}
                 {tiktokLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7762,7 +7730,7 @@ END:VCARD`;
                 )}
                 {tiktokLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7859,7 +7827,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -7958,7 +7926,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -8057,7 +8025,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -8156,7 +8124,7 @@ END:VCARD`;
                 )}
                 {address && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={addressImg}
@@ -8246,7 +8214,7 @@ END:VCARD`;
                 )}
                 {website && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8343,7 +8311,7 @@ END:VCARD`;
                 )}
                 {website02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8440,7 +8408,7 @@ END:VCARD`;
                 )}
                 {website03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8537,7 +8505,7 @@ END:VCARD`;
                 )}
                 {twitterLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8634,7 +8602,7 @@ END:VCARD`;
                 )}
                 {twitterLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8731,7 +8699,7 @@ END:VCARD`;
                 )}
                 {twitterLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8828,7 +8796,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -8927,7 +8895,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -9026,7 +8994,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -9125,7 +9093,7 @@ END:VCARD`;
                 )}
                 {googleMapLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9222,7 +9190,7 @@ END:VCARD`;
                 )}
                 {googleMapLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9321,7 +9289,7 @@ END:VCARD`;
                 )}
                 {googleMapLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9420,7 +9388,7 @@ END:VCARD`;
                 )}
                 {menuLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={menu} alt="menu01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -9513,7 +9481,7 @@ END:VCARD`;
                 )}
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={catalog}
@@ -9610,7 +9578,7 @@ END:VCARD`;
                 )}
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={profile}
@@ -9707,7 +9675,7 @@ END:VCARD`;
                 )}
                 {profileLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-white hover:border-white text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={profile}
@@ -9851,7 +9819,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-white hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
