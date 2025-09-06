@@ -9819,7 +9819,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-white hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-white hover:border-white text-[#784330] mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
@@ -10864,7 +10864,7 @@ END:VCARD`;
                     </div>
                   </div>
                 </div>
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                <h2 className="text-xl font-semibold text-[#784330] mb-3 mt-5">
                   Share Contact & QR
                 </h2>
                 <hr className="border-gray-300" />
