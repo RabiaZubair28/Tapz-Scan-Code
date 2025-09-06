@@ -470,7 +470,7 @@ END:VCARD`;
                       </div>
                     </a>
                     <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
-                      <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
+                      <div className="flex justify-center gap-x-1 -mt-5 pb-1 items-center">
                         <MdRemoveRedEye size={20} color="white" />
                         <p className="text-white">{visitCount}</p>
                       </div>
@@ -556,7 +556,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3bg-white  text-[#784330] border-[0.25px] border-white shadow rounded-lg max-w-md"
+                        className="flex items-center justify-between w-full px-5 py-3 bg-white  text-[#784330] border-[0.25px] border-white shadow rounded-lg max-w-md"
                       >
                         <div className="flex items-center space-x-6">
                           <img
