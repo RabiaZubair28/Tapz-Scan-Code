@@ -4771,7 +4771,7 @@ END:VCARD`;
 
         {!show && !show02 && !show03 && (
           <section className="main">
-            {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"rgb(22, 33, 92)", border:"1px solid white", borderRadius:"5px"}} onClick={
+            {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"#784330", border:"1px solid white", borderRadius:"5px"}} onClick={
             ()=>{
               navigate(`/`)
             }
@@ -10964,7 +10964,7 @@ END:VCARD`;
                     <div
                       style={{
                         fontSize: "20px",
-                        color: "rgb(22, 33, 92)",
+                        color: "#784330",
                         fontFamily: "sans-serif",
                         fontWeight: "bold",
                         marginBlock: "10px",
@@ -11307,7 +11307,7 @@ END:VCARD`;
                                 alignItems: "center",
                                 justifyContent: "center",
                                 fontSize: "20px",
-                                color: "rgb(22, 33, 92)",
+                                color: "#784330",
                                 fontFamily: "sans-serif",
                                 fontWeight: "bold",
                                 marginBlock: "10px",
@@ -11343,7 +11343,7 @@ END:VCARD`;
                               alignItems: "center",
                               justifyContent: "center",
                               fontSize: "20px",
-                              color: "rgb(22, 33, 92)",
+                              color: "#784330",
                               fontFamily: "sans-serif",
                               fontWeight: "bold",
                               marginBlock: "10px",
@@ -11686,7 +11686,7 @@ END:VCARD`;
                           }}
                           style={{
                             fontSize: "15px",
-                            backgroundColor: "rgb(22, 33, 92)",
+                            backgroundColor: "#784330",
                             color: "white",
                             fontFamily: "sans-serif",
                             fontWeight: "bold",
