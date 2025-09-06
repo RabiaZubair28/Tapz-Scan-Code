@@ -10873,7 +10873,7 @@ END:VCARD`;
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
                     onClick={handleShow}
                   >
-                    <IoQrCodeSharp size={35} color="[#784330]" />
+                    <IoQrCodeSharp size={35} color="#784330" />
                   </div>
 
                   <div
@@ -10881,7 +10881,7 @@ END:VCARD`;
                     onClick={downloadContactCard}
                     value="download"
                   >
-                    <FaDownload size={30} color="[#784330]" />
+                    <FaDownload size={30} color="#784330" />
                   </div>
                 </div>
 
