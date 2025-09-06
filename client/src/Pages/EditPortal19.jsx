@@ -4821,7 +4821,7 @@ END:VCARD`;
                     {/* <img src={eye} height={25}></img>
                   <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                   }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <div className="flex justify-start gap-x-1.5 -mt-5 pb-1 items-center">
+                    <div className="flex justify-center gap-x-1.5 -mt-5 pb-1 items-center">
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
@@ -10864,7 +10864,7 @@ END:VCARD`;
                     </div>
                   </div>
                 </div>
-                <h2 className="text-xl font-semibold text-[#784330] mb-3 mt-5">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                   Share Contact & QR
                 </h2>
                 <hr className="border-gray-300" />
@@ -10873,7 +10873,7 @@ END:VCARD`;
                     className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
                     onClick={handleShow}
                   >
-                    <IoQrCodeSharp size={35} />
+                    <IoQrCodeSharp size={35} color="[#784330]" />
                   </div>
 
                   <div
@@ -10881,7 +10881,7 @@ END:VCARD`;
                     onClick={downloadContactCard}
                     value="download"
                   >
-                    <FaDownload size={30} />
+                    <FaDownload size={30} color="[#784330]" />
                   </div>
                 </div>
 
