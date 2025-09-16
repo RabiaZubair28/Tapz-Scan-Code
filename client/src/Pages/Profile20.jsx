@@ -357,11 +357,11 @@ END:VCARD`;
             </div>
 
             <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full justify-center gap-x-2 items-center  text-white bg-[#F5E7C8] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#F5E7C8]  py-3 mt-2 mb-3 rounded-lg hover:text-gray-50 ">
+              <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-[#F5E7C8] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#F5E7C8]  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
-                  color="white"
+                  color="black"
                   className="text-black hover:text-black"
                 />
                 <span
@@ -1430,7 +1430,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#e20e0e] via-[#f16d55] to-[#F5E7C8] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8] pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
