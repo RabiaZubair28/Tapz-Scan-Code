@@ -4681,7 +4681,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8]"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8]`}
+              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
@@ -4892,7 +4892,7 @@ END:VCARD`;
                     href={`tel:${phone01}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
                   >
                     <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                     &nbsp;CALL
@@ -4902,7 +4902,7 @@ END:VCARD`;
                     href={`https://wa.me/${phone01}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
                   >
                     <ImWhatsapp size={20} color="#1f153d" />
                     &nbsp;REACH OUT
@@ -4910,7 +4910,7 @@ END:VCARD`;
                 </div>
 
                 <div className="flex items-center justify-center mt-0 mb-0 px-4">
-                  <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-[#F5E7C8]  hover:bg-[#F5E7C8]  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+                  <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                     <FaDownload
                       size={20}
                       onClick={downloadContactCard}
@@ -9438,7 +9438,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-black mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
@@ -10263,11 +10263,11 @@ END:VCARD`;
                     img09 == "" ||
                     img10 == "") && (
                     <div
-                      className="flex items-center  cursor-pointer  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                      className="flex items-center  cursor-pointer  bg-white hover:bg-gray-50 text-black border-[0.25px] border-black mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                       onClick={() => handleShow03()}
                     >
-                      <IoIosAddCircle className="text-[#38572e]" size={30} />
-                      <div className="text-lg font-bold text-[#38572e]">
+                      <IoIosAddCircle className="text-black" size={30} />
+                      <div className="text-lg font-bold text-black">
                         Add More Images
                       </div>
                     </div>
@@ -10285,7 +10285,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8]`}
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11066,7 +11066,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8]`}
+            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11121,7 +11121,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#e20e0e] via-[#f16d55] to-[#F5E7C8] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#e20e0e] via-[#f16d55] to-[#fab23f] pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
