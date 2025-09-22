@@ -303,7 +303,7 @@ END:VCARD`;
         </Helmet>
 
         <div
-          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8]`}
+          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
           style={{ backgroundAttachment: "fixed" }}
         >
           {logo && (
@@ -339,7 +339,7 @@ END:VCARD`;
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                 &nbsp;CALL
@@ -349,7 +349,7 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-2.5 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
                 &nbsp;REACH OUT
@@ -357,7 +357,7 @@ END:VCARD`;
             </div>
 
             <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-[#F5E7C8] border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-[#F5E7C8]  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+              <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
@@ -1430,7 +1430,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#F5E7C8] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f] pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
