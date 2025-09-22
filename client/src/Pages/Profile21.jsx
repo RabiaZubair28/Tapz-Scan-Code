@@ -1397,7 +1397,7 @@ END:VCARD`;
               </div>
             )}
             {location != "" && (
-              <div className="px-4">
+              <div className="px-0">
                 <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                   Location
                 </h2>
