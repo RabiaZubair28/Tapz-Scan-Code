@@ -4,6 +4,29 @@ const { login } = require("../controllers/auth-controller.js");
 const Client = require("../models/client-model.js");
 const Review = require("../models/review-model.js");
 const mongoose = require("mongoose");
+
+// GET all reviews
+router.route("/reviews").get(async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.json(reviews);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// POST new review
+router.route("/addReview").post(async (req, res) => {
+  try {
+    const { name, description, stars } = req.body;
+    const review = new Review({ name, description, stars });
+    await review.save();
+    res.status(201).json(review);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 router.route("/update/:id").put(async (req, res) => {
   const { id } = req.params;
   const {
@@ -1186,283 +1209,6 @@ router.delete("/deleteClient/:id", async (req, res) => {
   const { id } = req.params;
   await Client.findByIdAndDelete(id);
   res.status(200).json({ message: "Client deleted" });
-});
-router.route("/addSchool").post(async (req, res) => {
-  try {
-    console.log(req.body);
-    const {
-      companyName,
-      name,
-      description,
-      phone01,
-      phone02,
-      phone03,
-      telephone01,
-      telephone02,
-      telephone03,
-      services,
-      clientName,
-      designation,
-      qr,
-      address,
-      whatsapp01,
-      location,
-      whatsapp02,
-      whatsapp03,
-      instagramLink,
-      instagramLink02,
-      instagramLink03,
-      instagramName,
-      instagramName02,
-      instagramName03,
-      snapchatLink,
-      snapchatLink02,
-      snapchatLink03,
-      snapchatName,
-      snapchatName02,
-      snapchatName03,
-      youtubeLink,
-      youtubeLink02,
-      youtubeLink03,
-      youtubeName,
-      youtubeName02,
-      youtubeName03,
-      tiktokLink,
-      tiktokLink02,
-      tiktokLink03,
-      tiktokName,
-      tiktokName02,
-      tiktokName03,
-      twitterLink,
-      twitterLink02,
-      twitterLink03,
-      twitterName,
-      twitterName02,
-      twitterName03,
-      facebookLink,
-      facebookLink02,
-      facebookLink03,
-      facebookName,
-      facebookName02,
-      facebookName03,
-      googleReviewLink,
-      googleReviewLink02,
-      googleReviewLink03,
-      googleReviewName,
-      googleReviewName02,
-      googleReviewName03,
-      website,
-      website02,
-      website03,
-      websiteName,
-      websiteName02,
-      websiteName03,
-      email,
-      email02,
-      email03,
-      youtubeShortsLink,
-      youtubeShortsLink02,
-      youtubeShortsLink03,
-      youtubeShortsName,
-      youtubeShortsName02,
-      youtubeShortsName03,
-      googleMapLink,
-      googleMapLink02,
-      googleMapLink03,
-      googleMapName,
-      googleMapName02,
-      googleMapName03,
-      menuLink,
-      menuName,
-      catalogueLink,
-      catalogueName,
-      profileLink01,
-      profileLink02,
-      profileName01,
-      profileName02,
-      logo,
-      romanName,
-      images,
-      img01,
-      img02,
-      img03,
-      img04,
-      img05,
-      img06,
-      img07,
-      img08,
-      img09,
-      img10,
-      password,
-      color01,
-      color02,
-      color03,
-      flag,
-      option,
-      visitCount,
-    } = req.body;
-
-    const userCreated = await Client.create({
-      companyName,
-      name,
-      description,
-      phone01,
-      phone02,
-      phone03,
-      telephone01,
-      telephone02,
-      telephone03,
-      services,
-      clientName,
-      designation,
-      qr,
-      address,
-      whatsapp01,
-      location,
-      whatsapp02,
-      whatsapp03,
-      instagramLink,
-      instagramLink02,
-      instagramLink03,
-      instagramName,
-      instagramName02,
-      instagramName03,
-      snapchatLink,
-      snapchatLink02,
-      snapchatLink03,
-      snapchatName,
-      snapchatName02,
-      snapchatName03,
-      youtubeLink,
-      youtubeLink02,
-      youtubeLink03,
-      youtubeName,
-      youtubeName02,
-      youtubeName03,
-      tiktokLink,
-      tiktokLink02,
-      tiktokLink03,
-      tiktokName,
-      tiktokName02,
-      tiktokName03,
-      twitterLink,
-      twitterLink02,
-      twitterLink03,
-      twitterName,
-      twitterName02,
-      twitterName03,
-      facebookLink,
-      facebookLink02,
-      facebookLink03,
-      facebookName,
-      facebookName02,
-      facebookName03,
-      googleReviewLink,
-      googleReviewLink02,
-      googleReviewLink03,
-      googleReviewName,
-      googleReviewName02,
-      googleReviewName03,
-      website,
-      website02,
-      website03,
-      websiteName,
-      websiteName02,
-      websiteName03,
-      email,
-      email02,
-      email03,
-      youtubeShortsLink,
-      youtubeShortsLink02,
-      youtubeShortsLink03,
-      youtubeShortsName,
-      youtubeShortsName02,
-      youtubeShortsName03,
-      googleMapLink,
-      googleMapLink02,
-      googleMapLink03,
-      googleMapName,
-      googleMapName02,
-      googleMapName03,
-      menuLink,
-      menuName,
-      catalogueLink,
-      catalogueName,
-      profileLink01,
-      profileLink02,
-      profileName01,
-      profileName02,
-      logo,
-      romanName,
-      images,
-      img01,
-      img02,
-      img03,
-      img04,
-      img05,
-      img06,
-      img07,
-      img08,
-      img09,
-      img10,
-      password,
-      color01,
-      color02,
-      color03,
-      flag,
-      option,
-      visitCount,
-    });
-
-    res.status(201).json({
-      msg: "client making successful",
-    });
-  } catch (error) {
-    // res.status(500).json("internal server error");
-    next(error);
-  }
-});
-router.route("/school/:companyName").get(async (req, res) => {
-  const { companyName } = req.params;
-  console.log(companyName);
-  // Validate the ID format
-
-  try {
-    // Find the client by ID
-    const client = await Client.findOne({ companyName: companyName });
-
-    if (!client) {
-      return res.status(404).json({ error: "Client not found" });
-    }
-
-    res.status(200).json(client);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred", details: error.message });
-  }
-});
-
-// GET all reviews
-router.route("/reviews").get(async (req, res) => {
-  try {
-    const reviews = await Review.find();
-    res.json(reviews);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// POST new review
-router.route("/addReview").post(async (req, res) => {
-  try {
-    const { name, description, stars } = req.body;
-    const review = new Review({ name, description, stars });
-    await review.save();
-    res.status(201).json(review);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
 });
 
 module.exports = router;
