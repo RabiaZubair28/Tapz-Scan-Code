@@ -1465,6 +1465,4 @@ router.route("/addReview").post(async (req, res) => {
   }
 });
 
-export default router;
-
 module.exports = router;
