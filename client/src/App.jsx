@@ -7,7 +7,7 @@ import ContactForm from "./Components/Home/ContactForm.jsx";
 import EditPortal from "./Pages/EditPortal.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Dashboard from "./Pages/Dashboard.jsx";
-import { School } from "lucide-react";
+import School from "./Pages/School.jsx";
 
 function App() {
   return (
