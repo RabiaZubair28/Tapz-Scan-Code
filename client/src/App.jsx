@@ -7,6 +7,7 @@ import ContactForm from "./Components/Home/ContactForm.jsx";
 import EditPortal from "./Pages/EditPortal.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Dashboard from "./Pages/Dashboard.jsx";
+import { School } from "lucide-react";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/edit/:id" element={<EditPortal />} />
           <Route path="/:id" element={<Profile />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
+          <Route path="/profile/school" element={<School />} />
         </Routes>
       </div>
     </Router>
