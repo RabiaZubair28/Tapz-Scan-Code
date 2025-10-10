@@ -30,8 +30,8 @@ function School() {
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "auto", padding: "20px" }}>
-      <h1>School Reviews</h1>
+    <div className="font-extralight text-black">
+      <h1>School Reviews hyyy</h1>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -61,14 +61,7 @@ function School() {
 
       <h2>All Reviews</h2>
       {reviews.map((r, i) => (
-        <div
-          key={i}
-          style={{
-            border: "1px solid #ccc",
-            padding: "10px",
-            margin: "10px 0",
-          }}
-        >
+        <div key={i} className="text-black">
           <h3>{r.name}</h3>
           <p>{r.description}</p>
           <p>{"⭐".repeat(r.stars)}</p>
