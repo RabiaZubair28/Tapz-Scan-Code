@@ -252,7 +252,7 @@ function School() {
                 <div className="px-6">
                   <div className="flex justify-start space-x-5 mt-3 mb-2.5">
                     <a
-                      href={`tel:${90999}`}
+                      href={`tel:+97433221915`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center text-gray-800 bg-white border border-[#231f20] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
@@ -260,7 +260,7 @@ function School() {
                       <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
                     <a
-                      href={`mailto:${999}`}
+                      href={`mailto:n.aloutibi2306@education.qa`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20]  "
@@ -268,13 +268,13 @@ function School() {
                       <AiOutlineMail size={20} color="black" />
                     </a>
                     <a
-                      href={`sms:${99889}`}
+                      href={`sms:+97433221915`}
                       className="w-12 h-12 flex items-center justify-center rounded-full   shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20] "
                     >
                       <RiMessage2Line size={20} color="black" />
                     </a>
                     <a
-                      href={`https://wa.me/${9999}`}
+                      href={`https://wa.me/+97433221915`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full text-gray-800 bg-white border border-[#231f20]  shadow-sm hover:shadow-md "
@@ -355,8 +355,8 @@ function School() {
                 Leave A Review
               </div>
             </div>
-            <p className="pt-4 text-[#231f20] text-sm font-semibold px-2">
-              Copyright © <span className="company"> Alandalus School</span>.
+            <p className="pt-4 text-[#231f20] text-center text-sm font-semibold px-2">
+              Copyright © Alandalus School <br />
               All Rights Reserved.
             </p>
           </div>
