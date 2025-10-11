@@ -193,7 +193,7 @@ function School() {
                       <RiMessage2Line size={20} color="white" />
                     </a>
                     <a
-                      href={`https://wa.me/${whatsapp01}`}
+                      href={`https://wa.me/${9999}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
