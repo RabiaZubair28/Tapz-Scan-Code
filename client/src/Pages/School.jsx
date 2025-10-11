@@ -274,7 +274,7 @@ function School() {
               </div>
 
               <div
-                className="w-full max-w-md bg-[#231f20] shadow rounded-lg p-3 text-white hover:bg-gray-50"
+                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white hover:bg-gray-50"
                 onClick={() => {
                   setShow(true);
                 }}
