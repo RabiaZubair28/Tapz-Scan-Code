@@ -12,7 +12,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function School() {
   const [reviews, setReviews] = useState([]);
-  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [stars, setStars] = useState(0);
   const [show, setShow] = useState(false);
@@ -28,13 +27,12 @@ function School() {
   // Add a review
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newReview = { name, description, stars: Number(stars) };
+    const newReview = { description, stars: Number(stars) };
     const res = await axios.post(
       "https://www.scan-taps.com/api/data/addReview",
       newReview
     );
     setReviews([...reviews, res.data]);
-    setName("");
     setDescription("");
     setStars(0);
     setShow(false);
@@ -151,15 +149,6 @@ function School() {
 
               {/* Review Form */}
               <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Guardian's Name / اسم الوصي"
-                  className="w-full border border-[#231f20] rounded-md p-2 "
-                  required
-                />
-
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -321,9 +310,6 @@ function School() {
                   >
                     {/* Top section: Name (left) + Stars (right) */}
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-lg font-semibold text-[#231f20]">
-                        {review.name}
-                      </span>
                       <div className="flex space-x-1 text-yellow-500">
                         {[...Array(5)].map((_, i) => (
                           <svg

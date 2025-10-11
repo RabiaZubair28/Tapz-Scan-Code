@@ -18,8 +18,8 @@ router.route("/reviews").get(async (req, res) => {
 // POST new review
 router.route("/addReview").post(async (req, res) => {
   try {
-    const { name, description, stars } = req.body;
-    const review = new Review({ name, description, stars });
+    const { description, stars } = req.body;
+    const review = new Review({ description, stars });
     await review.save();
     res.status(201).json(review);
   } catch (err) {
