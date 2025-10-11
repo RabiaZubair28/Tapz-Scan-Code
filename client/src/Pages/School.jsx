@@ -123,7 +123,7 @@ function School() {
         </Helmet>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
             style={{
               backgroundImage:
                 "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
@@ -133,7 +133,7 @@ function School() {
               backgroundAttachment: "fixed",
             }}
           >
-            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-6 relative">
+            <div className="w-full bg-white border-gray-500 rounded-lg pb-8 pt-16 px-6 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
@@ -203,6 +203,7 @@ function School() {
                   className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {
                     setShow(true);
+                    window.location.reload();
                   }}
                 >
                   Submit Review
