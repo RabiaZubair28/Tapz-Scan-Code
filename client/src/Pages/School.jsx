@@ -37,8 +37,8 @@ function School() {
     setName("");
     setDescription("");
     setStars(0);
-    toast("Review added Successfully!");
     setShow(false);
+    toast("Review added Successfully!");
   };
   //   const downloadContactCard = async () => {
   //     const vcard = `BEGIN:VCARD
@@ -240,7 +240,7 @@ function School() {
 
             <div className="px-6">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-xl font-semibold text-[#231f20] text-center pt-1 ">
+                <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
                   Alandalus Primary School for Girls
                 </h2>
                 <h2 className="text-md font-semibold text-[#231f20] text-center pt-1 ">
@@ -354,7 +354,7 @@ function School() {
               >
                 Leave A Review
               </div>
-              <p className="pt-4 text-[#231f20] text-sm">
+              <p className="pt-4 text-[#231f20] text-sm font-semibold">
                 Copyright © <span className="company"> Alandalus School</span>.
                 All Rights Reserved.
               </p>
