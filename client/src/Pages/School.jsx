@@ -315,7 +315,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4 border border-[#183459]"
+                    className="w-full max-w-md bg-[#d2e3f9] shadow-md rounded-lg p-4 border border-[#183459]"
                   >
                     {/* Top section: Stars (left) + Name (right) */}
                     <div className="flex justify-between items-center mb-1">
