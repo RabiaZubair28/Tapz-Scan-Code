@@ -245,7 +245,7 @@ function School() {
                   Doha, Qatar
                 </h2>
               </div>
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center pt-1 pb-2">
                 {" "}
                 <div className="px-6">
                   <div className="flex justify-start space-x-5 mt-3 mb-2.5">
