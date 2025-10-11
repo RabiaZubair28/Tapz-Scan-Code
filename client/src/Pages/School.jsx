@@ -224,7 +224,7 @@ function School() {
               backgroundPosition: "center",
             }}
           >
-            <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
+            {/* <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
               <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png">
                 <div className="relative mb-2 ">
                   <img
@@ -234,18 +234,18 @@ function School() {
                   />
                 </div>
               </a>
-            </div>
+            </div> */}
 
-            <div className="px-6">
+            <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
                 <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
                   Alandalus Primary School for Girls
                 </h2>
-                <h2 className="text-md font-semibold text-[#231f20] text-center pt-1 ">
-                  Doha, Qatar
+                <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
+                  مدرسة الاندلس الابتدائية للبنات
                 </h2>
               </div>
-              <div className="flex justify-center items-center pt-1 pb-2">
+              {/* <div className="flex justify-center items-center pt-1 pb-2">
                 {" "}
                 <div className="px-6">
                   <div className="flex justify-start space-x-5 mt-3 mb-2.5">
@@ -281,7 +281,7 @@ function School() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className="flex items-center justify-center mt-0 mb-0 px-4">
               <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
@@ -304,6 +304,14 @@ function School() {
               </button>
             </div> */}
 
+              <div
+                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
+                Leave A Review
+              </div>
               <div className="flex flex-col items-center mt-4 space-y-2">
                 {reviews.map((review, index) => (
                   <div
@@ -342,15 +350,6 @@ function School() {
                     </p>
                   </div>
                 ))}
-              </div>
-
-              <div
-                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
-                onClick={() => {
-                  setShow(true);
-                }}
-              >
-                Leave A Review
               </div>
             </div>
             <p className="pt-4 text-[#231f20] text-center text-sm font-semibold px-2">
