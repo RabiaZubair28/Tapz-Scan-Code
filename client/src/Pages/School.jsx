@@ -8,7 +8,8 @@ import { RiMessage2Line } from "react-icons/ri";
 import { ImWhatsapp } from "react-icons/im";
 import { FaDownload } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function School() {
   const [reviews, setReviews] = useState([]);
   const [name, setName] = useState("");
@@ -36,6 +37,8 @@ function School() {
     setName("");
     setDescription("");
     setStars(0);
+    toast("Review added Successfully!");
+    setShow(false);
   };
   //   const downloadContactCard = async () => {
   //     const vcard = `BEGIN:VCARD
@@ -73,6 +76,7 @@ function School() {
   if (reviews) {
     return (
       <section>
+        <ToastContainer />
         <Helmet>
           <meta charset="UTF-8" />
           <meta
@@ -201,10 +205,7 @@ function School() {
                 <button
                   type="submit"
                   className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
-                  onClick={() => {
-                    setShow(true);
-                    window.location.reload();
-                  }}
+                  onClick={() => {}}
                 >
                   Submit Review
                 </button>
