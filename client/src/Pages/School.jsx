@@ -145,7 +145,7 @@ function School() {
                 }}
               />
 
-              <h2 className="text-2xl font-semibold text-center text-[#102642] mb-6">
+              <h2 className="text-2xl font-semibold text-center text-[#183459] mb-6">
                 Leave a Review / ترك التعليق
               </h2>
 
@@ -155,7 +155,7 @@ function School() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="اسم الوصي"
-                  className="w-full border border-[#102642] rounded-md p-2 "
+                  className="w-full border border-[#183459] rounded-md p-2 "
                   required
                 />
                 <textarea
@@ -164,7 +164,7 @@ function School() {
                   placeholder="...أكتب رأيك
 "
                   rows="4"
-                  className="w-full border border-[#102642] rounded-md p-2 "
+                  className="w-full border border-[#183459] rounded-md p-2 "
                   required
                 />
 
@@ -197,7 +197,7 @@ function School() {
 
                 <button
                   type="submit"
-                  className="w-full max-w-md bg-[#102642] mt-4 shadow rounded-lg p-3 text-white"
+                  className="w-full max-w-md bg-[#183459] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {}}
                 >
                   Submit Review / إرسال المراجعة
@@ -232,13 +232,13 @@ function School() {
 
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-xl font-bold text-[#102642] text-center pt-1 ">
+                <h2 className="text-xl font-bold text-[#183459] text-center pt-1 ">
                   Alandalus Primary School for Girls
                 </h2>
-                <h2 className="text-xl font-bold text-[#102642] text-center pt-1 ">
+                <h2 className="text-xl font-bold text-[#183459] text-center pt-1 ">
                   مدرسة الاندلس الابتدائية للبنات
                 </h2>
-                <p className="text-2xl font-bold text-[#102642] text-center pt-5 pb-5 ">
+                <p className="text-2xl font-bold text-[#183459] text-center pt-5 pb-5 ">
                   قسم الفنون البصرية
                   <br />
                   نادية بندر العتيبي
@@ -304,7 +304,7 @@ function School() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-[#102642] mt-2 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#183459] mt-2 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
@@ -315,7 +315,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4 border border-[#102642]"
+                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4 border border-[#183459]"
                   >
                     {/* Top section: Stars (left) + Name (right) */}
                     <div className="flex justify-between items-center mb-1">
@@ -341,7 +341,7 @@ function School() {
                       </div>
 
                       {/* Name (right) */}
-                      <span className="text-[#102642] font-semibold text-xl">
+                      <span className="text-[#183459] font-semibold text-xl">
                         {review.name || "Anonymous"}
                       </span>
                     </div>
@@ -354,7 +354,7 @@ function School() {
                 ))}
               </div>
             </div>
-            <p className="pt-4 text-[#102642] text-center text-sm font-semibold px-2">
+            <p className="pt-4 text-[#183459] text-center text-sm font-semibold px-2">
               Copyright © Alandalus School <br />
               All Rights Reserved.
             </p>
