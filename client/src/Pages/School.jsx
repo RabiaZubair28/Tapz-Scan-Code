@@ -223,13 +223,13 @@ function School() {
 
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
+                <h2 className="text-xl font-bold text-[#102642] text-center pt-1 ">
                   Alandalus Primary School for Girls
                 </h2>
-                <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
+                <h2 className="text-xl font-bold text-[#102642] text-center pt-1 ">
                   مدرسة الاندلس الابتدائية للبنات
                 </h2>
-                <p className="text-2xl font-bold text-[#231f20] text-center pt-5 pb-5 ">
+                <p className="text-2xl font-bold text-[#102642] text-center pt-5 pb-5 ">
                   قسم الفنون البصرية
                   <br />
                   نادية بندر العتيبي
@@ -295,7 +295,7 @@ function School() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-[#1c4273] mt-2 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#102642] mt-2 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
@@ -306,7 +306,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#a1c5f4] shadow-md rounded-lg p-4  border border-[#1c4273]"
+                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4  border border-[#102642]"
                   >
                     {/* Top section: Stars (left) */}
                     <div className="flex items-center mb-1">
@@ -332,14 +332,14 @@ function School() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-600 text-start text-sm leading-relaxed">
+                    <p className="text-gray-700 text-start text-sm leading-relaxed">
                       {review.description}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <p className="pt-4 text-[#231f20] text-center text-sm font-semibold px-2">
+            <p className="pt-4 text-[#102642] text-center text-sm font-semibold px-2">
               Copyright © Alandalus School <br />
               All Rights Reserved.
             </p>
