@@ -348,8 +348,13 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-              style={{ backgroundAttachment: "fixed" }}
+              className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative  opacity-60"
+              style={{
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed",
+              }}
             >
               <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
                 {/* Close Icon */}
