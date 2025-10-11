@@ -324,7 +324,7 @@ function School() {
                     {/* Top section: Stars (left) + Name (right) */}
                     <div className="flex justify-between items-center mb-1">
                       {/* Stars (left) */}
-                      <div className="flex space-x-1 text-yellow-500">
+                      <div className="flex pt-1 space-x-1 text-yellow-500">
                         {[...Array(5)].map((_, i) => (
                           <svg
                             key={i}
