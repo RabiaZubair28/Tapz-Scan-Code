@@ -153,7 +153,7 @@ function School() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Guardian's Name"
-                  className="w-full border border-[#231f20] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#231f20]"
+                  className="w-full border border-[#231f20] rounded-md p-2 "
                   required
                 />
 
@@ -162,7 +162,7 @@ function School() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Write your review..."
                   rows="4"
-                  className="w-full border border-[#231f20] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#231f20]"
+                  className="w-full border border-[#231f20] rounded-md p-2 "
                   required
                 />
 
