@@ -317,6 +317,10 @@ function School() {
                     key={index}
                     className="w-full max-w-md bg-[#d2e3f9] shadow-md rounded-lg p-4 border border-[#183459]"
                   >
+                    {" "}
+                    <p className="text-[#183459] text-start text-lg font-semibold leading-relaxed">
+                      {review.name}
+                    </p>
                     {/* Top section: Stars (left) + Name (right) */}
                     <div className="flex justify-between items-center mb-1">
                       {/* Stars (left) */}
@@ -339,13 +343,7 @@ function School() {
                           </svg>
                         ))}
                       </div>
-
-                      {/* Name (right) */}
-                      <span className="text-[#183459] font-semibold text-xl">
-                        {review.name || "Anonymous"}
-                      </span>
                     </div>
-
                     {/* Review Text */}
                     <p className="text-gray-700 text-start text-sm leading-relaxed">
                       {review.description}
