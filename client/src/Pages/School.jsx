@@ -315,7 +315,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#d5e4f9] shadow-md rounded-lg p-4 border border-[#183459]"
+                    className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-2 pb-4 border border-[#183459]"
                   >
                     {" "}
                     <p className="text-[#183459] text-start text-lg font-semibold leading-relaxed">
