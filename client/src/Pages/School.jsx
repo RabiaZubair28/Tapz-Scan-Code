@@ -7,11 +7,14 @@ import { AiOutlineMail } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
 import { ImWhatsapp } from "react-icons/im";
 import { FaDownload } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
+
 function School() {
   const [reviews, setReviews] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [stars, setStars] = useState("");
+  const [stars, setStars] = useState(0);
+  const [show, setShow] = useState(false);
 
   // Fetch all reviews
   useEffect(() => {
@@ -32,7 +35,7 @@ function School() {
     setReviews([...reviews, res.data]);
     setName("");
     setDescription("");
-    setStars("");
+    setStars(0);
   };
   //   const downloadContactCard = async () => {
   //     const vcard = `BEGIN:VCARD
@@ -118,71 +121,90 @@ function School() {
             content="Alandalus Primary School for Girls"
           />
         </Helmet>
+        {show && (
+          <div
+            className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            style={{ backgroundAttachment: "fixed" }}
+          >
+            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+              {/* Close Icon */}
+              <ImCross
+                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
+                onClick={() => {
+                  setShow(false);
+                }}
+              />
 
-        <div
-          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
-          style={{ backgroundAttachment: "fixed" }}
-        >
-          <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
-            <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png">
-              <div className="relative mb-2 ">
-                <img
-                  src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png"
-                  alt="profile"
-                  className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
-                />
-              </div>
-            </a>
-          </div>
-
-          <div className="px-6">
-            <div className="flex flex-col justify-center items-center pt-0.5">
-              <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
-                Alandalus Primary School for Girls
-              </h2>
-              <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
-                Doha, Qatar
-              </h2>
+              <div className="flex flex-col items-center justify-center space-y-8"></div>
             </div>
-            <div>
-              {" "}
-              <div className="px-6">
-                <div className="flex justify-start space-x-5 mt-3 mb-2.5">
-                  <a
-                    href={`tel:${90999}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
-                  >
-                    <MdOutlinePhoneAndroid size={20} color="white" />
-                  </a>
-                  <a
-                    href={`mailto:${999}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
-                  >
-                    <AiOutlineMail size={20} color="white" />
-                  </a>
-                  <a
-                    href={`sms:${99889}`}
-                    className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
-                  >
-                    <RiMessage2Line size={20} color="white" />
-                  </a>
-                  <a
-                    href={`https://wa.me/${whatsapp01}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
-                  >
-                    <ImWhatsapp size={20} color="white" />
-                  </a>
+          </div>
+        )}
+
+        {!show && (
+          <div
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
+            style={{ backgroundAttachment: "fixed" }}
+          >
+            <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
+              <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png">
+                <div className="relative mb-2 ">
+                  <img
+                    src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png"
+                    alt="profile"
+                    className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <div className="px-6">
+              <div className="flex flex-col justify-center items-center pt-0.5">
+                <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
+                  Alandalus Primary School for Girls
+                </h2>
+                <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
+                  Doha, Qatar
+                </h2>
+              </div>
+              <div>
+                {" "}
+                <div className="px-6">
+                  <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                    <a
+                      href={`tel:${90999}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                    >
+                      <MdOutlinePhoneAndroid size={20} color="white" />
+                    </a>
+                    <a
+                      href={`mailto:${999}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                    >
+                      <AiOutlineMail size={20} color="white" />
+                    </a>
+                    <a
+                      href={`sms:${99889}`}
+                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                    >
+                      <RiMessage2Line size={20} color="white" />
+                    </a>
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
+                    >
+                      <ImWhatsapp size={20} color="white" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* <div className="flex items-center justify-center mt-0 mb-0 px-4">
+              {/* <div className="flex items-center justify-center mt-0 mb-0 px-4">
               <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                 <FaDownload
                   size={20}
@@ -203,56 +225,57 @@ function School() {
               </button>
             </div> */}
 
-            <div className="flex flex-col items-center mt-4 space-y-3">
-              {reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="w-full max-w-md bg-white border border-[#38572e] shadow rounded-lg p-4 hover:bg-gray-50"
-                >
-                  {/* Top section: Name (left) + Stars (right) */}
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-lg font-semibold text-[#231f20]">
-                      {review.name}
-                    </span>
-                    <div className="flex space-x-1 text-yellow-500">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill={i < review.rating ? "currentColor" : "none"}
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M11.48 3.499a.562.562 0 011.04 0l2.005 4.06a.563.563 0 00.424.308l4.48.651a.563.563 0 01.312.96l-3.24 3.159a.563.563 0 00-.162.498l.765 4.46a.563.563 0 01-.817.593l-4.01-2.107a.563.563 0 00-.524 0l-4.01 2.107a.563.563 0 01-.818-.593l.766-4.46a.563.563 0 00-.163-.498l-3.24-3.16a.563.563 0 01.312-.959l4.48-.65a.563.563 0 00.424-.309l2.005-4.06z"
-                          />
-                        </svg>
-                      ))}
+              <div className="flex flex-col items-center mt-4 space-y-3">
+                {reviews.map((review, index) => (
+                  <div
+                    key={index}
+                    className="w-full max-w-md bg-white border border-[#38572e] shadow rounded-lg p-4 hover:bg-gray-50"
+                  >
+                    {/* Top section: Name (left) + Stars (right) */}
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-lg font-semibold text-[#231f20]">
+                        {review.name}
+                      </span>
+                      <div className="flex space-x-1 text-yellow-500">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill={i < review.stars ? "currentColor" : "none"}
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={1.5}
+                              d="M11.48 3.499a.562.562 0 011.04 0l2.005 4.06a.563.563 0 00.424.308l4.48.651a.563.563 0 01.312.96l-3.24 3.159a.563.563 0 00-.162.498l.765 4.46a.563.563 0 01-.817.593l-4.01-2.107a.563.563 0 00-.524 0l-4.01 2.107a.563.563 0 01-.818-.593l.766-4.46a.563.563 0 00-.163-.498l-3.24-3.16a.563.563 0 01.312-.959l4.48-.65a.563.563 0 00.424-.309l2.005-4.06z"
+                            />
+                          </svg>
+                        ))}
+                      </div>
                     </div>
+
+                    {/* Review Text */}
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {review.description}
+                    </p>
                   </div>
+                ))}
+              </div>
 
-                  {/* Review Text */}
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {review.description}
-                  </p>
-                </div>
-              ))}
+              <p className="pt-4 text-white">
+                Copyright ©{" "}
+                <span className="company">
+                  {" "}
+                  Alandalus Primary School for Girls
+                </span>
+                . All Rights Reserved.
+              </p>
             </div>
-
-            <p className="pt-4 text-white">
-              Copyright ©{" "}
-              <span className="company">
-                {" "}
-                Alandalus Primary School for Girls
-              </span>
-              . All Rights Reserved.
-            </p>
           </div>
-        </div>
+        )}
       </section>
     );
   } else {

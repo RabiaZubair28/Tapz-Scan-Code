@@ -22,7 +22,10 @@ function App() {
           <Route path="/edit/:id" element={<EditPortal />} />
           <Route path="/:id" element={<Profile />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
-          <Route path="/profile/school" element={<School />} />
+          <Route
+            path="/reviews/alandalus-primary-school"
+            element={<School />}
+          />
         </Routes>
       </div>
     </Router>
