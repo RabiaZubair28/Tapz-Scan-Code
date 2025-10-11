@@ -124,7 +124,11 @@ function School() {
         {show && (
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-            style={{ backgroundAttachment: "fixed" }}
+            style={{
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
+              backgroundAttachment: "fixed",
+            }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
@@ -143,7 +147,11 @@ function School() {
         {!show && (
           <div
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
-            style={{ backgroundAttachment: "fixed" }}
+            style={{
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
+              backgroundAttachment: "fixed",
+            }}
           >
             <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
               <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png">
@@ -290,7 +298,11 @@ function School() {
     return (
       <div
         className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f] pt-[25%]`}
-        style={{ backgroundAttachment: "fixed" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
+          backgroundAttachment: "fixed",
+        }}
       >
         <ScaleLoader
           color={"white"}
