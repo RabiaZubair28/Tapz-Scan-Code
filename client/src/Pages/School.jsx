@@ -149,7 +149,7 @@ function School() {
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{
               backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164762/cute-school-seamless-pattern-created-from-hand-drawn-doodles-on-white-background-wrapping-paper-textile-and-fabric-prints-wallpaper-stationery-scrapbook-etc-eps-10-vector_zectrx.jpg')",
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
               backgroundAttachment: "fixed",
             }}
           >
