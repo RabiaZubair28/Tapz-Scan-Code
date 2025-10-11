@@ -146,7 +146,7 @@ function School() {
               />
 
               <h2 className="text-2xl font-semibold text-center text-[#231f20] mb-6">
-                Leave a Review
+                Leave a Review / ترك التعليق
               </h2>
 
               {/* Review Form */}
@@ -155,7 +155,7 @@ function School() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Guardian's Name"
+                  placeholder="Guardian's Name / اسم الوصي"
                   className="w-full border border-[#231f20] rounded-md p-2 "
                   required
                 />
@@ -163,7 +163,8 @@ function School() {
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Write your review..."
+                  placeholder="...أكتب رأيك
+"
                   rows="4"
                   className="w-full border border-[#231f20] rounded-md p-2 "
                   required
@@ -195,18 +196,13 @@ function School() {
                     </button>
                   ))}
                 </div>
-                <p className="text-sm text-[#231f20] mt-1 text-center">
-                  {stars > 0
-                    ? `${stars} Star${stars > 1 ? "s" : ""} Selected`
-                    : "Click to rate"}
-                </p>
 
                 <button
                   type="submit"
                   className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {}}
                 >
-                  Submit Review
+                  Submit Review / إرسال المراجعة
                 </button>
               </form>
             </div>
@@ -244,6 +240,11 @@ function School() {
                 <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
                   مدرسة الاندلس الابتدائية للبنات
                 </h2>
+                <p className="text-xl font-bold text-[#231f20] text-center pt-1 ">
+                  قسم الفنون البصرية
+                  <br />
+                  نادية بندر العتيبي
+                </p>
               </div>
               {/* <div className="flex justify-center items-center pt-1 pb-2">
                 {" "}
@@ -310,7 +311,7 @@ function School() {
                   setShow(true);
                 }}
               >
-                Leave A Review
+                Leave a Review / ترك التعليق
               </div>
               <div className="flex flex-col items-center mt-4 space-y-2">
                 {reviews.map((review, index) => (
