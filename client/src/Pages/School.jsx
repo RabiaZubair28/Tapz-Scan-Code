@@ -214,7 +214,7 @@ function School() {
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f] opacity-60`}
             style={{
               backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164762/cute-school-seamless-pattern-created-from-hand-drawn-doodles-on-white-background-wrapping-paper-textile-and-fabric-prints-wallpaper-stationery-scrapbook-etc-eps-10-vector_zectrx.jpg')",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -227,7 +227,7 @@ function School() {
                   <img
                     src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png"
                     alt="profile"
-                    className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
+                    className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-[#231f20] shadow-md"
                   />
                 </div>
               </a>
@@ -250,7 +250,7 @@ function School() {
                       href={`tel:${90999}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center text-gray-800 bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center text-gray-800 bg-white border border-[#231f20] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
                     >
                       <MdOutlinePhoneAndroid size={20} color="black" />
                     </a>
@@ -258,13 +258,13 @@ function School() {
                       href={`mailto:${999}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md text-gray-800 bg-white border-white  "
+                      className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20]  "
                     >
                       <AiOutlineMail size={20} color="black" />
                     </a>
                     <a
                       href={`sms:${99889}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md text-gray-800 bg-white border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full   shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20] "
                     >
                       <RiMessage2Line size={20} color="black" />
                     </a>
@@ -272,7 +272,7 @@ function School() {
                       href={`https://wa.me/${9999}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full text-gray-800 bg-white border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      className="w-12 h-12 flex items-center justify-center rounded-full text-gray-800 bg-white border border-[#231f20]  shadow-sm hover:shadow-md "
                     >
                       <ImWhatsapp size={20} color="black" />
                     </a>
@@ -305,7 +305,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-white shadow-md rounded-lg p-4 hover:bg-gray-50"
+                    className="w-full max-w-md bg-white shadow-md rounded-lg p-4 hover:bg-gray-50 border border-[#231f20]"
                   >
                     {/* Top section: Name (left) + Stars (right) */}
                     <div className="flex justify-between items-center mb-1">
