@@ -167,10 +167,10 @@ function School() {
 
             <div className="px-6">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-xl font-semibold text-white text-center pt-1 ">
+                <h2 className="text-xl font-semibold text-[#231f20] text-center pt-1 ">
                   Alandalus Primary School for Girls
                 </h2>
-                <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
+                <h2 className="text-md font-semibold text-[#231f20] text-center pt-1 ">
                   Doha, Qatar
                 </h2>
               </div>
