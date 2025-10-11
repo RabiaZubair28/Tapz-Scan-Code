@@ -139,7 +139,72 @@ function School() {
                 }}
               />
 
-              <div className="flex flex-col items-center justify-center space-y-8"></div>
+              <h2 className="text-2xl font-semibold text-center text-[#231f20] mb-6">
+                Leave a Review
+              </h2>
+
+              {/* Review Form */}
+              <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Guardian's Name"
+                  className="w-full border border-[#231f20] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#231f20]"
+                  required
+                />
+
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Write your review..."
+                  rows="4"
+                  className="w-full border border-[#231f20] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#231f20]"
+                  required
+                />
+
+                {/* ⭐ Star Rating */}
+                <div className="flex justify-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((starValue) => (
+                    <button
+                      key={starValue}
+                      type="button"
+                      onClick={() => setStars(starValue)}
+                      className="focus:outline-none"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill={starValue <= stars ? "#facc15" : "none"}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="#facc15"
+                        className="w-8 h-8 transition-transform duration-200 hover:scale-110"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M11.48 3.499a.562.562 0 011.04 0l2.07 4.198 4.637.674a.562.562 0 01.312.959l-3.357 3.273.792 4.616a.563.563 0 01-.816.592L12 15.896l-4.158 2.185a.563.563 0 01-.816-.592l.792-4.616-3.357-3.273a.562.562 0 01.312-.959l4.637-.674 2.07-4.198z"
+                        />
+                      </svg>
+                    </button>
+                  ))}
+                </div>
+                <p className="text-sm text-[#231f20] mt-1 text-center">
+                  {stars > 0
+                    ? `${stars} Star${stars > 1 ? "s" : ""} Selected`
+                    : "Click to rate"}
+                </p>
+
+                <button
+                  type="submit"
+                  className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
+                  onClick={() => {
+                    setShow(true);
+                  }}
+                >
+                  Submit Review
+                </button>
+              </form>
             </div>
           </div>
         )}
@@ -277,7 +342,7 @@ function School() {
               </div>
 
               <div
-                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white hover:bg-gray-50"
+                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
