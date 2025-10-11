@@ -295,14 +295,14 @@ function School() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-[#1c4273] mt-4 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#1c4273] mt-2 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
               >
                 Leave a Review / ترك التعليق
               </div>
-              <div className="flex flex-col items-center mt-4 space-y-2">
+              <div className="flex flex-col items-center mt-3 space-y-2">
                 {reviews.map((review, index) => (
                   <div
                     key={index}
