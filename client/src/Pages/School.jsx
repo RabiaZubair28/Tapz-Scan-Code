@@ -295,7 +295,7 @@ function School() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#1c4273] mt-4 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
@@ -306,7 +306,7 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-white shadow-md rounded-lg p-4 hover:bg-gray-50 border border-[#231f20]"
+                    className="w-full max-w-md bg-[#a1c5f4] shadow-md rounded-lg p-4  border border-[#1c4273]"
                   >
                     {/* Top section: Stars (left) */}
                     <div className="flex items-center mb-1">
