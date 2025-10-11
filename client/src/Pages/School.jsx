@@ -354,11 +354,11 @@ function School() {
               >
                 Leave A Review
               </div>
-              <p className="pt-4 text-[#231f20] text-sm font-semibold">
-                Copyright © <span className="company"> Alandalus School</span>.
-                All Rights Reserved.
-              </p>
             </div>
+            <p className="pt-4 text-[#231f20] text-sm font-semibold px-2">
+              Copyright © <span className="company"> Alandalus School</span>.
+              All Rights Reserved.
+            </p>
           </div>
         )}
       </section>
