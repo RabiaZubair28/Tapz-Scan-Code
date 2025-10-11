@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 function School() {
   const [reviews, setReviews] = useState([]);
   const [description, setDescription] = useState("");
+  const [name, setName] = useState("");
   const [stars, setStars] = useState(0);
   const [show, setShow] = useState(false);
 
@@ -27,12 +28,13 @@ function School() {
   // Add a review
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newReview = { description, stars: Number(stars) };
+    const newReview = { name, description, stars: Number(stars) };
     const res = await axios.post(
       "https://www.scan-taps.com/api/data/addReview",
       newReview
     );
     setReviews([...reviews, res.data]);
+    setName("");
     setDescription("");
     setStars(0);
     setShow(false);
@@ -149,6 +151,13 @@ function School() {
 
               {/* Review Form */}
               <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="اسم الوصي"
+                  className="w-full border border-[#102642] rounded-md p-2 "
+                  required
+                />
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -306,10 +315,11 @@ function School() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4  border border-[#102642]"
+                    className="w-full max-w-md bg-[#bfd7f7] shadow-md rounded-lg p-4 border border-[#102642]"
                   >
-                    {/* Top section: Stars (left) */}
-                    <div className="flex items-center mb-1">
+                    {/* Top section: Stars (left) + Name (right) */}
+                    <div className="flex justify-between items-center mb-1">
+                      {/* Stars (left) */}
                       <div className="flex space-x-1 text-yellow-500">
                         {[...Array(5)].map((_, i) => (
                           <svg
@@ -329,6 +339,11 @@ function School() {
                           </svg>
                         ))}
                       </div>
+
+                      {/* Name (right) */}
+                      <span className="text-[#102642] font-semibold text-xl">
+                        {review.name || "Anonymous"}
+                      </span>
                     </div>
 
                     {/* Review Text */}
