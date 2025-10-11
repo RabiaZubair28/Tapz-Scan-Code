@@ -143,7 +143,7 @@ function School() {
                 }}
               />
 
-              <h2 className="text-2xl font-semibold text-center text-[#231f20] mb-6">
+              <h2 className="text-2xl font-semibold text-center text-[#102642] mb-6">
                 Leave a Review / ترك التعليق
               </h2>
 
@@ -155,7 +155,7 @@ function School() {
                   placeholder="...أكتب رأيك
 "
                   rows="4"
-                  className="w-full border border-[#231f20] rounded-md p-2 "
+                  className="w-full border border-[#102642] rounded-md p-2 "
                   required
                 />
 
@@ -188,7 +188,7 @@ function School() {
 
                 <button
                   type="submit"
-                  className="w-full max-w-md bg-[#231f20] mt-4 shadow rounded-lg p-3 text-white"
+                  className="w-full max-w-md bg-[#102642] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {}}
                 >
                   Submit Review / إرسال المراجعة
