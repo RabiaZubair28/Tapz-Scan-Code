@@ -311,7 +311,7 @@ function School() {
               >
                 Leave a Review / ترك التعليق
               </div>
-              <div className="flex flex-col items-center mt-3 space-y-2">
+              <div className="flex flex-col items-center mt-3 space-y-3">
                 {reviews.map((review, index) => (
                   <div
                     key={index}
