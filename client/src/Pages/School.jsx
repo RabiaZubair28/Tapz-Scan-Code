@@ -196,7 +196,7 @@ function School() {
                     </a>
                     <a
                       href={`sms:${99889}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                      className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md text-gray-800 bg-white border-white "
                     >
                       <RiMessage2Line size={20} color="black" />
                     </a>
