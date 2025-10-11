@@ -229,7 +229,7 @@ function School() {
                 <h2 className="text-xl font-bold text-[#231f20] text-center pt-1 ">
                   مدرسة الاندلس الابتدائية للبنات
                 </h2>
-                <p className="text-2xl font-bold text-[#231f20] text-center pt-3 pb-3 ">
+                <p className="text-2xl font-bold text-[#231f20] text-center pt-5 pb-5 ">
                   قسم الفنون البصرية
                   <br />
                   نادية بندر العتيبي
