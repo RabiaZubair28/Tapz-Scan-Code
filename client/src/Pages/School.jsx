@@ -308,8 +308,8 @@ function School() {
                     key={index}
                     className="w-full max-w-md bg-white shadow-md rounded-lg p-4 hover:bg-gray-50 border border-[#231f20]"
                   >
-                    {/* Top section: Name (left) + Stars (right) */}
-                    <div className="flex justify-between items-center mb-1">
+                    {/* Top section: Stars (left) */}
+                    <div className="flex items-center mb-1">
                       <div className="flex space-x-1 text-yellow-500">
                         {[...Array(5)].map((_, i) => (
                           <svg
