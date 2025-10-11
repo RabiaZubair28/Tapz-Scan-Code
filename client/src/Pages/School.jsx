@@ -106,7 +106,7 @@ function School() {
           />
           <meta
             property="og:url"
-            content={`https://www.scan-taps.com/${companyName}`}
+            content={`https://www.scan-taps.com/reviews/alandalus-primary-school`}
           />
           <meta
             property="og:image"
@@ -265,6 +265,14 @@ function School() {
                 ))}
               </div>
 
+              <div
+                className="w-full max-w-md bg-white shadow rounded-lg p-4 text-white hover:bg-gray-50"
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
+                Leave A Review
+              </div>
               <p className="pt-4 text-white">
                 Copyright ©{" "}
                 <span className="company">
