@@ -129,12 +129,11 @@ function School() {
           <div
             className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
             style={{
-              backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
               backgroundAttachment: "fixed",
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760179854/BG-01_p9h0ao.jpg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
             }}
           >
             <div className="w-full bg-white border-gray-500 rounded-lg pb-8 pt-16 px-6 relative">
@@ -218,12 +217,11 @@ function School() {
           <div
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{
-              backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
               backgroundAttachment: "fixed",
+              backgroundImage:
+                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760179854/BG-01_p9h0ao.jpg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
             }}
           >
             <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
@@ -368,9 +366,11 @@ function School() {
       <div
         className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f] pt-[25%]`}
         style={{
-          backgroundImage:
-            "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760164765/school-picture-background-1080-x-1920-lzswkjagfr2cf5ei_j2asxy.jpg')",
           backgroundAttachment: "fixed",
+          backgroundImage:
+            "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760179854/BG-01_p9h0ao.jpg",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
         }}
       >
         <ScaleLoader
