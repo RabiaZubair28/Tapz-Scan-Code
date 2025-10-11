@@ -144,7 +144,7 @@ function School() {
               </h2>
 
               {/* Review Form */}
-              <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
+              <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
                 <input
                   type="text"
                   value={name}
