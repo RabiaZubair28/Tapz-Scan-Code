@@ -312,44 +312,49 @@ function School() {
                 Leave a Review / ترك التعليق
               </div>
               <div className="flex flex-col items-center mt-3 space-y-3">
-                {reviews.map((review, index) => (
-                  <div
-                    key={index}
-                    className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#183459]"
-                  >
-                    {" "}
-                    <p className="text-[#183459] text-start text-lg font-semibold leading-relaxed">
-                      {review.name}
-                    </p>
-                    {/* Top section: Stars (left) + Name (right) */}
-                    <div className="flex justify-between items-center mb-1">
-                      {/* Stars (left) */}
-                      <div className="flex pt-1 space-x-1 text-yellow-500">
-                        {[...Array(5)].map((_, i) => (
-                          <svg
-                            key={i}
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill={i < review.stars ? "currentColor" : "none"}
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1.5}
-                              d="M11.48 3.499a.562.562 0 011.04 0l2.005 4.06a.563.563 0 00.424.308l4.48.651a.563.563 0 01.312.96l-3.24 3.159a.563.563 0 00-.162.498l.765 4.46a.563.563 0 01-.817.593l-4.01-2.107a.563.563 0 00-.524 0l-4.01 2.107a.563.563 0 01-.818-.593l.766-4.46a.563.563 0 00-.163-.498l-3.24-3.16a.563.563 0 01.312-.959l4.48-.65a.563.563 0 00.424-.309l2.005-4.06z"
-                            />
-                          </svg>
-                        ))}
+                {reviews
+                  .slice()
+                  .reverse()
+                  .map((review, index) => (
+                    <div
+                      key={index}
+                      dir="rtl" // ✅ enables right-to-left layout for Arabic
+                      className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#183459]"
+                    >
+                      {/* Name */}
+                      <p className="text-[#183459] text-end text-lg font-semibold leading-relaxed">
+                        {review.name}
+                      </p>
+
+                      {/* Stars (right-aligned) */}
+                      <div className="flex justify-end items-center mb-1">
+                        <div className="flex pt-1 space-x-1 space-x-reverse text-yellow-500">
+                          {[...Array(5)].map((_, i) => (
+                            <svg
+                              key={i}
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill={i < review.stars ? "currentColor" : "none"}
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={1.5}
+                                d="M11.48 3.499a.562.562 0 011.04 0l2.005 4.06a.563.563 0 00.424.308l4.48.651a.563.563 0 01.312.96l-3.24 3.159a.563.563 0 00-.162.498l.765 4.46a.563.563 0 01-.817.593l-4.01-2.107a.563.563 0 00-.524 0l-4.01 2.107a.563.563 0 01-.818-.593l.766-4.46a.563.563 0 00-.163-.498l-3.24-3.16a.563.563 0 01.312-.959l4.48-.65a.563.563 0 00.424-.309l2.005-4.06z"
+                              />
+                            </svg>
+                          ))}
+                        </div>
                       </div>
+
+                      {/* Review Text */}
+                      <p className="text-gray-700 text-end text-sm leading-relaxed">
+                        {review.description}
+                      </p>
                     </div>
-                    {/* Review Text */}
-                    <p className="text-gray-700 text-start text-sm leading-relaxed">
-                      {review.description}
-                    </p>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
             <p className="pt-4 text-[#183459] text-center text-sm font-semibold px-2">
