@@ -140,7 +140,7 @@ function School() {
             className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
             style={{
               backgroundAttachment: "fixed",
-              backgroundImage: { schoolImg },
+              backgroundImage: `url(${schoolImg})`,
               backgroundSize: "contain",
               backgroundPosition: "center",
             }}
@@ -221,7 +221,7 @@ function School() {
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{
               backgroundAttachment: "fixed",
-              backgroundImage: { schoolImg },
+              backgroundImage: `url(${schoolImg})`,
               backgroundSize: "contain",
               backgroundPosition: "center",
             }}
