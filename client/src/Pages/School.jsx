@@ -365,16 +365,15 @@ function School() {
                 {!allShown && (
                   <button
                     onClick={handleLoadMore}
-                    className="mt-4 mb-6 px-5 py-2 bg-[#183459] text-white rounded-lg hover:bg-[#204b82] transition"
+                    className="mt-4 mb-6 px-5 py-2.5 bg-[#183459] text-white rounded-lg hover:bg-[#204b82] transition"
                   >
                     Load More Reviews
                   </button>
                 )}
               </div>
             </div>
-            <p className="pt-4 text-[#183459] text-center text-sm font-semibold px-2">
-              Copyright © Alandalus School <br />
-              All Rights Reserved.
+            <p className="pt-8 text-[#183459] text-center text-sm font-semibold px-1">
+              Copyright © Alandalus School - All Rights Reserved.
             </p>
           </div>
         )}
