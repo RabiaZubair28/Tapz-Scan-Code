@@ -318,15 +318,14 @@ function School() {
                   .map((review, index) => (
                     <div
                       key={index}
-                      dir="rtl" // ✅ enables right-to-left layout for Arabic
-                      className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#183459]"
+                      className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#183459] text-right"
                     >
                       {/* Name */}
-                      <p className="text-[#183459] text-end text-lg font-semibold leading-relaxed">
+                      <p className="text-[#183459] text-lg font-semibold leading-relaxed">
                         {review.name}
                       </p>
 
-                      {/* Stars (right-aligned) */}
+                      {/* Stars (right side) */}
                       <div className="flex justify-end items-center mb-1">
                         <div className="flex pt-1 space-x-1 space-x-reverse text-yellow-500">
                           {[...Array(5)].map((_, i) => (
@@ -350,7 +349,7 @@ function School() {
                       </div>
 
                       {/* Review Text */}
-                      <p className="text-gray-700 text-end text-sm leading-relaxed">
+                      <p className="text-gray-700 text-sm leading-relaxed">
                         {review.description}
                       </p>
                     </div>
