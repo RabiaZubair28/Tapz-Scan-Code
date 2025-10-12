@@ -136,7 +136,7 @@ function School() {
               backgroundPosition: "center",
             }}
           >
-            <div className="w-full bg-white border-gray-500 rounded-lg pb-8 pt-16 px-6 relative">
+            <div className="w-full bg-[#ecf4ff] shadow-md border border-[#183459] rounded-lg pb-8 pt-16 px-6 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
@@ -155,7 +155,7 @@ function School() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="اسم الوصي"
-                  className="w-full border border-[#183459] rounded-md p-2 "
+                  className="w-full border text-right border-[#183459] rounded-md p-2 "
                   required
                 />
                 <textarea
@@ -164,7 +164,7 @@ function School() {
                   placeholder="...أكتب رأيك
 "
                   rows="4"
-                  className="w-full border border-[#183459] rounded-md p-2 "
+                  className="w-full text-right border border-[#183459] rounded-md p-2 "
                   required
                 />
 
