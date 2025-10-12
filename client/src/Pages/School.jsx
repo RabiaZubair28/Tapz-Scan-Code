@@ -9,6 +9,7 @@ import { ImWhatsapp } from "react-icons/im";
 import { FaDownload } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { ToastContainer, toast } from "react-toastify";
+import schoolImg from "../assets/school-img.jpg";
 import "react-toastify/dist/ReactToastify.css";
 function School() {
   const [reviews, setReviews] = useState([]);
@@ -139,8 +140,7 @@ function School() {
             className="qr-modal min-h-screen bg-gradient-to-tr from-[#38572e] via-[#6d7c3f] to-[#868e52] w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
             style={{
               backgroundAttachment: "fixed",
-              backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760179854/BG-01_p9h0ao.jpg')",
+              backgroundImage: { schoolImg },
               backgroundSize: "contain",
               backgroundPosition: "center",
             }}
@@ -221,8 +221,7 @@ function School() {
             className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
             style={{
               backgroundAttachment: "fixed",
-              backgroundImage:
-                "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1760179854/BG-01_p9h0ao.jpg')",
+              backgroundImage: { schoolImg },
               backgroundSize: "contain",
               backgroundPosition: "center",
             }}
