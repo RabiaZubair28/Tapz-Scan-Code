@@ -325,9 +325,9 @@ function School() {
                         {review.name}
                       </p>
 
-                      {/* Stars (right side) */}
+                      {/* Stars (fill right to left) */}
                       <div className="flex justify-end items-center mb-1">
-                        <div className="flex pt-1 space-x-1 space-x-reverse text-yellow-500">
+                        <div className="flex pt-1 flex-row-reverse text-yellow-500">
                           {[...Array(5)].map((_, i) => (
                             <svg
                               key={i}
