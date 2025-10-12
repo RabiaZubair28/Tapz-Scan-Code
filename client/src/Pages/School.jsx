@@ -137,7 +137,7 @@ function School() {
         </Helmet>
         {show && (
           <div
-            className="qr-modal min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
+            className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative px-8"
             style={{
               backgroundAttachment: "fixed",
               backgroundImage: `url(${schoolImg})`,
@@ -218,7 +218,7 @@ function School() {
 
         {!show && (
           <div
-            className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-black`}
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-white`}
             style={{
               backgroundAttachment: "fixed",
               backgroundImage: `url(${schoolImg})`,
@@ -366,7 +366,7 @@ function School() {
                     onClick={handleLoadMore}
                     className="mt-4 mb-6 px-5 py-2.5 bg-[#183459] text-white rounded-lg hover:bg-[#204b82] transition"
                   >
-                    Load More Reviews
+                    Load More Reviews / تحميل المزيد من التقييمات
                   </button>
                 )}
               </div>
