@@ -303,12 +303,9 @@ END:VCARD`;
         </Helmet>
 
         <div
-          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
+          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
           style={{
             backgroundAttachment: "fixed",
-            backgroundImage: `url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1761074518/84f4c98b-411d-455b-b24d-5990bf5213f8_gm6klm.jpg)`,
-            backgroundSize: "contain",
-            backgroundPosition: "center",
           }}
         >
           {logo && (
