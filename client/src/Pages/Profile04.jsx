@@ -512,7 +512,7 @@ END:VCARD`;
                     <h2 className="text-2xl text-start font-semibold text-white pt-1">
                       {clientName}
                     </h2>
-                    <p className="text-md font-semibold text-white pt-1 pb-1">
+                    <p className="text-md text-start font-semibold text-white pt-1 pb-1">
                       {designation}
                     </p>
                   </div>
