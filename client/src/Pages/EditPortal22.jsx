@@ -4681,7 +4681,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
+              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
@@ -4863,17 +4863,17 @@ END:VCARD`;
               <div className="px-6">
                 <div className="flex flex-col justify-center items-center pt-0.5">
                   <div className="flex justify-center gap-x-2 pt-3 pb-0 items-center">
-                    <MdRemoveRedEye size={20} color="white" />
-                    <p className="text-white">{visitCount}</p>
+                    <MdRemoveRedEye size={20} color="black" />
+                    <p className="text-black">{visitCount}</p>
                   </div>
 
                   {name && (
                     <div className="flex justify-center mt-1">
-                      <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
+                      <a className="flex w-full pe-5 py-1 text-lg font-semibold text-black max-w-md">
                         <div className="flex items-center space-x-5 w-full">
                           <div className="flex flex-1 items-center justify-center gap-x-5">
-                            <div className="flex flex-col text-lg font-semibold text-white text-start gap-y-1">
-                              <span className="text-2xl font-semibold  text-white text-center ">
+                            <div className="flex flex-col text-lg font-semibold text-black text-start gap-y-1">
+                              <span className="text-2xl font-semibold  text-black text-center ">
                                 {name}
                               </span>
                             </div>
@@ -4887,49 +4887,7 @@ END:VCARD`;
                   </h2>
                 </div>
 
-                <div className="px-4 mt-4 flex flex-row gap-x-2">
-                  <a
-                    href={`tel:${phone01}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
-                  >
-                    <MdOutlinePhoneAndroid size={20} color="#1f153d" />
-                    &nbsp;CALL
-                  </a>
-
-                  <a
-                    href={`https://wa.me/${phone01}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
-                  >
-                    <ImWhatsapp size={20} color="#1f153d" />
-                    &nbsp;REACH OUT
-                  </a>
-                </div>
-
-                <div className="flex items-center justify-center mt-0 mb-0 px-4">
-                  <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
-                    <FaDownload
-                      size={20}
-                      onClick={downloadContactCard}
-                      color="black"
-                      className="text-black hover:text-black"
-                    />
-                    <span
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                      onClick={downloadContactCard}
-                    >
-                      &nbsp;SAVE CONTACT
-                    </span>
-                  </button>
-                </div>
-                <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
+                <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
                   Please select the Menu
                 </h2>
               </div>
@@ -10274,7 +10232,7 @@ END:VCARD`;
                   )}
                 </div>
 
-                <p className="pt-4 text-white">
+                <p className="pt-4 text-black">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
                 </p>
@@ -10285,7 +10243,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11066,7 +11024,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
+            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11121,7 +11079,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#e20e0e] via-[#f16d55] to-[#fab23f] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50 pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
