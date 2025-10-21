@@ -306,7 +306,7 @@ END:VCARD`;
           className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
           style={{
             backgroundAttachment: "fixed",
-            backgroundImage: `url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761074060/sssghf-01_1_k6uumw.jpg')`,
+            backgroundImage: `url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1761074518/84f4c98b-411d-455b-b24d-5990bf5213f8_gm6klm.jpg)`,
             backgroundSize: "contain",
             backgroundPosition: "center",
           }}
@@ -327,14 +327,14 @@ END:VCARD`;
           <div className="px-6">
             <div className="flex flex-col justify-center items-center pt-0.5">
               <div className="flex justify-center gap-x-2 pt-1 pb-0 items-center">
-                <MdRemoveRedEye size={20} color="white" />
-                <p className="text-white">{visitCount}</p>
+                <MdRemoveRedEye size={20} color="black" />
+                <p className="text-black ">{visitCount}</p>
               </div>
 
-              <h2 className="text-2xl font-semibold text-white text-center pt-1 ">
+              <h2 className="text-2xl font-semibold text-black  text-center pt-1 ">
                 {name}
               </h2>
-              <h2 className="text-md font-semibold text-gray-50 text-center pt-1 ">
+              <h2 className="text-md font-semibold text-black text-center pt-1 ">
                 {address}
               </h2>
             </div>
@@ -1436,7 +1436,12 @@ END:VCARD`;
     return (
       <div
         className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f] pt-[25%]`}
-        style={{ backgroundAttachment: "fixed" }}
+        style={{
+          backgroundAttachment: "fixed",
+          backgroundImage: `url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1761074518/84f4c98b-411d-455b-b24d-5990bf5213f8_gm6klm.jpg)`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+        }}
       >
         <ScaleLoader
           color={"white"}
