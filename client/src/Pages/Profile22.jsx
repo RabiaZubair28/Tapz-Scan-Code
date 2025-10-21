@@ -336,7 +336,7 @@ END:VCARD`;
               </h2>
             </div>
 
-            <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
+            <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
               Please select the Menu
             </h2>
 
@@ -1377,7 +1377,7 @@ END:VCARD`;
               </div>
             )}
 
-            <p className="pt-4 text-white">
+            <p className="pt-4 text-black">
               Copyright © <span className="company">{companyName}</span>. All
               Rights Reserved.
             </p>
