@@ -304,7 +304,12 @@ END:VCARD`;
 
         <div
           className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#b10000] via-[#c12c2c] to-[#fab23f]`}
-          style={{ backgroundAttachment: "fixed" }}
+          style={{
+            backgroundAttachment: "fixed",
+            backgroundImage: `url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761074060/sssghf-01_1_k6uumw.jpg')`,
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+          }}
         >
           {logo && (
             <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
