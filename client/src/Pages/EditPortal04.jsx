@@ -5245,7 +5245,7 @@ END:VCARD`;
                           <div className="flex flex-1 items-start justify-center gap-x-3">
                             {!modal02 && !editDescription && (
                               <div className="flex flex-col text-md w-[280px] max-w-[280px] font-light text-white pt-1 text-start gap-y-1">
-                                <span className="text-sm text-white pt-1 pb-1  break-words">
+                                <span className="text-sm text-white pt-1 pb-1  break-words whitespace-pre-line">
                                   {description}
                                 </span>
                               </div>
