@@ -1274,11 +1274,11 @@ END:VCARD`;
               img08 != "" ||
               img09 != "" ||
               img10 != "") && (
-              <div className="px-4">
-                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+              <div className="px-0">
+                <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                   Image Gallery
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-black" />
                 {img01 && (
                   <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
                     <a href={img01}>
