@@ -558,7 +558,7 @@ END:VCARD`;
                   <div className="flex flex-col justify-center items-start">
                     <p
                       className="text-sm text-left text-white pt-1 pb-1 w-full  break-words"
-                      style={{ textWrap: "nowrap" }}
+                      style={{ textWrap: "wrap" }}
                     >
                       {description}
                     </p>
