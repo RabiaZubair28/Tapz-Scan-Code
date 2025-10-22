@@ -335,6 +335,48 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
+            <div className="px-4 mt-4 flex flex-row gap-x-2">
+              <a
+                href={`tel:${phone01}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+              >
+                <MdOutlinePhoneAndroid size={20} color="#1f153d" />
+                &nbsp;CALL
+              </a>
+
+              <a
+                href={`https://wa.me/${phone01}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+              >
+                <ImWhatsapp size={20} color="#1f153d" />
+                &nbsp;REACH OUT
+              </a>
+            </div>
+
+            <div className="flex items-center justify-center mt-0 mb-0 px-4">
+              <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+                <FaDownload
+                  size={20}
+                  onClick={downloadContactCard}
+                  color="black"
+                  className="text-black hover:text-black"
+                />
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onClick={downloadContactCard}
+                >
+                  &nbsp;SAVE CONTACT
+                </span>
+              </button>
+            </div>
 
             <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
               Please select the Menu
