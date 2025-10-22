@@ -10274,7 +10274,7 @@ END:VCARD`;
                   )}
                 </div>
 
-                <p className="pt-4 text-black">
+                <p className="pt-4 text-white">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
                 </p>
