@@ -4681,7 +4681,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
+              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
@@ -4869,11 +4869,11 @@ END:VCARD`;
 
                   {name && (
                     <div className="flex justify-center mt-1">
-                      <a className="flex w-full pe-5 py-1 text-lg font-semibold text-black max-w-md">
+                      <a className="flex w-full pe-5 py-1 text-lg font-semibold text-white max-w-md">
                         <div className="flex items-center space-x-5 w-full">
                           <div className="flex flex-1 items-center justify-center gap-x-5">
-                            <div className="flex flex-col text-lg font-semibold text-black text-start gap-y-1">
-                              <span className="text-2xl font-semibold  text-black text-center ">
+                            <div className="flex flex-col text-lg font-semibold text-white text-start gap-y-1">
+                              <span className="text-2xl font-semibold  text-white text-center ">
                                 {name}
                               </span>
                             </div>
@@ -4891,7 +4891,7 @@ END:VCARD`;
                     href={`tel:${phone01}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
                   >
                     <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                     &nbsp;CALL
@@ -4901,7 +4901,7 @@ END:VCARD`;
                     href={`https://wa.me/${phone01}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
                   >
                     <ImWhatsapp size={20} color="#1f153d" />
                     &nbsp;REACH OUT
@@ -4909,7 +4909,7 @@ END:VCARD`;
                 </div>
 
                 <div className="flex items-center justify-center mt-0 mb-0 px-4">
-                  <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+                  <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[1px] border-black shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                     <FaDownload
                       size={20}
                       onClick={downloadContactCard}
@@ -4929,7 +4929,7 @@ END:VCARD`;
                   </button>
                 </div>
 
-                <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
+                <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
                   Please select the Menu
                 </h2>
               </div>
@@ -10285,7 +10285,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11066,7 +11066,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50`}
+            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11121,7 +11121,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-500 via-gray-200 to-gray-50 pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2] pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
