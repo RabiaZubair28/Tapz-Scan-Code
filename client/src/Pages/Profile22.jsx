@@ -340,7 +340,7 @@ END:VCARD`;
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
                 &nbsp;CALL
@@ -350,7 +350,7 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
                 &nbsp;REACH OUT
@@ -358,7 +358,7 @@ END:VCARD`;
             </div>
 
             <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[0.5px] border-white shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+              <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[1px] border-black shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
