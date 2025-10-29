@@ -348,7 +348,8 @@ END:VCARD`;
               className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage: `url(${bg})`,
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744017/cf72849d-e202-4a81-8d27-12bc072ec0c0_xfouev.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -464,7 +465,7 @@ END:VCARD`;
                           <img
                             src={logo}
                             alt="profile"
-                            className="w-36 h-36  mx-auto rounded-full border-4 border-white shadow-md"
+                            className="w-48 h-48  mx-auto rounded-full border-4 border-white shadow-md"
                           />
                         </div>
                       </a>
