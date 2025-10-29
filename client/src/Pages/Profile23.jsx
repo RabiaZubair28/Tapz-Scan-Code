@@ -465,7 +465,7 @@ END:VCARD`;
                           <img
                             src={logo}
                             alt="profile"
-                            className="w-48 h-48  mx-auto rounded-full border-4 border-white shadow-md"
+                            className="w-48 h-48  mx-auto rounded-full border-4 border-[#b17c29] shadow-md"
                           />
                         </div>
                       </a>
@@ -482,7 +482,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-[#b17c29] shadow-sm hover:shadow-md hover:bg-gray-100"
                       >
                         <MdOutlinePhoneAndroid size={20} />
                       </a>
@@ -490,13 +490,13 @@ END:VCARD`;
                         href={`mailto:${email}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-[#b17c29] shadow-sm hover:shadow-md hover:bg-gray-100"
                       >
                         <AiOutlineMail size={20} />
                       </a>
                       <a
                         href={`sms:${phone01}`}
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-[#b17c29] shadow-sm hover:shadow-md hover:bg-gray-100"
                       >
                         <RiMessage2Line size={20} />
                       </a>
@@ -504,7 +504,7 @@ END:VCARD`;
                         href={`https://wa.me/${whatsapp01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-[#b17c29] shadow-sm hover:shadow-md hover:bg-gray-100"
                       >
                         <ImWhatsapp size={20} />
                       </a>
