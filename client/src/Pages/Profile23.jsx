@@ -350,7 +350,7 @@ END:VCARD`;
                 backgroundAttachment: "fixed",
                 backgroundImage:
                   "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761761885/5020a342-09b6-40a9-8081-c2fa39b75c96_lqmdvy.jpg')",
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             >
@@ -453,7 +453,7 @@ END:VCARD`;
                   backgroundAttachment: "fixed",
                   backgroundImage:
                     "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761761885/5020a342-09b6-40a9-8081-c2fa39b75c96_lqmdvy.jpg",
-                  backgroundSize: "contain",
+                  backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
