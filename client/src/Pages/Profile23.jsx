@@ -345,13 +345,9 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#1e2533]`}
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761768675/Screenshot_2025-10-30_at_1.10.34_AM_xie8tx.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
               }}
             >
               <div className="bg-white border-[0.25px] border-black rounded-lg pb-8 pt-16 px-10 relative">
@@ -448,13 +444,9 @@ END:VCARD`;
           }>Logout</button> */}
 
               <div
-                className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-white`}
+                className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#1e2533]`}
                 style={{
                   backgroundAttachment: "fixed",
-                  backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761768675/Screenshot_2025-10-30_at_1.10.34_AM_xie8tx.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
                 }}
               >
                 {images && (
