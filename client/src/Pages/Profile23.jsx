@@ -458,6 +458,19 @@ END:VCARD`;
                 }}
               >
                 <div className="px-6 ">
+                  {images && (
+                    <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
+                      <a href={images} className="w-full">
+                        <div className="relative mb-2 ">
+                          <img
+                            src={images}
+                            alt="profile"
+                            className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-[#C79D3D]"
+                          />
+                        </div>
+                      </a>
+                    </div>
+                  )}
                   {logo && (
                     <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 pt-12">
                       <a href={logo}>
