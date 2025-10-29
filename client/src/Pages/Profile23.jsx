@@ -533,7 +533,7 @@ END:VCARD`;
                     {/* <img src={eye} height={25}></img>
                                <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                                }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-[#C79D3D] border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
+                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-[#C79D3D] border border-gray-300 shadow-sm hover:shadow-md ">
                       <FaDownload
                         size={20}
                         onClick={downloadContactCard}
@@ -648,7 +648,7 @@ END:VCARD`;
                             </span>
                           </div>
                         </div>
-                        <SlArrowRight color="gray" /> {/* Chevron/Arrow */}
+                        <SlArrowRight color="#C79D3D" /> {/* Chevron/Arrow */}
                       </a>
                     </div>
                   )}
