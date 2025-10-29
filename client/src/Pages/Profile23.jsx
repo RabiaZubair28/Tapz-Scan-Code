@@ -451,7 +451,7 @@ END:VCARD`;
                 style={{
                   backgroundAttachment: "fixed",
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761743589/04327e8c-c8ce-47ee-84a2-ab9556d5dacf_jgmewx.jpg')",
+                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744017/cf72849d-e202-4a81-8d27-12bc072ec0c0_xfouev.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
