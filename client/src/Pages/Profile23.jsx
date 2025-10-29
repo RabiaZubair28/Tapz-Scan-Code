@@ -459,7 +459,7 @@ END:VCARD`;
               >
                 <div className="px-6 ">
                   {logo && (
-                    <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 pt-18">
+                    <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 pt-12">
                       <a href={logo}>
                         <div className="relative mb-2 ">
                           <img
