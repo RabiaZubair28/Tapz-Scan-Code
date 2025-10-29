@@ -1847,14 +1847,14 @@ END:VCARD`;
                   <hr className="border-black" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-black bg-white hover:border-black"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-white border-gray-300"
                       onClick={handleShow}
                     >
                       <IoQrCodeSharp size={35} color="black" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-black bg-white hover:border-black"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-white border-gray-300"
                       onClick={downloadContactCard}
                       value="download"
                     >
