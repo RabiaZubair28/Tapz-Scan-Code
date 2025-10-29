@@ -345,7 +345,7 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen  w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className="qr-modal min-h-screen bg-white w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage: `url(${bg})`,
@@ -447,7 +447,7 @@ END:VCARD`;
           }>Logout</button> */}
 
               <div
-                className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
+                className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-white`}
                 style={{
                   backgroundAttachment: "fixed",
                   backgroundImage: `url(${bg})`,
