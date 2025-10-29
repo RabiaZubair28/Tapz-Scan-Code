@@ -349,7 +349,7 @@ END:VCARD`;
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763408/Backgroundddsss-02_1_lmjlmc.jpg')",
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763765/Screenshot_2025-10-29_at_11.48.23_PM_thb3nz.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -452,7 +452,7 @@ END:VCARD`;
                 style={{
                   backgroundAttachment: "fixed",
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763408/Backgroundddsss-02_1_lmjlmc.jpg')",
+                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763765/Screenshot_2025-10-29_at_11.48.23_PM_thb3nz.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
