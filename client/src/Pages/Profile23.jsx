@@ -472,8 +472,8 @@ END:VCARD`;
                     </div>
                   )}
                   <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
-                    <MdRemoveRedEye size={20} />
-                    <p>{visitCount}</p>
+                    <MdRemoveRedEye size={20} color="white" />
+                    <p className="text-white">{visitCount}</p>
                   </div>
 
                   <div className="px-4">
@@ -511,19 +511,19 @@ END:VCARD`;
                     </div>
                   </div>
                   <div className="flex flex-col justify-center items-center">
-                    <h2 className="text-lg font-semibold text-gray-800 pt-1 ">
+                    <h2 className="text-lg font-semibold text-white pt-1 ">
                       {name}
                     </h2>
-                    <h2 className="text-2xl font-semibold text-gray-800 pt-1">
+                    <h2 className="text-2xl font-semibold text-white pt-1">
                       {clientName}
                     </h2>
-                    <h2 className="text-xl font-semibold font-serif text-gray-800 pt-1">
+                    <h2 className="text-xl font-semibold font-serif text-white pt-1">
                       {romanName}
                     </h2>
-                    <p className="text-md font-semibold text-gray-900 pt-1 pb-1 break-words  whitespace-pre-wrap">
+                    <p className="text-md font-semibold text-white pt-1 pb-1 break-words  whitespace-pre-wrap">
                       {designation}
                     </p>
-                    <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[320px] break-words">
+                    <p className="text-sm text-white pt-1 pb-1 max-w-[320px] break-words">
                       {description}
                     </p>
                   </div>
@@ -1622,7 +1622,7 @@ END:VCARD`;
                   img09 != "" ||
                   img10 != "") && (
                   <div className="px-4">
-                    <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Image Gallery
                     </h2>
                     <hr className="border-gray-300" />
@@ -1747,7 +1747,7 @@ END:VCARD`;
                 )}
                 {location != "" && (
                   <div className="px-4">
-                    <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Location
                     </h2>
                     <hr className="border-gray-300" />
@@ -1766,7 +1766,7 @@ END:VCARD`;
                   </div>
                 )}
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Share Profile
                   </h2>
                   <hr className="border-gray-300" />
@@ -1843,7 +1843,7 @@ END:VCARD`;
                   </div>
                 </div>
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-black mb-3 mt-5 px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
                   <hr className="border-gray-300" />
@@ -1864,7 +1864,7 @@ END:VCARD`;
                     </div>
                   </div>
 
-                  <p className="pt-4 text-black">
+                  <p className="pt-4 text-white">
                     Copyright © <span className="company">{companyName}</span>.
                     All Rights Reserved.
                   </p>
