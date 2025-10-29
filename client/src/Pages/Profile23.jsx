@@ -484,7 +484,7 @@ END:VCARD`;
                         rel="noopener noreferrer"
                         className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border border-white shadow-sm hover:shadow-md"
                       >
-                        <MdOutlinePhoneAndroid size={20} />
+                        <MdOutlinePhoneAndroid size={20} color="white" />
                       </a>
                       <a
                         href={`mailto:${email}`}
@@ -492,13 +492,13 @@ END:VCARD`;
                         rel="noopener noreferrer"
                         className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border border-white  shadow-sm hover:shadow-md "
                       >
-                        <AiOutlineMail size={20} />
+                        <AiOutlineMail size={20} color="white" />
                       </a>
                       <a
                         href={`sms:${phone01}`}
                         className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border border-white  shadow-sm hover:shadow-md "
                       >
-                        <RiMessage2Line size={20} />
+                        <RiMessage2Line size={20} color="white" />
                       </a>
                       <a
                         href={`https://wa.me/${whatsapp01}`}
@@ -506,7 +506,7 @@ END:VCARD`;
                         rel="noopener noreferrer"
                         className="w-12 h-12 flex items-center justify-center rounded-full bg-[#C79D3D] border border-white  shadow-sm hover:shadow-md "
                       >
-                        <ImWhatsapp size={20} />
+                        <ImWhatsapp size={20} color="white" />
                       </a>
                     </div>
                   </div>
@@ -533,17 +533,17 @@ END:VCARD`;
                     {/* <img src={eye} height={25}></img>
                                <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                                }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
+                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-[#C79D3D] border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
                       <FaDownload
                         size={20}
                         onClick={downloadContactCard}
-                        color="black"
+                        color="white"
                       />
                       <span
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "black",
+                          color: "white",
                           justifyContent: "center",
                         }}
                         onClick={downloadContactCard}
