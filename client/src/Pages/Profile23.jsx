@@ -349,7 +349,7 @@ END:VCARD`;
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763765/Screenshot_2025-10-29_at_11.48.23_PM_thb3nz.png')",
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761768675/Screenshot_2025-10-30_at_1.10.34_AM_xie8tx.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -452,7 +452,7 @@ END:VCARD`;
                 style={{
                   backgroundAttachment: "fixed",
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761763765/Screenshot_2025-10-29_at_11.48.23_PM_thb3nz.png')",
+                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761768675/Screenshot_2025-10-30_at_1.10.34_AM_xie8tx.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -465,7 +465,7 @@ END:VCARD`;
                           <img
                             src={logo}
                             alt="profile"
-                            className="w-48 h-48  mx-auto rounded-full border-6 border-[#C79D3D] shadow-md"
+                            className="w-48 h-48  mx-auto rounded-full border-[10px] border-[#C79D3D] shadow-md"
                           />
                         </div>
                       </a>
