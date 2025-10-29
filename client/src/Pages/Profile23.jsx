@@ -348,7 +348,7 @@ END:VCARD`;
               className="qr-modal min-h-screen  w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage: bg,
+                backgroundImage: `url(${bg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -450,7 +450,7 @@ END:VCARD`;
                 className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
                 style={{
                   backgroundAttachment: "fixed",
-                  backgroundImage: bg,
+                  backgroundImage: `url(${bg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
