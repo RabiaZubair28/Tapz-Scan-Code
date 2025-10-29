@@ -450,7 +450,8 @@ END:VCARD`;
                 className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-white`}
                 style={{
                   backgroundAttachment: "fixed",
-                  backgroundImage: `url(${bg})`,
+                  backgroundImage:
+                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761743589/04327e8c-c8ce-47ee-84a2-ab9556d5dacf_jgmewx.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
