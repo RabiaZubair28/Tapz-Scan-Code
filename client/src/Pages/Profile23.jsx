@@ -455,20 +455,106 @@ END:VCARD`;
                   backgroundPosition: "center",
                 }}
               >
-                {images && (
-                  <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
-                    <a href={images} className="w-full">
-                      <div className="relative mb-2 ">
-                        <img
-                          src={images}
-                          alt="profile"
-                          className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-black"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                )}
-
+              <div className="px-6">
+                                 {logo && (
+                                   <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
+                                     <a href={logo}>
+                                       <div className="relative mb-2 ">
+                                         <img
+                                           src={logo}
+                                           alt="profile"
+                                           className="w-36 h-36 -mt-24 mx-auto rounded-full border-4 border-white shadow-md"
+                                         />
+                                       </div>
+                                     </a>
+                                   </div>
+                                 )}
+                                 <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
+                                   <MdRemoveRedEye size={20} />
+                                   <p>{visitCount}</p>
+                                 </div>
+             
+                                 <div className="px-4">
+                                   <div className="flex justify-center space-x-2 mt-2 mb-2.5">
+                                     <a
+                                       href={`tel:${phone01}`}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                                     >
+                                       <MdOutlinePhoneAndroid size={20} />
+                                     </a>
+                                     <a
+                                       href={`mailto:${email}`}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                                     >
+                                       <AiOutlineMail size={20} />
+                                     </a>
+                                     <a
+                                       href={`sms:${phone01}`}
+                                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                                     >
+                                       <RiMessage2Line size={20} />
+                                     </a>
+                                     <a
+                                       href={`https://wa.me/${whatsapp01}`}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
+                                     >
+                                       <ImWhatsapp size={20} />
+                                     </a>
+                                   </div>
+                                 </div>
+                                 <div className="flex flex-col justify-center items-center">
+                                   <h2 className="text-lg font-semibold text-gray-800 pt-1 ">
+                                     {name}
+                                   </h2>
+                                   <h2 className="text-2xl font-semibold text-gray-800 pt-1">
+                                     {clientName}
+                                   </h2>
+                                   <h2 className="text-xl font-semibold font-serif text-gray-800 pt-1">
+                                     {romanName}
+                                   </h2>
+                                   <p className="text-md font-semibold text-gray-900 pt-1 pb-1 break-words  whitespace-pre-wrap">
+                                     {designation}
+                                   </p>
+                                   <p className="text-sm text-gray-900 pt-1 pb-1 max-w-[320px] break-words">
+                                     {description}
+                                   </p>
+                                 </div>
+                                 {/* <p className="text-xs text-gray-500">{description}</p> */}
+                                 {/* <p className="text-md text-gray-600">{romanName}</p> */}
+                                 <div className="flex items-center justify-center mt-2 mb-5">
+                                   {/* <img src={eye} height={25}></img>
+                               <span style={{display:"flex",alignItems:"center",justifyContent:"center",
+                               }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
+                                   <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
+                                     <FaDownload
+                                       size={20}
+                                       onClick={downloadContactCard}
+                                       color="black"
+                                     />
+                                     <span
+                                       style={{
+                                         display: "flex",
+                                         alignItems: "center",
+                                         color: "black",
+                                         justifyContent: "center",
+                                       }}
+                                       onClick={downloadContactCard}
+                                     >
+                                       &nbsp;&nbsp;Save Contact
+                                     </span>
+                                   </button>
+                                
+          
+                                </div>
+                                   </div>
+                                
+                               </div>
                 <div className="px-6">
                   <div className="flex flex-col justify-center items-start pt-0.5">
                     <h2 className="text-lg font-semibold text-black pt-1 ">
