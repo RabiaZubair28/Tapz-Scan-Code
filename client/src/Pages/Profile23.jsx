@@ -456,7 +456,7 @@ END:VCARD`;
                   backgroundPosition: "center",
                 }}
               >
-                <div className="px-6 pt-24">
+                <div className="px-6 pt-36">
                   {logo && (
                     <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
                       <a href={logo}>
