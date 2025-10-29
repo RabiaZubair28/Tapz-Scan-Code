@@ -1660,7 +1660,7 @@ END:VCARD`;
                     <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                       Services
                     </h2>
-                    <hr className="border-gray-300" />
+                    <hr className="border-[#C79D3D]" />
                     {services && (
                       <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md">
                         <a className="flex w-full py-1  text-gray-700  max-w-md">
@@ -1699,7 +1699,7 @@ END:VCARD`;
                     <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Image Gallery
                     </h2>
-                    <hr className="border-gray-300" />
+                    <hr className="border-[#C79D3D]" />
                     {img01 && (
                       <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-[#C79D3D] shadow-md space-y-2 mt-3">
                         <a href={img01}>
@@ -1824,7 +1824,7 @@ END:VCARD`;
                     <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Location
                     </h2>
-                    <hr className="border-gray-300" />
+                    <hr className="border-[#C79D3D]" />
                     <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-black shadow-md  space-y-4 mt-3">
                       {location && (
                         <iframe
@@ -1843,7 +1843,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Share Profile
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-[#C79D3D]" />
                   <div className="flex justify-center space-x-3 mt-3">
                     <div className="social-btn ">
                       <FacebookShareButton
@@ -1920,21 +1920,21 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-[#C79D3D]" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-white border-gray-300"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-[#C79D3D] border-gray-300"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="black" />
+                      <IoQrCodeSharp size={35} color="white" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-white border-gray-300"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-[#C79D3D] border-gray-300"
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="black" />
+                      <FaDownload size={30} color="white" />
                     </div>
                   </div>
 
