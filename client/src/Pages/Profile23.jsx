@@ -349,7 +349,7 @@ END:VCARD`;
               style={{
                 backgroundAttachment: "fixed",
                 backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744017/cf72849d-e202-4a81-8d27-12bc072ec0c0_xfouev.jpg')",
+                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744881/39f4d267-8660-4220-9cb8-5f835df38373_daxyzp.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -452,7 +452,7 @@ END:VCARD`;
                 style={{
                   backgroundAttachment: "fixed",
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744017/cf72849d-e202-4a81-8d27-12bc072ec0c0_xfouev.jpg')",
+                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1761744881/39f4d267-8660-4220-9cb8-5f835df38373_daxyzp.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
