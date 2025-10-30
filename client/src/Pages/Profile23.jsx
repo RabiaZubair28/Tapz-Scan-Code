@@ -528,7 +528,7 @@ END:VCARD`;
                     <p className="text-md font-semibold text-white pt-1 pb-1 break-words  whitespace-pre-wrap">
                       {designation}
                     </p>
-                    <p className="text-sm text-white pt-1 pb-1 max-w-[320px] break-words">
+                    <p className="text-sm text-white pt-1 pb-1 max-w-[350px] break-words">
                       {description}
                     </p>
                   </div>
