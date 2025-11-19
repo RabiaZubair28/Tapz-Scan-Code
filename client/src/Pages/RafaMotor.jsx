@@ -133,16 +133,16 @@ function RafaMotor() {
               backgroundPosition: "center",
             }}
           >
-            <div className="w-full bg-[#ecf4ff] shadow-md border border-black rounded-lg pb-8 pt-16 px-6 relative">
+            <div className="w-full bg-[#ecf4ff] shadow-md border border-[#dfb85a] rounded-lg pb-8 pt-16 px-6 relative">
               {/* Close Icon */}
               <ImCross
-                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
+                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-[#dfb85a]"
                 onClick={() => {
                   setShow(false);
                 }}
               />
 
-              <h2 className="text-2xl font-semibold text-center text-black mb-6">
+              <h2 className="text-2xl font-semibold text-center text-[#dfb85a] mb-6">
                 Leave a Review / ترك التعليق
               </h2>
 
@@ -152,7 +152,7 @@ function RafaMotor() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="اسم الوصي"
-                  className="w-full border text-right border-black rounded-md p-2 "
+                  className="w-full border text-right border-[#dfb85a] rounded-md p-2 "
                   required
                 />
                 <textarea
@@ -161,7 +161,7 @@ function RafaMotor() {
                   placeholder="...أكتب رأيك
 "
                   rows="4"
-                  className="w-full text-right border border-black rounded-md p-2 "
+                  className="w-full text-right border border-[#dfb85a] rounded-md p-2 "
                   required
                 />
 
@@ -194,7 +194,7 @@ function RafaMotor() {
 
                 <button
                   type="submit"
-                  className="w-full max-w-md bg-black mt-4 shadow rounded-lg p-3 text-white"
+                  className="w-full max-w-md bg-[#dfb85a] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {}}
                 >
                   Submit Review / إرسال المراجعة
@@ -228,11 +228,11 @@ function RafaMotor() {
 
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-3xl font-bold text-black text-center pt-1 ">
+                <h2 className="text-3xl font-bold text-[#dfb85a] text-center pt-1 ">
                   Elevate Strategy Partners
                 </h2>
 
-                <p className="text-md font-medium text-black text-center pt-3 pb-5 ">
+                <p className="text-md font-medium text-[#dfb85a] text-center pt-3 pb-5 ">
                   A strategic and execution-oriented advisory firm that helps
                   middle-market companies, investors, and families make
                   data-driven decisions, align leadership & operations, and
@@ -249,7 +249,7 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center text-gray-800 bg-white border border-[#231f20] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
                     >
-                      <MdOutlinePhoneAndroid size={20} color="black" />
+                      <MdOutlinePhoneAndroid size={20} color="[#dfb85a]" />
                     </a>
                     <a
                       href={`mailto:n.aloutibi2306@education.qa`}
@@ -257,13 +257,13 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20]  "
                     >
-                      <AiOutlineMail size={20} color="black" />
+                      <AiOutlineMail size={20} color="[#dfb85a]" />
                     </a>
                     <a
                       href={`sms:+97433221915`}
                       className="w-12 h-12 flex items-center justify-center rounded-full   shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20] "
                     >
-                      <RiMessage2Line size={20} color="black" />
+                      <RiMessage2Line size={20} color="[#dfb85a]" />
                     </a>
                     <a
                       href={`https://wa.me/+97433221915`}
@@ -271,19 +271,19 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full text-gray-800 bg-white border border-[#231f20]  shadow-sm hover:shadow-md "
                     >
-                      <ImWhatsapp size={20} color="black" />
+                      <ImWhatsapp size={20} color="[#dfb85a]" />
                     </a>
                   </div>
                 </div>
               </div> */}
 
               {/* <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full justify-center gap-x-2 items-center  text-black bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-black ">
+              <button className="flex w-full justify-center gap-x-2 items-center  text-[#dfb85a] bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-[#dfb85a] ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
-                  color="black"
-                  className="text-black hover:text-black"
+                  color="[#dfb85a]"
+                  className="text-[#dfb85a] hover:text-[#dfb85a]"
                 />
                 <span
                   style={{
@@ -299,7 +299,7 @@ function RafaMotor() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-black mt-2 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#dfb85a] mt-2 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
@@ -310,10 +310,10 @@ function RafaMotor() {
                 {visibleReviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-black text-right"
+                    className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#dfb85a] text-right"
                   >
                     {/* Name */}
-                    <p className="text-black text-lg font-semibold leading-relaxed">
+                    <p className="text-[#dfb85a] text-lg font-semibold leading-relaxed">
                       {review.name}
                     </p>
 
@@ -351,14 +351,14 @@ function RafaMotor() {
                 {!allShown && (
                   <button
                     onClick={handleLoadMore}
-                    className="mt-4 mb-6 px-5 py-2.5 bg-black text-white rounded-lg hover:bg-[#204b82] transition"
+                    className="mt-4 mb-6 px-5 py-2.5 bg-[#dfb85a] text-white rounded-lg hover:bg-[#204b82] transition"
                   >
                     Load More Reviews / تحميل المزيد من التقييمات
                   </button>
                 )}
               </div>
             </div>
-            <p className="pt-8 text-black text-center text-sm font-semibold px-1">
+            <p className="pt-8 text-[#dfb85a] text-center text-sm font-semibold px-1">
               Copyright © Rafa Motors Qatar - All Rights Reserved.
             </p>
           </div>
