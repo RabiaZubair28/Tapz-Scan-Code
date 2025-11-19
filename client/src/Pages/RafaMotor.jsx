@@ -99,7 +99,7 @@ function RafaMotor() {
           <link
             rel="icon"
             type="image/x-icon"
-            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png"
+            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763547585/Screenshot_2025-11-19_at_3.17.43_PM_khhwgl.png"
           />
 
           <meta name="description" content="Rafa Motors Qatar" />
@@ -112,7 +112,7 @@ function RafaMotor() {
           />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1760161721/Screenshot_2025-10-11_at_10.47.17_AM_zk9cxn.png"
+            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763547585/Screenshot_2025-11-19_at_3.17.43_PM_khhwgl.png"
           />
           <meta name="twitter:title" content="Rafa Motors Qatar" />
           <meta name="twitter:description" content="Rafa Motors Qatar" />
