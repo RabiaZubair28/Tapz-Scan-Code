@@ -27,7 +27,10 @@ function App() {
             path="/reviews/alandalus-primary-school"
             element={<School />}
           />
-          <Route path="/reviews/rafa-motors" element={<RafaMotor />} />
+          <Route
+            path="/reviews/elevate-strategy-partners"
+            element={<RafaMotor />}
+          />
         </Routes>
       </div>
     </Router>
