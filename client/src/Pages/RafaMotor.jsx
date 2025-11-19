@@ -9,7 +9,7 @@ import { ImWhatsapp } from "react-icons/im";
 import { FaDownload } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { ToastContainer, toast } from "react-toastify";
-import schoolImg from "../assets/school-img.jpg";
+import schoolImg from "../assets/ar-foods.jpg";
 import "react-toastify/dist/ReactToastify.css";
 function RafaMotor() {
   const [reviews, setReviews] = useState([]);
