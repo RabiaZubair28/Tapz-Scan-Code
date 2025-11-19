@@ -3,6 +3,7 @@ const router = express.Router();
 const { login } = require("../controllers/auth-controller.js");
 const Client = require("../models/client-model.js");
 const Review = require("../models/review-model.js");
+const RafaReview = require("../models/rafaReview.model.js");
 const mongoose = require("mongoose");
 
 // GET all reviews
@@ -26,7 +27,27 @@ router.route("/addReview").post(async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+// GET all reviews
+router.route("/rafareviews").get(async (req, res) => {
+  try {
+    const rafareviews = await RafaReview.find();
+    res.json(rafareviews);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 
+// POST new review
+router.route("/addRafaReview").post(async (req, res) => {
+  try {
+    const { name, description, stars } = req.body;
+    const rafareview = new RafaReview({ name, description, stars });
+    await rafareview.save();
+    res.status(201).json(rafareview);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
 router.route("/update/:id").put(async (req, res) => {
   const { id } = req.params;
   const {

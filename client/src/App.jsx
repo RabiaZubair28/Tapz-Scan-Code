@@ -8,6 +8,7 @@ import EditPortal from "./Pages/EditPortal.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Dashboard from "./Pages/Dashboard.jsx";
 import School from "./Pages/School.jsx";
+import RafaMotor from "./Pages/RafaMotor.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             path="/reviews/alandalus-primary-school"
             element={<School />}
           />
+          <Route path="/reviews/rafa-motors" element={<RafaMotor />} />
         </Routes>
       </div>
     </Router>
