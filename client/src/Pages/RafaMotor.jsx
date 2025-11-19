@@ -94,28 +94,34 @@ function RafaMotor() {
             content="width=device-width, initial-scale=1.0"
           />
 
-          <title>Rafa Motors Qatar</title>
+          <title>Elevate Strategy Partners</title>
 
           <link
             rel="icon"
             type="image/x-icon"
-            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763547585/Screenshot_2025-11-19_at_3.17.43_PM_khhwgl.png"
+            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
           />
 
-          <meta name="description" content="Rafa Motors Qatar" />
-          <meta property="article:section" content="Rafa Motors Qatar" />
-          <meta property="og:title" content="Rafa Motors Qatar" />
-          <meta property="og:description" content="Rafa Motors Qatar" />
+          <meta name="description" content="Elevate Strategy Partners" />
+          <meta
+            property="article:section"
+            content="Elevate Strategy Partners"
+          />
+          <meta property="og:title" content="Elevate Strategy Partners" />
+          <meta property="og:description" content="Elevate Strategy Partners" />
           <meta
             property="og:url"
-            content={`https://www.scan-taps.com/reviews/rafa-motors`}
+            content={`https://www.scan-taps.com/reviews/elevate-strategy-partners`}
           />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763547585/Screenshot_2025-11-19_at_3.17.43_PM_khhwgl.png"
+            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
           />
-          <meta name="twitter:title" content="Rafa Motors Qatar" />
-          <meta name="twitter:description" content="Rafa Motors Qatar" />
+          <meta name="twitter:title" content="Elevate Strategy Partners" />
+          <meta
+            name="twitter:description"
+            content="Elevate Strategy Partners"
+          />
         </Helmet>
         {show && (
           <div
@@ -223,13 +229,14 @@ function RafaMotor() {
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
                 <h2 className="text-3xl font-bold text-black text-center pt-1 ">
-                  Rafa Motors Qatar
+                  Elevate Strategy Partners
                 </h2>
 
                 <p className="text-md font-medium text-black text-center pt-3 pb-5 ">
-                  Rafa Motors Qatar is a full-service auto workshop and parts
-                  supplier, offering maintenance, engine repair, bodywork, and
-                  high-quality replacement parts.
+                  A strategic and execution-oriented advisory firm that helps
+                  middle-market companies, investors, and families make
+                  data-driven decisions, align leadership & operations, and
+                  drive sustainable growth.
                 </p>
               </div>
               {/* <div className="flex justify-center items-center pt-1 pb-2">
