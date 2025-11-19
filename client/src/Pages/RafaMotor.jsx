@@ -94,7 +94,7 @@ function RafaMotor() {
             content="width=device-width, initial-scale=1.0"
           />
 
-          <title>Alandalus Primary School for Girls</title>
+          <title>Rafa Motors Qatar</title>
 
           <link
             rel="icon"
