@@ -133,7 +133,7 @@ function RafaMotor() {
               backgroundPosition: "center",
             }}
           >
-            <div className="w-full bg-[#ecf4ff] shadow-md border border-[#dfb85a] rounded-lg pb-8 pt-16 px-6 relative">
+            <div className="w-full bg-white shadow-md border border-[#dfb85a] rounded-lg pb-8 pt-16 px-6 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-[#dfb85a]"
@@ -310,7 +310,7 @@ function RafaMotor() {
                 {visibleReviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-[#ecf4ff] shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#dfb85a] text-right"
+                    className="w-full max-w-md bg-white shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#dfb85a] text-right"
                   >
                     {/* Name */}
                     <p className="text-[#dfb85a] text-lg font-semibold leading-relaxed">
