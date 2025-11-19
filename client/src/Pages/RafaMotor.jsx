@@ -222,11 +222,11 @@ function RafaMotor() {
 
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
-                <h2 className="text-xl font-bold text-black text-center pt-1 ">
+                <h2 className="text-3xl font-bold text-black text-center pt-1 ">
                   Rafa Motors Qatar
                 </h2>
 
-                <p className="text-md font-medium text-black text-center pt-5 pb-5 ">
+                <p className="text-md font-medium text-black text-center pt-3 pb-5 ">
                   Rafa Motors Qatar is a full-service auto workshop and parts
                   supplier, offering maintenance, engine repair, bodywork, and
                   high-quality replacement parts.
