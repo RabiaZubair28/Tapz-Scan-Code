@@ -142,7 +142,7 @@ function RafaMotor() {
                 }}
               />
 
-              <h2 className="text-2xl font-semibold text-center text-[#dfb85a] mb-6">
+              <h2 className="text-2xl font-bold text-center text-[#dfb85a] mb-6">
                 Leave a Review / ترك التعليق
               </h2>
 
