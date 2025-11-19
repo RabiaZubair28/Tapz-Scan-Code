@@ -232,7 +232,7 @@ function RafaMotor() {
                   Elevate Strategy Partners
                 </h2>
 
-                <p className="text-md font-medium text-[#dfb85a] text-center pt-3 pb-5 ">
+                <p className="text-md font-medium text-[#dfb85a] text-center pt-5 pb-5 ">
                   A strategic and execution-oriented advisory firm that helps
                   middle-market companies, investors, and families make
                   data-driven decisions, align leadership & operations, and
