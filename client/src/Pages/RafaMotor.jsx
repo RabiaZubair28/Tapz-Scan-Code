@@ -210,7 +210,7 @@ function RafaMotor() {
             style={{
               backgroundAttachment: "fixed",
               backgroundImage: `url(${schoolImg})`,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
