@@ -228,6 +228,17 @@ function RafaMotor() {
 
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
+                <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 ">
+                  <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png">
+                    <div className="relative mb-2 ">
+                      <img
+                        src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
+                        alt="profile"
+                        className="w-48 h-48  mx-auto rounded-full border-[6px] border-[#dfb85a] shadow-md"
+                      />
+                    </div>
+                  </a>
+                </div>
                 <h2 className="text-3xl font-bold text-[#dfb85a] text-center pt-1 ">
                   Elevate Strategy Partners
                 </h2>
@@ -359,7 +370,7 @@ function RafaMotor() {
               </div>
             </div>
             <p className="pt-8 text-[#dfb85a] text-center text-sm font-semibold px-1">
-              Copyright © Rafa Motors Qatar - All Rights Reserved.
+              Copyright © Elevate Strategy Partners - All Rights Reserved.
             </p>
           </div>
         )}
