@@ -240,11 +240,11 @@ function RafaMotor() {
                     </div>
                   </a>
                 </div>
-                <h2 className="text-3xl font-bold text-[#dfb85a] text-center pt-1 ">
+                <h2 className="text-3xl font-bold text-[#dfb85a] text-center pt-2 ">
                   Elevate Strategy Partners
                 </h2>
 
-                <p className="text-md font-medium text-[#dfb85a] text-center pt-5 pb-8 ">
+                <p className="text-md font-medium text-[#dfb85a] text-center pt-4 pb-8 ">
                   A strategic and execution-oriented advisory firm that helps
                   middle-market companies, investors, and families make
                   data-driven decisions, align leadership & operations, and
