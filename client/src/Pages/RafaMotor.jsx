@@ -212,6 +212,7 @@ function RafaMotor() {
               backgroundImage: `url(${schoolImg})`,
               backgroundSize: "contain",
               backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           >
             {/* <div className="flex  flex-row items-center  justify-center mx-auto rounded-full ps-0 pe-0 space-y-2 mt-4">
