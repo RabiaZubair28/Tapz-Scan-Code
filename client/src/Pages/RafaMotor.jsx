@@ -94,34 +94,28 @@ function RafaMotor() {
             content="width=device-width, initial-scale=1.0"
           />
 
-          <title>Elevate Strategy Partners</title>
+          <title>Saray Wellness & Health</title>
 
           <link
             rel="icon"
             type="image/x-icon"
-            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
+            href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763836991/Screenshot_2025-11-22_at_11.42.05_PM_w0bzn7.png"
           />
 
-          <meta name="description" content="Elevate Strategy Partners" />
-          <meta
-            property="article:section"
-            content="Elevate Strategy Partners"
-          />
-          <meta property="og:title" content="Elevate Strategy Partners" />
-          <meta property="og:description" content="Elevate Strategy Partners" />
+          <meta name="description" content="Saray Wellness & Health" />
+          <meta property="article:section" content="Saray Wellness & Health" />
+          <meta property="og:title" content="Saray Wellness & Health" />
+          <meta property="og:description" content="Saray Wellness & Health" />
           <meta
             property="og:url"
             content={`https://www.scan-taps.com/reviews/elevate-strategy-partners`}
           />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
+            content="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763836991/Screenshot_2025-11-22_at_11.42.05_PM_w0bzn7.png"
           />
-          <meta name="twitter:title" content="Elevate Strategy Partners" />
-          <meta
-            name="twitter:description"
-            content="Elevate Strategy Partners"
-          />
+          <meta name="twitter:title" content="Saray Wellness & Health" />
+          <meta name="twitter:description" content="Saray Wellness & Health" />
         </Helmet>
         {show && (
           <div
@@ -133,16 +127,16 @@ function RafaMotor() {
               backgroundPosition: "center",
             }}
           >
-            <div className="w-full bg-white shadow-md border border-[#dfb85a] rounded-lg pb-8 pt-16 px-6 relative">
+            <div className="w-full bg-white shadow-md border border-[#DDB86A] rounded-lg pb-8 pt-16 px-6 relative">
               {/* Close Icon */}
               <ImCross
-                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-[#dfb85a]"
+                className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-[#DDB86A]"
                 onClick={() => {
                   setShow(false);
                 }}
               />
 
-              <h2 className="text-2xl font-bold text-center text-[#dfb85a] mb-6">
+              <h2 className="text-2xl font-bold text-center text-[#DDB86A] mb-6">
                 Leave a Review / ترك التعليق
               </h2>
 
@@ -152,7 +146,7 @@ function RafaMotor() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="اسم الوصي"
-                  className="w-full border text-right border-[#dfb85a] rounded-md p-2 "
+                  className="w-full border text-right border-[#DDB86A] rounded-md p-2 "
                   required
                 />
                 <textarea
@@ -161,7 +155,7 @@ function RafaMotor() {
                   placeholder="...أكتب رأيك
 "
                   rows="4"
-                  className="w-full text-right border border-[#dfb85a] rounded-md p-2 "
+                  className="w-full text-right border border-[#DDB86A] rounded-md p-2 "
                   required
                 />
 
@@ -194,7 +188,7 @@ function RafaMotor() {
 
                 <button
                   type="submit"
-                  className="w-full max-w-md bg-[#dfb85a] mt-4 shadow rounded-lg p-3 text-white"
+                  className="w-full max-w-md bg-[#DDB86A] mt-4 shadow rounded-lg p-3 text-white"
                   onClick={() => {}}
                 >
                   Submit Review / إرسال المراجعة
@@ -230,21 +224,21 @@ function RafaMotor() {
             <div className="px-6 mt-4">
               <div className="flex flex-col justify-center items-center pt-0.5">
                 <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 ">
-                  <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png">
+                  <a href="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763836991/Screenshot_2025-11-22_at_11.42.05_PM_w0bzn7.png">
                     <div className="relative mb-2 ">
                       <img
-                        src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763543316/ELEVATE_STRATEGY_PARTNER_LOGO-1_nlf17w.png"
+                        src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1763836991/Screenshot_2025-11-22_at_11.42.05_PM_w0bzn7.png"
                         alt="profile"
-                        className="w-48 h-48  mx-auto rounded-full border-[6px] border-[#dfb85a] shadow-md"
+                        className="w-48 h-48  mx-auto rounded-full border-[6px] border-[#DDB86A] shadow-md"
                       />
                     </div>
                   </a>
                 </div>
-                <h2 className="text-3xl font-bold text-[#dfb85a] text-center pt-2 ">
-                  Elevate Strategy Partners
+                <h2 className="text-3xl font-bold text-[#DDB86A] text-center pt-2 ">
+                  Saray Wellness & Health
                 </h2>
 
-                <p className="text-md font-medium text-[#dfb85a] text-center pt-4 pb-8 ">
+                <p className="text-md font-medium text-[#DDB86A] text-center pt-4 pb-8 ">
                   A strategic and execution-oriented advisory firm that helps
                   middle-market companies, investors, and families make
                   data-driven decisions, align leadership & operations, and
@@ -261,7 +255,7 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center text-gray-800 bg-white border border-[#231f20] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
                     >
-                      <MdOutlinePhoneAndroid size={20} color="[#dfb85a]" />
+                      <MdOutlinePhoneAndroid size={20} color="[#DDB86A]" />
                     </a>
                     <a
                       href={`mailto:n.aloutibi2306@education.qa`}
@@ -269,13 +263,13 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20]  "
                     >
-                      <AiOutlineMail size={20} color="[#dfb85a]" />
+                      <AiOutlineMail size={20} color="[#DDB86A]" />
                     </a>
                     <a
                       href={`sms:+97433221915`}
                       className="w-12 h-12 flex items-center justify-center rounded-full   shadow-sm hover:shadow-md text-gray-800 bg-white border border-[#231f20] "
                     >
-                      <RiMessage2Line size={20} color="[#dfb85a]" />
+                      <RiMessage2Line size={20} color="[#DDB86A]" />
                     </a>
                     <a
                       href={`https://wa.me/+97433221915`}
@@ -283,19 +277,19 @@ function RafaMotor() {
                       rel="noopener noreferrer"
                       className="w-12 h-12 flex items-center justify-center rounded-full text-gray-800 bg-white border border-[#231f20]  shadow-sm hover:shadow-md "
                     >
-                      <ImWhatsapp size={20} color="[#dfb85a]" />
+                      <ImWhatsapp size={20} color="[#DDB86A]" />
                     </a>
                   </div>
                 </div>
               </div> */}
 
               {/* <div className="flex items-center justify-center mt-0 mb-0 px-4">
-              <button className="flex w-full justify-center gap-x-2 items-center  text-[#dfb85a] bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-[#dfb85a] ">
+              <button className="flex w-full justify-center gap-x-2 items-center  text-[#DDB86A] bg-white border-[0.5px] border-white shadow-sm hover:shadow-md hover:bg-white  py-3 mt-2 mb-3 rounded-lg hover:text-[#DDB86A] ">
                 <FaDownload
                   size={20}
                   onClick={downloadContactCard}
-                  color="[#dfb85a]"
-                  className="text-[#dfb85a] hover:text-[#dfb85a]"
+                  color="[#DDB86A]"
+                  className="text-[#DDB86A] hover:text-[#DDB86A]"
                 />
                 <span
                   style={{
@@ -311,7 +305,7 @@ function RafaMotor() {
             </div> */}
 
               <div
-                className="w-full max-w-md bg-[#dfb85a] mt-2 shadow rounded-lg p-3 text-white"
+                className="w-full max-w-md bg-[#DDB86A] mt-2 shadow rounded-lg p-3 text-white"
                 onClick={() => {
                   setShow(true);
                 }}
@@ -322,10 +316,10 @@ function RafaMotor() {
                 {visibleReviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full max-w-md bg-white shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#dfb85a] text-right"
+                    className="w-full max-w-md bg-white shadow-md rounded-lg px-4 pt-3 pb-4 border border-[#DDB86A] text-right"
                   >
                     {/* Name */}
-                    <p className="text-[#dfb85a] text-lg font-semibold leading-relaxed">
+                    <p className="text-[#DDB86A] text-lg font-semibold leading-relaxed">
                       {review.name}
                     </p>
 
@@ -363,15 +357,15 @@ function RafaMotor() {
                 {!allShown && (
                   <button
                     onClick={handleLoadMore}
-                    className="mt-4 mb-6 px-5 py-2.5 bg-[#dfb85a] text-white rounded-lg hover:bg-[#204b82] transition"
+                    className="mt-4 mb-6 px-5 py-2.5 bg-[#DDB86A] text-white rounded-lg hover:bg-[#204b82] transition"
                   >
                     Load More Reviews / تحميل المزيد من التقييمات
                   </button>
                 )}
               </div>
             </div>
-            <p className="pt-8 text-[#dfb85a] text-center text-sm font-semibold px-1">
-              Copyright © Elevate Strategy Partners - All Rights Reserved.
+            <p className="pt-8 text-[#DDB86A] text-center text-sm font-semibold px-1">
+              Copyright © Saray Wellness & Health - All Rights Reserved.
             </p>
           </div>
         )}
