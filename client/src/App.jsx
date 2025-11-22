@@ -28,7 +28,7 @@ function App() {
             element={<School />}
           />
           <Route
-            path="/reviews/elevate-strategy-partners"
+            path="/reviews/saray-wellness-and-health"
             element={<RafaMotor />}
           />
         </Routes>
