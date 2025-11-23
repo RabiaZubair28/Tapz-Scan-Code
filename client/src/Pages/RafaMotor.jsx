@@ -239,10 +239,10 @@ function RafaMotor() {
                 </h2>
 
                 <p className="text-md font-medium text-[#DDB86A] text-center pt-4 pb-8 ">
-                  A strategic and execution-oriented advisory firm that helps
-                  middle-market companies, investors, and families make
-                  data-driven decisions, align leadership & operations, and
-                  drive sustainable growth.
+                  Welcome to the Saray Spa review page. Your feedback helps us
+                  improve and continue offering peaceful, refreshing, and
+                  memorable wellness experiences. Share your thoughts and read
+                  what others love about Saray.
                 </p>
               </div>
               {/* <div className="flex justify-center items-center pt-1 pb-2">
