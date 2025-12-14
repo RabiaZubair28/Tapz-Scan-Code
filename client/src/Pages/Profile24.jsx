@@ -303,7 +303,7 @@ END:VCARD`;
         </Helmet>
 
         <div
-          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#e00914] via-[#ffec00] to-[#f4e7e6b2]`}
+          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#e00914] via-[#e16858] to-[#f4e7e6b2]`}
           style={{
             backgroundAttachment: "fixed",
           }}
@@ -355,7 +355,7 @@ END:VCARD`;
                 &nbsp;AL KHEESA
               </a>
             </div>
-            <div className="px-4 mt-4 flex flex-row gap-x-2">
+            <div className="px-4 mt-2 flex flex-row gap-x-2">
               <a
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
