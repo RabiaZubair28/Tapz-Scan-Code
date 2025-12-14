@@ -343,7 +343,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;AL WAKRAH
+                &nbsp;&nbsp;Al Wakrah
               </a>
               <a
                 href={`tel:${phone01}`}
@@ -352,7 +352,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;AL KHEESA
+                &nbsp;&nbsp;Al Kheesa
               </a>
             </div>
             <div className="px-4 mt-2 flex flex-row gap-x-2">
@@ -363,7 +363,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;AL WAKRAH
+                &nbsp;&nbsp;Al Wakrah
               </a>
               <a
                 href={`https://wa.me/${phone01}`}
@@ -372,7 +372,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;AL KHEESA
+                &nbsp;&nbsp;Al Kheesa
               </a>
             </div>
 
@@ -392,7 +392,7 @@ END:VCARD`;
                   }}
                   onClick={downloadContactCard}
                 >
-                  &nbsp;SAVE CONTACT
+                  &nbsp;Save Contact
                 </span>
               </button>
             </div>
