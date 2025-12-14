@@ -162,10 +162,18 @@ app.get("/:id", async (req, res, next) => {
     const client = await Client.findOne({ companyName: id }).lean();
 
     const url = absoluteUrl(req, `/${encodeURIComponent(id)}`);
-    const title = client?.companyName
-      ? `${client.companyName} | ScanTaps`
-      : "ScanTaps";
+    // WhatsApp preview order you want:
+    // - image (og:image)
+    // - clientName (og:title)
+    // - name (og:description)
+    const title =
+      client?.clientName ||
+      client?.companyName ||
+      client?.name ||
+      "ScanTaps";
     const description =
+      client?.name ||
+      client?.companyName ||
       client?.description ||
       client?.services ||
       "Tap to view the digital profile.";
