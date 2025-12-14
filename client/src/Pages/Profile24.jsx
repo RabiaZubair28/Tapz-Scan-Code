@@ -315,7 +315,7 @@ END:VCARD`;
                   <img
                     src={logo}
                     alt="profile"
-                    className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
+                    className="w-[10rem] h-[10rem] mx-auto rounded-[50%] border-[2px] border-white shadow-md"
                   />
                 </div>
               </a>
@@ -382,44 +382,6 @@ END:VCARD`;
               Please select the Menu
             </h2>
 
-            {phone02 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${phone02}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md "
-                >
-                  <div className="flex items-center space-x-6">
-                    <img src={phone} alt="Phone02" className="h-10 w-10" />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Phone</span>
-                      <span className="text-sm">{phone02}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-            {phone03 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${phone03}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img src={phone} alt="Phone03" className="h-10 w-10" />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Phone</span>
-                      <span className="text-sm">{phone03}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
             {telephone02 && (
               <div className="flex justify-center mt-3">
                 <a
@@ -509,6 +471,29 @@ END:VCARD`;
                     <div className="flex flex-col text-start gap-y-1">
                       <span className="font-medium">Whatsapp</span>
                       <span className="text-sm">{whatsapp02}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </a>
+              </div>
+            )}
+            {whatsapp01 && (
+              <div className="flex justify-center mt-3">
+                <a
+                  href={`https://wa.me/${whatsapp01}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={whatsapp}
+                      alt="Whatsapp02"
+                      className="h-10 w-10"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Whatsapp</span>
+                      <span className="text-sm">{whatsapp01}</span>
                     </div>
                   </div>
                   <SlArrowRight /> {/* Chevron/Arrow */}
@@ -640,6 +625,26 @@ END:VCARD`;
                 </button>
               </div>
             )}
+            {menuLink && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
+                  onClick={() => window.open(menuLink, "_blank")}
+                >
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={menu}
+                      alt="Profile"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start">
+                      <span className="text-lg font-semibold">{menuName}</span>
+                    </div>
+                  </div>
+                  {/* <SlArrowRight  /> Chevron/Arrow */}
+                </button>
+              </div>
+            )}
             {instagramLink && (
               <div className="flex justify-center mt-3">
                 <button
@@ -697,6 +702,132 @@ END:VCARD`;
                     <div className="flex flex-col text-start gap-y-1">
                       <span className="font-medium">Instagram</span>
                       <span className="text-sm">{instagramName03}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleMapLink && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleMapLink, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={locations}
+                      alt="Google Map"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Map</span>
+                      <span className="text-sm">{googleMapName}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleMapLink02 && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleMapLink02, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={locations}
+                      alt="Google Map"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Map</span>
+                      <span className="text-sm">{googleMapName02}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleMapLink03 && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleMapLink03, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={locations}
+                      alt="Google Map"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Map</span>
+                      <span className="text-sm">{googleMapName03}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleReviewLink && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleReviewLink, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={greview}
+                      alt="Google Review"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Review</span>
+                      <span className="text-sm">{googleReviewName}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleReviewLink02 && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleReviewLink02, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={greview}
+                      alt="Google Review"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Review</span>
+                      <span className="text-sm">{googleReviewName02}</span>
+                    </div>
+                  </div>
+                  <SlArrowRight /> {/* Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {googleReviewLink03 && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  onClick={() => window.open(googleReviewLink03, "_blank")}
+                >
+                  <div className="flex items-center space-x-6">
+                    <img
+                      src={greview}
+                      alt="Google Review"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Google Review</span>
+                      <span className=" text-sm">{googleReviewName03}</span>
                     </div>
                   </div>
                   <SlArrowRight /> {/* Chevron/Arrow */}
@@ -1046,132 +1177,6 @@ END:VCARD`;
                 </button>
               </div>
             )}
-            {googleReviewLink && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleReviewLink, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={greview}
-                      alt="Google Review"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Review</span>
-                      <span className="text-sm">{googleReviewName}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {googleReviewLink02 && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleReviewLink02, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={greview}
-                      alt="Google Review"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Review</span>
-                      <span className="text-sm">{googleReviewName02}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {googleReviewLink03 && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleReviewLink03, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={greview}
-                      alt="Google Review"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Review</span>
-                      <span className=" text-sm">{googleReviewName03}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {googleMapLink && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleMapLink, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={locations}
-                      alt="Google Map"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Map</span>
-                      <span className="text-sm">{googleMapName}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {googleMapLink02 && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleMapLink02, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={locations}
-                      alt="Google Map"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Map</span>
-                      <span className="text-sm">{googleMapName02}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {googleMapLink03 && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                  onClick={() => window.open(googleMapLink03, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={locations}
-                      alt="Google Map"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Google Map</span>
-                      <span className="text-sm">{googleMapName03}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </button>
-              </div>
-            )}
 
             {catalogueLink && (
               <div className="flex justify-center mt-3">
@@ -1234,26 +1239,6 @@ END:VCARD`;
                       <span className="text-lg font-semibold">
                         {profileName02}
                       </span>
-                    </div>
-                  </div>
-                  {/* <SlArrowRight  /> Chevron/Arrow */}
-                </button>
-              </div>
-            )}
-            {menuLink && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
-                  onClick={() => window.open(menuLink, "_blank")}
-                >
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src={menu}
-                      alt="Profile"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start">
-                      <span className="text-lg font-semibold">{menuName}</span>
                     </div>
                   </div>
                   {/* <SlArrowRight  /> Chevron/Arrow */}
