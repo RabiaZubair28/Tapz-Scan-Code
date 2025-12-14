@@ -661,7 +661,7 @@ END:VCARD`;
                       <span className=" text-sm">{menuName}</span>
                     </div>
                   </div>
-                  {/* <SlArrowRight  /> Chevron/Arrow */}
+                  <SlArrowRight />
                 </button>
               </div>
             )}
