@@ -647,17 +647,18 @@ END:VCARD`;
             {menuLink && (
               <div className="flex justify-center mt-3">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
+                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
                   onClick={() => window.open(menuLink, "_blank")}
                 >
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-6">
                     <img
                       src={menu}
                       alt="Profile"
                       className="h-10 w-10 rounded-md"
                     />
-                    <div className="flex flex-col text-start">
-                      <span className="text-lg font-semibold">{menuName}</span>
+                    <div className="flex flex-col text-start gap-y-1">
+                      <span className="font-medium">Menu</span>
+                      <span className=" text-sm">{menuName}</span>
                     </div>
                   </div>
                   {/* <SlArrowRight  /> Chevron/Arrow */}
