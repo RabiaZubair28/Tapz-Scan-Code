@@ -1,5 +1,4 @@
 require("dotenv").config();
-const prerender = require("prerender-node");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -17,15 +16,129 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-const _dirname = path.resolve();
-prerender.set("prerenderToken", "bF19sF0R6C6m2Bdw8QE2");
+function isCrawlerUserAgent(userAgent = "") {
+  const ua = String(userAgent).toLowerCase();
+  // WhatsApp uses Facebook's crawler user-agent in many cases.
+  return (
+    ua.includes("facebookexternalhit") ||
+    ua.includes("whatsapp") ||
+    ua.includes("twitterbot") ||
+    ua.includes("linkedinbot") ||
+    ua.includes("slackbot") ||
+    ua.includes("discordbot") ||
+    ua.includes("telegrambot") ||
+    ua.includes("pinterest") ||
+    ua.includes("googlebot") ||
+    ua.includes("bingbot")
+  );
+}
+
+function escapeHtml(s = "") {
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function absoluteUrl(req, pathPart = "/") {
+  // Prefer explicit origin if provided by proxies; fallback to https.
+  const origin =
+    req.get("x-forwarded-proto") && req.get("host")
+      ? `${req.get("x-forwarded-proto")}://${req.get("host")}`
+      : `https://${req.get("host")}`;
+  return new URL(pathPart, origin).toString();
+}
+
+function renderOgHtml({ title, description, image, url }) {
+  const safeTitle = escapeHtml(title);
+  const safeDescription = escapeHtml(description);
+  const safeImage = escapeHtml(image);
+  const safeUrl = escapeHtml(url);
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${safeTitle}</title>
+    <meta name="description" content="${safeDescription}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${safeTitle}" />
+    <meta property="og:description" content="${safeDescription}" />
+    <meta property="og:image" content="${safeImage}" />
+    <meta property="og:url" content="${safeUrl}" />
+    <meta property="og:site_name" content="ScanTaps" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${safeTitle}" />
+    <meta name="twitter:description" content="${safeDescription}" />
+    <meta name="twitter:image" content="${safeImage}" />
+
+    <link rel="canonical" href="${safeUrl}" />
+  </head>
+  <body>
+    <a href="${safeUrl}">Open</a>
+  </body>
+</html>`;
+}
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
-console.log("Auth Route:", authRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
+
+// Server-side OpenGraph for WhatsApp/Facebook crawlers.
+// Important: crawlers do NOT execute JS, so we return OG tags directly for profile links.
+app.get("/:id", async (req, res, next) => {
+  const { id } = req.params;
+
+  // Don't hijack known SPA/static routes; let the normal handler serve the SPA.
+  const reserved = new Set([
+    "api",
+    "home",
+    "login",
+    "shop",
+    "contact",
+    "edit",
+    "dashboard",
+    "reviews",
+    "assets",
+    "favicon.ico",
+  ]);
+  if (!id || reserved.has(id)) return next();
+
+  if (!isCrawlerUserAgent(req.get("user-agent"))) return next();
+
+  try {
+    const client = await Client.findOne({ companyName: id }).lean();
+
+    const url = absoluteUrl(req, `/${encodeURIComponent(id)}`);
+    const title = client?.companyName
+      ? `${client.companyName} | ScanTaps`
+      : "ScanTaps";
+    const description =
+      client?.description ||
+      client?.services ||
+      "Tap to view the digital profile.";
+
+    // Prefer logo, then cover image, then first gallery image; fallback to a local asset if present.
+    const image =
+      client?.logo ||
+      client?.images ||
+      client?.img01 ||
+      absoluteUrl(req, "/assets/static/header/Asset%2072.png");
+
+    const html = renderOgHtml({ title, description, image, url });
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    return res.status(200).send(html);
+  } catch (err) {
+    return next(err);
+  }
+});
 
 // Visit count endpoint
 app.post("/api/visit/:clientId", async (req, res) => {
@@ -46,9 +159,6 @@ app.post("/api/visit/:clientId", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "..", "/client/dist")));
-
-app.use(prerender);
-console.log(__dirname);
 app.get("*", (_, res) => {
   res.sendFile(path.resolve(__dirname, "..", "client", "dist", "index.html"));
 });
