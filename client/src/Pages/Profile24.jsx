@@ -343,7 +343,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
-                &nbsp;CALL - AL WAKRAH BRANCH
+                &nbsp;AL WAKRAH
               </a>
               <a
                 href={`tel:${phone01}`}
@@ -352,17 +352,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
               >
                 <MdOutlinePhoneAndroid size={20} color="#1f153d" />
-                &nbsp;CALL - AL KHEESA BRANCH
-              </a>
-
-              <a
-                href={`https://wa.me/${phone01}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
-              >
-                <ImWhatsapp size={20} color="#1f153d" />
-                &nbsp;REACH OUT
+                &nbsp;AL KHEESA
               </a>
             </div>
             <div className="px-4 mt-4 flex flex-row gap-x-2">
@@ -373,7 +363,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
-                &nbsp;REACH OUT - AL WAKRAH BRANCH
+                &nbsp;AL WAKRAH
               </a>
               <a
                 href={`https://wa.me/${phone01}`}
@@ -382,7 +372,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
               >
                 <ImWhatsapp size={20} color="#1f153d" />
-                &nbsp;REACH OUT - AL KHEESA BRANCH
+                &nbsp;AL KHEESA
               </a>
             </div>
 
