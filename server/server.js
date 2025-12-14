@@ -9,12 +9,39 @@ const connectDb = require("./utils/db.js");
 const errorMiddleware = require("./middlewares/error-middleware.js");
 
 const path = require("path");
+const fs = require("fs");
 const corsOptions = {
   origin: "https://www.scan-taps.com/",
   method: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
   optionSuccessStatus: 200,
 };
+
+let cachedDefaultOgImagePath = null;
+function pickDefaultOgImagePath() {
+  if (cachedDefaultOgImagePath) return cachedDefaultOgImagePath;
+  try {
+    const assetsDir = path.join(__dirname, "..", "client", "dist", "assets");
+    const files = fs.readdirSync(assetsDir, { withFileTypes: true });
+    const candidates = files
+      .filter((d) => d.isFile())
+      .map((d) => d.name)
+      .filter((name) => /\.(png|jpe?g)$/i.test(name))
+      // Prefer something logo-ish if it exists
+      .sort((a, b) => {
+        const aScore = /logo|profile/i.test(a) ? 0 : 1;
+        const bScore = /logo|profile/i.test(b) ? 0 : 1;
+        return aScore - bScore || a.localeCompare(b);
+      });
+    cachedDefaultOgImagePath = candidates.length
+      ? `/assets/${candidates[0]}`
+      : null;
+    return cachedDefaultOgImagePath;
+  } catch {
+    cachedDefaultOgImagePath = null;
+    return null;
+  }
+}
 
 function isCrawlerUserAgent(userAgent = "") {
   const ua = String(userAgent).toLowerCase();
@@ -51,6 +78,22 @@ function absoluteUrl(req, pathPart = "/") {
   return new URL(pathPart, origin).toString();
 }
 
+function normalizePublicUrl(req, maybeUrl) {
+  const raw = String(maybeUrl || "").trim();
+  if (!raw) return "";
+  if (raw.startsWith("http://") || raw.startsWith("https://")) return raw;
+  if (raw.startsWith("//")) return `https:${raw}`;
+  if (raw.startsWith("/")) return absoluteUrl(req, raw);
+  // Best-effort: treat as a path relative to site root.
+  return absoluteUrl(req, `/${raw}`);
+}
+
+function isLikelyUnsupportedForWhatsAppImage(url) {
+  const u = String(url || "").toLowerCase();
+  // WhatsApp previews are most reliable with JPG/PNG.
+  return u.endsWith(".webp") || u.endsWith(".avif") || u.endsWith(".svg");
+}
+
 function renderOgHtml({ title, description, image, url }) {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
@@ -69,6 +112,8 @@ function renderOgHtml({ title, description, image, url }) {
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDescription}" />
     <meta property="og:image" content="${safeImage}" />
+    <meta property="og:image:secure_url" content="${safeImage}" />
+    <meta property="og:image:alt" content="${safeTitle}" />
     <meta property="og:url" content="${safeUrl}" />
     <meta property="og:site_name" content="ScanTaps" />
 
@@ -125,15 +170,26 @@ app.get("/:id", async (req, res, next) => {
       client?.services ||
       "Tap to view the digital profile.";
 
-    // Prefer logo, then cover image, then first gallery image; fallback to a local asset if present.
-    const image =
-      client?.logo ||
-      client?.images ||
-      client?.img01 ||
-      absoluteUrl(req, "/assets/static/header/Asset%2072.png");
+    // WhatsApp is most reliable with absolute HTTPS JPG/PNG.
+    // Prefer client logo/cover if usable; otherwise fall back to a real built asset.
+    const preferred = [
+      client?.logo,
+      client?.images,
+      client?.img01,
+      client?.img02,
+      client?.img03,
+    ]
+      .map((v) => normalizePublicUrl(req, v))
+      .filter(Boolean)
+      .find((u) => !isLikelyUnsupportedForWhatsAppImage(u));
+
+    const defaultPath = pickDefaultOgImagePath();
+    const image = preferred || (defaultPath ? absoluteUrl(req, defaultPath) : url);
 
     const html = renderOgHtml({ title, description, image, url });
     res.setHeader("Content-Type", "text/html; charset=utf-8");
+    // Avoid overly sticky caching while debugging previews
+    res.setHeader("Cache-Control", "public, max-age=60");
     return res.status(200).send(html);
   } catch (err) {
     return next(err);
