@@ -340,7 +340,7 @@ END:VCARD`;
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;AL WAKRAH
@@ -349,7 +349,7 @@ END:VCARD`;
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;AL KHEESA
@@ -360,7 +360,7 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;AL WAKRAH
@@ -369,7 +369,7 @@ END:VCARD`;
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;AL KHEESA
