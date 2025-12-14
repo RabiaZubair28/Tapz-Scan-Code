@@ -342,8 +342,8 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
               >
-                <img src={phone} alt="Whatsapp02" className="h-4 w-4" />
-                &nbsp;AL WAKRAH
+                <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;AL WAKRAH
               </a>
               <a
                 href={`tel:${phone01}`}
@@ -351,8 +351,8 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg  border-[1px] border-black"
               >
-                <img src={phone} alt="Whatsapp02" className="h-4 w-4" />
-                &nbsp;AL KHEESA
+                <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;AL KHEESA
               </a>
             </div>
             <div className="px-4 mt-2 flex flex-row gap-x-2">
@@ -362,8 +362,8 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
               >
-                <img src={whatsapp} alt="Whatsapp02" className="h-4 w-4" />
-                &nbsp;AL WAKRAH
+                <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;AL WAKRAH
               </a>
               <a
                 href={`https://wa.me/${phone01}`}
@@ -371,8 +371,8 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
               >
-                <img src={whatsapp} alt="Whatsapp02" className="h-4 w-4" />
-                &nbsp;AL KHEESA
+                <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;AL KHEESA
               </a>
             </div>
 
