@@ -303,7 +303,7 @@ END:VCARD`;
         </Helmet>
 
         <div
-          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#000000] via-[#e00914] to-[#efe1e2]`}
+          className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
           style={{
             backgroundAttachment: "fixed",
           }}
@@ -1437,7 +1437,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#000000] via-[#e00914] to-[#efe1e2] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`}
         style={{
           backgroundAttachment: "fixed",
         }}

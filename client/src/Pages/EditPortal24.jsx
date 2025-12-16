@@ -4681,7 +4681,7 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-[#000000] via-[#e00914] to-[#efe1e2] to-[#f4e7e6b2]"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col justify-center items-center mx-2 relative bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800"
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
+              className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
@@ -10285,7 +10285,7 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
+            className={`min-h-screen pt-2 w-full max-w-md mx-auto flex justify-center items-center mx-2 shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11066,7 +11066,7 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-[#331312d4] via-[#9e201cc1] to-[#f4e7e6b2]`}
+            className={`min-h-screen flex justify-center items-center mx-2 pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
             style={{ backgroundAttachment: "fixed" }}
           >
             <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
@@ -11121,7 +11121,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-[#000000] via-[#e00914] to-[#efe1e2] pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
