@@ -560,7 +560,15 @@ END:VCARD`;
                       className="text-sm text-left text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
                       style={{ textWrap: "wrap" }}
                     >
-                      {description}
+                      {String(description || "")
+                        .replace(/<br\s*\/?>/gi, "\n")
+                        .split(/\r?\n/)
+                        .map((line, index, arr) => (
+                          <React.Fragment key={index}>
+                            {line}
+                            {index < arr.length - 1 ? <br /> : null}
+                          </React.Fragment>
+                        ))}
                     </p>
                   </div>
                   {/* <p className="text-xs text-gray-500">{description}</p> */}
