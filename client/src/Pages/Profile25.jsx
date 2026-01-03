@@ -549,13 +549,13 @@ END:VCARD`;
                       <FaDownload
                         size={20}
                         onClick={downloadContactCard}
-                        color="black"
+                        color="white"
                       />
                       <span
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "black",
+                          color: "white",
                           justifyContent: "center",
                         }}
                         onClick={downloadContactCard}
