@@ -494,31 +494,31 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center bg-white border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
                       >
-                        <MdOutlinePhoneAndroid size={20} color="white" />
+                        <MdOutlinePhoneAndroid size={20} color="black" />
                       </a>
                       <a
                         href={`mailto:${email}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-white border-white "
                       >
-                        <AiOutlineMail size={20} color="white" />
+                        <AiOutlineMail size={20} color="black" />
                       </a>
                       <a
                         href={`sms:${phone01}`}
-                        className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                        className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-white border-white "
                       >
-                        <RiMessage2Line size={20} color="white" />
+                        <RiMessage2Line size={20} color="black" />
                       </a>
                       <a
                         href={`https://wa.me/${whatsapp01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border-white border-[0.25px] shadow-sm hover:shadow-md "
                       >
-                        <ImWhatsapp size={20} color="white" />
+                        <ImWhatsapp size={20} color="black" />
                       </a>
                     </div>
                   </div>
