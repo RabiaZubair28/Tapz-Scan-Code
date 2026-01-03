@@ -472,7 +472,7 @@ END:VCARD`;
                   </div>
                 )}
                 <div className="px-6">
-                  <div className="flex flex-col justify-center items-center pt-0.5">
+                  <div className="flex flex-col justify-center items-center">
                     <h2 className="text-lg font-semibold text-white pt-1 ">
                       {name}
                     </h2>
