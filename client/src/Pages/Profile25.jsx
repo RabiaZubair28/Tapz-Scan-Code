@@ -541,6 +541,30 @@ END:VCARD`;
                   {/* <p className="text-xs text-gray-500">{description}</p> */}
                   {/* <p className="text-md text-gray-600">{romanName}</p> */}
 
+                  <div className="flex items-center justify-center mt-2 mb-5">
+                    {/* <img src={eye} height={25}></img>
+                                    <span style={{display:"flex",alignItems:"center",justifyContent:"center",
+                                    }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
+                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10  bg-gray-600 hover:bg-gray-500 border-white shadow-sm hover:shadow-md ">
+                      <FaDownload
+                        size={20}
+                        onClick={downloadContactCard}
+                        color="black"
+                      />
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          color: "black",
+                          justifyContent: "center",
+                        }}
+                        onClick={downloadContactCard}
+                      >
+                        &nbsp;&nbsp;Save Contact
+                      </span>
+                    </button>
+                  </div>
+
                   {phone01 && (
                     <div className="flex justify-center mt-3">
                       <a
