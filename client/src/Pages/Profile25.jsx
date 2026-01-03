@@ -545,7 +545,7 @@ END:VCARD`;
                     {/* <img src={eye} height={25}></img>
                                     <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                                     }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10  bg-gray-600 hover:bg-gray-500 border-white shadow-sm hover:shadow-md ">
+                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10  bg-gray-600 hover:bg-gray-500 border-white border-[0.25px]shadow-sm hover:shadow-md ">
                       <FaDownload
                         size={20}
                         onClick={downloadContactCard}
