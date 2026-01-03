@@ -555,7 +555,7 @@ END:VCARD`;
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          color: "white",
+                          color: "black",
                           justifyContent: "center",
                         }}
                         onClick={downloadContactCard}
