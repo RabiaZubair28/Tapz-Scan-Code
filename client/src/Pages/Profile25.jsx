@@ -541,7 +541,7 @@ END:VCARD`;
                   {/* <p className="text-xs text-gray-500">{description}</p> */}
                   {/* <p className="text-md text-gray-600">{romanName}</p> */}
 
-                  <div className="flex items-center justify-center mt-2 mb-7">
+                  <div className="flex items-center justify-center mt-4 mb-7">
                     {/* <img src={eye} height={25}></img>
                                     <span style={{display:"flex",alignItems:"center",justifyContent:"center",
                                     }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
