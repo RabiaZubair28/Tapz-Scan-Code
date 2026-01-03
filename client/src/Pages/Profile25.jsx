@@ -459,96 +459,107 @@ END:VCARD`;
                 style={{ backgroundAttachment: "fixed" }}
               >
                 {logo && (
-                                    <div className="flex flex-col items-center mx-auto rounded-x p-1 space-y-2 mt-3">
-                                      <a href={logo}>
-                                        <div className="relative mb-2 ">
-                                          <img
-                                            src={logo}
-                                            alt="profile"
-                                            className="w-48 h-48 mx-auto rounded-full border-4 border-white shadow-md"
-                                          />
-                                        </div>
-                                      </a>
-                                    </div>
-                                  )}
-                                  <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
-                                    <MdRemoveRedEye size={20} />
-                                    <p>{visitCount}</p>
-                                  </div>
-                
-                                  <div className="px-4">
-                                    <div className="flex justify-center space-x-2 mt-2 mb-2.5">
-                                      <a
-                                        href={`tel:${phone01}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
-                                      >
-                                        <MdOutlinePhoneAndroid size={20} />
-                                      </a>
-                                      <a
-                                        href={`mailto:${email}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
-                                      >
-                                        <AiOutlineMail size={20} />
-                                      </a>
-                                      <a
-                                        href={`sms:${phone01}`}
-                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
-                                      >
-                                        <RiMessage2Line size={20} />
-                                      </a>
-                                      <a
-                                        href={`https://wa.me/${whatsapp01}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100"
-                                      >
-                                        <ImWhatsapp size={20} />
-                                      </a>
-                                    </div>
-                                  </div>
-                                  <div className="flex flex-col justify-center items-center">
-                                    <h2 className="text-md font-semibold text-gray-800 pt-1 ">
-                                      {name}
-                                    </h2>
-                                    <h2 className="text-2xl font-semibold text-gray-800 pt-1">
-                                      {clientName}
-                                    </h2>
-                                    <p className="text-md font-semibold text-gray-600 pt-1 pb-1">
-                                      {designation}
-                                    </p>
-                                    <p className="text-sm text-gray-600 pt-1 pb-1 max-w-[280px] break-words">
-                                      {description}
-                                    </p>
-                                  </div>
-                                  {/* <p className="text-xs text-gray-500">{description}</p> */}
-                                  {/* <p className="text-md text-gray-600">{romanName}</p> */}
-                                  <div className="flex items-center justify-center mt-2 mb-5">
-                                    {/* <img src={eye} height={25}></img>
-                                  <span style={{display:"flex",alignItems:"center",justifyContent:"center",
-                                  }}>&nbsp;{visitCount} &nbsp;&nbsp;&nbsp;&nbsp;</span> */}
-                                    <button className="flex items-center justify-center gap-x-2 rounded-lg py-2 px-10 bg-white border border-gray-300 shadow-sm hover:shadow-md hover:bg-gray-100">
-                                      <FaDownload
-                                        size={20}
-                                        onClick={downloadContactCard}
-                                        color="black"
-                                      />
-                                      <span
-                                        style={{
-                                          display: "flex",
-                                          alignItems: "center",
-                                          color: "black",
-                                          justifyContent: "center",
-                                        }}
-                                        onClick={downloadContactCard}
-                                      >
-                                        &nbsp;&nbsp;Save Contact
-                                      </span>
-                                    </button>
-                                  </div>
+                  <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                    <a href={logo}>
+                      <div className="relative mb-2 ">
+                        <img
+                          src={logo}
+                          alt="profile"
+                          className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[0.25px] border-white shadow-md"
+                        />
+                      </div>
+                    </a>
+                    <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
+                      <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
+                        <MdRemoveRedEye size={20} color="white" />
+                        <p className="text-white">{visitCount}</p>
+                      </div>
+                      <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-gray-600 border border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                        {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
+                        <span
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            color: "white",
+                            justifyContent: "center",
+                          }}
+                          onClick={downloadContactCard}
+                        >
+                          Save Contact
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <div className="px-6">
+                  <div className="flex flex-col justify-center items-start pt-0.5">
+                    <h2 className="text-lg font-semibold text-white pt-1 ">
+                      {name}
+                    </h2>
+                    <h2 className="text-2xl text-start font-semibold text-white pt-1">
+                      {clientName}
+                    </h2>
+                    <p className="text-md text-start font-semibold text-white pt-1 pb-1">
+                      {designation}
+                    </p>
+                  </div>
+                  {/* <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
+          <MdRemoveRedEye size={20} />
+          <p>{visitCount}</p>
+        </div> */}
+
+                  <div className="">
+                    <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                      <a
+                        href={`tel:${phone01}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                      >
+                        <MdOutlinePhoneAndroid size={20} color="white" />
+                      </a>
+                      <a
+                        href={`mailto:${email}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                      >
+                        <AiOutlineMail size={20} color="white" />
+                      </a>
+                      <a
+                        href={`sms:${phone01}`}
+                        className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-gray-600 hover:bg-gray-500 border-white "
+                      >
+                        <RiMessage2Line size={20} color="white" />
+                      </a>
+                      <a
+                        href={`https://wa.me/${whatsapp01}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-500 border-white border-[0.25px] shadow-sm hover:shadow-md "
+                      >
+                        <ImWhatsapp size={20} color="white" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-start">
+                    <p
+                      className="text-sm text-left text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
+                      style={{ textWrap: "wrap" }}
+                    >
+                      {String(description || "")
+                        .replace(/<br\s*\/?>/gi, "\n")
+                        .split(/\r?\n/)
+                        .map((line, index, arr) => (
+                          <React.Fragment key={index}>
+                            {line}
+                            {index < arr.length - 1 ? <br /> : null}
+                          </React.Fragment>
+                        ))}
+                    </p>
+                  </div>
+                  {/* <p className="text-xs text-gray-500">{description}</p> */}
+                  {/* <p className="text-md text-gray-600">{romanName}</p> */}
 
                   {phone01 && (
                     <div className="flex justify-center mt-3">
