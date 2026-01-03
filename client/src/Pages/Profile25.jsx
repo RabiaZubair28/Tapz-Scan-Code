@@ -509,7 +509,7 @@ END:VCARD`;
         </div> */}
 
                   <div className="">
-                    <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                    <div className="flex justify-center space-x-5 mt-3 mb-2.5">
                       <a
                         href={`tel:${phone01}`}
                         target="_blank"
@@ -542,7 +542,7 @@ END:VCARD`;
                       </a>
                     </div>
                   </div>
-                  <div className="flex flex-col justify-center items-start">
+                  <div className="flex flex-col justify-center items-center">
                     <p
                       className="text-sm text-left text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
                       style={{ textWrap: "wrap" }}
