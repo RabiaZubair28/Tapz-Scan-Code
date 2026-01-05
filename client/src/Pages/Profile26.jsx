@@ -335,7 +335,7 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
-            <div className="px-4 mt-4 flex flex-row gap-x-2">
+            <div className="mt-4 flex flex-row gap-x-2">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
@@ -364,7 +364,7 @@ END:VCARD`;
                 &nbsp;&nbsp;Al Sadd
               </a>
             </div>
-            <div className="px-4 mt-2 flex flex-row gap-x-2">
+            <div className=" mt-2 flex flex-row gap-x-2">
               <a
                 href={`https://wa.me/${phone01}`}
                 target="_blank"
@@ -394,7 +394,7 @@ END:VCARD`;
               </a>
             </div>
 
-            <div className="flex items-center justify-center mt-0 mb-0 px-4">
+            <div className="flex items-center justify-center mt-0 mb-0 ">
               <button className="flex w-full gap-x-2 items-center  text-black justify-center bg-white  hover:bg-white  border-[1px] border-black font-semibold  shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-black ">
                 <FaDownload
                   size={20}
