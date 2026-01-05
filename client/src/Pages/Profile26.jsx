@@ -384,7 +384,7 @@ END:VCARD`;
                 &nbsp;&nbsp;&nbsp;Laqtafia
               </a>
               <a
-                href={`https://wa.me/${phone03}`}
+                href={`https://wa.me/${whatsapp03}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
