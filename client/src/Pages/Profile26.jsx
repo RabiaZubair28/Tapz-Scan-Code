@@ -542,27 +542,7 @@ END:VCARD`;
                 </button>
               </div>
             )}
-            {menuLink && (
-              <div className="flex justify-center mt-3">
-                <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
-                  onClick={() => window.open(menuLink, "_blank")}
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={menu}
-                      alt="Profile"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Menu</span>
-                      <span className=" text-sm">{menuName}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight />
-                </button>
-              </div>
-            )}
+
             {instagramLink && (
               <div className="flex justify-center mt-3">
                 <button
@@ -1099,7 +1079,7 @@ END:VCARD`;
             {catalogueLink && (
               <div className="flex justify-center mt-3">
                 <button
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
                   onClick={() => window.open(catalogueLink, "_blank")}
                 >
                   <div className="flex items-center space-x-3">
@@ -1113,8 +1093,8 @@ END:VCARD`;
                         {catalogueName}
                       </span>
                     </div>
-                  </div>{" "}
-                  {/* Chevron/Arrow */}
+                  </div>
+                  {/* <SlArrowRight  /> Chevron/Arrow */}
                 </button>
               </div>
             )}
