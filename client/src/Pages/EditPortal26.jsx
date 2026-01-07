@@ -10730,7 +10730,7 @@ END:VCARD`;
                               }}
                             >
                               {" "}
-                              Enter {selected02}:{" "}
+                              Enter Name:{" "}
                             </span>
                             <span
                               style={{
@@ -10766,7 +10766,7 @@ END:VCARD`;
                             }}
                           >
                             {" "}
-                            Enter {selected}:{" "}
+                            Enter Link / Number:{" "}
                           </span>
                           <span
                             style={{
