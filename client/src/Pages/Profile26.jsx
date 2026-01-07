@@ -354,6 +354,8 @@ END:VCARD`;
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;Laqtafia
               </a>
+            </div>
+            <div className="mt-2 flex flex-row gap-x-2">
               <a
                 href={`tel:${phone03}`}
                 target="_blank"
@@ -363,10 +365,19 @@ END:VCARD`;
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;Al Sadd
               </a>
+              <a
+                href={`tel:${telephone01}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
+              >
+                <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;Wholesale
+              </a>
             </div>
             <div className=" mt-2 flex flex-row gap-x-2">
               <a
-                href={`https://wa.me/${phone01}`}
+                href={`https://wa.me/${whatsapp01}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
@@ -375,7 +386,7 @@ END:VCARD`;
                 &nbsp;&nbsp;Gharrafa
               </a>
               <a
-                href={`https://wa.me/${phone02}`}
+                href={`https://wa.me/${whatsapp02}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
@@ -383,8 +394,19 @@ END:VCARD`;
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
                 &nbsp;&nbsp;Laqtafia
               </a>
+            </div>
+            <div className=" mt-2 flex flex-row gap-x-2">
               <a
                 href={`https://wa.me/${whatsapp03}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
+              >
+                <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;Al Sadd
+              </a>
+              <a
+                href={`https://wa.me/${telephone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
@@ -418,148 +440,6 @@ END:VCARD`;
             <h2 className="text-lg font-semibold text-white text-center  pt-3 ">
               Please select the Menu
             </h2>
-
-            {telephone02 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${telephone02}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={telephone}
-                      alt="Telephone"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Telephone</span>
-                      <span className="text-sm">{telephone02}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-
-            {telephone01 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${telephone01}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={telephone}
-                      alt="Telephone"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Telephone</span>
-                      <span className=" text-sm">{telephone01}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-
-            {telephone03 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`tel:${telephone03}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={telephone}
-                      alt="Telephone"
-                      className="h-10 w-10 rounded-md"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Telephone</span>
-                      <span className="text-sm">{telephone03}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-
-            {whatsapp02 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`https://wa.me/${whatsapp02}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={whatsapp}
-                      alt="Whatsapp02"
-                      className="h-10 w-10"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Whatsapp</span>
-                      <span className="text-sm">{whatsapp02}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-            {whatsapp01 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`https://wa.me/${whatsapp01}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={whatsapp}
-                      alt="Whatsapp02"
-                      className="h-10 w-10"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Whatsapp</span>
-                      <span className="text-sm">{whatsapp01}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
-            {whatsapp03 && (
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`https://wa.me/${whatsapp03}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-5 py-3  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md"
-                >
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={whatsapp}
-                      alt="Whatsapp03"
-                      className="h-10 w-10"
-                    />
-                    <div className="flex flex-col text-start gap-y-1">
-                      <span className="font-medium">Whatsapp</span>
-                      <span className=" text-sm">{whatsapp03}</span>
-                    </div>
-                  </div>
-                  <SlArrowRight /> {/* Chevron/Arrow */}
-                </a>
-              </div>
-            )}
 
             {email02 && (
               <div className="flex justify-center mt-3">
