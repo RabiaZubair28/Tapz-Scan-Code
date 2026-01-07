@@ -4886,25 +4886,84 @@ END:VCARD`;
                     {address}
                   </h2>
                 </div>
-                <div className="px-4 mt-4 flex flex-row gap-x-2">
+                <div className="mt-4 flex flex-row gap-x-2">
                   <a
                     href={`tel:${phone01}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
                   >
-                    <MdOutlinePhoneAndroid size={20} color="#1f153d" />
-                    &nbsp;CALL
+                    <img src={phone} alt="phone01" className="h-6 w-6" />
+                    &nbsp;&nbsp;Gharrafa
                   </a>
-
                   <a
-                    href={`https://wa.me/${phone01}`}
+                    href={`tel:${phone02}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] border-black"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
                   >
-                    <ImWhatsapp size={20} color="#1f153d" />
-                    &nbsp;REACH OUT
+                    <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Laqtafia
+                  </a>
+                </div>
+                <div className="mt-2 flex flex-row gap-x-2">
+                  <a
+                    href={`tel:${phone03}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
+                  >
+                    <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Al Sadd
+                  </a>
+                  <a
+                    href={`tel:${telephone01}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg font-semibold  border-[1px] border-black"
+                  >
+                    <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Wholesale
+                  </a>
+                </div>
+                <div className=" mt-2 flex flex-row gap-x-2">
+                  <a
+                    href={`https://wa.me/${whatsapp01}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
+                  >
+                    <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Gharrafa
+                  </a>
+                  <a
+                    href={`https://wa.me/${whatsapp02}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
+                  >
+                    <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Laqtafia
+                  </a>
+                </div>
+                <div className=" mt-2 flex flex-row gap-x-2">
+                  <a
+                    href={`https://wa.me/${whatsapp03}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
+                  >
+                    <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Al Sadd
+                  </a>
+                  <a
+                    href={`https://wa.me/${telephone02}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
+                  >
+                    <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                    &nbsp;&nbsp;Wholesale
                   </a>
                 </div>
 
