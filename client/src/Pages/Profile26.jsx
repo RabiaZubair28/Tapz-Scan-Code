@@ -406,7 +406,7 @@ END:VCARD`;
                 &nbsp;&nbsp;Al Sadd
               </a>
               <a
-                href={`https://wa.me/${telephone01}`}
+                href={`https://wa.me/${telephone02}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-white  shadow-sm hover:shadow-md hover:bg-gray-100 text-[#1f153d] py-3 rounded-lg border-[1px] font-semibold  border-black"
