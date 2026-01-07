@@ -25,7 +25,7 @@ import menu from "../assets/menu.png";
 import catalog from "../assets/menu.png";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
-import telephone from "../assets/telephone01.jpg";
+import telephone from "../assets/phone.png";
 import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
