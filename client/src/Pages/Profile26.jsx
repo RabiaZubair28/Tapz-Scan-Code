@@ -24,7 +24,7 @@ import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
-import catalog from "../assets/menu.png";
+import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
@@ -1104,7 +1104,7 @@ END:VCARD`;
                 >
                   <div className="flex items-center space-x-3">
                     <img
-                      src={menu}
+                      src={catalog}
                       alt="Profile"
                       className="h-10 w-10 rounded-md"
                     />
@@ -1127,7 +1127,7 @@ END:VCARD`;
                 >
                   <div className="flex items-center space-x-3">
                     <img
-                      src={menu}
+                      src={catalog}
                       alt="Profile"
                       className="h-10 w-10 rounded-md"
                     />
@@ -1149,7 +1149,7 @@ END:VCARD`;
                 >
                   <div className="flex items-center space-x-3">
                     <img
-                      src={menu}
+                      src={catalog}
                       alt="Profile"
                       className="h-10 w-10 rounded-md"
                     />
@@ -1157,6 +1157,26 @@ END:VCARD`;
                       <span className="text-lg font-semibold">
                         {profileName02}
                       </span>
+                    </div>
+                  </div>
+                  {/* <SlArrowRight  /> Chevron/Arrow */}
+                </button>
+              </div>
+            )}
+            {menuLink && (
+              <div className="flex justify-center mt-3">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-4  bg-white hover:bg-gray-50 text-[#231f20] border-[0.25px] border-[#38572e] shadow rounded-lg max-w-md gap-x-2"
+                  onClick={() => window.open(menuLink, "_blank")}
+                >
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={catalog}
+                      alt="Profile"
+                      className="h-10 w-10 rounded-md"
+                    />
+                    <div className="flex flex-col text-start">
+                      <span className="text-lg font-semibold">{menuName}</span>
                     </div>
                   </div>
                   {/* <SlArrowRight  /> Chevron/Arrow */}
