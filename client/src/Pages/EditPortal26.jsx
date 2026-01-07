@@ -4812,7 +4812,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-[10rem] h-[10rem] mx-auto rounded-2xl border-[2px] border-white shadow-md"
+                        className="w-[10rem] h-[10rem] mx-auto rounded-[50%] border-[2px] border-white shadow-md"
                       />
                     </div>
                   </a>
