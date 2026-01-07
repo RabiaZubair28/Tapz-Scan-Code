@@ -1234,11 +1234,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Phone Number updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating Phone Number:", error);
     }
   };
   const handleAddTelephone01 = async (id) => {
@@ -1253,11 +1253,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name Added successfully:", response.data);
+        console.log("Phone Number Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding name:", error);
+      console.error("Error Adding Phone Number:", error);
     }
   };
   const handleDeleteTelephone01 = async (id) => {
@@ -1271,11 +1271,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Phone Number updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating Phone Number:", error);
     }
   };
   const handleEditTelephone02 = async (id) => {
@@ -1294,11 +1294,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Whatsapp updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating Whatsapp:", error);
     }
   };
   const handleAddTelephone02 = async (id) => {
@@ -1313,11 +1313,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name Added successfully:", response.data);
+        console.log("Whatsapp Added successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error Adding name:", error);
+      console.error("Error Adding Whatsapp:", error);
     }
   };
   const handleDeleteTelephone02 = async (id) => {
@@ -1331,11 +1331,11 @@ END:VCARD`;
       );
 
       if (response.status === 200) {
-        console.log("Name updated successfully:", response.data);
+        console.log("Whatsapp updated successfully:", response.data);
         // Update the state or trigger a re-render here as needed
       }
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating Whatsapp:", error);
     }
   };
   const handleEditTelephone03 = async (id) => {
@@ -5212,7 +5212,7 @@ END:VCARD`;
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-3 w-full">
                         <img
-                          src={telephone}
+                          src={phone}
                           alt="Telephone01"
                           className="h-10 w-10"
                         />
@@ -5220,7 +5220,7 @@ END:VCARD`;
                           {/* Telephone Info */}
                           {!modal49 && !editTelephone01 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Telephone</span>
+                              <span className="font-medium">Phone</span>
                               <span className=" text-sm">{telephone01}</span>
                             </div>
                           )}
@@ -5271,7 +5271,7 @@ END:VCARD`;
                           {/* Edit Telephone Input */}
                           {editTelephone01 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Telephone</span>
+                              <span className="font-medium">Phone</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <input
                                   id="telephone01"
@@ -5308,7 +5308,7 @@ END:VCARD`;
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-3 w-full">
                         <img
-                          src={telephone}
+                          src={whatsapp}
                           alt="Telephone02"
                           className="h-10 w-10"
                         />
@@ -5316,7 +5316,7 @@ END:VCARD`;
                           {/* Telephone Info */}
                           {!modal47 && !editTelephone02 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Telephone</span>
+                              <span className="font-medium">Whatsapp</span>
                               <span className=" text-sm">{telephone02}</span>
                             </div>
                           )}
@@ -5367,7 +5367,7 @@ END:VCARD`;
                           {/* Edit Telephone Input */}
                           {editTelephone02 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Telephone</span>
+                              <span className="font-medium">Whatsapp</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <input
                                   id="telephone02"
@@ -9021,7 +9021,7 @@ END:VCARD`;
                         <div className="flex flex-1 items-center justify-between">
                           {!modal45 && !editMenu && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <span className=" text-sm">{menuName}</span>
                             </div>
                           )}
@@ -9066,16 +9066,16 @@ END:VCARD`;
                           )}
                           {editMenu && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Menu Name:</label>
+                                  <label>Catalogue Name:</label>
                                   <input
                                     id="menuText"
                                     placeholder={menuName}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Menu Link:</label>
+                                  <label>Catalogue Link:</label>
                                   <input
                                     id="menuLink"
                                     placeholder={menuLink}
@@ -9166,13 +9166,13 @@ END:VCARD`;
                               <span className="font-medium">Catalogue</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Account Name:</label>
+                                  <label>Catalogue Name:</label>
                                   <input
                                     id="catalogueText"
                                     placeholder={catalogueName}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Account Link:</label>
+                                  <label>Catalogue Link:</label>
                                   <input
                                     id="catalogueLink"
                                     placeholder={catalogueLink}
@@ -9211,7 +9211,7 @@ END:VCARD`;
                         <div className="flex flex-1 items-center justify-between">
                           {!modal48 && !editProfile01 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <span className=" text-sm">{profileName01}</span>
                             </div>
                           )}
@@ -9256,16 +9256,16 @@ END:VCARD`;
                           )}
                           {editProfile01 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Menu Name:</label>
+                                  <label>Catalogue Name:</label>
                                   <input
                                     id="profileText01"
                                     placeholder={profileName01}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Menu Link:</label>
+                                  <label>Catalogue Link:</label>
                                   <input
                                     id="profile01"
                                     placeholder={profileLink01}
@@ -9304,7 +9304,7 @@ END:VCARD`;
                         <div className="flex flex-1 items-center justify-between">
                           {!modal47 && !editProfile02 && (
                             <div className="flex flex-col text-start gap-y-1">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <span className=" text-sm">{profileName02}</span>
                             </div>
                           )}
@@ -9349,16 +9349,16 @@ END:VCARD`;
                           )}
                           {editProfile02 && (
                             <div className="flex flex-col text-start gap-y-1 w-full">
-                              <span className="font-medium">Menu</span>
+                              <span className="font-medium">Catalogue</span>
                               <div className="flex items-center space-x-2 mt-1">
                                 <div className="flex flex-col space-y-2 mt-1">
-                                  <label>Menu Name:</label>
+                                  <label>Catalogue Name:</label>
                                   <input
                                     id="profileText02"
                                     placeholder={profileName02}
                                     className="flex-1 max-w-[150px] px-3 py-0.5 border rounded-md focus:outline-none"
                                   />
-                                  <label>Menu Link:</label>
+                                  <label>Catalogue Link:</label>
                                   <input
                                     id="profile02"
                                     placeholder={profileLink02}
@@ -10614,7 +10614,7 @@ END:VCARD`;
                           setSelected("Menu Link");
                           setSelected02("Menu Name");
                         }}
-                        src={menu}
+                        src={catalog}
                         height={50}
                         width={50}
                       ></img>
@@ -10646,7 +10646,7 @@ END:VCARD`;
                           setSelected("Profile Link");
                           setSelected02("Profile Name");
                         }}
-                        src={profile}
+                        src={catalog}
                         height={50}
                         width={50}
                       ></img>
@@ -11019,22 +11019,22 @@ END:VCARD`;
                               document.getElementById("add-link").value = "";
                             } else if (selected == "Menu Link") {
                               handleAddMenu(_id);
-                              toast("Menu Added Successfully!");
+                              toast("Catalogue Added Successfully!");
                               document.getElementById("add-link").value = "";
                             } else if (selected == "Catalogue Link") {
                               handleAddCatalogue(_id);
-                              toast("Menu Added Successfully!");
+                              toast("Catalogue Added Successfully!");
                               document.getElementById("add-link").value = "";
                             } else if (selected == "Profile Link") {
                               if (profileLink01 == "") {
                                 handleAddProfile01(_id);
-                                toast("Profile Added Successfully!");
+                                toast("Catalogue Added Successfully!");
                                 document.getElementById("add-link").value = "";
                                 document.getElementById("add-link-text").value =
                                   "";
                               } else if (profileLink02 == "") {
                                 handleAddProfile02(_id);
-                                toast("Profile Added Successfully!");
+                                toast("Catalogue Added Successfully!");
                                 document.getElementById("add-link").value = "";
                                 document.getElementById("add-link-text").value =
                                   "";
