@@ -61,7 +61,7 @@ import { ImWhatsapp } from "react-icons/im";
 import linkedin02 from "../assets/download.png";
 import { MdRemoveRedEye } from "react-icons/md";
 // import { link } from "../../../server/router/auth-router";
-const EditPortal24 = () => {
+const EditPortal26 = () => {
   const [show, setShow] = useState(false);
   const [show02, setShow02] = useState(false);
   const [show03, setShow03] = useState(false);
@@ -11194,4 +11194,4 @@ END:VCARD`;
   }
 };
 
-export default EditPortal24;
+export default EditPortal26;
