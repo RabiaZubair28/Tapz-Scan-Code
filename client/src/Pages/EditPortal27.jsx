@@ -1,5 +1,7 @@
 import React from "react";
 
-export const EditPortal27 = () => {
+const EditPortal27 = () => {
   return <div>EditPortal27</div>;
 };
+
+export default EditPortal27;
