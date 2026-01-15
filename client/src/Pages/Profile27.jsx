@@ -25,17 +25,17 @@ import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
 import {
   FaDownload,
+  FaFacebookF,
   FaGift,
   FaGlobe,
+  FaInstagram,
+  FaLinkedinIn,
   FaShoppingBag,
   FaSnapchatGhost,
+  FaTelegramPlane,
+  FaWhatsapp,
 } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa6";
-import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialInstagram, TiSocialTwitter } from "react-icons/ti";
-import { TiSocialLinkedin } from "react-icons/ti";
-import { FaTelegramPlane } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { SlArrowRight } from "react-icons/sl";
 import vCard from "vcards-js";
 import {
@@ -379,7 +379,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-2 border-white bg-[#1877F2] flex items-center justify-center">
-                          <TiSocialFacebook size={30} color="white" />
+                          <FaFacebookF size={26} color="white" />
                         </div>
                       </FacebookShareButton>
                     </div>
@@ -391,7 +391,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-2 border-white bg-[#0A66C2] flex items-center justify-center">
-                          <TiSocialLinkedin size={28} color="white" />
+                          <FaLinkedinIn size={26} color="white" />
                         </div>
                       </LinkedinShareButton>
                     </div>
@@ -415,7 +415,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-2 border-white bg-[#25D366] flex items-center justify-center">
-                          <IoLogoWhatsapp size={26} color="white" />
+                          <FaWhatsapp size={26} color="white" />
                         </div>
                       </WhatsappShareButton>
                     </div>
@@ -444,7 +444,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <TiSocialInstagram size={30} color="white" />
+                      <FaInstagram size={26} color="white" />
                     </a>
                   )}
                   {twitterLink && (
@@ -453,7 +453,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <TiSocialTwitter size={30} color="white" />
+                      <FaXTwitter size={24} color="white" />
                     </a>
                   )}
                   {whatsapp01 && (
@@ -462,7 +462,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <IoLogoWhatsapp size={28} color="white" />
+                      <FaWhatsapp size={26} color="white" />
                     </a>
                   )}
                   {tiktokLink && (
@@ -529,7 +529,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <IoLogoWhatsapp size={30} color="white" />
+                          <FaWhatsapp size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -591,7 +591,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <IoLogoWhatsapp size={30} color="white" />
+                          <FaWhatsapp size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -678,7 +678,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <TiSocialInstagram size={32} color="white" />
+                          <FaInstagram size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -707,7 +707,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <TiSocialTwitter size={32} color="white" />
+                          <FaXTwitter size={26} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">X</p>
