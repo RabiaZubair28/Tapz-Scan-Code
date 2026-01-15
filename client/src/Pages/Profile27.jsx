@@ -385,7 +385,7 @@ END:VCARD`;
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} color="white" />
+                      <FaDownload size={20} color="black" />
                     </div>
 
                     <div className="social-btn">
@@ -395,7 +395,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
-                          <FaFacebookF size={26} color="white" />
+                          <FaFacebookF size={26} color="black" />
                         </div>
                       </FacebookShareButton>
                     </div>
@@ -407,7 +407,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
-                          <FaLinkedinIn size={26} color="white" />
+                          <FaLinkedinIn size={26} color="black" />
                         </div>
                       </LinkedinShareButton>
                     </div>
@@ -419,7 +419,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]  flex items-center justify-center">
-                          <FaTelegramPlane size={22} color="white" />
+                          <FaTelegramPlane size={22} color="black" />
                         </div>
                       </TelegramShareButton>
                     </div>
@@ -431,7 +431,7 @@ END:VCARD`;
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
-                          <FaWhatsapp size={26} color="white" />
+                          <FaWhatsapp size={26} color="black" />
                         </div>
                       </WhatsappShareButton>
                     </div>
