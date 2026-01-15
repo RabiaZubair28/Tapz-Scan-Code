@@ -448,7 +448,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-48 h-48 mt-5 mx-auto rounded-full border-[0.25px] border-[#b89a64] shadow-md"
+                        className="w-48 h-48 mt-5 mx-auto rounded-full border-[3px] border-[#b89a64] shadow-md"
                       />
                     </div>
                   </a>
