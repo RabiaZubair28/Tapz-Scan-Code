@@ -379,7 +379,7 @@ END:VCARD`;
                   </div>
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12  text-white p-3 rounded-full  flex items-center justify-center border-[2px] border-[#b89a64]"
+                      className="w-12 h-12  text-black p-3 rounded-full  flex items-center justify-center border-[2px] border-[#b89a64]"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
