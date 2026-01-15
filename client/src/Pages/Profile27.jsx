@@ -44,7 +44,12 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
-import { FaMapLocation, FaTiktok, FaXTwitter } from "react-icons/fa6";
+import {
+  FaMapLocation,
+  FaTiktok,
+  FaTwitter,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { SlArrowRight } from "react-icons/sl";
 import vCard from "vcards-js";
 import {
@@ -364,7 +369,7 @@ END:VCARD`;
             >
               <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
                 <ImCross
-                  className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
+                  className="absolute top-4 right-4 cursor-pointer text-white"
                   onClick={handleClose}
                 />
 
@@ -374,7 +379,7 @@ END:VCARD`;
                   </div>
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                      className="w-12 h-12  text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
@@ -389,7 +394,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#1877F2] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
                           <FaFacebookF size={26} color="white" />
                         </div>
                       </FacebookShareButton>
@@ -401,7 +406,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#0A66C2] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
                           <FaLinkedinIn size={26} color="white" />
                         </div>
                       </LinkedinShareButton>
@@ -413,7 +418,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#229ED9] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
                           <FaTelegramPlane size={22} color="white" />
                         </div>
                       </TelegramShareButton>
@@ -1182,7 +1187,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Share Profile
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-[#b89a64]" />
                   <div className="flex justify-center space-x-3 mt-3">
                     <div className="social-btn ">
                       <FacebookShareButton
@@ -1194,7 +1199,7 @@ END:VCARD`;
                           size={40}
                           color="white"
                           alt="Facebook"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </FacebookShareButton>
                     </div>
@@ -1205,10 +1210,11 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={twitter02} // Replace with the actual path to the Twitter icon
+                        <FaTwitter
+                          size={40}
+                          color="white" // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TwitterShareButton>
                     </div>
@@ -1223,7 +1229,7 @@ END:VCARD`;
                           size={40}
                           color="white" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </LinkedinShareButton>
                     </div>
@@ -1239,7 +1245,7 @@ END:VCARD`;
                           color="white"
                           // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TelegramShareButton>
                     </div>
@@ -1256,7 +1262,7 @@ END:VCARD`;
                           size={40}
                           color="white"
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </a>
                     </div>
@@ -1289,11 +1295,6 @@ END:VCARD`;
                     All Rights Reserved.
                   </p>
                 </div>
-
-                <p className="pt-8 text-white/70 text-sm">
-                  Copyright © <span className="company">{companyName}</span>.
-                  All Rights Reserved.
-                </p>
               </div>
             </div>
           )}
