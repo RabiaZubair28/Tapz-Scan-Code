@@ -40,7 +40,6 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { SlArrowRight } from "react-icons/sl";
-import vCard from "vcards-js";
 import {
   FacebookShareButton,
   TelegramShareButton,
@@ -245,26 +244,104 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const websiteLine = website ? `URL:${website}\n` : "";
+    const sanitizeVcardText = (value) =>
+      String(value ?? "")
+        .replace(/\r\n/g, "\n")
+        .replace(/\r/g, "\n")
+        .replace(/\n/g, "\\n")
+        .trim();
 
-    const whatsappLine = whatsapp
-      ? `TEL;TYPE=CELL;TYPE=WHATSAPP:${whatsapp}\n`
-      : "";
+    const foldVcardLine = (line, maxLen = 75) => {
+      if (!line || line.length <= maxLen) return line;
+      let out = "";
+      for (let i = 0; i < line.length; i += maxLen) {
+        const chunk = line.slice(i, i + maxLen);
+        out += i === 0 ? chunk : `\r\n ${chunk}`;
+      }
+      return out;
+    };
 
-    const logoLine = logo ? `PHOTO;ENCODING=b;TYPE=JPG:${logo}\n` : "";
+    const arrayBufferToBase64 = (buffer) => {
+      const bytes = new Uint8Array(buffer);
+      const chunkSize = 0x8000;
+      let binary = "";
+      for (let i = 0; i < bytes.length; i += chunkSize) {
+        binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+      }
+      return btoa(binary);
+    };
 
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:${clientName};;;;
-FN:${clientName}
-ORG:${name}
-TITLE:${designation}
-TEL;CELL:${phone01}
-TEL;CELL:${phone02}
-${whatsappLine}EMAIL;HOME:${email}
-${websiteLine}${logoLine}END:VCARD`;
+    const getLogoBase64 = async () => {
+      if (!logo) return null;
 
-    const blob = new Blob([vcard], { type: "text/vcard" });
+      // If logo already provided as a data URL, just extract base64 + mime.
+      if (typeof logo === "string" && logo.startsWith("data:")) {
+        const match = logo.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.*)$/);
+        if (!match) return null;
+        return { mime: match[1], base64: match[2] };
+      }
+
+      // Otherwise, fetch the image and embed it.
+      try {
+        const response = await axios.get(logo, { responseType: "arraybuffer" });
+        const mime =
+          response.headers?.["content-type"] ||
+          (typeof logo === "string" && logo.toLowerCase().includes(".png")
+            ? "image/png"
+            : "image/jpeg");
+        return { mime, base64: arrayBufferToBase64(response.data) };
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const lines = ["BEGIN:VCARD", "VERSION:3.0"];
+
+    if (clientName) lines.push(`N:${sanitizeVcardText(clientName)};;;;`);
+    if (clientName) lines.push(`FN:${sanitizeVcardText(clientName)}`);
+    if (name) lines.push(`ORG:${sanitizeVcardText(name)}`);
+    if (designation) lines.push(`TITLE:${sanitizeVcardText(designation)}`);
+
+    if (phone01) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone01)}`);
+    if (phone02) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone02)}`);
+    if (phone03) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone03)}`);
+
+    if (whatsapp01)
+      lines.push(
+        `TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp01)}`
+      );
+    if (whatsapp02)
+      lines.push(
+        `TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp02)}`
+      );
+    if (whatsapp03)
+      lines.push(
+        `TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp03)}`
+      );
+
+    if (email) lines.push(`EMAIL;TYPE=HOME:${sanitizeVcardText(email)}`);
+    if (website) lines.push(`URL:${sanitizeVcardText(website)}`);
+
+    const logoData = await getLogoBase64();
+    if (logoData?.base64) {
+      const type = logoData.mime?.toLowerCase().includes("png")
+        ? "PNG"
+        : "JPEG";
+      const photoLine = foldVcardLine(
+        `PHOTO;ENCODING=b;TYPE=${type}:${logoData.base64}`
+      );
+      const logoLine = foldVcardLine(
+        `LOGO;ENCODING=b;TYPE=${type}:${logoData.base64}`
+      );
+      lines.push(photoLine);
+      lines.push(logoLine);
+    }
+
+    lines.push("END:VCARD");
+
+    const vcard = `${lines.join("\r\n")}\r\n`;
+
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
 
     // iOS check
