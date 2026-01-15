@@ -26,14 +26,13 @@ import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
-import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
 import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaPhoneAlt } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
 import { TiSocialTwitter } from "react-icons/ti";
 import { TiSocialLinkedin } from "react-icons/ti";
@@ -853,11 +852,9 @@ const Profile04 = () => {
                         className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaPhoneAlt size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Telephone</span>
                             <span className="text-sm">{telephone02}</span>
@@ -877,11 +874,9 @@ const Profile04 = () => {
                         className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaPhoneAlt size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Telephone</span>
                             <span className=" text-sm">{telephone01}</span>
@@ -901,11 +896,9 @@ const Profile04 = () => {
                         className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaPhoneAlt size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Telephone</span>
                             <span className="text-sm">{telephone03}</span>
