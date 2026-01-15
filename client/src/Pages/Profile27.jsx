@@ -544,7 +544,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال الموقع الإلكتروني
+                            {websiteName}
                           </p>
                         </div>
                       </div>
@@ -573,7 +573,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال الواتساب
+                            {whatsapp01}
                           </p>
                         </div>
                       </div>
@@ -602,40 +602,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            التوزيعات وخدمة التبخير للمناسبات
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-
-                  {(whatsapp02 || profileLink02) && (
-                    <a
-                      href={
-                        whatsapp02
-                          ? `https://wa.me/${whatsapp02}`
-                          : profileLink02
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={28} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            VIP Room Whatsapp | VIP
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            واتساب غرفة الـ VIP
+                            {profileName01}
                           </p>
                         </div>
                       </div>
@@ -658,13 +625,13 @@ END:VCARD`;
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through Boutiqaat
+                            Order through Catalog
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال بوتيكات
+                            {catalogueName}
                           </p>
                         </div>
                       </div>
@@ -693,7 +660,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            تيك توك
+                            {tiktokName}
                           </p>
                         </div>
                       </div>
@@ -722,7 +689,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            انستغرام
+                            {instagramName}
                           </p>
                         </div>
                       </div>
@@ -749,7 +716,7 @@ END:VCARD`;
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            منصة إكس
+                            {twitterName}
                           </p>
                         </div>
                       </div>
