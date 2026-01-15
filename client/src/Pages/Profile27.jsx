@@ -59,6 +59,7 @@ import { RiMessage2Line } from "react-icons/ri";
 import { ImWhatsapp } from "react-icons/im";
 import linkedin02 from "../assets/download.png";
 import { MdRemoveRedEye } from "react-icons/md";
+import fb from "../assets/fb.png";
 
 const Profile27 = () => {
   // SAME LOGIC AS Profile04 (only UI below changed)
