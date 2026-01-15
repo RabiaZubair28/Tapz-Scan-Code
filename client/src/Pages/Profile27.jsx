@@ -364,12 +364,12 @@ END:VCARD`;
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className="qr-modal min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{ backgroundAttachment: "fixed" }}
             >
-              <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+              <div className="bg-white border-[#b89a64] rounded-lg pb-8 pt-16 px-10 relative">
                 <ImCross
-                  className="absolute top-4 right-4 cursor-pointer text-white"
+                  className="absolute top-4 right-4 cursor-pointer text-[#b89a64]"
                   onClick={handleClose}
                 />
 
@@ -379,13 +379,13 @@ END:VCARD`;
                   </div>
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12  text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                      className="w-12 h-12  text-white p-3 rounded-full  flex items-center justify-center border-[2px] border-[#b89a64]"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} />
+                      <FaDownload size={20} color="white" />
                     </div>
 
                     <div className="social-btn">
@@ -394,7 +394,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
                           <FaFacebookF size={26} color="white" />
                         </div>
                       </FacebookShareButton>
@@ -406,7 +406,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
                           <FaLinkedinIn size={26} color="white" />
                         </div>
                       </LinkedinShareButton>
@@ -418,7 +418,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white  flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]  flex items-center justify-center">
                           <FaTelegramPlane size={22} color="white" />
                         </div>
                       </TelegramShareButton>
@@ -430,7 +430,7 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#25D366] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] flex items-center justify-center">
                           <FaWhatsapp size={26} color="white" />
                         </div>
                       </WhatsappShareButton>
@@ -443,7 +443,7 @@ END:VCARD`;
 
           {!show && !show02 && (
             <div
-              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-gradient-to-tr from-[#0f1b12] via-[#1f2a20] to-[#0f1b12]"
+              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-black"
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
