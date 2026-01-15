@@ -252,7 +252,7 @@ ORG:${name}
 TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
-EMAIL;HOME:${email}
+EMAIL:${email}
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
