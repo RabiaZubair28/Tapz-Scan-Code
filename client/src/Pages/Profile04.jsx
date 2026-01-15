@@ -32,7 +32,7 @@ import { IoIosAddCircle } from "react-icons/io";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
-import { FaDownload, FaPhoneAlt } from "react-icons/fa";
+import { FaDownload, FaPhoneAlt, FaStar } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
 import { TiSocialTwitter } from "react-icons/ti";
 import { TiSocialLinkedin } from "react-icons/ti";
@@ -1554,11 +1554,9 @@ const Profile04 = () => {
                         onClick={() => window.open(googleReviewLink, "_blank")}
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaStar size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Google Review</span>
                             <span className="text-sm">{googleReviewName}</span>
@@ -1577,11 +1575,9 @@ const Profile04 = () => {
                         }
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaStar size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Google Review</span>
                             <span className="text-sm">
@@ -1602,11 +1598,9 @@ const Profile04 = () => {
                         }
                       >
                         <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
+                          <div className="h-10 w-10 rounded-md flex items-center justify-center bg-white/10">
+                            <FaStar size={22} color="white" />
+                          </div>
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Google Review</span>
                             <span className=" text-sm">
