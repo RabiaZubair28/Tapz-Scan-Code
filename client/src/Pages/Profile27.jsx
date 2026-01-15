@@ -500,6 +500,257 @@ END:VCARD`;
                   )}
                 </div>
 
+                <div className="flex flex-col gap-4">
+                  {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGlobe size={30} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Order through our website
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {websiteName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {whatsapp01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaWhatsapp size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Whatsapp
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {profileLink01 && (
+                    <a
+                      href={profileLink01}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGift size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Company Profile
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {profileName01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {whatsapp02 && (
+                    <a
+                      href={`https://wa.me/${whatsapp02}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaWhatsapp size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Whatsapp
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {whatsapp02}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {catalogueLink && (
+                    <a
+                      href={catalogueLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaShoppingBag size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Catalogue
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {catalogueName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {tiktokLink && (
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaTiktok size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Tik Tok
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                           {tiktokName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaInstagram size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Instagram
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaXTwitter size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{twitterName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                </div>
+
+                <p className="pt-8 text-white/70 text-sm">
+                  Copyright © <span className="company">{companyName}</span>.
+                  All Rights Reserved.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  } else {
+    return (
+      <div
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-[#1f2a20] pt-[25%]"
+        style={{ backgroundAttachment: "fixed" }}
+      >
+        <ScaleLoader
+          color={"white"}
+          size={50}
+
                 {(img01 != "" ||
                   img02 != "" ||
                   img03 != "" ||
