@@ -40,7 +40,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { SlArrowRight } from "react-icons/sl";
-import vCardsJS from "vcards-js";
+import vCard from "vcards-js";
 import {
   FacebookShareButton,
   TelegramShareButton,
@@ -245,56 +245,26 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const card = vCardsJS();
-    card.firstName = String(clientName || "");
-    card.formattedName = String(clientName || "");
-    card.organization = String(name || "");
-    card.title = String(designation || "");
-    if (phone01) card.cellPhone = String(phone01);
-    if (phone02) card.workPhone = String(phone02);
-    if (phone03) card.homePhone = String(phone03);
-    if (email) card.email = String(email);
-    if (website) card.url = String(website);
-    if (logo) card.logo.embedFromString(logo, "image/jpg");
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${clientName};;;;
+FN:${clientName}
+ORG:${name}
+TITLE:${designation}
+TEL;CELL:${phone01}
+TEL;TYPE=CELL,WHATSAPP:${phone02}
+EMAIL;HOME:${email}
+URL:${website}
+LOGO;ENCODING=b;TYPE=JPEG:${logo}
+END:VCARD`;
 
-    let vCardString = card.getFormattedString();
-
-    // Inject WhatsApp numbers (vcards-js has no native WhatsApp TEL field).
-    const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
-      .filter(Boolean)
-      .map((n) => String(n).trim())
-      .filter(Boolean);
-
-    if (whatsappNumbers.length) {
-      const whatsappLines = whatsappNumbers.map(
-        (n) => `TEL;TYPE=CELL;TYPE=WHATSAPP:${n}`
-      );
-      const endIndex = vCardString.lastIndexOf("END:VCARD");
-      if (endIndex !== -1) {
-        const beforeEnd = vCardString.slice(0, endIndex).replace(/\r?\n$/, "");
-        vCardString = `${beforeEnd}\r\n${whatsappLines.join(
-          "\r\n"
-        )}\r\nEND:VCARD\r\n`;
-      }
-    }
-
-    const blob = new Blob([vCardString], { type: "text/vcard;charset=utf-8" });
+    const blob = new Blob([vcard], { type: "text/vcard" });
     const url = URL.createObjectURL(blob);
 
-    // iOS check
+    // Check if it's an iPhone/iPad device
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    if (isIOS) {
-      window.location.href = url;
-    } else {
-      const newLink = document.createElement("a");
-      newLink.download = `${clientName}.vcf`;
-      newLink.href = url;
-      newLink.click();
-    }
 
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  };
 
   const downloadQr = (rootEle) => {
     const input = document.getElementById(rootEle);
