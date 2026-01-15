@@ -245,6 +245,14 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
+    const websiteLine = website ? `URL:${website}\n` : "";
+
+    const whatsappLine = whatsapp
+      ? `TEL;TYPE=CELL;TYPE=WHATSAPP:${whatsapp}\n`
+      : "";
+
+    const logoLine = logo ? `PHOTO;ENCODING=b;TYPE=JPG:${logo}\n` : "";
+
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
@@ -253,28 +261,24 @@ ORG:${name}
 TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
-EMAIL;HOME:${email}
-URL:${website}
-END:VCARD`;
+${whatsappLine}EMAIL;HOME:${email}
+${websiteLine}${logoLine}END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
     const url = URL.createObjectURL(blob);
 
-    // Check if it's an iPhone/iPad device
+    // iOS check
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
-      // Open vCard in a new tab instead of forcing download
       window.location.href = url;
     } else {
-      // Regular download for other devices
       const newLink = document.createElement("a");
       newLink.download = `${clientName}.vcf`;
       newLink.href = url;
       newLink.click();
     }
 
-    // Revoke the object URL to free memory
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
