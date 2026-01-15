@@ -1208,7 +1208,7 @@ END:VCARD`;
                         <img
                           src={twitter02} // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TwitterShareButton>
                     </div>
@@ -1223,7 +1223,7 @@ END:VCARD`;
                           size={40}
                           color="white" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </LinkedinShareButton>
                     </div>
@@ -1239,7 +1239,7 @@ END:VCARD`;
                           color="white"
                           // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TelegramShareButton>
                     </div>
@@ -1256,7 +1256,7 @@ END:VCARD`;
                           size={40}
                           color="white"
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </a>
                     </div>
