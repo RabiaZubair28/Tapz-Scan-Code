@@ -25,6 +25,7 @@ import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
 import {
   FaDownload,
+  FaEnvelope,
   FaFacebook,
   FaFacebookF,
   FaGift,
@@ -830,10 +831,12 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaMailchimp size={26} color="white" />
+                          <FaEnvelope size={26} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">X</p>
+                          <p className="text-white font-semibold truncate">
+                            Email
+                          </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
