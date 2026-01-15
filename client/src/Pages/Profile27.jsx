@@ -1178,6 +1178,118 @@ END:VCARD`;
                   </div>
                 )}
 
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                    Share Profile
+                  </h2>
+                  <hr className="border-gray-300" />
+                  <div className="flex justify-center space-x-3 mt-3">
+                    <div className="social-btn ">
+                      <FacebookShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaFacebookF
+                          size={40}
+                          color="white"
+                          alt="Facebook"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </FacebookShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TwitterShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <img
+                          src={twitter02} // Replace with the actual path to the Twitter icon
+                          alt="Twitter"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </TwitterShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <LinkedinShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaLinkedinIn
+                          size={40}
+                          color="white" // Replace with the actual path to the LinkedIn icon
+                          alt="LinkedIn"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </LinkedinShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TelegramShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaTelegramPlane
+                          size={40}
+                          color="white"
+                          // Replace with the actual path to the Telegram icon
+                          alt="Telegram"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </TelegramShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <a
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaWhatsapp
+                          size={40}
+                          color="white"
+                          alt="WhatsApp"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                    Share Contact & QR
+                  </h2>
+                  <hr className="border-[#b89a64]" />
+                  <div className="flex justify-center space-x-3 mt-3 px-4">
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64]  hover:border-[#b89a64]"
+                      onClick={handleShow}
+                    >
+                      <IoQrCodeSharp size={35} color="white" />
+                    </div>
+
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64] hover:border-[#b89a64]"
+                      onClick={downloadContactCard}
+                      value="download"
+                    >
+                      <FaDownload size={30} color="white" />
+                    </div>
+                  </div>
+
+                  <p className="pt-4 text-white">
+                    Copyright © <span className="company">{companyName}</span>.
+                    All Rights Reserved.
+                  </p>
+                </div>
+
                 <p className="pt-8 text-white/70 text-sm">
                   Copyright © <span className="company">{companyName}</span>.
                   All Rights Reserved.
