@@ -473,7 +473,7 @@ END:VCARD`;
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-4"
+                      className="border-[1px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaInstagram size={26} color="white" />
                     </a>
@@ -483,7 +483,7 @@ END:VCARD`;
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-4"
+                      className="border-[1px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
@@ -493,7 +493,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-4"
+                      className="border-[1px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaWhatsapp size={26} color="white" />
                     </a>
@@ -503,7 +503,7 @@ END:VCARD`;
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-4"
+                      className="border-[1px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaTiktok size={26} color="white" />
                     </a>
@@ -513,7 +513,7 @@ END:VCARD`;
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-4"
+                      className="border-[1px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
