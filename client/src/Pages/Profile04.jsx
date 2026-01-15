@@ -291,6 +291,11 @@ const Profile04 = () => {
       }
     };
 
+    const base64ToBlob = (b64, mime) => {
+      const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+      return new Blob([bytes], { type: mime || "application/octet-stream" });
+    };
+
     const getLogoJpegData = async () => {
       if (!logo) return null;
 
@@ -299,8 +304,7 @@ const Profile04 = () => {
         const match = logo.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.*)$/);
         if (!match) return null;
         try {
-          const bytes = Uint8Array.from(atob(match[2]), (c) => c.charCodeAt(0));
-          const blob = new Blob([bytes], { type: match[1] });
+          const blob = base64ToBlob(match[2], match[1]);
           const jpegBase64 = await blobToJpegBase64(blob);
           return jpegBase64 ? { mime: "image/jpeg", base64: jpegBase64 } : null;
         } catch (e) {
@@ -308,29 +312,50 @@ const Profile04 = () => {
         }
       }
 
-      // Otherwise, fetch the image bytes and convert to JPEG so we accept all formats.
+      // Otherwise, fetch the image server-side (avoids browser CORS), then convert to JPEG.
       try {
-        const response = await axios.get(logo, { responseType: "arraybuffer" });
-        const mime =
-          response.headers?.["content-type"] ||
-          (typeof logo === "string" && logo.toLowerCase().includes(".png")
-            ? "image/png"
-            : "image/jpeg");
-        const normalizedMime = String(mime || "").toLowerCase() === "image/jpg" ? "image/jpeg" : mime;
-        const blob = new Blob([response.data], { type: normalizedMime || "application/octet-stream" });
+        const response = await axios.get(
+          `https://www.scan-taps.com/api/vcard/image?url=${encodeURIComponent(
+            logo
+          )}`
+        );
+        const mimeRaw = String(response.data?.mime || "");
+        const b64 = String(response.data?.base64 || "");
+        if (!mimeRaw.startsWith("image/") || !b64) return null;
+
+        const normalizedMime =
+          mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
+        const blob = base64ToBlob(b64, normalizedMime);
         const jpegBase64 = await blobToJpegBase64(blob);
         if (jpegBase64) return { mime: "image/jpeg", base64: jpegBase64 };
 
         // Fallback: if conversion fails but it's a common supported type, embed as-is.
-        const rawBase64 = arrayBufferToBase64(response.data);
-        if (rawBase64 && (normalizedMime === "image/jpeg" || normalizedMime === "image/png")) {
-          return { mime: normalizedMime, base64: rawBase64 };
+        if (
+          normalizedMime === "image/jpeg" ||
+          normalizedMime === "image/png"
+        ) {
+          return { mime: normalizedMime, base64: b64 };
         }
         return null;
       } catch (e) {
         return null;
       }
     };
+
+    const foldVcardLines = (vcardText) =>
+      String(vcardText || "")
+        .split(/\r?\n/)
+        .map((line) => {
+          const maxLen = 75;
+          if (line.length <= maxLen) return line;
+          let out = "";
+          for (let i = 0; i < line.length; i += maxLen) {
+            const chunk = line.slice(i, i + maxLen);
+            out += (i === 0 ? chunk : `\r\n ${chunk}`);
+          }
+          return out;
+        })
+        .join("\r\n");
 
     const card = vCardsJS();
     card.firstName = String(clientName || "");
@@ -350,7 +375,7 @@ const Profile04 = () => {
       card.photo.embedFromString(logoData.base64, logoData.mime);
     }
 
-    let vCardString = card.getFormattedString();
+    let vCardString = foldVcardLines(card.getFormattedString());
 
     // Inject WhatsApp numbers (vcards-js has no native WhatsApp TEL field).
     const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
