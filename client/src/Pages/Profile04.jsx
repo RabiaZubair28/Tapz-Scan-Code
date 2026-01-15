@@ -245,101 +245,6 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const arrayBufferToBase64 = (buffer) => {
-      const bytes = new Uint8Array(buffer);
-      const chunkSize = 0x8000;
-      let binary = "";
-      for (let i = 0; i < bytes.length; i += chunkSize) {
-        binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
-      }
-      return btoa(binary);
-    };
-
-    const blobToJpegBase64 = async (blob, maxSize = 512) => {
-      const blobUrl = URL.createObjectURL(blob);
-
-      try {
-        const base64 = await new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => {
-            const w = img.naturalWidth || img.width;
-            const h = img.naturalHeight || img.height;
-            if (!w || !h) return resolve(null);
-
-            const scale = Math.min(1, maxSize / Math.max(w, h));
-            const targetW = Math.max(1, Math.round(w * scale));
-            const targetH = Math.max(1, Math.round(h * scale));
-
-            const canvas = document.createElement("canvas");
-            canvas.width = targetW;
-            canvas.height = targetH;
-            const ctx = canvas.getContext("2d");
-            if (!ctx) return resolve(null);
-
-            ctx.drawImage(img, 0, 0, targetW, targetH);
-            const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
-            const parts = dataUrl.split(",");
-            resolve(parts[1] || null);
-          };
-          img.onerror = () => resolve(null);
-          img.src = blobUrl;
-        });
-
-        return base64;
-      } finally {
-        URL.revokeObjectURL(blobUrl);
-      }
-    };
-
-    const getLogoJpegData = async () => {
-      if (!logo) return null;
-
-      // If logo already provided as a data URL, convert it to JPEG for compatibility.
-      if (typeof logo === "string" && logo.startsWith("data:")) {
-        const match = logo.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.*)$/);
-        if (!match) return null;
-        try {
-          const bytes = Uint8Array.from(atob(match[2]), (c) => c.charCodeAt(0));
-          const blob = new Blob([bytes], { type: match[1] });
-          const jpegBase64 = await blobToJpegBase64(blob);
-          return jpegBase64 ? { mime: "image/jpeg", base64: jpegBase64 } : null;
-        } catch (e) {
-          return null;
-        }
-      }
-
-      // Otherwise, fetch the image bytes and convert to JPEG so we accept all formats.
-      try {
-        const response = await axios.get(logo, { responseType: "arraybuffer" });
-        const mime =
-          response.headers?.["content-type"] ||
-          (typeof logo === "string" && logo.toLowerCase().includes(".png")
-            ? "image/png"
-            : "image/jpeg");
-        const normalizedMime =
-          String(mime || "").toLowerCase() === "image/jpg"
-            ? "image/jpeg"
-            : mime;
-        const blob = new Blob([response.data], {
-          type: normalizedMime || "application/octet-stream",
-        });
-        const jpegBase64 = await blobToJpegBase64(blob);
-        if (jpegBase64) return { mime: "image/jpeg", base64: jpegBase64 };
-
-        // Fallback: if conversion fails but it's a common supported type, embed as-is.
-        const rawBase64 = arrayBufferToBase64(response.data);
-        if (
-          rawBase64 &&
-          (normalizedMime === "image/jpeg" || normalizedMime === "image/png")
-        ) {
-          return { mime: normalizedMime, base64: rawBase64 };
-        }
-        return null;
-      } catch (e) {
-        return null;
-      }
-    };
-
     const card = vCardsJS();
     card.firstName = String(clientName || "");
     card.formattedName = String(clientName || "");
@@ -350,13 +255,7 @@ const Profile04 = () => {
     if (phone03) card.homePhone = String(phone03);
     if (email) card.email = String(email);
     if (website) card.url = String(website);
-
-    const logoData = await getLogoJpegData();
-    if (logoData?.base64) {
-      // Ensure logo is saved in the vCard (logo section), and also set photo for compatibility.
-      card.logo.embedFromString(logoData.base64, logoData.mime);
-      card.photo.embedFromString(logoData.base64, logoData.mime);
-    }
+    if (logo) card.logo.embedFromString(logo, "image/jpg");
 
     let vCardString = card.getFormattedString();
 
