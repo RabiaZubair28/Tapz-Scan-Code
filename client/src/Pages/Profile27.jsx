@@ -473,7 +473,7 @@ END:VCARD`;
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-3"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaInstagram size={26} color="white" />
                     </a>
@@ -483,7 +483,7 @@ END:VCARD`;
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-3"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
@@ -493,7 +493,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-3"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaWhatsapp size={26} color="white" />
                     </a>
@@ -503,7 +503,7 @@ END:VCARD`;
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-3"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaTiktok size={26} color="white" />
                     </a>
@@ -513,7 +513,7 @@ END:VCARD`;
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-3"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
@@ -530,7 +530,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaPhone size={28} color="white" />
+                          <FaPhone size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -559,7 +559,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={28} color="white" />
+                          <FaWhatsapp size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -587,7 +587,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaPhoneSquareAlt size={28} color="white" />
+                          <FaPhoneSquareAlt size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -615,7 +615,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={28} color="white" />
+                          <FaInstagram size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -643,7 +643,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={28} color="white" />
+                          <FaInstagram size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -671,7 +671,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaYoutube size={28} color="white" />
+                          <FaYoutube size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -914,7 +914,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaUtensils size={28} color="white" />
+                          <FaUtensils size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -943,7 +943,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGift size={28} color="white" />
+                          <FaGift size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -972,7 +972,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={28} color="white" />
+                          <FaWhatsapp size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -1001,7 +1001,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaShoppingBag size={28} color="white" />
+                          <FaShoppingBag size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
