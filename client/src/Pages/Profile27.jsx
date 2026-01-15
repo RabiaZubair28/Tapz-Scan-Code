@@ -639,34 +639,7 @@ END:VCARD`;
                       </span>
                     </a>
                   )}
-                  {instagramLink && (
-                    <a
-                      href={instagramLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={35} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Instagram
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {instagramName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
+
                   {youtubeLink && (
                     <a
                       href={youtubeLink}
