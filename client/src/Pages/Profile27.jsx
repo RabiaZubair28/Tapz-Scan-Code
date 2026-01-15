@@ -499,9 +499,266 @@ END:VCARD`;
                   )}
                 </div>
 
-                <div className="flex items-center justify-center gap-x-2 pb-3">
-                  <MdRemoveRedEye size={20} color="white" />
-                  <p className="text-white">{visitCount}</p>
+                {(img01 != "" ||
+                  img02 != "" ||
+                  img03 != "" ||
+                  img04 != "" ||
+                  img05 != "" ||
+                  img05 != "" ||
+                  img06 != "" ||
+                  img07 != "" ||
+                  img08 != "" ||
+                  img09 != "" ||
+                  img10 != "") && (
+                  <div className="px-4">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                      Image Gallery
+                    </h2>
+                    <hr className="border-gray-300" />
+                    {img01 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img01}>
+                          <img
+                            src={img01}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img02 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img02}>
+                          <img
+                            src={img02}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img03 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img03}>
+                          <img
+                            src={img03}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img04 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img04}>
+                          <img
+                            src={img04}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img05 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img05}>
+                          <img
+                            src={img05}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img06 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img06}>
+                          <img
+                            src={img06}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img07 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img07}>
+                          <img
+                            src={img07}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                    {img08 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img08}>
+                          <img
+                            src={img08}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img09 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img09}>
+                          <img
+                            src={img09}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                    {img10 && (
+                      <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                        <a href={img10}>
+                          <img
+                            src={img10}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {location != "" && (
+                  <div className="px-4">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                      Location
+                    </h2>
+                    <hr className="border-gray-300" />
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                      {location && (
+                        <iframe
+                          src={location}
+                          width="100%"
+                          height="300"
+                          allowfullscreen=""
+                          loading="lazy"
+                          className="rounded-xl"
+                        ></iframe>
+                      )}
+                    </div>
+                  </div>
+                )}
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                    Share Profile
+                  </h2>
+                  <hr className="border-gray-300" />
+                  <div className="flex justify-center space-x-3 mt-3">
+                    <div className="social-btn ">
+                      <FacebookShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <img
+                          src={fb} // Replace with the actual path to the Facebook icon
+                          alt="Facebook"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </FacebookShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TwitterShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <img
+                          src={twitter02} // Replace with the actual path to the Twitter icon
+                          alt="Twitter"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </TwitterShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <LinkedinShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <img
+                          src={linkedin} // Replace with the actual path to the LinkedIn icon
+                          alt="LinkedIn"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </LinkedinShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TelegramShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <img
+                          src={telegram} // Replace with the actual path to the Telegram icon
+                          alt="Telegram"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </TelegramShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <a
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={whatsapp}
+                          alt="WhatsApp"
+                          className="w-12 h-12 rounded-full border-2 border-white"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                    Share Contact & QR
+                  </h2>
+                  <hr className="border-gray-300" />
+                  <div className="flex justify-center space-x-3 mt-3 px-4">
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      onClick={handleShow}
+                    >
+                      <IoQrCodeSharp size={35} color="white" />
+                    </div>
+
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white"
+                      onClick={downloadContactCard}
+                      value="download"
+                    >
+                      <FaDownload size={30} color="white" />
+                    </div>
+                  </div>
+
+                  <p className="pt-4 text-white">
+                    Copyright © <span className="company">{companyName}</span>.
+                    All Rights Reserved.
+                  </p>
                 </div>
 
                 <p className="pt-8 text-white/70 text-sm">
