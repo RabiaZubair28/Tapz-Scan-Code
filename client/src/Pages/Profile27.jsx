@@ -441,13 +441,13 @@ END:VCARD`;
               style={{ backgroundAttachment: "fixed" }}
             >
               {logo && (
-                <div className="flex  flex-row items-center  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                <div className="flex items-center  justify-center mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
                   <a href={logo}>
                     <div className="relative mb-2 ">
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 mt-5 mx-auto rounded-full border-[0.25px] border-white shadow-md"
+                        className="w-36 h-36 mt-5 mx-auto rounded-full border-[0.25px] border-[#b89a64] shadow-md"
                       />
                     </div>
                   </a>
@@ -458,7 +458,7 @@ END:VCARD`;
                   <h1 className="text-white text-3xl font-semibold" dir="rtl">
                     {clientName}
                   </h1>
-                  <p className="text-white text-md font-medium" dir="rtl">
+                  <p className="text-white text-md" dir="rtl">
                     {description}
                   </p>
                 </div>
@@ -469,6 +469,7 @@ END:VCARD`;
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[1px] border-[#b89a64] rounded-full p-2"
                     >
                       <FaInstagram size={26} color="white" />
                     </a>
@@ -478,6 +479,7 @@ END:VCARD`;
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[1px] border-[#b89a64] rounded-full p-2"
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
@@ -487,6 +489,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[1px] border-[#b89a64] rounded-full p-2"
                     >
                       <FaWhatsapp size={26} color="white" />
                     </a>
@@ -496,6 +499,7 @@ END:VCARD`;
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[1px] border-[#b89a64] rounded-full p-2"
                     >
                       <FaTiktok size={26} color="white" />
                     </a>
@@ -505,6 +509,7 @@ END:VCARD`;
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[1px] border-[#b89a64] rounded-full p-2"
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
@@ -1022,13 +1027,13 @@ END:VCARD`;
                   img08 != "" ||
                   img09 != "" ||
                   img10 != "") && (
-                  <div className="px-4">
+                  <div className="px-0">
                     <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Image Gallery
                     </h2>
-                    <hr className="border-gray-300" />
+                    <hr className="border-[#b89a64]" />
                     {img01 && (
-                      <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img01}>
                           <img
                             src={img01}
@@ -1040,7 +1045,7 @@ END:VCARD`;
                     )}
 
                     {img02 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img02}>
                           <img
                             src={img02}
@@ -1052,7 +1057,7 @@ END:VCARD`;
                     )}
 
                     {img03 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img03}>
                           <img
                             src={img03}
@@ -1064,7 +1069,7 @@ END:VCARD`;
                     )}
 
                     {img04 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img04}>
                           <img
                             src={img04}
@@ -1076,7 +1081,7 @@ END:VCARD`;
                     )}
 
                     {img05 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img05}>
                           <img
                             src={img05}
@@ -1088,7 +1093,7 @@ END:VCARD`;
                     )}
 
                     {img06 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img06}>
                           <img
                             src={img06}
@@ -1100,7 +1105,7 @@ END:VCARD`;
                     )}
 
                     {img07 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img07}>
                           <img
                             src={img07}
@@ -1111,7 +1116,7 @@ END:VCARD`;
                       </div>
                     )}
                     {img08 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img08}>
                           <img
                             src={img08}
@@ -1123,7 +1128,7 @@ END:VCARD`;
                     )}
 
                     {img09 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img09}>
                           <img
                             src={img09}
@@ -1134,7 +1139,7 @@ END:VCARD`;
                       </div>
                     )}
                     {img10 && (
-                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-[#b89a64] shadow-md space-y-2 mt-3">
                         <a href={img10}>
                           <img
                             src={img10}
