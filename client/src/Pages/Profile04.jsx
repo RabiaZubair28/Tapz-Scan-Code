@@ -255,7 +255,7 @@ const Profile04 = () => {
       return btoa(binary);
     };
 
-    const blobToJpegBase64 = async (blob, maxSize = 512) => {
+    const blobToJpegBase64 = async (blob, maxSize = 256) => {
       const blobUrl = URL.createObjectURL(blob);
 
       try {
