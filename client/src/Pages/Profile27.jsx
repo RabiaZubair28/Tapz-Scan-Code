@@ -253,6 +253,7 @@ TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;CELL:${phone02}
 EMAIL:${email}
+
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
@@ -430,10 +431,43 @@ END:VCARD`;
               className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-gradient-to-tr from-[#0f1b12] via-[#1f2a20] to-[#0f1b12]"
               style={{ backgroundAttachment: "fixed" }}
             >
+              {logo && (
+                <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                  <a href={logo}>
+                    <div className="relative mb-2 ">
+                      <img
+                        src={logo}
+                        alt="profile"
+                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[0.25px] border-white shadow-md"
+                      />
+                    </div>
+                  </a>
+                  <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
+                    <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
+                      <MdRemoveRedEye size={20} color="white" />
+                      <p className="text-white">{visitCount}</p>
+                    </div>
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-gray-600 border border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                      {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          color: "white",
+                          justifyContent: "center",
+                        }}
+                        onClick={downloadContactCard}
+                      >
+                        Save Contact
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="px-5">
                 <div className="pt-6 pb-4">
                   <h1 className="text-white text-3xl font-semibold" dir="rtl">
-                    {name || companyName}
+                    {name}
                   </h1>
                 </div>
 
