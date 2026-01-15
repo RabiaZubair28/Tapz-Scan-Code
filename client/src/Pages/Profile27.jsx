@@ -25,17 +25,25 @@ import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
 import {
   FaDownload,
+  FaFacebook,
   FaFacebookF,
   FaGift,
   FaGlobe,
   FaInstagram,
   FaLinkedinIn,
+  FaMailchimp,
+  FaPhone,
+  FaPhoneAlt,
+  FaPhoneSquareAlt,
   FaShoppingBag,
   FaSnapchatGhost,
+  FaStar,
   FaTelegramPlane,
+  FaUtensils,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
-import { FaTiktok, FaXTwitter } from "react-icons/fa6";
+import { FaMapLocation, FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { SlArrowRight } from "react-icons/sl";
 import vCard from "vcards-js";
 import {
@@ -448,8 +456,11 @@ END:VCARD`;
               <div className="px-5">
                 <div className="pt-6 pb-4">
                   <h1 className="text-white text-3xl font-semibold" dir="rtl">
-                    {name}
+                    {clientName}
                   </h1>
+                   <p className="text-white text-md font-medium" dir="rtl">
+                    {description}
+                  </p>
                 </div>
 
                 <div className="flex items-center justify-center gap-5 pb-6">
@@ -501,26 +512,26 @@ END:VCARD`;
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  {website && (
+                  {phone01 && (
                     <a
-                      href={website}
+                      href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGlobe size={30} color="white" />
+                          <FaPhone size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through our website
+                            Phone
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            {websiteName}
+                            {phone01}
                           </p>
                         </div>
                       </div>
@@ -550,6 +561,353 @@ END:VCARD`;
                             dir="rtl"
                           >
                             {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                   {telephone01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaPhoneSquareAlt size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Telephone
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {telephone01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                    {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaInstagram size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Instagram
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                   {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaInstagram size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Instagram
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                   {youtubeLink && (
+                    <a
+                      href={youtubeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaYoutube size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            YouTube
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {tiktokLink && (
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaTiktok size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Tik Tok
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                           {tiktokName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                   {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaXTwitter size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{twitterName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {facebookLink && (
+                    <a
+                      href={facebookLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaFacebook size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{facebookName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleReviewLink && (
+                    <a
+                      href={googleReviewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaStar size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{googleReviewName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  
+                   {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGlobe size={30} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Order through our website
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {websiteName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {email && (
+                    <a
+                      href={email}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaMailchimp size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{email}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {youtubeShortsLink && (
+                    <a
+                      href={youtubeShortsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaLinkedinIn size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{youtubeShortsLink}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleMapLink && (
+                    <a
+                      href={googleMapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaMapLocation size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">X</p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >{googleMapName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {menuLink && (
+                    <a
+                      href={menuLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaUtensils size={28} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Menu
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {menuName}
                           </p>
                         </div>
                       </div>
@@ -645,91 +1003,163 @@ END:VCARD`;
                       </span>
                     </a>
                   )}
+                </div>
 
-                  {tiktokLink && (
-                    <a
-                      href={tiktokLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaTiktok size={26} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Tik Tok
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                           {tiktokName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
+                  {(img01 != "" ||
+              img02 != "" ||
+              img03 != "" ||
+              img04 != "" ||
+              img05 != "" ||
+              img05 != "" ||
+              img06 != "" ||
+              img07 != "" ||
+              img08 != "" ||
+              img09 != "" ||
+              img10 != "") && (
+              <div className="px-4">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  Image Gallery
+                </h2>
+                <hr className="border-gray-300" />
+                {img01 && (
+                  <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img01}>
+                      <img
+                        src={img01}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
                     </a>
-                  )}
+                  </div>
+                )}
 
-                  {instagramLink && (
-                    <a
-                      href={instagramLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={28} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Instagram
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {instagramName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
+                {img02 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img02}>
+                      <img
+                        src={img02}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
                     </a>
-                  )}
+                  </div>
+                )}
 
-                  {twitterLink && (
-                    <a
-                      href={twitterLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaXTwitter size={26} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">X</p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >{twitterName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
+                {img03 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img03}>
+                      <img
+                        src={img03}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
                     </a>
+                  </div>
+                )}
+
+                {img04 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img04}>
+                      <img
+                        src={img04}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img05 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img05}>
+                      <img
+                        src={img05}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img06 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img06}>
+                      <img
+                        src={img06}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img07 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img07}>
+                      <img
+                        src={img07}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+                {img08 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img08}>
+                      <img
+                        src={img08}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+
+                {img09 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img09}>
+                      <img
+                        src={img09}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+                {img10 && (
+                  <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3">
+                    <a href={img10}>
+                      <img
+                        src={img10}
+                        alt="Image"
+                        className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            )}
+            {location != "" && (
+              <div className="px-0">
+                <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  Location
+                </h2>
+                <hr className="border-gray-300" />
+                <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                  {location && (
+                    <iframe
+                      src={location}
+                      width="100%"
+                      height="300"
+                      allowfullscreen=""
+                      loading="lazy"
+                      className="rounded-xl"
+                    ></iframe>
                   )}
                 </div>
+              </div>
+            )}
 
                 <p className="pt-8 text-white/70 text-sm">
                   Copyright © <span className="company">{companyName}</span>.
