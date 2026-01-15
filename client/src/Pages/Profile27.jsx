@@ -448,15 +448,18 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 mt-5 mx-auto rounded-full border-[0.25px] border-[#b89a64] shadow-md"
+                        className="w-48 h-48 mt-5 mx-auto rounded-full border-[0.25px] border-[#b89a64] shadow-md"
                       />
                     </div>
                   </a>
                 </div>
               )}
               <div className="px-5">
-                <div className="pt-6 pb-4">
-                  <h1 className="text-white text-3xl font-semibold" dir="rtl">
+                <div className="pt-5 pb-5">
+                  <h1
+                    className="text-white text-3xl font-semibold pb-3"
+                    dir="rtl"
+                  >
                     {clientName}
                   </h1>
                   <p className="text-white text-md" dir="rtl">
@@ -464,13 +467,13 @@ END:VCARD`;
                   </p>
                 </div>
 
-                <div className="flex items-center justify-center gap-5 pb-6">
+                <div className="flex items-center justify-center gap-4 pb-8">
                   {instagramLink && (
                     <a
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-2"
+                      className="border-[1px] border-[#b89a64] rounded-full p-4"
                     >
                       <FaInstagram size={26} color="white" />
                     </a>
@@ -480,7 +483,7 @@ END:VCARD`;
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-2"
+                      className="border-[1px] border-[#b89a64] rounded-full p-4"
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
@@ -490,7 +493,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-2"
+                      className="border-[1px] border-[#b89a64] rounded-full p-4"
                     >
                       <FaWhatsapp size={26} color="white" />
                     </a>
@@ -500,7 +503,7 @@ END:VCARD`;
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-2"
+                      className="border-[1px] border-[#b89a64] rounded-full p-4"
                     >
                       <FaTiktok size={26} color="white" />
                     </a>
@@ -510,7 +513,7 @@ END:VCARD`;
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[1px] border-[#b89a64] rounded-full p-2"
+                      className="border-[1px] border-[#b89a64] rounded-full p-4"
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
