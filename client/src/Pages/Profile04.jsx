@@ -255,31 +255,86 @@ const Profile04 = () => {
       return btoa(binary);
     };
 
-    const blobToJpegBase64 = async (blob, maxSize = 512) => {
+    const blobToJpegBase64 = async (
+      blob,
+      { maxSize = 512, maxBytes = 256 * 1024 } = {}
+    ) => {
       const blobUrl = URL.createObjectURL(blob);
 
       try {
         const base64 = await new Promise((resolve) => {
           const img = new Image();
-          img.onload = () => {
+          img.onload = async () => {
             const w = img.naturalWidth || img.width;
             const h = img.naturalHeight || img.height;
             if (!w || !h) return resolve(null);
 
-            const scale = Math.min(1, maxSize / Math.max(w, h));
-            const targetW = Math.max(1, Math.round(w * scale));
-            const targetH = Math.max(1, Math.round(h * scale));
-
             const canvas = document.createElement("canvas");
-            canvas.width = targetW;
-            canvas.height = targetH;
             const ctx = canvas.getContext("2d");
             if (!ctx) return resolve(null);
 
-            ctx.drawImage(img, 0, 0, targetW, targetH);
-            const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
-            const parts = dataUrl.split(",");
-            resolve(parts[1] || null);
+            const makeJpegBlob = (targetW, targetH, quality) =>
+              new Promise((r) => {
+                canvas.width = targetW;
+                canvas.height = targetH;
+                ctx.clearRect(0, 0, targetW, targetH);
+                ctx.drawImage(img, 0, 0, targetW, targetH);
+                canvas.toBlob(
+                  (b) => r(b || null),
+                  "image/jpeg",
+                  Math.max(0.1, Math.min(1, quality))
+                );
+              });
+
+            const blobToBase64 = (b) =>
+              new Promise((r) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  const result = String(reader.result || "");
+                  const parts = result.split(",");
+                  r(parts[1] || null);
+                };
+                reader.onerror = () => r(null);
+                reader.readAsDataURL(b);
+              });
+
+            // Try a few size/quality combinations until we are <= maxBytes.
+            const scales = [
+              1,
+              0.85,
+              0.7,
+              0.55,
+              0.45,
+              0.35,
+              0.25,
+            ];
+            const qualities = [0.9, 0.82, 0.74, 0.66, 0.58, 0.5, 0.42];
+
+            for (const s of scales) {
+              const scale = Math.min(1, (maxSize / Math.max(w, h)) * s);
+              const targetW = Math.max(1, Math.round(w * scale));
+              const targetH = Math.max(1, Math.round(h * scale));
+
+              for (const q of qualities) {
+                // eslint-disable-next-line no-await-in-loop
+                const jpegBlob = await makeJpegBlob(targetW, targetH, q);
+                if (!jpegBlob) continue;
+                if (jpegBlob.size <= maxBytes) {
+                  // eslint-disable-next-line no-await-in-loop
+                  const b64 = await blobToBase64(jpegBlob);
+                  if (b64) return resolve(b64);
+                }
+              }
+            }
+
+            // Last resort: return something even if it's slightly larger (some devices still accept it).
+            const fallbackScale = Math.min(1, maxSize / Math.max(w, h));
+            const fallbackW = Math.max(1, Math.round(w * fallbackScale));
+            const fallbackH = Math.max(1, Math.round(h * fallbackScale));
+            const fallbackBlob = await makeJpegBlob(fallbackW, fallbackH, 0.6);
+            if (!fallbackBlob) return resolve(null);
+            const b64 = await blobToBase64(fallbackBlob);
+            return resolve(b64);
           };
           img.onerror = () => resolve(null);
           img.src = blobUrl;
