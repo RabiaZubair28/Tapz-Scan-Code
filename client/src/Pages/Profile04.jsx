@@ -40,6 +40,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { SlArrowRight } from "react-icons/sl";
+import vCardsJS from "vcards-js";
 import {
   FacebookShareButton,
   TelegramShareButton,
@@ -244,23 +245,6 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const sanitizeVcardText = (value) =>
-      String(value ?? "")
-        .replace(/\r\n/g, "\n")
-        .replace(/\r/g, "\n")
-        .replace(/\n/g, "\\n")
-        .trim();
-
-    const foldVcardLine = (line, maxLen = 75) => {
-      if (!line || line.length <= maxLen) return line;
-      let out = "";
-      for (let i = 0; i < line.length; i += maxLen) {
-        const chunk = line.slice(i, i + maxLen);
-        out += (i === 0 ? chunk : `\r\n ${chunk}`);
-      }
-      return out;
-    };
-
     const arrayBufferToBase64 = (buffer) => {
       const bytes = new Uint8Array(buffer);
       const chunkSize = 0x8000;
@@ -271,7 +255,7 @@ const Profile04 = () => {
       return btoa(binary);
     };
 
-    const getLogoBase64 = async () => {
+    const getLogoData = async () => {
       if (!logo) return null;
 
       // If logo already provided as a data URL, just extract base64 + mime.
@@ -295,41 +279,46 @@ const Profile04 = () => {
       }
     };
 
-    const lines = ["BEGIN:VCARD", "VERSION:3.0"];
+    const card = vCardsJS();
+    card.firstName = String(clientName || "");
+    card.formattedName = String(clientName || "");
+    card.organization = String(name || "");
+    card.title = String(designation || "");
+    if (phone01) card.cellPhone = String(phone01);
+    if (phone02) card.workPhone = String(phone02);
+    if (phone03) card.homePhone = String(phone03);
+    if (email) card.email = String(email);
+    if (website) card.url = String(website);
 
-    if (clientName) lines.push(`N:${sanitizeVcardText(clientName)};;;;`);
-    if (clientName) lines.push(`FN:${sanitizeVcardText(clientName)}`);
-    if (name) lines.push(`ORG:${sanitizeVcardText(name)}`);
-    if (designation) lines.push(`TITLE:${sanitizeVcardText(designation)}`);
-
-    if (phone01) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone01)}`);
-    if (phone02) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone02)}`);
-    if (phone03) lines.push(`TEL;TYPE=CELL:${sanitizeVcardText(phone03)}`);
-
-    if (whatsapp01)
-      lines.push(`TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp01)}`);
-    if (whatsapp02)
-      lines.push(`TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp02)}`);
-    if (whatsapp03)
-      lines.push(`TEL;TYPE=CELL;TYPE=WHATSAPP:${sanitizeVcardText(whatsapp03)}`);
-
-    if (email) lines.push(`EMAIL;TYPE=HOME:${sanitizeVcardText(email)}`);
-    if (website) lines.push(`URL:${sanitizeVcardText(website)}`);
-
-    const logoData = await getLogoBase64();
+    const logoData = await getLogoData();
     if (logoData?.base64) {
-      const type = logoData.mime?.toLowerCase().includes("png") ? "PNG" : "JPEG";
-      const photoLine = foldVcardLine(`PHOTO;ENCODING=b;TYPE=${type}:${logoData.base64}`);
-      const logoLine = foldVcardLine(`LOGO;ENCODING=b;TYPE=${type}:${logoData.base64}`);
-      lines.push(photoLine);
-      lines.push(logoLine);
+      // Ensure logo is saved in the vCard (logo section), and also set photo for compatibility.
+      card.logo.embedFromString(logoData.base64, logoData.mime);
+      card.photo.embedFromString(logoData.base64, logoData.mime);
     }
 
-    lines.push("END:VCARD");
+    let vCardString = card.getFormattedString();
 
-    const vcard = `${lines.join("\r\n")}\r\n`;
+    // Inject WhatsApp numbers (vcards-js has no native WhatsApp TEL field).
+    const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
+      .filter(Boolean)
+      .map((n) => String(n).trim())
+      .filter(Boolean);
 
-    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    if (whatsappNumbers.length) {
+      const whatsappLines = whatsappNumbers.map(
+        (n) => `TEL;TYPE=CELL;TYPE=WHATSAPP:${n}`
+      );
+      const endIndex = vCardString.lastIndexOf("END:VCARD");
+      if (endIndex !== -1) {
+        const beforeEnd = vCardString.slice(0, endIndex).replace(/\r?\n$/, "");
+        vCardString = `${beforeEnd}\r\n${whatsappLines.join(
+          "\r\n"
+        )}\r\nEND:VCARD\r\n`;
+      }
+    }
+
+    const blob = new Blob([vCardString], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
 
     // iOS check
