@@ -351,6 +351,14 @@ const Profile04 = () => {
       return new Blob([bytes], { type: mime || "application/octet-stream" });
     };
 
+    const mimeToVcardImageType = (mime) => {
+      const m = String(mime || "").toLowerCase();
+      if (m.includes("png")) return "PNG";
+      if (m.includes("gif")) return "GIF";
+      // Default to JPEG, which has best compatibility for contact photos.
+      return "JPEG";
+    };
+
     const getLogoJpegData = async () => {
       if (!logo) return null;
 
@@ -361,7 +369,7 @@ const Profile04 = () => {
         try {
           const blob = base64ToBlob(match[2], match[1]);
           const jpegBase64 = await blobToJpegBase64(blob);
-          return jpegBase64 ? { mime: "image/jpeg", base64: jpegBase64 } : null;
+          return jpegBase64 ? { type: "JPEG", base64: jpegBase64 } : null;
         } catch (e) {
           return null;
         }
@@ -382,14 +390,14 @@ const Profile04 = () => {
           mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
         const blob = base64ToBlob(b64, normalizedMime);
         const jpegBase64 = await blobToJpegBase64(blob);
-        if (jpegBase64) return { mime: "image/jpeg", base64: jpegBase64 };
+        if (jpegBase64) return { type: "JPEG", base64: jpegBase64 };
 
         // Fallback: if conversion fails but it's a common supported type, embed as-is.
         if (
           normalizedMime === "image/jpeg" ||
           normalizedMime === "image/png"
         ) {
-          return { mime: normalizedMime, base64: b64 };
+          return { type: mimeToVcardImageType(normalizedMime), base64: b64 };
         }
         return null;
       } catch (e) {
@@ -426,8 +434,9 @@ const Profile04 = () => {
     const logoData = await getLogoJpegData();
     if (logoData?.base64) {
       // Ensure logo is saved in the vCard (logo section), and also set photo for compatibility.
-      card.logo.embedFromString(logoData.base64, logoData.mime);
-      card.photo.embedFromString(logoData.base64, logoData.mime);
+      // vcards-js expects mediaType like "JPEG"/"PNG" (not "image/jpeg").
+      card.logo.embedFromString(logoData.base64, logoData.type);
+      card.photo.embedFromString(logoData.base64, logoData.type);
     }
 
     let vCardString = foldVcardLines(card.getFormattedString());
