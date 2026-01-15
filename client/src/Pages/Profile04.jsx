@@ -40,7 +40,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { SlArrowRight } from "react-icons/sl";
-import vCard from "vcards-js";
+import vCardsJS from "vcards-js";
 import {
   FacebookShareButton,
   TelegramShareButton,
@@ -245,37 +245,169 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:${clientName};;;;
-FN:${clientName}
-ORG:${name}
-TITLE:${designation}
-TEL;CELL:${phone01}
-TEL;TYPE=CELL,WHATSAPP:${phone02}
-EMAIL;HOME:${email}
-URL:${website}
-LOGO;ENCODING=b;TYPE=JPEG:${logo}
-END:VCARD`;
+    const arrayBufferToBase64 = (buffer) => {
+      const bytes = new Uint8Array(buffer);
+      const chunkSize = 0x8000;
+      let binary = "";
+      for (let i = 0; i < bytes.length; i += chunkSize) {
+        binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+      }
+      return btoa(binary);
+    };
 
-    const blob = new Blob([vcard], { type: "text/vcard" });
+    const blobToJpegBase64 = async (blob, maxSize = 512) => {
+      const blobUrl = URL.createObjectURL(blob);
+
+      try {
+        const base64 = await new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            const w = img.naturalWidth || img.width;
+            const h = img.naturalHeight || img.height;
+            if (!w || !h) return resolve(null);
+
+            const scale = Math.min(1, maxSize / Math.max(w, h));
+            const targetW = Math.max(1, Math.round(w * scale));
+            const targetH = Math.max(1, Math.round(h * scale));
+
+            const canvas = document.createElement("canvas");
+            canvas.width = targetW;
+            canvas.height = targetH;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return resolve(null);
+
+            ctx.drawImage(img, 0, 0, targetW, targetH);
+            const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
+            const parts = dataUrl.split(",");
+            resolve(parts[1] || null);
+          };
+          img.onerror = () => resolve(null);
+          img.src = blobUrl;
+        });
+
+        return base64;
+      } finally {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
+
+    const base64ToBlob = (b64, mime) => {
+      const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+      return new Blob([bytes], { type: mime || "application/octet-stream" });
+    };
+
+    const getLogoJpegData = async () => {
+      if (!logo) return null;
+
+      // If logo already provided as a data URL, convert it to JPEG for compatibility.
+      if (typeof logo === "string" && logo.startsWith("data:")) {
+        const match = logo.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.*)$/);
+        if (!match) return null;
+        try {
+          const blob = base64ToBlob(match[2], match[1]);
+          const jpegBase64 = await blobToJpegBase64(blob);
+          return jpegBase64 ? { mime: "image/jpeg", base64: jpegBase64 } : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      // Otherwise, fetch the image server-side (avoids browser CORS), then convert to JPEG.
+      try {
+        const response = await axios.get(
+          `https://www.scan-taps.com/api/vcard/image?url=${encodeURIComponent(
+            logo
+          )}`
+        );
+        const mimeRaw = String(response.data?.mime || "");
+        const b64 = String(response.data?.base64 || "");
+        if (!mimeRaw.startsWith("image/") || !b64) return null;
+
+        const normalizedMime =
+          mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
+        const blob = base64ToBlob(b64, normalizedMime);
+        const jpegBase64 = await blobToJpegBase64(blob);
+        if (jpegBase64) return { mime: "image/jpeg", base64: jpegBase64 };
+
+        // Fallback: if conversion fails but it's a common supported type, embed as-is.
+        if (normalizedMime === "image/jpeg" || normalizedMime === "image/png") {
+          return { mime: normalizedMime, base64: b64 };
+        }
+        return null;
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const foldVcardLines = (vcardText) =>
+      String(vcardText || "")
+        .split(/\r?\n/)
+        .map((line) => {
+          const maxLen = 75;
+          if (line.length <= maxLen) return line;
+          let out = "";
+          for (let i = 0; i < line.length; i += maxLen) {
+            const chunk = line.slice(i, i + maxLen);
+            out += i === 0 ? chunk : `\r\n ${chunk}`;
+          }
+          return out;
+        })
+        .join("\r\n");
+
+    const card = vCardsJS();
+    card.firstName = String(clientName || "");
+    card.formattedName = String(clientName || "");
+    card.organization = String(name || "");
+    card.title = String(designation || "");
+    if (phone01) card.cellPhone = String(phone01);
+    if (phone02) card.workPhone = String(phone02);
+    if (phone03) card.homePhone = String(phone03);
+    if (email) card.email = String(email);
+    if (website) card.url = String(website);
+
+    const logoData = await getLogoJpegData();
+    if (logoData?.base64) {
+      // Ensure logo is saved in the vCard (logo section), and also set photo for compatibility.
+      card.logo.embedFromString(logoData.base64, logoData.mime);
+      card.photo.embedFromString(logoData.base64, logoData.mime);
+    }
+
+    let vCardString = foldVcardLines(card.getFormattedString());
+
+    // Inject WhatsApp numbers (vcards-js has no native WhatsApp TEL field).
+    const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
+      .filter(Boolean)
+      .map((n) => String(n).trim())
+      .filter(Boolean);
+
+    if (whatsappNumbers.length) {
+      const whatsappLines = whatsappNumbers.map(
+        (n) => `TEL;TYPE=CELL;TYPE=WHATSAPP:${n}`
+      );
+      const endIndex = vCardString.lastIndexOf("END:VCARD");
+      if (endIndex !== -1) {
+        const beforeEnd = vCardString.slice(0, endIndex).replace(/\r?\n$/, "");
+        vCardString = `${beforeEnd}\r\n${whatsappLines.join(
+          "\r\n"
+        )}\r\nEND:VCARD\r\n`;
+      }
+    }
+
+    const blob = new Blob([vCardString], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
 
-    // Check if it's an iPhone/iPad device
+    // iOS check
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
-      // Open vCard in a new tab instead of forcing download
       window.location.href = url;
     } else {
-      // Regular download for other devices
       const newLink = document.createElement("a");
       newLink.download = `${clientName}.vcf`;
       newLink.href = url;
       newLink.click();
     }
 
-    // Revoke the object URL to free memory
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
