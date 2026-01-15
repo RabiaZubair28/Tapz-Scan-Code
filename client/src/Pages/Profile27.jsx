@@ -8,25 +8,14 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import phone from "../assets/phone.png";
 import addressImg from "../assets/adress.png";
-import whatsapp from "../assets/whatsapp.png";
-import insta from "../assets/insta.png";
 import { useNavigate } from "react-router-dom";
-import snap from "../assets/snap.png";
 import yt from "../assets/yt.png";
-import tiktok from "../assets/tiktok.png";
-import threads from "../assets/threads.png";
-import fb from "../assets/fb.png";
 import greview from "../assets/greview.png";
-import websiteImg from "../assets/web.png";
 import emailImg from "../assets/gmail.png";
-import linkedin from "../assets/linkedin.webp";
 import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
-import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
-import catalog from "../assets/catalog.jpg";
-import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
 import { IoIosAddCircle } from "react-icons/io";
@@ -34,9 +23,10 @@ import { IoIosAddCircle } from "react-icons/io";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGift, FaGlobe, FaShoppingBag, FaSnapchatGhost } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialTwitter } from "react-icons/ti";
+import { TiSocialInstagram, TiSocialTwitter } from "react-icons/ti";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -382,11 +372,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={fb}
-                          alt="Facebook"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
+                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#1877F2] flex items-center justify-center">
+                          <TiSocialFacebook size={30} color="white" />
+                        </div>
                       </FacebookShareButton>
                     </div>
 
@@ -396,11 +384,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={linkedin}
-                          alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
+                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#0A66C2] flex items-center justify-center">
+                          <TiSocialLinkedin size={28} color="white" />
+                        </div>
                       </LinkedinShareButton>
                     </div>
 
@@ -410,11 +396,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={telegram}
-                          alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
+                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#229ED9] flex items-center justify-center">
+                          <FaTelegramPlane size={22} color="white" />
+                        </div>
                       </TelegramShareButton>
                     </div>
 
@@ -424,11 +408,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={whatsapp}
-                          alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 border-white"
-                        />
+                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#25D366] flex items-center justify-center">
+                          <IoLogoWhatsapp size={26} color="white" />
+                        </div>
                       </WhatsappShareButton>
                     </div>
                   </div>
@@ -456,7 +438,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src={insta} alt="Instagram" className="w-8 h-8" />
+                      <TiSocialInstagram size={30} color="white" />
                     </a>
                   )}
                   {twitterLink && (
@@ -465,7 +447,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src={threads} alt="X" className="w-8 h-8" />
+                      <TiSocialTwitter size={30} color="white" />
                     </a>
                   )}
                   {whatsapp01 && (
@@ -474,7 +456,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src={whatsapp} alt="WhatsApp" className="w-8 h-8" />
+                      <IoLogoWhatsapp size={28} color="white" />
                     </a>
                   )}
                   {tiktokLink && (
@@ -483,7 +465,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src={tiktok} alt="TikTok" className="w-8 h-8" />
+                      <FaTiktok size={26} color="white" />
                     </a>
                   )}
                   {snapchatLink && (
@@ -492,7 +474,7 @@ END:VCARD`;
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src={snap} alt="Snapchat" className="w-8 h-8" />
+                      <FaSnapchatGhost size={26} color="white" />
                     </a>
                   )}
                 </div>
@@ -512,11 +494,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={websiteImg}
-                            alt="Website"
-                            className="w-10 h-10"
-                          />
+                          <FaGlobe size={30} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -545,11 +523,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={whatsapp}
-                            alt="WhatsApp"
-                            className="w-10 h-10"
-                          />
+                          <IoLogoWhatsapp size={30} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -578,11 +552,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={profile}
-                            alt="Services"
-                            className="w-10 h-10"
-                          />
+                          <FaGift size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -615,7 +585,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img src={whatsapp} alt="VIP" className="w-10 h-10" />
+                          <IoLogoWhatsapp size={30} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -644,11 +614,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={catalog}
-                            alt="Boutiqaat"
-                            className="w-10 h-10"
-                          />
+                          <FaShoppingBag size={28} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -677,11 +643,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={tiktok}
-                            alt="TikTok"
-                            className="w-10 h-10"
-                          />
+                          <FaTiktok size={26} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -710,11 +672,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img
-                            src={insta}
-                            alt="Instagram"
-                            className="w-10 h-10"
-                          />
+                          <TiSocialInstagram size={32} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
@@ -743,7 +701,7 @@ END:VCARD`;
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <img src={threads} alt="X" className="w-10 h-10" />
+                          <TiSocialTwitter size={32} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">X</p>
