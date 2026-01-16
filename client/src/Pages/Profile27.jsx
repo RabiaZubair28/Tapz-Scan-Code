@@ -25,17 +25,31 @@ import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
 import {
   FaDownload,
+  FaEnvelope,
+  FaFacebook,
   FaFacebookF,
   FaGift,
   FaGlobe,
   FaInstagram,
   FaLinkedinIn,
+  FaMailchimp,
+  FaPhone,
+  FaPhoneAlt,
+  FaPhoneSquareAlt,
   FaShoppingBag,
   FaSnapchatGhost,
+  FaStar,
   FaTelegramPlane,
+  FaUtensils,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
-import { FaTiktok, FaXTwitter } from "react-icons/fa6";
+import {
+  FaMapLocation,
+  FaTiktok,
+  FaTwitter,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { SlArrowRight } from "react-icons/sl";
 import vCardsJS from "vcards-js";
 import {
@@ -59,6 +73,7 @@ import { RiMessage2Line } from "react-icons/ri";
 import { ImWhatsapp } from "react-icons/im";
 import linkedin02 from "../assets/download.png";
 import { MdRemoveRedEye } from "react-icons/md";
+import fb from "../assets/fb.png";
 
 const Profile27 = () => {
   // SAME LOGIC AS Profile04 (only UI below changed)
@@ -357,8 +372,7 @@ const Profile27 = () => {
           mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
         const blob = base64ToBlob(b64, normalizedMime);
         const jpegBase64 = await blobToJpegBase64(blob);
-        if (jpegBase64) return { type: "JPEG", base64: jpegBase64 };
-        return null;
+        return jpegBase64 ? { type: "JPEG", base64: jpegBase64 } : null;
       } catch {
         return null;
       }
@@ -495,12 +509,12 @@ const Profile27 = () => {
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              className="qr-modal min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{ backgroundAttachment: "fixed" }}
             >
-              <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+              <div className="bg-white border-[#b89a64] rounded-lg pb-8 pt-16 px-10 relative">
                 <ImCross
-                  className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-black"
+                  className="absolute top-4 right-4 cursor-pointer text-[#b89a64]"
                   onClick={handleClose}
                 />
 
@@ -510,13 +524,13 @@ const Profile27 = () => {
                   </div>
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                      className="w-12 h-12  text-black p-3 rounded-full  flex items-center justify-center border-[2px] border-[#b89a64]"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} />
+                      <FaDownload size={20} color="black" />
                     </div>
 
                     <div className="social-btn">
@@ -525,8 +539,8 @@ const Profile27 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#1877F2] flex items-center justify-center">
-                          <FaFacebookF size={26} color="white" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] text-black flex items-center justify-center">
+                          <FaFacebookF size={26} color="black" />
                         </div>
                       </FacebookShareButton>
                     </div>
@@ -537,8 +551,8 @@ const Profile27 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#0A66C2] flex items-center justify-center">
-                          <FaLinkedinIn size={26} color="white" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] text-black flex items-center justify-center">
+                          <FaLinkedinIn size={26} color="black" />
                         </div>
                       </LinkedinShareButton>
                     </div>
@@ -549,8 +563,8 @@ const Profile27 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#229ED9] flex items-center justify-center">
-                          <FaTelegramPlane size={22} color="white" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] text-black flex items-center justify-center">
+                          <FaTelegramPlane size={22} color="black" />
                         </div>
                       </TelegramShareButton>
                     </div>
@@ -561,8 +575,8 @@ const Profile27 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-2 border-white bg-[#25D366] flex items-center justify-center">
-                          <FaWhatsapp size={26} color="white" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#b89a64] text-black flex items-center justify-center">
+                          <FaWhatsapp size={26} color="black" />
                         </div>
                       </WhatsappShareButton>
                     </div>
@@ -574,22 +588,42 @@ const Profile27 = () => {
 
           {!show && !show02 && (
             <div
-              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-gradient-to-tr from-[#0f1b12] via-[#1f2a20] to-[#0f1b12]"
+              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-black"
               style={{ backgroundAttachment: "fixed" }}
             >
+              {logo && (
+                <div className="flex items-center  justify-center mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                  <a href={logo}>
+                    <div className="relative mb-2 ">
+                      <img
+                        src={logo}
+                        alt="profile"
+                        className="w-48 h-48 mt-5 mx-auto rounded-full border-[3px] border-[#b89a64] shadow-md"
+                      />
+                    </div>
+                  </a>
+                </div>
+              )}
               <div className="px-5">
-                <div className="pt-6 pb-4">
-                  <h1 className="text-white text-3xl font-semibold" dir="rtl">
-                    {name || companyName}
+                <div className="pt-5 pb-5">
+                  <h1
+                    className="text-white text-3xl font-semibold pb-3"
+                    dir="rtl"
+                  >
+                    {clientName}
                   </h1>
+                  <p className="text-white text-md" dir="rtl">
+                    {description}
+                  </p>
                 </div>
 
-                <div className="flex items-center justify-center gap-5 pb-6">
+                <div className="flex items-center justify-center gap-4 pb-8">
                   {instagramLink && (
                     <a
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaInstagram size={26} color="white" />
                     </a>
@@ -599,6 +633,7 @@ const Profile27 = () => {
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
@@ -608,6 +643,7 @@ const Profile27 = () => {
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaWhatsapp size={26} color="white" />
                     </a>
@@ -617,6 +653,7 @@ const Profile27 = () => {
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaTiktok size={26} color="white" />
                     </a>
@@ -626,38 +663,34 @@ const Profile27 = () => {
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
                   )}
                 </div>
 
-                <div className="flex items-center justify-center gap-x-2 pb-3">
-                  <MdRemoveRedEye size={20} color="white" />
-                  <p className="text-white">{visitCount}</p>
-                </div>
-
                 <div className="flex flex-col gap-4">
-                  {website && (
+                  {phone01 && (
                     <a
-                      href={website}
+                      href={`tel:${phone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGlobe size={30} color="white" />
+                          <FaPhone size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through our website
+                            Phone هاتف
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال الموقع الإلكتروني
+                            {phone01}
                           </p>
                         </div>
                       </div>
@@ -672,21 +705,359 @@ const Profile27 = () => {
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={28} color="white" />
+                          <FaWhatsapp size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through Whatsapp
+                            WhatsApp واتساب
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال الواتساب
+                            {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {telephone01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaPhoneSquareAlt size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Telephone هاتف ثابت
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {telephone01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaInstagram size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Instagram انستغرام
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {youtubeLink && (
+                    <a
+                      href={youtubeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaYoutube size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            YouTube يوتيوب
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {tiktokLink && (
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaTiktok size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            TikTok تيك توك
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {tiktokName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaXTwitter size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            X إكس
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {twitterName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {facebookLink && (
+                    <a
+                      href={facebookLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaFacebook size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Facebook فيسبوك
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {facebookName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleReviewLink && (
+                    <a
+                      href={googleReviewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaStar size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Google Review تقييمات جوجل
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleReviewName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGlobe size={30} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Order through our website الطلب من خلال الموقع الإلكتروني
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {websiteName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {email && (
+                    <a
+                      href={email}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaEnvelope size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Email البريد الإلكتروني
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {email}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {youtubeShortsLink && (
+                    <a
+                      href={youtubeShortsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaLinkedinIn size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            LinkedIn لينكدإن
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeShortsLink}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleMapLink && (
+                    <a
+                      href={googleMapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaMapLocation size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Location الموقع
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleMapName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {menuLink && (
+                    <a
+                      href={menuLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaUtensils size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Menu قائمة الطعام
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {menuName}
                           </p>
                         </div>
                       </div>
@@ -701,21 +1072,21 @@ const Profile27 = () => {
                       href={profileLink01}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGift size={28} color="white" />
+                          <FaGift size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Giveaways & Occasions Services
+                            Company Profile ملف الشركة
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            التوزيعات وخدمة التبخير للمناسبات
+                            {profileName01}
                           </p>
                         </div>
                       </div>
@@ -725,30 +1096,26 @@ const Profile27 = () => {
                     </a>
                   )}
 
-                  {(whatsapp02 || profileLink02) && (
+                  {whatsapp02 && (
                     <a
-                      href={
-                        whatsapp02
-                          ? `https://wa.me/${whatsapp02}`
-                          : profileLink02
-                      }
+                      href={`https://wa.me/${whatsapp02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={28} color="white" />
+                          <FaWhatsapp size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            VIP Room Whatsapp | VIP
+                            WhatsApp واتساب
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            واتساب غرفة الـ VIP
+                            {whatsapp02}
                           </p>
                         </div>
                       </div>
@@ -763,106 +1130,21 @@ const Profile27 = () => {
                       href={catalogueLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaShoppingBag size={28} color="white" />
+                          <FaShoppingBag size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through Boutiqaat
+                            Catalogue الكتالوج
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            الطلب من خلال بوتيكات
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-
-                  {tiktokLink && (
-                    <a
-                      href={tiktokLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaTiktok size={26} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Tik Tok
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            تيك توك
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-
-                  {instagramLink && (
-                    <a
-                      href={instagramLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={28} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Instagram
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            انستغرام
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-white/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-
-                  {twitterLink && (
-                    <a
-                      href={twitterLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-[#1f2a20]/80 hover:bg-[#243325] transition-colors"
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaXTwitter size={26} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">X</p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            منصة إكس
+                            {catalogueName}
                           </p>
                         </div>
                       </div>
@@ -873,10 +1155,274 @@ const Profile27 = () => {
                   )}
                 </div>
 
-                <p className="pt-8 text-white/70 text-sm">
-                  Copyright © <span className="company">{companyName}</span>.
-                  All Rights Reserved.
-                </p>
+                {(img01 != "" ||
+                  img02 != "" ||
+                  img03 != "" ||
+                  img04 != "" ||
+                  img05 != "" ||
+                  img05 != "" ||
+                  img06 != "" ||
+                  img07 != "" ||
+                  img08 != "" ||
+                  img09 != "" ||
+                  img10 != "") && (
+                  <div className="px-0">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                      Image Gallery
+                    </h2>
+                    <hr className="border-[#b89a64]" />
+                    {img01 && (
+                      <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img01}>
+                          <img
+                            src={img01}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img02 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img02}>
+                          <img
+                            src={img02}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img03 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img03}>
+                          <img
+                            src={img03}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img04 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img04}>
+                          <img
+                            src={img04}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img05 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img05}>
+                          <img
+                            src={img05}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img06 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img06}>
+                          <img
+                            src={img06}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img07 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img07}>
+                          <img
+                            src={img07}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                    {img08 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img08}>
+                          <img
+                            src={img08}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+
+                    {img09 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img09}>
+                          <img
+                            src={img09}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                    {img10 && (
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#b89a64] shadow-md space-y-2 mt-3">
+                        <a href={img10}>
+                          <img
+                            src={img10}
+                            alt="Image"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
+                          />
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {location != "" && (
+                  <div className="px-0">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                      Location
+                    </h2>
+                    <hr className="border-gray-300" />
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                      {location && (
+                        <iframe
+                          src={location}
+                          width="100%"
+                          height="300"
+                          allowfullscreen=""
+                          loading="lazy"
+                          className="rounded-xl"
+                        ></iframe>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                    Share Profile
+                  </h2>
+                  <hr className="border-[#b89a64]" />
+                  <div className="flex justify-center space-x-3 mt-3">
+                    <div className="social-btn ">
+                      <FacebookShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaFacebookF
+                          size={40}
+                          color="white"
+                          alt="Facebook"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
+                        />
+                      </FacebookShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TwitterShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaTwitter
+                          size={40}
+                          color="white" // Replace with the actual path to the Twitter icon
+                          alt="Twitter"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
+                        />
+                      </TwitterShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <LinkedinShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaLinkedinIn
+                          size={40}
+                          color="white" // Replace with the actual path to the LinkedIn icon
+                          alt="LinkedIn"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
+                        />
+                      </LinkedinShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <TelegramShareButton
+                        url={currentPageUrl}
+                        quote="please share this"
+                        hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
+                      >
+                        <FaTelegramPlane
+                          size={40}
+                          color="white"
+                          // Replace with the actual path to the Telegram icon
+                          alt="Telegram"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
+                        />
+                      </TelegramShareButton>
+                    </div>
+
+                    <div className="social-btn">
+                      <a
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaWhatsapp
+                          size={40}
+                          color="white"
+                          alt="WhatsApp"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#b89a64]"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                    Share Contact & QR
+                  </h2>
+                  <hr className="border-[#b89a64]" />
+                  <div className="flex justify-center space-x-3 mt-3 px-4">
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64]  hover:border-[#b89a64]"
+                      onClick={handleShow}
+                    >
+                      <IoQrCodeSharp size={35} color="white" />
+                    </div>
+
+                    <div
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64] hover:border-[#b89a64]"
+                      onClick={downloadContactCard}
+                      value="download"
+                    >
+                      <FaDownload size={30} color="white" />
+                    </div>
+                  </div>
+
+                  <p className="pt-4 text-white">
+                    Copyright © <span className="company">{companyName}</span>.
+                    All Rights Reserved.
+                  </p>
+                </div>
               </div>
             </div>
           )}
