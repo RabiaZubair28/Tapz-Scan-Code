@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const axios = require("axios");
 const Client = require("./models/client-model.js");
 const authRoute = require("./router/auth-router.js");
 const detailRoute = require("./router/detail-router");
@@ -135,6 +136,82 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/data", detailRoute);
+
+function isPrivateIp(ip) {
+  const s = String(ip || "");
+  // IPv6 localhost / private-ish
+  if (s === "::1") return true;
+  // IPv4 localhost
+  if (s.startsWith("127.")) return true;
+  // RFC1918
+  if (s.startsWith("10.")) return true;
+  if (s.startsWith("192.168.")) return true;
+  const m = s.match(/^172\.(\d+)\./);
+  if (m) {
+    const n = Number(m[1]);
+    if (n >= 16 && n <= 31) return true;
+  }
+  // Link-local
+  if (s.startsWith("169.254.")) return true;
+  return false;
+}
+
+function isBlockedHostname(hostname) {
+  const h = String(hostname || "").toLowerCase();
+  if (!h) return true;
+  if (h === "localhost" || h.endsWith(".localhost")) return true;
+  if (h === "0.0.0.0") return true;
+  if (h.endsWith(".local")) return true;
+  // If hostname is a raw IP, block private ranges.
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(h) && isPrivateIp(h)) return true;
+  return false;
+}
+
+// Fetch remote image server-side for vCard embedding (avoids browser CORS).
+app.get("/api/vcard/image", async (req, res) => {
+  const rawUrl = String(req.query.url || "").trim();
+  if (!rawUrl) return res.status(400).json({ error: "Missing url" });
+
+  let parsed;
+  try {
+    parsed = new URL(rawUrl);
+  } catch {
+    return res.status(400).json({ error: "Invalid url" });
+  }
+
+  if (!["http:", "https:"].includes(parsed.protocol)) {
+    return res.status(400).json({ error: "Only http/https allowed" });
+  }
+
+  if (isBlockedHostname(parsed.hostname)) {
+    return res.status(400).json({ error: "Blocked hostname" });
+  }
+
+  try {
+    const response = await axios.get(parsed.toString(), {
+      responseType: "arraybuffer",
+      timeout: 10000,
+      maxContentLength: 2 * 1024 * 1024,
+      maxBodyLength: 2 * 1024 * 1024,
+      validateStatus: (s) => s >= 200 && s < 300,
+      headers: {
+        // Some CDNs require a UA.
+        "User-Agent": "ScanTaps vCard Image Fetcher",
+        Accept: "image/*,*/*;q=0.8",
+      },
+    });
+
+    const contentType = String(response.headers?.["content-type"] || "").split(";")[0].trim();
+    if (!contentType.startsWith("image/")) {
+      return res.status(415).json({ error: "URL did not return an image" });
+    }
+
+    const base64 = Buffer.from(response.data).toString("base64");
+    return res.status(200).json({ mime: contentType, base64 });
+  } catch (err) {
+    return res.status(502).json({ error: "Failed to fetch image" });
+  }
+});
 
 // Server-side OpenGraph for WhatsApp/Facebook crawlers.
 // Important: crawlers do NOT execute JS, so we return OG tags directly for profile links.
