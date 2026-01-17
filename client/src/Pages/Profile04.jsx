@@ -93,7 +93,7 @@ const Profile04 = () => {
     const fetchClient = async () => {
       try {
         const response = await axios.get(
-          `https://www.scan-taps.com/api/data/client/${clientId}`
+          `https://www.scan-taps.com/api/data/client/${clientId}`,
         );
         setClient(response.data);
         setLoading(false);
@@ -231,7 +231,7 @@ const Profile04 = () => {
       try {
         // console.log("Fetching visit count...");
         const incrementResponse = await axios.post(
-          `https://www.scan-taps.com/api/visit/${clientId01}`
+          `https://www.scan-taps.com/api/visit/${clientId01}`,
         );
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
@@ -245,6 +245,12 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
+    const base64Logo = logo;
+    function formatBase64(base64String) {
+      return base64String.match(/.{1,75}/g).join("\r\n ");
+    }
+
+    const formattedImage = formatBase64(base64Logo);
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
@@ -253,10 +259,11 @@ ORG:${name}
 TITLE:${designation}
 PHOTO;TYPE=JPEG;ENCODING=b:[${logo}]
 TEL;CELL:${phone01}
-TEL;TYPE=CELL,WHATSAPP:${phone02}
+TEL;TYPE=CELL:${phone02}
 EMAIL;HOME:${email}
+PHOTO;ENCODING=b;TYPE=JPEG:
+ ${formattedImage}
 URL:${website}
-LOGO;ENCODING=b;TYPE=JPEG:${logo}
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
@@ -301,7 +308,7 @@ END:VCARD`;
       const availableWidth = pageWidth - horizontalMargin * 2; // Subtract left and right margins
       const scaleFactor = Math.min(
         availableWidth / imgWidth,
-        pageHeight / imgHeight
+        pageHeight / imgHeight,
       );
       const imgScaledWidth = imgWidth * scaleFactor;
       const imgScaledHeight = imgHeight * scaleFactor;
@@ -1845,7 +1852,7 @@ END:VCARD`;
                     <div className="social-btn">
                       <a
                         href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`
+                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`,
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
