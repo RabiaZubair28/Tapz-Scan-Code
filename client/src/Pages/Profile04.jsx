@@ -257,7 +257,6 @@ N:${clientName};;;;
 FN:${clientName}
 ORG:${name}
 TITLE:${designation}
-PHOTO;TYPE=JPG;ENCODING=b:[${logo}]
 TEL;CELL:${phone01}
 TEL;TYPE=CELL:${whatsapp01}
 EMAIL;HOME:${email}
