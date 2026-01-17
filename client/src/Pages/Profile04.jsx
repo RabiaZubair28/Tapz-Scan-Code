@@ -260,7 +260,7 @@ TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;TYPE=CELL:${whatsapp01}
 EMAIL;HOME:${email}
-PHOTO;ENCODING=b;TYPE=JPG:
+PHOTO;ENCODING=b;TYPE=JPEG:
  ${formattedImage}
 URL:${website}
 END:VCARD`;
