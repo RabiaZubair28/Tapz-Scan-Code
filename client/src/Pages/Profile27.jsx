@@ -680,7 +680,7 @@ const Profile27 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaPhone size={35} color="white" />
+                          <FaPhone size={32} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
