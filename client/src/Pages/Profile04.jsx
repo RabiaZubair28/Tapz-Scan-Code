@@ -261,7 +261,7 @@ PHOTO;TYPE=JPG;ENCODING=b:[${logo}]
 TEL;CELL:${phone01}
 TEL;TYPE=CELL:${whatsapp01}
 EMAIL;HOME:${email}
-PHOTO;ENCODING=b;TYPE=JPEG:
+PHOTO;ENCODING=b;TYPE=JPG:
  ${formattedImage}
 URL:${website}
 END:VCARD`;
