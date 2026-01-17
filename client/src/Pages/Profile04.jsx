@@ -245,12 +245,12 @@ const Profile04 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    const base64Logo = logo;
-    function formatBase64(base64String) {
-      return base64String.match(/.{1,75}/g).join("\r\n ");
-    }
+    // const base64Logo = logo;
+    // function formatBase64(base64String) {
+    //   return base64String.match(/.{1,75}/g).join("\r\n ");
+    // }
 
-    const formattedImage = formatBase64(base64Logo);
+    // const formattedImage = formatBase64(base64Logo);
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:${clientName};;;;
@@ -260,8 +260,6 @@ TITLE:${designation}
 TEL;CELL:${phone01}
 TEL;TYPE=CELL:${whatsapp01}
 EMAIL;HOME:${email}
-PHOTO;ENCODING=b;TYPE=JPEG:
- ${formattedImage}
 URL:${website}
 END:VCARD`;
 
