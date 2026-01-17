@@ -686,10 +686,7 @@ const Profile27 = () => {
                           <p className="text-white font-semibold truncate">
                             Phone هاتف
                           </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
+                          <p className="text-white/80 text-sm truncate">
                             {phone01}
                           </p>
                         </div>
@@ -715,10 +712,7 @@ const Profile27 = () => {
                           <p className="text-white font-semibold truncate">
                             WhatsApp واتساب
                           </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
+                          <p className="text-white/80 text-sm truncate">
                             {whatsapp01}
                           </p>
                         </div>
