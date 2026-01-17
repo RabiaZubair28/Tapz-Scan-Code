@@ -257,9 +257,9 @@ N:${clientName};;;;
 FN:${clientName}
 ORG:${name}
 TITLE:${designation}
-PHOTO;TYPE=JPEG;ENCODING=b:[${logo}]
+PHOTO;TYPE=JPG;ENCODING=b:[${logo}]
 TEL;CELL:${phone01}
-TEL;TYPE=CELL:${phone02}
+TEL;TYPE=CELL:${whatsapp01}
 EMAIL;HOME:${email}
 PHOTO;ENCODING=b;TYPE=JPEG:
  ${formattedImage}
