@@ -93,7 +93,7 @@ const Profile19 = () => {
     const fetchClient = async () => {
       try {
         const response = await axios.get(
-          `https://www.scan-taps.com/api/data/client/${clientId}`
+          `https://www.scan-taps.com/api/data/client/${clientId}`,
         );
         setClient(response.data);
         setLoading(false);
@@ -231,7 +231,7 @@ const Profile19 = () => {
       try {
         // console.log("Fetching visit count...");
         const incrementResponse = await axios.post(
-          `https://www.scan-taps.com/api/visit/${clientId01}`
+          `https://www.scan-taps.com/api/visit/${clientId01}`,
         );
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
@@ -298,7 +298,7 @@ END:VCARD`;
       const availableWidth = pageWidth - horizontalMargin * 2; // Subtract left and right margins
       const scaleFactor = Math.min(
         availableWidth / imgWidth,
-        pageHeight / imgHeight
+        pageHeight / imgHeight,
       );
       const imgScaledWidth = imgWidth * scaleFactor;
       const imgScaledHeight = imgHeight * scaleFactor;
@@ -333,17 +333,17 @@ END:VCARD`;
 
           <link rel="icon" type="image/x-icon" href={`${logo}`} />
 
-          <meta name="description" content={name} />
-          <meta property="article:section" content={name} />
+          <meta name="description" content={designation || name} />
+          <meta property="article:section" content={designation || name} />
           <meta property="og:title" content={client.clientName} />
-          <meta property="og:description" content={name} />
+          <meta property="og:description" content={designation || name} />
           <meta
             property="og:url"
             content={`https://www.scan-taps.com/${companyName}`}
           />
           <meta property="og:image" content={`${logo}`} />
           <meta name="twitter:title" content={client.clientName} />
-          <meta name="twitter:description" content={name} />
+          <meta name="twitter:description" content={designation || name} />
         </Helmet>
         <div>
           {show && (
@@ -1818,7 +1818,7 @@ END:VCARD`;
                     <div className="social-btn">
                       <a
                         href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`
+                          `Hey there! 🌟 \nIts ${clientName} !\n\nHere’s my digital card:\nhttps://www.scan-taps.com/${companyName}\n\nPowered by ScanTaps!`,
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
