@@ -612,8 +612,19 @@ const Profile27 = () => {
                   >
                     {clientName}
                   </h1>
-                  <p className="text-white text-md" dir="rtl">
-                    {description}
+                  <p
+                    className="text-md text-center text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
+                    style={{ textWrap: "wrap" }}
+                  >
+                    {String(description || "")
+                      .replace(/<br\s*\/?>/gi, "\n")
+                      .split(/\r?\n/)
+                      .map((line, index, arr) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          {index < arr.length - 1 ? <br /> : null}
+                        </React.Fragment>
+                      ))}
                   </p>
                 </div>
 
