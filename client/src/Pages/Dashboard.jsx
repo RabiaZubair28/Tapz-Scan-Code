@@ -1151,7 +1151,8 @@ const Dashboard = () => {
                       Client Name: {client.clientName || "Unnamed Client"}
                     </p>
                     <p className="text-sm text-gray-600">
-                      URL Name: {client.companyName} <br /> ID: {client._id}
+                      Designation: {client.designation || "-"} <br /> ID:{" "}
+                      {client._id}
                     </p>
 
                     {client.email && (
