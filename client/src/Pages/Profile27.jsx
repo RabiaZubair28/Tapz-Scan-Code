@@ -1064,7 +1064,7 @@ const Profile27 = () => {
                       <div className="w-12 h-12 flex items-center justify-center text-white">
                         <FaUtensils size={35} color="white" />
                       </div>
-                      <div className="min-w-0 text-left">
+                      <div className="min-w-0 text-center">
                         <p className="text-white font-semibold truncate">
                           Menu قائمة الطعام
                         </p>
