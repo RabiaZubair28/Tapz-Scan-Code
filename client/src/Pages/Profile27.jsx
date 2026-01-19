@@ -1061,22 +1061,18 @@ const Profile27 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaUtensils size={35} color="white" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
-                            Menu قائمة الطعام
-                          </p>
-                          <p
-                            className="text-white/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {menuName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-white">
+                        <FaUtensils size={35} color="white" />
                       </div>
+                      <div className="min-w-0 text-left">
+                        <p className="text-white font-semibold truncate">
+                          Menu قائمة الطعام
+                        </p>
+                        <p className="text-white/80 text-sm truncate" dir="rtl">
+                          {menuName}
+                        </p>
+                      </div>
+
                       <span className="text-white/80 text-2xl leading-none">
                         ⋮
                       </span>
@@ -1448,7 +1444,7 @@ const Profile27 = () => {
   } else {
     return (
       <div
-        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-[#1f2a20] pt-[25%]"
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-black pt-[25%]"
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
