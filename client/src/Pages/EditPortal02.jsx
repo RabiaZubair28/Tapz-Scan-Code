@@ -4782,29 +4782,29 @@ END:VCARD`;
             }
           }>Logout</button> */}
 
-            <Helmet>
-              <meta charset="UTF-8" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0"
-              />
+             <Helmet>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
 
-              <title>{clientName}</title>
+          <title>{clientName}</title>
 
-              <link rel="icon" type="image/x-icon" href={`${logo}`} />
+          <link rel="icon" type="image/x-icon" href={`${logo}`} />
 
-              <meta name="description" content={description} />
-              <meta property="article:section" content={description} />
-              <meta property="og:title" content={clientName} />
-              <meta property="og:description" content={description} />
-              <meta
-                property="og:url"
-                content={`https://www.scan-taps.com/${companyName}`}
-              />
-              <meta property="og:image" content={`${logo}`} />
-              <meta name="twitter:title" content={clientName} />
-              <meta name="twitter:description" content={description} />
-            </Helmet>
+          <meta name="description" content={designation || name} />
+          <meta property="article:section" content={designation || name} />
+          <meta property="og:title" content={client.clientName} />
+          <meta property="og:description" content={designation || name} />
+          <meta
+            property="og:url"
+            content={`https://www.scan-taps.com/${companyName}`}
+          />
+          <meta property="og:image" content={`${logo}`} />
+          <meta name="twitter:title" content={client.clientName} />
+          <meta name="twitter:description" content={designation || name} />
+        </Helmet>
 
             <div
               className={`min-h-screen w-full px-3 max-w-md mx-auto shadow-lg pt-5 pb-5 text-center bg-gradient-to-tr from-[#16215c] via-[#16215c] to-[#16215c]`}

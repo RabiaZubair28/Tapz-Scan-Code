@@ -90,7 +90,7 @@ const EditPortal05 = () => {
     const fetchClient = async () => {
       try {
         const response = await axios.get(
-          `https://www.scan-taps.com/api/data/clients/${clientId}`
+          `https://www.scan-taps.com/api/data/clients/${clientId}`,
         );
         setClient(response.data);
         setLoading(false);
@@ -225,7 +225,7 @@ const EditPortal05 = () => {
       try {
         // console.log("Fetching visit count...");
         const incrementResponse = await axios.post(
-          `https://www.scan-taps.com/api/visit/${clientId01}`
+          `https://www.scan-taps.com/api/visit/${clientId01}`,
         );
         // console.log("Current visit count fetched.");
         setVisitCount(incrementResponse.data.count);
@@ -292,7 +292,7 @@ END:VCARD`;
       const availableWidth = pageWidth - horizontalMargin * 2; // Subtract left and right margins
       const scaleFactor = Math.min(
         availableWidth / imgWidth,
-        pageHeight / imgHeight
+        pageHeight / imgHeight,
       );
       const imgScaledWidth = imgWidth * scaleFactor;
       const imgScaledHeight = imgHeight * scaleFactor;
@@ -456,7 +456,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -478,7 +478,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -494,7 +494,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateCover/${_id}`,
         {
           images: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -522,7 +522,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -538,7 +538,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateLogo/${_id}`,
         {
           logo: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -558,7 +558,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img01: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -586,7 +586,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -602,7 +602,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg01/${_id}`,
         {
           img01: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -622,7 +622,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -650,7 +650,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -666,7 +666,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg02/${_id}`,
         {
           img02: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -686,7 +686,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -714,7 +714,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -730,7 +730,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg03/${_id}`,
         {
           img03: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -749,7 +749,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img04: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -777,7 +777,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -793,7 +793,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg04/${_id}`,
         {
           img04: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -811,7 +811,7 @@ END:VCARD`;
         `https://www.scan-taps.com/update/${id}`,
         {
           img05: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -839,7 +839,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -855,7 +855,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg05/${_id}`,
         {
           img05: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -874,7 +874,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img06: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -902,7 +902,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -918,7 +918,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg06/${_id}`,
         {
           img06: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -936,7 +936,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img07: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -964,7 +964,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -980,7 +980,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg07/${_id}`,
         {
           img07: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -999,7 +999,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img08: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1027,7 +1027,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -1043,7 +1043,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg08/${_id}`,
         {
           img08: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1061,7 +1061,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img09: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1089,7 +1089,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -1105,7 +1105,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg09/${_id}`,
         {
           img09: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1124,7 +1124,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           img10: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1152,7 +1152,7 @@ END:VCARD`;
       {
         method: "POST",
         body: data,
-      }
+      },
     );
 
     const uploadedImgURL = await res.json();
@@ -1168,7 +1168,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/updateImg10/${_id}`,
         {
           img10: newImg,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1191,7 +1191,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           name: newName,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1214,7 +1214,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone01: newTelephone01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1233,7 +1233,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           telephone01: addTelephone01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1251,7 +1251,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone01: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1274,7 +1274,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone02: newTelephone02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1293,7 +1293,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           telephone02: addTelephone02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1311,7 +1311,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1334,7 +1334,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone03: newTelephone03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1353,7 +1353,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           telephone03: addTelephone03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1371,7 +1371,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           telephone03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1390,7 +1390,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           name: addName,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1408,7 +1408,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           name: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1430,7 +1430,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           services: newServices,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1449,7 +1449,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           services: addServices,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1467,7 +1467,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           services: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1490,7 +1490,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           romanName: newNameRoman,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1509,7 +1509,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           romanName: addRomanName,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1527,7 +1527,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           romanName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1550,7 +1550,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           clientName: newClientName,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1569,7 +1569,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           clientName: addClientName,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1587,7 +1587,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           clientName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1610,7 +1610,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           designation: newDesignation,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1628,7 +1628,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           designation: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1651,7 +1651,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email: newEmail,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1670,7 +1670,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           email: addEmail,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1688,7 +1688,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1707,7 +1707,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           email02: addEmail,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1730,7 +1730,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email02: newEmail02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1748,7 +1748,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1767,7 +1767,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           email03: addEmail,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1790,7 +1790,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email03: newEmail03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1808,7 +1808,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           email03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1831,7 +1831,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           description: newDescription,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1849,7 +1849,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           description: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1872,7 +1872,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone01: newPhone01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1891,7 +1891,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           phone01: addPhone01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1909,7 +1909,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone01: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1932,7 +1932,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone02: newPhone02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1951,7 +1951,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           phone02: addPhone02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1970,7 +1970,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -1993,7 +1993,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone03: newPhone03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2012,7 +2012,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           phone03: addPhone03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2030,7 +2030,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           phone03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2050,7 +2050,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           whatsapp01: addWhatsapp01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2073,7 +2073,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp01: newWhatsapp01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2091,7 +2091,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp01: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2114,7 +2114,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp02: newWhatsapp02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2133,7 +2133,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           whatsapp02: addWhatsapp02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2151,7 +2151,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2174,7 +2174,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp03: newWhatsapp03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2193,7 +2193,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           whatsapp03: addWhatsapp03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2211,7 +2211,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           whatsapp03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2239,7 +2239,7 @@ END:VCARD`;
         {
           instagramLink: newInstagram,
           instagramName: newInstagramText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2260,7 +2260,7 @@ END:VCARD`;
         {
           instagramLink: addInstagram,
           instagramName: addInstagramText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2279,7 +2279,7 @@ END:VCARD`;
         {
           instagramLink: "",
           instagramName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2308,7 +2308,7 @@ END:VCARD`;
         {
           instagramLink02: newInstagram02,
           instagramName02: newInstagramText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2329,7 +2329,7 @@ END:VCARD`;
         {
           instagramLink02: addInstagram02,
           instagramName02: addInstagramText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2348,7 +2348,7 @@ END:VCARD`;
         {
           instagramLink02: "",
           instagramName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2376,7 +2376,7 @@ END:VCARD`;
         {
           instagramLink03: newInstagram03,
           instagramName03: newInstagramText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2397,7 +2397,7 @@ END:VCARD`;
         {
           instagramLink03: addInstagram03,
           instagramName03: addInstagramText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2416,7 +2416,7 @@ END:VCARD`;
         {
           instagramLink03: "",
           instagramName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2444,7 +2444,7 @@ END:VCARD`;
         {
           snapchatLink: newSnapchat,
           snapchatName: newSnapchatText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2465,7 +2465,7 @@ END:VCARD`;
         {
           snapchatLink: addSnapchat,
           snapchatName: addSnapchatText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2484,7 +2484,7 @@ END:VCARD`;
         {
           snapchatLink: "",
           snapchatName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2513,7 +2513,7 @@ END:VCARD`;
         {
           snapchatLink02: newSnapchat02,
           snapchatName02: newSnapchatText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2535,7 +2535,7 @@ END:VCARD`;
         {
           snapchatLink02: addSnapchat02,
           snapchatName02: addSnapchatText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2554,7 +2554,7 @@ END:VCARD`;
         {
           snapchatLink02: "",
           snapchatName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2583,7 +2583,7 @@ END:VCARD`;
         {
           snapchatLink03: newSnapchat03,
           snapchatName03: newSnapchatText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2605,7 +2605,7 @@ END:VCARD`;
         {
           snapchatLink03: addSnapchat03,
           snapchatName03: addSnapchatText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2624,7 +2624,7 @@ END:VCARD`;
         {
           snapchatLink03: "",
           snapchatName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2646,7 +2646,7 @@ END:VCARD`;
         {
           youtubeLink: addYoutube,
           youtubeName: addYoutubeText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2674,7 +2674,7 @@ END:VCARD`;
         {
           youtubeLink: newYoutube,
           youtubeName: newYoutubeText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2693,7 +2693,7 @@ END:VCARD`;
         {
           youtubeLink: "",
           youtubeName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2722,7 +2722,7 @@ END:VCARD`;
         {
           youtubeLink02: newYoutube02,
           youtubeName02: newYoutubeText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2744,7 +2744,7 @@ END:VCARD`;
         {
           youtubeLink02: addYoutube02,
           youtubeName02: addYoutubeText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2763,7 +2763,7 @@ END:VCARD`;
         {
           youtubeLink02: "",
           youtubeName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2792,7 +2792,7 @@ END:VCARD`;
         {
           youtubeLink03: newYoutube03,
           youtubeName03: newYoutubeText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2814,7 +2814,7 @@ END:VCARD`;
         {
           youtubeLink03: addYoutube03,
           youtubeName03: addYoutubeText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2833,7 +2833,7 @@ END:VCARD`;
         {
           youtubeLink03: "",
           youtubeName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2862,7 +2862,7 @@ END:VCARD`;
         {
           youtubeShortsLink: newYoutubeShorts,
           youtubeShortsName: newYoutubeShortsText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2884,7 +2884,7 @@ END:VCARD`;
         {
           youtubeShortsLink: addYoutubeShorts,
           youtubeShortsName: addYoutubeShortsText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2903,7 +2903,7 @@ END:VCARD`;
         {
           youtubeShortsLink: "",
           youtubeShortsName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2918,7 +2918,7 @@ END:VCARD`;
   const handleEditYoutubeShorts02 = async (id) => {
     var newYoutubeShorts02 = document.getElementById("youtubeShorts02").value;
     var newYoutubeShortsText02 = document.getElementById(
-      "youtubeShortsText02"
+      "youtubeShortsText02",
     ).value;
     console.log(newYoutubeShorts02);
     if (newYoutubeShorts02 == "") {
@@ -2934,7 +2934,7 @@ END:VCARD`;
         {
           youtubeShortsLink02: newYoutubeShorts02,
           youtubeShortsName02: newYoutubeShortsText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2956,7 +2956,7 @@ END:VCARD`;
         {
           youtubeShortsLink02: addYoutubeShorts02,
           youtubeShortsName02: addYoutubeShortsText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2975,7 +2975,7 @@ END:VCARD`;
         {
           youtubeShortsLink02: "",
           youtubeShortsName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -2990,7 +2990,7 @@ END:VCARD`;
   const handleEditYoutubeShorts03 = async (id) => {
     var newYoutubeShorts03 = document.getElementById("youtubeShorts03").value;
     var newYoutubeShortsText03 = document.getElementById(
-      "youtubeShortsText03"
+      "youtubeShortsText03",
     ).value;
     console.log(newYoutubeShorts03);
     if (newYoutubeShorts03 == "") {
@@ -3006,7 +3006,7 @@ END:VCARD`;
         {
           youtubeShortsLink03: newYoutubeShorts03,
           youtubeShortsName03: newYoutubeShortsText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3028,7 +3028,7 @@ END:VCARD`;
         {
           youtubeShortsLink03: addYoutubeShorts03,
           youtubeShortsName03: addYoutubeShortsText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3047,7 +3047,7 @@ END:VCARD`;
         {
           youtubeShortsLink03: "",
           youtubeShortsName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3075,7 +3075,7 @@ END:VCARD`;
         {
           tiktokLink: newTiktok,
           tiktokName: newTiktokText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3097,7 +3097,7 @@ END:VCARD`;
         {
           tiktokLink: addTiktok,
           tiktokName: addTiktokText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3116,7 +3116,7 @@ END:VCARD`;
         {
           tiktokLink: "",
           tiktokName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3145,7 +3145,7 @@ END:VCARD`;
         {
           tiktokLink02: newTiktok02,
           tiktokName02: newTiktokText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3167,7 +3167,7 @@ END:VCARD`;
         {
           tiktokLink02: addTiktok02,
           tiktokName02: addTiktokText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3186,7 +3186,7 @@ END:VCARD`;
         {
           tiktokLink02: "",
           tiktokName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3215,7 +3215,7 @@ END:VCARD`;
         {
           tiktokLink03: newTiktok03,
           tiktokName03: newTiktokText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3237,7 +3237,7 @@ END:VCARD`;
         {
           tiktokLink03: addTiktok03,
           tiktokName03: addTiktokText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3256,7 +3256,7 @@ END:VCARD`;
         {
           tiktokLink03: "",
           tiktokName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3284,7 +3284,7 @@ END:VCARD`;
         {
           twitterLink: newTwitter,
           twitterName: newTwitterText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3305,7 +3305,7 @@ END:VCARD`;
         {
           twitterLink: addTwitter,
           twitterName: addTwitterText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3324,7 +3324,7 @@ END:VCARD`;
         {
           twitterLink: "",
           twitterName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3353,7 +3353,7 @@ END:VCARD`;
         {
           twitterLink02: newTwitter02,
           twitterName02: newTwitterText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3375,7 +3375,7 @@ END:VCARD`;
         {
           twitterLink02: addTwitter02,
           twitterName02: addTwitterText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3394,7 +3394,7 @@ END:VCARD`;
         {
           twitterLink02: "",
           twitterName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3423,7 +3423,7 @@ END:VCARD`;
         {
           twitterLink03: newTwitter03,
           twitterName03: newTwitterText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3445,7 +3445,7 @@ END:VCARD`;
         {
           twitterLink03: addTwitter03,
           twitterName03: addTwitterText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3464,7 +3464,7 @@ END:VCARD`;
         {
           twitterLink03: "",
           twitterName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3493,7 +3493,7 @@ END:VCARD`;
         {
           facebookLink: newFacebook,
           facebookName: newFacebookText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3514,7 +3514,7 @@ END:VCARD`;
         {
           facebookLink: addFacebook,
           facebookName: addFacebookText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3533,7 +3533,7 @@ END:VCARD`;
         {
           facebookLink: "",
           facebookName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3562,7 +3562,7 @@ END:VCARD`;
         {
           facebookLink02: newFacebook02,
           facebookName02: newFacebookText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3583,7 +3583,7 @@ END:VCARD`;
         {
           facebookLink02: addFacebook02,
           facebookName02: addFacebookText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3602,7 +3602,7 @@ END:VCARD`;
         {
           facebookLink02: "",
           facebookName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3630,7 +3630,7 @@ END:VCARD`;
         {
           facebookLink03: newFacebook03,
           facebookName03: newFacebookText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3652,7 +3652,7 @@ END:VCARD`;
         {
           facebookLink03: addFacebook03,
           facebookName03: addFacebookText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3672,7 +3672,7 @@ END:VCARD`;
         {
           facebookLink03: "",
           facebookName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3701,7 +3701,7 @@ END:VCARD`;
         {
           googleReviewLink: newGoogleReview,
           googleReviewName: newGoogleReviewText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3723,7 +3723,7 @@ END:VCARD`;
         {
           googleReviewLink: addGoogleReview,
           googleReviewName: addGoogleReviewText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3743,7 +3743,7 @@ END:VCARD`;
         {
           googleReviewLink: "",
           googleReviewName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3773,7 +3773,7 @@ END:VCARD`;
         {
           googleReviewLink02: newGoogleReview02,
           googleReviewName02: newGoogleReviewText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3795,7 +3795,7 @@ END:VCARD`;
         {
           googleReviewLink02: addGoogleReview02,
           googleReviewName02: addGoogleReviewText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3815,7 +3815,7 @@ END:VCARD`;
         {
           googleReviewLink02: "",
           googleReviewName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3845,7 +3845,7 @@ END:VCARD`;
         {
           googleReviewLink03: newGoogleReview03,
           googleReviewName03: newGoogleReviewText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3867,7 +3867,7 @@ END:VCARD`;
         {
           googleReviewLink03: addGoogleReview03,
           googleReviewName03: addGoogleReviewText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3887,7 +3887,7 @@ END:VCARD`;
         {
           googleReviewLink03: "",
           googleReviewName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3909,7 +3909,7 @@ END:VCARD`;
         {
           websiteLink: addWebsite,
           websiteName: addWebsiteText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3937,7 +3937,7 @@ END:VCARD`;
         {
           website: newWebsite,
           websiteName: newWebsiteText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3956,7 +3956,7 @@ END:VCARD`;
         {
           website: "",
           websiteName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -3985,7 +3985,7 @@ END:VCARD`;
         {
           websiteLink02: newWebsite02,
           websiteName02: newWebsiteText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4007,7 +4007,7 @@ END:VCARD`;
         {
           website02: addWebsite02,
           websiteName02: addWebsiteText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4026,7 +4026,7 @@ END:VCARD`;
         {
           website02: "",
           websiteName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4055,7 +4055,7 @@ END:VCARD`;
         {
           website03: newWebsite03,
           websiteName03: newWebsiteText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4077,7 +4077,7 @@ END:VCARD`;
         {
           website03: addWebsite03,
           websiteName03: addWebsiteText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4096,7 +4096,7 @@ END:VCARD`;
         {
           website03: "",
           websiteName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4120,7 +4120,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           address: newAddress,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4139,7 +4139,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/add/${id}`,
         {
           address: addAddress,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4157,7 +4157,7 @@ END:VCARD`;
         `https://www.scan-taps.com/api/data/update/${id}`,
         {
           address: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4185,7 +4185,7 @@ END:VCARD`;
         {
           googleMapLink: newGoogleMap,
           googleMapName: newGoogleMapText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4207,7 +4207,7 @@ END:VCARD`;
         {
           googleMapLink: addGoogleMap,
           googleMapName: addGoogleMapText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4227,7 +4227,7 @@ END:VCARD`;
         {
           googleMapLink: "",
           googleMapName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4256,7 +4256,7 @@ END:VCARD`;
         {
           googleMapLink02: newGoogleMap02,
           googleMapName02: newGoogleMapText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4278,7 +4278,7 @@ END:VCARD`;
         {
           googleMapLink02: addGoogleMap02,
           googleMapName02: addGoogleMapText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4298,7 +4298,7 @@ END:VCARD`;
         {
           googleMapLink02: "",
           googleMapName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4327,7 +4327,7 @@ END:VCARD`;
         {
           googleMapLink03: newGoogleMap03,
           googleMapName03: newGoogleMapText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4349,7 +4349,7 @@ END:VCARD`;
         {
           googleMapLink03: addGoogleMap03,
           googleMapName03: addGoogleMapText03,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4369,7 +4369,7 @@ END:VCARD`;
         {
           googleMapLink03: "",
           googleMapName03: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4390,7 +4390,7 @@ END:VCARD`;
         {
           menuLink: addMenuLink,
           menuName: addMenuText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4418,7 +4418,7 @@ END:VCARD`;
         {
           menuLink: newMenuLink,
           menuName: newMenuText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4437,7 +4437,7 @@ END:VCARD`;
         {
           menuLink: "",
           menuName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4458,7 +4458,7 @@ END:VCARD`;
         {
           catalogueLink: addCatalogueLink,
           catalogueName: addCatalogueText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4487,7 +4487,7 @@ END:VCARD`;
         {
           catalogueLink: newCatalogueLink,
           catalogueName: newCatalogueText,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4506,7 +4506,7 @@ END:VCARD`;
         {
           catalogueLink: "",
           catalogueName: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4528,7 +4528,7 @@ END:VCARD`;
         {
           profileLink01: addProfileLink01,
           profileName01: addProfileText01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4557,7 +4557,7 @@ END:VCARD`;
         {
           profileLink01: newProfileLink01,
           profileName01: newProfileText01,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4576,7 +4576,7 @@ END:VCARD`;
         {
           profileLink01: "",
           profileName01: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4597,7 +4597,7 @@ END:VCARD`;
         {
           profileLink02: addProfileLink02,
           profileName02: addProfileText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4626,7 +4626,7 @@ END:VCARD`;
         {
           profileLink02: newProfileLink02,
           profileName02: newProfileText02,
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4645,7 +4645,7 @@ END:VCARD`;
         {
           profileLink02: "",
           profileName02: "",
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -4772,17 +4772,17 @@ END:VCARD`;
 
               <link rel="icon" type="image/x-icon" href={`${logo}`} />
 
-              <meta name="description" content={description} />
-              <meta property="article:section" content={description} />
-              <meta property="og:title" content={clientName} />
-              <meta property="og:description" content={description} />
+              <meta name="description" content={designation || name} />
+              <meta property="article:section" content={designation || name} />
+              <meta property="og:title" content={client.clientName} />
+              <meta property="og:description" content={designation || name} />
               <meta
                 property="og:url"
                 content={`https://www.scan-taps.com/${companyName}`}
               />
               <meta property="og:image" content={`${logo}`} />
-              <meta name="twitter:title" content={clientName} />
-              <meta name="twitter:description" content={description} />
+              <meta name="twitter:title" content={client.clientName} />
+              <meta name="twitter:description" content={designation || name} />
             </Helmet>
 
             <div
