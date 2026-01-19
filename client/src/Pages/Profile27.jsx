@@ -1066,7 +1066,7 @@ const Profile27 = () => {
                       </div>
                       <div className="min-w-0 text-center">
                         <p className="text-white font-semibold truncate">
-                          Menu قائمة الطعام
+                          Menu قائمة المشروبات
                         </p>
                         <p className="text-white/80 text-sm truncate" dir="rtl">
                           {menuName}
