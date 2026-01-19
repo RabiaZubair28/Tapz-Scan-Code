@@ -628,7 +628,7 @@ const Profile27 = () => {
                       <FaInstagram size={26} color="white" />
                     </a>
                   )}
-                  {twitterLink && (
+                  {/* {twitterLink && (
                     <a
                       href={twitterLink}
                       target="_blank"
@@ -637,7 +637,7 @@ const Profile27 = () => {
                     >
                       <FaXTwitter size={24} color="white" />
                     </a>
-                  )}
+                  )} */}
                   {whatsapp01 && (
                     <a
                       href={`https://wa.me/${whatsapp01}`}
@@ -668,10 +668,20 @@ const Profile27 = () => {
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
                   )}
+                  {email && (
+                    <a
+                      href={`mailto:${email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
+                    >
+                      <FaEnvelope size={26} color="white" />
+                    </a>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  {phone01 && (
+                  {/* {phone01 && (
                     <a
                       href={`tel:${phone01}`}
                       target="_blank"
@@ -695,9 +705,9 @@ const Profile27 = () => {
                         ⋮
                       </span>
                     </a>
-                  )}
+                  )} */}
 
-                  {whatsapp01 && (
+                  {/* {whatsapp01 && (
                     <a
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
@@ -777,9 +787,9 @@ const Profile27 = () => {
                         ⋮
                       </span>
                     </a>
-                  )}
+                  )} */}
 
-                  {youtubeLink && (
+                  {/* {youtubeLink && (
                     <a
                       href={youtubeLink}
                       target="_blank"
@@ -918,9 +928,9 @@ const Profile27 = () => {
                         ⋮
                       </span>
                     </a>
-                  )}
+                  )} */}
 
-                  {website && (
+                  {/* {website && (
                     <a
                       href={website}
                       target="_blank"
@@ -1032,7 +1042,7 @@ const Profile27 = () => {
                         ⋮
                       </span>
                     </a>
-                  )}
+                  )} */}
                   {menuLink && (
                     <a
                       href={menuLink}
@@ -1062,7 +1072,7 @@ const Profile27 = () => {
                     </a>
                   )}
 
-                  {profileLink01 && (
+                  {/* {profileLink01 && (
                     <a
                       href={profileLink01}
                       target="_blank"
@@ -1147,7 +1157,7 @@ const Profile27 = () => {
                         ⋮
                       </span>
                     </a>
-                  )}
+                  )} */}
                 </div>
 
                 {(img01 != "" ||
