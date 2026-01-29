@@ -391,7 +391,7 @@ END:VCARD`;
                         <img
                           src={fb} // Replace with the actual path to the Facebook icon
                           alt="Facebook"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full "
                         />
                       </FacebookShareButton>
                     </div>
@@ -405,7 +405,7 @@ END:VCARD`;
                         <img
                           src={linkedin} // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full "
                         />
                       </LinkedinShareButton>
                     </div>
@@ -419,7 +419,7 @@ END:VCARD`;
                         <img
                           src={telegram} // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full "
                         />
                       </TelegramShareButton>
                     </div>
@@ -433,7 +433,7 @@ END:VCARD`;
                         <img
                           src={whatsapp} // Replace with the actual path to the WhatsApp icon
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full "
                         />
                       </WhatsappShareButton>
                     </div>
@@ -534,7 +534,7 @@ END:VCARD`;
                         href={`tel:${phone01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center bg-[#65141a] justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center bg-[#65141a] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
                       >
                         <MdOutlinePhoneAndroid size={20} color="#f0d3b5" />
                       </a>
@@ -542,13 +542,13 @@ END:VCARD`;
                         href={`mailto:${email}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full border-[0.25px]  shadow-sm hover:shadow-md bg-[#65141a] "
+                        className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md bg-[#65141a] "
                       >
                         <AiOutlineMail size={20} color="#f0d3b5" />
                       </a>
                       <a
                         href={`sms:${phone01}`}
-                        className="w-12 h-12 flex items-center justify-center rounded-full  border-[0.25px]  shadow-sm hover:shadow-md bg-[#65141a] "
+                        className="w-12 h-12 flex items-center justify-center rounded-full  shadow-sm hover:shadow-md bg-[#65141a] "
                       >
                         <RiMessage2Line size={20} color="#f0d3b5" />
                       </a>
@@ -556,7 +556,7 @@ END:VCARD`;
                         href={`https://wa.me/${whatsapp01}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#65141a] border-[0.25px] shadow-sm hover:shadow-md "
+                        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#65141a] shadow-sm hover:shadow-md "
                       >
                         <ImWhatsapp size={20} color="#f0d3b5" />
                       </a>
@@ -1799,7 +1799,7 @@ END:VCARD`;
                         <img
                           src={fb} // Replace with the actual path to the Facebook icon
                           alt="Facebook"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full  "
                         />
                       </FacebookShareButton>
                     </div>
@@ -1813,7 +1813,7 @@ END:VCARD`;
                         <img
                           src={twitter02} // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full  "
                         />
                       </TwitterShareButton>
                     </div>
@@ -1827,7 +1827,7 @@ END:VCARD`;
                         <img
                           src={linkedin} // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full  "
                         />
                       </LinkedinShareButton>
                     </div>
@@ -1841,7 +1841,7 @@ END:VCARD`;
                         <img
                           src={telegram} // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full  "
                         />
                       </TelegramShareButton>
                     </div>
@@ -1857,7 +1857,7 @@ END:VCARD`;
                         <img
                           src={whatsapp}
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 border-[#65141a]"
+                          className="w-12 h-12 rounded-full border-2 "
                         />
                       </a>
                     </div>
