@@ -1059,24 +1059,24 @@ const Profile28 = () => {
                       href={menuLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#65141a] "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="w-12 h-12 flex items-center justify-center text-[#f0d3b5]">
-                        <FaUtensils size={35} color="#f0d3b5" />
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaUtensils size={35} color="#65141a" />
                       </div>
                       <div className="min-w-0 text-center">
-                        <p className="text-[#f0d3b5] font-semibold truncate">
+                        <p className="text-[#65141a] font-semibold truncate">
                           Menu قائمة المشروبات
                         </p>
                         <p
-                          className="text-[#f0d3b5] text-sm truncate"
+                          className="text-[#65141a] text-sm truncate"
                           dir="rtl"
                         >
                           {menuName}
                         </p>
                       </div>
 
-                      <span className="text-[#f0d3b5] text-2xl leading-none">
+                      <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
