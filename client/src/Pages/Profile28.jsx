@@ -636,7 +636,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaInstagram size={26} color="[#65141a]" />
+                      <FaInstagram size={26} color="#65141a" />
                     </a>
                   )}
                   {/* {twitterLink && (
@@ -646,7 +646,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaXTwitter size={24} color="[#65141a]" />
+                      <FaXTwitter size={24} color="#65141a" />
                     </a>
                   )} */}
                   {whatsapp01 && (
@@ -656,7 +656,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaWhatsapp size={26} color="[#65141a]" />
+                      <FaWhatsapp size={26} color="#65141a" />
                     </a>
                   )}
                   {tiktokLink && (
@@ -666,7 +666,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaTiktok size={26} color="[#65141a]" />
+                      <FaTiktok size={26} color="#65141a" />
                     </a>
                   )}
                   {snapchatLink && (
@@ -676,7 +676,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaSnapchatGhost size={26} color="[#65141a]" />
+                      <FaSnapchatGhost size={26} color="#65141a" />
                     </a>
                   )}
                   {email && (
@@ -686,7 +686,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaEnvelope size={26} color="[#65141a]" />
+                      <FaEnvelope size={26} color="#65141a" />
                     </a>
                   )}
                 </div>
@@ -701,7 +701,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhone size={32} color="[#65141a]" />
+                          <FaPhone size={32} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -727,7 +727,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaWhatsapp size={35} color="[#65141a]" />
+                          <FaWhatsapp size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -752,7 +752,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhoneSquareAlt size={35} color="[#65141a]" />
+                          <FaPhoneSquareAlt size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -780,7 +780,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaInstagram size={35} color="[#65141a]" />
+                          <FaInstagram size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -809,7 +809,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaYoutube size={35} color="[#65141a]" />
+                          <FaYoutube size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -837,7 +837,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaTiktok size={26} color="[#65141a]" />
+                          <FaTiktok size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -865,7 +865,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaXTwitter size={26} color="[#65141a]" />
+                          <FaXTwitter size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -893,7 +893,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaFacebook size={26} color="[#65141a]" />
+                          <FaFacebook size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -921,7 +921,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaStar size={26} color="[#65141a]" />
+                          <FaStar size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -950,7 +950,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaGlobe size={30} color="[#65141a]" />
+                          <FaGlobe size={30} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -979,7 +979,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaEnvelope size={26} color="[#65141a]" />
+                          <FaEnvelope size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1007,7 +1007,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaLinkedinIn size={26} color="[#65141a]" />
+                          <FaLinkedinIn size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1035,7 +1035,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaMapLocation size={26} color="[#65141a]" />
+                          <FaMapLocation size={26} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1061,22 +1061,22 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#65141a] "
                     >
-                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                        <FaUtensils size={35} color="[#65141a]" />
+                      <div className="w-12 h-12 flex items-center justify-center text-[#f0d3b5]">
+                        <FaUtensils size={35} color="#f0d3b5" />
                       </div>
                       <div className="min-w-0 text-center">
-                        <p className="text-[#65141a] font-semibold truncate">
+                        <p className="text-[#f0d3b5] font-semibold truncate">
                           Menu قائمة المشروبات
                         </p>
                         <p
-                          className="text-[#65141a]/80 text-sm truncate"
+                          className="text-[#f0d3b5] text-sm truncate"
                           dir="rtl"
                         >
                           {menuName}
                         </p>
                       </div>
 
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
+                      <span className="text-[#f0d3b5] text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1091,7 +1091,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaGift size={35} color="[#65141a]" />
+                          <FaGift size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1120,7 +1120,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaWhatsapp size={35} color="[#65141a]" />
+                          <FaWhatsapp size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1149,7 +1149,7 @@ const Profile28 = () => {
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaShoppingBag size={35} color="[#65141a]" />
+                          <FaShoppingBag size={35} color="#65141a" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-[#65141a] font-semibold truncate">
@@ -1340,7 +1340,7 @@ const Profile28 = () => {
                       >
                         <FaFacebookF
                           size={40}
-                          color="[#65141a]"
+                          color="#65141a"
                           alt="Facebook"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1355,7 +1355,7 @@ const Profile28 = () => {
                       >
                         <FaTwitter
                           size={40}
-                          color="[#65141a]" // Replace with the actual path to the Twitter icon
+                          color="#65141a" // Replace with the actual path to the Twitter icon
                           alt="Twitter"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1370,7 +1370,7 @@ const Profile28 = () => {
                       >
                         <FaLinkedinIn
                           size={40}
-                          color="[#65141a]" // Replace with the actual path to the LinkedIn icon
+                          color="#65141a" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1385,7 +1385,7 @@ const Profile28 = () => {
                       >
                         <FaTelegramPlane
                           size={40}
-                          color="[#65141a]"
+                          color="#65141a"
                           // Replace with the actual path to the Telegram icon
                           alt="Telegram"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
@@ -1403,7 +1403,7 @@ const Profile28 = () => {
                       >
                         <FaWhatsapp
                           size={40}
-                          color="[#65141a]"
+                          color="#65141a"
                           alt="WhatsApp"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1421,7 +1421,7 @@ const Profile28 = () => {
                       className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#65141a]  hover:border-[#65141a]"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="[#65141a]" />
+                      <IoQrCodeSharp size={35} color="#65141a" />
                     </div>
 
                     <div
@@ -1429,7 +1429,7 @@ const Profile28 = () => {
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="[#65141a]" />
+                      <FaDownload size={30} color="#65141a" />
                     </div>
                   </div>
 
