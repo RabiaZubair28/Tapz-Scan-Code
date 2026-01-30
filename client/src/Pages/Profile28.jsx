@@ -530,7 +530,7 @@ const Profile28 = () => {
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} color="black" />
+                      <FaDownload size={20} color="#65141a" />
                     </div>
 
                     <div className="social-btn">
@@ -540,7 +540,7 @@ const Profile28 = () => {
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
-                          <FaFacebookF size={26} color="black" />
+                          <FaFacebookF size={26} color="#65141a" />
                         </div>
                       </FacebookShareButton>
                     </div>
@@ -552,7 +552,7 @@ const Profile28 = () => {
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
-                          <FaLinkedinIn size={26} color="black" />
+                          <FaLinkedinIn size={26} color="#65141a" />
                         </div>
                       </LinkedinShareButton>
                     </div>
@@ -564,7 +564,7 @@ const Profile28 = () => {
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
-                          <FaTelegramPlane size={22} color="black" />
+                          <FaTelegramPlane size={22} color="#65141a" />
                         </div>
                       </TelegramShareButton>
                     </div>
@@ -576,7 +576,7 @@ const Profile28 = () => {
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
                         <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
-                          <FaWhatsapp size={26} color="black" />
+                          <FaWhatsapp size={26} color="#65141a" />
                         </div>
                       </WhatsappShareButton>
                     </div>
@@ -607,13 +607,13 @@ const Profile28 = () => {
               <div className="px-5">
                 <div className="pt-5 pb-5">
                   <h1
-                    className="text-white text-3xl font-semibold pb-3"
+                    className="text-[#65141a] text-3xl font-semibold pb-3"
                     dir="rtl"
                   >
                     {clientName}
                   </h1>
                   <p
-                    className="text-md text-center text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
+                    className="text-md text-center text-[#65141a] pt-1 pb-1 w-full  break-words [#65141a]space-pre-line"
                     style={{ textWrap: "wrap" }}
                   >
                     {String(description || "")
@@ -636,7 +636,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaInstagram size={26} color="white" />
+                      <FaInstagram size={26} color="[#65141a]" />
                     </a>
                   )}
                   {/* {twitterLink && (
@@ -646,7 +646,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaXTwitter size={24} color="white" />
+                      <FaXTwitter size={24} color="[#65141a]" />
                     </a>
                   )} */}
                   {whatsapp01 && (
@@ -656,7 +656,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaWhatsapp size={26} color="white" />
+                      <FaWhatsapp size={26} color="[#65141a]" />
                     </a>
                   )}
                   {tiktokLink && (
@@ -666,7 +666,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaTiktok size={26} color="white" />
+                      <FaTiktok size={26} color="[#65141a]" />
                     </a>
                   )}
                   {snapchatLink && (
@@ -676,7 +676,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaSnapchatGhost size={26} color="white" />
+                      <FaSnapchatGhost size={26} color="[#65141a]" />
                     </a>
                   )}
                   {email && (
@@ -686,7 +686,7 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#65141a] rounded-full p-3"
                     >
-                      <FaEnvelope size={26} color="white" />
+                      <FaEnvelope size={26} color="[#65141a]" />
                     </a>
                   )}
                 </div>
@@ -700,19 +700,19 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaPhone size={32} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaPhone size={32} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Phone هاتف
                           </p>
-                          <p className="text-white/80 text-sm truncate">
+                          <p className="text-[#65141a]/80 text-sm truncate">
                             {phone01}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -726,19 +726,19 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaWhatsapp size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             WhatsApp واتساب
                           </p>
-                          <p className="text-white/80 text-sm truncate">
+                          <p className="text-[#65141a]/80 text-sm truncate">
                             {whatsapp01}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -751,22 +751,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaPhoneSquareAlt size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaPhoneSquareAlt size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Telephone هاتف ثابت
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {telephone01}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -779,22 +779,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaInstagram size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaInstagram size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Instagram انستغرام
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {instagramName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -808,22 +808,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaYoutube size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaYoutube size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             YouTube يوتيوب
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {youtubeName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -836,22 +836,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaTiktok size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaTiktok size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             TikTok تيك توك
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {tiktokName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -864,22 +864,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaXTwitter size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaXTwitter size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             X إكس
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {twitterName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -892,22 +892,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaFacebook size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaFacebook size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Facebook فيسبوك
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {facebookName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -920,22 +920,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaStar size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaStar size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Google Review تقييمات جوجل
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {googleReviewName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -949,23 +949,23 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGlobe size={30} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaGlobe size={30} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Order through our website الطلب من خلال الموقع
                             الإلكتروني
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {websiteName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -978,22 +978,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaEnvelope size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaEnvelope size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Email البريد الإلكتروني
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {email}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1006,22 +1006,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaLinkedinIn size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaLinkedinIn size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             LinkedIn لينكدإن
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {youtubeShortsLink}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1034,22 +1034,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaMapLocation size={26} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaMapLocation size={26} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Location الموقع
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {googleMapName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1059,21 +1059,24 @@ const Profile28 = () => {
                       href={menuLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#65141a] "
                     >
-                      <div className="w-12 h-12 flex items-center justify-center text-white">
-                        <FaUtensils size={35} color="white" />
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaUtensils size={35} color="[#65141a]" />
                       </div>
                       <div className="min-w-0 text-center">
-                        <p className="text-white font-semibold truncate">
+                        <p className="text-[#65141a] font-semibold truncate">
                           Menu قائمة المشروبات
                         </p>
-                        <p className="text-white/80 text-sm truncate" dir="rtl">
+                        <p
+                          className="text-[#65141a]/80 text-sm truncate"
+                          dir="rtl"
+                        >
                           {menuName}
                         </p>
                       </div>
 
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1087,22 +1090,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaGift size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaGift size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Company Profile ملف الشركة
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {profileName01}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1116,22 +1119,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaWhatsapp size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             WhatsApp واتساب
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {whatsapp02}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1145,22 +1148,22 @@ const Profile28 = () => {
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaShoppingBag size={35} color="white" />
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaShoppingBag size={35} color="[#65141a]" />
                         </div>
                         <div className="min-w-0 text-left">
-                          <p className="text-white font-semibold truncate">
+                          <p className="text-[#65141a] font-semibold truncate">
                             Catalogue الكتالوج
                           </p>
                           <p
-                            className="text-white/80 text-sm truncate"
+                            className="text-[#65141a]/80 text-sm truncate"
                             dir="rtl"
                           >
                             {catalogueName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/80 text-2xl leading-none">
+                      <span className="text-[#65141a]/80 text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1179,7 +1182,7 @@ const Profile28 = () => {
                   img09 != "" ||
                   img10 != "") && (
                   <div className="px-0">
-                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                    <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
                       Image Gallery
                     </h2>
                     <hr className="border-[#65141a]" />
@@ -1304,11 +1307,11 @@ const Profile28 = () => {
                 )}
                 {location != "" && (
                   <div className="px-0">
-                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                    <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
                       Location
                     </h2>
                     <hr className="border-gray-300" />
-                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
+                    <div className="flex flex-col items-center bg-[#65141a] mx-auto rounded-xl border-[1px] border-[#65141a] shadow-md  space-y-4 mt-3">
                       {location && (
                         <iframe
                           src={location}
@@ -1324,7 +1327,7 @@ const Profile28 = () => {
                 )}
 
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
                     Share Profile
                   </h2>
                   <hr className="border-[#65141a]" />
@@ -1337,7 +1340,7 @@ const Profile28 = () => {
                       >
                         <FaFacebookF
                           size={40}
-                          color="white"
+                          color="[#65141a]"
                           alt="Facebook"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1352,7 +1355,7 @@ const Profile28 = () => {
                       >
                         <FaTwitter
                           size={40}
-                          color="white" // Replace with the actual path to the Twitter icon
+                          color="[#65141a]" // Replace with the actual path to the Twitter icon
                           alt="Twitter"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1367,7 +1370,7 @@ const Profile28 = () => {
                       >
                         <FaLinkedinIn
                           size={40}
-                          color="white" // Replace with the actual path to the LinkedIn icon
+                          color="[#65141a]" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1382,7 +1385,7 @@ const Profile28 = () => {
                       >
                         <FaTelegramPlane
                           size={40}
-                          color="white"
+                          color="[#65141a]"
                           // Replace with the actual path to the Telegram icon
                           alt="Telegram"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
@@ -1400,7 +1403,7 @@ const Profile28 = () => {
                       >
                         <FaWhatsapp
                           size={40}
-                          color="white"
+                          color="[#65141a]"
                           alt="WhatsApp"
                           className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
@@ -1409,7 +1412,7 @@ const Profile28 = () => {
                   </div>
                 </div>
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
+                  <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
                   <hr className="border-[#65141a]" />
@@ -1418,7 +1421,7 @@ const Profile28 = () => {
                       className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#65141a]  hover:border-[#65141a]"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="white" />
+                      <IoQrCodeSharp size={35} color="[#65141a]" />
                     </div>
 
                     <div
@@ -1426,11 +1429,11 @@ const Profile28 = () => {
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="white" />
+                      <FaDownload size={30} color="[#65141a]" />
                     </div>
                   </div>
 
-                  <p className="pt-4 text-white">
+                  <p className="pt-4 text-[#65141a]">
                     Copyright © <span className="company">{companyName}</span>.
                     All Rights Reserved.
                   </p>
