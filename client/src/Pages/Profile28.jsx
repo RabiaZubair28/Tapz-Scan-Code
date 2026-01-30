@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { useParams } from "react-router-dom";
@@ -7,25 +8,14 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import phone from "../assets/phone.png";
 import addressImg from "../assets/adress.png";
-import whatsapp from "../assets/whatsapp.png";
-import insta from "../assets/insta.png";
 import { useNavigate } from "react-router-dom";
-import snap from "../assets/snap.png";
 import yt from "../assets/yt.png";
-import tiktok from "../assets/tiktok.png";
-import threads from "../assets/threads.png";
-import fb from "../assets/fb.png";
 import greview from "../assets/greview.png";
-import websiteImg from "../assets/web.png";
 import emailImg from "../assets/gmail.png";
-import linkedin from "../assets/linkedin.webp";
 import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
-import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
-import catalog from "../assets/catalog.jpg";
-import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.jpg";
 import eye from "../assets/eye.jpg";
 import { IoIosAddCircle } from "react-icons/io";
@@ -33,14 +23,35 @@ import { IoIosAddCircle } from "react-icons/io";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { IoQrCodeSharp } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
-import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialTwitter } from "react-icons/ti";
-import { TiSocialLinkedin } from "react-icons/ti";
-import { FaTelegramPlane } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+import {
+  FaDownload,
+  FaEnvelope,
+  FaFacebook,
+  FaFacebookF,
+  FaGift,
+  FaGlobe,
+  FaInstagram,
+  FaLinkedinIn,
+  FaMailchimp,
+  FaPhone,
+  FaPhoneAlt,
+  FaPhoneSquareAlt,
+  FaShoppingBag,
+  FaSnapchatGhost,
+  FaStar,
+  FaTelegramPlane,
+  FaUtensils,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
+import {
+  FaMapLocation,
+  FaTiktok,
+  FaTwitter,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { SlArrowRight } from "react-icons/sl";
-import vCard from "vcards-js";
+import vCardsJS from "vcards-js";
 import {
   FacebookShareButton,
   TelegramShareButton,
@@ -62,7 +73,10 @@ import { RiMessage2Line } from "react-icons/ri";
 import { ImWhatsapp } from "react-icons/im";
 import linkedin02 from "../assets/download.png";
 import { MdRemoveRedEye } from "react-icons/md";
+import fb from "../assets/fb.png";
+
 const Profile28 = () => {
+  // SAME LOGIC AS Profile04 (only UI below changed)
   const [show, setShow] = useState(false);
   const [show02, setShow02] = useState(false);
   const [show03, setShow03] = useState(false);
@@ -245,25 +259,164 @@ const Profile28 = () => {
   }, [clientId01]);
 
   const downloadContactCard = async () => {
-    // const base64Logo = logo;
-    // function formatBase64(base64String) {
-    //   return base64String.match(/.{1,75}/g).join("\r\n ");
-    // }
+    const blobToJpegBase64 = async (
+      blob,
+      { maxSize = 512, maxBytes = 256 * 1024 } = {},
+    ) => {
+      const blobUrl = URL.createObjectURL(blob);
+      try {
+        const base64 = await new Promise((resolve) => {
+          const img = new Image();
+          img.onload = async () => {
+            const w = img.naturalWidth || img.width;
+            const h = img.naturalHeight || img.height;
+            if (!w || !h) return resolve(null);
 
-    // const formattedImage = formatBase64(base64Logo);
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:${clientName};;;;
-FN:${clientName}
-ORG:${name}
-TITLE:${designation}
-TEL;CELL:${phone01}
-TEL;TYPE=CELL:${whatsapp01}
-EMAIL;HOME:${email}
-URL:${website}
-END:VCARD`;
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return resolve(null);
 
-    const blob = new Blob([vcard], { type: "text/vcard" });
+            const makeJpegBlob = (targetW, targetH, quality) =>
+              new Promise((r) => {
+                canvas.width = targetW;
+                canvas.height = targetH;
+                ctx.clearRect(0, 0, targetW, targetH);
+                ctx.drawImage(img, 0, 0, targetW, targetH);
+                canvas.toBlob(
+                  (b) => r(b || null),
+                  "image/jpeg",
+                  Math.max(0.1, Math.min(1, quality)),
+                );
+              });
+
+            const blobToBase64 = (b) =>
+              new Promise((r) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  const result = String(reader.result || "");
+                  const parts = result.split(",");
+                  r(parts[1] || null);
+                };
+                reader.onerror = () => r(null);
+                reader.readAsDataURL(b);
+              });
+
+            const scales = [1, 0.85, 0.7, 0.55, 0.45, 0.35, 0.25];
+            const qualities = [0.9, 0.82, 0.74, 0.66, 0.58, 0.5, 0.42];
+
+            for (const s of scales) {
+              const scale = Math.min(1, (maxSize / Math.max(w, h)) * s);
+              const targetW = Math.max(1, Math.round(w * scale));
+              const targetH = Math.max(1, Math.round(h * scale));
+              for (const q of qualities) {
+                // eslint-disable-next-line no-await-in-loop
+                const jpegBlob = await makeJpegBlob(targetW, targetH, q);
+                if (!jpegBlob) continue;
+                if (jpegBlob.size <= maxBytes) {
+                  // eslint-disable-next-line no-await-in-loop
+                  const b64 = await blobToBase64(jpegBlob);
+                  if (b64) return resolve(b64);
+                }
+              }
+            }
+
+            const fallbackScale = Math.min(1, maxSize / Math.max(w, h));
+            const fallbackW = Math.max(1, Math.round(w * fallbackScale));
+            const fallbackH = Math.max(1, Math.round(h * fallbackScale));
+            const fallbackBlob = await makeJpegBlob(fallbackW, fallbackH, 0.6);
+            if (!fallbackBlob) return resolve(null);
+            const b64 = await blobToBase64(fallbackBlob);
+            return resolve(b64);
+          };
+          img.onerror = () => resolve(null);
+          img.src = blobUrl;
+        });
+        return base64;
+      } finally {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
+
+    const base64ToBlob = (b64, mime) => {
+      const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+      return new Blob([bytes], { type: mime || "application/octet-stream" });
+    };
+
+    const foldVcardLines = (vcardText) =>
+      String(vcardText || "")
+        .split(/\r?\n/)
+        .map((line) => {
+          const maxLen = 75;
+          if (line.length <= maxLen) return line;
+          let out = "";
+          for (let i = 0; i < line.length; i += maxLen) {
+            const chunk = line.slice(i, i + maxLen);
+            out += i === 0 ? chunk : `\r\n ${chunk}`;
+          }
+          return out;
+        })
+        .join("\r\n");
+
+    const getLogoJpegData = async () => {
+      if (!logo) return null;
+      try {
+        const response = await axios.get(
+          `https://www.scan-taps.com/api/vcard/image?url=${encodeURIComponent(
+            logo,
+          )}`,
+        );
+        const mimeRaw = String(response.data?.mime || "");
+        const b64 = String(response.data?.base64 || "");
+        if (!mimeRaw.startsWith("image/") || !b64) return null;
+        const normalizedMime =
+          mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
+        const blob = base64ToBlob(b64, normalizedMime);
+        const jpegBase64 = await blobToJpegBase64(blob);
+        return jpegBase64 ? { type: "JPEG", base64: jpegBase64 } : null;
+      } catch {
+        return null;
+      }
+    };
+
+    const card = vCardsJS();
+    card.firstName = String(clientName || "");
+    card.formattedName = String(clientName || "");
+    card.organization = String(name || "");
+    card.title = String(designation || "");
+    if (phone01) card.cellPhone = String(phone01);
+    if (phone02) card.workPhone = String(phone02);
+    if (phone03) card.homePhone = String(phone03);
+    if (email) card.email = String(email);
+    if (website) card.url = String(website);
+
+    const logoData = await getLogoJpegData();
+    if (logoData?.base64) {
+      // TYPE must be JPEG/PNG/etc (NOT image/jpeg) for vCard 3.0 compatibility.
+      card.logo.embedFromString(logoData.base64, logoData.type);
+      card.photo.embedFromString(logoData.base64, logoData.type);
+    }
+
+    let vCardString = foldVcardLines(card.getFormattedString());
+
+    const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
+      .filter(Boolean)
+      .map((n) => String(n).trim())
+      .filter(Boolean);
+
+    if (whatsappNumbers.length) {
+      const whatsappLines = whatsappNumbers.map(
+        (n) => `TEL;TYPE=CELL;TYPE=WHATSAPP:${n}`,
+      );
+      const endIndex = vCardString.lastIndexOf("END:VCARD");
+      if (endIndex !== -1) {
+        const beforeEnd = vCardString.slice(0, endIndex).replace(/\r?\n$/, "");
+        vCardString = `${beforeEnd}\r\n${whatsappLines.join(
+          "\r\n",
+        )}\r\nEND:VCARD\r\n`;
+      }
+    }
+
+    const blob = new Blob([vCardString], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
 
     // Check if it's an iPhone/iPad device
@@ -352,6 +505,7 @@ END:VCARD`;
           <meta name="twitter:title" content={client.clientName} />
           <meta name="twitter:description" content={designation || name} />
         </Helmet>
+
         <div>
           {show && (
             <div
@@ -359,27 +513,24 @@ END:VCARD`;
               style={{ backgroundAttachment: "fixed" }}
             >
               <div className="bg-white border-[#65141a] rounded-lg pb-8 pt-16 px-10 relative">
-                {/* Close Icon */}
                 <ImCross
-                  className="absolute top-4 right-4 cursor-pointer text-[#65141a] hover:text-[#65141a]"
+                  className="absolute top-4 right-4 cursor-pointer text-[#65141a]"
                   onClick={handleClose}
                 />
 
                 <div className="flex flex-col items-center justify-center space-y-8">
-                  {/* QR Code */}
                   <div className="qr flex items-center justify-center" id="qr">
                     <QRCodeCanvas value={window.location.href} />
                   </div>
-                  {/* Buttons and Social Icons */}
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12 bg-[#65141a] text-[#f0d3b5] p-3 rounded-full flex items-center justify-center"
+                      className="w-12 h-12  text-black p-3 rounded-full  flex items-center justify-center border-[2px] border-[#65141a]"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} />
+                      <FaDownload size={20} color="black" />
                     </div>
 
                     <div className="social-btn">
@@ -388,11 +539,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={fb} // Replace with the actual path to the Facebook icon
-                          alt="Facebook"
-                          className="w-12 h-12 rounded-full "
-                        />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
+                          <FaFacebookF size={26} color="black" />
+                        </div>
                       </FacebookShareButton>
                     </div>
 
@@ -402,11 +551,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={linkedin} // Replace with the actual path to the LinkedIn icon
-                          alt="LinkedIn"
-                          className="w-12 h-12 rounded-full "
-                        />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
+                          <FaLinkedinIn size={26} color="black" />
+                        </div>
                       </LinkedinShareButton>
                     </div>
 
@@ -416,11 +563,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={telegram} // Replace with the actual path to the Telegram icon
-                          alt="Telegram"
-                          className="w-12 h-12 rounded-full "
-                        />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
+                          <FaTelegramPlane size={22} color="black" />
+                        </div>
                       </TelegramShareButton>
                     </div>
 
@@ -430,11 +575,9 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={whatsapp} // Replace with the actual path to the WhatsApp icon
-                          alt="WhatsApp"
-                          className="w-12 h-12 rounded-full "
-                        />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[#65141a] text-black flex items-center justify-center">
+                          <FaWhatsapp size={26} color="black" />
+                        </div>
                       </WhatsappShareButton>
                     </div>
                   </div>
@@ -444,1191 +587,586 @@ END:VCARD`;
           )}
 
           {!show && !show02 && (
-            <section className="main">
-              {/* <button style={{color:"white", fontSize:"17px", paddingBlock:"8px", paddingInline:"30px", backgroundColor:"rgb(22, 33, 92)", border:"1px solid white", borderRadius:"5px"}} onClick={
-            ()=>{
-              navigate(`/`)
-            }
-          }>Logout</button> */}
+            <div
+              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-[#f0d3b5]"
+              style={{ backgroundAttachment: "fixed" }}
+            >
+              {logo && (
+                <div className="flex items-center  justify-center mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
+                  <a href={logo}>
+                    <div className="relative mb-2 ">
+                      <img
+                        src={logo}
+                        alt="profile"
+                        className="w-48 h-48 mt-5 mx-auto rounded-full border-[3px] border-[#65141a] shadow-md"
+                      />
+                    </div>
+                  </a>
+                </div>
+              )}
+              <div className="px-5">
+                <div className="pt-5 pb-5">
+                  <h1
+                    className="text-white text-3xl font-semibold pb-3"
+                    dir="rtl"
+                  >
+                    {clientName}
+                  </h1>
+                  <p
+                    className="text-md text-center text-white pt-1 pb-1 w-full  break-words whitespace-pre-line"
+                    style={{ textWrap: "wrap" }}
+                  >
+                    {String(description || "")
+                      .replace(/<br\s*\/?>/gi, "\n")
+                      .split(/\r?\n/)
+                      .map((line, index, arr) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          {index < arr.length - 1 ? <br /> : null}
+                        </React.Fragment>
+                      ))}
+                  </p>
+                </div>
 
-              <Helmet>
-                <title>{clientName}</title>
-                <link
-                  rel="icon"
-                  href={logo}
-                  type="image/x-icon"
-                  style="border: 1px solid #65141a; border-radius: 50%"
-                />
-              </Helmet>
-
-              <div
-                className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#f0d3b5]`}
-                style={{ backgroundAttachment: "fixed" }}
-              >
-                {images && (
-                  <div className="flex flex-col items-center mx-auto rounded-x space-y-2 ">
-                    <a href={images} className="w-full">
-                      <div className="relative mb-2 ">
-                        <img
-                          src={images}
-                          alt="profile"
-                          className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-[#65141a]"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                )}
-                {logo && (
-                  <div className="flex  flex-row items-start  justify-between mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
-                    <a href={logo}>
-                      <div className="relative mb-2 ">
-                        <img
-                          src={logo}
-                          alt="profile"
-                          className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-[0.25px] border-[#65141a] shadow-md"
-                        />
-                      </div>
-                    </a>
-                    <div className="flex items-center justify-center -mt-24 mb-5 gap-x-2">
-                      <div className="flex justify-start gap-x-1 -mt-5 pb-1 items-center">
-                        <MdRemoveRedEye size={20} color="#65141a" />
-                        <p className="text-[#65141a]">{visitCount}</p>
-                      </div>
-                      <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 text-sm bg-[#65141a] border border-[#65141a] shadow-sm hover:shadow-md ">
-                        {/* <FaDownload size={20} onClick={downloadContactCard} color="black" /> */}
-                        <span
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            color: "#f0d3b5",
-                            justifyContent: "center",
-                          }}
-                          onClick={downloadContactCard}
-                        >
-                          Save Contact
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                )}
-                <div className="px-6">
-                  <div className="flex flex-col justify-center items-start pt-0.5">
-                    <h2 className="text-lg font-semibold text-[#65141a] pt-1 ">
-                      {name}
-                    </h2>
-                    <h2 className="text-2xl text-start font-semibold text-[#65141a] pt-1">
-                      {clientName}
-                    </h2>
-                    <p className="text-md text-start font-semibold text-[#65141a] pt-1 pb-1">
-                      {designation}
-                    </p>
-                  </div>
-                  {/* <div className="flex justify-center gap-x-2 pt-2 pb-1 items-center">
-          <MdRemoveRedEye size={20} />
-          <p>{visitCount}</p>
-        </div> */}
-
-                  <div className="">
-                    <div className="flex justify-start space-x-5 mt-3 mb-2.5">
-                      <a
-                        href={`tel:${phone01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center bg-[#65141a] justify-center rounded-full bg-gray-7 shadow-sm hover:shadow-md "
-                      >
-                        <MdOutlinePhoneAndroid size={20} color="#f0d3b5" />
-                      </a>
-                      <a
-                        href={`mailto:${email}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full shadow-sm hover:shadow-md bg-[#65141a] "
-                      >
-                        <AiOutlineMail size={20} color="#f0d3b5" />
-                      </a>
-                      <a
-                        href={`sms:${phone01}`}
-                        className="w-12 h-12 flex items-center justify-center rounded-full  shadow-sm hover:shadow-md bg-[#65141a] "
-                      >
-                        <RiMessage2Line size={20} color="#f0d3b5" />
-                      </a>
-                      <a
-                        href={`https://wa.me/${whatsapp01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#65141a] shadow-sm hover:shadow-md "
-                      >
-                        <ImWhatsapp size={20} color="#f0d3b5" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-center items-start">
-                    <p
-                      className="text-sm text-left text-[#65141a] pt-1 pb-1 w-full  break-words whitespace-pre-line"
-                      style={{ textWrap: "wrap" }}
-                    >
-                      {String(description || "")
-                        .replace(/<br\s*\/?>/gi, "\n")
-                        .split(/\r?\n/)
-                        .map((line, index, arr) => (
-                          <React.Fragment key={index}>
-                            {line}
-                            {index < arr.length - 1 ? <br /> : null}
-                          </React.Fragment>
-                        ))}
-                    </p>
-                  </div>
-                  {/* <p className="text-xs text-gray-500">{description}</p> */}
-                  {/* <p className="text-md text-gray-600">{romanName}</p> */}
-
-                  {phone01 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${phone01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3 bg-[#65141a] text-[#f0d3b5]  shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={phone}
-                            alt="Phone01"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Phone</span>
-                            <span className="text-sm">{phone01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight color="white" /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {phone02 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${phone02}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md "
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={phone}
-                            alt="Phone02"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Phone</span>
-                            <span className="text-sm">{phone02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {phone03 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${phone03}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={phone}
-                            alt="Phone03"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Phone</span>
-                            <span className="text-sm">{phone03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {telephone02 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${telephone02}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Telephone</span>
-                            <span className="text-sm">{telephone02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-
-                  {telephone01 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${telephone01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Telephone</span>
-                            <span className=" text-sm">{telephone01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-
-                  {telephone03 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`tel:${telephone03}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={telephone}
-                            alt="Telephone"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Telephone</span>
-                            <span className="text-sm">{telephone03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp01 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp01"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className="text-sm">{whatsapp01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp02 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp02}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp02"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className="text-sm">{whatsapp02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp03 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp03}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp03"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className=" text-sm">{whatsapp03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {email && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`mailto:${email}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={emailImg}
-                            alt="Email"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Email</span>
-                            <span className="text-sm">{email}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {email02 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`mailto:${email02}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={emailImg}
-                            alt="Email"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Email</span>
-                            <span className=" text-sm">{email02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {email03 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`mailto:${email03}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={emailImg}
-                            alt="Email"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Email</span>
-                            <span className="text-sm">{email03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {facebookLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(facebookLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                            alt="Facebook"
-                            className="h-10 w-10 rounded-full"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Facebook</span>
-                            <span className="text-sm">{facebookName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {facebookLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(facebookLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                            alt="Facebook"
-                            className="h-10 w-10 rounded-full"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Facebook</span>
-                            <span className=" text-sm">{facebookName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {facebookLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(facebookLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                            alt="Facebook"
-                            className="h-10 w-10 rounded-full"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Facebook</span>
-                            <span className=" text-sm">{facebookName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
+                <div className="flex items-center justify-center gap-4 pb-8">
                   {instagramLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(instagramLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                            alt="Instagram"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Instagram</span>
-                            <span className=" text-sm">{instagramName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaInstagram size={26} color="white" />
+                    </a>
                   )}
-                  {instagramLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(instagramLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                            alt="Instagram"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Instagram</span>
-                            <span className="text-sm">{instagramName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {instagramLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(instagramLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                            alt="Instagram"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Instagram</span>
-                            <span className="text-sm">{instagramName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {snapchatLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(snapchatLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={snap}
-                            alt="Snapchat"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Snapchat</span>
-                            <span className="text-sm">{snapchatName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {snapchatLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(snapchatLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={snap}
-                            alt="Snapchat"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Snapchat</span>
-                            <span className="text-sm">{snapchatName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {snapchatLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(snapchatLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={snap}
-                            alt="Snapchat"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Snapchat</span>
-                            <span className="text-sm">{snapchatName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(youtubeLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img src={yt} alt="Youtube" className="h-10 w-10" />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Youtube</span>
-                            <span className="text-sm">{youtubeName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(youtubeLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img src={yt} alt="Youtube" className="h-10 w-10" />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Youtube</span>
-                            <span className="text-sm">{youtubeName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(youtubeLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img src={yt} alt="Youtube" className="h-10 w-10" />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Youtube</span>
-                            <span className="text-sm">{youtubeName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
+                  {/* {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaXTwitter size={24} color="white" />
+                    </a>
+                  )} */}
+                  {whatsapp01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaWhatsapp size={26} color="white" />
+                    </a>
                   )}
                   {tiktokLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(tiktokLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={tiktok}
-                            alt="Youtube"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Tiktok</span>
-                            <span className="text-sm">{tiktokName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaTiktok size={26} color="white" />
+                    </a>
                   )}
-                  {tiktokLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(tiktokLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={tiktok}
-                            alt="Youtube"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Tiktok</span>
-                            <span className="text-sm">{tiktokName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
+                  {snapchatLink && (
+                    <a
+                      href={snapchatLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaSnapchatGhost size={26} color="white" />
+                    </a>
                   )}
-                  {tiktokLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(tiktokLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={tiktok}
-                            alt="Youtube"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Tiktok</span>
-                            <span className="text-sm">{tiktokName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeShortsLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(youtubeShortsLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={linkedin02}
-                            alt="Youtube"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Linkedin</span>
-                            <span className="text-sm">{youtubeShortsName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeShortsLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() =>
-                          window.open(youtubeShortsLink02, "_blank")
-                        }
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={linkedin02}
-                            alt="Youtube"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Linkedin</span>
-                            <span className="text-sm">
-                              {youtubeShortsName02}
-                            </span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {youtubeShortsLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() =>
-                          window.open(youtubeShortsLink03, "_blank")
-                        }
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={linkedin02}
-                            alt="Youtube"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Linkedin</span>
-                            <span className="text-sm">
-                              {youtubeShortsName03}
-                            </span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {twitterLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(twitterLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={threads}
-                            alt="Twitter"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Twitter</span>
-                            <span className="text-sm">{twitterName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {twitterLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(twitterLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={threads}
-                            alt="Twitter"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Twitter</span>
-                            <span className="text-sm">{twitterName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {twitterLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(twitterLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={threads}
-                            alt="Twitter"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Twitter</span>
-                            <span className=" text-sm">{twitterName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-
-                  {website && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(website, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={websiteImg}
-                            alt="Website"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Website</span>
-                            <span className="text-sm">{websiteName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {website02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(website02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={websiteImg}
-                            alt="Website"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Website</span>
-                            <span className=" text-sm">{websiteName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {website03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(website03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={websiteImg}
-                            alt="Website"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Website</span>
-                            <span className=" text-sm">{websiteName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleReviewLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(googleReviewLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Review</span>
-                            <span className="text-sm">{googleReviewName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleReviewLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() =>
-                          window.open(googleReviewLink02, "_blank")
-                        }
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Review</span>
-                            <span className="text-sm">
-                              {googleReviewName02}
-                            </span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleReviewLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() =>
-                          window.open(googleReviewLink03, "_blank")
-                        }
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={greview}
-                            alt="Google Review"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Review</span>
-                            <span className=" text-sm">
-                              {googleReviewName03}
-                            </span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleMapLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(googleMapLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={locations}
-                            alt="Google Map"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Map</span>
-                            <span className="text-sm">{googleMapName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleMapLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(googleMapLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={locations}
-                            alt="Google Map"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Map</span>
-                            <span className="text-sm">{googleMapName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {googleMapLink03 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(googleMapLink03, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={locations}
-                            alt="Google Map"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Google Map</span>
-                            <span className="text-sm">{googleMapName03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {menuLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(menuLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={menu}
-                            alt="Menu"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Menu</span>
-                            <span className="text-sm">{menuName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {catalogueLink && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(catalogueLink, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={catalog}
-                            alt="Catalog"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Catalogue</span>
-                            <span className=" text-sm">{catalogueName}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {profileLink01 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(profileLink01, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={profile}
-                            alt="Profile"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Profile</span>
-                            <span className=" text-sm">{profileName01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {profileLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md"
-                        onClick={() => window.open(profileLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={profile}
-                            alt="Profile"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Profile</span>
-                            <span className="text-sm">{profileName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {address && (
-                    <div className="flex justify-center mt-3">
-                      <button className="flex items-center justify-between w-full px-5 py-3  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md">
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={addressImg}
-                            alt="Address"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Address</span>
-                            <span className=" text-sm break-words whitespace-normal">
-                              {address}
-                            </span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
+                  {email && (
+                    <a
+                      href={`mailto:${email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaEnvelope size={26} color="white" />
+                    </a>
                   )}
                 </div>
 
-                {services != "" && (
-                  <div className="px-4 ">
-                    <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
-                      Services
-                    </h2>
-                    <hr className="border-[#65141a]" />
-                    {services && (
-                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg  bg-[#65141a] text-[#f0d3b5] shadow rounded-lg max-w-md">
-                        <a className="flex w-full py-1  text-[#65141a]  max-w-md">
-                          <div className="flex items-center space-x-6 w-full">
-                            <div className="flex flex-row w-full  items-start justify-between gap-x-3">
-                              <div className="flex flex-col text-md max-w-[450px] font-medium text-[#f0d3b5] pt-1 text-start gap-y-1">
-                                {services.split("\n").map((line, index) => (
-                                  <div
-                                    key={index}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <span className="text-[#f0d3b5]">•</span>
-                                    <span>{line}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </a>
+                <div className="flex flex-col gap-4">
+                  {/* {phone01 && (
+                    <a
+                      href={`tel:${phone01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaPhone size={32} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Phone هاتف
+                          </p>
+                          <p className="text-white/80 text-sm truncate">
+                            {phone01}
+                          </p>
+                        </div>
                       </div>
-                    )}
-                  </div>
-                )}
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} */}
+
+                  {/* {whatsapp01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaWhatsapp size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            WhatsApp واتساب
+                          </p>
+                          <p className="text-white/80 text-sm truncate">
+                            {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {telephone01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaPhoneSquareAlt size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Telephone هاتف ثابت
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {telephone01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaInstagram size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Instagram انستغرام
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} */}
+
+                  {/* {youtubeLink && (
+                    <a
+                      href={youtubeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaYoutube size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            YouTube يوتيوب
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {tiktokLink && (
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaTiktok size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            TikTok تيك توك
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {tiktokName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaXTwitter size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            X إكس
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {twitterName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {facebookLink && (
+                    <a
+                      href={facebookLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaFacebook size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Facebook فيسبوك
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {facebookName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleReviewLink && (
+                    <a
+                      href={googleReviewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaStar size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Google Review تقييمات جوجل
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleReviewName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} */}
+
+                  {/* {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGlobe size={30} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Order through our website الطلب من خلال الموقع
+                            الإلكتروني
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {websiteName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {email && (
+                    <a
+                      href={email}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaEnvelope size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Email البريد الإلكتروني
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {email}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {youtubeShortsLink && (
+                    <a
+                      href={youtubeShortsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaLinkedinIn size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            LinkedIn لينكدإن
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeShortsLink}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleMapLink && (
+                    <a
+                      href={googleMapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaMapLocation size={26} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Location الموقع
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleMapName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} */}
+                  {menuLink && (
+                    <a
+                      href={menuLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center text-white">
+                        <FaUtensils size={35} color="white" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-white font-semibold truncate">
+                          Menu قائمة المشروبات
+                        </p>
+                        <p className="text-white/80 text-sm truncate" dir="rtl">
+                          {menuName}
+                        </p>
+                      </div>
+
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {/* {profileLink01 && (
+                    <a
+                      href={profileLink01}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaGift size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Company Profile ملف الشركة
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {profileName01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {whatsapp02 && (
+                    <a
+                      href={`https://wa.me/${whatsapp02}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaWhatsapp size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            WhatsApp واتساب
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {whatsapp02}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {catalogueLink && (
+                    <a
+                      href={catalogueLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaShoppingBag size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Catalogue الكتالوج
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {catalogueName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} */}
+                </div>
+
                 {(img01 != "" ||
                   img02 != "" ||
                   img03 != "" ||
@@ -1640,124 +1178,124 @@ END:VCARD`;
                   img08 != "" ||
                   img09 != "" ||
                   img10 != "") && (
-                  <div className="px-4">
-                    <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
+                  <div className="px-0">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Image Gallery
                     </h2>
                     <hr className="border-[#65141a]" />
                     {img01 && (
-                      <div className="flex flex-col items-center bg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e] mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img01}>
                           <img
                             src={img01}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img02 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img02}>
                           <img
                             src={img02}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img03 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img03}>
                           <img
                             src={img03}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img04 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img04}>
                           <img
                             src={img04}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img05 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img05}>
                           <img
                             src={img05}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img06 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img06}>
                           <img
                             src={img06}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img07 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img07}>
                           <img
                             src={img07}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
                     {img08 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img08}>
                           <img
                             src={img08}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
 
                     {img09 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img09}>
                           <img
                             src={img09}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
                     )}
                     {img10 && (
-                      <div className="flex flex-col items-centerbg-[#65141a] mx-auto rounded-xl border-[0.25px] border-[#65141a] shadow-md space-y-2 mt-3">
+                      <div className="flex flex-col items-center bg-[#38572e]  mx-auto rounded-xs border-[2px] border-[#65141a] shadow-md space-y-2 mt-3">
                         <a href={img10}>
                           <img
                             src={img10}
                             alt="Image"
-                            className="w-100 h-auto rounded-xl shadow-md hover:shadow-lg"
+                            className="w-100 h-auto rounded-xs shadow-md hover:shadow-lg"
                           />
                         </a>
                       </div>
@@ -1765,12 +1303,12 @@ END:VCARD`;
                   </div>
                 )}
                 {location != "" && (
-                  <div className="px-4">
-                    <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
+                  <div className="px-0">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Location
                     </h2>
-                    <hr className="border-[#65141a]" />
-                    <div className="flex flex-col items-center bg-[#65141a] mx-auto rounded-xl border-[1px] shadow-md  space-y-4 mt-3">
+                    <hr className="border-gray-300" />
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[1px] border-white shadow-md  space-y-4 mt-3">
                       {location && (
                         <iframe
                           src={location}
@@ -1784,8 +1322,9 @@ END:VCARD`;
                     </div>
                   </div>
                 )}
+
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Share Profile
                   </h2>
                   <hr className="border-[#65141a]" />
@@ -1796,10 +1335,11 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={fb} // Replace with the actual path to the Facebook icon
+                        <FaFacebookF
+                          size={40}
+                          color="white"
                           alt="Facebook"
-                          className="w-12 h-12 rounded-full  "
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
                       </FacebookShareButton>
                     </div>
@@ -1810,10 +1350,11 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={twitter02} // Replace with the actual path to the Twitter icon
+                        <FaTwitter
+                          size={40}
+                          color="white" // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 rounded-full  "
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
                       </TwitterShareButton>
                     </div>
@@ -1824,10 +1365,11 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={linkedin} // Replace with the actual path to the LinkedIn icon
+                        <FaLinkedinIn
+                          size={40}
+                          color="white" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full  "
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
                       </LinkedinShareButton>
                     </div>
@@ -1838,10 +1380,12 @@ END:VCARD`;
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <img
-                          src={telegram} // Replace with the actual path to the Telegram icon
+                        <FaTelegramPlane
+                          size={40}
+                          color="white"
+                          // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full  "
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
                       </TelegramShareButton>
                     </div>
@@ -1854,46 +1398,45 @@ END:VCARD`;
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
-                          src={whatsapp}
+                        <FaWhatsapp
+                          size={40}
+                          color="white"
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 "
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[#65141a]"
                         />
                       </a>
                     </div>
                   </div>
                 </div>
                 <div className="px-4">
-                  <h2 className="text-xl font-semibold text-[#65141a] mb-3 mt-5 px-4">
+                  <h2 className="text-xl font-semibold text-white mb-3 mt-5 px-4">
                     Share Contact & QR
                   </h2>
                   <hr className="border-[#65141a]" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px] bg-[#65141a] hover:border-white"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#65141a]  hover:border-[#65141a]"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="#f0d3b5" />
+                      <IoQrCodeSharp size={35} color="white" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[0.25px]  bg-[#65141a]"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#65141a] hover:border-[#65141a]"
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="#f0d3b5" />
+                      <FaDownload size={30} color="white" />
                     </div>
                   </div>
 
-                  <p className="pt-4 text-[#65141a]">
+                  <p className="pt-4 text-white">
                     Copyright © <span className="company">{companyName}</span>.
                     All Rights Reserved.
                   </p>
                 </div>
               </div>
-
-              {/* <iframe src={details[i].location} width="600" height="450" allowfullscreen="" loading="lazy"></iframe> */}
-            </section>
+            </div>
           )}
         </div>
       </section>
@@ -1901,7 +1444,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-[#f0d3b5] pt-[25%]`}
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-black pt-[25%]"
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
