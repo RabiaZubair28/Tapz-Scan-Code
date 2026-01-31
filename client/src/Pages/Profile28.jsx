@@ -727,19 +727,18 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhone size={32} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Phone هاتف
-                          </p>
-                          <p className="text-[#65141a] text-sm truncate">
-                            {phone01}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaPhone size={32} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Phone هاتف
+                        </p>
+                        <p className="text-[#65141a] text-sm truncate">
+                          {phone01}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -753,19 +752,18 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaWhatsapp size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            WhatsApp واتساب
-                          </p>
-                          <p className="text-[#65141a] text-sm truncate">
-                            {whatsapp01}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaWhatsapp size={35} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          WhatsApp واتساب
+                        </p>
+                        <p className="text-[#65141a] text-sm truncate">
+                          {whatsapp01}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -778,22 +776,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhoneSquareAlt size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Telephone هاتف ثابت
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {telephone01}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaPhoneSquareAlt size={35} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Telephone هاتف ثابت
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {telephone01}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -806,22 +803,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaInstagram size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Instagram انستغرام
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {instagramName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaInstagram size={35} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Instagram انستغرام
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {instagramName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -835,21 +831,19 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaYoutube size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            YouTube يوتيوب
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {youtubeName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaYoutube size={35} color="#65141a" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          YouTube يوتيوب
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {youtubeName}
+                        </p>
                       </div>
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
@@ -863,22 +857,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaTiktok size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            TikTok تيك توك
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {tiktokName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaTiktok size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          TikTok تيك توك
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {tiktokName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -891,21 +884,19 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaXTwitter size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            X إكس
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {twitterName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaXTwitter size={26} color="#65141a" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          X إكس
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {twitterName}
+                        </p>
                       </div>
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
@@ -919,22 +910,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaFacebook size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Facebook فيسبوك
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {facebookName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaFacebook size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Facebook فيسبوك
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {facebookName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -947,22 +937,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaStar size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Google Review تقييمات جوجل
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {googleReviewName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaStar size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Google Review تقييمات جوجل
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {googleReviewName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -976,23 +965,22 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaGlobe size={30} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Order through our website الطلب من خلال الموقع
-                            الإلكتروني
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {websiteName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaGlobe size={30} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Order through our website الطلب من خلال الموقع
+                          الإلكتروني
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {websiteName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -1005,22 +993,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaEnvelope size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Email البريد الإلكتروني
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {email}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaEnvelope size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Email البريد الإلكتروني
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {email}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -1033,22 +1020,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaLinkedinIn size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            LinkedIn لينكدإن
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {youtubeShortsLink}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaLinkedinIn size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          LinkedIn لينكدإن
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {youtubeShortsLink}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -1061,22 +1047,21 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaMapLocation size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Location الموقع
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {googleMapName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaMapLocation size={26} color="#65141a" />
                       </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Location الموقع
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {googleMapName}
+                        </p>
+                      </div>
+
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
@@ -1090,21 +1075,19 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaGift size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Company Profile ملف الشركة
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {profileName01}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaGift size={35} color="#65141a" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Company Profile ملف الشركة
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {profileName01}
+                        </p>
                       </div>
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
@@ -1119,21 +1102,19 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaWhatsapp size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            WhatsApp واتساب
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {whatsapp02}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaWhatsapp size={35} color="#65141a" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          WhatsApp واتساب
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {whatsapp02}
+                        </p>
                       </div>
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
@@ -1148,21 +1129,19 @@ const Profile28 = () => {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaShoppingBag size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-center">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Catalogue الكتالوج
-                          </p>
-                          <p
-                            className="text-[#65141a] text-sm truncate"
-                            dir="rtl"
-                          >
-                            {catalogueName}
-                          </p>
-                        </div>
+                      <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                        <FaShoppingBag size={35} color="#65141a" />
+                      </div>
+                      <div className="min-w-0 text-center">
+                        <p className="text-[#65141a] font-semibold truncate">
+                          Catalogue الكتالوج
+                        </p>
+                        <p
+                          className="text-[#65141a] text-sm truncate"
+                          dir="rtl"
+                        >
+                          {catalogueName}
+                        </p>
                       </div>
                       <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
