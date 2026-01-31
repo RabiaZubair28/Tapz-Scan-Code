@@ -692,368 +692,6 @@ const Profile28 = () => {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  {/* {phone01 && (
-                    <a
-                      href={`tel:${phone01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhone size={32} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Phone هاتف
-                          </p>
-                          <p className="text-[#65141a]/80 text-sm truncate">
-                            {phone01}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )} */}
-
-                  {/* {whatsapp01 && (
-                    <a
-                      href={`https://wa.me/${whatsapp01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaWhatsapp size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            WhatsApp واتساب
-                          </p>
-                          <p className="text-[#65141a]/80 text-sm truncate">
-                            {whatsapp01}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {telephone01 && (
-                    <a
-                      href={`https://wa.me/${whatsapp01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaPhoneSquareAlt size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Telephone هاتف ثابت
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {telephone01}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {instagramLink && (
-                    <a
-                      href={instagramLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaInstagram size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Instagram انستغرام
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {instagramName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )} */}
-
-                  {/* {youtubeLink && (
-                    <a
-                      href={youtubeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaYoutube size={35} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            YouTube يوتيوب
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {youtubeName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {tiktokLink && (
-                    <a
-                      href={tiktokLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaTiktok size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            TikTok تيك توك
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {tiktokName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {twitterLink && (
-                    <a
-                      href={twitterLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaXTwitter size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            X إكس
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {twitterName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {facebookLink && (
-                    <a
-                      href={facebookLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaFacebook size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Facebook فيسبوك
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {facebookName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {googleReviewLink && (
-                    <a
-                      href={googleReviewLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaStar size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Google Review تقييمات جوجل
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {googleReviewName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )} */}
-
-                  {/* {website && (
-                    <a
-                      href={website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaGlobe size={30} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Order through our website الطلب من خلال الموقع
-                            الإلكتروني
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {websiteName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {email && (
-                    <a
-                      href={email}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaEnvelope size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Email البريد الإلكتروني
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {email}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {youtubeShortsLink && (
-                    <a
-                      href={youtubeShortsLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaLinkedinIn size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            LinkedIn لينكدإن
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {youtubeShortsLink}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )}
-                  {googleMapLink && (
-                    <a
-                      href={googleMapLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
-                          <FaMapLocation size={26} color="#65141a" />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <p className="text-[#65141a] font-semibold truncate">
-                            Location الموقع
-                          </p>
-                          <p
-                            className="text-[#65141a]/80 text-sm truncate"
-                            dir="rtl"
-                          >
-                            {googleMapName}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
-                        ⋮
-                      </span>
-                    </a>
-                  )} */}
                   {menuLink && (
                     <a
                       href={menuLink}
@@ -1066,7 +704,8 @@ const Profile28 = () => {
                       </div>
                       <div className="min-w-0 text-center">
                         <p className="text-[#65141a] font-semibold truncate">
-                          Menu قائمة المشروبات
+                          {" "}
+                          Menu قائمة طعام
                         </p>
                         <p
                           className="text-[#65141a] text-sm truncate"
@@ -1081,13 +720,375 @@ const Profile28 = () => {
                       </span>
                     </a>
                   )}
+                  {phone01 && (
+                    <a
+                      href={`tel:${phone01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaPhone size={32} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Phone هاتف
+                          </p>
+                          <p className="text-[#65141a] text-sm truncate">
+                            {phone01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
 
-                  {/* {profileLink01 && (
+                  {whatsapp01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaWhatsapp size={35} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            WhatsApp واتساب
+                          </p>
+                          <p className="text-[#65141a] text-sm truncate">
+                            {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {telephone01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaPhoneSquareAlt size={35} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Telephone هاتف ثابت
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {telephone01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {instagramLink && (
+                    <a
+                      href={instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaInstagram size={35} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Instagram انستغرام
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {instagramName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {youtubeLink && (
+                    <a
+                      href={youtubeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaYoutube size={35} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            YouTube يوتيوب
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {tiktokLink && (
+                    <a
+                      href={tiktokLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaTiktok size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            TikTok تيك توك
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {tiktokName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {twitterLink && (
+                    <a
+                      href={twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaXTwitter size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            X إكس
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {twitterName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {facebookLink && (
+                    <a
+                      href={facebookLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaFacebook size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Facebook فيسبوك
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {facebookName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleReviewLink && (
+                    <a
+                      href={googleReviewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaStar size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Google Review تقييمات جوجل
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleReviewName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaGlobe size={30} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Order through our website الطلب من خلال الموقع
+                            الإلكتروني
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {websiteName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {email && (
+                    <a
+                      href={email}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaEnvelope size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Email البريد الإلكتروني
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {email}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {youtubeShortsLink && (
+                    <a
+                      href={youtubeShortsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaLinkedinIn size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            LinkedIn لينكدإن
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {youtubeShortsLink}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {googleMapLink && (
+                    <a
+                      href={googleMapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
+                          <FaMapLocation size={26} color="#65141a" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-[#65141a] font-semibold truncate">
+                            Location الموقع
+                          </p>
+                          <p
+                            className="text-[#65141a] text-sm truncate"
+                            dir="rtl"
+                          >
+                            {googleMapName}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#65141a] text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+
+                  {profileLink01 && (
                     <a
                       href={profileLink01}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
@@ -1098,14 +1099,14 @@ const Profile28 = () => {
                             Company Profile ملف الشركة
                           </p>
                           <p
-                            className="text-[#65141a]/80 text-sm truncate"
+                            className="text-[#65141a] text-sm truncate"
                             dir="rtl"
                           >
                             {profileName01}
                           </p>
                         </div>
                       </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
+                      <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1116,7 +1117,7 @@ const Profile28 = () => {
                       href={`https://wa.me/${whatsapp02}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
@@ -1127,14 +1128,14 @@ const Profile28 = () => {
                             WhatsApp واتساب
                           </p>
                           <p
-                            className="text-[#65141a]/80 text-sm truncate"
+                            className="text-[#65141a] text-sm truncate"
                             dir="rtl"
                           >
                             {whatsapp02}
                           </p>
                         </div>
                       </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
+                      <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
@@ -1145,7 +1146,7 @@ const Profile28 = () => {
                       href={catalogueLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-black "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
@@ -1156,18 +1157,18 @@ const Profile28 = () => {
                             Catalogue الكتالوج
                           </p>
                           <p
-                            className="text-[#65141a]/80 text-sm truncate"
+                            className="text-[#65141a] text-sm truncate"
                             dir="rtl"
                           >
                             {catalogueName}
                           </p>
                         </div>
                       </div>
-                      <span className="text-[#65141a]/80 text-2xl leading-none">
+                      <span className="text-[#65141a] text-2xl leading-none">
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )}
                 </div>
 
                 {(img01 != "" ||
@@ -1447,7 +1448,7 @@ const Profile28 = () => {
   } else {
     return (
       <div
-        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-black pt-[25%]"
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-[#f0d3b5] pt-[25%]"
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
