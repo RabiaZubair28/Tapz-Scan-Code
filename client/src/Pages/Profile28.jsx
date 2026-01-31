@@ -629,6 +629,16 @@ const Profile28 = () => {
                 </div>
 
                 <div className="flex items-center justify-center gap-4 pb-8">
+                  {menuLink && (
+                    <a
+                      href={menuLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#65141a] rounded-full p-3"
+                    >
+                      <FaUtensils size={24} color="#65141a" />
+                    </a>
+                  )}
                   {instagramLink && (
                     <a
                       href={instagramLink}
@@ -639,16 +649,7 @@ const Profile28 = () => {
                       <FaInstagram size={26} color="#65141a" />
                     </a>
                   )}
-                  {/* {twitterLink && (
-                    <a
-                      href={twitterLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border-[2px] border-[#65141a] rounded-full p-3"
-                    >
-                      <FaXTwitter size={24} color="#65141a" />
-                    </a>
-                  )} */}
+
                   {whatsapp01 && (
                     <a
                       href={`https://wa.me/${whatsapp01}`}
