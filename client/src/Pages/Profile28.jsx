@@ -1003,7 +1003,7 @@ const Profile28 = () => {
                         </p>
                         <p
                           className="text-[#65141a] text-sm truncate"
-                          style={{ whiteSpace: "normal", textWrap: "wrap" }}
+                          style={{ textWrap: "wrap" }}
                           dir="rtl"
                         >
                           {email}
