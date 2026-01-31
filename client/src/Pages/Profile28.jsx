@@ -731,7 +731,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaPhone size={32} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Phone هاتف
                           </p>
@@ -757,7 +757,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaWhatsapp size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             WhatsApp واتساب
                           </p>
@@ -782,7 +782,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaPhoneSquareAlt size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Telephone هاتف ثابت
                           </p>
@@ -810,7 +810,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaInstagram size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Instagram انستغرام
                           </p>
@@ -839,7 +839,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaYoutube size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             YouTube يوتيوب
                           </p>
@@ -867,7 +867,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaTiktok size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             TikTok تيك توك
                           </p>
@@ -895,7 +895,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaXTwitter size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             X إكس
                           </p>
@@ -923,7 +923,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaFacebook size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Facebook فيسبوك
                           </p>
@@ -951,7 +951,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaStar size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Google Review تقييمات جوجل
                           </p>
@@ -980,7 +980,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaGlobe size={30} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Order through our website الطلب من خلال الموقع
                             الإلكتروني
@@ -1009,7 +1009,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaEnvelope size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Email البريد الإلكتروني
                           </p>
@@ -1037,7 +1037,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaLinkedinIn size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             LinkedIn لينكدإن
                           </p>
@@ -1065,7 +1065,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaMapLocation size={26} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Location الموقع
                           </p>
@@ -1094,7 +1094,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaGift size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Company Profile ملف الشركة
                           </p>
@@ -1123,7 +1123,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaWhatsapp size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             WhatsApp واتساب
                           </p>
@@ -1152,7 +1152,7 @@ const Profile28 = () => {
                         <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                           <FaShoppingBag size={35} color="#65141a" />
                         </div>
-                        <div className="min-w-0 text-left">
+                        <div className="min-w-0 text-center">
                           <p className="text-[#65141a] font-semibold truncate">
                             Catalogue الكتالوج
                           </p>
