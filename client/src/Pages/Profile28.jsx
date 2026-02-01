@@ -992,18 +992,19 @@ const Profile28 = () => {
                       href={email}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5] "
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#65141a] bg-[#f0d3b5]"
                     >
                       <div className="w-12 h-12 flex items-center justify-center text-[#65141a]">
                         <FaEnvelope size={26} color="#65141a" />
                       </div>
+
                       <div className="min-w-0 text-center">
-                        <p className="text-[#65141a] font-semibold truncate">
+                        <p className="text-[#65141a] font-semibold">
                           Email البريد الإلكتروني
                         </p>
+
                         <p
-                          className="text-[#65141a] text-sm truncate"
-                          style={{ textWrap: "wrap" }}
+                          className="text-[#65141a] text-sm break-all whitespace-normal"
                           dir="rtl"
                         >
                           {email}
@@ -1015,6 +1016,7 @@ const Profile28 = () => {
                       </span>
                     </a>
                   )}
+
                   {youtubeShortsLink && (
                     <a
                       href={youtubeShortsLink}
