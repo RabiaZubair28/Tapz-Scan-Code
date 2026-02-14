@@ -306,8 +306,10 @@ END:VCARD`;
           className={`min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
           style={{
             backgroundAttachment: "fixed",
-            backgroundImage: `url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)`,
-            backgroundSize: "contain",
+            backgroundImage:
+              "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
             backgroundPosition: "center",
           }}
         >
@@ -346,7 +348,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Wakrah
+                &nbsp;&nbsp;&nbsp;Lusail
               </a>
               <a
                 href={`tel:${phone02}`}
@@ -355,7 +357,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Kheesa
+                &nbsp;&nbsp;&nbsp;Jasim
               </a>
               <a
                 href={`tel:${phone03}`}
@@ -364,7 +366,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Kheesa
+                &nbsp;&nbsp;&nbsp;Othman
               </a>
             </div>
             <div className="px-4 mt-2 flex flex-row gap-x-2">
@@ -375,7 +377,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Wakrah
+                &nbsp;&nbsp;&nbsp;Lusail
               </a>
               <a
                 href={`https://wa.me/${whatsapp02}`}
@@ -384,7 +386,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Kheesa
+                &nbsp;&nbsp;&nbsp;Jasim
               </a>
               <a
                 href={`https://wa.me/${whatsapp03}`}
@@ -393,7 +395,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
-                &nbsp;&nbsp;&nbsp;Al Kheesa
+                &nbsp;&nbsp;&nbsp;Othman
               </a>
             </div>
 
@@ -1424,7 +1426,7 @@ END:VCARD`;
                 )}
               </div>
             )}
-            {location != "" && (
+            {/* {location != "" && (
               <div className="px-0">
                 <h2 className="text-xl font-semibold text-black mb-3 mt-5">
                   Location
@@ -1443,7 +1445,7 @@ END:VCARD`;
                   )}
                 </div>
               </div>
-            )}
+            )} */}
 
             <p className="pt-4 text-black">
               Copyright © <span className="company">{companyName}</span>. All
@@ -1461,8 +1463,10 @@ END:VCARD`;
         className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`}
         style={{
           backgroundAttachment: "fixed",
-          backgroundImage: `url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)`,
-          backgroundSize: "contain",
+          backgroundImage:
+            "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
           backgroundPosition: "center",
         }}
       >
