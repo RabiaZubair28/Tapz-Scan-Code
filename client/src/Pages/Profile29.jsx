@@ -340,7 +340,7 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
-            <div className="px-4 mt-4 flex flex-row gap-x-2">
+            <div className="px-0 mt-4 flex flex-row gap-x-2">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
@@ -348,7 +348,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <MdOutlinePhoneAndroid size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Lusail
+                &nbsp;&nbsp;Lusail
               </a>
               <a
                 href={`tel:${phone02}`}
@@ -357,7 +357,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <MdOutlinePhoneAndroid size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Jasim
+                &nbsp;&nbsp;Jasim
               </a>
               <a
                 href={`tel:${phone03}`}
@@ -366,10 +366,10 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <MdOutlinePhoneAndroid size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Othman
+                &nbsp;&nbsp;Othman
               </a>
             </div>
-            <div className="px-4 mt-2 flex flex-row gap-x-2">
+            <div className="px-0 mt-2 flex flex-row gap-x-2">
               <a
                 href={`https://wa.me/${whatsapp01}`}
                 target="_blank"
@@ -377,7 +377,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <IoLogoWhatsapp size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Lusail
+                &nbsp;&nbsp;Lusail
               </a>
               <a
                 href={`https://wa.me/${whatsapp02}`}
@@ -386,7 +386,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <IoLogoWhatsapp size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Jasim
+                &nbsp;&nbsp;Jasim
               </a>
               <a
                 href={`https://wa.me/${whatsapp03}`}
@@ -395,11 +395,11 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <IoLogoWhatsapp size={22} color="white" />
-                &nbsp;&nbsp;&nbsp;Othman
+                &nbsp;&nbsp;Othman
               </a>
             </div>
 
-            <div className="flex items-center justify-center mt-0 mb-0 px-4">
+            <div className="flex items-center justify-center mt-0 mb-0 px-0">
               <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-black  hover:bg-black  border-[1px] border-white font-semibold  shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-white ">
                 <FaDownload
                   size={20}
