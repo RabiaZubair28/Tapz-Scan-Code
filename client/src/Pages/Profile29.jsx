@@ -307,7 +307,7 @@ END:VCARD`;
           style={{
             backgroundAttachment: "fixed",
             backgroundImage:
-              "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)",
+              "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771089901/Screenshot_2026-02-14_at_10.24.12_PM_zsdyye.png)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
             backgroundPosition: "center",
@@ -1464,7 +1464,7 @@ END:VCARD`;
         style={{
           backgroundAttachment: "fixed",
           backgroundImage:
-            "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771087828/FLP_2__page-0001_fet7ei.jpg)",
+            "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771089901/Screenshot_2026-02-14_at_10.24.12_PM_zsdyye.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
           backgroundPosition: "center",
