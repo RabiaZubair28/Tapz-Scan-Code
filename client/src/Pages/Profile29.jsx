@@ -307,7 +307,7 @@ END:VCARD`;
           style={{
             backgroundAttachment: "fixed",
             backgroundImage:
-              "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771089901/Screenshot_2026-02-14_at_10.24.12_PM_zsdyye.png)",
+              "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771090452/Screenshot_2026-02-14_at_10.33.16_PM_sup9e2.png)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
             backgroundPosition: "center",
@@ -421,7 +421,7 @@ END:VCARD`;
             </div>
 
             <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
-              Please select the Menu
+              Profile Details
             </h2>
 
             {telephone02 && (
@@ -1464,7 +1464,7 @@ END:VCARD`;
         style={{
           backgroundAttachment: "fixed",
           backgroundImage:
-            "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771089901/Screenshot_2026-02-14_at_10.24.12_PM_zsdyye.png)",
+            "url(https://res.cloudinary.com/dxokfhkhu/image/upload/v1771090452/Screenshot_2026-02-14_at_10.33.16_PM_sup9e2.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover", // or keep "contain" if you prefer, but no-repeat is required
           backgroundPosition: "center",
