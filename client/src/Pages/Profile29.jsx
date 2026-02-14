@@ -349,7 +349,16 @@ END:VCARD`;
                 &nbsp;&nbsp;&nbsp;Al Wakrah
               </a>
               <a
-                href={`tel:${phone01}`}
+                href={`tel:${phone02}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
+              >
+                <img src={phone} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;&nbsp;Al Kheesa
+              </a>
+              <a
+                href={`tel:${phone03}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
@@ -360,7 +369,7 @@ END:VCARD`;
             </div>
             <div className="px-4 mt-2 flex flex-row gap-x-2">
               <a
-                href={`https://wa.me/${phone01}`}
+                href={`https://wa.me/${whatsapp01}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
@@ -369,7 +378,16 @@ END:VCARD`;
                 &nbsp;&nbsp;&nbsp;Al Wakrah
               </a>
               <a
-                href={`https://wa.me/${phone01}`}
+                href={`https://wa.me/${whatsapp02}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
+              >
+                <img src={whatsapp} alt="Whatsapp02" className="h-6 w-6" />
+                &nbsp;&nbsp;&nbsp;Al Kheesa
+              </a>
+              <a
+                href={`https://wa.me/${whatsapp03}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-gray-100 text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
