@@ -341,36 +341,35 @@ END:VCARD`;
               </h2>
             </div>
             <div className="px-0 mt-4 flex gap-2 flex-nowrap">
-              <a
-                href={`tel:${phone01}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
-              >
-                <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1 truncate">Lusail</span>
-              </a>
+  <a
+    href={`tel:${phone01}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <MdOutlinePhoneAndroid size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespace-nowrap">Lusail</span>
+  </a>
 
-              <a
-                href={`tel:${phone02}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-[2] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
-              >
-                <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1 truncate">Freej Kuailb</span>
-              </a>
+  <a
+    href={`tel:${phone02}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1.3] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <MdOutlinePhoneAndroid size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespace-nowrap">Freej Kuailb</span>
+  </a>
 
-              <a
-                href={`tel:${phone03}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
-              >
-                <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1 truncate">Aziziyah</span>
-              </a>
-            </div>
+  <a
+    href={`tel:${phone03}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <MdOutlinePhoneAndroid size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespa
+
 
             <div className="px-0 mt-2 flex gap-2 flex-nowrap">
               <a
@@ -404,26 +403,38 @@ END:VCARD`;
               </a>
             </div>
 
-            <div className="flex items-center justify-center mt-0 mb-0 px-0">
-              <button className="flex w-full gap-x-2 items-center  text-white justify-center bg-black  hover:bg-black  border-[1px] border-white font-semibold  shadow-sm hover:shadow-md py-3 mt-2 mb-3 rounded-lg hover:text-white ">
-                <FaDownload
-                  size={20}
-                  onClick={downloadContactCard}
-                  color="white"
-                  className="text-white hover:text-white"
-                />
-                <span
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  onClick={downloadContactCard}
-                >
-                  &nbsp;Save Contact
-                </span>
-              </button>
-            </div>
+            <div className="px-0 mt-2 flex gap-2 flex-nowrap">
+  <a
+    href={`https://wa.me/${whatsapp01}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <IoLogoWhatsapp size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespace-nowrap">Lusail</span>
+  </a>
+
+  <a
+    href={`https://wa.me/${whatsapp02}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1.3] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <IoLogoWhatsapp size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespace-nowrap">Freej Kuailb</span>
+  </a>
+
+  <a
+    href={`https://wa.me/${whatsapp03}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-[1] flex items-center justify-center bg-black text-white py-3 px-2 rounded-lg font-semibold border border-white"
+  >
+    <IoLogoWhatsapp size={18} className="shrink-0" />
+    <span className="ml-1 text-[12px] whitespace-nowrap">Aziziyah</span>
+  </a>
+</div>
+
 
             <h2 className="text-lg font-semibold text-black text-center  pt-3 ">
               Profile Details
