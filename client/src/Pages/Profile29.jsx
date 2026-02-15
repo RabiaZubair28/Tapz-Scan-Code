@@ -347,7 +347,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
-                <MdOutlinePhoneAndroid size={22} color="white" />
+                <MdOutlinePhoneAndroid size={20} color="white" />
                 &nbsp;&nbsp;Lusail
               </a>
               <a
@@ -356,7 +356,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
-                <MdOutlinePhoneAndroid size={22} color="white" />
+                <MdOutlinePhoneAndroid size={20} color="white" />
                 &nbsp;&nbsp;Freej Kuailb
               </a>
               <a
@@ -365,7 +365,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
-                <MdOutlinePhoneAndroid size={22} color="white" />
+                <MdOutlinePhoneAndroid size={20} color="white" />
                 &nbsp;&nbsp;Aziziyah
               </a>
             </div>
@@ -376,7 +376,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
-                <IoLogoWhatsapp size={22} color="white" />
+                <IoLogoWhatsapp size={20} color="white" />
                 &nbsp;&nbsp;Lusail
               </a>
               <a
@@ -385,7 +385,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
-                <IoLogoWhatsapp size={22} color="white" />
+                <IoLogoWhatsapp size={20} color="white" />
                 &nbsp;&nbsp;Freej Kuailb
               </a>
               <a
@@ -394,7 +394,7 @@ END:VCARD`;
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
-                <IoLogoWhatsapp size={22} color="white" />
+                <IoLogoWhatsapp size={20} color="white" />
                 &nbsp;&nbsp;Aziziyah
               </a>
             </div>
