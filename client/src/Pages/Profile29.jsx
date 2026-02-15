@@ -340,67 +340,67 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
-            <div className="px-0 mt-4 grid grid-cols-3 gap-2">
+            <div className="px-0 mt-4 flex gap-2 flex-nowrap">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1">Lusail</span>
+                <span className="ml-1 truncate">Lusail</span>
               </a>
 
               <a
                 href={`tel:${phone02}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[2] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1">Freej Kuailb</span>
+                <span className="ml-1 truncate">Freej Kuailb</span>
               </a>
 
               <a
                 href={`tel:${phone03}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <MdOutlinePhoneAndroid size={18} />
-                <span className="ml-1">Aziziyah</span>
+                <span className="ml-1 truncate">Aziziyah</span>
               </a>
             </div>
 
-            <div className="px-0 mt-2 grid grid-cols-3 gap-2">
+            <div className="px-0 mt-2 flex gap-2 flex-nowrap">
               <a
                 href={`https://wa.me/${whatsapp01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <IoLogoWhatsapp size={18} />
-                <span className="ml-1">Lusail</span>
+                <span className="ml-1 truncate">Lusail</span>
               </a>
 
               <a
                 href={`https://wa.me/${whatsapp02}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[2] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <IoLogoWhatsapp size={18} />
-                <span className="ml-1">Freej Kuailb</span>
+                <span className="ml-1 truncate">Freej Kuailb</span>
               </a>
 
               <a
                 href={`https://wa.me/${whatsapp03}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md text-[12px]"
+                className="flex-[1] min-w-0 flex items-center justify-center bg-black text-white py-3 rounded-lg font-semibold border border-white"
               >
                 <IoLogoWhatsapp size={18} />
-                <span className="ml-1">Aziziyah</span>
+                <span className="ml-1 truncate">Aziziyah</span>
               </a>
             </div>
 
