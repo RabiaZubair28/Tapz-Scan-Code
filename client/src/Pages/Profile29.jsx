@@ -340,62 +340,67 @@ END:VCARD`;
                 {address}
               </h2>
             </div>
-            <div className="px-0 mt-4 flex flex-row gap-x-2">
+            <div className="px-0 mt-4 flex flex-wrap gap-2">
               <a
                 href={`tel:${phone01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <MdOutlinePhoneAndroid size={20} color="white" />
-                &nbsp;&nbsp;Lusail
+                <MdOutlinePhoneAndroid size={20} />
+                <span className="ml-2">Lusail</span>
               </a>
+
               <a
                 href={`tel:${phone02}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <MdOutlinePhoneAndroid size={20} color="white" />
-                &nbsp;&nbsp;Freej Kuailb
+                <MdOutlinePhoneAndroid size={20} />
+                <span className="ml-2">Freej Kuailb</span>
               </a>
+
               <a
                 href={`tel:${phone03}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <MdOutlinePhoneAndroid size={20} color="white" />
-                &nbsp;&nbsp;Aziziyah
+                <MdOutlinePhoneAndroid size={20} />
+                <span className="ml-2">Aziziyah</span>
               </a>
             </div>
-            <div className="px-0 mt-2 flex flex-row gap-x-2">
+
+            <div className="px-0 mt-2 flex flex-wrap gap-2">
               <a
                 href={`https://wa.me/${whatsapp01}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <IoLogoWhatsapp size={20} color="white" />
-                &nbsp;&nbsp;Lusail
+                <IoLogoWhatsapp size={20} />
+                <span className="ml-2">Lusail</span>
               </a>
+
               <a
                 href={`https://wa.me/${whatsapp02}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <IoLogoWhatsapp size={20} color="white" />
-                &nbsp;&nbsp;Freej Kuailb
+                <IoLogoWhatsapp size={20} />
+                <span className="ml-2">Freej Kuailb</span>
               </a>
+
               <a
                 href={`https://wa.me/${whatsapp03}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
+                className="inline-flex items-center justify-center bg-black text-white py-3 px-4 rounded-lg font-semibold border border-white shadow-sm hover:shadow-md"
               >
-                <IoLogoWhatsapp size={20} color="white" />
-                &nbsp;&nbsp;Aziziyah
+                <IoLogoWhatsapp size={20} />
+                <span className="ml-2">Aziziyah</span>
               </a>
             </div>
 
