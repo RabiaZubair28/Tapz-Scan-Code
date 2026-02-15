@@ -357,7 +357,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <MdOutlinePhoneAndroid size={22} color="white" />
-                &nbsp;&nbsp;Jasim
+                &nbsp;&nbsp;Freej Kuailb
               </a>
               <a
                 href={`tel:${phone03}`}
@@ -366,7 +366,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg font-semibold  border-[1px] border-white"
               >
                 <MdOutlinePhoneAndroid size={22} color="white" />
-                &nbsp;&nbsp;Othman
+                &nbsp;&nbsp;Aziziyah
               </a>
             </div>
             <div className="px-0 mt-2 flex flex-row gap-x-2">
@@ -386,7 +386,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <IoLogoWhatsapp size={22} color="white" />
-                &nbsp;&nbsp;Jasim
+                &nbsp;&nbsp;Freej Kuailb
               </a>
               <a
                 href={`https://wa.me/${whatsapp03}`}
@@ -395,7 +395,7 @@ END:VCARD`;
                 className="w-full flex items-center justify-center bg-black  shadow-sm hover:shadow-md hover:bg-black text-white py-3 rounded-lg border-[1px] font-semibold  border-white"
               >
                 <IoLogoWhatsapp size={22} color="white" />
-                &nbsp;&nbsp;Othman
+                &nbsp;&nbsp;Aziziyah
               </a>
             </div>
 
