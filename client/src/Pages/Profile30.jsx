@@ -669,7 +669,7 @@ const Profile30 = () => {
                       <FaTiktok size={26} color="white" />
                     </a>
                   )}
-                  {snapchatLink && (
+                  {/* {snapchatLink && (
                     <a
                       href={snapchatLink}
                       target="_blank"
@@ -678,7 +678,7 @@ const Profile30 = () => {
                     >
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
-                  )}
+                  )} */}
                   {email && (
                     <a
                       href={`mailto:${email}`}
@@ -692,7 +692,7 @@ const Profile30 = () => {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  {/* {phone01 && (
+                  {phone01 && (
                     <a
                       href={`tel:${phone01}`}
                       target="_blank"
@@ -716,9 +716,9 @@ const Profile30 = () => {
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )} 
 
-                  {/* {whatsapp01 && (
+                  {whatsapp01 && (
                     <a
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
@@ -798,9 +798,9 @@ const Profile30 = () => {
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )} 
 
-                  {/* {youtubeLink && (
+                  {youtubeLink && (
                     <a
                       href={youtubeLink}
                       target="_blank"
@@ -939,9 +939,9 @@ const Profile30 = () => {
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )} 
 
-                  {/* {website && (
+                  {website && (
                     <a
                       href={website}
                       target="_blank"
@@ -1053,7 +1053,7 @@ const Profile30 = () => {
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )} 
                   {menuLink && (
                     <a
                       href={menuLink}
@@ -1079,7 +1079,7 @@ const Profile30 = () => {
                     </a>
                   )}
 
-                  {/* {profileLink01 && (
+                  {profileLink01 && (
                     <a
                       href={profileLink01}
                       target="_blank"
@@ -1164,7 +1164,7 @@ const Profile30 = () => {
                         ⋮
                       </span>
                     </a>
-                  )} */}
+                  )}
                 </div>
 
                 {(img01 != "" ||
