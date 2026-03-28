@@ -1095,6 +1095,7 @@ const Profile30 = () => {
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
+                            style={{textWrap:"nowrap"}}
                           >
                             {googleMapName}
                           </p>
