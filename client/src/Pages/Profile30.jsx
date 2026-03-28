@@ -717,6 +717,31 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )} 
+                  {phone02 && (
+                    <a
+                      href={`tel:${phone02}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaPhone size={32} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            Phone هاتف
+                          </p>
+                          <p className="text-white/80 text-sm truncate">
+                            {phone02}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )} 
 
                   {whatsapp01 && (
                     <a
@@ -735,6 +760,34 @@ const Profile30 = () => {
                           </p>
                           <p className="text-white/80 text-sm truncate">
                             {whatsapp01}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-white/80 text-2xl leading-none">
+                        ⋮
+                      </span>
+                    </a>
+                  )}
+                  {whatsapp02 && (
+                    <a
+                      href={`https://wa.me/${whatsapp02}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-white">
+                          <FaWhatsapp size={35} color="white" />
+                        </div>
+                        <div className="min-w-0 text-left">
+                          <p className="text-white font-semibold truncate">
+                            WhatsApp واتساب
+                          </p>
+                          <p
+                            className="text-white/80 text-sm truncate"
+                            dir="rtl"
+                          >
+                            {whatsapp02}
                           </p>
                         </div>
                       </div>
@@ -799,7 +852,6 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )} 
-
                   {youtubeLink && (
                     <a
                       href={youtubeLink}
@@ -940,7 +992,6 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )} 
-
                   {website && (
                     <a
                       href={website}
@@ -1078,7 +1129,6 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )}
-
                   {profileLink01 && (
                     <a
                       href={profileLink01}
@@ -1107,27 +1157,26 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )}
-
-                  {whatsapp02 && (
+                  {profileLink02 && (
                     <a
-                      href={`https://wa.me/${whatsapp02}`}
+                      href={profileLink02}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[#b89a64] bg-black "
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-12 h-12 flex items-center justify-center text-white">
-                          <FaWhatsapp size={35} color="white" />
+                          <FaGift size={35} color="white" />
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            WhatsApp واتساب
+                            Company Profile ملف الشركة
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
                             dir="rtl"
                           >
-                            {whatsapp02}
+                            {profileName02}
                           </p>
                         </div>
                       </div>
@@ -1136,7 +1185,6 @@ const Profile30 = () => {
                       </span>
                     </a>
                   )}
-
                   {catalogueLink && (
                     <a
                       href={catalogueLink}
