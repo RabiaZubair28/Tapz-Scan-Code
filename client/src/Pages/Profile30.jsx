@@ -705,7 +705,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Phone هاتف
+                            Phone
                           </p>
                           <p className="text-white/80 text-sm truncate">
                             {phone01}
@@ -730,7 +730,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Phone هاتف
+                            Phone 
                           </p>
                           <p className="text-white/80 text-sm truncate">
                             {phone02}
@@ -756,7 +756,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            WhatsApp واتساب
+                            WhatsApp 
                           </p>
                           <p className="text-white/80 text-sm truncate">
                             {whatsapp01}
@@ -781,7 +781,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            WhatsApp واتساب
+                            WhatsApp 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -809,7 +809,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Telephone هاتف ثابت
+                            Telephone  
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -837,7 +837,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Instagram انستغرام
+                            Instagram 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -865,7 +865,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            YouTube يوتيوب
+                            YouTube 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -893,7 +893,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            TikTok تيك توك
+                            TikTok  
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -921,7 +921,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            X إكس
+                            Twitter
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -949,7 +949,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Facebook فيسبوك
+                            Facebook 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -977,7 +977,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Google Review تقييمات جوجل
+                            Google Review  
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1005,8 +1005,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Order through our website الطلب من خلال الموقع
-                            الإلكتروني
+                           Website
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1034,7 +1033,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Email البريد الإلكتروني
+                            Email  
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1062,7 +1061,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            LinkedIn لينكدإن
+                            LinkedIn 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1090,7 +1089,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Location الموقع
+                            Location 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1118,7 +1117,7 @@ const Profile30 = () => {
                       </div>
                       <div className="min-w-0 text-center">
                         <p className="text-white font-semibold truncate">
-                          Menu قائمة المشروبات
+                          Menu  
                         </p>
                         <p className="text-white/80 text-sm truncate" dir="rtl">
                           {menuName}
@@ -1143,7 +1142,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Company Profile ملف الشركة
+                            Company Profile 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1171,7 +1170,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Company Profile ملف الشركة
+                            Company Profile  
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
@@ -1199,7 +1198,7 @@ const Profile30 = () => {
                         </div>
                         <div className="min-w-0 text-left">
                           <p className="text-white font-semibold truncate">
-                            Catalogue الكتالوج
+                            Catalogue 
                           </p>
                           <p
                             className="text-white/80 text-sm truncate"
