@@ -4681,10 +4681,10 @@ END:VCARD`;
       <div>
         {show && (
           <div
-            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800"
+            className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative bg-black"
             style={{ backgroundAttachment: "fixed" }}
           >
-            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+            <div className="bg-white border-[#b89a64] rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer  hover:text-black"
@@ -4699,7 +4699,7 @@ END:VCARD`;
                 {/* Buttons and Social Icons */}
                 <div className="flex justify-center space-x-2">
                   <div
-                    className="w-12 h-12 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 flex items-center justify-center"
+                    className="w-12 h-12 text-black p-3 rounded-full flex items-center justify-center border-[2px] border-[#b89a64]"
                     onClick={() => {
                       downloadQr("qr");
                       handleClose();
@@ -4717,7 +4717,7 @@ END:VCARD`;
                       <img
                         src={fb} // Replace with the actual path to the Facebook icon
                         alt="Facebook"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                       />
                     </FacebookShareButton>
                   </div>
@@ -4731,7 +4731,7 @@ END:VCARD`;
                       <img
                         src={linkedin} // Replace with the actual path to the LinkedIn icon
                         alt="LinkedIn"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                       />
                     </LinkedinShareButton>
                   </div>
@@ -4745,7 +4745,7 @@ END:VCARD`;
                       <img
                         src={telegram} // Replace with the actual path to the Telegram icon
                         alt="Telegram"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                       />
                     </TelegramShareButton>
                   </div>
@@ -4759,7 +4759,7 @@ END:VCARD`;
                       <img
                         src={whatsapp} // Replace with the actual path to the WhatsApp icon
                         alt="WhatsApp"
-                        className="w-12 h-12 rounded-full border-2 border-white"
+                        className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                       />
                     </WhatsappShareButton>
                   </div>
@@ -4802,7 +4802,7 @@ END:VCARD`;
             </Helmet>
 
             <div
-              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800`}
+              className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-black`}
               style={{ backgroundAttachment: "fixed" }}
             >
               {images && (
@@ -4812,7 +4812,7 @@ END:VCARD`;
                       <img
                         src={images}
                         alt="profile"
-                        className="mx-auto  h-[220px] w-full bg-cover border-b-[1px] border-gray-300"
+                        className="mx-auto h-[220px] w-full bg-cover border-b-[1px] border-[#b89a64]"
                       />
                     </div>
                   </a>
@@ -4825,7 +4825,7 @@ END:VCARD`;
                       <img
                         src={logo}
                         alt="profile"
-                        className="w-36 h-36 -mt-24 mx-auto rounded-2xl border-4 border-white shadow-md"
+                        className="w-36 h-36 -mt-24 mx-auto rounded-full border-[3px] border-[#b89a64] shadow-md"
                       />
                     </div>
                   </a>
@@ -4838,7 +4838,7 @@ END:VCARD`;
                       <MdRemoveRedEye size={20} color="white" />
                       <p className="text-white">{visitCount}</p>
                     </div>
-                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-lg py-2.5  px-3 bg-gray-600 border text-sm border-white shadow-sm hover:shadow-md hover:bg-gray-500">
+                    <button className="flex items-start justify-start -mt-5 gap-x-2 rounded-full py-2.5 px-4 bg-black border-2 border-[#b89a64] text-sm text-white shadow-sm hover:shadow-md">
                       {/* <FaDownload size={20} onClick={downloadContactCard}  /> */}
                       <span
                         style={{
@@ -4860,7 +4860,7 @@ END:VCARD`;
                 {!editLogo && (
                   <div className="space-x-2">
                     <button
-                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                      className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                       onClick={() => {
                         setDeleteModal11(false);
                         setEditLogo(true);
@@ -4869,7 +4869,7 @@ END:VCARD`;
                       Edit Logo
                     </button>
                     {/* <button
-              className="btn bg-red-500 text-white rounded-md py-1 px-4"
+              className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
               onClick={() => {
                 setDeleteModal11(true)}}
             >
@@ -4898,7 +4898,7 @@ END:VCARD`;
                 {!editCover && (
                   <div className="space-x-2">
                     <button
-                      className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                      className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                       onClick={() => {
                         setEditCover(true);
                       }}
@@ -4906,7 +4906,7 @@ END:VCARD`;
                       Edit Cover
                     </button>
                     {/* <button
-              className="btn bg-red-500 text-white rounded-md py-1 px-4"
+              className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
               onClick={() => {
                 setDeleteModal11(true)}}
             >
@@ -4971,13 +4971,13 @@ END:VCARD`;
                                 </div>
                                 <div className="flex justify-start space-x-1">
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => setModal05(false)}
                                   >
                                     Cancel
                                   </button>
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => {
                                       handleDeleteName(_id);
                                       window.location.reload();
@@ -5001,7 +5001,7 @@ END:VCARD`;
                                     />
                                   </div>
                                   <button
-                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => {
                                       handleEditName(_id);
                                       setEditName(false);
@@ -5011,7 +5011,7 @@ END:VCARD`;
                                     &#x2714;
                                   </button>
                                   <button
-                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => setEditName(false)}
                                   >
                                     &#x2716;
@@ -5060,13 +5060,13 @@ END:VCARD`;
                                 </div>
                                 <div className="flex justify-start space-x-1">
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => setModal04(false)}
                                   >
                                     Cancel
                                   </button>
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => {
                                       handleDeleteClientName(_id);
                                       window.location.reload();
@@ -5090,7 +5090,7 @@ END:VCARD`;
                                     />
                                   </div>
                                   <button
-                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => {
                                       handleEditClientName(_id);
                                       setEditClientName(false);
@@ -5100,7 +5100,7 @@ END:VCARD`;
                                     &#x2714;
                                   </button>
                                   <button
-                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => setEditClientName(false)}
                                   >
                                     &#x2716;
@@ -5149,13 +5149,13 @@ END:VCARD`;
                                 </div>
                                 <div className="flex justify-start space-x-1">
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => setModal03(false)}
                                   >
                                     Cancel
                                   </button>
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => {
                                       handleDeleteDesignation(_id);
                                       window.location.reload();
@@ -5181,7 +5181,7 @@ END:VCARD`;
                                     />
                                   </div>
                                   <button
-                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => {
                                       handleEditDesignation(_id);
                                       setEditDesignation(false);
@@ -5191,7 +5191,7 @@ END:VCARD`;
                                     &#x2714;
                                   </button>
                                   <button
-                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => setEditDesignation(false)}
                                   >
                                     &#x2716;
@@ -5210,7 +5210,7 @@ END:VCARD`;
                       href={`tel:${telephone01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-black border-[2px] border-[#b89a64] justify-center rounded-full shadow-sm hover:shadow-md"
                     >
                       <MdOutlinePhoneAndroid size={20} color="white" />
                     </a>
@@ -5218,13 +5218,13 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-black border-[2px] border-[#b89a64] justify-center rounded-full shadow-sm hover:shadow-md"
                     >
                       <AiOutlineMail size={20} color="white" />
                     </a>
                     <a
                       href={`sms:${phone01}`}
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-black border-[2px] border-[#b89a64] justify-center rounded-full shadow-sm hover:shadow-md"
                     >
                       <RiMessage2Line size={20} color="white" />
                     </a>
@@ -5232,7 +5232,7 @@ END:VCARD`;
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center bg-gray-600 hover:bg-gray-500 border-white justify-center rounded-full bg-gray-7 border-[0.25px] shadow-sm hover:shadow-md"
+                      className="w-12 h-12 flex items-center bg-black border-[2px] border-[#b89a64] justify-center rounded-full shadow-sm hover:shadow-md"
                     >
                       <ImWhatsapp size={20} color="white" />
                     </a>
@@ -5273,13 +5273,13 @@ END:VCARD`;
                                 </div>
                                 <div className="flex justify-start space-x-1">
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => setModal02(false)}
                                   >
                                     Cancel
                                   </button>
                                   <button
-                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                    className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                     onClick={() => {
                                       handleDeleteDescription(_id);
                                       window.location.reload();
@@ -5305,7 +5305,7 @@ END:VCARD`;
                                     />
                                   </div>
                                   <button
-                                    className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => {
                                       handleEditDescription(_id);
                                       setEditDescription(false);
@@ -5315,7 +5315,7 @@ END:VCARD`;
                                     &#x2714;
                                   </button>
                                   <button
-                                    className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                    className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                     onClick={() => setEditDescription(false)}
                                   >
                                     &#x2716;
@@ -5332,7 +5332,7 @@ END:VCARD`;
 
                 {phone01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone01" className="h-10 w-10" />
@@ -5369,13 +5369,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal06(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeletePhone01(_id);
                                     window.location.reload();
@@ -5399,7 +5399,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditPhone01(_id);
                                     setEditPhone01(false);
@@ -5409,7 +5409,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditPhone01(false)}
                                 >
                                   &#x2716;
@@ -5424,7 +5424,7 @@ END:VCARD`;
                 )}
                 {phone02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
@@ -5461,13 +5461,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal07(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeletePhone02(_id);
                                     window.location.reload();
@@ -5491,7 +5491,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditPhone02(_id);
                                     setEditPhone02(false);
@@ -5501,7 +5501,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditPhone02(false)}
                                 >
                                   &#x2716;
@@ -5516,7 +5516,7 @@ END:VCARD`;
                 )}
                 {phone03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={phone} alt="Phone02" className="h-10 w-10" />
@@ -5553,13 +5553,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal08(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeletePhone03(_id);
                                     window.location.reload();
@@ -5583,7 +5583,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditPhone03(_id);
                                     setEditPhone03(false);
@@ -5593,7 +5593,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditPhone03(false)}
                                 >
                                   &#x2716;
@@ -5608,7 +5608,7 @@ END:VCARD`;
                 )}
                 {telephone01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5649,13 +5649,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal49(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTelephone01(_id);
                                     window.location.reload();
@@ -5679,7 +5679,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTelephone01(_id);
                                     setEditTelephone01(false);
@@ -5689,7 +5689,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTelephone01(false)}
                                 >
                                   &#x2716;
@@ -5704,7 +5704,7 @@ END:VCARD`;
                 )}
                 {telephone02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5745,13 +5745,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal47(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTelephone02(_id);
                                     window.location.reload();
@@ -5775,7 +5775,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTelephone02(_id);
                                     setEditTelephone02(false);
@@ -5785,7 +5785,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTelephone02(false)}
                                 >
                                   &#x2716;
@@ -5800,7 +5800,7 @@ END:VCARD`;
                 )}
                 {telephone03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Telephone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5841,13 +5841,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal48(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTelephone03(_id);
                                     window.location.reload();
@@ -5871,7 +5871,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTelephone03(_id);
                                     setEditTelephone03(false);
@@ -5881,7 +5881,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTelephone03(false)}
                                 >
                                   &#x2716;
@@ -5896,7 +5896,7 @@ END:VCARD`;
                 )}
                 {whatsapp01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -5937,13 +5937,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal09(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWhatsapp01(_id);
                                     window.location.reload();
@@ -5967,7 +5967,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWhatsapp01(_id);
                                     setEditWhatsapp01(false);
@@ -5977,7 +5977,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWhatsapp01(false)}
                                 >
                                   &#x2716;
@@ -5992,7 +5992,7 @@ END:VCARD`;
                 )}
                 {whatsapp02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6033,13 +6033,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal10(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWhatsapp02(_id);
                                     window.location.reload();
@@ -6063,7 +6063,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWhatsapp02(_id);
                                     setEditWhatsapp02(false);
@@ -6073,7 +6073,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWhatsapp02(false)}
                                 >
                                   &#x2716;
@@ -6088,7 +6088,7 @@ END:VCARD`;
                 )}
                 {whatsapp03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6129,13 +6129,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal11(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWhatsapp03(_id);
                                     window.location.reload();
@@ -6159,7 +6159,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWhatsapp03(_id);
                                     setEditWhatsapp03(false);
@@ -6169,7 +6169,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWhatsapp03(false)}
                                 >
                                   &#x2716;
@@ -6188,7 +6188,7 @@ END:VCARD`;
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md"
+                      className="flex items-center justify-between w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md"
                     >
                       <div className="flex items-center space-x-6">
                         <img src={emailImg} alt="Email" className="h-10 w-10" />
@@ -6202,7 +6202,7 @@ END:VCARD`;
                 )}
                 {email02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3  border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3  border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6245,13 +6245,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal12(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteEmail02(_id);
                                     window.location.reload();
@@ -6275,7 +6275,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditEmail02(_id);
                                     setEditEmail02(false);
@@ -6285,7 +6285,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditEmail02(false)}
                                 >
                                   &#x2716;
@@ -6300,7 +6300,7 @@ END:VCARD`;
                 )}
                 {email03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img
@@ -6343,13 +6343,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal13(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteEmail03(_id);
                                     window.location.reload();
@@ -6373,7 +6373,7 @@ END:VCARD`;
                                   className="flex-1 w-[100px] px-3 py-0.5 border rounded-md focus:outline-none"
                                 />
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditEmail03(_id);
                                     setEditEmail03(false);
@@ -6383,7 +6383,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditEmail03(false)}
                                 >
                                   &#x2716;
@@ -6399,7 +6399,7 @@ END:VCARD`;
 
                 {facebookLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
@@ -6436,13 +6436,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal14(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteFacebook(_id);
                                     window.location.reload();
@@ -6475,7 +6475,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditFacebook(_id);
                                     setEditFacebook(false);
@@ -6485,7 +6485,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditFacebook(false)}
                                 >
                                   &#x2716;
@@ -6500,7 +6500,7 @@ END:VCARD`;
                 )}
                 {facebookLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook01" className="h-10 w-10" />
@@ -6537,13 +6537,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal15(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteFacebook02(_id);
                                     window.location.reload();
@@ -6576,7 +6576,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditFacebook02(_id);
                                     setEditFacebook02(false);
@@ -6586,7 +6586,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditFacebook02(false)}
                                 >
                                   &#x2716;
@@ -6601,7 +6601,7 @@ END:VCARD`;
                 )}
                 {facebookLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       {/* Phone Icon and Info */}
                       <div className="flex items-center space-x-6 w-full">
                         <img src={fb} alt="facebook03" className="h-10 w-10" />
@@ -6638,13 +6638,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal16(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteFacebook03(_id);
                                     window.location.reload();
@@ -6677,7 +6677,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditFacebook03(_id);
                                     setEditFacebook03(false);
@@ -6687,7 +6687,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditFacebook03(false)}
                                 >
                                   &#x2716;
@@ -6702,7 +6702,7 @@ END:VCARD`;
                 )}
                 {instagramLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6737,13 +6737,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal17(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteInstagram(_id);
                                     window.location.reload();
@@ -6774,7 +6774,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditInstagram(_id);
                                     setEditInstagram(false);
@@ -6784,7 +6784,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditInstagram(false)}
                                 >
                                   &#x2716;
@@ -6799,7 +6799,7 @@ END:VCARD`;
                 )}
                 {instagramLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6836,13 +6836,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal18(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteInstagram02(_id);
                                     window.location.reload();
@@ -6873,7 +6873,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditInstagram02(_id);
                                     setEditInstagram02(false);
@@ -6883,7 +6883,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditInstagram02(false)}
                                 >
                                   &#x2716;
@@ -6898,7 +6898,7 @@ END:VCARD`;
                 )}
                 {instagramLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={insta}
@@ -6935,13 +6935,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal19(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteInstagram03(_id);
                                     window.location.reload();
@@ -6972,7 +6972,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditInstagram03(_id);
                                     setEditInstagram03(false);
@@ -6982,7 +6982,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditInstagram03(false)}
                                 >
                                   &#x2716;
@@ -6997,7 +6997,7 @@ END:VCARD`;
                 )}
                 {snapchatLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7032,13 +7032,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal20(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteSnapchat(_id);
                                     window.location.reload();
@@ -7069,7 +7069,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditSnapchat(_id);
                                     setEditSnapchat(false);
@@ -7079,7 +7079,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditSnapchat(false)}
                                 >
                                   &#x2716;
@@ -7094,7 +7094,7 @@ END:VCARD`;
                 )}
                 {snapchatLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7129,13 +7129,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal21(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteSnapchat02(_id);
                                     window.location.reload();
@@ -7166,7 +7166,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditSnapchat02(_id);
                                     setEditSnapchat02(false);
@@ -7176,7 +7176,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditSnapchat02(false)}
                                 >
                                   &#x2716;
@@ -7191,7 +7191,7 @@ END:VCARD`;
                 )}
                 {snapchatLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={snap}
@@ -7226,13 +7226,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal22(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteSnapchat03(_id);
                                     window.location.reload();
@@ -7263,7 +7263,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditSnapchat03(_id);
                                     setEditSnapchat03(false);
@@ -7273,7 +7273,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditSnapchat03(false)}
                                 >
                                   &#x2716;
@@ -7288,7 +7288,7 @@ END:VCARD`;
                 )}
                 {youtubeLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7319,13 +7319,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal23(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutube(_id);
                                     window.location.reload();
@@ -7356,7 +7356,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutube(_id);
                                     setEditYoutube(false);
@@ -7366,7 +7366,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutube(false)}
                                 >
                                   &#x2716;
@@ -7381,7 +7381,7 @@ END:VCARD`;
                 )}
                 {youtubeLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube02" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7412,13 +7412,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal24(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutube02(_id);
                                     window.location.reload();
@@ -7449,7 +7449,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutube02(_id);
                                     setEditYoutube02(false);
@@ -7459,7 +7459,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutube02(false)}
                                 >
                                   &#x2716;
@@ -7474,7 +7474,7 @@ END:VCARD`;
                 )}
                 {youtubeLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={yt} alt="youtube03" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -7505,13 +7505,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal25(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutube03(_id);
                                     window.location.reload();
@@ -7542,7 +7542,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutube03(_id);
                                     setEditYoutube03(false);
@@ -7552,7 +7552,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutube03(false)}
                                 >
                                   &#x2716;
@@ -7568,7 +7568,7 @@ END:VCARD`;
 
                 {tiktokLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7603,13 +7603,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal26(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTiktok(_id);
                                     window.location.reload();
@@ -7640,7 +7640,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTiktok(_id);
                                     setEditTiktok(false);
@@ -7650,7 +7650,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTiktok(false)}
                                 >
                                   &#x2716;
@@ -7665,7 +7665,7 @@ END:VCARD`;
                 )}
                 {tiktokLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7700,13 +7700,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal27(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTiktok02(_id);
                                     window.location.reload();
@@ -7737,7 +7737,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTiktok02(_id);
                                     setEditTiktok02(false);
@@ -7747,7 +7747,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTiktok02(false)}
                                 >
                                   &#x2716;
@@ -7762,7 +7762,7 @@ END:VCARD`;
                 )}
                 {tiktokLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={tiktok}
@@ -7797,13 +7797,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal28(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTiktok03(_id);
                                     window.location.reload();
@@ -7834,7 +7834,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTiktok03(_id);
                                     setEditTiktok03(false);
@@ -7844,7 +7844,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTiktok03(false)}
                                 >
                                   &#x2716;
@@ -7859,7 +7859,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -7896,13 +7896,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal29(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutubeShorts(_id);
                                     window.location.reload();
@@ -7933,7 +7933,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutubeShorts(_id);
                                     setEditYoutubeShorts(false);
@@ -7943,7 +7943,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutubeShorts(false)}
                                 >
                                   &#x2716;
@@ -7958,7 +7958,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -7995,13 +7995,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal30(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutubeShorts02(_id);
                                     window.location.reload();
@@ -8032,7 +8032,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutubeShorts02(_id);
                                     setEditYoutubeShorts02(false);
@@ -8042,7 +8042,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutubeShorts02(false)}
                                 >
                                   &#x2716;
@@ -8057,7 +8057,7 @@ END:VCARD`;
                 )}
                 {youtubeShortsLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={linkedin02}
@@ -8094,13 +8094,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal31(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteYoutubeShorts03(_id);
                                     window.location.reload();
@@ -8131,7 +8131,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditYoutubeShorts03(_id);
                                     setEditYoutubeShorts03(false);
@@ -8141,7 +8141,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditYoutubeShorts03(false)}
                                 >
                                   &#x2716;
@@ -8156,7 +8156,7 @@ END:VCARD`;
                 )}
                 {address && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={addressImg}
@@ -8191,13 +8191,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal16(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteAddress(_id);
                                     window.location.reload();
@@ -8221,7 +8221,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditAddress(_id);
                                     setEditAddress(false);
@@ -8231,7 +8231,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditAddress(false)}
                                 >
                                   &#x2716;
@@ -8246,7 +8246,7 @@ END:VCARD`;
                 )}
                 {website && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8281,13 +8281,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal33(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWebsite(_id);
                                     window.location.reload();
@@ -8318,7 +8318,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWebsite(_id);
                                     setEditWebsite(false);
@@ -8328,7 +8328,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWebsite(false)}
                                 >
                                   &#x2716;
@@ -8343,7 +8343,7 @@ END:VCARD`;
                 )}
                 {website02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8378,13 +8378,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal34(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWebsite02(_id);
                                     window.location.reload();
@@ -8415,7 +8415,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWebsite02(_id);
                                     setEditWebsite02(false);
@@ -8425,7 +8425,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWebsite02(false)}
                                 >
                                   &#x2716;
@@ -8440,7 +8440,7 @@ END:VCARD`;
                 )}
                 {website03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={websiteImg}
@@ -8475,13 +8475,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal35(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteWebsite03(_id);
                                     window.location.reload();
@@ -8512,7 +8512,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditWebsite03(_id);
                                     setEditWebsite03(false);
@@ -8522,7 +8522,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditWebsite03(false)}
                                 >
                                   &#x2716;
@@ -8537,7 +8537,7 @@ END:VCARD`;
                 )}
                 {twitterLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8572,13 +8572,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal36(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTwitter(_id);
                                     window.location.reload();
@@ -8609,7 +8609,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTwitter(_id);
                                     setEditTwitter(false);
@@ -8619,7 +8619,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTwitter(false)}
                                 >
                                   &#x2716;
@@ -8634,7 +8634,7 @@ END:VCARD`;
                 )}
                 {twitterLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8669,13 +8669,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal37(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTwitter02(_id);
                                     window.location.reload();
@@ -8706,7 +8706,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTwitter02(_id);
                                     setEditTwitter02(false);
@@ -8716,7 +8716,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTwitter02(false)}
                                 >
                                   &#x2716;
@@ -8731,7 +8731,7 @@ END:VCARD`;
                 )}
                 {twitterLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={threads}
@@ -8766,13 +8766,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal38(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteTwitter03(_id);
                                     window.location.reload();
@@ -8803,7 +8803,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditTwitter03(_id);
                                     setEditTwitter03(false);
@@ -8813,7 +8813,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditTwitter03(false)}
                                 >
                                   &#x2716;
@@ -8828,7 +8828,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -8865,13 +8865,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal39(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleReview(_id);
                                     window.location.reload();
@@ -8902,7 +8902,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleReview(_id);
                                     setEditGoogleReview(false);
@@ -8912,7 +8912,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleReview(false)}
                                 >
                                   &#x2716;
@@ -8927,7 +8927,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -8964,13 +8964,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal40(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleReview02(_id);
                                     window.location.reload();
@@ -9001,7 +9001,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleReview02(_id);
                                     setEditGoogleReview02(false);
@@ -9011,7 +9011,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleReview02(false)}
                                 >
                                   &#x2716;
@@ -9026,7 +9026,7 @@ END:VCARD`;
                 )}
                 {googleReviewLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={greview}
@@ -9063,13 +9063,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal41(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleReview03(_id);
                                     window.location.reload();
@@ -9100,7 +9100,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleReview03(_id);
                                     setEditGoogleReview03(false);
@@ -9110,7 +9110,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleReview03(false)}
                                 >
                                   &#x2716;
@@ -9125,7 +9125,7 @@ END:VCARD`;
                 )}
                 {googleMapLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9160,13 +9160,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal42(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleMap(_id);
                                     window.location.reload();
@@ -9197,7 +9197,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleMap(_id);
                                     setEditGoogleMap(false);
@@ -9207,7 +9207,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleMap(false)}
                                 >
                                   &#x2716;
@@ -9222,7 +9222,7 @@ END:VCARD`;
                 )}
                 {googleMapLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9259,13 +9259,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal43(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleMap02(_id);
                                     window.location.reload();
@@ -9296,7 +9296,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleMap02(_id);
                                     setEditGoogleMap02(false);
@@ -9306,7 +9306,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleMap02(false)}
                                 >
                                   &#x2716;
@@ -9321,7 +9321,7 @@ END:VCARD`;
                 )}
                 {googleMapLink03 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={locations}
@@ -9358,13 +9358,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal44(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteGoogleMap03(_id);
                                     window.location.reload();
@@ -9395,7 +9395,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditGoogleMap03(_id);
                                     setEditGoogleMap03(false);
@@ -9405,7 +9405,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditGoogleMap03(false)}
                                 >
                                   &#x2716;
@@ -9420,7 +9420,7 @@ END:VCARD`;
                 )}
                 {menuLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img src={menu} alt="menu01" className="h-10 w-10" />
                         <div className="flex flex-1 items-center justify-between">
@@ -9451,13 +9451,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal45(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteMenu(_id);
                                     window.location.reload();
@@ -9488,7 +9488,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditMenu(_id);
                                     setEditMenu(false);
@@ -9498,7 +9498,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditMenu(false)}
                                 >
                                   &#x2716;
@@ -9513,7 +9513,7 @@ END:VCARD`;
                 )}
                 {catalogueLink && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={catalog}
@@ -9548,13 +9548,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md  text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal46(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteCatalogue(_id);
                                     window.location.reload();
@@ -9585,7 +9585,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditCatalogue(_id);
                                     setEditCatalogue(false);
@@ -9595,7 +9595,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditCatalogue(false)}
                                 >
                                   &#x2716;
@@ -9610,7 +9610,7 @@ END:VCARD`;
                 )}
                 {profileLink01 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={profile}
@@ -9645,13 +9645,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal48(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteProfile01(_id);
                                     window.location.reload();
@@ -9682,7 +9682,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditProfile01(_id);
                                     setEditProfile01(false);
@@ -9692,7 +9692,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditProfile01(false)}
                                 >
                                   &#x2716;
@@ -9707,7 +9707,7 @@ END:VCARD`;
                 )}
                 {profileLink02 && (
                   <div className="flex justify-center mt-3">
-                    <a className="flex w-full px-5 py-3 border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white shadow rounded-lg max-w-md">
+                    <a className="flex w-full px-5 py-3 border-2 border-[#b89a64] bg-black text-white shadow rounded-lg max-w-md">
                       <div className="flex items-center space-x-6 w-full">
                         <img
                           src={profile}
@@ -9742,13 +9742,13 @@ END:VCARD`;
                               </div>
                               <div className="flex justify-start space-x-1">
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => setModal47(false)}
                                 >
                                   Cancel
                                 </button>
                                 <button
-                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                  className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                   onClick={() => {
                                     handleDeleteProfile02(_id);
                                     window.location.reload();
@@ -9779,7 +9779,7 @@ END:VCARD`;
                                   />
                                 </div>
                                 <button
-                                  className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => {
                                     handleEditProfile02(_id);
                                     setEditProfile02(false);
@@ -9789,7 +9789,7 @@ END:VCARD`;
                                   &#x2714;
                                 </button>
                                 <button
-                                  className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                  className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                   onClick={() => setEditProfile02(false)}
                                 >
                                   &#x2716;
@@ -9851,7 +9851,7 @@ END:VCARD`;
                   profileLink01 == "" ||
                   profileLink02 == "") && (
                   <div
-                    className="flex items-center  cursor-pointer border-[0.25px] border-white  bg-gray-600 hover:bg-gray-500 hover:border-white text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
+                    className="flex items-center  cursor-pointer border-2 border-[#b89a64] bg-black text-white mx-auto rounded-lg shadow-md px-4 py-2 mt-3 gap-x-2"
                     onClick={() => handleShow02()}
                   >
                     <IoIosAddCircle className="" size={30} />
@@ -9867,9 +9867,9 @@ END:VCARD`;
                     <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Services
                     </h2>
-                    <hr className="border-white" />
+                    <hr className="border-[#b89a64]" />
                     {services && (
-                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg-gray-600 text-white shadow rounded-lg max-w-md border-[0.25px] border-white">
+                      <div className="flex justify-center mt-2 w-full px-5 py-3 bg-black text-white shadow rounded-lg max-w-md border-2 border-[#b89a64]">
                         <a className="flex w-full py-1  text-white  max-w-md">
                           <div className="flex items-center space-x-6 w-full">
                             <div className="flex flex-row w-full  items-start justify-between gap-x-3">
@@ -9895,13 +9895,13 @@ END:VCARD`;
                                   </div>
                                   <div className="flex justify-start space-x-1">
                                     <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                       onClick={() => setModal01(false)}
                                     >
                                       Cancel
                                     </button>
                                     <button
-                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-white"
+                                      className="bg-black font-medium text-md text-white px-3 py-1 rounded-md border border-[#b89a64]"
                                       onClick={() => {
                                         handleDeleteServices(_id);
                                         window.location.reload();
@@ -9926,12 +9926,12 @@ END:VCARD`;
                                         id="services"
                                         rows="4" // Setting rows for better height management
                                         placeholder={services}
-                                        className="w-full px-3 py-0.5 border rounded-md focus:outline-none"
+                                        className="w-full px-3 py-0.5 border border-[#b89a64] bg-black text-white rounded-md focus:outline-none"
                                       />
                                     </div>
                                     <div className="flex space-x-2">
                                       <button
-                                        className="bg-green-600 text-white px-2 py-1 rounded-md text-sm"
+                                        className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                         onClick={() => {
                                           handleEditServices(_id);
                                           setEditServices(false);
@@ -9941,7 +9941,7 @@ END:VCARD`;
                                         &#x2714;
                                       </button>
                                       <button
-                                        className="bg-red-600 text-white px-2 py-1 rounded-md text-sm"
+                                        className="bg-black border border-[#b89a64] text-white px-2 py-1 rounded-md text-sm"
                                         onClick={() => setEditServices(false)}
                                       >
                                         &#x2716;
@@ -9978,9 +9978,9 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Image Gallery
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-[#b89a64]" />
                   {img01 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img01}>
                         <img
                           src={img01}
@@ -9992,7 +9992,7 @@ END:VCARD`;
                       {!editImg01 && !deleteModal01 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal01(false);
                               setEditImg01(true);
@@ -10001,7 +10001,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal01(true);
                             }}
@@ -10018,7 +10018,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal01(false);
                               }}
@@ -10026,7 +10026,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg01(_id);
                                 setDeleteModal01(false);
@@ -10060,7 +10060,7 @@ END:VCARD`;
                   )}
 
                   {img02 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img02}>
                         <img
                           src={img02}
@@ -10072,7 +10072,7 @@ END:VCARD`;
                       {!editImg02 && !deleteModal02 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal02(false);
                               setEditImg02(true);
@@ -10081,7 +10081,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal02(true);
                             }}
@@ -10098,7 +10098,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal02(false);
                               }}
@@ -10106,7 +10106,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg02(_id);
                                 window.location.reload();
@@ -10140,7 +10140,7 @@ END:VCARD`;
                   )}
 
                   {img03 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img03}>
                         <img
                           src={img03}
@@ -10152,7 +10152,7 @@ END:VCARD`;
                       {!editImg03 && !deleteModal03 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal03(false);
                               setEditImg03(true);
@@ -10161,7 +10161,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal03(true);
                             }}
@@ -10178,7 +10178,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal03(false);
                               }}
@@ -10186,7 +10186,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg03(_id);
                                 window.location.reload();
@@ -10220,7 +10220,7 @@ END:VCARD`;
                   )}
 
                   {img04 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img04}>
                         <img
                           src={img04}
@@ -10232,7 +10232,7 @@ END:VCARD`;
                       {!editImg04 && !deleteModal04 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal04(false);
                               setEditImg04(true);
@@ -10241,7 +10241,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal04(true);
                             }}
@@ -10258,7 +10258,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal04(false);
                               }}
@@ -10266,7 +10266,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg04(_id);
                                 window.location.reload();
@@ -10300,7 +10300,7 @@ END:VCARD`;
                   )}
 
                   {img05 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img05}>
                         <img
                           src={img05}
@@ -10312,7 +10312,7 @@ END:VCARD`;
                       {!editImg05 && !deleteModal05 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal05(false);
                               setEditImg05(true);
@@ -10321,7 +10321,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal05(true);
                             }}
@@ -10338,7 +10338,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal05(false);
                               }}
@@ -10346,7 +10346,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg05(_id);
                                 window.location.reload();
@@ -10380,7 +10380,7 @@ END:VCARD`;
                   )}
 
                   {img06 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img06}>
                         <img
                           src={img06}
@@ -10392,7 +10392,7 @@ END:VCARD`;
                       {!editImg06 && !deleteModal06 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal06(false);
                               setEditImg06(true);
@@ -10401,7 +10401,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal06(true);
                             }}
@@ -10418,7 +10418,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal06(false);
                               }}
@@ -10426,7 +10426,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg06(_id);
                                 window.location.reload();
@@ -10460,7 +10460,7 @@ END:VCARD`;
                   )}
 
                   {img07 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img07}>
                         <img
                           src={img07}
@@ -10472,7 +10472,7 @@ END:VCARD`;
                       {!editImg07 && !deleteModal07 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal07(false);
                               setEditImg07(true);
@@ -10481,7 +10481,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal07(true);
                             }}
@@ -10498,7 +10498,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal07(false);
                               }}
@@ -10506,7 +10506,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg07(_id);
                                 window.location.reload();
@@ -10539,7 +10539,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img08 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img08}>
                         <img
                           src={img08}
@@ -10551,7 +10551,7 @@ END:VCARD`;
                       {!editImg08 && !deleteModal08 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal08(false);
                               setEditImg08(true);
@@ -10560,7 +10560,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal08(true);
                             }}
@@ -10577,7 +10577,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal08(false);
                               }}
@@ -10585,7 +10585,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg08(_id);
                                 window.location.reload();
@@ -10619,7 +10619,7 @@ END:VCARD`;
                   )}
 
                   {img09 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img09}>
                         <img
                           src={img09}
@@ -10631,7 +10631,7 @@ END:VCARD`;
                       {!editImg09 && !deleteModal09 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal09(false);
                               setEditImg09(true);
@@ -10640,7 +10640,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal09(true);
                             }}
@@ -10657,7 +10657,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal09(false);
                               }}
@@ -10665,7 +10665,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg09(_id);
                                 window.location.reload();
@@ -10698,7 +10698,7 @@ END:VCARD`;
                     </div>
                   )}
                   {img10 && (
-                    <div className="flex flex-col items-center bg-gray-600 mx-auto rounded-xl border-[0.25px] border-white shadow-md space-y-2 mt-3 pb-2">
+                    <div className="flex flex-col items-center bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-2 mt-3 pb-2">
                       <a href={img10}>
                         <img
                           src={img10}
@@ -10710,7 +10710,7 @@ END:VCARD`;
                       {!editImg10 && !deleteModal10 && (
                         <div className="space-x-2">
                           <button
-                            className="btn bg-green-500 text-white rounded-md py-1 px-6"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-6"
                             onClick={() => {
                               setDeleteModal10(false);
                               setEditImg10(true);
@@ -10719,7 +10719,7 @@ END:VCARD`;
                             Edit
                           </button>
                           <button
-                            className="btn bg-red-500 text-white rounded-md py-1 px-4"
+                            className="btn bg-black border border-[#b89a64] text-white rounded-md py-1 px-4"
                             onClick={() => {
                               setDeleteModal10(true);
                             }}
@@ -10736,7 +10736,7 @@ END:VCARD`;
                           </div>
                           <div className="flex items-center justify-center mt-1 space-x-1">
                             <button
-                              className="bg-black text-white py-1 px-4 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-4 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 setDeleteModal10(false);
                               }}
@@ -10744,7 +10744,7 @@ END:VCARD`;
                               Cancel
                             </button>
                             <button
-                              className="bg-black text-white py-1 px-3 border border-white rounded-md hover:bg-gray-800"
+                              className="bg-black text-white py-1 px-3 border border-[#b89a64] rounded-md"
                               onClick={() => {
                                 handleDeleteImg10(_id);
                                 window.location.reload();
@@ -10788,7 +10788,7 @@ END:VCARD`;
                     img09 == "" ||
                     img10 == "") && (
                     <div
-                      className="flex items-center  cursor-pointer mt-3   px-3 pt-1 pb-3 gap-x-2 bg-gray-600   mx-auto rounded-xl border-[0.25px] shadow-md space-y-3"
+                      className="flex items-center  cursor-pointer mt-3 px-3 pt-1 pb-3 gap-x-2 bg-black mx-auto rounded-xl border-2 border-[#b89a64] shadow-md space-y-3"
                       onClick={() => handleShow03()}
                     >
                       <IoIosAddCircle className="text-white mt-2" size={30} />
@@ -10804,8 +10804,8 @@ END:VCARD`;
                     <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                       Location
                     </h2>
-                    <hr className="border-gray-300" />
-                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-4 border-white shadow-md  space-y-4 mt-3">
+                    <hr className="border-[#b89a64]" />
+                    <div className="flex flex-col items-center bg-white mx-auto rounded-xl border-[3px] border-[#b89a64] shadow-md  space-y-4 mt-3">
                       {location && (
                         <iframe
                           src={location}
@@ -10823,7 +10823,7 @@ END:VCARD`;
                   <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                     Share Profile
                   </h2>
-                  <hr className="border-gray-300" />
+                  <hr className="border-[#b89a64]" />
                   <div className="flex justify-center space-x-3 mt-3">
                     <div className="social-btn ">
                       <FacebookShareButton
@@ -10834,7 +10834,7 @@ END:VCARD`;
                         <img
                           src={fb} // Replace with the actual path to the Facebook icon
                           alt="Facebook"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </FacebookShareButton>
                     </div>
@@ -10848,7 +10848,7 @@ END:VCARD`;
                         <img
                           src={twitter02} // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TwitterShareButton>
                     </div>
@@ -10862,7 +10862,7 @@ END:VCARD`;
                         <img
                           src={linkedin} // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </LinkedinShareButton>
                     </div>
@@ -10876,7 +10876,7 @@ END:VCARD`;
                         <img
                           src={telegram} // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </TelegramShareButton>
                     </div>
@@ -10890,7 +10890,7 @@ END:VCARD`;
                         <img
                           src={whatsapp} // Replace with the actual path to the WhatsApp icon
                           alt="WhatsApp"
-                          className="w-12 h-12 rounded-full border-2 border-white"
+                          className="w-12 h-12 rounded-full border-[2px] border-[#b89a64]"
                         />
                       </WhatsappShareButton>
                     </div>
@@ -10899,17 +10899,17 @@ END:VCARD`;
                 <h2 className="text-xl font-semibold text-white mb-3 mt-5">
                   Share Contact & QR
                 </h2>
-                <hr className="border-gray-300" />
+                <hr className="border-[#b89a64]" />
                 <div className="flex justify-center space-x-3 mt-3 px-4">
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64] bg-white"
                     onClick={handleShow}
                   >
                     <IoQrCodeSharp size={35} />
                   </div>
 
                   <div
-                    className=" flex justify-center items-center w-16 h-16 rounded-full border-2 border-white bg-white"
+                    className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[#b89a64] bg-white"
                     onClick={downloadContactCard}
                     value="download"
                   >
@@ -10928,10 +10928,10 @@ END:VCARD`;
 
         {show02 && (
           <div
-            className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
-            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+            <div className="bg-white border-[#b89a64] rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer  hover:text-black"
@@ -11324,7 +11324,7 @@ END:VCARD`;
                               }}
                             >
                               <input
-                                className="px-3 py-0.5 border border-gray-300 rounded-md focus:outline-none"
+                                className="px-3 py-0.5 border border-[#b89a64] rounded-md focus:outline-none"
                                 id="add-link-text"
                                 style={{
                                   paddingBlock: "5px",
@@ -11360,7 +11360,7 @@ END:VCARD`;
                             }}
                           >
                             <input
-                              className="px-3 py-0.5 border border-gray-300 rounded-md focus:outline-none"
+                              className="px-3 py-0.5 border border-[#b89a64] rounded-md focus:outline-none"
                               id="add-link"
                               style={{
                                 paddingBlock: "5px",
@@ -11686,7 +11686,7 @@ END:VCARD`;
                           }}
                           style={{
                             fontSize: "15px",
-                            backgroundColor: "rgb(22, 33, 92)",
+                            backgroundColor: "black",
                             color: "white",
                             fontFamily: "sans-serif",
                             fontWeight: "bold",
@@ -11709,10 +11709,10 @@ END:VCARD`;
 
         {show03 && (
           <div
-            className="qr-modal min-h-screen bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+            className="qr-modal min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
             style={{ backgroundAttachment: "fixed" }}
           >
-            <div className="bg-white border-gray-500 rounded-lg pb-8 pt-16 px-10 relative">
+            <div className="bg-white border-[#b89a64] rounded-lg pb-8 pt-16 px-10 relative">
               {/* Close Icon */}
               <ImCross
                 className="absolute top-4 right-4 cursor-pointer  hover:text-black"
@@ -11764,7 +11764,7 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`}
+        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-black pt-[25%]`}
         style={{ backgroundAttachment: "fixed" }}
       >
         <ScaleLoader
