@@ -33,6 +33,7 @@ import EditPortal24 from "./EditPortal24";
 import EditPortal25 from "./EditPortal25";
 import EditPortal26 from "./EditPortal26";
 import EditPortal27 from "./EditPortal27";
+import EditPortal30 from "./EditPortal30";
 const EditPortal = () => {
   const params = useParams();
   const clientId = params.id;
@@ -230,6 +231,8 @@ const EditPortal = () => {
       return <EditPortal26 />;
     } else if (option === "27") {
       return <EditPortal27 />;
+    } else if (option === "30") {
+      return <EditPortal30 />;
     } else {
       return (
         <div>{/* Add fallback UI or any other component you want here */}</div>
