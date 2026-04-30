@@ -241,13 +241,14 @@ const EditPortal31 = () => {
   const downloadContactCard = async () => {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
-N:${clientName};;;;
+N:;${clientName};;;
 FN:${clientName}
 ORG:${name}
 TITLE:${designation}
-TEL;CELL:${phone01}
-TEL;CELL:${phone02}
+TEL;TYPE=CELL:${phone01}
+TEL;TYPE=WORK:${telephone01}
 EMAIL;HOME:${email}
+URL:${website || ""}
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
