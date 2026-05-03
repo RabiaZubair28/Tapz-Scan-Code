@@ -25,7 +25,7 @@ import menu from "../assets/fresha.jpg";
 import catalog from "../assets/pricelist.jpg";
 import profile from "../assets/profile.png";
 import eye from "../assets/eye.jpg";
-import telephone from "../assets/telephone01.jpg";
+import telephone from "../assets/telephone01.png";
 import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";

@@ -35,7 +35,7 @@ import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
-import telephone from "../assets/telephone01.jpg";
+import telephone from "../assets/telephone01.png";
 import { FaBuilding } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaGlobe } from "react-icons/fa";

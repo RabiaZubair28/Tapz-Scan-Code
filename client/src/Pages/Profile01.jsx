@@ -26,7 +26,7 @@ import telegram from "../assets/telegram.webp";
 import menu from "../assets/menu.png";
 import catalog from "../assets/catalog.jpg";
 import profile from "../assets/profile.png";
-import telephone from "../assets/telephone01.jpg";
+import telephone from "../assets/telephone01.png";
 import vCard from "vcards-js";
 import eye from "../assets/eye.jpg";
 import { IoIosAddCircle } from "react-icons/io";

@@ -16,7 +16,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import menu from "../assets/menu.png";
-import telephone from "../assets/telephone01.jpg";
+import telephone from "../assets/telephone01.png";
 import eye from "../assets/eye.jpg";
 import { IoIosAddCircle } from "react-icons/io";
 // import Modal from 'react-bootstrap/Modal';
