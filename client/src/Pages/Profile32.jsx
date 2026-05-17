@@ -38,6 +38,7 @@ import {
   FaPhoneAlt,
   FaPhoneSquareAlt,
   FaShoppingBag,
+  FaSnapchat,
   FaSnapchatGhost,
   FaStar,
   FaTelegramPlane,
@@ -1199,6 +1200,120 @@ const Profile32 = () => {
                                                 <div className="flex flex-col text-start gap-y-1">
                                                   <span className="font-medium">Phone</span>
                                                   <span className="text-sm">{phone01}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                        {whatsapp01 && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`https://api.whatsapp.com/send?phone=${whatsapp01}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaWhatsapp size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Whatsapp</span>
+                                                  <span className="text-sm">{whatsapp01}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                         {email && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`mailto:${email}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaMailchimp size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Email</span>
+                                                  <span className="text-sm">{email}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                         {instagramLink && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`${instagramLink}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaInstagram size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Instagram</span>
+                                                  <span className="text-sm">{instagramName}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                          {snapchatLink && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`${snapchatLink}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaSnapchat size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Snapchat</span>
+                                                  <span className="text-sm">{snapchatName}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                          {tiktokLink && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`${tiktokLink}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaTiktok size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">TikTok</span>
+                                                  <span className="text-sm">{tiktokName}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                                          {googleMapLink && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`${googleMapLink}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaMapLocation size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Google Map</span>
+                                                  <span className="text-sm">{googleMapName}</span>
                                                 </div>
                                               </div>
                                               <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
