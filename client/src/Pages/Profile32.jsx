@@ -33,6 +33,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaMailchimp,
+  FaMap,
   FaPhone,
   FaPhoneAlt,
   FaPhoneSquareAlt,
@@ -629,6 +630,26 @@ const Profile32 = () => {
                 </div>
 
                 <div className="flex items-center justify-center gap-4 pb-8">
+                  {whatsapp01 && (
+                    <a
+                      href={`https://wa.me/${whatsapp01}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
+                    >
+                      <FaWhatsapp size={26} color="white" />
+                    </a>
+                  )}
+                  {email && (
+                    <a
+                      href={`mailto:${email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-[2px] border-[#b89a64] rounded-full p-3"
+                    >
+                      <FaEnvelope size={26} color="white" />
+                    </a>
+                  )}
                   {instagramLink && (
                     <a
                       href={instagramLink}
@@ -649,16 +670,7 @@ const Profile32 = () => {
                       <FaXTwitter size={24} color="white" />
                     </a>
                   )} */}
-                  {whatsapp01 && (
-                    <a
-                      href={`https://wa.me/${whatsapp01}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border-[2px] border-[#b89a64] rounded-full p-3"
-                    >
-                      <FaWhatsapp size={26} color="white" />
-                    </a>
-                  )}
+                  
                   {tiktokLink && (
                     <a
                       href={tiktokLink}
@@ -679,16 +691,17 @@ const Profile32 = () => {
                       <FaSnapchatGhost size={26} color="white" />
                     </a>
                   )}
-                  {email && (
+                  {googleMapLink && (
                     <a
-                      href={`mailto:${email}`}
+                      href={googleMapLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="border-[2px] border-[#b89a64] rounded-full p-3"
                     >
-                      <FaEnvelope size={26} color="white" />
+                      <FaMap size={26} color="white" />
                     </a>
                   )}
+                  
                 </div>
 
                 <div className="flex flex-col gap-4">
