@@ -1180,6 +1180,12 @@ const Profile32 = () => {
                   )} */}
                 </div>
 
+                <div className="px-0">
+                    <h2 className="text-xl font-semibold text-white mb-3 mt-5">
+                      Social Profiles
+                    </h2>
+                    <hr className="border-[#b89a64]" />
+</div>
                 {(img01 != "" ||
                   img02 != "" ||
                   img03 != "" ||
