@@ -1185,6 +1185,27 @@ const Profile32 = () => {
                       Social Profiles
                     </h2>
                     <hr className="border-[#b89a64]" />
+                    <div className="px-6">
+                      {phone01 && (
+                                          <div className="flex justify-center mt-3">
+                                            <a
+                                              href={`tel:${phone01}`}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between w-full px-5 py-3  text-[#b89a64] border-[0.25px] border-[#b89a64] shadow rounded-lg max-w-md"
+                                            >
+                                              <div className="flex items-center space-x-6">
+                                                <FaPhone size={32} color="#b89a64" className="h-10 w-10" />
+                                                <div className="flex flex-col text-start gap-y-1">
+                                                  <span className="font-medium">Phone</span>
+                                                  <span className="text-sm">{phone01}</span>
+                                                </div>
+                                              </div>
+                                              <SlArrowRight color="#b89a64" /> {/* Chevron/Arrow */}
+                                            </a>
+                                          </div>
+                                        )}
+                      </div>
 </div>
                 {(img01 != "" ||
                   img02 != "" ||
