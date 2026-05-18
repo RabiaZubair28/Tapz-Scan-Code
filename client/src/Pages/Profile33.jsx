@@ -716,23 +716,28 @@ const Profile33 = () => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[var(--profile-theme-color)]"
-        style={{ background: "var(--profile-card-gradient)" }}
+        className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
       >
         <div className="flex items-center gap-4 min-w-0">
-          <div className="w-12 h-12 flex items-center justify-center text-white">
-            {icon}
+          <div className="w-12 h-12 flex items-center justify-center text-[var(--profile-theme-color)]">
+            {React.isValidElement(icon)
+              ? React.cloneElement(icon, { color: "var(--profile-theme-color)" })
+              : icon}
           </div>
           <div className="min-w-0 text-left">
-            <p className="text-white font-semibold truncate">{title}</p>
+            <p className="text-[var(--profile-theme-color)] font-semibold truncate">{title}</p>
             {isFilled(subtitle) && (
-              <p className="text-white/80 text-sm truncate" dir="rtl">
+              <p
+                className="text-sm truncate"
+                dir="rtl"
+                style={{ color: "var(--profile-theme-color)", opacity: 0.82 }}
+              >
                 {subtitle}
               </p>
             )}
           </div>
         </div>
-        <span className="text-white/80 text-2xl leading-none">⋮</span>
+        <span className="text-[var(--profile-theme-color)] text-2xl leading-none">⋮</span>
       </a>
     );
   };
@@ -743,322 +748,322 @@ const Profile33 = () => {
       href: phone01 ? `tel:${phone01}` : "",
       title: "Phone هاتف",
       subtitle: phone01,
-      icon: <FaPhone size={32} color="white" />,
+      icon: <FaPhone size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: phone02,
       href: phone02 ? `tel:${phone02}` : "",
       title: "Phone هاتف",
       subtitle: phone02,
-      icon: <FaPhone size={32} color="white" />,
+      icon: <FaPhone size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: phone03,
       href: phone03 ? `tel:${phone03}` : "",
       title: "Phone هاتف",
       subtitle: phone03,
-      icon: <FaPhone size={32} color="white" />,
+      icon: <FaPhone size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: telephone01,
       href: telephone01 ? `tel:${telephone01}` : "",
       title: "Telephone هاتف ثابت",
       subtitle: telephone01,
-      icon: <FaPhoneSquareAlt size={35} color="white" />,
+      icon: <FaPhoneSquareAlt size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: telephone02,
       href: telephone02 ? `tel:${telephone02}` : "",
       title: "Telephone هاتف ثابت",
       subtitle: telephone02,
-      icon: <FaPhoneSquareAlt size={35} color="white" />,
+      icon: <FaPhoneSquareAlt size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: telephone03,
       href: telephone03 ? `tel:${telephone03}` : "",
       title: "Telephone هاتف ثابت",
       subtitle: telephone03,
-      icon: <FaPhoneSquareAlt size={35} color="white" />,
+      icon: <FaPhoneSquareAlt size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: whatsapp01,
       href: whatsapp01 ? `https://wa.me/${safeWhatsappNumber(whatsapp01)}` : "",
       title: "WhatsApp واتساب",
       subtitle: whatsapp01,
-      icon: <FaWhatsapp size={35} color="white" />,
+      icon: <FaWhatsapp size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: whatsapp02,
       href: whatsapp02 ? `https://wa.me/${safeWhatsappNumber(whatsapp02)}` : "",
       title: "WhatsApp واتساب",
       subtitle: whatsapp02,
-      icon: <FaWhatsapp size={35} color="white" />,
+      icon: <FaWhatsapp size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: whatsapp03,
       href: whatsapp03 ? `https://wa.me/${safeWhatsappNumber(whatsapp03)}` : "",
       title: "WhatsApp واتساب",
       subtitle: whatsapp03,
-      icon: <FaWhatsapp size={35} color="white" />,
+      icon: <FaWhatsapp size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: instagramLink,
       href: instagramLink,
       title: "Instagram انستغرام",
       subtitle: instagramName || instagramLink,
-      icon: <FaInstagram size={35} color="white" />,
+      icon: <FaInstagram size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: instagramLink02,
       href: instagramLink02,
       title: "Instagram انستغرام",
       subtitle: instagramName02 || instagramLink02,
-      icon: <FaInstagram size={35} color="white" />,
+      icon: <FaInstagram size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: instagramLink03,
       href: instagramLink03,
       title: "Instagram انستغرام",
       subtitle: instagramName03 || instagramLink03,
-      icon: <FaInstagram size={35} color="white" />,
+      icon: <FaInstagram size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: snapchatLink,
       href: snapchatLink,
       title: "Snapchat سناب شات",
       subtitle: snapchatName || snapchatLink,
-      icon: <FaSnapchatGhost size={35} color="white" />,
+      icon: <FaSnapchatGhost size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: snapchatLink02,
       href: snapchatLink02,
       title: "Snapchat سناب شات",
       subtitle: snapchatName02 || snapchatLink02,
-      icon: <FaSnapchatGhost size={35} color="white" />,
+      icon: <FaSnapchatGhost size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: snapchatLink03,
       href: snapchatLink03,
       title: "Snapchat سناب شات",
       subtitle: snapchatName03 || snapchatLink03,
-      icon: <FaSnapchatGhost size={35} color="white" />,
+      icon: <FaSnapchatGhost size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeLink,
       href: youtubeLink,
       title: "YouTube يوتيوب",
       subtitle: youtubeName || youtubeLink,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeLink02,
       href: youtubeLink02,
       title: "YouTube يوتيوب",
       subtitle: youtubeName02 || youtubeLink02,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeLink03,
       href: youtubeLink03,
       title: "YouTube يوتيوب",
       subtitle: youtubeName03 || youtubeLink03,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeShortsLink,
       href: youtubeShortsLink,
       title: "YouTube Shorts يوتيوب شورتس",
       subtitle: youtubeShortsName || youtubeShortsLink,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeShortsLink02,
       href: youtubeShortsLink02,
       title: "YouTube Shorts يوتيوب شورتس",
       subtitle: youtubeShortsName02 || youtubeShortsLink02,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: youtubeShortsLink03,
       href: youtubeShortsLink03,
       title: "YouTube Shorts يوتيوب شورتس",
       subtitle: youtubeShortsName03 || youtubeShortsLink03,
-      icon: <FaYoutube size={35} color="white" />,
+      icon: <FaYoutube size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: tiktokLink,
       href: tiktokLink,
       title: "TikTok تيك توك",
       subtitle: tiktokName || tiktokLink,
-      icon: <FaTiktok size={30} color="white" />,
+      icon: <FaTiktok size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: tiktokLink02,
       href: tiktokLink02,
       title: "TikTok تيك توك",
       subtitle: tiktokName02 || tiktokLink02,
-      icon: <FaTiktok size={30} color="white" />,
+      icon: <FaTiktok size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: tiktokLink03,
       href: tiktokLink03,
       title: "TikTok تيك توك",
       subtitle: tiktokName03 || tiktokLink03,
-      icon: <FaTiktok size={30} color="white" />,
+      icon: <FaTiktok size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: twitterLink,
       href: twitterLink,
       title: "X إكس",
       subtitle: twitterName || twitterLink,
-      icon: <FaXTwitter size={30} color="white" />,
+      icon: <FaXTwitter size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: twitterLink02,
       href: twitterLink02,
       title: "X إكس",
       subtitle: twitterName02 || twitterLink02,
-      icon: <FaXTwitter size={30} color="white" />,
+      icon: <FaXTwitter size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: twitterLink03,
       href: twitterLink03,
       title: "X إكس",
       subtitle: twitterName03 || twitterLink03,
-      icon: <FaXTwitter size={30} color="white" />,
+      icon: <FaXTwitter size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: facebookLink,
       href: facebookLink,
       title: "Facebook فيسبوك",
       subtitle: facebookName || facebookLink,
-      icon: <FaFacebook size={30} color="white" />,
+      icon: <FaFacebook size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: facebookLink02,
       href: facebookLink02,
       title: "Facebook فيسبوك",
       subtitle: facebookName02 || facebookLink02,
-      icon: <FaFacebook size={30} color="white" />,
+      icon: <FaFacebook size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: facebookLink03,
       href: facebookLink03,
       title: "Facebook فيسبوك",
       subtitle: facebookName03 || facebookLink03,
-      icon: <FaFacebook size={30} color="white" />,
+      icon: <FaFacebook size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleReviewLink,
       href: googleReviewLink,
       title: "Google Review تقييمات جوجل",
       subtitle: googleReviewName || googleReviewLink,
-      icon: <FaStar size={30} color="white" />,
+      icon: <FaStar size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleReviewLink02,
       href: googleReviewLink02,
       title: "Google Review تقييمات جوجل",
       subtitle: googleReviewName02 || googleReviewLink02,
-      icon: <FaStar size={30} color="white" />,
+      icon: <FaStar size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleReviewLink03,
       href: googleReviewLink03,
       title: "Google Review تقييمات جوجل",
       subtitle: googleReviewName03 || googleReviewLink03,
-      icon: <FaStar size={30} color="white" />,
+      icon: <FaStar size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: website,
       href: website,
       title: "Website الموقع الإلكتروني",
       subtitle: websiteName || website,
-      icon: <FaGlobe size={32} color="white" />,
+      icon: <FaGlobe size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: website02,
       href: website02,
       title: "Website الموقع الإلكتروني",
       subtitle: websiteName02 || website02,
-      icon: <FaGlobe size={32} color="white" />,
+      icon: <FaGlobe size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: website03,
       href: website03,
       title: "Website الموقع الإلكتروني",
       subtitle: websiteName03 || website03,
-      icon: <FaGlobe size={32} color="white" />,
+      icon: <FaGlobe size={32} color="var(--profile-theme-color)" />,
     },
     {
       value: email,
       href: email ? `mailto:${email}` : "",
       title: "Email البريد الإلكتروني",
       subtitle: email,
-      icon: <FaEnvelope size={30} color="white" />,
+      icon: <FaEnvelope size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: email02,
       href: email02 ? `mailto:${email02}` : "",
       title: "Email البريد الإلكتروني",
       subtitle: email02,
-      icon: <FaEnvelope size={30} color="white" />,
+      icon: <FaEnvelope size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: email03,
       href: email03 ? `mailto:${email03}` : "",
       title: "Email البريد الإلكتروني",
       subtitle: email03,
-      icon: <FaEnvelope size={30} color="white" />,
+      icon: <FaEnvelope size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleMapLink,
       href: googleMapLink,
       title: "Location الموقع",
       subtitle: googleMapName || googleMapLink,
-      icon: <FaMapLocation size={30} color="white" />,
+      icon: <FaMapLocation size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleMapLink02,
       href: googleMapLink02,
       title: "Location الموقع",
       subtitle: googleMapName02 || googleMapLink02,
-      icon: <FaMapLocation size={30} color="white" />,
+      icon: <FaMapLocation size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: googleMapLink03,
       href: googleMapLink03,
       title: "Location الموقع",
       subtitle: googleMapName03 || googleMapLink03,
-      icon: <FaMapLocation size={30} color="white" />,
+      icon: <FaMapLocation size={30} color="var(--profile-theme-color)" />,
     },
     {
       value: menuLink,
       href: menuLink,
       title: "Menu قائمة المشروبات",
       subtitle: menuName || menuLink,
-      icon: <FaUtensils size={35} color="white" />,
+      icon: <FaUtensils size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: catalogueLink,
       href: catalogueLink,
       title: "Catalogue الكتالوج",
       subtitle: catalogueName || catalogueLink,
-      icon: <FaShoppingBag size={35} color="white" />,
+      icon: <FaShoppingBag size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: profileLink01,
       href: profileLink01,
       title: "Company Profile ملف الشركة",
       subtitle: profileName01 || profileLink01,
-      icon: <FaGift size={35} color="white" />,
+      icon: <FaGift size={35} color="var(--profile-theme-color)" />,
     },
     {
       value: profileLink02,
       href: profileLink02,
       title: "Company Profile ملف الشركة",
       subtitle: profileName02 || profileLink02,
-      icon: <FaGift size={35} color="white" />,
+      icon: <FaGift size={35} color="var(--profile-theme-color)" />,
     },
   ];
 
@@ -1110,13 +1115,13 @@ const Profile33 = () => {
                   </div>
                   <div className="flex justify-center space-x-2">
                     <div
-                      className="w-12 h-12  text-black p-3 rounded-full  flex items-center justify-center border-[2px] border-[var(--profile-theme-color)]"
+                      className="w-12 h-12 text-[var(--profile-theme-color)] bg-white p-3 rounded-full flex items-center justify-center border-[2px] border-[var(--profile-theme-color)]"
                       onClick={() => {
                         downloadQr("qr");
                         handleClose();
                       }}
                     >
-                      <FaDownload size={20} color="black" />
+                      <FaDownload size={20} color="var(--profile-theme-color)" />
                     </div>
 
                     <div className="social-btn">
@@ -1125,8 +1130,8 @@ const Profile33 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] text-black flex items-center justify-center">
-                          <FaFacebookF size={26} color="black" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] flex items-center justify-center">
+                          <FaFacebookF size={26} color="var(--profile-theme-color)" />
                         </div>
                       </FacebookShareButton>
                     </div>
@@ -1137,8 +1142,8 @@ const Profile33 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] text-black flex items-center justify-center">
-                          <FaLinkedinIn size={26} color="black" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] flex items-center justify-center">
+                          <FaLinkedinIn size={26} color="var(--profile-theme-color)" />
                         </div>
                       </LinkedinShareButton>
                     </div>
@@ -1149,8 +1154,8 @@ const Profile33 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] text-black flex items-center justify-center">
-                          <FaTelegramPlane size={22} color="black" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] flex items-center justify-center">
+                          <FaTelegramPlane size={22} color="var(--profile-theme-color)" />
                         </div>
                       </TelegramShareButton>
                     </div>
@@ -1161,8 +1166,8 @@ const Profile33 = () => {
                         quote="please share this"
                         hashtag={`Welcome to ${companyName}. Get to know us at ${currentPageUrl}`}
                       >
-                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] text-black flex items-center justify-center">
-                          <FaWhatsapp size={26} color="black" />
+                        <div className="w-12 h-12 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] flex items-center justify-center">
+                          <FaWhatsapp size={26} color="var(--profile-theme-color)" />
                         </div>
                       </WhatsappShareButton>
                     </div>
@@ -1223,9 +1228,9 @@ const Profile33 = () => {
                       href={instagramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaInstagram size={26} color="white" />
+                      <FaInstagram size={26} color="var(--profile-theme-color)" />
                     </a>
                   )}
                   {/* {twitterLink && (
@@ -1233,9 +1238,9 @@ const Profile33 = () => {
                       href={twitterLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaXTwitter size={24} color="white" />
+                      <FaXTwitter size={24} color="var(--profile-theme-color)" />
                     </a>
                   )} */}
                   {whatsapp01 && (
@@ -1243,9 +1248,9 @@ const Profile33 = () => {
                       href={`https://wa.me/${whatsapp01}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaWhatsapp size={26} color="white" />
+                      <FaWhatsapp size={26} color="var(--profile-theme-color)" />
                     </a>
                   )}
                   {tiktokLink && (
@@ -1253,9 +1258,9 @@ const Profile33 = () => {
                       href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaTiktok size={26} color="white" />
+                      <FaTiktok size={26} color="var(--profile-theme-color)" />
                     </a>
                   )}
                   {snapchatLink && (
@@ -1263,9 +1268,9 @@ const Profile33 = () => {
                       href={snapchatLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaSnapchatGhost size={26} color="white" />
+                      <FaSnapchatGhost size={26} color="var(--profile-theme-color)" />
                     </a>
                   )}
                   {email && (
@@ -1273,9 +1278,9 @@ const Profile33 = () => {
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3"
+                      className="border-[2px] border-[var(--profile-theme-color)] rounded-full p-3 bg-white text-[var(--profile-theme-color)]"
                     >
-                      <FaEnvelope size={26} color="white" />
+                      <FaEnvelope size={26} color="var(--profile-theme-color)" />
                     </a>
                   )}
                 </div>
@@ -1454,9 +1459,9 @@ const Profile33 = () => {
                       >
                         <FaFacebookF
                           size={40}
-                          color="white"
+                          color="var(--profile-theme-color)"
                           alt="Facebook"
-                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
                         />
                       </FacebookShareButton>
                     </div>
@@ -1469,9 +1474,9 @@ const Profile33 = () => {
                       >
                         <FaTwitter
                           size={40}
-                          color="white" // Replace with the actual path to the Twitter icon
+                          color="var(--profile-theme-color)" // Replace with the actual path to the Twitter icon
                           alt="Twitter"
-                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
                         />
                       </TwitterShareButton>
                     </div>
@@ -1484,9 +1489,9 @@ const Profile33 = () => {
                       >
                         <FaLinkedinIn
                           size={40}
-                          color="white" // Replace with the actual path to the LinkedIn icon
+                          color="var(--profile-theme-color)" // Replace with the actual path to the LinkedIn icon
                           alt="LinkedIn"
-                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
                         />
                       </LinkedinShareButton>
                     </div>
@@ -1499,10 +1504,10 @@ const Profile33 = () => {
                       >
                         <FaTelegramPlane
                           size={40}
-                          color="white"
+                          color="var(--profile-theme-color)"
                           // Replace with the actual path to the Telegram icon
                           alt="Telegram"
-                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
                         />
                       </TelegramShareButton>
                     </div>
@@ -1517,9 +1522,9 @@ const Profile33 = () => {
                       >
                         <FaWhatsapp
                           size={40}
-                          color="white"
+                          color="var(--profile-theme-color)"
                           alt="WhatsApp"
-                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)]"
+                          className="w-12 h-12 p-2 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)]"
                         />
                       </a>
                     </div>
@@ -1532,18 +1537,18 @@ const Profile33 = () => {
                   <hr className="border-[var(--profile-theme-color)]" />
                   <div className="flex justify-center space-x-3 mt-3 px-4">
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[var(--profile-theme-color)]  hover:border-[var(--profile-theme-color)]"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] hover:border-[var(--profile-theme-color)]"
                       onClick={handleShow}
                     >
-                      <IoQrCodeSharp size={35} color="white" />
+                      <IoQrCodeSharp size={35} color="var(--profile-theme-color)" />
                     </div>
 
                     <div
-                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[var(--profile-theme-color)] hover:border-[var(--profile-theme-color)]"
+                      className=" flex justify-center items-center w-16 h-16 rounded-full border-[2px] border-[var(--profile-theme-color)] bg-white text-[var(--profile-theme-color)] hover:border-[var(--profile-theme-color)]"
                       onClick={downloadContactCard}
                       value="download"
                     >
-                      <FaDownload size={30} color="white" />
+                      <FaDownload size={30} color="var(--profile-theme-color)" />
                     </div>
                   </div>
 
