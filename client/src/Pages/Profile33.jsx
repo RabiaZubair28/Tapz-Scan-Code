@@ -75,6 +75,158 @@ import linkedin02 from "../assets/download.png";
 import { MdRemoveRedEye } from "react-icons/md";
 import fb from "../assets/fb.png";
 
+
+const DEFAULT_LOGO_THEME = {
+  primary: "#b89a64",
+  contrast: "#111111",
+};
+
+const rgbToHex = ({ r, g, b }) =>
+  `#${[r, g, b]
+    .map((value) => Math.max(0, Math.min(255, Math.round(value))).toString(16).padStart(2, "0"))
+    .join("")}`;
+
+const getRelativeLuminance = ({ r, g, b }) => {
+  const channels = [r, g, b].map((value) => {
+    const normalized = value / 255;
+    return normalized <= 0.03928
+      ? normalized / 12.92
+      : Math.pow((normalized + 0.055) / 1.055, 2.4);
+  });
+
+  return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+};
+
+const getContrastRatio = (colorA, colorB) => {
+  const lumA = getRelativeLuminance(colorA);
+  const lumB = getRelativeLuminance(colorB);
+  const light = Math.max(lumA, lumB);
+  const dark = Math.min(lumA, lumB);
+  return (light + 0.05) / (dark + 0.05);
+};
+
+const mixRgb = (colorA, colorB, amount) => ({
+  r: colorA.r + (colorB.r - colorA.r) * amount,
+  g: colorA.g + (colorB.g - colorA.g) * amount,
+  b: colorA.b + (colorB.b - colorA.b) * amount,
+});
+
+const getSaturation = ({ r, g, b }) => {
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  if (max === 0) return 0;
+  return (max - min) / max;
+};
+
+const normalizeAccentForDarkBackground = (rgb) => {
+  const black = { r: 0, g: 0, b: 0 };
+  const white = { r: 255, g: 255, b: 255 };
+  let accent = rgb;
+
+  // Keep the color from the logo, but make sure it stays visible on the black profile background.
+  for (let i = 0; i < 8 && getContrastRatio(accent, black) < 3.5; i += 1) {
+    accent = mixRgb(accent, white, 0.18);
+  }
+
+  return accent;
+};
+
+const getReadableTextColor = (rgb) => {
+  const white = { r: 255, g: 255, b: 255 };
+  const black = { r: 17, g: 17, b: 17 };
+  return getContrastRatio(rgb, white) >= getContrastRatio(rgb, black)
+    ? "#ffffff"
+    : "#111111";
+};
+
+const buildThemeFromLogoColor = (rgb) => {
+  const accent = normalizeAccentForDarkBackground(rgb);
+  return {
+    primary: rgbToHex(accent),
+    contrast: getReadableTextColor(accent),
+  };
+};
+
+const extractLogoColorFromDataUrl = (dataUrl) =>
+  new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const maxSize = 80;
+      const width = img.naturalWidth || img.width || maxSize;
+      const height = img.naturalHeight || img.height || maxSize;
+      const scale = Math.min(1, maxSize / Math.max(width, height));
+      canvas.width = Math.max(1, Math.round(width * scale));
+      canvas.height = Math.max(1, Math.round(height * scale));
+
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      if (!ctx) return resolve(null);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      const buckets = new Map();
+
+      for (let i = 0; i < imageData.length; i += 4) {
+        const alpha = imageData[i + 3];
+        if (alpha < 128) continue;
+
+        const raw = {
+          r: imageData[i],
+          g: imageData[i + 1],
+          b: imageData[i + 2],
+        };
+        const avg = (raw.r + raw.g + raw.b) / 3;
+        const saturation = getSaturation(raw);
+
+        // Ignore near-white/near-black noise unless the logo has no other usable color.
+        const isNeutralEdge = saturation < 0.08 && (avg > 245 || avg < 12);
+        const bucketStep = 24;
+        const rgb = {
+          r: Math.round(raw.r / bucketStep) * bucketStep,
+          g: Math.round(raw.g / bucketStep) * bucketStep,
+          b: Math.round(raw.b / bucketStep) * bucketStep,
+        };
+        const key = `${rgb.r},${rgb.g},${rgb.b}`;
+        const existing = buckets.get(key) || {
+          rgb,
+          count: 0,
+          saturation,
+          skippedNeutralEdge: isNeutralEdge,
+        };
+        existing.count += isNeutralEdge ? 0.2 : 1;
+        existing.saturation = Math.max(existing.saturation, saturation);
+        existing.skippedNeutralEdge = existing.skippedNeutralEdge && isNeutralEdge;
+        buckets.set(key, existing);
+      }
+
+      let best = null;
+      buckets.forEach((bucket) => {
+        const luminance = getRelativeLuminance(bucket.rgb);
+        const contrastOnBlack = getContrastRatio(bucket.rgb, { r: 0, g: 0, b: 0 });
+        const neutralPenalty = bucket.skippedNeutralEdge ? 0.25 : 1;
+        const contrastBonus = contrastOnBlack >= 2.5 ? 1.35 : 0.55;
+        const saturationBonus = 0.65 + bucket.saturation * 1.7;
+        const extremeLightPenalty = luminance > 0.92 ? 0.55 : 1;
+        const extremeDarkPenalty = luminance < 0.03 ? 0.35 : 1;
+        const score =
+          bucket.count *
+          neutralPenalty *
+          contrastBonus *
+          saturationBonus *
+          extremeLightPenalty *
+          extremeDarkPenalty;
+
+        if (!best || score > best.score) {
+          best = { ...bucket, score };
+        }
+      });
+
+      resolve(best?.rgb || null);
+    };
+    img.onerror = () => resolve(null);
+    img.src = dataUrl;
+  });
+
 const Profile33 = () => {
   // SAME LOGIC AS Profile04 (only UI below changed)
   const [show, setShow] = useState(false);
@@ -229,9 +381,6 @@ const Profile33 = () => {
     img08,
     img09,
     img10,
-    color01,
-    color02,
-    color03,
     password,
     flag,
   } = client;
@@ -480,8 +629,53 @@ const Profile33 = () => {
   const [selected, setSelected] = useState("");
 
 
-  const themeColor = color01 || color02 || color03 || "#b89a64";
-  const themeStyle = { "--profile-theme-color": themeColor };
+  const [logoTheme, setLogoTheme] = useState(DEFAULT_LOGO_THEME);
+  const themeStyle = {
+    "--profile-theme-color": logoTheme.primary,
+    "--profile-theme-contrast-color": logoTheme.contrast,
+  };
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadLogoTheme = async () => {
+      if (!logo) {
+        setLogoTheme(DEFAULT_LOGO_THEME);
+        return;
+      }
+
+      try {
+        const response = await axios.get(
+          `https://www.scan-taps.com/api/vcard/image?url=${encodeURIComponent(
+            logo,
+          )}`,
+        );
+        const mimeRaw = String(response.data?.mime || "image/png");
+        const b64 = String(response.data?.base64 || "");
+        if (!b64 || !mimeRaw.startsWith("image/")) {
+          throw new Error("Logo image data unavailable");
+        }
+
+        const logoColor = await extractLogoColorFromDataUrl(
+          `data:${mimeRaw};base64,${b64}`,
+        );
+
+        if (isMounted) {
+          setLogoTheme(
+            logoColor ? buildThemeFromLogoColor(logoColor) : DEFAULT_LOGO_THEME,
+          );
+        }
+      } catch (error) {
+        if (isMounted) setLogoTheme(DEFAULT_LOGO_THEME);
+      }
+    };
+
+    loadLogoTheme();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [logo]);
 
   const isFilled = (value) =>
     value !== undefined && value !== null && String(value).trim() !== "";
