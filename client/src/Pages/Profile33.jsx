@@ -77,13 +77,15 @@ import fb from "../assets/fb.png";
 
 
 const DEFAULT_LOGO_THEME = {
-  primary: "#b89a64",
-  contrast: "#111111",
+  primary: "#1f7a3f",
+  contrast: "#ffffff",
 };
 
 const rgbToHex = ({ r, g, b }) =>
   `#${[r, g, b]
-    .map((value) => Math.max(0, Math.min(255, Math.round(value))).toString(16).padStart(2, "0"))
+    .map((value) =>
+      Math.max(0, Math.min(255, Math.round(value))).toString(16).padStart(2, "0"),
+    )
     .join("")}`;
 
 const getRelativeLuminance = ({ r, g, b }) => {
@@ -118,14 +120,24 @@ const getSaturation = ({ r, g, b }) => {
   return (max - min) / max;
 };
 
-const normalizeAccentForDarkBackground = (rgb) => {
-  const black = { r: 0, g: 0, b: 0 };
+const getGreenScore = ({ r, g, b }) => {
+  const saturation = getSaturation({ r, g, b });
+  const greenDominance = g - Math.max(r, b);
+
+  if (greenDominance <= 0 || saturation < 0.08) return 0;
+
+  return Math.min(1, greenDominance / 120) * (0.45 + saturation * 0.55);
+};
+
+const normalizeLogoGreenForTheme = (rgb) => {
   const white = { r: 255, g: 255, b: 255 };
+  const black = { r: 0, g: 0, b: 0 };
   let accent = rgb;
 
-  // Keep the color from the logo, but make sure it stays visible on the black profile background.
-  for (let i = 0; i < 8 && getContrastRatio(accent, black) < 3.5; i += 1) {
-    accent = mixRgb(accent, white, 0.18);
+  // The black profile background is now replaced by a white-to-logo-green gradient,
+  // so keep the green strong enough to replace the previous gold borders clearly.
+  for (let i = 0; i < 8 && getContrastRatio(accent, white) < 2.4; i += 1) {
+    accent = mixRgb(accent, black, 0.12);
   }
 
   return accent;
@@ -140,7 +152,7 @@ const getReadableTextColor = (rgb) => {
 };
 
 const buildThemeFromLogoColor = (rgb) => {
-  const accent = normalizeAccentForDarkBackground(rgb);
+  const accent = normalizeLogoGreenForTheme(rgb);
   return {
     primary: rgbToHex(accent),
     contrast: getReadableTextColor(accent),
@@ -177,6 +189,7 @@ const extractLogoColorFromDataUrl = (dataUrl) =>
         };
         const avg = (raw.r + raw.g + raw.b) / 3;
         const saturation = getSaturation(raw);
+        const greenScore = getGreenScore(raw);
 
         // Ignore near-white/near-black noise unless the logo has no other usable color.
         const isNeutralEdge = saturation < 0.08 && (avg > 245 || avg < 12);
@@ -191,37 +204,46 @@ const extractLogoColorFromDataUrl = (dataUrl) =>
           rgb,
           count: 0,
           saturation,
+          greenScore: 0,
           skippedNeutralEdge: isNeutralEdge,
         };
         existing.count += isNeutralEdge ? 0.2 : 1;
         existing.saturation = Math.max(existing.saturation, saturation);
+        existing.greenScore = Math.max(existing.greenScore, greenScore);
         existing.skippedNeutralEdge = existing.skippedNeutralEdge && isNeutralEdge;
         buckets.set(key, existing);
       }
 
-      let best = null;
+      let bestGreen = null;
+      let bestFallback = null;
+
       buckets.forEach((bucket) => {
         const luminance = getRelativeLuminance(bucket.rgb);
-        const contrastOnBlack = getContrastRatio(bucket.rgb, { r: 0, g: 0, b: 0 });
         const neutralPenalty = bucket.skippedNeutralEdge ? 0.25 : 1;
-        const contrastBonus = contrastOnBlack >= 2.5 ? 1.35 : 0.55;
         const saturationBonus = 0.65 + bucket.saturation * 1.7;
         const extremeLightPenalty = luminance > 0.92 ? 0.55 : 1;
         const extremeDarkPenalty = luminance < 0.03 ? 0.35 : 1;
-        const score =
+        const baseScore =
           bucket.count *
           neutralPenalty *
-          contrastBonus *
           saturationBonus *
           extremeLightPenalty *
           extremeDarkPenalty;
 
-        if (!best || score > best.score) {
-          best = { ...bucket, score };
+        const greenScore =
+          baseScore * (bucket.greenScore > 0 ? 3 + bucket.greenScore * 8 : 0);
+        const fallbackScore = baseScore;
+
+        if (greenScore > 0 && (!bestGreen || greenScore > bestGreen.score)) {
+          bestGreen = { ...bucket, score: greenScore };
+        }
+
+        if (!bestFallback || fallbackScore > bestFallback.score) {
+          bestFallback = { ...bucket, score: fallbackScore };
         }
       });
 
-      resolve(best?.rgb || null);
+      resolve(bestGreen?.rgb || bestFallback?.rgb || null);
     };
     img.onerror = () => resolve(null);
     img.src = dataUrl;
@@ -633,6 +655,8 @@ const Profile33 = () => {
   const themeStyle = {
     "--profile-theme-color": logoTheme.primary,
     "--profile-theme-contrast-color": logoTheme.contrast,
+    "--profile-bg-gradient": `linear-gradient(180deg, #ffffff 0%, ${logoTheme.primary} 100%)`,
+    "--profile-card-gradient": `linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, ${logoTheme.primary} 100%)`,
   };
 
   useEffect(() => {
@@ -692,7 +716,8 @@ const Profile33 = () => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[var(--profile-theme-color)] bg-black"
+        className="w-full flex items-center justify-between gap-3 px-4 py-4 border-2 border-[var(--profile-theme-color)]"
+        style={{ background: "var(--profile-card-gradient)" }}
       >
         <div className="flex items-center gap-4 min-w-0">
           <div className="w-12 h-12 flex items-center justify-center text-white">
@@ -1067,8 +1092,11 @@ const Profile33 = () => {
         <div>
           {show && (
             <div
-              className="qr-modal min-h-screen bg-black w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
-              style={{ backgroundAttachment: "fixed" }}
+              className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
+              style={{
+                background: "var(--profile-bg-gradient)",
+                backgroundAttachment: "fixed",
+              }}
             >
               <div className="bg-white border-[var(--profile-theme-color)] rounded-lg pb-8 pt-16 px-10 relative">
                 <ImCross
@@ -1146,8 +1174,11 @@ const Profile33 = () => {
 
           {!show && !show02 && (
             <div
-              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center bg-black"
-              style={{ backgroundAttachment: "fixed" }}
+              className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center"
+              style={{
+                background: "var(--profile-bg-gradient)",
+                backgroundAttachment: "fixed",
+              }}
             >
               {logo && (
                 <div className="flex items-center  justify-center mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
@@ -1530,8 +1561,11 @@ const Profile33 = () => {
   } else {
     return (
       <div
-        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-black pt-[25%]"
-        style={{ backgroundAttachment: "fixed" }}
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center pt-[25%]"
+        style={{
+          background: `linear-gradient(180deg, #ffffff 0%, ${DEFAULT_LOGO_THEME.primary} 100%)`,
+          backgroundAttachment: "fixed",
+        }}
       >
         <ScaleLoader
           color={"white"}
