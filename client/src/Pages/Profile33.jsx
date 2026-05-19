@@ -743,6 +743,13 @@ const Profile33 = () => {
   };
 
   const actionCards = [
+       {
+      value: menuLink,
+      href: menuLink,
+      title: "Menu قائمة المشروبات",
+      subtitle: menuName || menuLink,
+      icon: <FaUtensils size={35} color="var(--profile-theme-color)" />,
+    },
     {
       value: phone01,
       href: phone01 ? `tel:${phone01}` : "",
@@ -1037,13 +1044,7 @@ const Profile33 = () => {
       subtitle: googleMapName03 || googleMapLink03,
       icon: <FaMapLocation size={30} color="var(--profile-theme-color)" />,
     },
-    {
-      value: menuLink,
-      href: menuLink,
-      title: "Menu قائمة المشروبات",
-      subtitle: menuName || menuLink,
-      icon: <FaUtensils size={35} color="var(--profile-theme-color)" />,
-    },
+ 
     {
       value: catalogueLink,
       href: catalogueLink,
