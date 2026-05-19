@@ -617,7 +617,6 @@ END:VCARD`;
                       </a>
                     </div>
                   )}
-
                   {telephone03 && (
                     <div className="flex justify-center mt-3">
                       <a
@@ -695,12 +694,12 @@ END:VCARD`;
                       >
                         <div className="flex items-center space-x-6">
                           <img
-                            src={catalog}
-                            alt="Catalog"
+                            src={menu}
+                            alt="Menu"
                             className="h-10 w-10 rounded-md"
                           />
                           <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Pricelist</span>
+                            <span className="font-medium">Menu</span>
                             <span className=" text-sm">{catalogueName}</span>
                           </div>
                         </div>
@@ -746,6 +745,48 @@ END:VCARD`;
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Menu</span>
                             <span className="text-sm">{menuName}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </button>
+                    </div>
+                  )}
+                  {profileLink01 && (
+                    <div className="flex justify-center mt-3">
+                      <button
+                        className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
+                        onClick={() => window.open(profileLink01, "_blank")}
+                      >
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={catalog}
+                            alt="Catalog"
+                            className="h-10 w-10 rounded-md"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Price List</span>
+                            <span className=" text-sm">{profileName01}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </button>
+                    </div>
+                  )}
+                  {profileLink02 && (
+                    <div className="flex justify-center mt-3">
+                      <button
+                        className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
+                        onClick={() => window.open(profileLink02, "_blank")}
+                      >
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={profile}
+                            alt="Profile"
+                            className="h-10 w-10 rounded-md"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Profile</span>
+                            <span className="text-sm">{profileName02}</span>
                           </div>
                         </div>
                         <SlArrowRight /> {/* Chevron/Arrow */}
@@ -1461,48 +1502,7 @@ END:VCARD`;
                     </div>
                   )}
 
-                  {profileLink01 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
-                        onClick={() => window.open(profileLink01, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={profile}
-                            alt="Profile"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Profile</span>
-                            <span className=" text-sm">{profileName01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
-                  {profileLink02 && (
-                    <div className="flex justify-center mt-3">
-                      <button
-                        className="flex items-center justify-between w-full px-5 py-3  bg-white text-black border-[0.25px] border-black shadow rounded-lg max-w-md"
-                        onClick={() => window.open(profileLink02, "_blank")}
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={profile}
-                            alt="Profile"
-                            className="h-10 w-10 rounded-md"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Profile</span>
-                            <span className="text-sm">{profileName02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </button>
-                    </div>
-                  )}
+                  
                 </div>
 
                 {services != "" && (
