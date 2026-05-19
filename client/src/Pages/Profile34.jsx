@@ -313,6 +313,9 @@ END:VCARD`;
 
   const currentPageUrl = window.location.href;
 
+  const cardGoldGradient =
+    "linear-gradient(160deg, #e8c365 0%, #d8ac50 42%, #c49240 72%, #9f6a2a 100%)";
+
   const [selected, setSelected] = useState("");
 
   if (client) {
@@ -347,10 +350,8 @@ END:VCARD`;
               className="qr-modal min-h-screen  w-full max-w-md mx-auto shadow-lg flex flex-col items-center justify-center relative"
               style={{
                 backgroundAttachment: "fixed",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#d4a84e",
+                backgroundImage: cardGoldGradient,
               }}
             >
               <div className="bg-white border-[0.25px] border-black rounded-lg pb-8 pt-16 px-10 relative">
@@ -450,10 +451,8 @@ END:VCARD`;
                 className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center bg-[#C79D3D]`}
                 style={{
                   backgroundAttachment: "fixed",
-                  backgroundImage:
-                    "url('https://res.cloudinary.com/dxokfhkhu/image/upload/v1746304910/01_f8ohxq.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundColor: "#d4a84e",
+                  backgroundImage: cardGoldGradient,
                 }}
               >
                 {images && (
@@ -1805,11 +1804,15 @@ END:VCARD`;
   } else {
     return (
       <div
-        className={`min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-800 pt-[25%]`}
-        style={{ backgroundAttachment: "fixed" }}
+        className="min-h-screen w-full max-w-md mx-auto shadow-lg pb-5 text-center flex justify-center align-center pt-[25%]"
+        style={{
+          backgroundAttachment: "fixed",
+          backgroundColor: "#d4a84e",
+          backgroundImage: cardGoldGradient,
+        }}
       >
         <ScaleLoader
-          color={"white"}
+          color={"black"}
           size={50}
           aria-label="Loading Spinner"
           data-testid="loader"
