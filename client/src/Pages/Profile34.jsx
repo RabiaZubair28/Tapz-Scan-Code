@@ -23,7 +23,7 @@ import ytshorts from "../assets/yt-shorts.png";
 import locations from "../assets/location.png";
 import twitter02 from "../assets/twitter02.png";
 import telegram from "../assets/telegram.webp";
-import menu from "../assets/fresha.jpg";
+import menu from "../assets/menu.png";
 import catalog from "../assets/pricelist.jpg";
 import profile from "../assets/profile.png";
 import telephone from "../assets/telephone01.png";
@@ -473,7 +473,7 @@ END:VCARD`;
                         <img
                           src={logo}
                           alt="logo"
-                          className="w-36 h-36 object-cover rounded-2xl border-[1px] border-white bg-white shadow-lg"
+                          className="w-36 h-36 object-cover rounded-2xl border-[3px] border-black bg-white shadow-lg"
                         />
                       </a>
                     )}
