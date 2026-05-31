@@ -650,6 +650,76 @@ END:VCARD`;
                       </a>
                     </div>
                   )}
+                  
+                  {whatsapp01 && (
+                    <div className="flex justify-center mt-3">
+                      <a
+                        href={`https://wa.me/${whatsapp01}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      >
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={whatsapp}
+                            alt="Whatsapp01"
+                            className="h-10 w-10"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Whatsapp</span>
+                            <span className="text-sm">{whatsapp01}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </a>
+                    </div>
+                  )}
+                  {whatsapp02 && (
+                    <div className="flex justify-center mt-3">
+                      <a
+                        href={`https://wa.me/${whatsapp02}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      >
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={whatsapp}
+                            alt="Whatsapp02"
+                            className="h-10 w-10"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Whatsapp</span>
+                            <span className="text-sm">{whatsapp02}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </a>
+                    </div>
+                  )}
+                  {whatsapp03 && (
+                    <div className="flex justify-center mt-3">
+                      <a
+                        href={`https://wa.me/${whatsapp03}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
+                      >
+                        <div className="flex items-center space-x-6">
+                          <img
+                            src={whatsapp}
+                            alt="Whatsapp03"
+                            className="h-10 w-10"
+                          />
+                          <div className="flex flex-col text-start gap-y-1">
+                            <span className="font-medium">Whatsapp</span>
+                            <span className=" text-sm">{whatsapp03}</span>
+                          </div>
+                        </div>
+                        <SlArrowRight /> {/* Chevron/Arrow */}
+                      </a>
+                    </div>
+                  )}
                   {telephone02 && (
                     <div className="flex justify-center mt-3">
                       <a
@@ -715,75 +785,6 @@ END:VCARD`;
                           <div className="flex flex-col text-start gap-y-1">
                             <span className="font-medium">Telephone</span>
                             <span className="text-sm">{telephone03}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp01 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp01}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp01"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className="text-sm">{whatsapp01}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp02 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp02}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp02"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className="text-sm">{whatsapp02}</span>
-                          </div>
-                        </div>
-                        <SlArrowRight /> {/* Chevron/Arrow */}
-                      </a>
-                    </div>
-                  )}
-                  {whatsapp03 && (
-                    <div className="flex justify-center mt-3">
-                      <a
-                        href={`https://wa.me/${whatsapp03}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full px-5 py-3  bg-gray-600 hover:bg-gray-500 text-white border-[0.25px] border-white shadow rounded-lg max-w-md"
-                      >
-                        <div className="flex items-center space-x-6">
-                          <img
-                            src={whatsapp}
-                            alt="Whatsapp03"
-                            className="h-10 w-10"
-                          />
-                          <div className="flex flex-col text-start gap-y-1">
-                            <span className="font-medium">Whatsapp</span>
-                            <span className=" text-sm">{whatsapp03}</span>
                           </div>
                         </div>
                         <SlArrowRight /> {/* Chevron/Arrow */}
