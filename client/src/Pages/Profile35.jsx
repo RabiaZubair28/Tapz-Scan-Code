@@ -519,7 +519,7 @@ END:VCARD`;
                       >
                         <MdOutlinePhoneAndroid size={20} color="white" />
                       </a>
-                      {/* <a
+                      <a
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -527,7 +527,7 @@ END:VCARD`;
                     >
                       <AiOutlineMail size={20} color="white" />
                     </a>
-                    <a
+                    {/* <a
                       href={`sms:${phone01}`}
                       className="w-12 h-12 flex items-center justify-center rounded-full  border-[2px]  shadow-sm hover:shadow-md bg-black hover:bg-gray-500 border-[#b89a64] "
                     >
