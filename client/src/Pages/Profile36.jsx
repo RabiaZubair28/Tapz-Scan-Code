@@ -510,7 +510,7 @@ END:VCARD`;
         </div> */}
 
                   <div className="flex justify-between ">
-                    <div className="flex justify-start space-x-5 mt-3 mb-2.5">
+                    <div className="flex justify-start space-x-3 mt-3 mb-2.5">
                       <a
                         href={`tel:${phone01}`}
                         target="_blank"
