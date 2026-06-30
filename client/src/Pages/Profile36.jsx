@@ -473,7 +473,7 @@ END:VCARD`;
                         <img
                           src={logo}
                           alt="logo"
-                          className="w-24 h-24 object-cover rounded-2xl border-[3px] border-[#fef485] bg-black shadow-lg"
+                          className="w-24 h-24 object-cover rounded-full border-[3px] border-[#fef485] bg-black shadow-lg"
                         />
                       </a>
                     )}
