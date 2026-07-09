@@ -57,7 +57,7 @@ const ContactRow = ({ icon, label, value, href }) => {
   const content = (
     <div className="flex w-full items-center justify-between gap-3 border-b border-[#ead9c9] px-4 py-3 last:border-b-0 transition-all duration-200 hover:bg-[#fff5e9]">
       <div className="flex min-w-0 items-center gap-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#5d0618] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
           {icon}
         </div>
         <span className="font-serif text-[13px] font-semibold text-[#3c3130]">
@@ -216,7 +216,7 @@ const Profile37 = () => {
           <button
             type="button"
             onClick={downloadContactCard}
-            className="absolute right-3 top-3 z-10 flex items-center gap-2 rounded-[10px] bg-[#8d061c] px-4 py-2.5 text-[15px] font-bold text-white shadow-[0_5px_12px_rgba(104,3,22,0.34)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#690316]"
+            className="absolute right-3 top-3 z-10 flex items-center gap-2 rounded-[10px] bg-[#5d0618] px-4 py-2.5 text-[15px] font-bold text-white shadow-[0_5px_12px_rgba(104,3,22,0.34)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#690316]"
           >
             <FaUserPlus size={19} />
             Save Contact
@@ -231,15 +231,15 @@ const Profile37 = () => {
                   className="h-[116px] w-[116px] rounded-full object-cover"
                 />
               ) : (
-                <div className="flex h-[116px] w-[116px] items-center justify-center rounded-full bg-[#f1dfc9] font-serif text-5xl font-bold text-[#8d061c]">
+                <div className="flex h-[116px] w-[116px] items-center justify-center rounded-full bg-[#f1dfc9] font-serif text-5xl font-bold text-[#5d0618]">
                   {personName.charAt(0)}
                 </div>
               )}
             </div>
 
             <div className="mt-6 flex items-center justify-center gap-2">
-              <p className="font-serif text-[16px] font-bold text-[#8d061c]">{brandName}</p>
-              <FaCheckCircle className="text-[#8d061c]" size={18} />
+              <p className="font-serif text-[16px] font-bold text-[#5d0618]">{brandName}</p>
+              <FaCheckCircle className="text-[#5d0618]" size={18} />
             </div>
 
             <h1 className="mt-3 font-serif text-[22px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
@@ -255,7 +255,7 @@ const Profile37 = () => {
                 rel={googleMapLink ? "noopener noreferrer" : undefined}
                 className="mx-auto mt-1 flex max-w-full items-center justify-center gap-2 text-[16px] font-semibold text-[#3c3130]"
               >
-                <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={18} />
+                <FaMapMarkerAlt className="shrink-0 text-[#5d0618]" size={18} />
                 <a href={locationLabel} className="truncate">Starlink Aspire Store</a>
               </a>
             ) : null}
@@ -264,7 +264,7 @@ const Profile37 = () => {
 
             <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-4 py-5 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
               <div className="flex items-start gap-2">
-                <FaQuoteLeft className="mt-1 shrink-0 text-[#8d061c]" size={20} />
+                <FaQuoteLeft className="mt-1 shrink-0 text-[#5d0618]" size={20} />
                 <p className="w-full whitespace-pre-line font-serif text-[11px] font-medium leading-[1.35] text-[#3c3130]">
                   {quoteText}
                 </p>
