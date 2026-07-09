@@ -298,10 +298,10 @@ const Profile37 = () => {
                 href={googleReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-4 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
+                className="mt-3 flex items-center gap-3 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-3 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
               >
-                <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={35} />
+                <div className="relative flex h-8 w-8 shrink-0 items-center justify-center">
+                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={30} />
                   <FaStar className="absolute text-[#f8d28b]" size={20} />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -312,10 +312,10 @@ const Profile37 = () => {
                     Your feedback helps us improve and recognize great service.
                   </p>
                 </div>
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_13px_rgba(80,55,30,0.16)]">
-                  <FaGoogle size={20} className="text-[#4285f4]" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_13px_rgba(80,55,30,0.16)]">
+                  <FaGoogle size={18} className="text-[#4285f4]" />
                 </div>
-                <FaChevronRight className="shrink-0 text-[#7b1223]" size={16} />
+                <FaChevronRight className="shrink-0 text-[#7b1223]" size={12} />
               </a>
             ) : null}
 
