@@ -237,7 +237,7 @@ const Profile37 = () => {
               )}
             </div>
 
-            <div className="mt-6 flex items-center justify-center gap-2">
+            <div className="mt-4 flex items-center justify-center gap-2">
               <p className="font-serif text-[16px] font-bold text-[#5d0618]">{brandName}</p>
               <FaCheckCircle className="text-[#5d0618]" size={18} />
             </div>
