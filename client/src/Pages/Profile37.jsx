@@ -195,7 +195,7 @@ const Profile37 = () => {
   }
 
   return (
-    <section className="min-h-screen bg-[#fbf4e9] px-2 py-4 sm:px-5">
+    <section className="min-h-screen bg-[#fbf4e9] px-2.5 py-4 sm:px-5">
       <Helmet>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -210,20 +210,20 @@ const Profile37 = () => {
         <meta name="twitter:description" content={roleName || brandName} />
       </Helmet>
 
-      <div className="mx-auto max-w-[430px] rounded-[30px] bg-white/45 p-[2px] shadow-[0_10px_28px_rgba(88,45,20,0.16)]">
-        <article className="relative overflow-hidden rounded-[28px] border border-white bg-[#fffaf3] px-3 py-5 text-center shadow-[inset_0_0_0_1px_rgba(232,205,167,0.55)]">
+      <div className="mx-auto max-w-[430px] rounded-[20x] bg-white/45 p-[2px] shadow-[0_10px_28px_rgba(88,45,20,0.16)]">
+        <article className="relative overflow-hidden rounded-[20px] border border-white bg-[#fffaf3] px-3 py-5 text-center shadow-[inset_0_0_0_1px_rgba(232,205,167,0.55)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_42%),linear-gradient(180deg,rgba(255,255,255,0.45),rgba(246,226,200,0.16))]" />
 
           <button
             type="button"
             onClick={downloadContactCard}
-            className="absolute right-5 top-5 z-10 flex items-center gap-2 rounded-[10px] bg-[#8d061c] px-4 py-2.5 text-[15px] font-bold text-white shadow-[0_5px_12px_rgba(104,3,22,0.34)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#690316]"
+            className="absolute right-2 top-2 z-10 flex items-center gap-2 rounded-[10px] bg-[#8d061c] px-4 py-2.5 text-[15px] font-bold text-white shadow-[0_5px_12px_rgba(104,3,22,0.34)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#690316]"
           >
             <FaUserPlus size={19} />
             Save Contact
           </button>
 
-          <div className="relative z-10 pt-14">
+          <div className="relative z-10 pt-16">
             <div className="mx-auto flex h-[128px] w-[128px] items-center justify-center rounded-full border-[3px] border-white bg-[#fff7ed] shadow-[0_0_0_3px_rgba(232,205,167,0.85),0_10px_24px_rgba(117,58,28,0.16)]">
               {profileImage ? (
                 <img
