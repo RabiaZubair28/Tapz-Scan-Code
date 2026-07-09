@@ -298,17 +298,17 @@ const Profile37 = () => {
                 href={googleReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-2 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
+                className="mt-3 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-4 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
               >
                 <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={45} />
-                  <FaStar className="absolute text-[#f8d28b]" size={28} />
+                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={35} />
+                  <FaStar className="absolute text-[#f8d28b]" size={20} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h2 className="font-serif text-[14px] font-bold leading-tight text-[#7b1223]">
+                  <h2 className="font-serif text-[12px] font-bold leading-tight text-[#7b1223]">
                     Share us your Google Review
                   </h2>
-                  <p className="mt-1 text-[8px] font-semibold leading-snug text-[#8d8178]">
+                  <p className="mt-1 text-[12px] font-semibold leading-snug text-[#8d8178]">
                     Your feedback helps us improve and recognize great service.
                   </p>
                 </div>
