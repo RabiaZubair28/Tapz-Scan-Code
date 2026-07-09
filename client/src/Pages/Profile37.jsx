@@ -58,16 +58,16 @@ const ContactRow = ({ icon, label, value, href }) => {
   const content = (
     <div className="flex w-full items-center justify-between gap-3 border-b border-[#ead9c9] px-4 py-3 last:border-b-0 transition-all duration-200 hover:bg-[#fff5e9]">
       <div className="flex min-w-0 items-center gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[12px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[12px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
           {icon}
         </div>
-        <span className="font-serif text-[20px] font-semibold text-[#3c3130]">
+        <span className="font-serif text-[16px] font-semibold text-[#3c3130]">
           {label}
         </span>
       </div>
       <div className="flex min-w-0 items-center gap-3 text-right">
-        <span className="truncate text-[15px] font-semibold text-[#a04555]">{value}</span>
-        <FaChevronRight className="shrink-0 text-[#7b1223]" size={16} />
+        <span className="truncate text-[13px] font-semibold text-[#a04555]">{value}</span>
+        <FaChevronRight className="shrink-0 text-[#7b1223]" size={13} />
       </div>
     </div>
   );
@@ -239,22 +239,22 @@ const Profile37 = () => {
             </div>
 
             <div className="mt-6 flex items-center justify-center gap-2">
-              <p className="font-serif text-[22px] font-bold text-[#8d061c]">{brandName}</p>
+              <p className="font-serif text-[18px] font-bold text-[#8d061c]">{brandName}</p>
               <FaCheckCircle className="text-[#8d061c]" size={18} />
             </div>
 
-            <h1 className="mt-2 font-serif text-[40px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
+            <h1 className="mt-2 font-serif text-[30px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
               {personName}
             </h1>
 
-            <p className="mt-4 text-[20px] font-semibold text-[#8d8178]">{roleName}</p>
+            <p className="mt-2 text-[20px] font-semibold text-[#8d8178]">{roleName}</p>
 
             {locationLabel ? (
               <a
                 href={googleMapLink || undefined}
                 target={googleMapLink ? "_blank" : undefined}
                 rel={googleMapLink ? "noopener noreferrer" : undefined}
-                className="mx-auto mt-4 flex max-w-full items-center justify-center gap-3 text-[19px] font-semibold text-[#3c3130]"
+                className="mx-auto mt-2 flex max-w-full items-center justify-center gap-3 text-[19px] font-semibold text-[#3c3130]"
               >
                 <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={21} />
                 <span className="truncate">{locationLabel}</span>
@@ -266,7 +266,7 @@ const Profile37 = () => {
             <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-5 py-4 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
               <div className="flex items-start gap-3">
                 <FaQuoteLeft className="mt-1 shrink-0 text-[#8d061c]" size={30} />
-                <p className="w-full whitespace-pre-line font-serif text-[18px] font-semibold leading-[1.35] text-[#3c3130]">
+                <p className="w-full whitespace-pre-line font-serif text-[14px] font-semibold leading-[1.35] text-[#3c3130]">
                   {quoteText}
                 </p>
               </div>
@@ -301,38 +301,38 @@ const Profile37 = () => {
                 className="mt-5 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-5 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
               >
                 <div className="relative flex h-16 w-16 shrink-0 items-center justify-center">
-                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={58} />
-                  <FaStar className="absolute text-[#f8d28b]" size={36} />
+                  <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={45} />
+                  <FaStar className="absolute text-[#f8d28b]" size={28} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h2 className="font-serif text-[23px] font-bold leading-tight text-[#7b1223]">
-                    {reviewLabel}
+                  <h2 className="font-serif text-[18px] font-bold leading-tight text-[#7b1223]">
+                    Share us your Google Review
                   </h2>
-                  <p className="mt-1 text-[14px] font-semibold leading-snug text-[#8d8178]">
+                  <p className="mt-1 text-[12px] font-semibold leading-snug text-[#8d8178]">
                     Your feedback helps us improve and recognize great service.
                   </p>
                 </div>
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_13px_rgba(80,55,30,0.16)]">
-                  <FaGoogle size={35} className="text-[#4285f4]" />
+                  <FaGoogle size={25} className="text-[#4285f4]" />
                 </div>
                 <FaChevronRight className="shrink-0 text-[#7b1223]" size={22} />
               </a>
             ) : null}
 
-            <div className="my-6 flex items-center gap-3">
+            <div className="mt-6 mb-4 flex items-center gap-3">
               <span className="h-px flex-1 bg-[#e8cda7]" />
               <FaRegStar className="text-[#d9aa62]" size={11} />
               <span className="h-px flex-1 bg-[#e8cda7]" />
             </div>
 
             <footer className="text-center">
-              <p className="font-serif text-[18px] font-bold text-[#7b1223]">
+              <p className="font-serif text-[16px] font-bold text-[#7b1223]">
                 We appreciate your time and feedback.
               </p>
-              <p className="mt-1 text-[16px] font-semibold text-[#8d8178]">
+              <p className="mt-1 text-[14px] font-semibold text-[#8d8178]">
                 It helps us serve you better every day.
               </p>
-              <FaHeart className="mx-auto mt-3 text-[#d9aa62]" size={25} />
+              <FaHeart className="mx-auto mt-2 text-[#d9aa62]" size={25} />
               {visitCount ? (
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#c7a77d]">
                   Visits {visitCount}
