@@ -257,7 +257,7 @@ const Profile37 = () => {
                 className="mx-auto mt-1 flex max-w-full items-center justify-center gap-2 text-[16px] font-semibold text-[#3c3130]"
               >
                 <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={18} />
-                <span className="truncate">{locationLabel}</span>
+                <a href={locationLabel} className="truncate">Starlink Aspire Store</a>
               </a>
             ) : null}
 
