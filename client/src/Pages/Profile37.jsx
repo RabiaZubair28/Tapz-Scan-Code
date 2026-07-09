@@ -41,10 +41,10 @@ const normalizeWhatsApp = (value = "") => String(value || "").replace(/[^0-9]/g,
 const displayValue = (value, fallback = "") => cleanText(value) || fallback;
 
 const DividerTitle = ({ children }) => (
-  <div className="my-6 flex items-center gap-3">
+  <div className="mt-6 mb-2 flex items-center gap-3">
     <span className="h-px flex-1 bg-[#e8cda7]" />
     <FaRegStar className="text-[#d9aa62]" size={11} />
-    <span className="font-serif text-[16px] font-bold uppercase tracking-[0.45em] text-[#7b1223]">
+    <span className="font-serif text-[14px] font-bold uppercase tracking-[0.35em] text-[#7b1223]">
       {children}
     </span>
     <FaRegStar className="text-[#d9aa62]" size={11} />
@@ -223,7 +223,7 @@ const Profile37 = () => {
             Save Contact
           </button>
 
-          <div className="relative z-10 pt-8">
+          <div className="relative z-10 pt-12">
             <div className="mx-auto flex h-[128px] w-[128px] items-center justify-center rounded-full border-[3px] border-white bg-[#fff7ed] shadow-[0_0_0_3px_rgba(232,205,167,0.85),0_10px_24px_rgba(117,58,28,0.16)]">
               {profileImage ? (
                 <img
@@ -243,7 +243,7 @@ const Profile37 = () => {
               <FaCheckCircle className="text-[#8d061c]" size={18} />
             </div>
 
-            <h1 className="mt-2 font-serif text-[22px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
+            <h1 className="mt-3 font-serif text-[22px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
               {personName}
             </h1>
 
@@ -254,7 +254,7 @@ const Profile37 = () => {
                 href={googleMapLink || undefined}
                 target={googleMapLink ? "_blank" : undefined}
                 rel={googleMapLink ? "noopener noreferrer" : undefined}
-                className="mx-auto mt-1 flex max-w-full items-center justify-center gap-3 text-[16px] font-semibold text-[#3c3130]"
+                className="mx-auto mt-1 flex max-w-full items-center justify-center gap-2 text-[16px] font-semibold text-[#3c3130]"
               >
                 <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={18} />
                 <span className="truncate">{locationLabel}</span>
@@ -263,10 +263,10 @@ const Profile37 = () => {
 
             <DividerTitle>Welcome</DividerTitle>
 
-            <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-5 py-4 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
+            <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-4 py-6 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
               <div className="flex items-start gap-3">
-                <FaQuoteLeft className="mt-1 shrink-0 text-[#8d061c]" size={30} />
-                <p className="w-full whitespace-pre-line font-serif text-[14px] font-semibold leading-[1.35] text-[#3c3130]">
+                <FaQuoteLeft className="mt-1 shrink-0 text-[#8d061c]" size={20} />
+                <p className="w-full whitespace-pre-line font-serif text-[12px] font-semibold leading-[1.35] text-[#3c3130]">
                   {quoteText}
                 </p>
               </div>
