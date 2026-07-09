@@ -57,16 +57,16 @@ const ContactRow = ({ icon, label, value, href }) => {
 
   const content = (
     <div className="flex w-full items-center justify-between gap-3 border-b border-[#ead9c9] px-4 py-3 last:border-b-0 transition-all duration-200 hover:bg-[#fff5e9]">
-      <div className="flex min-w-0 items-center gap-4">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[12px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
+      <div className="flex min-w-0 items-center gap-2">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
           {icon}
         </div>
-        <span className="font-serif text-[16px] font-semibold text-[#3c3130]">
+        <span className="font-serif text-[15px] font-semibold text-[#3c3130]">
           {label}
         </span>
       </div>
       <div className="flex min-w-0 items-center gap-3 text-right">
-        <span className="truncate text-[13px] font-semibold text-[#a04555]">{value}</span>
+        <span className="truncate text-[14px] font-semibold text-[#a04555]">{value}</span>
         <FaChevronRight className="shrink-0 text-[#7b1223]" size={13} />
       </div>
     </div>
