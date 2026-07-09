@@ -211,7 +211,7 @@ const Profile37 = () => {
       </Helmet>
 
       <div className="mx-auto max-w-[430px] rounded-[30px] bg-white/45 p-[2px] shadow-[0_10px_28px_rgba(88,45,20,0.16)]">
-        <article className="relative overflow-hidden rounded-[28px] border border-white bg-[#fffaf3] px-5 pb-7 pt-7 text-center shadow-[inset_0_0_0_1px_rgba(232,205,167,0.55)]">
+        <article className="relative overflow-hidden rounded-[28px] border border-white bg-[#fffaf3] px-3 py-5 text-center shadow-[inset_0_0_0_1px_rgba(232,205,167,0.55)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_42%),linear-gradient(180deg,rgba(255,255,255,0.45),rgba(246,226,200,0.16))]" />
 
           <button
@@ -223,7 +223,7 @@ const Profile37 = () => {
             Save Contact
           </button>
 
-          <div className="relative z-10 pt-16">
+          <div className="relative z-10 pt-14">
             <div className="mx-auto flex h-[128px] w-[128px] items-center justify-center rounded-full border-[3px] border-white bg-[#fff7ed] shadow-[0_0_0_3px_rgba(232,205,167,0.85),0_10px_24px_rgba(117,58,28,0.16)]">
               {profileImage ? (
                 <img
