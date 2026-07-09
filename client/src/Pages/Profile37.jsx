@@ -254,7 +254,7 @@ const Profile37 = () => {
                 href={googleMapLink || undefined}
                 target={googleMapLink ? "_blank" : undefined}
                 rel={googleMapLink ? "noopener noreferrer" : undefined}
-                className="mx-auto mt-2 flex max-w-full items-center justify-center gap-3 text-[16px] font-semibold text-[#3c3130]"
+                className="mx-auto mt-1 flex max-w-full items-center justify-center gap-3 text-[16px] font-semibold text-[#3c3130]"
               >
                 <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={18} />
                 <span className="truncate">{locationLabel}</span>
