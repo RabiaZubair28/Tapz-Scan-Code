@@ -195,7 +195,7 @@ const Profile37 = () => {
   }
 
   return (
-    <section className="min-h-screen bg-[#fbf4e9] px-3 py-5 sm:px-5">
+    <section className="min-h-screen bg-[#fbf4e9] px-2 py-4 sm:px-5">
       <Helmet>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
