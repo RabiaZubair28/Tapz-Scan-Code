@@ -147,7 +147,7 @@ const Profile37 = () => {
   const roleName = displayValue(designation, "Technology Advisor");
   const locationLabel = displayValue(address || googleMapName || location, `${brandName} Aspire Store`);
   const profileImage = logo || images;
-  const phoneValue = displayValue(phone01 || telephone01);
+  const phoneValue = displayValue(phone01);
   const whatsappValue = displayValue(whatsapp01);
   const emailValue = displayValue(email);
   const reviewLabel = displayValue(googleReviewName, "Share us your Google review");
