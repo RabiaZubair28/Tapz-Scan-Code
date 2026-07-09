@@ -41,10 +41,10 @@ const normalizeWhatsApp = (value = "") => String(value || "").replace(/[^0-9]/g,
 const displayValue = (value, fallback = "") => cleanText(value) || fallback;
 
 const DividerTitle = ({ children }) => (
-  <div className="mt-6 mb-3 flex items-center gap-3">
+  <div className="mt-6 mb-4 flex items-center gap-3">
     <span className="h-px flex-1 bg-[#e8cda7]" />
     <FaRegStar className="text-[#d9aa62]" size={11} />
-    <span className="font-serif text-[12px] font-bold uppercase tracking-[0.10em] text-[#7b1223]">
+    <span className="font-serif text-[13px] font-bold uppercase tracking-[0.20em] text-[#7b1223]">
       {children}
     </span>
     <FaRegStar className="text-[#d9aa62]" size={11} />
@@ -326,15 +326,15 @@ const Profile37 = () => {
             </div>
 
             <footer className="text-center">
-              <p className="font-serif text-[16px] font-bold text-[#7b1223]">
+              <p className="font-serif text-[14px] font-bold text-[#7b1223]">
                 We appreciate your time and feedback.
               </p>
               <p className="text-[15px] font-semibold text-[#8d8178]">
                 It helps us serve you better every day.
               </p>
-              <FaHeart className="mx-auto mt-2 text-[#d9aa62]" size={25} />
+              <FaHeart className="mx-auto mt-2 text-[#d9aa62]" size={20} />
               {visitCount ? (
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#c7a77d]">
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-[#c7a77d]">
                   Visits {visitCount}
                 </p>
               ) : null}
