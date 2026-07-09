@@ -311,10 +311,10 @@ const Profile37 = () => {
                     Your feedback helps us improve and recognize great service.
                   </p>
                 </div>
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_13px_rgba(80,55,30,0.16)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_13px_rgba(80,55,30,0.16)]">
   <svg
     viewBox="0 0 48 48"
-    className="h-[20px] w-[20px]"
+    className="h-[25px] w-[25px]"
     aria-hidden="true"
   >
     <path
