@@ -41,7 +41,7 @@ const normalizeWhatsApp = (value = "") => String(value || "").replace(/[^0-9]/g,
 const displayValue = (value, fallback = "") => cleanText(value) || fallback;
 
 const DividerTitle = ({ children }) => (
-  <div className="mt-6 mb-4 flex items-center gap-3">
+  <div className="mt-6 mb-3 flex items-center gap-3">
     <span className="h-px flex-1 bg-[#e8cda7]" />
     <FaRegStar className="text-[#d9aa62]" size={11} />
     <span className="font-serif text-[12px] font-bold uppercase tracking-[0.10em] text-[#7b1223]">
@@ -272,7 +272,7 @@ const Profile37 = () => {
               </div>
             </div>
 
-            <div className="mt-4 overflow-hidden rounded-[14px] border border-[#ead9c9] bg-[#fffdf8] shadow-[0_4px_14px_rgba(106,57,28,0.1)]">
+            <div className="mt-3 overflow-hidden rounded-[14px] border border-[#ead9c9] bg-[#fffdf8] shadow-[0_4px_14px_rgba(106,57,28,0.1)]">
               <ContactRow
                 icon={<FaPhoneAlt size={17} />}
                 label="Call"
@@ -298,7 +298,7 @@ const Profile37 = () => {
                 href={googleReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-5 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
+                className="mt-3 flex items-center gap-4 rounded-[16px] border border-[#ead9c9] bg-[#fff5e9] px-5 py-5 text-left shadow-[0_5px_16px_rgba(106,57,28,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(106,57,28,0.18)]"
               >
                 <div className="relative flex h-16 w-16 shrink-0 items-center justify-center">
                   <FaStar className="absolute text-[#dfaa5e] drop-shadow" size={45} />
