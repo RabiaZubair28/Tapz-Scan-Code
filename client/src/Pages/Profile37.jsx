@@ -41,7 +41,7 @@ const normalizeWhatsApp = (value = "") => String(value || "").replace(/[^0-9]/g,
 const displayValue = (value, fallback = "") => cleanText(value) || fallback;
 
 const DividerTitle = ({ children }) => (
-  <div className="mt-6 mb-2 flex items-center gap-3">
+  <div className="mt-6 mb-4 flex items-center gap-3">
     <span className="h-px flex-1 bg-[#e8cda7]" />
     <FaRegStar className="text-[#d9aa62]" size={11} />
     <span className="font-serif text-[14px] font-bold uppercase tracking-[0.35em] text-[#7b1223]">
@@ -57,16 +57,16 @@ const ContactRow = ({ icon, label, value, href }) => {
 
   const content = (
     <div className="flex w-full items-center justify-between gap-3 border-b border-[#ead9c9] px-4 py-3 last:border-b-0 transition-all duration-200 hover:bg-[#fff5e9]">
-      <div className="flex min-w-0 items-center gap-2">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
+      <div className="flex min-w-0 items-center gap-3">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[8px] bg-[#8d061c] text-white shadow-[0_5px_12px_rgba(141,6,28,0.24)]">
           {icon}
         </div>
-        <span className="font-serif text-[15px] font-semibold text-[#3c3130]">
+        <span className="font-serif text-[12px] font-medium text-[#3c3130]">
           {label}
         </span>
       </div>
       <div className="flex min-w-0 items-center gap-3 text-right">
-        <span className="truncate text-[14px] font-semibold text-[#a04555]">{value}</span>
+        <span className="truncate text-[12px] font-medium text-[#a04555]">{value}</span>
         <FaChevronRight className="shrink-0 text-[#7b1223]" size={13} />
       </div>
     </div>
@@ -223,7 +223,7 @@ const Profile37 = () => {
             Save Contact
           </button>
 
-          <div className="relative z-10 pt-12">
+          <div className="relative z-10 pt-15">
             <div className="mx-auto flex h-[128px] w-[128px] items-center justify-center rounded-full border-[3px] border-white bg-[#fff7ed] shadow-[0_0_0_3px_rgba(232,205,167,0.85),0_10px_24px_rgba(117,58,28,0.16)]">
               {profileImage ? (
                 <img
@@ -263,30 +263,30 @@ const Profile37 = () => {
 
             <DividerTitle>Welcome</DividerTitle>
 
-            <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-4 py-6 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
+            <div className="rounded-[12px] border border-[#ead9c9] bg-[#fffdf8] px-4 py-5 text-center shadow-[0_5px_16px_rgba(106,57,28,0.12)]">
               <div className="flex items-start gap-3">
                 <FaQuoteLeft className="mt-1 shrink-0 text-[#8d061c]" size={20} />
-                <p className="w-full whitespace-pre-line font-serif text-[12px] font-semibold leading-[1.35] text-[#3c3130]">
+                <p className="w-full whitespace-pre-line font-serif text-[10px] font-medium leading-[1.35] text-[#3c3130]">
                   {quoteText}
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-[14px] border border-[#ead9c9] bg-[#fffdf8] shadow-[0_4px_14px_rgba(106,57,28,0.1)]">
+            <div className="mt-4 overflow-hidden rounded-[14px] border border-[#ead9c9] bg-[#fffdf8] shadow-[0_4px_14px_rgba(106,57,28,0.1)]">
               <ContactRow
-                icon={<FaPhoneAlt size={19} />}
+                icon={<FaPhoneAlt size={17} />}
                 label="Call"
                 value={phoneValue}
                 href={phoneValue ? `tel:${phoneValue}` : undefined}
               />
               <ContactRow
-                icon={<FaWhatsapp size={22} />}
+                icon={<FaWhatsapp size={17} />}
                 label="WhatsApp"
                 value={whatsappValue}
                 href={whatsappNumber ? `https://wa.me/${whatsappNumber}` : undefined}
               />
               <ContactRow
-                icon={<FaEnvelope size={21} />}
+                icon={<FaEnvelope size={17} />}
                 label="Email"
                 value={emailValue}
                 href={emailValue ? `mailto:${emailValue}` : undefined}
