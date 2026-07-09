@@ -239,24 +239,24 @@ const Profile37 = () => {
             </div>
 
             <div className="mt-6 flex items-center justify-center gap-2">
-              <p className="font-serif text-[18px] font-bold text-[#8d061c]">{brandName}</p>
+              <p className="font-serif text-[16px] font-bold text-[#8d061c]">{brandName}</p>
               <FaCheckCircle className="text-[#8d061c]" size={18} />
             </div>
 
-            <h1 className="mt-2 font-serif text-[30px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
+            <h1 className="mt-2 font-serif text-[22px] font-bold leading-[1.03] tracking-[-0.04em] text-[#5d0618] sm:text-[44px]">
               {personName}
             </h1>
 
-            <p className="mt-2 text-[20px] font-semibold text-[#8d8178]">{roleName}</p>
+            <p className="mt-2 text-[16px] font-semibold text-[#8d8178]">{roleName}</p>
 
             {locationLabel ? (
               <a
                 href={googleMapLink || undefined}
                 target={googleMapLink ? "_blank" : undefined}
                 rel={googleMapLink ? "noopener noreferrer" : undefined}
-                className="mx-auto mt-2 flex max-w-full items-center justify-center gap-3 text-[19px] font-semibold text-[#3c3130]"
+                className="mx-auto mt-2 flex max-w-full items-center justify-center gap-3 text-[16px] font-semibold text-[#3c3130]"
               >
-                <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={21} />
+                <FaMapMarkerAlt className="shrink-0 text-[#8d061c]" size={18} />
                 <span className="truncate">{locationLabel}</span>
               </a>
             ) : null}
@@ -329,7 +329,7 @@ const Profile37 = () => {
               <p className="font-serif text-[16px] font-bold text-[#7b1223]">
                 We appreciate your time and feedback.
               </p>
-              <p className="mt-1 text-[14px] font-semibold text-[#8d8178]">
+              <p className="text-[15px] font-semibold text-[#8d8178]">
                 It helps us serve you better every day.
               </p>
               <FaHeart className="mx-auto mt-2 text-[#d9aa62]" size={25} />
