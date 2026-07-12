@@ -1046,22 +1046,7 @@ const EditPortal33 = () => {
               {logo && renderDeleteButton(() => deleteImageField("logo"))}
             </div>
 
-            {images && (
-              <div className="mb-4 overflow-hidden rounded-2xl border-2 border-[var(--profile-theme-color)] bg-white">
-                <img src={images} alt="cover" className="h-44 w-full object-cover" />
-              </div>
-            )}
-            <div className="flex justify-center gap-2 pb-4">
-              <label className="cursor-pointer rounded-full border-2 border-[var(--profile-theme-color)] bg-white px-4 py-2 text-xs font-bold text-[var(--profile-theme-color)]">
-                {images ? "Edit Cover" : "Add Cover"}
-                <input
-                  type="file"
-                  className="hidden"
-                  onChange={(event) => updateImageField("images", event.target.files?.[0])}
-                />
-              </label>
-              {images && renderDeleteButton(() => deleteImageField("images"))}
-            </div>
+      
 
             <div className="pt-2 pb-5">
               <h1 className="text-white text-3xl font-semibold pb-3" dir="rtl">
