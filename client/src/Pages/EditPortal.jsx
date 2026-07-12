@@ -35,6 +35,7 @@ import EditPortal26 from "./EditPortal26";
 import EditPortal27 from "./EditPortal27";
 import EditPortal30 from "./EditPortal30";
 import EditPortal31 from "./EditPortal31";
+import EditPortal33 from "./EditPortal33";
 import EditPortal34 from "./EditPortal34";
 import EditPortal36 from "./EditPortal36";
 
@@ -239,7 +240,9 @@ const EditPortal = () => {
       return <EditPortal30 />;
     } else if (option === "31") {
       return <EditPortal31 />;
-    } else if (option === "34") {
+    } else if (option === "33") {
+      return <EditPortal33 />;
+    }else if (option === "34") {
       return <EditPortal34 />;
     }else if (option === "36") {
       return <EditPortal36 />;
