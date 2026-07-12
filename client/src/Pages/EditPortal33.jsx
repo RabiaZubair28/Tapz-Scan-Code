@@ -1015,19 +1015,7 @@ const EditPortal33 = () => {
           className="min-h-screen pt-2 w-full max-w-md mx-auto shadow-lg pb-10 text-center"
           style={{ background: "var(--profile-bg-gradient)", backgroundAttachment: "fixed" }}
         >
-          <div className="sticky top-0 z-20 mx-3 mt-2 rounded-2xl border border-white/50 bg-white/80 px-3 py-2 backdrop-blur">
-            <div className="flex items-center justify-between gap-2">
-              <button
-                type="button"
-                className="rounded-full bg-[var(--profile-theme-color)] px-4 py-2 text-xs font-bold text-white"
-                onClick={() => navigate(-1)}
-              >
-                Back
-              </button>
-              <p className="text-sm font-bold text-[var(--profile-theme-color)]">Edit Portal 33</p>
-              <p className="text-xs font-semibold text-[var(--profile-theme-color)]">{saving ? "Saving..." : "Ready"}</p>
-            </div>
-          </div>
+          
 
           <div className="flex items-center justify-center mx-auto rounded-x ps-6 pe-4 space-y-2 mt-4">
             <div className="relative mb-2">
