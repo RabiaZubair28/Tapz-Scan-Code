@@ -945,8 +945,8 @@ function ProfileForm({
 export function ScanTapDashboardWorkspace({
   variant = "operations",
   defaultTab = "overview",
-  pageTitle = "Dashboard 02",
-  pageSubtitle = "Portfolio operations",
+  pageTitle = "Dashboard",
+  pageSubtitle = "Create, Update & Manage Profiles",
 }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [profile, setProfile] = useState(createEmptyProfile);
@@ -1140,8 +1140,8 @@ export default function Dashboard02() {
     <ScanTapDashboardWorkspace
       variant="operations"
       defaultTab="manage"
-      pageTitle="Dashboard 02"
-      pageSubtitle="Portfolio operations"
+      pageTitle="Dashboard"
+      pageSubtitle="Create, Update & Manage Profiles"
     />
   );
 }
