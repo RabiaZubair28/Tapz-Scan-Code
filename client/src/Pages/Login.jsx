@@ -47,7 +47,7 @@ function Login() {
         setSubmitSuccess(true);
         setMessage(data.message || "Login successful.");
         if (data.role === "admin") {
-          navigate("/dashboard02", { replace: true });
+          navigate("/dashboard", { replace: true });
         } else {
           navigate(`/edit/${data.userId}`);
         }
