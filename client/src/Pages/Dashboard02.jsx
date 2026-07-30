@@ -1103,7 +1103,7 @@ export function ScanTapDashboardWorkspace({
       if (result?.role !== "admin") {
         await request(API.logout, { method: "POST" }).catch(() => {});
         throw new Error(
-          "This is a normal profile account. Only the administrator can access this dashboard.",
+          "Only the administrator can access this dashboard.",
         );
       }
 
