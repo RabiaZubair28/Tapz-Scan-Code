@@ -316,9 +316,6 @@ const clientSchema = new mongoose.Schema({
   color03: {
     type: String,
   },
-  flag: {
-    type: Boolean,
-  },
   password: {
     type: String,
     select: false,
@@ -333,6 +330,7 @@ const clientSchema = new mongoose.Schema({
 
 const removePrivateFields = (_, result) => {
   delete result.password;
+  delete result.flag;
   return result;
 };
 

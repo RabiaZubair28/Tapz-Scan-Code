@@ -56,8 +56,19 @@ const login = async (req, res, next) => {
     }
 
     if (!/^\$2[aby]\$\d{2}\$/.test(user.password || "")) {
-      user.password = await hashPassword(password);
-      await user.save();
+      const hashedPassword = await hashPassword(password);
+
+      // Use the native collection update so legacy documents containing
+      // obsolete or invalid fields (such as flag: "") do not fail a full
+      // Mongoose document validation during login. The obsolete field is
+      // removed from this client as part of the password upgrade.
+      await Client.collection.updateOne(
+        { _id: user._id },
+        {
+          $set: { password: hashedPassword },
+          $unset: { flag: "" },
+        },
+      );
     }
 
     await destroyAuthSession(req, res);

@@ -54,7 +54,6 @@ const DASHBOARD_SYSTEM_FIELDS = new Set([
   "_id",
   "__v",
   "password",
-  "flag",
   "color01",
   "color02",
   "color03",
@@ -448,7 +447,6 @@ router.route("/update/:id").put(async (req, res) => {
     color01,
     color02,
     color03,
-    flag,
     option,
     visitCount,
   } = req.body; // The new name from the frontend
@@ -564,7 +562,6 @@ router.route("/update/:id").put(async (req, res) => {
         color02,
         color03,
         password,
-        flag,
         option,
         visitCount,
       },
@@ -690,7 +687,6 @@ router.route("/add/:id").put(async (req, res) => {
     color02,
     color03,
     password,
-    flag,
     visitCount,
     option,
   } = req.body; // The new name from the frontend
@@ -806,7 +802,6 @@ router.route("/add/:id").put(async (req, res) => {
         color02,
         color03,
         password,
-        flag,
         visitCount,
         option,
       },
@@ -1377,7 +1372,6 @@ router.route("/addClient").post(async (req, res) => {
       color01,
       color02,
       color03,
-      flag,
       option,
       visitCount,
     } = req.body;
@@ -1489,7 +1483,6 @@ router.route("/addClient").post(async (req, res) => {
       color01,
       color02,
       color03,
-      flag,
       option,
       visitCount,
     });
