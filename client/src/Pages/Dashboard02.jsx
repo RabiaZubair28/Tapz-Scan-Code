@@ -1,69 +1,26 @@
-/* eslint-disable react/prop-types */
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Navigate } from "react-router-dom";
-
-const PROFILE_OPTIONS = [
-  { value: "1", label: "Blush pink · Soft ivory", colors: ["#ffb8d6", "#f6ece9"] },
-  { value: "2", label: "Deep navy · White", colors: ["#16215c", "#ffffff"] },
-  { value: "3", label: "Muted violet · Midnight purple", colors: ["#544e66", "#1f153d"] },
-  { value: "4", label: "Near black · Slate grey", colors: ["#030712", "#374151"] },
-  { value: "5", label: "Sage teal · Mist grey", colors: ["#4e867e", "#e6eaea"] },
-  { value: "6", label: "Charcoal · Snow white", colors: ["#111827", "#f9fafb"] },
-  { value: "7", label: "Ocean blue · White", colors: ["#1d8eb7", "#ffffff"] },
-  { value: "8", label: "Deep navy · Lime green", colors: ["#16215c", "#a3c24e"] },
-  { value: "9", label: "Deep navy · Dusty rose", colors: ["#16215c", "#f2b0b4"] },
-  { value: "10", label: "Charcoal · Classic gold", colors: ["#111827", "#c79d3d"] },
-  { value: "11", label: "White · Classic gold", colors: ["#ffffff", "#c79d3d"] },
-  { value: "12", label: "Silver · Classic gold", colors: ["#bdbdbd", "#c79d3d"] },
-  { value: "13", label: "Black · Classic gold", colors: ["#111111", "#c79d3d"] },
-  { value: "14", label: "Forest green · Charcoal", colors: ["#38572e", "#111827"] },
-  { value: "15", label: "Forest green · Olive", colors: ["#38572e", "#868e52"] },
-  { value: "16", label: "Olive green · Soft white", colors: ["#6d7c3f", "#fafcee"] },
-  { value: "17", label: "Fresh green · Mint", colors: ["#4c9537", "#aee19f"] },
-  { value: "18", label: "Peach blush · Soft ivory", colors: ["#f9d6cd", "#f6ece9"] },
-  { value: "19", label: "Coffee brown · Warm taupe", colors: ["#784330", "#957a71"] },
-  { value: "20", label: "Ruby red · Cream", colors: ["#b10000", "#f5e7c8"] },
-  { value: "21", label: "Crimson · Amber", colors: ["#c12c2c", "#fab23f"] },
-  { value: "22", label: "Wine red · Pearl blush", colors: ["#9e201c", "#f4e7e6"] },
-  { value: "23", label: "Charcoal blue · Classic gold", colors: ["#1e2533", "#c79d3d"] },
-  { value: "24", label: "Midnight charcoal · Forest green", colors: ["#111827", "#38572e"] },
-  { value: "25", label: "Pure black · White", colors: ["#000000", "#ffffff"] },
-  { value: "26", label: "Graphite · Forest green", colors: ["#231f20", "#38572e"] },
-  { value: "27", label: "Black · Antique gold", colors: ["#000000", "#b89a64"] },
-  { value: "28", label: "Burgundy · Warm sand", colors: ["#65141a", "#f0d3b5"] },
-  { value: "29", label: "Charcoal · Cool grey", colors: ["#111827", "#6b7280"] },
-  { value: "30", label: "Onyx · Antique gold", colors: ["#000000", "#b89a64"] },
-  { value: "31", label: "Slate black · Silver grey", colors: ["#111827", "#9ca3af"] },
-  { value: "32", label: "Onyx · Antique gold", colors: ["#000000", "#b89a64"] },
-  { value: "33", label: "Emerald green · White", colors: ["#1f7a3f", "#ffffff"] },
-  { value: "34", label: "Metallic gold · Pale gold", colors: ["#d4a84e", "#fff7dd"] },
-  { value: "35", label: "Black · Bronze", colors: ["#000000", "#b89a64"] },
-  { value: "36", label: "Black · Soft yellow", colors: ["#000000", "#fef485"] },
-  { value: "37", label: "Heritage burgundy · Warm ivory", colors: ["#5d0618", "#ead9c9"] },
-];
-
-const getProfileOption = (value) =>
-  PROFILE_OPTIONS.find((option) => option.value === String(value)) ||
-  PROFILE_OPTIONS[0];
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 const ENV = import.meta.env || {};
 const API_BASE = (
   ENV.VITE_API_BASE_URL ||
   ENV.VITE_SCANTAP_API_BASE_URL ||
-  "https://scantap.onrender.com/api"
-).replace(/\/$/, "");
-const DATA_BASE = `${API_BASE}/data`;
-const CLIENTS_URL = `${DATA_BASE}/admin/clients`;
-const ADD_CLIENT_URL = ENV.VITE_SCANTAP_ADD_CLIENT_URL || CLIENTS_URL;
-const DIRECTORY_URL = ENV.VITE_SCANTAP_DIRECTORY_URL || CLIENTS_URL;
+  "/api"
+).replace(/\/+$/, "");
+const ADD_CLIENT_URL =
+  ENV.VITE_SCANTAP_ADD_CLIENT_URL ||
+  `${API_BASE}/data/addClient`;
+const DIRECTORY_URL =
+  ENV.VITE_SCANTAP_DIRECTORY_URL || `${API_BASE}/dashboard1`;
+const PUBLIC_SITE_URL = (
+  ENV.VITE_PUBLIC_SITE_URL ||
+  (typeof window !== "undefined" ? window.location.origin : "")
+).replace(/\/+$/, "");
 
 const API = {
-  client: (id) => `${CLIENTS_URL}/${id}`,
-  update: (id) => `${CLIENTS_URL}/${id}`,
-  remove: (id) => `${CLIENTS_URL}/${id}`,
-  allClients: `${CLIENTS_URL}?limit=100`,
-  logout: `${API_BASE}/auth/logout`,
-  session: `${API_BASE}/auth/session`,
+  client: (id) => `${API_BASE}/data/client/${id}`,
+  update: (id) => `${API_BASE}/data/update/${id}`,
+  remove: (id) => `${API_BASE}/data/deleteClient/${id}`,
+  allClients: `${API_BASE}/data/fetchClients`,
 };
 
 const socialFields = (key, label) => [
@@ -92,11 +49,12 @@ const FORM_GROUPS = [
       { name: "location", label: "Location / map URL", type: "url" },
       { name: "qr", label: "QR value or URL" },
       { name: "option", label: "Profile template", type: "template", required: true },
+      { name: "flag", label: "Profile status", type: "status" },
       {
         name: "password",
-        label: "Profile password",
+        label: "Login password",
         type: "password",
-        hint: "While editing, leave this blank to keep the current password.",
+        hint: "Leave blank while editing to keep the current password.",
       },
       { name: "visitCount", label: "Visit count", type: "number" },
     ],
@@ -160,7 +118,7 @@ const FORM_GROUPS = [
   {
     id: "visuals",
     title: "Brand and media",
-    description: "Logo, cover and gallery media used by the selected template.",
+    description: "Logo, cover/gallery media and the three template colours.",
     fields: [
       { name: "logo", label: "Logo URL", type: "url" },
       { name: "images", label: "Cover image URL", type: "url" },
@@ -169,6 +127,9 @@ const FORM_GROUPS = [
         label: `Gallery image ${index + 1} URL`,
         type: "url",
       })),
+      { name: "color01", label: "Primary colour", type: "color" },
+      { name: "color02", label: "Secondary colour", type: "color" },
+      { name: "color03", label: "Accent colour", type: "color" },
     ],
   },
 ];
@@ -180,6 +141,7 @@ const PROFILE_FIELD_NAMES = FORM_GROUPS.flatMap((group) =>
 const createEmptyProfile = () => {
   const profile = Object.fromEntries(PROFILE_FIELD_NAMES.map((name) => [name, ""]));
   profile.option = "1";
+  profile.flag = true;
   profile.visitCount = 5;
   return profile;
 };
@@ -192,6 +154,7 @@ const normaliseProfile = (source = {}) => {
       profile[name] = source[name];
     }
   });
+  profile.flag = source.flag !== false;
   profile.option = String(source.option || "1");
   profile.visitCount = Number(source.visitCount || 0);
   profile.password = "";
@@ -202,7 +165,9 @@ const profilePayload = (profile, editing) => {
   const payload = {};
   PROFILE_FIELD_NAMES.forEach((name) => {
     if (editing && name === "password" && !profile.password) return;
-    if (name === "visitCount") {
+    if (name === "flag") {
+      payload[name] = profile[name] !== false;
+    } else if (name === "visitCount") {
       payload[name] = Number(profile[name] || 0);
     } else {
       payload[name] = profile[name] ?? "";
@@ -212,9 +177,7 @@ const profilePayload = (profile, editing) => {
 };
 
 const safeDirectoryItem = (item = {}) => {
-  const safe = { ...item };
-  delete safe.password;
-  delete safe.__v;
+  const { password: _password, __v: _version, ...safe } = item;
   return safe;
 };
 
@@ -243,18 +206,14 @@ async function request(url, options = {}) {
   }
 
   if (!response.ok) {
-    const error = new Error(
-      messageFromResponse(data, `Request failed (${response.status})`),
-    );
-    error.status = response.status;
-    throw error;
+    throw new Error(messageFromResponse(data, `Request failed (${response.status})`));
   }
   return data;
 }
 
-function useDirectory(active, onUnauthorized) {
+function useDirectory(enabled) {
   const [items, setItems] = useState([]);
-  const [stats, setStats] = useState({ total: 0 });
+  const [stats, setStats] = useState({ total: 0, enabled: 0, disabled: 0 });
   const [pagination, setPagination] = useState({
     page: 1,
     limit: 8,
@@ -267,7 +226,7 @@ function useDirectory(active, onUnauthorized) {
 
   const load = useCallback(
     async (page = 1, query = search) => {
-      if (!active) return;
+      if (!enabled) return;
       setLoading(true);
       setError("");
 
@@ -279,7 +238,7 @@ function useDirectory(active, onUnauthorized) {
         });
         const result = await request(`${DIRECTORY_URL}?${params.toString()}`);
         setItems((result.items || []).map(safeDirectoryItem));
-        setStats(result.stats || { total: 0 });
+        setStats(result.stats || { total: 0, enabled: 0, disabled: 0 });
         setPagination(
           result.pagination || {
             page,
@@ -291,9 +250,7 @@ function useDirectory(active, onUnauthorized) {
       } catch (directoryError) {
         try {
           const all = await request(API.allClients);
-          const cleaned = (
-            Array.isArray(all) ? all : all.items || []
-          ).map(safeDirectoryItem);
+          const cleaned = (Array.isArray(all) ? all : []).map(safeDirectoryItem);
           const term = query.trim().toLowerCase();
           const filtered = term
             ? cleaned.filter((item) =>
@@ -309,6 +266,8 @@ function useDirectory(active, onUnauthorized) {
           setItems(filtered.slice(offset, offset + limit));
           setStats({
             total: cleaned.length,
+            enabled: cleaned.filter((item) => item.flag !== false).length,
+            disabled: cleaned.filter((item) => item.flag === false).length,
           });
           setPagination({
             page: safePage,
@@ -318,20 +277,17 @@ function useDirectory(active, onUnauthorized) {
           });
         } catch (fallbackError) {
           setError(fallbackError.message || directoryError.message);
-          if ([401, 403].includes(fallbackError.status || directoryError.status)) {
-            onUnauthorized?.();
-          }
         }
       } finally {
         setLoading(false);
       }
     },
-    [active, onUnauthorized, pagination.limit, search],
+    [enabled, pagination.limit, search],
   );
 
   useEffect(() => {
-    if (active) load(1, "");
-  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (enabled) load(1, "");
+  }, [enabled]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
     items,
@@ -386,7 +342,7 @@ function Alert({ notice, onClose }) {
   );
 }
 
-function Header({ title, subtitle, auth, onLogout }) {
+function Header({ title, subtitle }) {
   return (
     <header className="st-header">
       <div className="st-header-brand">
@@ -402,25 +358,9 @@ function Header({ title, subtitle, auth, onLogout }) {
       </div>
       <div className="st-account">
         <div className="st-account-copy">
-          <strong>
-            {auth?.authenticated
-              ? auth.role === "admin"
-                ? "Administrator"
-                : "Profile verified"
-              : "Profile workspace"}
-          </strong>
-          <small>
-            {auth?.authenticated
-              ? "Authorized editing is active"
-              : "Create and browse clients"}
-          </small>
+          <strong>Profile workspace</strong>
+          <small>Create and manage clients</small>
         </div>
-        {auth?.authenticated ? (
-          <button type="button" className="st-logout" onClick={onLogout}>
-            <Icon name="logout" />
-            Log out
-          </button>
-        ) : null}
       </div>
     </header>
   );
@@ -453,7 +393,7 @@ function Sidebar({ activeTab, onTabChange }) {
         <span className="st-live-dot" />
         <div>
           <strong>API connected</strong>
-          <small>Localhost :3500</small>
+          <small>ScanTap production</small>
         </div>
       </div>
     </aside>
@@ -540,15 +480,15 @@ function Overview({
           tone="blue"
         />
         <StatCard
-          label="Profiles in view"
-          value={loading ? "—" : items.length}
-          note="Recently loaded profiles"
+          label="Enabled"
+          value={loading ? "—" : stats.enabled}
+          note="Visible public profiles"
           tone="green"
         />
         <StatCard
-          label="Template layouts"
-          value="37"
-          note="Available design options"
+          label="Disabled"
+          value={loading ? "—" : stats.disabled}
+          note="Currently hidden"
           tone="orange"
         />
         <StatCard
@@ -575,7 +515,7 @@ function Overview({
               type="button"
               className="st-mini-profile"
               key={item._id}
-              onClick={() => onEdit(item)}
+              onClick={() => onEdit(item._id)}
             >
               <span className="st-mini-logo">
                 {item.logo ? (
@@ -586,10 +526,10 @@ function Overview({
               </span>
               <span>
                 <strong>{item.name || item.clientName || "Untitled profile"}</strong>
-                <small>
-                  Option {getProfileOption(item.option).value} (
-                  {getProfileOption(item.option).label})
-                </small>
+                <small>Template {item.option || "—"}</small>
+              </span>
+              <span className={`st-status ${item.flag === false ? "is-off" : ""}`}>
+                {item.flag === false ? "Disabled" : "Enabled"}
               </span>
             </button>
           ))}
@@ -656,6 +596,7 @@ function Directory({
                 <th>Contact</th>
                 <th>Template</th>
                 <th>Visits</th>
+                <th>Status</th>
                 <th aria-label="Actions" />
               </tr>
             </thead>
@@ -683,16 +624,22 @@ function Directory({
                   </td>
                   <td>
                     <span className="st-template-badge">
-                      Option {getProfileOption(item.option).value} (
-                      {getProfileOption(item.option).label})
+                      Option {item.option || "—"}
                     </span>
                   </td>
                   <td>{Number(item.visitCount || 0).toLocaleString()}</td>
                   <td>
+                    <span
+                      className={`st-status ${item.flag === false ? "is-off" : ""}`}
+                    >
+                      {item.flag === false ? "Disabled" : "Enabled"}
+                    </span>
+                  </td>
+                  <td>
                     <div className="st-row-actions">
                       <button
                         type="button"
-                        onClick={() => onEdit(item)}
+                        onClick={() => onEdit(item._id)}
                         aria-label={`Edit ${item.name || item.clientName || "profile"}`}
                       >
                         <Icon name="edit" />
@@ -712,7 +659,7 @@ function Directory({
               ))}
               {!directory.loading && !directory.items.length && (
                 <tr>
-                  <td colSpan="5">
+                  <td colSpan="6">
                     <div className="st-empty">No matching profiles found.</div>
                   </td>
                 </tr>
@@ -755,7 +702,6 @@ function Directory({
 
 function Field({ field, value, onChange, editing }) {
   const id = `profile-${field.name}`;
-  const [passwordVisible, setPasswordVisible] = useState(false);
 
   if (field.type === "textarea") {
     return (
@@ -790,9 +736,9 @@ function Field({ field, value, onChange, editing }) {
           onChange={onChange}
           required={field.required}
         >
-          {PROFILE_OPTIONS.map((option) => (
-            <option key={option.value} value={option.value}>
-              Option {option.value} ({option.label})
+          {Array.from({ length: 37 }, (_, index) => (
+            <option key={index + 1} value={String(index + 1)}>
+              Option {index + 1}
             </option>
           ))}
         </select>
@@ -800,33 +746,44 @@ function Field({ field, value, onChange, editing }) {
     );
   }
 
-  if (field.type === "password") {
+  if (field.type === "status") {
     return (
       <label className="st-field" htmlFor={id}>
-        <span>
-          {field.label}
-          {!editing && <b>*</b>}
-        </span>
-        <span className="st-password-wrap">
+        <span>{field.label}</span>
+        <select
+          id={id}
+          name={field.name}
+          value={value === false ? "false" : "true"}
+          onChange={onChange}
+        >
+          <option value="true">Enabled</option>
+          <option value="false">Disabled</option>
+        </select>
+      </label>
+    );
+  }
+
+  if (field.type === "color") {
+    return (
+      <label className="st-field" htmlFor={id}>
+        <span>{field.label}</span>
+        <div className="st-color-input">
+          <input
+            type="color"
+            value={/^#[0-9a-f]{6}$/i.test(value || "") ? value : "#5b5cf0"}
+            onChange={(event) =>
+              onChange({ target: { name: field.name, value: event.target.value } })
+            }
+            aria-label={`${field.label} colour picker`}
+          />
           <input
             id={id}
-            type={passwordVisible ? "text" : "password"}
             name={field.name}
-            value={value ?? ""}
+            value={value || ""}
             onChange={onChange}
-            required={!editing}
-            autoComplete="new-password"
+            placeholder="#5B5CF0"
           />
-          <button
-            type="button"
-            onClick={() => setPasswordVisible((visible) => !visible)}
-            aria-label={passwordVisible ? "Hide password" : "Show password"}
-            title={passwordVisible ? "Hide password" : "Show password"}
-          >
-            <Icon name="eye" />
-          </button>
-        </span>
-        {field.hint && <small>{field.hint}</small>}
+        </div>
       </label>
     );
   }
@@ -871,7 +828,11 @@ function ProfileForm({
     setProfile((current) => ({
       ...current,
       [name]:
-        name === "visitCount" ? value.replace(/[^\d]/g, "") : value,
+        name === "flag"
+          ? value === "true"
+          : name === "visitCount"
+            ? value.replace(/[^\d]/g, "")
+            : value,
     }));
   };
 
@@ -896,7 +857,7 @@ function ProfileForm({
         {editing && profile.companyName && (
           <a
             className="st-secondary"
-            href={`https://www.scan-taps.com/${profile.companyName}`}
+            href={`${PUBLIC_SITE_URL}/${profile.companyName}`}
             target="_blank"
             rel="noreferrer"
           >
@@ -963,7 +924,7 @@ function ProfileForm({
           <div className="st-template-preview">
             <span>Selected layout</span>
             <strong>{profile.option || "1"}</strong>
-            <small>{getProfileOption(profile.option).label}</small>
+            <small>Template option</small>
           </div>
           <button type="submit" className="st-primary" disabled={saving}>
             {saving
@@ -994,49 +955,15 @@ export function ScanTapDashboardWorkspace({
   const [busy, setBusy] = useState(false);
   const [saving, setSaving] = useState(false);
   const [deletingId, setDeletingId] = useState("");
-  const [auth, setAuth] = useState({
-    checked: false,
-    authenticated: false,
-  });
   const [notice, setNotice] = useState(null);
-  const endAdminSession = useCallback(() => {
-    setAuth({ checked: true, authenticated: false });
-  }, []);
-  const directory = useDirectory(
-    auth.checked && auth.authenticated && auth.role === "admin",
-    endAdminSession,
-  );
+  const directory = useDirectory(true);
 
   const showNotice = useCallback((type, message) => {
     setNotice({ type, message });
     window.setTimeout(() => setNotice(null), 5000);
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-    request(API.session)
-      .then((result) => {
-        if (cancelled) return;
-        if (result.authenticated && result.role === "admin") {
-          setAuth({ ...result, checked: true });
-          return;
-        }
-        if (result.authenticated) {
-          request(API.logout, { method: "POST" }).catch(() => {});
-        }
-        setAuth({ checked: true, authenticated: false });
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setAuth({ checked: true, authenticated: false });
-        }
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const loadEditor = useCallback(
+  const editProfile = useCallback(
     async (id) => {
       if (!id) return;
       setBusy(true);
@@ -1048,41 +975,13 @@ export function ScanTapDashboardWorkspace({
         setFormMode("edit");
         setActiveTab("editor");
       } catch (error) {
-        if ([401, 403].includes(error.status)) {
-          endAdminSession();
-          return;
-        }
         showNotice("error", error.message);
       } finally {
         setBusy(false);
       }
     },
-    [endAdminSession, showNotice],
+    [showNotice],
   );
-
-  const editProfile = useCallback(
-    (itemOrId) => {
-      const item =
-        typeof itemOrId === "string"
-          ? { _id: itemOrId }
-          : itemOrId || {};
-      const id = item._id;
-      if (!id) return;
-      loadEditor(id);
-    },
-    [loadEditor],
-  );
-
-  const logout = async () => {
-    try {
-      await request(API.logout, { method: "POST" });
-    } catch {
-      // Clear the local state even if the expired server session is gone.
-    }
-    setAuth({ checked: true, authenticated: false });
-    setProfile(createEmptyProfile());
-    setProfileId("");
-  };
 
   const startCreate = () => {
     setProfile(createEmptyProfile());
@@ -1107,11 +1006,10 @@ export function ScanTapDashboardWorkspace({
       const payload = profilePayload(profile, editing);
       if (editing) {
         await request(API.update(profileId), {
-          method: "PATCH",
+          method: "PUT",
           body: JSON.stringify(payload),
         });
         showNotice("success", "Profile changes saved successfully.");
-        directory.load(directory.pagination.page, directory.search);
       } else {
         await request(ADD_CLIENT_URL, {
           method: "POST",
@@ -1122,10 +1020,6 @@ export function ScanTapDashboardWorkspace({
         directory.load(1, "");
       }
     } catch (error) {
-      if ([401, 403].includes(error.status)) {
-        endAdminSession();
-        return;
-      }
       showNotice("error", error.message);
     } finally {
       setSaving(false);
@@ -1143,10 +1037,6 @@ export function ScanTapDashboardWorkspace({
       showNotice("success", `${label} was deleted.`);
       directory.load(directory.pagination.page, directory.search);
     } catch (error) {
-      if ([401, 403].includes(error.status)) {
-        endAdminSession();
-        return;
-      }
       showNotice("error", error.message);
     } finally {
       setDeletingId("");
@@ -1214,30 +1104,12 @@ export function ScanTapDashboardWorkspace({
     );
   };
 
-  if (!auth.checked) {
-    return (
-      <div className={`st-admin st-variant-${variant}`}>
-        <style>{ADMIN_CSS}</style>
-        <div className="st-session-check" role="status">
-          <span className="st-brand-mark">S</span>
-          <strong>Checking administrator session…</strong>
-        </div>
-      </div>
-    );
-  }
-
-  if (!auth.authenticated || auth.role !== "admin") {
-    return <Navigate to="/login" replace />;
-  }
-
   return (
     <div className={`st-admin st-variant-${variant}`}>
       <style>{ADMIN_CSS}</style>
       <Header
         title={titleCopy.title}
         subtitle={titleCopy.subtitle}
-        auth={auth}
-        onLogout={logout}
       />
       <div className="st-workspace">
         <Sidebar
@@ -1322,16 +1194,6 @@ const ADMIN_CSS = `
     letter-spacing: .16em;
   }
   .st-muted { color: var(--muted); }
-  .st-session-check {
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    justify-items: center;
-    gap: 16px;
-    color: var(--muted);
-    background: var(--soft);
-    font-size: 13px;
-  }
 
   .st-login-shell {
     min-height: 100vh;
@@ -1450,7 +1312,7 @@ const ADMIN_CSS = `
     border-color: var(--accent);
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 11%, transparent);
   }
-  .st-password-wrap { position: relative; display: block; }
+  .st-password-wrap { position: relative; }
   .st-password-wrap input { padding-right: 50px; }
   .st-password-wrap button {
     position: absolute;
@@ -1539,21 +1401,6 @@ const ADMIN_CSS = `
   .st-account { display: flex; align-items: center; gap: 14px; }
   .st-account-copy { text-align: right; }
   .st-account-copy strong { font-size: 12px; }
-  .st-logout {
-    min-height: 38px;
-    padding: 8px 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    color: var(--ink);
-    background: white;
-    font-size: 10px;
-    font-weight: 800;
-    cursor: pointer;
-  }
-  .st-logout .st-icon { width: 15px; height: 15px; }
   .st-icon-button {
     min-height: 38px;
     padding: 8px 11px;
@@ -1768,6 +1615,18 @@ const ADMIN_CSS = `
   .st-mini-profile > span:nth-child(2), .st-profile-cell > span:nth-child(2) { min-width: 0; display: grid; }
   .st-mini-profile strong, .st-profile-cell strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
   .st-mini-profile small, .st-profile-cell small, .st-table td small { color: var(--muted); font-size: 10px; }
+  .st-status {
+    display: inline-flex;
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 999px;
+    color: #0b7652;
+    background: #e7f8f0;
+    font-size: 9px;
+    font-weight: 850;
+  }
+  .st-status.is-off { color: #a15c1b; background: #fff1e2; }
+
   .st-page-intro {
     margin-bottom: 20px;
     display: flex;
@@ -1856,6 +1715,8 @@ const ADMIN_CSS = `
   .st-field.is-wide { grid-column: 1 / -1; }
   .st-field > span b { margin-left: 3px; color: var(--danger); }
   .st-field > small { margin-top: -3px; color: var(--muted); font-size: 9px; }
+  .st-color-input { display: grid; grid-template-columns: 45px 1fr; gap: 7px; }
+  .st-color-input input[type="color"] { height: 43px; padding: 4px; cursor: pointer; }
   .st-save-card {
     position: sticky;
     top: 100px;
@@ -1945,5 +1806,6 @@ const ADMIN_CSS = `
     .st-field.is-wide { grid-column: auto; }
     .st-pagination { justify-content: center; }
     .st-mini-profile { grid-template-columns: 38px 1fr; }
+    .st-mini-profile .st-status { grid-column: 2; }
   }
 `;
