@@ -6,21 +6,17 @@ const API_BASE = (
   ENV.VITE_SCANTAP_API_BASE_URL ||
   "/api"
 ).replace(/\/+$/, "");
-const ADD_CLIENT_URL =
-  ENV.VITE_SCANTAP_ADD_CLIENT_URL ||
-  `${API_BASE}/data/addClient`;
-const DIRECTORY_URL =
-  ENV.VITE_SCANTAP_DIRECTORY_URL || `${API_BASE}/dashboard1`;
+const ADMIN_CLIENTS_URL = `${API_BASE}/data/admin/clients`;
 const PUBLIC_SITE_URL = (
   ENV.VITE_PUBLIC_SITE_URL ||
   (typeof window !== "undefined" ? window.location.origin : "")
 ).replace(/\/+$/, "");
 
 const API = {
-  client: (id) => `${API_BASE}/data/client/${id}`,
-  update: (id) => `${API_BASE}/data/update/${id}`,
-  remove: (id) => `${API_BASE}/data/deleteClient/${id}`,
-  allClients: `${API_BASE}/data/fetchClients`,
+  collection: ADMIN_CLIENTS_URL,
+  client: (id) => `${ADMIN_CLIENTS_URL}/${id}`,
+  update: (id) => `${ADMIN_CLIENTS_URL}/${id}`,
+  remove: (id) => `${ADMIN_CLIENTS_URL}/${id}`,
 };
 
 const socialFields = (key, label) => [
@@ -49,7 +45,6 @@ const FORM_GROUPS = [
       { name: "location", label: "Location / map URL", type: "url" },
       { name: "qr", label: "QR value or URL" },
       { name: "option", label: "Profile template", type: "template", required: true },
-      { name: "flag", label: "Profile status", type: "status" },
       {
         name: "password",
         label: "Login password",
@@ -141,7 +136,6 @@ const PROFILE_FIELD_NAMES = FORM_GROUPS.flatMap((group) =>
 const createEmptyProfile = () => {
   const profile = Object.fromEntries(PROFILE_FIELD_NAMES.map((name) => [name, ""]));
   profile.option = "1";
-  profile.flag = true;
   profile.visitCount = 5;
   return profile;
 };
@@ -154,7 +148,6 @@ const normaliseProfile = (source = {}) => {
       profile[name] = source[name];
     }
   });
-  profile.flag = source.flag !== false;
   profile.option = String(source.option || "1");
   profile.visitCount = Number(source.visitCount || 0);
   profile.password = "";
@@ -165,9 +158,7 @@ const profilePayload = (profile, editing) => {
   const payload = {};
   PROFILE_FIELD_NAMES.forEach((name) => {
     if (editing && name === "password" && !profile.password) return;
-    if (name === "flag") {
-      payload[name] = profile[name] !== false;
-    } else if (name === "visitCount") {
+    if (name === "visitCount") {
       payload[name] = Number(profile[name] || 0);
     } else {
       payload[name] = profile[name] ?? "";
@@ -213,7 +204,7 @@ async function request(url, options = {}) {
 
 function useDirectory(enabled) {
   const [items, setItems] = useState([]);
-  const [stats, setStats] = useState({ total: 0, enabled: 0, disabled: 0 });
+  const [stats, setStats] = useState({ total: 0 });
   const [pagination, setPagination] = useState({
     page: 1,
     limit: 8,
@@ -236,9 +227,9 @@ function useDirectory(enabled) {
           limit: String(pagination.limit),
           search: query.trim(),
         });
-        const result = await request(`${DIRECTORY_URL}?${params.toString()}`);
+        const result = await request(`${API.collection}?${params.toString()}`);
         setItems((result.items || []).map(safeDirectoryItem));
-        setStats(result.stats || { total: 0, enabled: 0, disabled: 0 });
+        setStats(result.stats || { total: 0 });
         setPagination(
           result.pagination || {
             page,
@@ -248,36 +239,7 @@ function useDirectory(enabled) {
           },
         );
       } catch (directoryError) {
-        try {
-          const all = await request(API.allClients);
-          const cleaned = (Array.isArray(all) ? all : []).map(safeDirectoryItem);
-          const term = query.trim().toLowerCase();
-          const filtered = term
-            ? cleaned.filter((item) =>
-                [item.companyName, item.name, item.clientName, item.email]
-                  .filter(Boolean)
-                  .some((value) => String(value).toLowerCase().includes(term)),
-              )
-            : cleaned;
-          const limit = pagination.limit;
-          const totalPages = Math.max(1, Math.ceil(filtered.length / limit));
-          const safePage = Math.min(Math.max(1, page), totalPages);
-          const offset = (safePage - 1) * limit;
-          setItems(filtered.slice(offset, offset + limit));
-          setStats({
-            total: cleaned.length,
-            enabled: cleaned.filter((item) => item.flag !== false).length,
-            disabled: cleaned.filter((item) => item.flag === false).length,
-          });
-          setPagination({
-            page: safePage,
-            limit,
-            total: filtered.length,
-            totalPages,
-          });
-        } catch (fallbackError) {
-          setError(fallbackError.message || directoryError.message);
-        }
+        setError(directoryError.message);
       } finally {
         setLoading(false);
       }
@@ -480,15 +442,15 @@ function Overview({
           tone="blue"
         />
         <StatCard
-          label="Enabled"
-          value={loading ? "—" : stats.enabled}
-          note="Visible public profiles"
+          label="Profiles in view"
+          value={loading ? "—" : items.length}
+          note="Loaded on this page"
           tone="green"
         />
         <StatCard
-          label="Disabled"
-          value={loading ? "—" : stats.disabled}
-          note="Currently hidden"
+          label="Templates"
+          value="37"
+          note="Available profile layouts"
           tone="orange"
         />
         <StatCard
@@ -527,9 +489,6 @@ function Overview({
               <span>
                 <strong>{item.name || item.clientName || "Untitled profile"}</strong>
                 <small>Template {item.option || "—"}</small>
-              </span>
-              <span className={`st-status ${item.flag === false ? "is-off" : ""}`}>
-                {item.flag === false ? "Disabled" : "Enabled"}
               </span>
             </button>
           ))}
@@ -596,7 +555,6 @@ function Directory({
                 <th>Contact</th>
                 <th>Template</th>
                 <th>Visits</th>
-                <th>Status</th>
                 <th aria-label="Actions" />
               </tr>
             </thead>
@@ -629,13 +587,6 @@ function Directory({
                   </td>
                   <td>{Number(item.visitCount || 0).toLocaleString()}</td>
                   <td>
-                    <span
-                      className={`st-status ${item.flag === false ? "is-off" : ""}`}
-                    >
-                      {item.flag === false ? "Disabled" : "Enabled"}
-                    </span>
-                  </td>
-                  <td>
                     <div className="st-row-actions">
                       <button
                         type="button"
@@ -659,7 +610,7 @@ function Directory({
               ))}
               {!directory.loading && !directory.items.length && (
                 <tr>
-                  <td colSpan="6">
+                  <td colSpan="5">
                     <div className="st-empty">No matching profiles found.</div>
                   </td>
                 </tr>
@@ -702,6 +653,7 @@ function Directory({
 
 function Field({ field, value, onChange, editing }) {
   const id = `profile-${field.name}`;
+  const [showPassword, setShowPassword] = useState(false);
 
   if (field.type === "textarea") {
     return (
@@ -746,19 +698,33 @@ function Field({ field, value, onChange, editing }) {
     );
   }
 
-  if (field.type === "status") {
+  if (field.type === "password") {
     return (
       <label className="st-field" htmlFor={id}>
-        <span>{field.label}</span>
-        <select
-          id={id}
-          name={field.name}
-          value={value === false ? "false" : "true"}
-          onChange={onChange}
-        >
-          <option value="true">Enabled</option>
-          <option value="false">Disabled</option>
-        </select>
+        <span>
+          {field.label}
+          {!editing && <b>*</b>}
+        </span>
+        <div className="st-password-input">
+          <input
+            id={id}
+            type={showPassword ? "text" : "password"}
+            name={field.name}
+            value={value ?? ""}
+            onChange={onChange}
+            required={!editing}
+            autoComplete="new-password"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword((current) => !current)}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            aria-pressed={showPassword}
+          >
+            <Icon name="eye" />
+          </button>
+        </div>
+        {field.hint && <small>{field.hint}</small>}
       </label>
     );
   }
@@ -828,11 +794,7 @@ function ProfileForm({
     setProfile((current) => ({
       ...current,
       [name]:
-        name === "flag"
-          ? value === "true"
-          : name === "visitCount"
-            ? value.replace(/[^\d]/g, "")
-            : value,
+        name === "visitCount" ? value.replace(/[^\d]/g, "") : value,
     }));
   };
 
@@ -1011,7 +973,7 @@ export function ScanTapDashboardWorkspace({
         });
         showNotice("success", "Profile changes saved successfully.");
       } else {
-        await request(ADD_CLIENT_URL, {
+        await request(API.collection, {
           method: "POST",
           body: JSON.stringify(payload),
         });
@@ -1590,7 +1552,7 @@ const ADMIN_CSS = `
     border: 1px solid var(--line);
     border-radius: 13px;
     display: grid;
-    grid-template-columns: 42px 1fr auto;
+    grid-template-columns: 42px 1fr;
     align-items: center;
     gap: 11px;
     color: var(--ink);
@@ -1615,18 +1577,6 @@ const ADMIN_CSS = `
   .st-mini-profile > span:nth-child(2), .st-profile-cell > span:nth-child(2) { min-width: 0; display: grid; }
   .st-mini-profile strong, .st-profile-cell strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
   .st-mini-profile small, .st-profile-cell small, .st-table td small { color: var(--muted); font-size: 10px; }
-  .st-status {
-    display: inline-flex;
-    width: fit-content;
-    padding: 5px 8px;
-    border-radius: 999px;
-    color: #0b7652;
-    background: #e7f8f0;
-    font-size: 9px;
-    font-weight: 850;
-  }
-  .st-status.is-off { color: #a15c1b; background: #fff1e2; }
-
   .st-page-intro {
     margin-bottom: 20px;
     display: flex;
@@ -1717,6 +1667,25 @@ const ADMIN_CSS = `
   .st-field > small { margin-top: -3px; color: var(--muted); font-size: 9px; }
   .st-color-input { display: grid; grid-template-columns: 45px 1fr; gap: 7px; }
   .st-color-input input[type="color"] { height: 43px; padding: 4px; cursor: pointer; }
+  .st-password-input { position: relative; }
+  .st-password-input input { width: 100%; padding-right: 48px; }
+  .st-password-input button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    background: transparent;
+    cursor: pointer;
+  }
+  .st-password-input button:hover { color: var(--accent); background: var(--soft); }
+  .st-password-input .st-icon { width: 18px; height: 18px; }
   .st-save-card {
     position: sticky;
     top: 100px;
@@ -1806,6 +1775,5 @@ const ADMIN_CSS = `
     .st-field.is-wide { grid-column: auto; }
     .st-pagination { justify-content: center; }
     .st-mini-profile { grid-template-columns: 38px 1fr; }
-    .st-mini-profile .st-status { grid-column: 2; }
   }
 `;
