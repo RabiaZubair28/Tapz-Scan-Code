@@ -5,6 +5,297 @@ const Client = require("../models/client-model.js");
 const Review = require("../models/review-model.js");
 const RafaReview = require("../models/rafaReview.model.js");
 const mongoose = require("mongoose");
+const {
+  hashPassword,
+  requireAdminAccess,
+} = require("../middlewares/auth-middleware");
+
+const TEMPLATE_COLORS = [
+  ["#ffb8d6", "#f6ece9"],
+  ["#16215c", "#ffffff"],
+  ["#544e66", "#1f153d"],
+  ["#030712", "#374151"],
+  ["#4e867e", "#e6eaea"],
+  ["#111827", "#f9fafb"],
+  ["#1d8eb7", "#ffffff"],
+  ["#16215c", "#a3c24e"],
+  ["#16215c", "#f2b0b4"],
+  ["#111827", "#c79d3d"],
+  ["#ffffff", "#c79d3d"],
+  ["#bdbdbd", "#c79d3d"],
+  ["#111111", "#c79d3d"],
+  ["#38572e", "#111827"],
+  ["#38572e", "#868e52"],
+  ["#6d7c3f", "#fafcee"],
+  ["#4c9537", "#aee19f"],
+  ["#f9d6cd", "#f6ece9"],
+  ["#784330", "#957a71"],
+  ["#b10000", "#f5e7c8"],
+  ["#c12c2c", "#fab23f"],
+  ["#9e201c", "#f4e7e6"],
+  ["#1e2533", "#c79d3d"],
+  ["#111827", "#38572e"],
+  ["#000000", "#ffffff"],
+  ["#231f20", "#38572e"],
+  ["#000000", "#b89a64"],
+  ["#65141a", "#f0d3b5"],
+  ["#111827", "#6b7280"],
+  ["#000000", "#b89a64"],
+  ["#111827", "#9ca3af"],
+  ["#000000", "#b89a64"],
+  ["#1f7a3f", "#ffffff"],
+  ["#d4a84e", "#fff7dd"],
+  ["#000000", "#b89a64"],
+  ["#000000", "#fef485"],
+  ["#5d0618", "#ead9c9"],
+];
+
+const DASHBOARD_SYSTEM_FIELDS = new Set([
+  "_id",
+  "__v",
+  "password",
+  "flag",
+  "color01",
+  "color02",
+  "color03",
+]);
+const DASHBOARD_EDITABLE_FIELDS = Object.keys(Client.schema.paths).filter(
+  (field) => !DASHBOARD_SYSTEM_FIELDS.has(field),
+);
+
+const escapeRegex = (value) =>
+  String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const dashboardClientJson = (client) => {
+  const result = client.toJSON();
+  delete result.flag;
+  return result;
+};
+
+const cleanDashboardBody = (body, creating = false) => {
+  const result = {};
+
+  DASHBOARD_EDITABLE_FIELDS.forEach((field) => {
+    if (!Object.prototype.hasOwnProperty.call(body, field)) return;
+    if (field === "visitCount") {
+      result.visitCount = Math.max(0, Number(body.visitCount || 0));
+    } else {
+      result[field] = String(body[field] ?? "").trim();
+    }
+  });
+
+  if (Object.prototype.hasOwnProperty.call(result, "email")) {
+    result.email = result.email.toLowerCase();
+  }
+
+  if (Object.prototype.hasOwnProperty.call(result, "companyName")) {
+    result.companyName = result.companyName.replace(/\s+/g, "-");
+  }
+
+  if (Object.prototype.hasOwnProperty.call(result, "option")) {
+    const option = Number.parseInt(result.option, 10);
+    if (!Number.isInteger(option) || option < 1 || option > 37) {
+      const error = new Error("Template option must be between 1 and 37.");
+      error.status = 400;
+      throw error;
+    }
+    result.option = String(option);
+    [result.color01, result.color02] = TEMPLATE_COLORS[option - 1];
+  } else if (creating) {
+    result.option = "1";
+    [result.color01, result.color02] = TEMPLATE_COLORS[0];
+  }
+
+  return result;
+};
+
+const validateDashboardIdentity = async (
+  { email, companyName },
+  excludeId = null,
+) => {
+  if (email) {
+    const existingEmail = await Client.findOne({
+      email: { $regex: `^${escapeRegex(email)}$`, $options: "i" },
+      ...(excludeId ? { _id: { $ne: excludeId } } : {}),
+    }).select("_id");
+    if (existingEmail) {
+      const error = new Error("A profile with this email already exists.");
+      error.status = 409;
+      throw error;
+    }
+  }
+
+  if (companyName) {
+    const existingCompany = await Client.findOne({
+      companyName: {
+        $regex: `^${escapeRegex(companyName)}$`,
+        $options: "i",
+      },
+      ...(excludeId ? { _id: { $ne: excludeId } } : {}),
+    }).select("_id");
+    if (existingCompany) {
+      const error = new Error("This profile URL name is already in use.");
+      error.status = 409;
+      throw error;
+    }
+  }
+};
+
+const requireDashboardObjectId = (req, res, next) => {
+  if (!mongoose.isValidObjectId(req.params.id)) {
+    return res.status(400).json({ message: "Invalid client ID." });
+  }
+  next();
+};
+
+// Dashboard 02: paginated client directory.
+router.get("/admin/clients", requireAdminAccess, async (req, res, next) => {
+  try {
+    const page = Math.max(1, Number.parseInt(req.query.page || "1", 10));
+    const limit = Math.min(
+      100,
+      Math.max(1, Number.parseInt(req.query.limit || "12", 10)),
+    );
+    const search = String(req.query.search || "").trim();
+    const query = {};
+
+    if (search) {
+      const regex = new RegExp(escapeRegex(search), "i");
+      query.$or = [
+        { companyName: regex },
+        { name: regex },
+        { clientName: regex },
+        { email: regex },
+      ];
+    }
+    const [items, total] = await Promise.all([
+      Client.find(query)
+        .select("-flag")
+        .sort({ _id: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .lean(),
+      Client.countDocuments(query),
+    ]);
+
+    res.status(200).json({
+      items,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.max(1, Math.ceil(total / limit)),
+      },
+      stats: {
+        total,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Dashboard 02: load one client by MongoDB ID.
+router.get(
+  "/admin/clients/:id",
+  requireDashboardObjectId,
+  requireAdminAccess,
+  async (req, res, next) => {
+    try {
+      const client = await Client.findById(req.params.id)
+        .select("-flag")
+        .lean();
+      if (!client) {
+        return res.status(404).json({ message: "Client not found." });
+      }
+      res.status(200).json(client);
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
+// Dashboard 02: create a profile.
+router.post("/admin/clients", requireAdminAccess, async (req, res, next) => {
+  try {
+    const payload = cleanDashboardBody(req.body, true);
+    const password = String(req.body.password || "");
+
+    if (!payload.companyName || !payload.email || !password) {
+      return res.status(400).json({
+        message: "Profile URL name, email and password are required.",
+      });
+    }
+
+    await validateDashboardIdentity(payload);
+    payload.password = await hashPassword(password);
+
+    const client = await Client.create(payload);
+    res.status(201).json({
+      message: "Profile created successfully.",
+      client: dashboardClientJson(client),
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+const updateDashboardClient = async (req, res, next) => {
+  try {
+    const payload = cleanDashboardBody(req.body);
+    const password = String(req.body.password || "");
+
+    await validateDashboardIdentity(payload, req.params.id);
+    if (password) payload.password = await hashPassword(password);
+
+    const client = await Client.findByIdAndUpdate(
+      req.params.id,
+      { $set: payload },
+      { new: true, runValidators: true },
+    );
+
+    if (!client) {
+      return res.status(404).json({ message: "Client not found." });
+    }
+
+    res.status(200).json({
+      message: "Profile updated successfully.",
+      client: dashboardClientJson(client),
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+router.patch(
+  "/admin/clients/:id",
+  requireDashboardObjectId,
+  requireAdminAccess,
+  updateDashboardClient,
+);
+router.put(
+  "/admin/clients/:id",
+  requireDashboardObjectId,
+  requireAdminAccess,
+  updateDashboardClient,
+);
+
+router.delete(
+  "/admin/clients/:id",
+  requireDashboardObjectId,
+  requireAdminAccess,
+  async (req, res, next) => {
+    try {
+      const client = await Client.findByIdAndDelete(req.params.id);
+      if (!client) {
+        return res.status(404).json({ message: "Client not found." });
+      }
+      res.status(200).json({ message: "Client deleted successfully." });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
 
 // GET all reviews
 router.route("/reviews").get(async (req, res) => {
@@ -1231,5 +1522,7 @@ router.delete("/deleteClient/:id", async (req, res) => {
   await Client.findByIdAndDelete(id);
   res.status(200).json({ message: "Client deleted" });
 });
+
+router.use(require("../middlewares/error-middleware.js"));
 
 module.exports = router;

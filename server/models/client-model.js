@@ -321,6 +321,7 @@ const clientSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    select: false,
   },
   visitCount: {
     type: Number,
@@ -330,5 +331,13 @@ const clientSchema = new mongoose.Schema({
   },
 });
 
-const Client = new mongoose.model("Client", clientSchema);
+const removePrivateFields = (_, result) => {
+  delete result.password;
+  return result;
+};
+
+clientSchema.set("toJSON", { transform: removePrivateFields });
+clientSchema.set("toObject", { transform: removePrivateFields });
+
+const Client = mongoose.model("Client", clientSchema, "clients");
 module.exports = Client;

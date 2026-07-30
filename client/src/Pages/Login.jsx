@@ -1,7 +1,13 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+
+const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_SCANTAP_API_BASE_URL ||
+  "https://scantap.onrender.com/api"
+).replace(/\/$/, "");
+
 function Login() {
   const [user, setUser] = useState({
     email: "",
@@ -12,6 +18,7 @@ function Login() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,29 +29,39 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    setIsSubmitting(true);
+    setSubmitSuccess(null);
+    setMessage("");
+
     try {
-      const response = await fetch("https://www.scan-taps.com/api/auth/login", {
+      const response = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user), // Correctly send the user object as JSON
+        body: JSON.stringify(user),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        console.log("Login successful:", data);
-        if (data.userId == "679d0388338c8b03276c7ae2") {
-          navigate(`/dashboard/${data.userId}`);
+        setSubmitSuccess(true);
+        setMessage(data.message || "Login successful.");
+        if (data.role === "admin") {
+          navigate("/dashboard02", { replace: true });
         } else {
           navigate(`/edit/${data.userId}`);
         }
       } else {
-        console.log("Login failed:", data.message);
-        alert(data.message || "Invalid credentials");
+        setSubmitSuccess(false);
+        setMessage(data.message || "Invalid email or password.");
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      setSubmitSuccess(false);
+      setMessage(
+        error.message || "Could not connect to the server. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -130,16 +147,42 @@ function Login() {
                     required
                   />
                 </div>
-                <div>
+                <div className="relative">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Password"
                     name="password"
                     value={user.password}
                     onChange={handleInput}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1a237e] focus:ring-2 focus:ring-[#1a237e] focus:ring-opacity-20 transition-all text-[#1a237e] placeholder-gray-400"
+                    className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 focus:border-[#1a237e] focus:ring-2 focus:ring-[#1a237e] focus:ring-opacity-20 transition-all text-[#1a237e] placeholder-gray-400"
+                    autoComplete="current-password"
                     required
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((visible) => !visible)}
+                    className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-[#1a237e]"
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    title={showPassword ? "Hide password" : "Show password"}
+                  >
+                    <svg
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d={
+                          showPassword
+                            ? "M3 3l18 18M10.6 10.7a2 2 0 0 0 2.7 2.7M9.9 4.2A10.8 10.8 0 0 1 12 4c7 0 10 8 10 8a17.8 17.8 0 0 1-2.2 3.5M6.6 6.7C3.5 8.7 2 12 2 12s3 8 10 8a10.7 10.7 0 0 0 5.2-1.3"
+                            : "M2 12s3-8 10-8 10 8 10 8-3 8-10 8S2 12 2 12Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        }
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
