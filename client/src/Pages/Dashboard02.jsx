@@ -13,6 +13,9 @@ const PUBLIC_SITE_URL = (
 ).replace(/\/+$/, "");
 
 const API = {
+  login: `${API_BASE}/auth/login`,
+  logout: `${API_BASE}/auth/logout`,
+  session: `${API_BASE}/auth/session`,
   collection: ADMIN_CLIENTS_URL,
   client: (id) => `${ADMIN_CLIENTS_URL}/${id}`,
   update: (id) => `${ADMIN_CLIENTS_URL}/${id}`,
@@ -197,7 +200,11 @@ async function request(url, options = {}) {
   }
 
   if (!response.ok) {
-    throw new Error(messageFromResponse(data, `Request failed (${response.status})`));
+    const error = new Error(
+      messageFromResponse(data, `Request failed (${response.status})`),
+    );
+    error.status = response.status;
+    throw error;
   }
   return data;
 }
@@ -304,7 +311,119 @@ function Alert({ notice, onClose }) {
   );
 }
 
-function Header({ title, subtitle }) {
+function LoginPanel({ onLogin, busy, notice, onDismissNotice, variant }) {
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const submit = (event) => {
+    event.preventDefault();
+    onLogin(credentials, () =>
+      setCredentials((current) => ({ ...current, password: "" })),
+    );
+  };
+
+  return (
+    <main className="st-login-shell">
+      <section className="st-login-story">
+        <div className="st-brand-mark" aria-hidden="true">
+          S
+        </div>
+        <p className="st-eyebrow">SCAN TAP CONTROL CENTRE</p>
+        <h1>
+          One login.
+          <br />
+          Every profile detail.
+        </h1>
+        <p className="st-login-copy">
+          Create profiles, edit live information and switch any public profile
+          between templates 1–37 from one coherent workspace.
+        </p>
+        <div className="st-login-points">
+          <span>Administrator only</span>
+          <span>37 templates</span>
+          <span>Secure session</span>
+        </div>
+        <div className="st-orbit st-orbit-one" />
+        <div className="st-orbit st-orbit-two" />
+      </section>
+
+      <section className="st-login-panel">
+        <div className="st-login-card">
+          <div className="st-mobile-brand">
+            <span className="st-brand-mark">S</span>
+            <strong>ScanTap</strong>
+          </div>
+          <div className="st-login-icon">
+            <Icon name="lock" />
+          </div>
+          <p className="st-kicker">
+            {variant === "portal" ? "PROFILE MANAGEMENT PORTAL" : "ADMIN WORKSPACE"}
+          </p>
+          <h2>Administrator sign in</h2>
+          <p className="st-muted">
+            Only the administrator account configured on the server can open
+            this dashboard.
+          </p>
+
+          <Alert notice={notice} onClose={onDismissNotice} />
+
+          <form onSubmit={submit} className="st-login-form">
+            <label>
+              <span>Administrator email</span>
+              <input
+                type="email"
+                autoComplete="username"
+                value={credentials.email}
+                onChange={(event) =>
+                  setCredentials((current) => ({
+                    ...current,
+                    email: event.target.value,
+                  }))
+                }
+                placeholder="admin@example.com"
+                required
+              />
+            </label>
+            <label>
+              <span>Password</span>
+              <div className="st-password-wrap">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
+                  value={credentials.password}
+                  onChange={(event) =>
+                    setCredentials((current) => ({
+                      ...current,
+                      password: event.target.value,
+                    }))
+                  }
+                  placeholder="Enter your password"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((current) => !current)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  <Icon name="eye" />
+                </button>
+              </div>
+            </label>
+            <button className="st-primary st-login-submit" type="submit" disabled={busy}>
+              {busy ? "Verifying…" : "Sign in securely"}
+              {!busy && <Icon name="arrow" />}
+            </button>
+          </form>
+          <p className="st-login-note">
+            Normal profile accounts cannot access this dashboard.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function Header({ title, subtitle, adminEmail, onLogout }) {
   return (
     <header className="st-header">
       <div className="st-header-brand">
@@ -320,9 +439,13 @@ function Header({ title, subtitle }) {
       </div>
       <div className="st-account">
         <div className="st-account-copy">
-          <strong>Profile workspace</strong>
-          <small>Create and manage clients</small>
+          <strong>Administrator</strong>
+          <small>{adminEmail || "Secure workspace"}</small>
         </div>
+        <button type="button" className="st-icon-button" onClick={onLogout}>
+          <Icon name="logout" />
+          <span>Log out</span>
+        </button>
       </div>
     </header>
   );
@@ -910,6 +1033,11 @@ export function ScanTapDashboardWorkspace({
   pageTitle = "Dashboard",
   pageSubtitle = "Create, Update & Manage Profiles",
 }) {
+  const [authState, setAuthState] = useState({
+    checking: true,
+    isAdmin: false,
+    email: "",
+  });
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [profile, setProfile] = useState(createEmptyProfile);
   const [profileId, setProfileId] = useState("");
@@ -918,12 +1046,99 @@ export function ScanTapDashboardWorkspace({
   const [saving, setSaving] = useState(false);
   const [deletingId, setDeletingId] = useState("");
   const [notice, setNotice] = useState(null);
-  const directory = useDirectory(true);
+  const directory = useDirectory(authState.isAdmin);
 
   const showNotice = useCallback((type, message) => {
     setNotice({ type, message });
     window.setTimeout(() => setNotice(null), 5000);
   }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    request(API.session)
+      .then((session) => {
+        if (!active) return;
+
+        const isAdmin =
+          session?.authenticated === true && session?.role === "admin";
+        setAuthState({
+          checking: false,
+          isAdmin,
+          email: isAdmin ? String(session.email || "") : "",
+        });
+
+        if (session?.authenticated && !isAdmin) {
+          setNotice({
+            type: "error",
+            message:
+              "This account is a normal profile account. Administrator access is required.",
+          });
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setAuthState({ checking: false, isAdmin: false, email: "" });
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const login = async (credentials, clearPassword) => {
+    setBusy(true);
+    setNotice(null);
+
+    try {
+      const result = await request(API.login, {
+        method: "POST",
+        body: JSON.stringify({
+          email: credentials.email.trim(),
+          password: credentials.password,
+        }),
+      });
+
+      if (result?.role !== "admin") {
+        await request(API.logout, { method: "POST" }).catch(() => {});
+        throw new Error(
+          "This is a normal profile account. Only the administrator can access this dashboard.",
+        );
+      }
+
+      clearPassword();
+      setAuthState({
+        checking: false,
+        isAdmin: true,
+        email: credentials.email.trim(),
+      });
+      setActiveTab(defaultTab);
+      showNotice("success", "Administrator access verified.");
+    } catch (error) {
+      setAuthState({ checking: false, isAdmin: false, email: "" });
+      showNotice("error", error.message || "Invalid administrator credentials.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const logout = async () => {
+    setBusy(true);
+    try {
+      await request(API.logout, { method: "POST" });
+    } catch {
+      // Clear the local view even if the server session already expired.
+    } finally {
+      setAuthState({ checking: false, isAdmin: false, email: "" });
+      setProfile(createEmptyProfile());
+      setProfileId("");
+      setFormMode("create");
+      setActiveTab(defaultTab);
+      setNotice(null);
+      setBusy(false);
+    }
+  };
 
   const editProfile = useCallback(
     async (id) => {
@@ -1012,6 +1227,33 @@ export function ScanTapDashboardWorkspace({
     return { title: pageTitle, subtitle: pageSubtitle || "Portfolio operations" };
   }, [pageSubtitle, pageTitle, variant]);
 
+  if (authState.checking) {
+    return (
+      <div className={`st-admin st-variant-${variant}`}>
+        <style>{ADMIN_CSS}</style>
+        <div className="st-auth-check" role="status">
+          <span className="st-brand-mark">S</span>
+          <strong>Checking administrator access…</strong>
+        </div>
+      </div>
+    );
+  }
+
+  if (!authState.isAdmin) {
+    return (
+      <div className={`st-admin st-variant-${variant}`}>
+        <style>{ADMIN_CSS}</style>
+        <LoginPanel
+          onLogin={login}
+          busy={busy}
+          notice={notice}
+          onDismissNotice={() => setNotice(null)}
+          variant={variant}
+        />
+      </div>
+    );
+  }
+
   const renderContent = () => {
     if (activeTab === "editor") {
       return (
@@ -1072,6 +1314,8 @@ export function ScanTapDashboardWorkspace({
       <Header
         title={titleCopy.title}
         subtitle={titleCopy.subtitle}
+        adminEmail={authState.email}
+        onLogout={logout}
       />
       <div className="st-workspace">
         <Sidebar
@@ -1156,6 +1400,17 @@ const ADMIN_CSS = `
     letter-spacing: .16em;
   }
   .st-muted { color: var(--muted); }
+
+  .st-auth-check {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 18px;
+    color: var(--muted);
+    background: var(--soft);
+  }
+  .st-auth-check strong { font-size: 14px; }
 
   .st-login-shell {
     min-height: 100vh;

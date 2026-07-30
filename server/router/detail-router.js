@@ -140,6 +140,9 @@ const validateDashboardIdentity = async (
   }
 };
 
+const normalizeIdentityValue = (value) =>
+  String(value || "").trim().toLowerCase();
+
 const requireDashboardObjectId = (req, res, next) => {
   if (!mongoose.isValidObjectId(req.params.id)) {
     return res.status(400).json({ message: "Invalid client ID." });
@@ -197,8 +200,8 @@ router.get("/admin/clients", requireAdminAccess, async (req, res, next) => {
 // Dashboard 02: load one client by MongoDB ID.
 router.get(
   "/admin/clients/:id",
-  requireDashboardObjectId,
   requireAdminAccess,
+  requireDashboardObjectId,
   async (req, res, next) => {
     try {
       const client = await Client.findById(req.params.id)
@@ -244,7 +247,34 @@ const updateDashboardClient = async (req, res, next) => {
     const payload = cleanDashboardBody(req.body);
     const password = String(req.body.password || "");
 
-    await validateDashboardIdentity(payload, req.params.id);
+    const existingClient = await Client.findById(req.params.id)
+      .select("email companyName")
+      .lean();
+
+    if (!existingClient) {
+      return res.status(404).json({ message: "Client not found." });
+    }
+
+    // Only run uniqueness checks when an identity value is actually changed.
+    // This allows legacy profiles that already share an email to be edited
+    // without falsely treating the profile's own unchanged email as a conflict.
+    const changedIdentity = {};
+    if (
+      Object.prototype.hasOwnProperty.call(payload, "email") &&
+      normalizeIdentityValue(payload.email) !==
+        normalizeIdentityValue(existingClient.email)
+    ) {
+      changedIdentity.email = payload.email;
+    }
+    if (
+      Object.prototype.hasOwnProperty.call(payload, "companyName") &&
+      normalizeIdentityValue(payload.companyName) !==
+        normalizeIdentityValue(existingClient.companyName)
+    ) {
+      changedIdentity.companyName = payload.companyName;
+    }
+
+    await validateDashboardIdentity(changedIdentity, existingClient._id);
     if (password) payload.password = await hashPassword(password);
 
     const client = await Client.findByIdAndUpdate(
@@ -268,21 +298,21 @@ const updateDashboardClient = async (req, res, next) => {
 
 router.patch(
   "/admin/clients/:id",
-  requireDashboardObjectId,
   requireAdminAccess,
+  requireDashboardObjectId,
   updateDashboardClient,
 );
 router.put(
   "/admin/clients/:id",
-  requireDashboardObjectId,
   requireAdminAccess,
+  requireDashboardObjectId,
   updateDashboardClient,
 );
 
 router.delete(
   "/admin/clients/:id",
-  requireDashboardObjectId,
   requireAdminAccess,
+  requireDashboardObjectId,
   async (req, res, next) => {
     try {
       const client = await Client.findByIdAndDelete(req.params.id);
