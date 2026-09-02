@@ -91,7 +91,7 @@ const LinkCard = ({ icon, label, value, href }) => {
   const body = (
     <div className="flex w-full items-center justify-between gap-3 px-4 py-3.5">
       <div className="flex min-w-0 items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#b58a12] bg-white/35 text-[#704753] shadow-[0_4px_12px_rgba(90,49,64,0.10)]">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-[0_4px_12px_rgba(90,49,64,0.10)]">
           {icon}
         </div>
         <div className="min-w-0 text-left">
@@ -458,7 +458,6 @@ const Profile38 = () => {
     description,
     clientName,
     designation,
-    address,
     logo,
     images,
     services,
@@ -490,6 +489,10 @@ const Profile38 = () => {
 
   const firstPhone = client.phone01 || client.telephone01;
   const firstWhatsapp = normalizeWhatsApp(client.whatsapp01);
+  const firstInstagram = externalHref(client.instagramLink || client.instagramLink02 || client.instagramLink03);
+  const firstSnapchat = externalHref(client.snapchatLink || client.snapchatLink02 || client.snapchatLink03);
+  const firstFacebook = externalHref(client.facebookLink || client.facebookLink02 || client.facebookLink03);
+  const firstTiktok = externalHref(client.tiktokLink || client.tiktokLink02 || client.tiktokLink03);
   const canonicalUrl = `https://www.scan-taps.com/${companyName || clientId}`;
 
   return (
@@ -515,7 +518,7 @@ const Profile38 = () => {
           className="fixed inset-0 z-50 flex items-center justify-center px-5"
           style={{ background: "rgba(58, 42, 47, 0.40)" }}
         >
-          <div className="relative w-full max-w-sm rounded-3xl border-2 border-[#b58a12] bg-[#fff9f6] px-6 pb-7 pt-14 shadow-2xl">
+          <div className="relative w-full max-w-sm rounded-3xl border-2 border-[#b58a12]/80 bg-[#fff9f6] px-6 pb-7 pt-14 shadow-2xl">
             <button
               type="button"
               onClick={() => setShowQr(false)}
@@ -528,7 +531,7 @@ const Profile38 = () => {
             <div className="flex flex-col items-center gap-6">
               <div
                 id="profile36-qr"
-                className="rounded-2xl border border-[#efb8c4] bg-white p-5 shadow"
+                className="rounded-2xl border-2 border-[#b58a12]/80 bg-white p-5 shadow"
               >
                 <QRCodeCanvas value={currentPageUrl} size={190} />
               </div>
@@ -536,7 +539,7 @@ const Profile38 = () => {
               <button
                 type="button"
                 onClick={downloadQr}
-                className="flex items-center gap-2 rounded-xl border border-[#b58a12] bg-white/42 px-5 py-3 font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/75"
+                className="flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/70 px-5 py-3 font-semibold text-[#5a3140] shadow-sm transition hover:bg-white"
               >
                 <FaDownload /> Download QR
               </button>
@@ -575,18 +578,10 @@ const Profile38 = () => {
                   <img
                     src={logo}
                     alt="logo"
-                    className="h-24 w-24 rounded-2xl border-[3px] border-[#b58a12] bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.16)]"
+                    className="h-24 w-24 rounded-2xl border-2 border-[#b58a12]/80 bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.12)]"
                   />
                 </a>
               ) : null}
-
-              <button
-                type="button"
-                onClick={downloadContactCard}
-                className="absolute bottom-3 right-4 flex items-center gap-2 rounded-xl border border-[#b58a12] bg-white/72 px-3.5 py-2.5 text-sm font-bold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.12)] backdrop-blur-sm transition hover:bg-white"
-              >
-                <FaUserPlus size={16} /> Save Contact
-              </button>
             </div>
 
             <div className="px-5">
@@ -602,55 +597,85 @@ const Profile38 = () => {
                     {designation}
                   </p>
                 ) : null}
-                {address ? (
-                  <p className="mt-2 flex items-start gap-2 text-sm font-medium text-[#77545e]">
-                    <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#b58a12]" />
-                    <span>{address}</span>
-                  </p>
-                ) : null}
               </div>
 
               <div className="mt-4 flex items-center justify-between gap-3">
-                <div className="flex gap-2">
-                  {firstPhone ? (
-                    <a
-                      href={`tel:${firstPhone}`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
-                      aria-label="Call"
-                    >
-                      <FaPhoneAlt />
-                    </a>
-                  ) : null}
+                <div className="flex flex-wrap gap-2">
                   {firstWhatsapp ? (
                     <a
                       href={`https://wa.me/${firstWhatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
                       aria-label="WhatsApp"
                     >
                       <FaWhatsapp size={19} />
                     </a>
                   ) : null}
-                  {client.email ? (
+                  {firstInstagram ? (
                     <a
-                      href={`mailto:${client.email}`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
-                      aria-label="Email"
+                      href={firstInstagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
+                      aria-label="Instagram"
                     >
-                      <FaEnvelope />
+                      <FaInstagram size={18} />
+                    </a>
+                  ) : null}
+                  {firstSnapchat ? (
+                    <a
+                      href={firstSnapchat}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
+                      aria-label="Snapchat"
+                    >
+                      <FaSnapchatGhost size={18} />
+                    </a>
+                  ) : null}
+                  {firstFacebook ? (
+                    <a
+                      href={firstFacebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
+                      aria-label="Facebook"
+                    >
+                      <FaFacebookF size={17} />
+                    </a>
+                  ) : null}
+                  {firstTiktok ? (
+                    <a
+                      href={firstTiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
+                      aria-label="TikTok"
+                    >
+                      <FaTiktok size={17} />
                     </a>
                   ) : null}
                 </div>
 
-                <div className="flex items-center gap-2 rounded-full border border-[#f0dfa9] bg-white/40 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2 rounded-full border-2 border-[#b58a12]/80 bg-white/62 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm backdrop-blur-sm">
                   <MdOutlineRemoveRedEye size={18} />
                   {visitCount}
                 </div>
               </div>
 
+              <div className="mt-4 flex justify-start">
+                <button
+                  type="button"
+                  onClick={downloadContactCard}
+                  className="flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/70 px-4 py-2.5 text-sm font-semibold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.08)] backdrop-blur-sm transition hover:bg-white"
+                >
+                  <FaUserPlus size={16} /> Save Contact
+                </button>
+              </div>
+
               {description ? (
-                <div className="mt-4 rounded-2xl border border-[#efb8c4] bg-white/40 px-4 py-4 shadow-[0_5px_16px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                <div className="mt-4 rounded-2xl border-2 border-[#b58a12]/80 bg-white/44 px-4 py-4 shadow-[0_5px_16px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                   <p className="whitespace-pre-line text-left text-sm font-medium leading-6 text-[#4a343a]">
                     {cleanText(description)}
                   </p>
@@ -660,7 +685,7 @@ const Profile38 = () => {
               {linkGroups.map((group) => (
                 <React.Fragment key={group.title}>
                   <DividerTitle>{group.title}</DividerTitle>
-                  <div className="overflow-hidden rounded-2xl border border-[#b58a12]/70 bg-white/42 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                  <div className="overflow-hidden rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {group.items.map((item, index) => (
                       <div
                         key={`${group.title}-${item.label}-${index}`}
@@ -676,7 +701,7 @@ const Profile38 = () => {
               {services ? (
                 <>
                   <DividerTitle>Services</DividerTitle>
-                  <div className="rounded-2xl border border-[#b58a12]/70 bg-white/42 px-4 py-4 text-left shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                  <div className="rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 px-4 py-4 text-left shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {cleanText(services)
                       .split(/\r?\n/)
                       .filter(Boolean)
@@ -696,7 +721,7 @@ const Profile38 = () => {
               {galleryImages.length ? (
                 <>
                   <DividerTitle>Image Gallery</DividerTitle>
-                  <div className="grid grid-cols-2 gap-2 rounded-2xl border border-[#b58a12]/70 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                  <div className="grid grid-cols-2 gap-2 rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {galleryImages.map((image, index) => (
                       <a
                         href={image}
@@ -719,7 +744,7 @@ const Profile38 = () => {
               {location ? (
                 <>
                   <DividerTitle>Location</DividerTitle>
-                  <div className="overflow-hidden rounded-2xl border border-[#b58a12] bg-white/58 shadow-[0_6px_18px_rgba(90,49,64,0.07)]">
+                  <div className="overflow-hidden rounded-2xl border-2 border-[#b58a12]/80 bg-white/58 shadow-[0_6px_18px_rgba(90,49,64,0.07)]">
                     <iframe
                       src={location}
                       title="Location"
@@ -736,22 +761,22 @@ const Profile38 = () => {
               <DividerTitle>Share Profile</DividerTitle>
               <div className="flex flex-wrap justify-center gap-3">
                 <FacebookShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm">
                     <FaFacebookF size={20} />
                   </span>
                 </FacebookShareButton>
                 <LinkedinShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm">
                     <FaLinkedinIn size={20} />
                   </span>
                 </LinkedinShareButton>
                 <TelegramShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm">
                     <FaTelegramPlane size={20} />
                   </span>
                 </TelegramShareButton>
                 <WhatsappShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm">
                     <FaWhatsapp size={21} />
                   </span>
                 </WhatsappShareButton>
@@ -762,7 +787,7 @@ const Profile38 = () => {
                 <button
                   type="button"
                   onClick={() => setShowQr(true)}
-                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
                   aria-label="Show QR"
                 >
                   <IoQrCodeSharp size={28} />
@@ -770,7 +795,7 @@ const Profile38 = () => {
                 <button
                   type="button"
                   onClick={downloadContactCard}
-                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-sm"
                   aria-label="Download contact"
                 >
                   <FaDownload size={23} />
