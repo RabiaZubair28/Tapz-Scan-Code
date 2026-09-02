@@ -552,37 +552,39 @@ const Profile38 = () => {
         style={{ backgroundColor: THEME.petalPink, backgroundImage: PROFILE_GRADIENT, backgroundAttachment: "fixed" }}>
         <article className="relative min-h-screen overflow-hidden bg-transparent pb-8">
           <div className="relative z-10">
-            <div className="relative mb-16 bg-transparent">
-              <a
-                href={images}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full"
-                aria-label="Open cover image"
-              >
-                <img
-                  src={images}
-                  alt="Profile cover"
-                  className="block h-auto max-h-[240px] w-full object-contain"
-                />
-              </a>
+            <div className="bg-transparent">
+  <a
+    href={images}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full"
+    aria-label="Open cover image"
+  >
+    <img
+      src={images}
+      alt="Profile cover"
+      className="block h-auto max-h-[240px] w-full object-contain"
+    />
+  </a>
+</div>
 
-              {logo ? (
-                <a
-                  href={logo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute left-5 -bottom-12"
-                  aria-label="Open profile logo"
-                >
-                  <img
-                    src={logo}
-                    alt="logo"
-                    className="h-24 w-24 rounded-2xl border-2 border-[#b58a12]/80 bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.12)]"
-                  />
-                </a>
-              ) : null}
-            </div>
+{logo ? (
+  <div className="relative z-20 -mt-6 mb-4 px-5">
+    <a
+      href={logo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block"
+      aria-label="Open profile logo"
+    >
+      <img
+        src={logo}
+        alt="logo"
+        className="h-24 w-24 rounded-2xl border-2 border-[#b58a12]/80 bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.12)]"
+      />
+    </a>
+  </div>
+) : null}
 
             <div className="px-5">
               <div className="text-left">
