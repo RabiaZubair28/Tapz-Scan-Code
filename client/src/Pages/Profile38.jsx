@@ -603,7 +603,7 @@ const Profile38 = () => {
                 <p className="font-serif text-[15px] font-bold text-[#5a3140]">
                   {name}
                 </p>
-                <h1 className="mt-1 font-serif text-[23px] font-bold leading-tight text-[#704753]">
+                <h1 className="mt-1 font-serif text-[20px] font-bold leading-tight text-[#704753]">
                   {clientName}
                 </h1>
                 {designation ? (
