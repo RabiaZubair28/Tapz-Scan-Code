@@ -1,216 +1,467 @@
-import React, { useEffect, useState } from "react";
-import ScaleLoader from "react-spinners/ScaleLoader";
+/* PROFILE36_PINK_GOLD_FINAL_20260902 */
+/* COVER: https://res.cloudinary.com/dxokfhkhu/image/upload/v1788082399/v1z2rrrtg8enr7fs4bqa.jpg */
+/* THEME CHECK: #5d0618 pink | #d9aa62 gold */
+import React, { useEffect, useMemo, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import { QRCodeCanvas } from "qrcode.react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
-import { Helmet } from "react-helmet";
+import axios from "axios";
 import {
   FaDownload,
   FaEnvelope,
   FaFacebookF,
-  FaGift,
   FaGlobe,
   FaInstagram,
   FaLinkedinIn,
-  FaPhone,
-  FaPhoneSquareAlt,
-  FaShoppingBag,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaRegStar,
   FaSnapchatGhost,
   FaStar,
-  FaTelegramPlane,
-  FaUtensils,
+  FaUserPlus,
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
-import {
-  FaMapLocation,
-  FaTiktok,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { IoQrCodeSharp } from "react-icons/io5";
-import { MdRemoveRedEye } from "react-icons/md";
-import { SlArrowRight } from "react-icons/sl";
 import { ImCross } from "react-icons/im";
+import { MdMenuBook, MdOutlineRemoveRedEye } from "react-icons/md";
+import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { LuFileText } from "react-icons/lu";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TelegramShareButton,
-  TwitterShareButton,
   WhatsappShareButton,
 } from "react-share";
-import vCardsJS from "vcards-js";
-import axios from "axios";
+import { FaTelegramPlane } from "react-icons/fa";
+
+const PROFILE36_COVER =
+  "https://res.cloudinary.com/dxokfhkhu/image/upload/v1788082399/v1z2rrrtg8enr7fs4bqa.jpg";
 
 const THEME = {
-  page: "linear-gradient(180deg, #fff7fb 0%, #fde8f1 42%, #f8d4e2 100%)",
-  accent: "#c14978",
-  accentDark: "#8f2f58",
-  accentSoft: "#f7d7e4",
-  border: "#dfa3ba",
-  text: "#4b1830",
-  muted: "#8d5a70",
-  card: "#fffafd",
+  pink: "#5d0618",
+  pinkDark: "#470411",
+  pinkText: "#7b1223",
+  pinkSoft: "#a04555",
+  gold: "#d9aa62",
+  goldLight: "#ead9c9",
+  cream: "#fffaf3",
 };
 
-const ProfileLinkCard = ({ href, icon, title, value }) => {
-  if (!href) return null;
+const PINK_GOLD_GRADIENT =
+  "radial-gradient(circle at 18% 0%, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 38%), radial-gradient(circle at 88% 14%, rgba(217,170,98,0.26) 0%, rgba(217,170,98,0) 34%), linear-gradient(180deg, #fff3f7 0%, #f8dbe5 48%, #f8e7df 100%)";
+
+const cleanText = (value = "") =>
+  String(value || "")
+    .replace(/<br\s*\/?\s*>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .trim();
+
+const normalizeWhatsApp = (value = "") =>
+  String(value || "").replace(/[^0-9]/g, "");
+
+const externalHref = (value = "") => {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  if (/^(https?:|mailto:|tel:)/i.test(text)) return text;
+  return `https://${text}`;
+};
+
+const DividerTitle = ({ children }) => (
+  <div className="mb-3 mt-6 flex items-center gap-3">
+    <span className="h-px flex-1 bg-[#d9aa62] opacity-60" />
+    <FaRegStar className="text-[#d9aa62]" size={11} />
+    <span className="font-serif text-[12px] font-bold uppercase tracking-[0.18em] text-[#7b1223]">
+      {children}
+    </span>
+    <FaRegStar className="text-[#d9aa62]" size={11} />
+    <span className="h-px flex-1 bg-[#d9aa62] opacity-60" />
+  </div>
+);
+
+const LinkCard = ({ icon, label, value, href }) => {
+  if (!href && !value) return null;
+
+  const body = (
+    <div className="flex w-full items-center justify-between gap-3 px-4 py-3.5">
+      <div className="flex min-w-0 items-center gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#e8cda7] bg-[#5d0618] text-white shadow-[0_5px_14px_rgba(93,6,24,0.18)]">
+          {icon}
+        </div>
+        <div className="min-w-0 text-left">
+          <div className="font-serif text-[13px] font-bold text-[#4b2630]">
+            {label}
+          </div>
+          {value ? (
+            <div className="mt-0.5 break-all text-[12px] font-medium text-[#a04555]">
+              {value}
+            </div>
+          ) : null}
+        </div>
+      </div>
+      <span className="shrink-0 text-xl font-semibold text-[#d9aa62]">›</span>
+    </div>
+  );
+
+  if (!href) return body;
 
   return (
     <a
       href={href}
-      target="_blank"
+      target={href.startsWith("tel:") || href.startsWith("mailto:") ? undefined : "_blank"}
       rel="noopener noreferrer"
-      className="w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-      style={{
-        backgroundColor: THEME.card,
-        border: `1px solid ${THEME.border}`,
-        color: THEME.text,
-      }}
+      className="block transition duration-200 hover:bg-[#fff4f7]"
     >
-      <div className="flex items-center gap-4 min-w-0">
-        <div
-          className="w-12 h-12 shrink-0 flex items-center justify-center rounded-2xl"
-          style={{ backgroundColor: THEME.accentSoft, color: THEME.accentDark }}
-        >
-          {icon}
-        </div>
-        <div className="min-w-0 text-left">
-          <p className="font-semibold leading-tight" style={{ color: THEME.text }}>
-            {title}
-          </p>
-          {value ? (
-            <p
-              className="text-sm mt-1 break-words"
-              style={{ color: THEME.muted }}
-            >
-              {value}
-            </p>
-          ) : null}
-        </div>
-      </div>
-      <SlArrowRight className="shrink-0" style={{ color: THEME.accentDark }} />
+      {body}
     </a>
   );
 };
 
 const Profile38 = () => {
-  const [showQr, setShowQr] = useState(false);
-  const [client, setClient] = useState("");
+  const { id: clientId } = useParams();
+  const [client, setClient] = useState(null);
   const [loading, setLoading] = useState(true);
   const [visitCount, setVisitCount] = useState(0);
-  const { id: clientId } = useParams();
+  const [showQr, setShowQr] = useState(false);
 
   useEffect(() => {
+    let active = true;
+
     const fetchClient = async () => {
       try {
         const response = await axios.get(
           `https://www.scan-taps.com/api/data/client/${clientId}`,
         );
-        setClient(response.data);
+        if (active) setClient(response.data);
       } catch (error) {
-        console.error("Error fetching client:", error);
+        console.error("Unable to load Profile36 client:", error);
+        if (active) setClient(null);
       } finally {
-        setLoading(false);
+        if (active) setLoading(false);
       }
     };
 
     if (clientId) fetchClient();
     else setLoading(false);
+
+    return () => {
+      active = false;
+    };
   }, [clientId]);
 
+  useEffect(() => {
+    if (!client?._id) return;
+
+    axios
+      .post(`https://www.scan-taps.com/api/visit/${client._id}`)
+      .then((response) => setVisitCount(response.data?.count || 0))
+      .catch((error) =>
+        console.error("Unable to increment Profile36 visit count:", error),
+      );
+  }, [client?._id]);
+
+  const currentPageUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  const downloadContactCard = () => {
+    if (!client) return;
+
+    const phones = [client.phone01, client.phone02, client.phone03]
+      .filter(Boolean)
+      .map((number) => `TEL;TYPE=CELL:${number}`)
+      .join("\n");
+    const telephones = [client.telephone01, client.telephone02, client.telephone03]
+      .filter(Boolean)
+      .map((number) => `TEL;TYPE=WORK:${number}`)
+      .join("\n");
+    const emails = [client.email, client.email02, client.email03]
+      .filter(Boolean)
+      .map((address) => `EMAIL:${address}`)
+      .join("\n");
+
+    const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:${client.clientName || ""};;;;\nFN:${client.clientName || ""}\nORG:${client.name || ""}\nTITLE:${client.designation || ""}\n${phones}\n${telephones}\n${emails}\nURL:${client.website || ""}\nEND:VCARD`;
+
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      window.location.href = url;
+    } else {
+      const link = document.createElement("a");
+      link.download = `${client.clientName || "contact"}.vcf`;
+      link.href = url;
+      link.click();
+    }
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  const downloadQr = async () => {
+    const input = document.getElementById("profile36-qr");
+    if (!input) return;
+
+    const canvas = await html2canvas(input, { backgroundColor: "#ffffff" });
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF();
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    const margin = 20;
+    const scale = Math.min(
+      (pageWidth - margin * 2) / canvas.width,
+      (pageHeight - margin * 2) / canvas.height,
+    );
+    const width = canvas.width * scale;
+    const height = canvas.height * scale;
+
+    pdf.addImage(
+      imgData,
+      "PNG",
+      (pageWidth - width) / 2,
+      (pageHeight - height) / 2,
+      width,
+      height,
+    );
+    pdf.save("QR.pdf");
+  };
+
+  const linkGroups = useMemo(() => {
+    if (!client) return [];
+
+    const rows = [];
+    const push = (group, item) => {
+      if (!item.href && !item.value) return;
+      let existing = rows.find((entry) => entry.title === group);
+      if (!existing) {
+        existing = { title: group, items: [] };
+        rows.push(existing);
+      }
+      existing.items.push(item);
+    };
+
+    [client.phone01, client.phone02, client.phone03].forEach((value, index) => {
+      if (!value) return;
+      push("Contact", {
+        label: `Phone${index ? ` ${index + 1}` : ""}`,
+        value,
+        href: `tel:${value}`,
+        icon: <FaPhoneAlt size={18} />,
+      });
+    });
+
+    [client.telephone01, client.telephone02, client.telephone03].forEach(
+      (value, index) => {
+        if (!value) return;
+        push("Contact", {
+          label: `Telephone${index ? ` ${index + 1}` : ""}`,
+          value,
+          href: `tel:${value}`,
+          icon: <FaPhoneAlt size={18} />,
+        });
+      },
+    );
+
+    [client.whatsapp01, client.whatsapp02, client.whatsapp03].forEach(
+      (value, index) => {
+        const normalized = normalizeWhatsApp(value);
+        if (!normalized) return;
+        push("Contact", {
+          label: `WhatsApp${index ? ` ${index + 1}` : ""}`,
+          value,
+          href: `https://wa.me/${normalized}`,
+          icon: <FaWhatsapp size={20} />,
+        });
+      },
+    );
+
+    [client.email, client.email02, client.email03].forEach((value, index) => {
+      if (!value) return;
+      push("Contact", {
+        label: `Email${index ? ` ${index + 1}` : ""}`,
+        value,
+        href: `mailto:${value}`,
+        icon: <FaEnvelope size={18} />,
+      });
+    });
+
+    const addTriple = (group, label, links, names, icon) => {
+      links.forEach((link, index) => {
+        if (!link) return;
+        push(group, {
+          label: `${label}${index ? ` ${index + 1}` : ""}`,
+          value: cleanText(names[index]) || cleanText(link),
+          href: externalHref(link),
+          icon,
+        });
+      });
+    };
+
+    addTriple(
+      "Social & Online",
+      "Instagram",
+      [client.instagramLink, client.instagramLink02, client.instagramLink03],
+      [client.instagramName, client.instagramName02, client.instagramName03],
+      <FaInstagram size={21} />,
+    );
+    addTriple(
+      "Social & Online",
+      "Snapchat",
+      [client.snapchatLink, client.snapchatLink02, client.snapchatLink03],
+      [client.snapchatName, client.snapchatName02, client.snapchatName03],
+      <FaSnapchatGhost size={21} />,
+    );
+    addTriple(
+      "Social & Online",
+      "YouTube",
+      [client.youtubeLink, client.youtubeLink02, client.youtubeLink03],
+      [client.youtubeName, client.youtubeName02, client.youtubeName03],
+      <FaYoutube size={21} />,
+    );
+    addTriple(
+      "Social & Online",
+      "TikTok",
+      [client.tiktokLink, client.tiktokLink02, client.tiktokLink03],
+      [client.tiktokName, client.tiktokName02, client.tiktokName03],
+      <FaTiktok size={20} />,
+    );
+    addTriple(
+      "Social & Online",
+      "X / Twitter",
+      [client.twitterLink, client.twitterLink02, client.twitterLink03],
+      [client.twitterName, client.twitterName02, client.twitterName03],
+      <FaXTwitter size={19} />,
+    );
+    addTriple(
+      "Social & Online",
+      "Facebook",
+      [client.facebookLink, client.facebookLink02, client.facebookLink03],
+      [client.facebookName, client.facebookName02, client.facebookName03],
+      <FaFacebookF size={19} />,
+    );
+    addTriple(
+      "Social & Online",
+      "Google Review",
+      [
+        client.googleReviewLink,
+        client.googleReviewLink02,
+        client.googleReviewLink03,
+      ],
+      [
+        client.googleReviewName,
+        client.googleReviewName02,
+        client.googleReviewName03,
+      ],
+      <FaStar size={19} />,
+    );
+    addTriple(
+      "Social & Online",
+      "Website",
+      [client.website, client.website02, client.website03],
+      [client.websiteName, client.websiteName02, client.websiteName03],
+      <FaGlobe size={20} />,
+    );
+    addTriple(
+      "Social & Online",
+      "LinkedIn",
+      [
+        client.youtubeShortsLink,
+        client.youtubeShortsLink02,
+        client.youtubeShortsLink03,
+      ],
+      [
+        client.youtubeShortsName,
+        client.youtubeShortsName02,
+        client.youtubeShortsName03,
+      ],
+      <FaLinkedinIn size={20} />,
+    );
+    addTriple(
+      "Locations",
+      "Google Map",
+      [client.googleMapLink, client.googleMapLink02, client.googleMapLink03],
+      [client.googleMapName, client.googleMapName02, client.googleMapName03],
+      <FaMapMarkerAlt size={20} />,
+    );
+
+    if (client.menuLink) {
+      push("Documents & Links", {
+        label: "Menu",
+        value: cleanText(client.menuName) || cleanText(client.menuLink),
+        href: externalHref(client.menuLink),
+        icon: <MdMenuBook size={21} />,
+      });
+    }
+
+    if (client.catalogueLink) {
+      push("Documents & Links", {
+        label: "Catalogue",
+        value: cleanText(client.catalogueName) || cleanText(client.catalogueLink),
+        href: externalHref(client.catalogueLink),
+        icon: <LuFileText size={20} />,
+      });
+    }
+
+    if (client.profileLink01) {
+      push("Documents & Links", {
+        label: "Price List",
+        value: cleanText(client.profileName01) || cleanText(client.profileLink01),
+        href: externalHref(client.profileLink01),
+        icon: <LuFileText size={20} />,
+      });
+    }
+
+    if (client.profileLink02) {
+      push("Documents & Links", {
+        label: "Profile",
+        value: cleanText(client.profileName02) || cleanText(client.profileLink02),
+        href: externalHref(client.profileLink02),
+        icon: <HiOutlineBuildingOffice2 size={21} />,
+      });
+    }
+
+    return rows;
+  }, [client]);
+
+  if (loading) {
+    return (
+      <div
+        className="flex min-h-screen items-center justify-center"
+        style={{ backgroundImage: PINK_GOLD_GRADIENT }}
+      >
+        <ScaleLoader color={THEME.pink} aria-label="Loading Profile36" />
+      </div>
+    );
+  }
+
+  if (!client) {
+    return (
+      <div
+        className="flex min-h-screen items-center justify-center px-5 text-center"
+        style={{ backgroundImage: PINK_GOLD_GRADIENT }}
+      >
+        <div className="max-w-sm rounded-3xl border border-[#d9aa62] bg-white/90 px-7 py-8 shadow-xl">
+          <h1 className="font-serif text-3xl font-bold text-[#5d0618]">
+            Profile not found
+          </h1>
+          <p className="mt-3 text-[#a04555]">Unable to load this profile.</p>
+        </div>
+      </div>
+    );
+  }
+
   const {
-    _id,
     companyName,
     name,
     description,
-    phone01,
-    phone02,
-    phone03,
-    telephone01,
-    telephone02,
-    telephone03,
-    services,
     clientName,
     designation,
     address,
-    whatsapp01,
-    whatsapp02,
-    whatsapp03,
-    location,
-    instagramLink,
-    instagramLink02,
-    instagramLink03,
-    instagramName,
-    instagramName02,
-    instagramName03,
-    snapchatLink,
-    snapchatLink02,
-    snapchatLink03,
-    snapchatName,
-    snapchatName02,
-    snapchatName03,
-    youtubeLink,
-    youtubeLink02,
-    youtubeLink03,
-    youtubeName,
-    youtubeName02,
-    youtubeName03,
-    tiktokLink,
-    tiktokLink02,
-    tiktokLink03,
-    tiktokName,
-    tiktokName02,
-    tiktokName03,
-    twitterLink,
-    twitterLink02,
-    twitterLink03,
-    twitterName,
-    twitterName02,
-    twitterName03,
-    facebookLink,
-    facebookLink02,
-    facebookLink03,
-    facebookName,
-    facebookName02,
-    facebookName03,
-    googleReviewLink,
-    googleReviewLink02,
-    googleReviewLink03,
-    googleReviewName,
-    googleReviewName02,
-    googleReviewName03,
-    website,
-    website02,
-    website03,
-    websiteName,
-    websiteName02,
-    websiteName03,
-    email,
-    email02,
-    email03,
-    youtubeShortsLink,
-    youtubeShortsLink02,
-    youtubeShortsLink03,
-    youtubeShortsName,
-    youtubeShortsName02,
-    youtubeShortsName03,
-    googleMapLink,
-    googleMapLink02,
-    googleMapLink03,
-    googleMapName,
-    googleMapName02,
-    googleMapName03,
-    menuLink,
-    menuName,
-    catalogueLink,
-    catalogueName,
-    profileLink01,
-    profileLink02,
-    profileName01,
-    profileName02,
     logo,
-    images,
+    services,
+    location,
     img01,
     img02,
     img03,
@@ -221,537 +472,7 @@ const Profile38 = () => {
     img08,
     img09,
     img10,
-  } = client || {};
-
-  useEffect(() => {
-    const fetchAndIncrementVisitCount = async () => {
-      if (!_id) return;
-      try {
-        const response = await axios.post(
-          `https://www.scan-taps.com/api/visit/${_id}`,
-        );
-        setVisitCount(response.data.count || 0);
-      } catch (error) {
-        console.error("Error fetching or incrementing visit count:", error);
-      }
-    };
-
-    fetchAndIncrementVisitCount();
-  }, [_id]);
-
-  const downloadContactCard = async () => {
-    const blobToJpegBase64 = async (
-      blob,
-      { maxSize = 512, maxBytes = 256 * 1024 } = {},
-    ) => {
-      const blobUrl = URL.createObjectURL(blob);
-      try {
-        return await new Promise((resolve) => {
-          const img = new Image();
-          img.onload = async () => {
-            const width = img.naturalWidth || img.width;
-            const height = img.naturalHeight || img.height;
-            if (!width || !height) return resolve(null);
-
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            if (!ctx) return resolve(null);
-
-            const makeJpegBlob = (targetW, targetH, quality) =>
-              new Promise((done) => {
-                canvas.width = targetW;
-                canvas.height = targetH;
-                ctx.clearRect(0, 0, targetW, targetH);
-                ctx.drawImage(img, 0, 0, targetW, targetH);
-                canvas.toBlob(
-                  (result) => done(result || null),
-                  "image/jpeg",
-                  Math.max(0.1, Math.min(1, quality)),
-                );
-              });
-
-            const blobToBase64 = (fileBlob) =>
-              new Promise((done) => {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                  const result = String(reader.result || "");
-                  done(result.split(",")[1] || null);
-                };
-                reader.onerror = () => done(null);
-                reader.readAsDataURL(fileBlob);
-              });
-
-            const scales = [1, 0.85, 0.7, 0.55, 0.45, 0.35, 0.25];
-            const qualities = [0.9, 0.82, 0.74, 0.66, 0.58, 0.5, 0.42];
-
-            for (const scaleStep of scales) {
-              const scale = Math.min(
-                1,
-                (maxSize / Math.max(width, height)) * scaleStep,
-              );
-              const targetW = Math.max(1, Math.round(width * scale));
-              const targetH = Math.max(1, Math.round(height * scale));
-
-              for (const quality of qualities) {
-                // eslint-disable-next-line no-await-in-loop
-                const jpegBlob = await makeJpegBlob(targetW, targetH, quality);
-                if (!jpegBlob || jpegBlob.size > maxBytes) continue;
-                // eslint-disable-next-line no-await-in-loop
-                const base64 = await blobToBase64(jpegBlob);
-                if (base64) return resolve(base64);
-              }
-            }
-
-            const fallbackScale = Math.min(1, maxSize / Math.max(width, height));
-            const fallbackBlob = await makeJpegBlob(
-              Math.max(1, Math.round(width * fallbackScale)),
-              Math.max(1, Math.round(height * fallbackScale)),
-              0.6,
-            );
-            if (!fallbackBlob) return resolve(null);
-            return resolve(await blobToBase64(fallbackBlob));
-          };
-          img.onerror = () => resolve(null);
-          img.src = blobUrl;
-        });
-      } finally {
-        URL.revokeObjectURL(blobUrl);
-      }
-    };
-
-    const base64ToBlob = (base64, mime) => {
-      const bytes = Uint8Array.from(atob(base64), (char) => char.charCodeAt(0));
-      return new Blob([bytes], { type: mime || "application/octet-stream" });
-    };
-
-    const foldVcardLines = (vcardText) =>
-      String(vcardText || "")
-        .split(/\r?\n/)
-        .map((line) => {
-          const maxLen = 75;
-          if (line.length <= maxLen) return line;
-          let output = "";
-          for (let index = 0; index < line.length; index += maxLen) {
-            const chunk = line.slice(index, index + maxLen);
-            output += index === 0 ? chunk : `\r\n ${chunk}`;
-          }
-          return output;
-        })
-        .join("\r\n");
-
-    const getLogoJpegData = async () => {
-      if (!logo) return null;
-      try {
-        const response = await axios.get(
-          `https://www.scan-taps.com/api/vcard/image?url=${encodeURIComponent(
-            logo,
-          )}`,
-        );
-        const mimeRaw = String(response.data?.mime || "");
-        const base64 = String(response.data?.base64 || "");
-        if (!mimeRaw.startsWith("image/") || !base64) return null;
-        const normalizedMime =
-          mimeRaw.toLowerCase() === "image/jpg" ? "image/jpeg" : mimeRaw;
-        const jpegBase64 = await blobToJpegBase64(
-          base64ToBlob(base64, normalizedMime),
-        );
-        return jpegBase64 ? { type: "JPEG", base64: jpegBase64 } : null;
-      } catch {
-        return null;
-      }
-    };
-
-    const card = vCardsJS();
-    card.firstName = String(clientName || "");
-    card.formattedName = String(clientName || "");
-    card.organization = String(name || "");
-    card.title = String(designation || "");
-    if (phone01) card.cellPhone = String(phone01);
-    if (phone02) card.workPhone = String(phone02);
-    if (phone03) card.homePhone = String(phone03);
-    if (email) card.email = String(email);
-    if (website) card.url = String(website);
-
-    const logoData = await getLogoJpegData();
-    if (logoData?.base64) {
-      card.logo.embedFromString(logoData.base64, logoData.type);
-      card.photo.embedFromString(logoData.base64, logoData.type);
-    }
-
-    let vCardString = foldVcardLines(card.getFormattedString());
-    const whatsappNumbers = [whatsapp01, whatsapp02, whatsapp03]
-      .filter(Boolean)
-      .map((number) => String(number).trim())
-      .filter(Boolean);
-
-    if (whatsappNumbers.length) {
-      const whatsappLines = whatsappNumbers.map(
-        (number) => `TEL;TYPE=CELL;TYPE=WHATSAPP:${number}`,
-      );
-      const endIndex = vCardString.lastIndexOf("END:VCARD");
-      if (endIndex !== -1) {
-        const beforeEnd = vCardString.slice(0, endIndex).replace(/\r?\n$/, "");
-        vCardString = `${beforeEnd}\r\n${whatsappLines.join(
-          "\r\n",
-        )}\r\nEND:VCARD\r\n`;
-      }
-    }
-
-    const blob = new Blob([vCardString], {
-      type: "text/vcard;charset=utf-8",
-    });
-    const url = URL.createObjectURL(blob);
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    if (isIOS) {
-      window.location.href = url;
-    } else {
-      const link = document.createElement("a");
-      link.download = `${clientName || "contact"}.vcf`;
-      link.href = url;
-      link.click();
-    }
-
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  };
-
-  const downloadQr = (rootEle) => {
-    const input = document.getElementById(rootEle);
-    if (!input) return;
-
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-      const horizontalMargin = 20;
-      const availableWidth = pageWidth - horizontalMargin * 2;
-      const scaleFactor = Math.min(
-        availableWidth / canvas.width,
-        pageHeight / canvas.height,
-      );
-      const width = canvas.width * scaleFactor;
-      const height = canvas.height * scaleFactor;
-      const x = (pageWidth - width) / 2;
-      const y = (pageHeight - height) / 2;
-      pdf.addImage(imgData, "PNG", x, y, width, height);
-      pdf.save("QR.pdf");
-    });
-  };
-
-  const currentPageUrl = window.location.href;
-
-  const profileLinks = [
-    phone01 && {
-      href: `tel:${phone01}`,
-      title: "Phone",
-      value: phone01,
-      icon: <FaPhone size={22} />,
-    },
-    phone02 && {
-      href: `tel:${phone02}`,
-      title: "Phone 2",
-      value: phone02,
-      icon: <FaPhone size={22} />,
-    },
-    phone03 && {
-      href: `tel:${phone03}`,
-      title: "Phone 3",
-      value: phone03,
-      icon: <FaPhone size={22} />,
-    },
-    telephone01 && {
-      href: `tel:${telephone01}`,
-      title: "Telephone",
-      value: telephone01,
-      icon: <FaPhoneSquareAlt size={24} />,
-    },
-    telephone02 && {
-      href: `tel:${telephone02}`,
-      title: "Telephone 2",
-      value: telephone02,
-      icon: <FaPhoneSquareAlt size={24} />,
-    },
-    telephone03 && {
-      href: `tel:${telephone03}`,
-      title: "Telephone 3",
-      value: telephone03,
-      icon: <FaPhoneSquareAlt size={24} />,
-    },
-    whatsapp01 && {
-      href: `https://wa.me/${whatsapp01}`,
-      title: "WhatsApp",
-      value: whatsapp01,
-      icon: <FaWhatsapp size={25} />,
-    },
-    whatsapp02 && {
-      href: `https://wa.me/${whatsapp02}`,
-      title: "WhatsApp 2",
-      value: whatsapp02,
-      icon: <FaWhatsapp size={25} />,
-    },
-    whatsapp03 && {
-      href: `https://wa.me/${whatsapp03}`,
-      title: "WhatsApp 3",
-      value: whatsapp03,
-      icon: <FaWhatsapp size={25} />,
-    },
-    menuLink && {
-      href: menuLink,
-      title: "Menu",
-      value: menuName,
-      icon: <FaUtensils size={23} />,
-    },
-    catalogueLink && {
-      href: catalogueLink,
-      title: "Catalogue",
-      value: catalogueName,
-      icon: <FaShoppingBag size={23} />,
-    },
-    profileLink01 && {
-      href: profileLink01,
-      title: "Company Profile / Price List",
-      value: profileName01,
-      icon: <FaGift size={23} />,
-    },
-    profileLink02 && {
-      href: profileLink02,
-      title: "Profile",
-      value: profileName02,
-      icon: <FaGift size={23} />,
-    },
-    instagramLink && {
-      href: instagramLink,
-      title: "Instagram",
-      value: instagramName,
-      icon: <FaInstagram size={24} />,
-    },
-    instagramLink02 && {
-      href: instagramLink02,
-      title: "Instagram 2",
-      value: instagramName02,
-      icon: <FaInstagram size={24} />,
-    },
-    instagramLink03 && {
-      href: instagramLink03,
-      title: "Instagram 3",
-      value: instagramName03,
-      icon: <FaInstagram size={24} />,
-    },
-    snapchatLink && {
-      href: snapchatLink,
-      title: "Snapchat",
-      value: snapchatName,
-      icon: <FaSnapchatGhost size={24} />,
-    },
-    snapchatLink02 && {
-      href: snapchatLink02,
-      title: "Snapchat 2",
-      value: snapchatName02,
-      icon: <FaSnapchatGhost size={24} />,
-    },
-    snapchatLink03 && {
-      href: snapchatLink03,
-      title: "Snapchat 3",
-      value: snapchatName03,
-      icon: <FaSnapchatGhost size={24} />,
-    },
-    youtubeLink && {
-      href: youtubeLink,
-      title: "YouTube",
-      value: youtubeName,
-      icon: <FaYoutube size={24} />,
-    },
-    youtubeLink02 && {
-      href: youtubeLink02,
-      title: "YouTube 2",
-      value: youtubeName02,
-      icon: <FaYoutube size={24} />,
-    },
-    youtubeLink03 && {
-      href: youtubeLink03,
-      title: "YouTube 3",
-      value: youtubeName03,
-      icon: <FaYoutube size={24} />,
-    },
-    tiktokLink && {
-      href: tiktokLink,
-      title: "TikTok",
-      value: tiktokName,
-      icon: <FaTiktok size={23} />,
-    },
-    tiktokLink02 && {
-      href: tiktokLink02,
-      title: "TikTok 2",
-      value: tiktokName02,
-      icon: <FaTiktok size={23} />,
-    },
-    tiktokLink03 && {
-      href: tiktokLink03,
-      title: "TikTok 3",
-      value: tiktokName03,
-      icon: <FaTiktok size={23} />,
-    },
-    twitterLink && {
-      href: twitterLink,
-      title: "X / Twitter",
-      value: twitterName,
-      icon: <FaXTwitter size={22} />,
-    },
-    twitterLink02 && {
-      href: twitterLink02,
-      title: "X / Twitter 2",
-      value: twitterName02,
-      icon: <FaXTwitter size={22} />,
-    },
-    twitterLink03 && {
-      href: twitterLink03,
-      title: "X / Twitter 3",
-      value: twitterName03,
-      icon: <FaXTwitter size={22} />,
-    },
-    facebookLink && {
-      href: facebookLink,
-      title: "Facebook",
-      value: facebookName,
-      icon: <FaFacebookF size={22} />,
-    },
-    facebookLink02 && {
-      href: facebookLink02,
-      title: "Facebook 2",
-      value: facebookName02,
-      icon: <FaFacebookF size={22} />,
-    },
-    facebookLink03 && {
-      href: facebookLink03,
-      title: "Facebook 3",
-      value: facebookName03,
-      icon: <FaFacebookF size={22} />,
-    },
-    googleReviewLink && {
-      href: googleReviewLink,
-      title: "Google Review",
-      value: googleReviewName,
-      icon: <FaStar size={22} />,
-    },
-    googleReviewLink02 && {
-      href: googleReviewLink02,
-      title: "Google Review 2",
-      value: googleReviewName02,
-      icon: <FaStar size={22} />,
-    },
-    googleReviewLink03 && {
-      href: googleReviewLink03,
-      title: "Google Review 3",
-      value: googleReviewName03,
-      icon: <FaStar size={22} />,
-    },
-    website && {
-      href: website,
-      title: "Website",
-      value: websiteName,
-      icon: <FaGlobe size={23} />,
-    },
-    website02 && {
-      href: website02,
-      title: "Website 2",
-      value: websiteName02,
-      icon: <FaGlobe size={23} />,
-    },
-    website03 && {
-      href: website03,
-      title: "Website 3",
-      value: websiteName03,
-      icon: <FaGlobe size={23} />,
-    },
-    email && {
-      href: `mailto:${email}`,
-      title: "Email",
-      value: email,
-      icon: <FaEnvelope size={22} />,
-    },
-    email02 && {
-      href: `mailto:${email02}`,
-      title: "Email 2",
-      value: email02,
-      icon: <FaEnvelope size={22} />,
-    },
-    email03 && {
-      href: `mailto:${email03}`,
-      title: "Email 3",
-      value: email03,
-      icon: <FaEnvelope size={22} />,
-    },
-    youtubeShortsLink && {
-      href: youtubeShortsLink,
-      title: "LinkedIn",
-      value: youtubeShortsName,
-      icon: <FaLinkedinIn size={22} />,
-    },
-    youtubeShortsLink02 && {
-      href: youtubeShortsLink02,
-      title: "LinkedIn 2",
-      value: youtubeShortsName02,
-      icon: <FaLinkedinIn size={22} />,
-    },
-    youtubeShortsLink03 && {
-      href: youtubeShortsLink03,
-      title: "LinkedIn 3",
-      value: youtubeShortsName03,
-      icon: <FaLinkedinIn size={22} />,
-    },
-    googleMapLink && {
-      href: googleMapLink,
-      title: "Google Map",
-      value: googleMapName,
-      icon: <FaMapLocation size={23} />,
-    },
-    googleMapLink02 && {
-      href: googleMapLink02,
-      title: "Google Map 2",
-      value: googleMapName02,
-      icon: <FaMapLocation size={23} />,
-    },
-    googleMapLink03 && {
-      href: googleMapLink03,
-      title: "Google Map 3",
-      value: googleMapName03,
-      icon: <FaMapLocation size={23} />,
-    },
-  ].filter(Boolean);
-
-  const quickLinks = [
-    instagramLink && {
-      href: instagramLink,
-      label: "Instagram",
-      icon: <FaInstagram size={23} />,
-    },
-    whatsapp01 && {
-      href: `https://wa.me/${whatsapp01}`,
-      label: "WhatsApp",
-      icon: <FaWhatsapp size={23} />,
-    },
-    tiktokLink && {
-      href: tiktokLink,
-      label: "TikTok",
-      icon: <FaTiktok size={22} />,
-    },
-    snapchatLink && {
-      href: snapchatLink,
-      label: "Snapchat",
-      icon: <FaSnapchatGhost size={22} />,
-    },
-    email && {
-      href: `mailto:${email}`,
-      label: "Email",
-      icon: <FaEnvelope size={21} />,
-    },
-    website && {
-      href: website,
-      label: "Website",
-      icon: <FaGlobe size={21} />,
-    },
-  ].filter(Boolean);
+  } = client;
 
   const galleryImages = [
     img01,
@@ -766,491 +487,308 @@ const Profile38 = () => {
     img10,
   ].filter(Boolean);
 
-  if (loading || !client) {
-    return (
-      <div
-        className="min-h-screen w-full max-w-md mx-auto shadow-lg flex items-center justify-center"
-        style={{ background: THEME.page }}
-      >
-        <ScaleLoader color={THEME.accentDark} size={50} />
-      </div>
-    );
-  }
+  const firstPhone = client.phone01 || client.telephone01;
+  const firstWhatsapp = normalizeWhatsApp(client.whatsapp01);
+  const canonicalUrl = `https://www.scan-taps.com/${companyName || clientId}`;
 
   return (
-    <section>
+    <section
+      className="min-h-screen px-0 py-0 sm:px-3 sm:py-4"
+      style={{ backgroundImage: PINK_GOLD_GRADIENT, backgroundAttachment: "fixed" }}
+    >
       <Helmet>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{clientName}</title>
-        <link rel="icon" type="image/x-icon" href={`${logo || ""}`} />
-        <meta name="description" content={designation || name || ""} />
-        <meta property="article:section" content={designation || name || ""} />
-        <meta property="og:title" content={clientName || ""} />
-        <meta property="og:description" content={designation || name || ""} />
-        <meta
-          property="og:url"
-          content={`https://www.scan-taps.com/${companyName || ""}`}
-        />
-        <meta property="og:image" content={`${logo || ""}`} />
+        <title>{clientName || name}</title>
+        {logo ? <link rel="icon" href={logo} /> : null}
+        <meta name="description" content={designation || name || "Profile"} />
+        <meta property="og:title" content={clientName || name} />
+        <meta property="og:description" content={designation || name || "Profile"} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={PROFILE36_COVER} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={clientName || name} />
+        <meta name="twitter:description" content={designation || name || "Profile"} />
+        <meta name="twitter:image" content={PROFILE36_COVER} />
       </Helmet>
 
-      {showQr && (
+      {showQr ? (
         <div
-          className="qr-modal min-h-screen w-full max-w-md mx-auto shadow-lg flex items-center justify-center fixed inset-0 z-50"
-          style={{ background: THEME.page }}
+          className="fixed inset-0 z-50 flex items-center justify-center px-5"
+          style={{ background: "rgba(93, 6, 24, 0.72)" }}
         >
-          <div
-            className="rounded-3xl pb-8 pt-14 px-10 relative shadow-xl"
-            style={{
-              backgroundColor: THEME.card,
-              border: `1px solid ${THEME.border}`,
-            }}
-          >
-            <ImCross
-              className="absolute top-5 right-5 cursor-pointer"
-              style={{ color: THEME.accentDark }}
+          <div className="relative w-full max-w-sm rounded-3xl border-2 border-[#d9aa62] bg-[#fffaf3] px-6 pb-7 pt-14 shadow-2xl">
+            <button
+              type="button"
               onClick={() => setShowQr(false)}
-            />
+              className="absolute right-5 top-5 text-[#5d0618]"
+              aria-label="Close QR"
+            >
+              <ImCross size={18} />
+            </button>
 
-            <div className="flex flex-col items-center gap-7">
+            <div className="flex flex-col items-center gap-6">
               <div
-                id="qr"
-                className="p-4 rounded-2xl bg-white"
-                style={{ border: `1px solid ${THEME.border}` }}
+                id="profile36-qr"
+                className="rounded-2xl border border-[#ead9c9] bg-white p-5 shadow"
               >
-                <QRCodeCanvas value={currentPageUrl} size={180} />
+                <QRCodeCanvas value={currentPageUrl} size={190} />
               </div>
 
-              <div className="flex justify-center gap-2 flex-wrap">
-                <button
-                  type="button"
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor: THEME.accentSoft,
-                    color: THEME.accentDark,
-                    border: `1px solid ${THEME.border}`,
-                  }}
-                  onClick={() => downloadQr("qr")}
+              <button
+                type="button"
+                onClick={downloadQr}
+                className="flex items-center gap-2 rounded-xl border border-[#d9aa62] bg-[#5d0618] px-5 py-3 font-semibold text-white shadow-lg"
+              >
+                <FaDownload /> Download QR
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <div className="mx-auto min-h-screen w-full max-w-[430px] overflow-hidden bg-white/45 shadow-[0_14px_38px_rgba(93,6,24,0.16)] sm:rounded-[26px] sm:border sm:border-white/70">
+        <article className="relative min-h-screen overflow-hidden bg-[#fffaf3]/90 pb-8">
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ backgroundImage: PINK_GOLD_GRADIENT, opacity: 0.72 }}
+          />
+
+          <div className="relative z-10">
+            <div className="relative mb-16 bg-white">
+              <a
+                href={PROFILE36_COVER}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+                aria-label="Open cover image"
+              >
+                <img
+                  src={PROFILE36_COVER}
+                  alt="Profile cover"
+                  className="block h-auto max-h-[240px] w-full object-contain"
+                />
+              </a>
+
+              {logo ? (
+                <a
+                  href={logo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute left-5 -bottom-12"
+                  aria-label="Open profile logo"
                 >
-                  <FaDownload size={20} />
-                </button>
+                  <img
+                    src={logo}
+                    alt="logo"
+                    className="h-24 w-24 rounded-2xl border-[3px] border-[#d9aa62] bg-white object-cover shadow-[0_8px_24px_rgba(93,6,24,0.22)]"
+                  />
+                </a>
+              ) : null}
+
+              <button
+                type="button"
+                onClick={downloadContactCard}
+                className="absolute bottom-3 right-4 flex items-center gap-2 rounded-xl border border-[#d9aa62] bg-[#5d0618] px-3.5 py-2.5 text-sm font-bold text-white shadow-[0_6px_16px_rgba(93,6,24,0.28)]"
+              >
+                <FaUserPlus size={16} /> Save Contact
+              </button>
+            </div>
+
+            <div className="px-5">
+              <div className="text-left">
+                <p className="font-serif text-[15px] font-bold text-[#7b1223]">
+                  {name}
+                </p>
+                <h1 className="mt-1 font-serif text-[28px] font-bold leading-tight text-[#5d0618]">
+                  {clientName}
+                </h1>
+                {designation ? (
+                  <p className="mt-1 text-[15px] font-semibold text-[#a04555]">
+                    {designation}
+                  </p>
+                ) : null}
+                {address ? (
+                  <p className="mt-2 flex items-start gap-2 text-sm font-medium text-[#6f4c56]">
+                    <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#d9aa62]" />
+                    <span>{address}</span>
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="mt-4 flex items-center justify-between gap-3">
+                <div className="flex gap-2">
+                  {firstPhone ? (
+                    <a
+                      href={`tel:${firstPhone}`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9aa62] bg-white text-[#5d0618] shadow"
+                      aria-label="Call"
+                    >
+                      <FaPhoneAlt />
+                    </a>
+                  ) : null}
+                  {firstWhatsapp ? (
+                    <a
+                      href={`https://wa.me/${firstWhatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9aa62] bg-white text-[#5d0618] shadow"
+                      aria-label="WhatsApp"
+                    >
+                      <FaWhatsapp size={19} />
+                    </a>
+                  ) : null}
+                  {client.email ? (
+                    <a
+                      href={`mailto:${client.email}`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9aa62] bg-white text-[#5d0618] shadow"
+                      aria-label="Email"
+                    >
+                      <FaEnvelope />
+                    </a>
+                  ) : null}
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-[#e8cda7] bg-white/80 px-3 py-2 text-sm font-semibold text-[#7b1223] shadow-sm">
+                  <MdOutlineRemoveRedEye size={18} />
+                  {visitCount}
+                </div>
+              </div>
+
+              {description ? (
+                <div className="mt-4 rounded-2xl border border-[#ead9c9] bg-white/80 px-4 py-4 shadow-[0_5px_16px_rgba(93,6,24,0.08)]">
+                  <p className="whitespace-pre-line text-left text-sm font-medium leading-6 text-[#4b343b]">
+                    {cleanText(description)}
+                  </p>
+                </div>
+              ) : null}
+
+              {linkGroups.map((group) => (
+                <React.Fragment key={group.title}>
+                  <DividerTitle>{group.title}</DividerTitle>
+                  <div className="overflow-hidden rounded-2xl border border-[#d9aa62]/70 bg-white/85 shadow-[0_6px_18px_rgba(93,6,24,0.09)]">
+                    {group.items.map((item, index) => (
+                      <div
+                        key={`${group.title}-${item.label}-${index}`}
+                        className="border-b border-[#ead9c9] last:border-b-0"
+                      >
+                        <LinkCard {...item} />
+                      </div>
+                    ))}
+                  </div>
+                </React.Fragment>
+              ))}
+
+              {services ? (
+                <>
+                  <DividerTitle>Services</DividerTitle>
+                  <div className="rounded-2xl border border-[#d9aa62]/70 bg-white/85 px-4 py-4 text-left shadow-[0_6px_18px_rgba(93,6,24,0.09)]">
+                    {cleanText(services)
+                      .split(/\r?\n/)
+                      .filter(Boolean)
+                      .map((line, index) => (
+                        <div
+                          key={`${line}-${index}`}
+                          className="flex items-start gap-2 py-1 text-sm font-medium text-[#4b343b]"
+                        >
+                          <span className="mt-0.5 text-[#d9aa62]">•</span>
+                          <span>{line}</span>
+                        </div>
+                      ))}
+                  </div>
+                </>
+              ) : null}
+
+              {galleryImages.length ? (
+                <>
+                  <DividerTitle>Image Gallery</DividerTitle>
+                  <div className="grid grid-cols-2 gap-2 rounded-2xl border border-[#d9aa62]/70 bg-white/80 p-2 shadow-[0_6px_18px_rgba(93,6,24,0.09)]">
+                    {galleryImages.map((image, index) => (
+                      <a
+                        href={image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={`${image}-${index}`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Gallery ${index + 1}`}
+                          loading="lazy"
+                          className="aspect-square w-full rounded-xl object-cover"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+
+              {location ? (
+                <>
+                  <DividerTitle>Location</DividerTitle>
+                  <div className="overflow-hidden rounded-2xl border border-[#d9aa62] bg-white shadow-[0_6px_18px_rgba(93,6,24,0.09)]">
+                    <iframe
+                      src={location}
+                      title="Location"
+                      width="100%"
+                      height="300"
+                      allowFullScreen
+                      loading="lazy"
+                      className="block w-full"
+                    />
+                  </div>
+                </>
+              ) : null}
+
+              <DividerTitle>Share Profile</DividerTitle>
+              <div className="flex flex-wrap justify-center gap-3">
                 <FacebookShareButton url={currentPageUrl}>
-                  <span
-                    className="w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{ border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                  >
-                    <FaFacebookF size={21} />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d9aa62] bg-[#5d0618] text-white shadow">
+                    <FaFacebookF size={20} />
                   </span>
                 </FacebookShareButton>
                 <LinkedinShareButton url={currentPageUrl}>
-                  <span
-                    className="w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{ border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                  >
-                    <FaLinkedinIn size={21} />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d9aa62] bg-[#5d0618] text-white shadow">
+                    <FaLinkedinIn size={20} />
                   </span>
                 </LinkedinShareButton>
                 <TelegramShareButton url={currentPageUrl}>
-                  <span
-                    className="w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{ border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                  >
-                    <FaTelegramPlane size={21} />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d9aa62] bg-[#5d0618] text-white shadow">
+                    <FaTelegramPlane size={20} />
                   </span>
                 </TelegramShareButton>
                 <WhatsappShareButton url={currentPageUrl}>
-                  <span
-                    className="w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{ border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                  >
-                    <FaWhatsapp size={22} />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d9aa62] bg-[#5d0618] text-white shadow">
+                    <FaWhatsapp size={21} />
                   </span>
                 </WhatsappShareButton>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
 
-      <div
-        className="min-h-screen w-full max-w-md mx-auto shadow-xl pb-8 text-center overflow-hidden"
-        style={{ background: THEME.page }}
-      >
-        {/* Profile34-style cover with overlapping logo */}
-        {images ? (
-          <div className="relative mb-16">
-            <a href={images} target="_blank" rel="noopener noreferrer">
-              <img
-                src={images}
-                alt="Cover"
-                className="w-full h-[220px] object-cover"
-              />
-            </a>
-            <div
-              className="absolute inset-x-0 bottom-0 h-20"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,238,246,0.88) 100%)",
-              }}
-            />
-            {logo && (
-              <a
-                href={logo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute left-5 -bottom-12 z-10"
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-24 h-24 object-cover rounded-3xl bg-white shadow-xl"
-                  style={{ border: `3px solid ${THEME.card}` }}
-                />
-              </a>
-            )}
-          </div>
-        ) : (
-          <div
-            className="h-28 relative mb-16"
-            style={{
-              background:
-                "linear-gradient(135deg, #f4b8cf 0%, #df8ead 52%, #bf5f88 100%)",
-            }}
-          >
-            {logo && (
-              <a
-                href={logo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute left-5 -bottom-12 z-10"
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-24 h-24 object-cover rounded-3xl bg-white shadow-xl"
-                  style={{ border: `3px solid ${THEME.card}` }}
-                />
-              </a>
-            )}
-          </div>
-        )}
+              <DividerTitle>Share Contact & QR</DividerTitle>
+              <div className="flex justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowQr(true)}
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#d9aa62] bg-white text-[#5d0618] shadow"
+                  aria-label="Show QR"
+                >
+                  <IoQrCodeSharp size={28} />
+                </button>
+                <button
+                  type="button"
+                  onClick={downloadContactCard}
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#d9aa62] bg-white text-[#5d0618] shadow"
+                  aria-label="Download contact"
+                >
+                  <FaDownload size={23} />
+                </button>
+              </div>
 
-        <div className="px-5">
-          <div className="text-left pt-1">
-            {name && (
-              <p className="text-sm font-semibold" style={{ color: THEME.accentDark }}>
-                {name}
+              <p className="pt-6 text-center text-sm font-medium text-[#7b1223]">
+                Copyright © <span className="font-bold">{companyName}</span>. All Rights Reserved.
               </p>
-            )}
-            <h1
-              className="text-2xl font-bold mt-1 leading-tight"
-              style={{ color: THEME.text }}
-            >
-              {clientName}
-            </h1>
-            {designation && (
-              <p className="text-sm font-medium mt-1" style={{ color: THEME.muted }}>
-                {designation}
-              </p>
-            )}
-          </div>
-
-          <div className="flex justify-between items-center gap-3 mt-4">
-            <div className="flex gap-2">
-              {phone01 && (
-                <a
-                  href={`tel:${phone01}`}
-                  className="w-11 h-11 rounded-full flex items-center justify-center shadow-sm"
-                  style={{
-                    backgroundColor: THEME.card,
-                    color: THEME.accentDark,
-                    border: `1px solid ${THEME.border}`,
-                  }}
-                  aria-label="Call"
-                >
-                  <FaPhone size={18} />
-                </a>
-              )}
-              {whatsapp01 && (
-                <a
-                  href={`https://wa.me/${whatsapp01}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full flex items-center justify-center shadow-sm"
-                  style={{
-                    backgroundColor: THEME.card,
-                    color: THEME.accentDark,
-                    border: `1px solid ${THEME.border}`,
-                  }}
-                  aria-label="WhatsApp"
-                >
-                  <FaWhatsapp size={20} />
-                </a>
-              )}
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5" style={{ color: THEME.muted }}>
-                <MdRemoveRedEye size={19} />
-                <span className="text-sm">{visitCount}</span>
-              </div>
-              <button
-                type="button"
-                onClick={downloadContactCard}
-                className="px-4 py-2.5 rounded-xl text-sm font-semibold shadow-sm"
-                style={{
-                  backgroundColor: THEME.accent,
-                  color: "white",
-                  border: `1px solid ${THEME.accentDark}`,
-                }}
-              >
-                Save Contact
-              </button>
             </div>
           </div>
-
-          {description && (
-            <p
-              className="text-sm text-left mt-4 whitespace-pre-line break-words leading-relaxed"
-              style={{ color: THEME.text }}
-            >
-              {String(description).replace(/<br\s*\/?>/gi, "\n")}
-            </p>
-          )}
-
-          {address && (
-            <div
-              className="mt-4 px-4 py-3 rounded-2xl text-left"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.68)",
-                border: `1px solid ${THEME.border}`,
-                color: THEME.text,
-              }}
-            >
-              <div className="flex gap-3 items-start">
-                <FaMapLocation className="mt-0.5 shrink-0" color={THEME.accentDark} />
-                <div>
-                  <p className="font-semibold text-sm">Address</p>
-                  <p className="text-sm mt-1" style={{ color: THEME.muted }}>
-                    {address}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {quickLinks.length > 0 && (
-            <div className="flex flex-wrap justify-start gap-2.5 mt-5">
-              {quickLinks.map((item, index) => (
-                <a
-                  key={`${item.label}-${index}`}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.label}
-                  className="w-11 h-11 rounded-full flex items-center justify-center shadow-sm"
-                  style={{
-                    backgroundColor: THEME.card,
-                    color: THEME.accentDark,
-                    border: `1px solid ${THEME.border}`,
-                  }}
-                >
-                  {item.icon}
-                </a>
-              ))}
-            </div>
-          )}
-
-          {profileLinks.length > 0 && (
-            <div className="mt-6">
-              <h2
-                className="text-lg font-bold text-left mb-3"
-                style={{ color: THEME.text }}
-              >
-                Links & Contact
-              </h2>
-              <div className="flex flex-col gap-3">
-                {profileLinks.map((item, index) => (
-                  <ProfileLinkCard key={`${item.title}-${index}`} {...item} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {services && String(services).trim() && (
-            <div className="mt-7">
-              <h2
-                className="text-lg font-bold text-left mb-3"
-                style={{ color: THEME.text }}
-              >
-                Services
-              </h2>
-              <div
-                className="rounded-2xl p-4 text-left shadow-sm"
-                style={{
-                  backgroundColor: THEME.card,
-                  border: `1px solid ${THEME.border}`,
-                }}
-              >
-                {String(services)
-                  .split("\n")
-                  .filter((line) => line.trim())
-                  .map((line, index) => (
-                    <div key={index} className="flex gap-2 items-start py-1">
-                      <span style={{ color: THEME.accentDark }}>•</span>
-                      <span className="text-sm" style={{ color: THEME.text }}>
-                        {line}
-                      </span>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          )}
-
-          {galleryImages.length > 0 && (
-            <div className="mt-7">
-              <h2
-                className="text-lg font-bold text-left mb-3"
-                style={{ color: THEME.text }}
-              >
-                Image Gallery
-              </h2>
-              <div className="grid grid-cols-2 gap-3">
-                {galleryImages.map((image, index) => (
-                  <a
-                    key={index}
-                    href={image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-2xl overflow-hidden shadow-sm"
-                    style={{ border: `1px solid ${THEME.border}` }}
-                  >
-                    <img
-                      src={image}
-                      alt={`Gallery ${index + 1}`}
-                      className="w-full aspect-square object-cover"
-                    />
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {location && (
-            <div className="mt-7">
-              <h2
-                className="text-lg font-bold text-left mb-3"
-                style={{ color: THEME.text }}
-              >
-                Location
-              </h2>
-              <div
-                className="overflow-hidden rounded-2xl bg-white shadow-sm"
-                style={{ border: `1px solid ${THEME.border}` }}
-              >
-                <iframe
-                  title="Location"
-                  src={location}
-                  width="100%"
-                  height="300"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          )}
-
-          <div className="mt-8">
-            <h2
-              className="text-lg font-bold text-left mb-3"
-              style={{ color: THEME.text }}
-            >
-              Share Profile
-            </h2>
-            <div className="flex justify-start gap-3 flex-wrap">
-              <FacebookShareButton url={currentPageUrl}>
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: THEME.card, border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                >
-                  <FaFacebookF size={22} />
-                </span>
-              </FacebookShareButton>
-              <TwitterShareButton url={currentPageUrl}>
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: THEME.card, border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                >
-                  <FaXTwitter size={21} />
-                </span>
-              </TwitterShareButton>
-              <LinkedinShareButton url={currentPageUrl}>
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: THEME.card, border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                >
-                  <FaLinkedinIn size={22} />
-                </span>
-              </LinkedinShareButton>
-              <TelegramShareButton url={currentPageUrl}>
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: THEME.card, border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                >
-                  <FaTelegramPlane size={22} />
-                </span>
-              </TelegramShareButton>
-              <WhatsappShareButton url={currentPageUrl}>
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: THEME.card, border: `1px solid ${THEME.border}`, color: THEME.accentDark }}
-                >
-                  <FaWhatsapp size={23} />
-                </span>
-              </WhatsappShareButton>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h2
-              className="text-lg font-bold text-left mb-3"
-              style={{ color: THEME.text }}
-            >
-              Share Contact & QR
-            </h2>
-            <div className="flex justify-start gap-3">
-              <button
-                type="button"
-                onClick={() => setShowQr(true)}
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{
-                  backgroundColor: THEME.card,
-                  border: `1px solid ${THEME.border}`,
-                  color: THEME.accentDark,
-                }}
-              >
-                <IoQrCodeSharp size={29} />
-              </button>
-              <button
-                type="button"
-                onClick={downloadContactCard}
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{
-                  backgroundColor: THEME.card,
-                  border: `1px solid ${THEME.border}`,
-                  color: THEME.accentDark,
-                }}
-              >
-                <FaDownload size={25} />
-              </button>
-            </div>
-          </div>
-
-          <p className="pt-7 text-xs" style={{ color: THEME.muted }}>
-            Copyright © <span className="company">{companyName}</span>. All Rights Reserved.
-          </p>
-        </div>
+        </article>
       </div>
     </section>
   );
