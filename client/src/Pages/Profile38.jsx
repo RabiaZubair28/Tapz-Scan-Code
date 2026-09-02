@@ -563,12 +563,12 @@ const Profile38 = () => {
     <img
       src={images}
       alt="Profile cover"
-      className="block h-auto max-h-[240px] w-full object-contain"
+      className="block h-auto max-h-[240px] w-full object-contain "
     />
   </a>
 </div>
 
-<div className="relative z-20 mt-3 px-5">
+<div className="relative z-20 mt-3 mb-3 px-5">
   <div className="flex items-center justify-between gap-4">
     {logo ? (
       <a
