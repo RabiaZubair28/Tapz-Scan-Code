@@ -569,7 +569,7 @@ const Profile38 = () => {
 </div>
 
 {logo ? (
-  <div className="relative z-20 -mt-6 mb-4 px-5">
+  <div className="relative z-20 mt-3 px-5">
     <a
       href={logo}
       target="_blank"
