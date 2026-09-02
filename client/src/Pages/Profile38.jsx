@@ -568,23 +568,35 @@ const Profile38 = () => {
   </a>
 </div>
 
-{logo ? (
-  <div className="relative z-20 mt-3 px-5">
-    <a
-      href={logo}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block"
-      aria-label="Open profile logo"
+<div className="relative z-20 mt-3 px-5">
+  <div className="flex items-center justify-between gap-4">
+    {logo ? (
+      <a
+        href={logo}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0"
+        aria-label="Open profile logo"
+      >
+        <img
+          src={logo}
+          alt="logo"
+          className="h-24 w-24 rounded-2xl border-2 border-[#b58a12]/80 bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.12)]"
+        />
+      </a>
+    ) : (
+      <div />
+    )}
+
+    <button
+      type="button"
+      onClick={downloadContactCard}
+      className="flex shrink-0 items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 px-4 py-2.5 text-sm font-semibold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.08)] backdrop-blur-sm transition"
     >
-      <img
-        src={logo}
-        alt="logo"
-        className="h-24 w-24 rounded-2xl border-2 border-[#b58a12]/80 bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.12)]"
-      />
-    </a>
+      <FaUserPlus size={16} /> Save Contact
+    </button>
   </div>
-) : null}
+</div>
 
             <div className="px-5">
               <div className="text-left">
@@ -666,15 +678,7 @@ const Profile38 = () => {
                 </div>
               </div>
 
-              <div className="mt-4 flex justify-start">
-                <button
-                  type="button"
-                  onClick={downloadContactCard}
-                  className="flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80  px-4 py-2.5 text-sm font-semibold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.08)] backdrop-blur-sm transition "
-                >
-                  <FaUserPlus size={16} /> Save Contact
-                </button>
-              </div>
+             
 
               {description ? (
                 <div className="mt-4 rounded-2xl border-2 border-[#b58a12]/80 bg-white/44 px-4 py-4 shadow-[0_5px_16px_rgba(90,49,64,0.07)] backdrop-blur-sm">
