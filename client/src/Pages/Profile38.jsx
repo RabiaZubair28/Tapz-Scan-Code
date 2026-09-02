@@ -457,6 +457,7 @@ const Profile38 = () => {
     clientName,
     designation,
     address,
+    images,
     logo,
     services,
     location,
@@ -500,11 +501,11 @@ const Profile38 = () => {
         <meta property="og:title" content={clientName || name} />
         <meta property="og:description" content={designation || name || "Profile"} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={PROFILE36_COVER} />
+        <meta property="og:image" content={images} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={clientName || name} />
         <meta name="twitter:description" content={designation || name || "Profile"} />
-        <meta name="twitter:image" content={PROFILE36_COVER} />
+        <meta name="twitter:image" content={images} />
       </Helmet>
 
       {showQr ? (
@@ -548,14 +549,14 @@ const Profile38 = () => {
           <div className="relative z-10">
             <div className="relative mb-16 bg-transparent">
               <a
-                href={PROFILE36_COVER}
+                href={images}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full"
                 aria-label="Open cover image"
               >
                 <img
-                  src={PROFILE36_COVER}
+                  src={images}
                   alt="Profile cover"
                   className="block h-auto max-h-[240px] w-full object-contain"
                 />
