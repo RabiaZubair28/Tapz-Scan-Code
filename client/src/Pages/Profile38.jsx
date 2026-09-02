@@ -668,7 +668,7 @@ const Profile38 = () => {
                 <button
                   type="button"
                   onClick={downloadContactCard}
-                  className="flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/70 px-4 py-2.5 text-sm font-semibold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.08)] backdrop-blur-sm transition hover:bg-white"
+                  className="flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80  px-4 py-2.5 text-sm font-semibold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.08)] backdrop-blur-sm transition "
                 >
                   <FaUserPlus size={16} /> Save Contact
                 </button>
