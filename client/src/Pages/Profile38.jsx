@@ -1,6 +1,6 @@
-/* PROFILE36_BLUSH_GOLD_INSIDE_GRADIENT_FINAL */
-/* COVER: https://res.cloudinary.com/dxokfhkhu/image/upload/v1788082399/v1z2rrrtg8enr7fs4bqa.jpg */
-/* THEME CHECK: #a95f78 rose | #d5b46a gold | gradient lives INSIDE profile */
+/* PROFILE36_COVER_MATCHED_PETAL_PINK_GOLD_FINAL_20260902 */
+/* COVER: https://res.cloudinary.com/dxokfhkhu/image/upload/v1788372597/18682472-742a-4d3d-98a5-ba1637c62a93_pvi3qm.jpg */
+/* THEME CHECK: #f7c8d2 petal pink | #5a3140 deep rose | #b58a12 antique gold | gradient INSIDE profile only */
 import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
@@ -40,20 +40,22 @@ import {
 import { FaTelegramPlane } from "react-icons/fa";
 
 const PROFILE36_COVER =
-  "https://res.cloudinary.com/dxokfhkhu/image/upload/v1788082399/v1z2rrrtg8enr7fs4bqa.jpg";
+  "https://res.cloudinary.com/dxokfhkhu/image/upload/v1788372597/18682472-742a-4d3d-98a5-ba1637c62a93_pvi3qm.jpg";
 
 const THEME = {
-  rose: "#a95f78",
-  roseDeep: "#7f4b5d",
-  roseSoft: "#c98fa2",
-  gold: "#d5b46a",
-  goldLight: "#ead8a7",
-  cream: "#fffaf7",
-  page: "#f5f2ef",
+  petalPink: "#f7c8d2",
+  petalSoft: "#fde8ed",
+  deepRose: "#5a3140",
+  deepRoseSoft: "#704753",
+  antiqueGold: "#b58a12",
+  champagneGold: "#d8b858",
+  paleGold: "#f0dfa9",
+  cream: "#fff9f6",
+  page: "#f4f1ef",
 };
 
 const PROFILE_GRADIENT =
-  "radial-gradient(circle at 18% 4%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0) 34%), radial-gradient(circle at 90% 16%, rgba(213,180,106,0.18) 0%, rgba(213,180,106,0) 30%), linear-gradient(160deg, #fff8fa 0%, #fde9f0 40%, #fff5ed 70%, #fae8ef 100%)";
+  "radial-gradient(circle at 16% 0%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0) 34%), radial-gradient(circle at 92% 12%, rgba(216,184,88,0.20) 0%, rgba(216,184,88,0) 28%), linear-gradient(165deg, #fff3f6 0%, #f9d4dc 32%, #f7c8d2 56%, #fbe2e6 76%, #fff0e6 100%)";
 
 const cleanText = (value = "") =>
   String(value || "")
@@ -73,13 +75,13 @@ const externalHref = (value = "") => {
 
 const DividerTitle = ({ children }) => (
   <div className="mb-3 mt-6 flex items-center gap-3">
-    <span className="h-px flex-1 bg-[#d5b46a] opacity-60" />
-    <FaRegStar className="text-[#d5b46a]" size={11} />
-    <span className="font-serif text-[12px] font-bold uppercase tracking-[0.18em] text-[#7f4b5d]">
+    <span className="h-px flex-1 bg-[#b58a12] opacity-60" />
+    <FaRegStar className="text-[#b58a12]" size={11} />
+    <span className="font-serif text-[12px] font-bold uppercase tracking-[0.18em] text-[#5a3140]">
       {children}
     </span>
-    <FaRegStar className="text-[#d5b46a]" size={11} />
-    <span className="h-px flex-1 bg-[#d5b46a] opacity-60" />
+    <FaRegStar className="text-[#b58a12]" size={11} />
+    <span className="h-px flex-1 bg-[#b58a12] opacity-60" />
   </div>
 );
 
@@ -89,21 +91,21 @@ const LinkCard = ({ icon, label, value, href }) => {
   const body = (
     <div className="flex w-full items-center justify-between gap-3 px-4 py-3.5">
       <div className="flex min-w-0 items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d5b46a] bg-white/35 text-[#8f5669] shadow-[0_4px_12px_rgba(127,75,93,0.10)]">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#b58a12] bg-white/35 text-[#704753] shadow-[0_4px_12px_rgba(90,49,64,0.10)]">
           {icon}
         </div>
         <div className="min-w-0 text-left">
-          <div className="font-serif text-[13px] font-bold text-[#4b2630]">
+          <div className="font-serif text-[13px] font-bold text-[#4a2933]">
             {label}
           </div>
           {value ? (
-            <div className="mt-0.5 break-all text-[12px] font-medium text-[#8f5669]">
+            <div className="mt-0.5 break-all text-[12px] font-medium text-[#704753]">
               {value}
             </div>
           ) : null}
         </div>
       </div>
-      <span className="shrink-0 text-xl font-semibold text-[#d5b46a]">›</span>
+      <span className="shrink-0 text-xl font-semibold text-[#b58a12]">›</span>
     </div>
   );
 
@@ -114,7 +116,7 @@ const LinkCard = ({ icon, label, value, href }) => {
       href={href}
       target={href.startsWith("tel:") || href.startsWith("mailto:") ? undefined : "_blank"}
       rel="noopener noreferrer"
-      className="block transition duration-200 hover:bg-[#fff7fa]"
+      className="block transition duration-200 hover:bg-[#fff0f3]"
     >
       {body}
     </a>
@@ -428,9 +430,9 @@ const Profile38 = () => {
   if (loading) {
     return (
       <div
-        className="flex min-h-screen items-center justify-center bg-[#f5f2ef]"
+        className="flex min-h-screen items-center justify-center bg-[#f4f1ef]"
       >
-        <ScaleLoader color={THEME.rose} aria-label="Loading Profile36" />
+        <ScaleLoader color={THEME.deepRose} aria-label="Loading Profile36" />
       </div>
     );
   }
@@ -438,13 +440,13 @@ const Profile38 = () => {
   if (!client) {
     return (
       <div
-        className="flex min-h-screen items-center justify-center bg-[#f5f2ef] px-5 text-center"
+        className="flex min-h-screen items-center justify-center bg-[#f4f1ef] px-5 text-center"
       >
-        <div className="max-w-sm rounded-3xl border border-[#d5b46a] bg-white/90 px-7 py-8 shadow-xl">
-          <h1 className="font-serif text-3xl font-bold text-[#8f5669]">
+        <div className="max-w-sm rounded-3xl border border-[#b58a12] bg-white/90 px-7 py-8 shadow-xl">
+          <h1 className="font-serif text-3xl font-bold text-[#704753]">
             Profile not found
           </h1>
-          <p className="mt-3 text-[#8f5669]">Unable to load this profile.</p>
+          <p className="mt-3 text-[#704753]">Unable to load this profile.</p>
         </div>
       </div>
     );
@@ -457,8 +459,8 @@ const Profile38 = () => {
     clientName,
     designation,
     address,
-    images,
     logo,
+    images,
     services,
     location,
     img01,
@@ -491,7 +493,7 @@ const Profile38 = () => {
   const canonicalUrl = `https://www.scan-taps.com/${companyName || clientId}`;
 
   return (
-    <section className="min-h-screen bg-[#f5f2ef] px-0 py-0 sm:px-3 sm:py-4">
+    <section className="min-h-screen bg-[#f4f1ef] px-0 py-0 sm:px-3 sm:py-4">
       <Helmet>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -511,13 +513,13 @@ const Profile38 = () => {
       {showQr ? (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center px-5"
-          style={{ background: "rgba(60, 48, 52, 0.48)" }}
+          style={{ background: "rgba(58, 42, 47, 0.40)" }}
         >
-          <div className="relative w-full max-w-sm rounded-3xl border-2 border-[#d5b46a] bg-[#fffaf7] px-6 pb-7 pt-14 shadow-2xl">
+          <div className="relative w-full max-w-sm rounded-3xl border-2 border-[#b58a12] bg-[#fff9f6] px-6 pb-7 pt-14 shadow-2xl">
             <button
               type="button"
               onClick={() => setShowQr(false)}
-              className="absolute right-5 top-5 text-[#8f5669]"
+              className="absolute right-5 top-5 text-[#704753]"
               aria-label="Close QR"
             >
               <ImCross size={18} />
@@ -526,7 +528,7 @@ const Profile38 = () => {
             <div className="flex flex-col items-center gap-6">
               <div
                 id="profile36-qr"
-                className="rounded-2xl border border-[#efdae2] bg-white p-5 shadow"
+                className="rounded-2xl border border-[#efb8c4] bg-white p-5 shadow"
               >
                 <QRCodeCanvas value={currentPageUrl} size={190} />
               </div>
@@ -534,7 +536,7 @@ const Profile38 = () => {
               <button
                 type="button"
                 onClick={downloadQr}
-                className="flex items-center gap-2 rounded-xl border border-[#d5b46a] bg-white/50 px-5 py-3 font-semibold text-[#7f4b5d] shadow-sm transition hover:bg-white/75"
+                className="flex items-center gap-2 rounded-xl border border-[#b58a12] bg-white/42 px-5 py-3 font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/75"
               >
                 <FaDownload /> Download QR
               </button>
@@ -543,8 +545,8 @@ const Profile38 = () => {
         </div>
       ) : null}
 
-      <div className="mx-auto min-h-screen w-full max-w-[430px] overflow-hidden shadow-[0_14px_38px_rgba(95,68,76,0.14)] sm:rounded-[26px] sm:border sm:border-white/80"
-        style={{ backgroundImage: PROFILE_GRADIENT, backgroundAttachment: "fixed" }}>
+      <div className="mx-auto min-h-screen w-full max-w-[430px] overflow-hidden shadow-[0_14px_38px_rgba(90,49,64,0.14)] sm:rounded-[26px] sm:border sm:border-white/80"
+        style={{ backgroundColor: THEME.petalPink, backgroundImage: PROFILE_GRADIENT, backgroundAttachment: "fixed" }}>
         <article className="relative min-h-screen overflow-hidden bg-transparent pb-8">
           <div className="relative z-10">
             <div className="relative mb-16 bg-transparent">
@@ -573,7 +575,7 @@ const Profile38 = () => {
                   <img
                     src={logo}
                     alt="logo"
-                    className="h-24 w-24 rounded-2xl border-[3px] border-[#d5b46a] bg-white/90 object-cover shadow-[0_8px_24px_rgba(127,75,93,0.16)]"
+                    className="h-24 w-24 rounded-2xl border-[3px] border-[#b58a12] bg-white/90 object-cover shadow-[0_8px_24px_rgba(90,49,64,0.16)]"
                   />
                 </a>
               ) : null}
@@ -581,7 +583,7 @@ const Profile38 = () => {
               <button
                 type="button"
                 onClick={downloadContactCard}
-                className="absolute bottom-3 right-4 flex items-center gap-2 rounded-xl border border-[#d5b46a] bg-white/78 px-3.5 py-2.5 text-sm font-bold text-[#7f4b5d] shadow-[0_5px_14px_rgba(127,75,93,0.12)] backdrop-blur-sm transition hover:bg-white"
+                className="absolute bottom-3 right-4 flex items-center gap-2 rounded-xl border border-[#b58a12] bg-white/72 px-3.5 py-2.5 text-sm font-bold text-[#5a3140] shadow-[0_5px_14px_rgba(90,49,64,0.12)] backdrop-blur-sm transition hover:bg-white"
               >
                 <FaUserPlus size={16} /> Save Contact
               </button>
@@ -589,20 +591,20 @@ const Profile38 = () => {
 
             <div className="px-5">
               <div className="text-left">
-                <p className="font-serif text-[15px] font-bold text-[#7f4b5d]">
+                <p className="font-serif text-[15px] font-bold text-[#5a3140]">
                   {name}
                 </p>
-                <h1 className="mt-1 font-serif text-[28px] font-bold leading-tight text-[#8f5669]">
+                <h1 className="mt-1 font-serif text-[28px] font-bold leading-tight text-[#704753]">
                   {clientName}
                 </h1>
                 {designation ? (
-                  <p className="mt-1 text-[15px] font-semibold text-[#8f5669]">
+                  <p className="mt-1 text-[15px] font-semibold text-[#704753]">
                     {designation}
                   </p>
                 ) : null}
                 {address ? (
-                  <p className="mt-2 flex items-start gap-2 text-sm font-medium text-[#6f4c56]">
-                    <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#d5b46a]" />
+                  <p className="mt-2 flex items-start gap-2 text-sm font-medium text-[#77545e]">
+                    <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#b58a12]" />
                     <span>{address}</span>
                   </p>
                 ) : null}
@@ -613,7 +615,7 @@ const Profile38 = () => {
                   {firstPhone ? (
                     <a
                       href={`tel:${firstPhone}`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d5b46a] bg-white/45 text-[#8f5669] shadow-sm"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
                       aria-label="Call"
                     >
                       <FaPhoneAlt />
@@ -624,7 +626,7 @@ const Profile38 = () => {
                       href={`https://wa.me/${firstWhatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d5b46a] bg-white/45 text-[#8f5669] shadow-sm"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
                       aria-label="WhatsApp"
                     >
                       <FaWhatsapp size={19} />
@@ -633,7 +635,7 @@ const Profile38 = () => {
                   {client.email ? (
                     <a
                       href={`mailto:${client.email}`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d5b46a] bg-white/45 text-[#8f5669] shadow-sm"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
                       aria-label="Email"
                     >
                       <FaEnvelope />
@@ -641,15 +643,15 @@ const Profile38 = () => {
                   ) : null}
                 </div>
 
-                <div className="flex items-center gap-2 rounded-full border border-[#ead8a7] bg-white/45 px-3 py-2 text-sm font-semibold text-[#7f4b5d] shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2 rounded-full border border-[#f0dfa9] bg-white/40 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm backdrop-blur-sm">
                   <MdOutlineRemoveRedEye size={18} />
                   {visitCount}
                 </div>
               </div>
 
               {description ? (
-                <div className="mt-4 rounded-2xl border border-[#efdae2] bg-white/45 px-4 py-4 shadow-[0_5px_16px_rgba(127,75,93,0.07)] backdrop-blur-sm">
-                  <p className="whitespace-pre-line text-left text-sm font-medium leading-6 text-[#4b343b]">
+                <div className="mt-4 rounded-2xl border border-[#efb8c4] bg-white/40 px-4 py-4 shadow-[0_5px_16px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                  <p className="whitespace-pre-line text-left text-sm font-medium leading-6 text-[#4a343a]">
                     {cleanText(description)}
                   </p>
                 </div>
@@ -658,11 +660,11 @@ const Profile38 = () => {
               {linkGroups.map((group) => (
                 <React.Fragment key={group.title}>
                   <DividerTitle>{group.title}</DividerTitle>
-                  <div className="overflow-hidden rounded-2xl border border-[#d5b46a]/70 bg-white/46 shadow-[0_6px_18px_rgba(127,75,93,0.07)] backdrop-blur-sm">
+                  <div className="overflow-hidden rounded-2xl border border-[#b58a12]/70 bg-white/42 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {group.items.map((item, index) => (
                       <div
                         key={`${group.title}-${item.label}-${index}`}
-                        className="border-b border-[#efdae2] last:border-b-0"
+                        className="border-b border-[#efb8c4] last:border-b-0"
                       >
                         <LinkCard {...item} />
                       </div>
@@ -674,16 +676,16 @@ const Profile38 = () => {
               {services ? (
                 <>
                   <DividerTitle>Services</DividerTitle>
-                  <div className="rounded-2xl border border-[#d5b46a]/70 bg-white/46 px-4 py-4 text-left shadow-[0_6px_18px_rgba(127,75,93,0.07)] backdrop-blur-sm">
+                  <div className="rounded-2xl border border-[#b58a12]/70 bg-white/42 px-4 py-4 text-left shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {cleanText(services)
                       .split(/\r?\n/)
                       .filter(Boolean)
                       .map((line, index) => (
                         <div
                           key={`${line}-${index}`}
-                          className="flex items-start gap-2 py-1 text-sm font-medium text-[#4b343b]"
+                          className="flex items-start gap-2 py-1 text-sm font-medium text-[#4a343a]"
                         >
-                          <span className="mt-0.5 text-[#d5b46a]">•</span>
+                          <span className="mt-0.5 text-[#b58a12]">•</span>
                           <span>{line}</span>
                         </div>
                       ))}
@@ -694,7 +696,7 @@ const Profile38 = () => {
               {galleryImages.length ? (
                 <>
                   <DividerTitle>Image Gallery</DividerTitle>
-                  <div className="grid grid-cols-2 gap-2 rounded-2xl border border-[#d5b46a]/70 bg-white/46 p-2 shadow-[0_6px_18px_rgba(127,75,93,0.07)] backdrop-blur-sm">
+                  <div className="grid grid-cols-2 gap-2 rounded-2xl border border-[#b58a12]/70 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {galleryImages.map((image, index) => (
                       <a
                         href={image}
@@ -717,7 +719,7 @@ const Profile38 = () => {
               {location ? (
                 <>
                   <DividerTitle>Location</DividerTitle>
-                  <div className="overflow-hidden rounded-2xl border border-[#d5b46a] bg-white/65 shadow-[0_6px_18px_rgba(127,75,93,0.07)]">
+                  <div className="overflow-hidden rounded-2xl border border-[#b58a12] bg-white/58 shadow-[0_6px_18px_rgba(90,49,64,0.07)]">
                     <iframe
                       src={location}
                       title="Location"
@@ -734,22 +736,22 @@ const Profile38 = () => {
               <DividerTitle>Share Profile</DividerTitle>
               <div className="flex flex-wrap justify-center gap-3">
                 <FacebookShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d5b46a] bg-white/35 text-[#8f5669] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
                     <FaFacebookF size={20} />
                   </span>
                 </FacebookShareButton>
                 <LinkedinShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d5b46a] bg-white/35 text-[#8f5669] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
                     <FaLinkedinIn size={20} />
                   </span>
                 </LinkedinShareButton>
                 <TelegramShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d5b46a] bg-white/35 text-[#8f5669] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
                     <FaTelegramPlane size={20} />
                   </span>
                 </TelegramShareButton>
                 <WhatsappShareButton url={currentPageUrl}>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d5b46a] bg-white/35 text-[#8f5669] shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#b58a12] bg-white/35 text-[#704753] shadow-sm">
                     <FaWhatsapp size={21} />
                   </span>
                 </WhatsappShareButton>
@@ -760,7 +762,7 @@ const Profile38 = () => {
                 <button
                   type="button"
                   onClick={() => setShowQr(true)}
-                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#d5b46a] bg-white/45 text-[#8f5669] shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
                   aria-label="Show QR"
                 >
                   <IoQrCodeSharp size={28} />
@@ -768,14 +770,14 @@ const Profile38 = () => {
                 <button
                   type="button"
                   onClick={downloadContactCard}
-                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#d5b46a] bg-white/45 text-[#8f5669] shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#b58a12] bg-white/40 text-[#704753] shadow-sm"
                   aria-label="Download contact"
                 >
                   <FaDownload size={23} />
                 </button>
               </div>
 
-              <p className="pt-6 text-center text-sm font-medium text-[#7f4b5d]">
+              <p className="pt-6 text-center text-sm font-medium text-[#5a3140]">
                 Copyright © <span className="font-bold">{companyName}</span>. All Rights Reserved.
               </p>
             </div>
