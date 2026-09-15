@@ -270,16 +270,6 @@ const FIELD_GROUPS = [
   },
 ];
 
-const SIMPLE_FIELDS = [
-  { field: "name", label: "Company / Brand Name" },
-  { field: "clientName", label: "Client Name" },
-  { field: "designation", label: "Designation" },
-  { field: "romanName", label: "Roman Name" },
-  { field: "description", label: "Description", multiline: true },
-  { field: "services", label: "Services", multiline: true },
-  { field: "address", label: "Address", multiline: true },
-];
-
 const DividerTitle = ({ children, action }) => (
   <div className="mb-3 mt-6 flex items-center gap-3">
     <span className="h-px flex-1 bg-[#b58a12] opacity-60" />
@@ -1138,97 +1128,118 @@ const EditPortal38 = () => {
 
             <div className="px-5">
               <div className="text-left">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0 flex-1">
-                    {name ? (
-                      <p className="font-serif text-[15px] font-bold text-[#5a3140]">
-                        {name}
-                      </p>
-                    ) : (
+                <div className="space-y-1">
+                  <div className="flex min-w-0 items-start gap-2">
+                    <p className="min-w-0 flex-1 break-words font-serif text-[15px] font-bold text-[#5a3140]">
+                      {name || <span aria-hidden="true">&nbsp;</span>}
+                    </p>
+                    <div className="flex shrink-0 items-center gap-1">
                       <button
                         type="button"
                         onClick={() => openFieldEditor("name", "Company / Brand Name")}
-                        className="font-serif text-[13px] font-bold text-[#5a3140] underline decoration-[#b58a12] decoration-2 underline-offset-4"
+                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                        aria-label={name ? "Edit company name" : "Add company name"}
+                        title={name ? "Edit company name" : "Add company name"}
                       >
-                        + Add Company / Brand Name
+                        <FaEdit size={13} />
                       </button>
-                    )}
-                    {clientName ? (
-                      <h1 className="mt-1 font-serif text-[20px] font-bold leading-tight text-[#704753]">
-                        {clientName}
-                      </h1>
-                    ) : (
+                      {name ? (
+                        <button
+                          type="button"
+                          onClick={() => requestDelete("Company / Brand Name", { name })}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Delete company name"
+                          title="Delete company name"
+                        >
+                          <MdDelete size={15} />
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
+
+                  <div className="flex min-w-0 items-start gap-2">
+                    <h1 className="min-w-0 flex-1 break-words font-serif text-[20px] font-bold leading-tight text-[#704753]">
+                      {clientName || <span aria-hidden="true">&nbsp;</span>}
+                    </h1>
+                    <div className="flex shrink-0 items-center gap-1">
                       <button
                         type="button"
                         onClick={() => openFieldEditor("clientName", "Client Name")}
-                        className="mt-1 block font-serif text-[18px] font-bold text-[#704753] underline decoration-[#b58a12] decoration-2 underline-offset-4"
+                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                        aria-label={clientName ? "Edit client name" : "Add client name"}
+                        title={clientName ? "Edit client name" : "Add client name"}
                       >
-                        + Add Client Name
+                        <FaEdit size={13} />
                       </button>
-                    )}
-                    {designation ? (
-                      <p className="mt-1 text-[15px] font-semibold text-[#704753]">
-                        {designation}
-                      </p>
-                    ) : (
+                      {clientName ? (
+                        <button
+                          type="button"
+                          onClick={() => requestDelete("Client Name", { clientName })}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Delete client name"
+                          title="Delete client name"
+                        >
+                          <MdDelete size={15} />
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
+
+                  <div className="flex min-w-0 items-start gap-2">
+                    <p className="min-w-0 flex-1 break-words text-[15px] font-semibold text-[#704753]">
+                      {designation || <span aria-hidden="true">&nbsp;</span>}
+                    </p>
+                    <div className="flex shrink-0 items-center gap-1">
                       <button
                         type="button"
                         onClick={() => openFieldEditor("designation", "Designation")}
-                        className="mt-1 block text-[13px] font-semibold text-[#704753] underline decoration-[#b58a12] underline-offset-4"
+                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                        aria-label={designation ? "Edit designation" : "Add designation"}
+                        title={designation ? "Edit designation" : "Add designation"}
                       >
-                        + Add Designation
+                        <FaEdit size={13} />
                       </button>
-                    )}
-                    {romanName ? (
-                      <p className="mt-1 text-[12px] font-medium italic text-[#704753]">
-                        {romanName}
-                      </p>
-                    ) : null}
+                      {designation ? (
+                        <button
+                          type="button"
+                          onClick={() => requestDelete("Designation", { designation })}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Delete designation"
+                          title="Delete designation"
+                        >
+                          <MdDelete size={15} />
+                        </button>
+                      ) : null}
+                    </div>
                   </div>
 
-                  <div className="flex shrink-0 gap-1">
-                    <IconButton
-                      label="Edit profile names"
-                      onClick={() =>
-                        openFieldEditor(
-                          clientName ? "clientName" : name ? "name" : "clientName",
-                          clientName ? "Client Name" : name ? "Company / Brand Name" : "Client Name",
-                        )
-                      }
-                    >
-                      <FaEdit size={14} />
-                    </IconButton>
-                  </div>
-                </div>
-
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {SIMPLE_FIELDS.slice(0, 4).map((field) => (
-                    <SmallActionButton
-                      key={field.field}
-                      onClick={() => openFieldEditor(field.field, field.label, field.multiline)}
-                    >
-                      {client[field.field] ? `Edit ${field.label}` : `Add ${field.label}`}
-                    </SmallActionButton>
-                  ))}
-                </div>
-
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {SIMPLE_FIELDS.slice(0, 4)
-                    .filter((field) => client[field.field])
-                    .map((field) => (
+                  <div className="flex min-w-0 items-start gap-2">
+                    <p className="min-w-0 flex-1 break-words text-[12px] font-medium italic text-[#704753]">
+                      {romanName || <span aria-hidden="true">&nbsp;</span>}
+                    </p>
+                    <div className="flex shrink-0 items-center gap-1">
                       <button
                         type="button"
-                        key={`delete-${field.field}`}
-                        onClick={() =>
-                          requestDelete(field.label, {
-                            [field.field]: client[field.field],
-                          })
-                        }
-                        className="text-[11px] font-bold text-[#704753] underline decoration-[#b58a12] underline-offset-4"
+                        onClick={() => openFieldEditor("romanName", "Roman Name")}
+                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                        aria-label={romanName ? "Edit Roman name" : "Add Roman name"}
+                        title={romanName ? "Edit Roman name" : "Add Roman name"}
                       >
-                        Delete {field.label}
+                        <FaEdit size={13} />
                       </button>
-                    ))}
+                      {romanName ? (
+                        <button
+                          type="button"
+                          onClick={() => requestDelete("Roman Name", { romanName })}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Delete Roman name"
+                          title="Delete Roman name"
+                        >
+                          <MdDelete size={15} />
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
                 </div>
               </div>
 
