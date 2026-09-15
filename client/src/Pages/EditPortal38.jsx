@@ -1128,22 +1128,22 @@ const EditPortal38 = () => {
 
             <div className="px-5">
               <div className="text-left">
-                <div className="space-y-1">
-                  <div className="flex min-w-0 items-start gap-2">
-                    <p className="min-w-0 flex-1 break-words font-serif text-[15px] font-bold text-[#5a3140]">
-                      {name || <span aria-hidden="true">&nbsp;</span>}
-                    </p>
-                    <div className="flex shrink-0 items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => openFieldEditor("name", "Company / Brand Name")}
-                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
-                        aria-label={name ? "Edit company name" : "Add company name"}
-                        title={name ? "Edit company name" : "Add company name"}
-                      >
-                        <FaEdit size={13} />
-                      </button>
-                      {name ? (
+                <div className="space-y-1.5">
+                  {name ? (
+                    <div className="flex min-w-0 items-start gap-2">
+                      <p className="min-w-0 flex-1 break-words font-serif text-[15px] font-bold text-[#5a3140]">
+                        {name}
+                      </p>
+                      <div className="flex shrink-0 items-center gap-1">
+                        <button
+                          type="button"
+                          onClick={() => openFieldEditor("name", "Company / Brand Name")}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Edit company name"
+                          title="Edit company name"
+                        >
+                          <FaEdit size={13} />
+                        </button>
                         <button
                           type="button"
                           onClick={() => requestDelete("Company / Brand Name", { name })}
@@ -1153,25 +1153,33 @@ const EditPortal38 = () => {
                         >
                           <MdDelete size={15} />
                         </button>
-                      ) : null}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openFieldEditor("name", "Company / Brand Name")}
+                      className="inline-flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/55 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/80"
+                    >
+                      <FaPlus size={12} /> Add Company Name
+                    </button>
+                  )}
 
-                  <div className="flex min-w-0 items-start gap-2">
-                    <h1 className="min-w-0 flex-1 break-words font-serif text-[20px] font-bold leading-tight text-[#704753]">
-                      {clientName || <span aria-hidden="true">&nbsp;</span>}
-                    </h1>
-                    <div className="flex shrink-0 items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => openFieldEditor("clientName", "Client Name")}
-                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
-                        aria-label={clientName ? "Edit client name" : "Add client name"}
-                        title={clientName ? "Edit client name" : "Add client name"}
-                      >
-                        <FaEdit size={13} />
-                      </button>
-                      {clientName ? (
+                  {clientName ? (
+                    <div className="flex min-w-0 items-start gap-2">
+                      <h1 className="min-w-0 flex-1 break-words font-serif text-[20px] font-bold leading-tight text-[#704753]">
+                        {clientName}
+                      </h1>
+                      <div className="flex shrink-0 items-center gap-1">
+                        <button
+                          type="button"
+                          onClick={() => openFieldEditor("clientName", "Client Name")}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Edit client name"
+                          title="Edit client name"
+                        >
+                          <FaEdit size={13} />
+                        </button>
                         <button
                           type="button"
                           onClick={() => requestDelete("Client Name", { clientName })}
@@ -1181,25 +1189,33 @@ const EditPortal38 = () => {
                         >
                           <MdDelete size={15} />
                         </button>
-                      ) : null}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openFieldEditor("clientName", "Client Name")}
+                      className="inline-flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/55 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/80"
+                    >
+                      <FaPlus size={12} /> Add Client Name
+                    </button>
+                  )}
 
-                  <div className="flex min-w-0 items-start gap-2">
-                    <p className="min-w-0 flex-1 break-words text-[15px] font-semibold text-[#704753]">
-                      {designation || <span aria-hidden="true">&nbsp;</span>}
-                    </p>
-                    <div className="flex shrink-0 items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => openFieldEditor("designation", "Designation")}
-                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
-                        aria-label={designation ? "Edit designation" : "Add designation"}
-                        title={designation ? "Edit designation" : "Add designation"}
-                      >
-                        <FaEdit size={13} />
-                      </button>
-                      {designation ? (
+                  {designation ? (
+                    <div className="flex min-w-0 items-start gap-2">
+                      <p className="min-w-0 flex-1 break-words text-[15px] font-semibold text-[#704753]">
+                        {designation}
+                      </p>
+                      <div className="flex shrink-0 items-center gap-1">
+                        <button
+                          type="button"
+                          onClick={() => openFieldEditor("designation", "Designation")}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Edit designation"
+                          title="Edit designation"
+                        >
+                          <FaEdit size={13} />
+                        </button>
                         <button
                           type="button"
                           onClick={() => requestDelete("Designation", { designation })}
@@ -1209,25 +1225,33 @@ const EditPortal38 = () => {
                         >
                           <MdDelete size={15} />
                         </button>
-                      ) : null}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openFieldEditor("designation", "Designation")}
+                      className="inline-flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/55 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/80"
+                    >
+                      <FaPlus size={12} /> Add Designation
+                    </button>
+                  )}
 
-                  <div className="flex min-w-0 items-start gap-2">
-                    <p className="min-w-0 flex-1 break-words text-[12px] font-medium italic text-[#704753]">
-                      {romanName || <span aria-hidden="true">&nbsp;</span>}
-                    </p>
-                    <div className="flex shrink-0 items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => openFieldEditor("romanName", "Roman Name")}
-                        className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
-                        aria-label={romanName ? "Edit Roman name" : "Add Roman name"}
-                        title={romanName ? "Edit Roman name" : "Add Roman name"}
-                      >
-                        <FaEdit size={13} />
-                      </button>
-                      {romanName ? (
+                  {romanName ? (
+                    <div className="flex min-w-0 items-start gap-2">
+                      <p className="min-w-0 flex-1 break-words text-[12px] font-medium italic text-[#704753]">
+                        {romanName}
+                      </p>
+                      <div className="flex shrink-0 items-center gap-1">
+                        <button
+                          type="button"
+                          onClick={() => openFieldEditor("romanName", "Roman Name")}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-[#704753] transition hover:bg-white/55 hover:text-[#5a3140]"
+                          aria-label="Edit Roman name"
+                          title="Edit Roman name"
+                        >
+                          <FaEdit size={13} />
+                        </button>
                         <button
                           type="button"
                           onClick={() => requestDelete("Roman Name", { romanName })}
@@ -1237,9 +1261,17 @@ const EditPortal38 = () => {
                         >
                           <MdDelete size={15} />
                         </button>
-                      ) : null}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openFieldEditor("romanName", "Roman Name")}
+                      className="inline-flex items-center gap-2 rounded-xl border-2 border-[#b58a12]/80 bg-white/55 px-3 py-2 text-sm font-semibold text-[#5a3140] shadow-sm transition hover:bg-white/80"
+                    >
+                      <FaPlus size={12} /> Add Roman Name
+                    </button>
+                  )}
                 </div>
               </div>
 
