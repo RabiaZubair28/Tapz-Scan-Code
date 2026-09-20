@@ -7,6 +7,15 @@ import { QRCodeCanvas } from "qrcode.react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import axios from "axios";
+import phoneLogo from "../assets/phone.png";
+import addressLogo from "../assets/adress.png";
+import whatsappLogo from "../assets/whatsapp.png";
+import emailLogo from "../assets/gmail.png";
+import telephoneLogo from "../assets/telephone01.png";
+import locationLogo from "../assets/location.png";
+import menuLogo from "../assets/menu.png";
+import catalogLogo from "../assets/catalog.jpg";
+import profileLogo from "../assets/profile.png";
 import facebookLogo from "../assets/fb.png";
 import instagramLogo from "../assets/insta.png";
 import snapchatLogo from "../assets/snap.png";
@@ -67,7 +76,12 @@ const THEME = {
 const PROFILE_GRADIENT =
   "radial-gradient(circle at 16% 0%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0) 34%), radial-gradient(circle at 92% 12%, rgba(216,184,88,0.20) 0%, rgba(216,184,88,0) 28%), linear-gradient(165deg, #fff3f6 0%, #f9d4dc 32%, #f7c8d2 56%, #fbe2e6 76%, #fff0e6 100%)";
 
-const SOCIAL_ROW_LOGOS = {
+const ROW_LOGOS = {
+  Phone: phoneLogo,
+  Telephone: telephoneLogo,
+  WhatsApp: whatsappLogo,
+  Email: emailLogo,
+  Address: addressLogo,
   Instagram: instagramLogo,
   Snapchat: snapchatLogo,
   YouTube: youtubeLogo,
@@ -77,7 +91,15 @@ const SOCIAL_ROW_LOGOS = {
   "Google Review": googleReviewLogo,
   Website: websiteLogo,
   LinkedIn: linkedinLogo,
+  "Google Map": locationLogo,
+  Menu: menuLogo,
+  Catalogue: catalogLogo,
+  "Price List": profileLogo,
+  Profile: profileLogo,
 };
+
+const getRowLogo = (label = "") =>
+  ROW_LOGOS[String(label).replace(/\s+\d+$/, "")] || null;
 
 const cleanText = (value = "") =>
   String(value || "")
@@ -1424,9 +1446,9 @@ const EditPortal38 = () => {
                               if (!item.href) event.preventDefault();
                             }}
                           >
-                            {item.group === "Social & Online" && SOCIAL_ROW_LOGOS[item.label] ? (
+                            {getRowLogo(item.label) ? (
                               <img
-                                src={SOCIAL_ROW_LOGOS[item.label]}
+                                src={getRowLogo(item.label)}
                                 alt={`${item.label} logo`}
                                 className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-[0_4px_12px_rgba(90,49,64,0.10)]"
                               />
