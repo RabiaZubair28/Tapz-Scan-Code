@@ -7,6 +7,15 @@ import { QRCodeCanvas } from "qrcode.react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import axios from "axios";
+import facebookLogo from "../assets/fb.png";
+import instagramLogo from "../assets/insta.png";
+import snapchatLogo from "../assets/snap.png";
+import youtubeLogo from "../assets/yt.png";
+import tiktokLogo from "../assets/tiktok.png";
+import twitterLogo from "../assets/threads.png";
+import googleReviewLogo from "../assets/greview.png";
+import websiteLogo from "../assets/web.png";
+import linkedinLogo from "../assets/download.png";
 import {
   FaDownload,
   FaEdit,
@@ -57,6 +66,18 @@ const THEME = {
 
 const PROFILE_GRADIENT =
   "radial-gradient(circle at 16% 0%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0) 34%), radial-gradient(circle at 92% 12%, rgba(216,184,88,0.20) 0%, rgba(216,184,88,0) 28%), linear-gradient(165deg, #fff3f6 0%, #f9d4dc 32%, #f7c8d2 56%, #fbe2e6 76%, #fff0e6 100%)";
+
+const SOCIAL_ROW_LOGOS = {
+  Instagram: instagramLogo,
+  Snapchat: snapchatLogo,
+  YouTube: youtubeLogo,
+  TikTok: tiktokLogo,
+  "X / Twitter": twitterLogo,
+  Facebook: facebookLogo,
+  "Google Review": googleReviewLogo,
+  Website: websiteLogo,
+  LinkedIn: linkedinLogo,
+};
 
 const cleanText = (value = "") =>
   String(value || "")
@@ -1403,9 +1424,17 @@ const EditPortal38 = () => {
                               if (!item.href) event.preventDefault();
                             }}
                           >
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-[0_4px_12px_rgba(90,49,64,0.10)]">
-                              {item.icon}
-                            </div>
+                            {item.group === "Social & Online" && SOCIAL_ROW_LOGOS[item.label] ? (
+                              <img
+                                src={SOCIAL_ROW_LOGOS[item.label]}
+                                alt={`${item.label} logo`}
+                                className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-[0_4px_12px_rgba(90,49,64,0.10)]"
+                              />
+                            ) : (
+                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-[#b58a12]/80 bg-white/62 text-[#704753] shadow-[0_4px_12px_rgba(90,49,64,0.10)]">
+                                {item.icon}
+                              </div>
+                            )}
                             <div className="min-w-0 text-left">
                               <div className="font-serif text-[13px] font-bold text-[#4a2933]">
                                 {item.label}
