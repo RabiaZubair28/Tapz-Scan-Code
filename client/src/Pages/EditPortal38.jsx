@@ -1564,7 +1564,7 @@ const EditPortal38 = () => {
               </div>
 
               <DividerTitle>Image Gallery</DividerTitle>
-              <div className="grid grid-cols-2 gap-2 rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+              <div className="grid grid-cols-1 rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                 {galleryImages.map((slot) => (
                   <div className="relative" key={slot.field}>
                     <a href={slot.value} target="_blank" rel="noopener noreferrer">
