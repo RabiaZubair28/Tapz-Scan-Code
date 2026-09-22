@@ -1572,7 +1572,7 @@ const EditPortal38 = () => {
                         src={slot.value}
                         alt={`Gallery ${slot.index + 1}`}
                         loading="lazy"
-                        className="aspect-square w-full rounded-xl mb-1 object-cover"
+                        className="aspect-square w-full rounded-xl mb-2 object-cover"
                       />
                     </a>
                     <div className="absolute bottom-2 right-2 flex gap-1">
