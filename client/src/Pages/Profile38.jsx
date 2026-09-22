@@ -790,7 +790,7 @@ const Profile38 = () => {
                           src={image}
                           alt={`Gallery ${index + 1}`}
                           loading="lazy"
-                          className="aspect-square w-full rounded-xl object-cover"
+                          className="aspect-square w-full mb-1 rounded-xl object-cover"
                         />
                       </a>
                     ))}
