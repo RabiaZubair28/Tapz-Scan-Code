@@ -778,7 +778,7 @@ const Profile38 = () => {
               {galleryImages.length ? (
                 <>
                   <DividerTitle>Image Gallery</DividerTitle>
-                  <div className="grid grid-cols-1 mb-2 rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
+                  <div className="grid grid-cols-1 rounded-2xl border-2 border-[#b58a12]/80 bg-white/42 p-2 shadow-[0_6px_18px_rgba(90,49,64,0.07)] backdrop-blur-sm">
                     {galleryImages.map((image, index) => (
                       <a
                         href={image}
